@@ -1,0 +1,39 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "bin": {
+    "publish-flat-copy": "dist/cli-copy.js"
+  },
+  "dependencies": {
+    "@npmcli/arborist": "6.1.6",
+    "@types/npmcli__arborist": "5.6.1",
+    "commander": "10.0.0",
+    "fs-extra": "11.1.0",
+    "logdown": "3.3.1",
+    "npm-packlist": "7.0.4"
+  },
+  "description": "Publish your project without the dist directory",
+  "devDependencies": {
+    "@types/fs-extra": "11.0.1",
+    "@types/npm-packlist": "7.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "typescript"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "publish-flat",
+  "repository": "https://github.com/ffflorian/tree/node-packages/publish-flat.git",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "postversion": "node ../dist/cli-copy.js version",
+    "start": "ts-node src/cli.ts",
+    "test": "exit 0"
+  },
+  "version": "1.4.1"
+}

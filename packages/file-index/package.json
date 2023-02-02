@@ -1,0 +1,31 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "dependencies": {},
+  "description": "Generate a file index",
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "file",
+    "index",
+    "fileindex",
+    "tree"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "@ffflorian/file-index",
+  "repository": "https://github.com/ffflorian/tree/node-packages/file-index.git",
+  "scripts": {
+    "build": "tsc",
+    "clear": "rimraf dist",
+    "dist": "yarn clear && yarn build",
+    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "test": "exit 0"
+  },
+  "version": "2.1.0"
+}

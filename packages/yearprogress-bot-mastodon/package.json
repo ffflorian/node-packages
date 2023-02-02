@@ -1,0 +1,35 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "bin": {
+    "yearprogress": "dist/cli.js"
+  },
+  "dependencies": {
+    "commander": "10.0.0",
+    "megalodon": "5.1.1"
+  },
+  "description": "Toots year's progress every few days to Mastodon.",
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "typescript"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "@ffflorian/yearprogress-mastodon-bot",
+    "private": true,
+  "repository": "https://github.com/ffflorian/tree/node-packages/yearprogress-bot-mastodon.git",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "start": "ts-node src/cli.ts"
+  },
+  "version": "1.0.0"
+}

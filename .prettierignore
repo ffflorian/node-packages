@@ -1,0 +1,6 @@
+dist
+node_modules
+docs
+package.json
+CHANGELOG.md
+spec/fixtures

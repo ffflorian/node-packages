@@ -1,0 +1,46 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "bin": {
+    "jszip-cli": "dist/cli.js"
+  },
+  "dependencies": {
+    "commander": "10.0.0",
+    "cosmiconfig": "8.0.0",
+    "fs-extra": "11.1.0",
+    "jszip": "3.10.1",
+    "logdown": "3.3.1",
+    "progress": "2.0.3"
+  },
+  "description": "A zip CLI based on jszip.",
+  "devDependencies": {
+    "@types/fs-extra": "11.0.1",
+    "@types/progress": "2.0.5",
+    "cross-env": "7.0.3",
+    "true": "0.0.4"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "jszip",
+    "typescript",
+    "zip"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "@ffflorian/jszip-cli",
+  "repository": "https://github.com/ffflorian/tree/node-packages/jszip-cli.git",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" ts-node src/cli.ts",
+    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+  },
+  "version": "3.1.6"
+}

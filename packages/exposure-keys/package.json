@@ -1,0 +1,47 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "dependencies": {
+    "jszip": "3.10.1",
+    "protobufjs": "7.1.2"
+  },
+  "description": "Temporary Exposure Keys (TEK) library",
+  "devDependencies": {
+    "protobufjs-cli": "1.0.2"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist",
+    "proto/export.js",
+    "proto/export.d.ts"
+  ],
+  "keywords": [
+    "tek",
+    "temporary",
+    "exposure",
+    "keys",
+    "google",
+    "apple",
+    "corona",
+    "covid",
+    "covid19",
+    "covid-19",
+    "typescript"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "exposure-keys",
+  "repository": "https://github.com/ffflorian/tree/node-packages/exposure-keys.git",
+  "scripts": {
+    "build": "yarn build:proto && yarn build:ts",
+    "build:proto": "pbjs --t static-module -w commonjs -o proto/export.js proto/export.proto && pbts --out proto/export.d.ts --no-comments proto/export.js",
+    "build:ts": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "start": "ts-node src/cli.ts",
+    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+  },
+  "version": "1.3.1"
+}

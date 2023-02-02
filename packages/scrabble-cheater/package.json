@@ -1,0 +1,41 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "bin": {
+    "scrabble-cheater": "dist/cli.js"
+  },
+  "dependencies": {
+    "clipboardy": "2.3.0",
+    "commander": "10.0.0"
+  },
+  "description": "A simple Scrabble cheating tool.",
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "scrabble",
+    "cheater",
+    "typescript",
+    "cli"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "scrabble-cheater",
+    "repository": "https://github.com/ffflorian/tree/node-packages/scrabble-cheater.git",
+  "release": {
+    "extends": "@ffflorian/semantic-release-config"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "start": "ts-node src/cli.ts",
+    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+  },
+  "version": "3.1.0"
+}

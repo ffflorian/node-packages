@@ -1,0 +1,27 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "description": "Mock dgram udp requests.",
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "@ffflorian/mock-udp",
+    "repository": "https://github.com/ffflorian/tree/node-packages/mock-udp.git",
+  "release": {
+    "extends": "@ffflorian/semantic-release-config"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,38 @@
+{
+  "author": "Pedro Costa <pedrohenriqueteodorodacosta@gmail.com>",
+  "contributors": [
+    "Florian Imdahl <git@ffflorian.de>"
+  ],
+  "description": "Create Windows shortcuts using a VBScript.",
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist",
+    "scripts"
+  ],
+  "homepage": "https://github.com/ffflorian/tree/node-packages/windows-shortcut-maker",
+  "keywords": [
+    "windows",
+    "shortcut",
+    "native",
+    "lightweight",
+    "desktop",
+    "lnk",
+    "url"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "@ffflorian/windows-shortcut-maker",
+  "repository": "https://github.com/ffflorian/tree/node-packages/windows-shortcut-maker.git",
+  "scripts": {
+    "build": "tsc",
+    "clear": "rimraf dist",
+    "dist": "yarn clear && yarn build",
+    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "test": "exit 0"
+  },
+  "version": "2.0.1"
+}

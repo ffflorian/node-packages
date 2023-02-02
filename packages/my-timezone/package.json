@@ -1,0 +1,34 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "bin": {
+    "my-timezone": "dist/cli.js"
+  },
+  "dependencies": {
+    "commander": "10.0.0",
+    "ntpclient": "1.1.3"
+  },
+  "description": "Get the exact time based on your location.",
+  "devDependencies": {
+    "axios": "1.2.6",
+    "nock": "13.3.0"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "my-timezone",
+  "repository": "https://github.com/ffflorian/tree/node-packages/my-timezone.git",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "start": "ts-node src/cli.ts",
+    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+  },
+  "version": "1.0.0"
+}

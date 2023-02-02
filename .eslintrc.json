@@ -1,0 +1,21 @@
+{
+  "env": {
+    "jasmine": true
+  },
+  "extends": "@ffflorian/eslint-config",
+  "globals": {
+    "NodeJS": true
+  },
+  "overrides": [
+    {
+      "files": "*.ts",
+      "rules": {
+        "@typescript-eslint/typedef": "off",
+        "no-magic-numbers": "off"
+      }
+    }
+  ],
+  "rules": {
+    "valid-jsdoc": "off"
+  }
+}

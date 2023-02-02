@@ -1,0 +1,30 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "description": "TypeScript implementation of a double-linked list",
+  "devDependencies": {
+    "touch": "3.1.0",
+    "typedoc": "0.23.24"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "@ffflorian/doublelinkedlist",
+    "repository": "https://github.com/ffflorian/tree/node-packages/double-linked-list.git",
+  "release": {
+    "extends": "@ffflorian/semantic-release-config"
+  },
+  "scripts": {
+    "build:ts": "tsc",
+    "build:docs": "typedoc && npx touch docs/.nojekyll",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build:ts",
+    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+  },
+  "version": "3.0.0"
+}

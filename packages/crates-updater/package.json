@@ -1,0 +1,40 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "bin": {
+    "crates-updater": "dist/cli.js",
+    "update-crates": "dist/cli.js"
+  },
+  "dependencies": {
+    "commander": "10.0.0",
+    "compare-versions": "5.0.3",
+    "crates.io": "2.2.2"
+  },
+  "description": "Check your Rust packages for updates.",
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "typescript",
+    "cratesio",
+    "rust",
+    "cli"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "crates-updater",
+  "repository": "https://github.com/ffflorian/tree/node-packages/crates-updater",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "start": "ts-node src/cli.ts",
+    "test": "exit 0"
+  },
+  "version": "1.2.0"
+}

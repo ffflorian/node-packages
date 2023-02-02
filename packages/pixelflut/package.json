@@ -1,0 +1,26 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "bin": {
+    "pixelflut": "dist/cli.js"
+  },
+  "description": "Flood pixels",
+  "devDependencies": {
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "pixelflut",
+  "repository": "https://github.com/ffflorian/tree/node-packages/pixelflut.git",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "start": "ts-node src/cli.ts",
+    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+  },
+  "version": "1.2.0",
+  "dependencies": {}
+}

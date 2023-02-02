@@ -1,0 +1,18 @@
+{
+  "command": {
+    "publish": {
+      "allowBranch": "main",
+      "conventionalCommits": true,
+      "message": "chore: Publish [ci skip]"
+    }
+  },
+  "exact": true,
+  "ignoreChanges": ["**/docs/**"],
+  "loglevel": "verbose",
+  "npmClient": "yarn",
+  "npmClientArgs": ["--exact"],
+  "registry": "https://registry.npmjs.org/",
+  "useWorkspaces": true,
+  "version": "independent",
+  "yes": true
+}
