@@ -24,7 +24,7 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
     "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
-    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
   "version": "3.0.0"
 }

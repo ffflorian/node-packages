@@ -47,7 +47,7 @@
     "dist": "yarn clean && yarn build",
     "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
     "start": "ts-node src/cli.ts -d",
-    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
   "version": "1.17.4"
 }

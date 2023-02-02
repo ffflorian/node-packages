@@ -25,7 +25,7 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "start": "ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
   "version": "1.0.2"
 }
