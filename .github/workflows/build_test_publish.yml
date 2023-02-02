@@ -41,6 +41,7 @@ jobs:
         if: env.CI_SKIP == 'false'
         run: |
           yarn
+          yarn boot
           yarn lint
           yarn test
           yarn dist
