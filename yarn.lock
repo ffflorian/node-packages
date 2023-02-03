@@ -1280,10 +1280,10 @@
     treeverse "^2.0.0"
     walk-up-path "^1.0.0"
 
-"@npmcli/arborist@6.1.6":
-  version "6.1.6"
-  resolved "https://registry.npmjs.org/@npmcli/arborist/-/arborist-6.1.6.tgz#4a92a8fe2e6a00f916581a1d127043eefb6405e6"
-  integrity sha512-AvHsZV5ZPW/GvPfzgZFqXbiELx3Gh9dLL/nIHZdU2LnlqavReBfniMgy4tqxY7xJ71TB9/Ctkqfb7gIdku7Ybw==
+"@npmcli/arborist@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@npmcli/arborist/-/arborist-6.2.1.tgz#caaa29eff7fb369653ccf1ddb1bca1b279c7debb"
+  integrity sha512-5bpihPqBgAMdOoM7pCeziVVP5NHmAqnjTUq9v8qrzrFcesEbBRpeiD0h3M4tw16NtQ6f024sI6EvWASUrxTHHw==
   dependencies:
     "@isaacs/string-locale-compare" "^1.1.0"
     "@npmcli/fs" "^3.1.0"
