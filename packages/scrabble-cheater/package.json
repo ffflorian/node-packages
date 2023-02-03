@@ -35,7 +35,7 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "publish-flat -o flattened",
+    "flatten": "node ../../publish-flat/dist/cli.js -o flattened",
     "postversion": "node ../../publish-flat/dist/cli-copy.js -i package.json -o ../package.json version",
     "start": "ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
