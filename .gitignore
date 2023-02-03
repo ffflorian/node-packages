@@ -18,5 +18,8 @@ dist
 flattened
 
 # Temporary test files
-
 spec/.temp
+
+# Build files
+/packages/exposure-keys/proto/
+!/packages/exposure-keys/proto/export.proto

@@ -45,7 +45,7 @@ jobs:
         if: env.CI_SKIP == 'false'
         run: yarn lint
 
-      - name: Dist
+      - name: Build
         if: env.CI_SKIP == 'false'
         run: yarn dist
 
