@@ -50,7 +50,13 @@ export class ExtractService {
         return this;
       }
 
-      jszip.forEach((filePath, entry) => entries.push([filePath, entry]));
+      jszip.forEach((filePath, entry) => {
+        if (filePath.includes('..')) {
+          this.logger.info(`Skipping bad path "${filePath}"`);
+        } else {
+          entries.push([filePath, entry]);
+        }
+      });
       let lastPercent = 0;
 
       await Promise.all(
