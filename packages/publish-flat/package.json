@@ -1,6 +1,7 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": {
+    "publish-flat": "dist/cli.js",
     "publish-flat-copy": "dist/cli-copy.js"
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
+    "flatten": "node ../dist/cli.js -o flattened",
     "postversion": "node ../dist/cli-copy.js version",
     "start": "ts-node src/cli.ts",
     "test": "exit 0"

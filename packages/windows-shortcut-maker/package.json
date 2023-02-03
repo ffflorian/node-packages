@@ -33,7 +33,8 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "flatten": "publish-flat -o flattened",
+    "postversion": "node ../../publish-flat/dist/cli-copy.js -i package.json -o ../package.json version",
     "test": "exit 0"
   },
   "version": "2.0.1"

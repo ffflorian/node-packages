@@ -25,7 +25,8 @@
     "build:docs": "typedoc && npx touch docs/.nojekyll",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
+    "flatten": "publish-flat -o flattened",
+    "postversion": "node ../../publish-flat/dist/cli-copy.js -i package.json -o ../package.json version",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
   "version": "3.0.0"
