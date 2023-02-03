@@ -13,7 +13,9 @@
   "description": "Open a GitHub repository in your browser. Opens pull requests by default.",
   "devDependencies": {
     "http-status-codes": "2.2.0",
-    "nock": "13.3.0"
+    "nock": "13.3.0",
+    "rimraf": "4.1.2",
+    "typescript": "4.9.5"
   },
   "engines": {
     "node": ">= 10.9"
@@ -31,7 +33,7 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "@ffflorian/gh-open",
-  "repository": "https://github.com/ffflorian/tree/node-packages/gh-open.git",
+  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/gh-open",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",

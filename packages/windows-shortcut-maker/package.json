@@ -5,6 +5,8 @@
   ],
   "description": "Create Windows shortcuts using a VBScript.",
   "devDependencies": {
+    "rimraf": "4.1.2",
+    "typescript": "4.9.5"
   },
   "engines": {
     "node": ">= 10.9"
@@ -26,11 +28,11 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "@ffflorian/windows-shortcut-maker",
-  "repository": "https://github.com/ffflorian/tree/node-packages/windows-shortcut-maker.git",
+  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/windows-shortcut-maker",
   "scripts": {
     "build": "tsc",
-    "clear": "rimraf dist",
-    "dist": "yarn clear && yarn build",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
     "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
     "test": "exit 0"
   },

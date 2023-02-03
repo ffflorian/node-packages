@@ -4,6 +4,9 @@
       "allowBranch": "main",
       "conventionalCommits": true,
       "message": "chore: Publish [ci skip]"
+    },
+    "init": {
+      "exact": true
     }
   },
   "exact": true,
@@ -14,5 +17,6 @@
   "registry": "https://registry.npmjs.org/",
   "useWorkspaces": true,
   "version": "independent",
-  "yes": true
+  "yes": true,
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }

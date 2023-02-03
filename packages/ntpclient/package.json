@@ -8,7 +8,9 @@
   },
   "description": "A TypeScript implementation of the NTP Client Protocol",
   "devDependencies": {
-    "cpx": "1.5.0"
+    "cpx": "1.5.0",
+    "rimraf": "4.1.2",
+    "typescript": "4.9.5"
   },
   "engines": {
     "node": ">= 10.9"
@@ -20,12 +22,12 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "ntpclient",
-  "repository": "https://github.com/ffflorian/tree/node-packages/ntpclient.git",
+  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/ntpclient",
   "scripts": {
-    "build:ts": "tsc",
-    "clear": "rimraf dist",
+    "build": "tsc",
+    "clean": "rimraf dist",
     "copy:source": "cpx \"src/*.ts\" flattened",
-    "dist": "yarn clear && yarn build:ts",
+    "dist": "yarn clean && yarn build",
     "postversion": "node ../node_modules/publish-flat/cli-copy.js -i package.json -o ../package.json version",
     "start": "ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"

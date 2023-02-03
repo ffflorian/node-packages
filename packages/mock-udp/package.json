@@ -2,6 +2,8 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "Mock dgram udp requests.",
   "devDependencies": {
+    "rimraf": "4.1.2",
+    "typescript": "4.9.5"
   },
   "engines": {
     "node": ">= 10.9"
@@ -12,10 +14,10 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "@ffflorian/mock-udp",
-    "repository": "https://github.com/ffflorian/tree/node-packages/mock-udp.git",
   "release": {
     "extends": "@ffflorian/semantic-release-config"
   },
+  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/mock-udp",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
