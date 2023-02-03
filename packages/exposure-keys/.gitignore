@@ -1,2 +1,2 @@
-proto
-!proto/export.proto
+./proto
+!./proto/export.proto
