@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "esModuleInterop": true
   },
   "exclude": ["dist", "node_modules", "spec"],
   "extends": "../../tsconfig.json"

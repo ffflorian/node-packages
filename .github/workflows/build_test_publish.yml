@@ -37,14 +37,25 @@ jobs:
           key: ${{runner.os}}-yarn-${{hashFiles('**/yarn.lock')}}
           restore-keys: ${{runner.os}}-yarn-
 
-      - name: Build, lint and test
+      - name: Install
         if: env.CI_SKIP == 'false'
-        run: |
-          yarn
-          yarn lint
-          yarn dist
-          yarn test
-          yarn flatten
+        run: yarn
+
+      - name: Lint
+        if: env.CI_SKIP == 'false'
+        run: yarn lint
+
+      - name: Test
+        if: env.CI_SKIP == 'false'
+        run: yarn dist
+
+      - name: Test
+        if: env.CI_SKIP == 'false'
+        run: yarn test
+
+      - name: Flatten
+        if: env.CI_SKIP == 'false'
+        run: yarn flatten
 
       - name: Release on npm
         if: |
