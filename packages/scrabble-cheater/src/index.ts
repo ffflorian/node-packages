@@ -61,7 +61,7 @@ export class ScrabbleCheater {
   }
 
   private findMatches(letters: string): string[] {
-    const regex = new RegExp(`^[${letters}]+\$`);
+    const regex = new RegExp(`^[${letters}]+$`);
     return this.dictionary.filter(word => regex.test(word)).sort((wordA, wordB) => wordB.length - wordA.length);
   }
 
