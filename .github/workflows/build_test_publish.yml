@@ -57,7 +57,7 @@ jobs:
         run: |
           git config --global "user.email" "${GIT_AUTHOR_EMAIL}"
           git config --global "user.name" "${GIT_AUTHOR_NAME}"
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           yarn release
 
       # - name: Release on GitHub
@@ -67,7 +67,6 @@ jobs:
       #   env:
       #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       #   run: |
-      #     echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
-      #     cd flattened
       #     sed -i -E "s/\"name\": \"([^@].+)/\"name\": \"@ffflorian\/\1/" package.json
-      #     npm publish --registry=https://npm.pkg.github.com --dry-run || true
+      #     echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
+      #     npm publish --registry=https://npm.pkg.github.com
