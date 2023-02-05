@@ -18,8 +18,9 @@
     "typescript": "4.9.5"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 14.16"
   },
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
@@ -31,7 +32,6 @@
     "typescript"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
   "name": "@ffflorian/gh-open",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/gh-open",
   "scripts": {
@@ -40,8 +40,9 @@
     "dist": "yarn clean && yarn build",
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
     "postversion": "node ../../publish-flat/dist/cli-copy.js -i package.json -o ../package.json version",
-    "start": "ts-node src/cli.ts -d",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "start": "ts-node-esm src/cli.ts -d",
+    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
-  "version": "3.1.4"
+  "type": "module",
+  "version": "3.1.6"
 }

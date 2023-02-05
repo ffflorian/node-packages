@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "target": "ES2017"
   },
   "exclude": ["dist", "node_modules", "spec"],
   "extends": "../../tsconfig.json"

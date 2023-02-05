@@ -1,8 +1,8 @@
-import {promises as fsAsync} from 'fs';
-import * as logdown from 'logdown';
-import * as path from 'path';
+import {promises as fsAsync} from 'node:fs';
+import path from 'node:path';
+import logdown from 'logdown';
 
-import {GitHubClient} from './GitHubClient';
+import {GitHubClient} from './GitHubClient.js';
 
 export interface Options {
   debug?: boolean;
