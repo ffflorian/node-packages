@@ -71,6 +71,6 @@ jobs:
             cd "${DIR}flattened"
             jq -r '.name |= sub("^(?<r>[^@].+)"; "@ffflorian/" + .r)' package.json > package.tmp
             mv package.tmp package.json
-            npm publish --registry=https://npm.pkg.github.com --dry-run || true
+            npm publish --registry=https://npm.pkg.github.com
             cd ../../
           done
