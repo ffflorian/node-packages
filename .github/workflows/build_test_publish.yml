@@ -70,6 +70,6 @@ jobs:
           for DIR in */; do
             cd "${DIR}flattened"
             sed -i -E "s/\"name\": \"([^@].+)/\"name\": \"@ffflorian\/\1/" package.json
-            npm publish --access=public
+            npm publish --registry=https://npm.pkg.github.com
             cd ../../
           done
