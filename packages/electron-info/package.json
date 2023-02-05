@@ -55,5 +55,5 @@
     "start": "ts-node src/cli.ts -d",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
-  "version": "1.17.5"
+  "version": "1.17.6"
 }
