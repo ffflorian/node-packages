@@ -3,6 +3,7 @@
   "bin": {
     "pixelflut": "dist/cli.js"
   },
+  "dependencies": {},
   "description": "Flood pixels",
   "devDependencies": {
     "rimraf": "4.1.2",
@@ -24,6 +25,5 @@
     "start": "ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
-  "version": "1.2.0",
-  "dependencies": {}
+  "version": "1.2.0"
 }
