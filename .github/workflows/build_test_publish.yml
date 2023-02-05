@@ -70,11 +70,8 @@ jobs:
           cd packages
           for DIR in */; do
             cd "${DIR}flattened"
-            IS_PRIVATE=$(jq -e '.private == true' package.json)
-            if [[ "${IS_PRIVATE}" == "false" ]]; then
-              jq -r '.name |= sub("^(?<r>[^@].+)"; "@ffflorian/" + .r)' package.json > package.tmp
-              mv package.tmp package.json
-              npm publish --registry=https://npm.pkg.github.com || true
-            fi
+            jq -r '.name |= sub("^(?<r>[^@].+)"; "@ffflorian/" + .r)' package.json > package.tmp
+            mv package.tmp package.json
+            jq -e '.private == true' || npm publish --registry=https://npm.pkg.github.com || true
             cd ../../
           done
