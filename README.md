@@ -1,8 +1,8 @@
-## node-packages [![Build Status](https://github.com/ffflorian/node-packages/workflows/Build/badge.svg)](https://github.com/ffflorian/node-packages/actions/)
+# node-packages [![Build Status](https://github.com/ffflorian/node-packages/workflows/Build/badge.svg)](https://github.com/ffflorian/node-packages/actions/)
 
 My Node.js packages
 
-### Packages
+## Packages
 
 - [`auto-approver`](./packages/auto-approver) [![npm version](https://img.shields.io/npm/v/auto-approver.svg)](https://npmjs.com/packages/auto-approver)
 - [`crates-updater`](./packages/crates-updater) [![npm version](https://img.shields.io/npm/v/crates-updater.svg)](https://npmjs.com/packages/crates-updater)

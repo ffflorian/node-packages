@@ -1,4 +1,4 @@
-# crates-updater [![npm version](https://img.shields.io/npm/v/crates-updater.svg?style=flat)](https://www.npmjs.com/package/crates-updater)
+# crates-updater [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/crates-updater.svg?style=flat)](https://www.npmjs.com/package/crates-updater)
 
 Check your [Rust packages](https://crates.io) for updates.
 

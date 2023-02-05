@@ -1,4 +1,4 @@
-# auto-approver [![npm version](https://img.shields.io/npm/v/auto-approver.svg?style=flat)](https://www.npmjs.com/package/auto-approver)
+# auto-approver [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/auto-approver.svg?style=flat)](https://www.npmjs.com/package/auto-approver)
 
 Automatically approve all GitHub PRs which match a specific pattern.
 

@@ -1,4 +1,4 @@
-# exposure-keys [![npm version](https://img.shields.io/npm/v/exposure-keys.svg?style=flat)](https://www.npmjs.com/package/exposure-keys)
+# exposure-keys [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/exposure-keys.svg?style=flat)](https://www.npmjs.com/package/exposure-keys)
 
 A library to load Temporary Exposure Keys (TEK). For more information on the format see https://developers.google.com/android/exposure-notifications/exposure-key-file-format.
 
