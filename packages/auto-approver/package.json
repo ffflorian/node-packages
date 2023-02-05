@@ -29,6 +29,9 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "auto-approver",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/auto-approver",
   "scripts": {
     "build": "tsc",

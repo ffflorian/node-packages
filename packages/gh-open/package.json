@@ -33,6 +33,9 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "@ffflorian/gh-open",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/gh-open",
   "scripts": {
     "build": "tsc",

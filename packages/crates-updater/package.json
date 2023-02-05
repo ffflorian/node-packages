@@ -29,6 +29,9 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "crates-updater",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/tree/node-packages/crates-updater",
   "scripts": {
     "build": "tsc",

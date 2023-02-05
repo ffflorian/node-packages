@@ -31,6 +31,9 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "@ffflorian/electron-icon-generator",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/electron-icon-generator",
   "scripts": {
     "build": "tsc",

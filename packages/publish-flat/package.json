@@ -29,6 +29,9 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "publish-flat",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/publish-flat",
   "scripts": {
     "build": "tsc",

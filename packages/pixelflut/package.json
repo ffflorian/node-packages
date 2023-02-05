@@ -15,6 +15,9 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "pixelflut",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/pixelflut",
   "scripts": {
     "build": "tsc",

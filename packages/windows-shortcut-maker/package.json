@@ -15,7 +15,6 @@
     "dist",
     "scripts"
   ],
-  "homepage": "https://github.com/ffflorian/tree/node-packages/windows-shortcut-maker",
   "keywords": [
     "windows",
     "shortcut",
@@ -28,6 +27,9 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "@ffflorian/windows-shortcut-maker",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/windows-shortcut-maker",
   "scripts": {
     "build": "tsc",

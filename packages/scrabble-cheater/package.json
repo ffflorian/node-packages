@@ -27,8 +27,8 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "scrabble-cheater",
-  "release": {
-    "extends": "@ffflorian/semantic-release-config"
+  "publishConfig": {
+    "directory": "flattened"
   },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/scrabble-cheater",
   "scripts": {
