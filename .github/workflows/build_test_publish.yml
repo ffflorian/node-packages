@@ -34,7 +34,7 @@ jobs:
 
       - name: Build, lint and test
         run: |
-          yarn
+          yarn --frozen-lockfile
           yarn lint
           yarn dist
           yarn test
