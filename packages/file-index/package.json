@@ -30,8 +30,7 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../../publish-flat/dist/cli-copy.js -i package.json -o ../package.json version",
-    "test": "exit 0"
+    "postversion": "node ../../publish-flat/dist/cli-copy.js -i package.json -o ../package.json version"
   },
   "version": "2.1.0"
 }

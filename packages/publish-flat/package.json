@@ -39,8 +39,7 @@
     "dist": "yarn clean && yarn build",
     "flatten": "node ./dist/cli.js -o flattened",
     "postversion": "node ../dist/cli-copy.js version",
-    "start": "ts-node src/cli.ts",
-    "test": "exit 0"
+    "start": "ts-node src/cli.ts"
   },
   "version": "1.4.1"
 }

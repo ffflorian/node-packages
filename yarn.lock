@@ -5758,13 +5758,6 @@ npmlog@^7.0.1:
     gauge "^5.0.0"
     set-blocking "^2.0.0"
 
-ntfy@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/ntfy/-/ntfy-1.0.3.tgz#40e6a21509e8809baa894a44969f3fd02f245870"
-  integrity sha512-7CEbMOs8p5pczMhKtSd0MasvYDtTbNArUncQjTFPmrDaHZr3Yb4Q0V2UbAt8rDVz4RnoSW/V4lCcLw7VUZLGEw==
-  dependencies:
-    axios "0.27.2"
-
 nx@15.6.3, "nx@>=15.4.2 < 16":
   version "15.6.3"
   resolved "https://registry.npmjs.org/nx/-/nx-15.6.3.tgz#900087bce38c6e5975660c23ebd41ead1bf54f98"
