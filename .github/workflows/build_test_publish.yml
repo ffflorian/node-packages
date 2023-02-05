@@ -65,6 +65,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          sed -i -E "s/\"name\": \"([^@].+)/\"name\": \"@ffflorian\/\1/" package.json
           echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
-          yarn release --registry https://npm.pkg.github.com
+          cd packages
+          for DIR in */; do
+            cd "${DIR}flattened"
+            sed -i -E "s/\"name\": \"([^@].+)/\"name\": \"@ffflorian\/\1/" package.json
+            npm publish --access=public
+            cd ../../
+          done
