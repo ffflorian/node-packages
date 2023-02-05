@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.0.1 (2023-02-05)
+
+**Note:** Version bump only for package @ffflorian/electron-icon-generator
+
+
+
+
+
 # [1.0.0](https://github.com/ffflorian/electron-icon-generator/compare/v0.0.4...v1.0.0) (2019-09-08)
 
 ### Features

@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.5.1 (2023-02-05)
+
+**Note:** Version bump only for package @ffflorian/https-proxy
+
+
+
+
+
 # [1.5.0](https://github.com/ffflorian/https-proxy/compare/v1.4.2...v1.5.0) (2019-11-20)
 
 ### Features

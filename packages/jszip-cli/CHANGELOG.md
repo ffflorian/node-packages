@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 3.1.8 (2023-02-05)
+
+**Note:** Version bump only for package @ffflorian/jszip-cli
+
+
+
+
+
 ## [3.1.6](https://github.com/ffflorian/jszip-cli/compare/v3.1.5...v3.1.6) (2021-10-04)
 
 

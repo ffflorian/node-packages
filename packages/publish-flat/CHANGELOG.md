@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.4.2 (2023-02-05)
+
+**Note:** Version bump only for package publish-flat
+
+
+
+
+
 ## [1.4.1](https://github.com/ffflorian/publish-flat/compare/v1.4.0...v1.4.1) (2020-08-18)
 
 

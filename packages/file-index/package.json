@@ -1,6 +1,5 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "dependencies": {},
   "description": "Generate a file index",
   "devDependencies": {
     "rimraf": "4.1.2",
@@ -32,5 +31,5 @@
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
     "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version"
   },
-  "version": "2.1.0"
+  "version": "2.1.1"
 }
