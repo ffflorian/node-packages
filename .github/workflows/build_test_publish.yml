@@ -64,9 +64,9 @@ jobs:
           github.event_name != 'pull_request' &&
           !startsWith(github.event.head_commit.message, 'chore(deps')
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PUBLISH_TOKEN: ${{secrets.PUBLISH_TOKEN}}
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${PUBLISH_TOKEN}" > ~/.npmrc
           cd packages
           for DIR in */; do
             cd "${DIR}flattened"
