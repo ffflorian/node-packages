@@ -6,7 +6,7 @@
   "dependencies": {
     "axios": "1.3.2",
     "commander": "10.0.0",
-    "find-up": "5.0.0",
+    "find-up": "6.3.0",
     "logdown": "3.3.1",
     "open": "8.4.1"
   },
@@ -18,8 +18,9 @@
     "typescript": "4.9.5"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 14.16"
   },
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
@@ -31,7 +32,6 @@
     "typescript"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
   "name": "@ffflorian/gh-open",
   "publishConfig": {
     "directory": "flattened"
@@ -43,8 +43,9 @@
     "dist": "yarn clean && yarn build",
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
     "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
-    "start": "ts-node src/cli.ts -d",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "start": "ts-node-esm src/cli.ts -d",
+    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
+  "type": "module",
   "version": "3.1.6"
 }

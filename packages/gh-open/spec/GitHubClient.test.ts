@@ -1,7 +1,7 @@
-import * as nock from 'nock';
+import nock from 'nock';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 
-import {GitHubClient, PullRequest} from '../src/GitHubClient';
+import {GitHubClient, PullRequest} from '../src/GitHubClient.js';
 
 const TEN_SECONDS_IN_MILLIS = 10_000;
 const HALF_SECOND_IN_MILLIS = 500;
