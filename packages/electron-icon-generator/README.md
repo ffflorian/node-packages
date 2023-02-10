@@ -1,4 +1,4 @@
-# electron-icon-generator [![npm version](https://img.shields.io/npm/v/@ffflorian/electron-icon-generator.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/electron-icon-generator)
+# electron-icon-generator [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/@ffflorian/electron-icon-generator.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/electron-icon-generator)
 
 Based on https://github.com/jaretburkett/electron-icon-maker.
 

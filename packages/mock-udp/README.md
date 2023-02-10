@@ -1,4 +1,4 @@
-# mock-udp [![npm version](https://img.shields.io/npm/v/@ffflorian/mock-udp.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/mock-udp)
+# mock-udp [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/@ffflorian/mock-udp.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/mock-udp)
 
 Mock dgram udp requests. Based on [node-mock-udp](https://github.com/mattrobenolt/node-mock-udp).
 

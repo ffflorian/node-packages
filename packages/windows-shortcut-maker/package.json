@@ -15,7 +15,6 @@
     "dist",
     "scripts"
   ],
-  "homepage": "https://github.com/ffflorian/tree/node-packages/windows-shortcut-maker",
   "keywords": [
     "windows",
     "shortcut",
@@ -28,14 +27,16 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "@ffflorian/windows-shortcut-maker",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/windows-shortcut-maker",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../../publish-flat/dist/cli-copy.js -i package.json -o ../package.json version",
-    "test": "exit 0"
+    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version"
   },
-  "version": "2.0.1"
+  "version": "2.0.3"
 }

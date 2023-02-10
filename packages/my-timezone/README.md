@@ -1,4 +1,4 @@
-# my-timezone [![npm version](https://img.shields.io/npm/v/my-timezone.svg?style=flat)](https://www.npmjs.com/package/my-timezone)
+# my-timezone [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/my-timezone.svg?style=flat)](https://www.npmjs.com/package/my-timezone)
 
 Get the exact time based on your location by calculating the time difference in seconds from UTC (good explanation on [CS4FN](http://www.cs4fn.org/mobile/owntimezone.php)).
 

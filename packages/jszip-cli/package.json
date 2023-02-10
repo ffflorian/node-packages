@@ -16,8 +16,8 @@
     "@types/fs-extra": "11.0.1",
     "@types/progress": "2.0.5",
     "cross-env": "7.0.3",
-    "true": "0.0.4",
     "rimraf": "4.1.2",
+    "true": "0.0.4",
     "typescript": "4.9.5"
   },
   "engines": {
@@ -35,15 +35,18 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "@ffflorian/jszip-cli",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/jszip-cli",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../../publish-flat/dist/cli-copy.js -i package.json -o ../package.json version",
+    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
     "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
-  "version": "3.1.6"
+  "version": "3.1.9"
 }

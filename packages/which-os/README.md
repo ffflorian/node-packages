@@ -1,4 +1,4 @@
-# which-os [![npm version](https://img.shields.io/npm/v/which-os.svg?style=flat)](https://www.npmjs.com/package/which-os)
+# which-os [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/which-os.svg?style=flat)](https://www.npmjs.com/package/which-os)
 
 Get informations about your OS
 

@@ -1,8 +1,8 @@
-## node-packages [![Build Status](https://github.com/ffflorian/node-packages/workflows/Build/badge.svg)](https://github.com/ffflorian/node-packages/actions/)
+# node-packages [![Build Status](https://github.com/ffflorian/node-packages/workflows/Build/badge.svg)](https://github.com/ffflorian/node-packages/actions/)
 
 My Node.js packages
 
-### Packages
+## Packages
 
 - [`auto-approver`](./packages/auto-approver) [![npm version](https://img.shields.io/npm/v/auto-approver.svg)](https://npmjs.com/packages/auto-approver)
 - [`crates-updater`](./packages/crates-updater) [![npm version](https://img.shields.io/npm/v/crates-updater.svg)](https://npmjs.com/packages/crates-updater)
@@ -13,7 +13,7 @@ My Node.js packages
 - [`file-index`](./packages/file-index) [![npm version](https://img.shields.io/npm/v/@ffflorian/file-index.svg)](https://npmjs.com/packages/@ffflorian/file-index)
 - [`gh-open`](./packages/gh-open) [![npm version](https://img.shields.io/npm/v/@ffflorian/gh-open.svg)](https://npmjs.com/packages/@ffflorian/gh-open)
 - [`https-proxy`](./packages/https-proxy) [![npm version](https://img.shields.io/npm/v/@ffflorian/https-proxy.svg)](https://npmjs.com/packages/@ffflorian/https-proxy)
-- [`impfstatus-bot-mastodon`](./packages/impfstatus-bot-mastodon) [![npm version](https://img.shields.io/npm/v/@ffflorian/impfstatus-bot-mastodon.svg)](https://npmjs.com/packages/@ffflorian/impfstatus-bot-mastodon)
+- [`impfstatus-bot-mastodon`](./packages/impfstatus-bot-mastodon)
 - [`jszip-cli`](./packages/jszip-cli) [![npm version](https://img.shields.io/npm/v/@ffflorian/jszip-cli.svg)](https://npmjs.com/packages/@ffflorian/jszip-cli)
 - [`mock-udp`](./packages/mock-udp) [![npm version](https://img.shields.io/npm/v/@ffflorian/mock-udp.svg)](https://npmjs.com/packages/@ffflorian/mock-udp)
 - [`my-timezone`](./packages/my-timezone) [![npm version](https://img.shields.io/npm/v/my-timezone.svg)](https://npmjs.com/packages/my-timezone)
@@ -21,8 +21,8 @@ My Node.js packages
 - [`ntpclient`](./packages/ntpclient) [![npm version](https://img.shields.io/npm/v/ntpclient.svg)](https://npmjs.com/packages/ntpclient)
 - [`pixelflut`](./packages/pixelflut) [![npm version](https://img.shields.io/npm/v/pixelflut.svg)](https://npmjs.com/packages/pixelflut)
 - [`publish-flat`](./packages/publish-flat) [![npm version](https://img.shields.io/npm/v/publish-flat.svg)](https://npmjs.com/packages/publish-flat)
-- [`quick-sort`](./packages/quick-sort) [![npm version](https://img.shields.io/npm/v/quick-sort.svg)](https://npmjs.com/packages/quick-sort)
+- [`quick-sort`](./packages/quick-sort)
 - [`scrabble-cheater`](./packages/scrabble-cheater) [![npm version](https://img.shields.io/npm/v/scrabble-cheater.svg)](https://npmjs.com/packages/scrabble-cheater)
 - [`which-os`](./packages/which-os) [![npm version](https://img.shields.io/npm/v/which-os.svg)](https://npmjs.com/packages/which-os)
 - [`windows-shortcut-maker`](./packages/windows-shortcut-maker) [![npm version](https://img.shields.io/npm/v/@ffflorian/windows-shortcut-maker.svg)](https://npmjs.com/packages/@ffflorian/windows-shortcut-maker)
-- [`yearprogress-bot-mastodon`](./packages/yearprogress-bot-mastodon) [![npm version](https://img.shields.io/npm/v/@ffflorian/yearprogress-mastodon-bot.svg)](https://npmjs.com/packages/@ffflorian/yearprogress-mastodon-bot)
+- [`yearprogress-bot-mastodon`](./packages/yearprogress-bot-mastodon)

@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+  packages: write
+
 jobs:
   build_test_publish:
     name: Build, test and publish
@@ -14,76 +18,57 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Skip CI check
-        uses: mstachniuk/ci-skip@v1
-
       - name: Set up Node.js
-        if: env.CI_SKIP == 'false'
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
 
       - name: Set yarn cache directory
-        if: env.CI_SKIP == 'false'
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
       - name: Get yarn cache
         uses: actions/cache@v3
-        if: env.CI_SKIP == 'false'
         id: yarn-cache
         with:
-          path: ${{steps.yarn-cache-dir-path.outputs.dir}}
-          key: ${{runner.os}}-yarn-${{hashFiles('**/yarn.lock')}}
-          restore-keys: ${{runner.os}}-yarn-
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-      - name: Install
-        if: env.CI_SKIP == 'false'
-        run: yarn
+      - name: Build, lint and test
+        run: |
+          yarn --frozen-lockfile
+          yarn lint
+          yarn build:ts
+          yarn test
+          yarn flatten
 
-      - name: Lint
-        if: env.CI_SKIP == 'false'
-        run: yarn lint
+      - name: Release on npm
+        if: |
+          github.event_name != 'pull_request' &&
+          !startsWith(github.event.head_commit.message, 'chore(deps')
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          yarn release
 
-      - name: Build
-        if: env.CI_SKIP == 'false'
-        run: yarn dist
-
-      - name: Test
-        if: env.CI_SKIP == 'false'
-        run: yarn test
-
-      - name: Flatten
-        if: env.CI_SKIP == 'false'
-        run: yarn flatten
-
-      # - name: Release on npm
-      #   if: |
-      #     env.CI_SKIP == 'false' &&
-      #     github.event_name != 'pull_request' &&
-      #     !startsWith(github.event.head_commit.message, 'chore(deps')
-      #   env:
-      #     GIT_AUTHOR_NAME: ffflobot
-      #     GIT_AUTHOR_EMAIL: ffflobot@users.noreply.github.com
-      #     GIT_COMMITTER_NAME: ffflobot
-      #     GIT_COMMITTER_EMAIL: ffflobot@users.noreply.github.com
-      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      #     NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-      #   run: |
-      #     git config --global "user.email" "${GIT_AUTHOR_EMAIL}"
-      #     git config --global "user.name" "${GIT_AUTHOR_NAME}"
-      #     REPO_URL="$(git remote get-url origin | sed -n "s/https:\/\/github.com\//https:\/\/${GIT_AUTHOR_NAME}:${GITHUB_TOKEN}@github.com\//p")"
-      #     yarn release -r "${REPO_URL}"#
-
-      # - name: Release on GitHub
-      #   if: |
-      #     env.CI_SKIP == 'false' &&
-      #     github.event_name != 'pull_request' &&
-      #     !startsWith(github.event.head_commit.message, 'chore(deps')
-      #   env:
-      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      #   run: |
-      #     echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
-      #     cd flattened
-      #     sed -i -E "s/\"name\": \"([^@].+)/\"name\": \"@ffflorian\/\1/" package.json
-      #     npm publish --registry=https://npm.pkg.github.com --dry-run || true
+      - name: Release on GitHub
+        if: |
+          github.event_name != 'pull_request' &&
+          !startsWith(github.event.head_commit.message, 'chore(deps')
+        env:
+          PUBLISH_TOKEN: ${{secrets.PUBLISH_TOKEN}}
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${PUBLISH_TOKEN}" > ~/.npmrc
+          cd packages
+          for DIR in */; do
+            cd "${DIR}flattened"
+            jq -r '.name |= sub("^(?<r>[^@].+)"; "@ffflorian/" + .r) | .repository = "https://github.com/ffflorian/node-packages"' package.json > package.tmp
+            mv package.tmp package.json
+            if ! jq -e '.private == true' package.json > /dev/null; then
+              npm publish --registry=https://npm.pkg.github.com || true
+            fi
+            cd ../../
+          done

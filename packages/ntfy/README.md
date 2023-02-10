@@ -1,4 +1,4 @@
-# ntfy [![npm version](https://img.shields.io/npm/v/ntfy.svg?style=flat)](https://www.npmjs.com/package/ntfy)
+# ntfy [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/ntfy.svg?style=flat)](https://www.npmjs.com/package/ntfy)
 
 Send notifications over [ntfy.sh](https://ntfy.sh).
 

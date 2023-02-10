@@ -1,4 +1,4 @@
-# impfstatus-bot-mastodon
+# impfstatus-bot-mastodon [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Toots Germany's COVID-19 vaccination progress to Mastodon.
 

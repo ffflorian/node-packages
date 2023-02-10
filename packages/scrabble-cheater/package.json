@@ -27,8 +27,8 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "scrabble-cheater",
-  "release": {
-    "extends": "@ffflorian/semantic-release-config"
+  "publishConfig": {
+    "directory": "flattened"
   },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/scrabble-cheater",
   "scripts": {
@@ -36,9 +36,9 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../../publish-flat/dist/cli-copy.js -i package.json -o ../package.json version",
+    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
     "start": "ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
-  "version": "3.1.0"
+  "version": "3.1.3"
 }

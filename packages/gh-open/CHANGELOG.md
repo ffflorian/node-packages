@@ -1,3 +1,24 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 3.1.6 (2023-02-05)
+
+**Note:** Version bump only for package @ffflorian/gh-open
+
+
+
+
+
+## 3.1.5 (2023-02-05)
+
+**Note:** Version bump only for package @ffflorian/gh-open
+
+
+
+
+
 ## [3.1.4](https://github.com/ffflorian/gh-open/compare/v3.1.3...v3.1.4) (2022-03-22)
 
 

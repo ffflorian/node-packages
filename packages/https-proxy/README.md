@@ -1,4 +1,4 @@
-# https-proxy [![npm version](https://img.shields.io/npm/v/@ffflorian/https-proxy.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/https-proxy)
+# https-proxy [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/@ffflorian/https-proxy.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/https-proxy)
 
 A simple HTTPS proxy for Node.js with authentication support.
 

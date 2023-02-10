@@ -1,4 +1,4 @@
-# gh-open [![npm version](https://img.shields.io/npm/v/@ffflorian/gh-open.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/gh-open)
+# gh-open [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/@ffflorian/gh-open.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/gh-open)
 
 Open a GitHub repository in your browser.
 

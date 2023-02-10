@@ -7,7 +7,7 @@
     "commander": "10.0.0",
     "fs-extra": "11.1.0",
     "icon-gen": "3.0.1",
-    "jimp": "0.16.2"
+    "jimp": "0.22.4"
   },
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "devDependencies": {
@@ -31,15 +31,17 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "@ffflorian/electron-icon-generator",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/electron-icon-generator",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../../publish-flat/dist/cli-copy.js -i package.json -o ../package.json version",
-    "start": "ts-node src/cli.ts",
-    "test": "exit 0"
+    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
+    "start": "ts-node src/cli.ts"
   },
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
