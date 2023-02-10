@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src",
+    "esModuleInterop": true,
     "module": "NodeNext",
     "moduleResolution": "nodenext",
+    "outDir": "dist",
+    "rootDir": "src",
     "target": "ES2017"
   },
   "exclude": ["dist", "node_modules", "spec"],
