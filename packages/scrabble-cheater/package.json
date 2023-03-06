@@ -9,7 +9,7 @@
   },
   "description": "A simple Scrabble cheating tool.",
   "devDependencies": {
-    "rimraf": "4.2.0",
+    "rimraf": "4.3.0",
     "typescript": "4.9.5"
   },
   "engines": {
