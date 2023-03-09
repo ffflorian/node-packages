@@ -584,10 +584,10 @@
     treeverse "^2.0.0"
     walk-up-path "^1.0.0"
 
-"@npmcli/arborist@6.2.4":
-  version "6.2.4"
-  resolved "https://registry.yarnpkg.com/@npmcli/arborist/-/arborist-6.2.4.tgz#a9c567a33012a7df5af86dfd1a3308686b056d92"
-  integrity sha512-8nwyvv/WyGupcD9CRm3SOyFVgysHehMbkFgNXwz6db8Dd4hCkG8bptgPL5dveJzRUiA2AGKaGhX5CQsXaCyI/g==
+"@npmcli/arborist@6.2.5":
+  version "6.2.5"
+  resolved "https://registry.yarnpkg.com/@npmcli/arborist/-/arborist-6.2.5.tgz#b35c6ec42feeb7b44d6a6fcd2ea323e35b256d80"
+  integrity sha512-+GPm+9WrDnl9q+LvuMB2W+roVinHTGDdYWOtYzRfpAnuiqaATFbH14skpXjlJ7LvyUcyd1oJhuGq6XXJLGFNng==
   dependencies:
     "@isaacs/string-locale-compare" "^1.1.0"
     "@npmcli/fs" "^3.1.0"
@@ -4768,14 +4768,7 @@ minimatch@^6.1.6:
   dependencies:
     brace-expansion "^2.0.1"
 
-minimatch@^7.1.3:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-7.2.0.tgz#741ff59370007ebb8faff0a9b20cdb44357803e4"
-  integrity sha512-rMRHmwySzopAQjmWW6TkAKCEDKNaY/HuV/c2YkWWuWnfkTwApt0V4hnYzzPnZ/5Gcd2+8MPncSyuOGPl3xPvcg==
-  dependencies:
-    brace-expansion "^2.0.1"
-
-minimatch@^7.4.1:
+minimatch@^7.1.3, minimatch@^7.4.1:
   version "7.4.2"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-7.4.2.tgz#157e847d79ca671054253b840656720cb733f10f"
   integrity sha512-xy4q7wou3vUoC9k1xGTXc+awNdGaGVHtFUaey8tiX4H1QRc04DZ/rmDFwNm2EBsuYEhAZ6SgMmYf3InGY6OauA==
