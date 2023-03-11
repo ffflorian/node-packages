@@ -9,7 +9,7 @@
   },
   "description": "Toots year's progress every few days to Mastodon.",
   "devDependencies": {
-    "rimraf": "4.3.1",
+    "rimraf": "4.4.0",
     "typescript": "4.9.5"
   },
   "engines": {
