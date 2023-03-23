@@ -1,6 +1,6 @@
-import * as fs from 'fs-extra';
-import * as logdown from 'logdown';
-import * as path from 'path';
+import fs from 'fs-extra';
+import logdown from 'logdown';
+import path from 'path';
 import type {TerminalOptions} from './interfaces';
 
 export class FileService {

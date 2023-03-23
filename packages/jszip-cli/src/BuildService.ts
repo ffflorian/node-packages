@@ -1,8 +1,8 @@
-import * as fs from 'fs-extra';
-import * as JSZip from 'jszip';
-import * as logdown from 'logdown';
-import * as path from 'path';
-import * as progress from 'progress';
+import fs from 'fs-extra';
+import JSZip from 'jszip';
+import logdown from 'logdown';
+import path from 'path';
+import progress from 'progress';
 import {FileService} from './FileService';
 import {Entry, TerminalOptions} from './interfaces';
 
