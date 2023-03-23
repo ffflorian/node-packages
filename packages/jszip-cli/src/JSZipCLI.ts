@@ -1,5 +1,6 @@
 import {cosmiconfigSync} from 'cosmiconfig';
 import type {CosmiconfigResult} from 'cosmiconfig/dist/types';
+import {globSync} from 'glob';
 import logdown from 'logdown';
 
 import {BuildService} from './BuildService';
@@ -54,7 +55,7 @@ export class JSZipCLI {
   public add(rawEntries?: string[]): BuildService {
     if (!rawEntries || !rawEntries.length) {
       if (this.options.entries) {
-        rawEntries = this.options.entries;
+        rawEntries = globSync(this.options.entries);
       } else {
         throw new Error('No entries to add.');
       }
