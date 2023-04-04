@@ -23,7 +23,7 @@
     "eslint-plugin-unused-imports": "1.1.5",
     "jasmine": "4.6.0",
     "lerna": "6.6.1",
-    "prettier": "2.8.4",
+    "prettier": "2.8.7",
     "publish-flat": "*",
     "rimraf": "4.4.0",
     "ts-node": "10.9.1",
