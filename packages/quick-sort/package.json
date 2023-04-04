@@ -3,7 +3,7 @@
   "description": "A TypeScript QuickSort implementation",
   "devDependencies": {
     "rimraf": "4.4.1",
-    "typescript": "4.9.5"
+    "typescript": "5.0.3"
   },
   "files": [
     "dist"
