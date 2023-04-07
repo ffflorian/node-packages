@@ -1,5 +1,9 @@
-import * as path from 'path';
-import {ScrabbleCheater} from '../src/';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {ScrabbleCheater} from '../src/index.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const wordList = path.resolve(__dirname, 'wordlist.txt');
 const emptyList = path.resolve(__dirname, 'empty.txt');
