@@ -20,7 +20,12 @@
   "engines": {
     "node": ">= 14.16"
   },
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": {
+        "import": "./dist/mjs/index.js",
+        "require": "./dist/cjs/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -38,7 +43,10 @@
   },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/gh-open",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:cjs && yarn build:mjs",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:mjs": "tsc -p tsconfig.json",
+    "generate:packagejson": "../../bin/generate-packagejson.sh",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
