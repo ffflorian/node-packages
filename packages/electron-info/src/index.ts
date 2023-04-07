@@ -1,1 +1,1 @@
-export * from './ElectronInfo';
+export * from './ElectronInfo.js';

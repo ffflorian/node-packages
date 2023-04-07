@@ -1,7 +1,7 @@
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
 
-import {HTTPService} from '../src/HTTPService';
+import {HTTPService} from '../src/HTTPService.js';
 
 const mockUrl = 'http://example.com';
 const FIVE_SECONDS_IN_MILLIS = 5000;

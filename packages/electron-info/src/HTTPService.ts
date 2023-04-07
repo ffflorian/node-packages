@@ -1,9 +1,9 @@
-import {promises as fs} from 'fs';
-import {inspect} from 'util';
+import {promises as fs} from 'node:fs';
+import {inspect} from 'node:util';
 import axios from 'axios';
 import logdown from 'logdown';
 
-import type {Options, RawReleaseInfo} from './ElectronInfo';
+import type {Options, RawReleaseInfo} from './ElectronInfo.js';
 
 export type HTTPOptions = Pick<Options, 'debug' | 'timeout'>;
 

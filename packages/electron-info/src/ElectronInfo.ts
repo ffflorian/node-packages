@@ -1,10 +1,10 @@
-import {Chalk, bold as chalkBold} from 'chalk';
+import chalk from 'chalk';
 import {format as formatDate} from 'date-fns';
 import {table as createTable} from 'table';
 import logdown from 'logdown';
 import * as semver from 'semver';
 
-import {FileService} from './FileService';
+import {FileService} from './FileService.js';
 
 export interface RawDeps {
   chrome: string;
@@ -157,27 +157,27 @@ export class ElectronInfo {
 
   private buildRawTables(releases: RawReleaseInfo[], colored?: boolean): string[][][] {
     this.logger.log('Building raw tables:', {colored, releasesLength: releases.length});
-    const coloredOrNot = (text: string, style: Chalk): string => (colored ? style(text) : text);
+    const coloredOrNot = (text: string, style: typeof chalk): string => (colored ? style(text) : text);
 
     return releases.map(release => {
       const electronVersion = `${release.version}${release.prerelease ? ' (prerelease)' : ''}`;
       const parsedDate = new Date(release.published_at);
       const releaseDate = formatDate(parsedDate, 'yyyy-MM-dd');
       const table = [
-        [coloredOrNot('Electron', chalkBold), electronVersion],
-        [coloredOrNot('Published on', chalkBold), releaseDate],
+        [coloredOrNot('Electron', chalk.bold), electronVersion],
+        [coloredOrNot('Published on', chalk.bold), releaseDate],
       ];
 
       if (release.deps) {
         table.push(
-          [coloredOrNot(SupportedDependencies.node, chalkBold.red), release.deps.node],
-          [coloredOrNot(SupportedDependencies.chrome, chalkBold.green), release.deps.chrome],
-          [coloredOrNot(SupportedDependencies.openssl, chalkBold.blue), release.deps.openssl],
-          [coloredOrNot(SupportedDependencies.modules, chalkBold.yellow), release.deps.modules],
-          [coloredOrNot(SupportedDependencies.uv, chalkBold.cyan), release.deps.uv],
+          [coloredOrNot(SupportedDependencies.node, chalk.bold.red), release.deps.node],
+          [coloredOrNot(SupportedDependencies.chrome, chalk.bold.green), release.deps.chrome],
+          [coloredOrNot(SupportedDependencies.openssl, chalk.bold.blue), release.deps.openssl],
+          [coloredOrNot(SupportedDependencies.modules, chalk.bold.yellow), release.deps.modules],
+          [coloredOrNot(SupportedDependencies.uv, chalk.bold.cyan), release.deps.uv],
           // eslint-disable-next-line no-magic-numbers
-          [coloredOrNot(SupportedDependencies.v8, chalkBold.rgb(150, 150, 150)), release.deps.v8],
-          [coloredOrNot(SupportedDependencies.zlib, chalkBold.magenta), release.deps.zlib]
+          [coloredOrNot(SupportedDependencies.v8, chalk.bold.rgb(150, 150, 150)), release.deps.v8],
+          [coloredOrNot(SupportedDependencies.zlib, chalk.bold.magenta), release.deps.zlib]
         );
       }
 
