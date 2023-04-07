@@ -51,24 +51,7 @@ jobs:
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
         run: |
+          git config "user.name" "ffflobot"
+          git config "user.email" "ffflobot@users.noreply.github.com"
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           yarn release
-
-      - name: Release on GitHub
-        if: |
-          github.event_name != 'pull_request' &&
-          !startsWith(github.event.head_commit.message, 'chore(deps')
-        env:
-          PUBLISH_TOKEN: ${{secrets.PUBLISH_TOKEN}}
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${PUBLISH_TOKEN}" > ~/.npmrc
-          cd packages
-          for DIR in */; do
-            cd "${DIR}flattened"
-            jq -r '.name |= sub("^(?<r>[^@].+)"; "@ffflorian/" + .r) | .repository = "https://github.com/ffflorian/node-packages"' package.json > package.tmp
-            mv package.tmp package.json
-            if ! jq -e '.private == true' package.json > /dev/null; then
-              npm publish --registry=https://npm.pkg.github.com || true
-            fi
-            cd ../../
-          done
