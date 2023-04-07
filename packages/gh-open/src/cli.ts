@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 
+import path from 'node:path';
+import fs from 'node:fs';
+import {fileURLToPath} from 'node:url';
 import {program as commander} from 'commander';
-import * as findUp from 'find-up';
-import * as fs from 'fs';
-import open = require('open');
-import * as path from 'path';
+import {findUp} from 'find-up';
+import open from 'open';
 
-import {RepositoryService} from './RepositoryService';
+import {RepositoryService} from './RepositoryService.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const defaultPackageJsonPath = path.join(__dirname, 'package.json');
 const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
@@ -53,10 +57,9 @@ void (async () => {
 
     if (commanderOptions.print) {
       console.info(fullUrl);
-      return;
+    } else {
+      await open(fullUrl);
     }
-
-    await open(fullUrl);
     process.exit();
   } catch (error) {
     console.error((error as Error).message);

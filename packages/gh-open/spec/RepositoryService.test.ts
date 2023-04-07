@@ -1,4 +1,4 @@
-import {RepositoryService} from '../src/RepositoryService';
+import {RepositoryService} from '../src/RepositoryService.js';
 
 describe('RepositoryService', () => {
   const repositoryService = new RepositoryService();

@@ -1,1 +1,1 @@
-export * from './RepositoryService';
+export * from './RepositoryService.js';
