@@ -41,5 +41,5 @@
     "postversion": "node ./dist/cli-copy.js -o flattened/package.json version",
     "start": "ts-node src/cli.ts"
   },
-  "version": "1.4.5"
+  "version": "1.5.0"
 }
