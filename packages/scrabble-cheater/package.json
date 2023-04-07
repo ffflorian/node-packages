@@ -25,10 +25,10 @@
     "dist"
   ],
   "keywords": [
+    "cli",
     "scrabble",
     "cheater",
-    "typescript",
-    "cli"
+    "typescript"
   ],
   "license": "GPL-3.0",
   "main": "dist/cjs/index.js",
@@ -43,9 +43,9 @@
     "dist": "yarn clean && yarn build",
     "flatten": "exit 0",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
-    "start": "ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "postversion": "exit 0",
+    "start": "ts-node-esm src/cli.ts -d",
+    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
   "type": "module",
   "version": "3.1.4"
