@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.1.10 (2023-04-07)
+
+**Note:** Version bump only for package @ffflorian/jszip-cli
+
+
+
+
+
 ## 3.1.9 (2023-02-05)
 
 **Note:** Version bump only for package @ffflorian/jszip-cli
