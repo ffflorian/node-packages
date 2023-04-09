@@ -1,7 +1,7 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": {
-    "yearprogress": "dist/cli.js"
+    "yearprogress": "dist/cjs/cli.js"
   },
   "dependencies": {
     "commander": "10.0.0",
@@ -13,7 +13,13 @@
     "typescript": "5.0.3"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 14.16"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js"
+    }
   },
   "files": [
     "dist"
@@ -23,17 +29,22 @@
     "typescript"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
   "name": "@ffflorian/yearprogress-mastodon-bot",
   "private": true,
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/yearprogress-bot-mastodon",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:mjs": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
+    "flatten": "exit 0",
+    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
+    "postversion": "exit 0",
     "start": "ts-node src/cli.ts"
   },
+  "type": "module",
   "version": "1.2.0"
 }
