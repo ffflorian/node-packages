@@ -2,21 +2,14 @@
 
 A library to load Temporary Exposure Keys (TEK). For more information on the format see https://developers.google.com/android/exposure-notifications/exposure-key-file-format.
 
-## Prerequisites
-
-- [Node.js](https://nodejs.org) >= 14
-- npm (preinstalled) or [yarn](https://classic.yarnpkg.com) < 2
-
 ## Installation
-
-ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 Run `yarn add exposure-keys` or `npm install exposure-keys`.
 
 ## Usage
 
 ```ts
-import fs from 'node:fs';
+import * as fs from 'fs';
 import {loadZip, loadKeys, loadSignature} from 'exposure-keys';
 
 (async () => {

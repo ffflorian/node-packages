@@ -11,13 +11,7 @@
     "typescript": "5.0.3"
   },
   "engines": {
-    "node": ">= 14.16"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/mjs/index.js",
-      "require": "./dist/cjs/index.js"
-    }
+    "node": ">= 10.9"
   },
   "files": [
     "dist",
@@ -38,21 +32,20 @@
     "typescript"
   ],
   "license": "GPL-3.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/mjs/index.js",
+  "main": "dist/index.js",
   "name": "exposure-keys",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/exposure-keys",
   "scripts": {
-    "build": "yarn build:proto && build:cjs && yarn build:mjs && yarn generate:packagejson",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:mjs": "tsc -p tsconfig.json",
+    "build": "yarn build:proto && yarn build:ts",
     "build:proto": "pbjs --t static-module -w commonjs -o proto/export.js proto/export.proto && pbts --out proto/export.d.ts --no-comments proto/export.js",
+    "build:ts": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "start": "ts-node-esm src/cli.ts",
-    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "start": "ts-node src/cli.ts",
+    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
-  "type": "module",
   "version": "1.5.0"
 }
