@@ -51,10 +51,13 @@
   "name": "electron-info",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/electron-info",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:mjs": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "flatten": "exit 0",
+    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
     "postversion": "exit 0",
     "start": "ts-node-esm src/cli.ts -d",
     "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
