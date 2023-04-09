@@ -4,7 +4,14 @@ This is a simple Scrabble cheating tool designed for Andy's [scrabble-bot](https
 
 Of course you shouldn't be using this and I'm not responsible if people call you a cheater.
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org) >= 14
+- [yarn](https://classic.yarnpkg.com) < 2
+
 ## Setup
+
+ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 ```
 yarn
