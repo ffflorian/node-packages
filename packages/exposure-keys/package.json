@@ -49,9 +49,7 @@
     "build:proto": "pbjs --t static-module -w commonjs -o proto/export.js proto/export.proto && pbts --out proto/export.d.ts --no-comments proto/export.js",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "exit 0",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "postversion": "exit 0",
     "start": "ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },

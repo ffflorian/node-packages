@@ -41,9 +41,8 @@
     "build:mjs": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "exit 0",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version"
+    "postversion": "exit 0"
   },
   "type": "module",
   "version": "2.2.0"

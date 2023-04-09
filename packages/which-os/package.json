@@ -40,9 +40,7 @@
     "build:mjs": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "exit 0",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "postversion": "exit 0",
     "start": "ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
