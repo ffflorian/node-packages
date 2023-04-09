@@ -1,5 +1,5 @@
 import {cosmiconfigSync} from 'cosmiconfig';
-import type {CosmiconfigResult} from 'cosmiconfig/dist/types';
+import type {CosmiconfigResult} from 'cosmiconfig/dist/types.js';
 import logdown from 'logdown';
 
 import {BuildService} from './BuildService.js';

@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
-import {ConfigFileOptions, JSZipCLI, TerminalOptions} from '../src';
+import {ConfigFileOptions, JSZipCLI, TerminalOptions} from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

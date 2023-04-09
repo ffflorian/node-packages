@@ -1,5 +1,5 @@
 /* eslint-disable no-magic-numbers */
-import {NTPClient} from '../src';
+import {NTPClient} from '../src/index.js';
 
 const SECOND_IN_MILLIS = 1000;
 const replyTimeout = 10 * SECOND_IN_MILLIS;
