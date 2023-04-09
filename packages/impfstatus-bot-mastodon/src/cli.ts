@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
 import {program as commander} from 'commander';
-import * as fs from 'fs';
-import * as path from 'path';
-
-import {ImpfstatusClient} from './ImpfstatusClient';
+import {ImpfstatusClient} from './ImpfstatusClient.js';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 
 interface CommanderOptions {
   config?: string;
@@ -15,13 +14,13 @@ interface CommanderOptions {
   token?: string;
 }
 
-const defaultPackageJsonPath = path.join(__dirname, 'package.json');
-const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
-  ? defaultPackageJsonPath
-  : path.join(__dirname, '../package.json');
+interface PackageJson {
+  bin: Record<string, string>;
+  description: string;
+  version: string;
+}
 
-const packageJson = fs.readFileSync(packageJsonPath, 'utf-8');
-const {bin, description, version} = JSON.parse(packageJson);
+const {bin, description, version}: PackageJson = require('../package.json');
 
 commander
   .name(Object.keys(bin)[0])

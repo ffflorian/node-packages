@@ -2,7 +2,7 @@
 
 /* eslint-disable no-magic-numbers */
 
-import {Pixelflut} from './';
+import {Pixelflut} from './.js';
 
 void (async () => {
   try {

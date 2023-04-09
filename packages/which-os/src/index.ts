@@ -1,1 +1,1 @@
-export * from './which-os';
+export * from './which-os.js';

@@ -1,5 +1,5 @@
 import generator from 'megalodon';
-import {Config} from './Config';
+import {Config} from './Config.js';
 
 enum ConfigKeys {
   ACCESS_TOKEN = 'accessToken',

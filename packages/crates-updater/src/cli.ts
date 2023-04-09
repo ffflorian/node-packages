@@ -1,16 +1,18 @@
 #!/usr/bin/env node
 
 import {program as commander} from 'commander';
-import * as fs from 'fs';
-import * as path from 'path';
-import * as CratesUpdater from './CratesUpdater';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 
-const defaultPackageJsonPath = path.join(__dirname, 'package.json');
-const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
-  ? defaultPackageJsonPath
-  : path.join(__dirname, '../package.json');
+import * as CratesUpdater from './CratesUpdater.js';
 
-const {bin, description, version} = require(packageJsonPath);
+interface PackageJson {
+  bin: Record<string, string>;
+  description: string;
+  version: string;
+}
+
+const {bin, description, version}: PackageJson = require('../package.json');
 
 commander
   .name(Object.keys(bin)[0])

@@ -1,4 +1,4 @@
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import {JSZipCLI} from '../src';
 import type {BuildService} from '../src/BuildService';
 

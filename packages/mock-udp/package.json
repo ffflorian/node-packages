@@ -29,7 +29,7 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
   "type": "module",
   "version": "1.2.0"

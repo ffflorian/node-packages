@@ -16,7 +16,7 @@ Run `yarn add @ffflorian/mock-udp` or `npm i @ffflorian/mock-udp`.
 ## Usage
 
 ```ts
-import * as dgram from 'dgram';
+import dgram from 'node:dgram';
 import mockudp from '@ffflorian/mock-udp';
 // When imported, Socket gets patched immediately.
 

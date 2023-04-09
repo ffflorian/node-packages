@@ -1,6 +1,6 @@
 /* eslint-disable no-magic-numbers */
 
-import * as nock from 'nock';
+import nock from 'nock';
 
 import {MyTimezone} from '../src/MyTimezone';
 

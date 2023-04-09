@@ -3,7 +3,7 @@ import nock from 'nock';
 import fs from 'fs-extra';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import * as uuid from 'uuid';
+import uuid from 'uuid';
 
 import {ElectronInfo, RawReleaseInfo} from '../src/ElectronInfo.js';
 

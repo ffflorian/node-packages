@@ -12,7 +12,7 @@ A TypeScript QuickSort implementation.
 ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 ```ts
-import * as quickSort from 'quick-sort';
+import quickSort from 'quick-sort';
 
 const unsortedArray = [15, 13, 1, 22];
 const sortedArray = quickSort.sort(unsortedArray);

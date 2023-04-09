@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import icongen from 'icon-gen';
 import Jimp from 'jimp';
-import * as path from 'path';
+import path from 'node:path';
 
 // eslint-disable-next-line no-magic-numbers
 const pngSizes = [16, 24, 32, 48, 64, 128, 256, 512, 1024];

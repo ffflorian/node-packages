@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
 import {program as commander} from 'commander';
-import fs from 'node:fs';
-import path from 'node:path';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 
 import {ElectronInfo, RawDeps, SupportedDependencies} from './ElectronInfo.js';
 
-const defaultPackageJsonPath = path.join(__dirname, 'package.json');
-const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
-  ? defaultPackageJsonPath
-  : path.join(__dirname, '../package.json');
+interface PackageJson {
+  description: string;
+  name: string;
+  version: string;
+}
 
-const packageJson = fs.readFileSync(packageJsonPath, 'utf-8');
-const {description, name, version}: {description: string; name: string; version: string} = JSON.parse(packageJson);
+const {description, name, version}: PackageJson = require('../package.json');
 
 let matchedCommand = false;
 

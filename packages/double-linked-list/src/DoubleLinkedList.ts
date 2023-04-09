@@ -1,4 +1,4 @@
-import {ListElement, ListElementValue} from './ListElement';
+import {ListElement, ListElementValue} from './ListElement.js';
 
 /**
  * The linked list. By default the head and the tail are set to `null` since they don't exist yet.

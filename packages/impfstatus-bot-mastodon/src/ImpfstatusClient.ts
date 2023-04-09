@@ -1,6 +1,6 @@
 import generator from 'megalodon';
 import axios from 'axios';
-import {Config} from './Config';
+import {Config} from './Config.js';
 import {publish as ntfyPublish} from 'ntfy';
 
 const CsvHeaders = [
