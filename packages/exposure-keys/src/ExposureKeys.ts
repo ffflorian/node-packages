@@ -1,5 +1,5 @@
 import {loadAsync} from 'jszip';
-import {TemporaryExposureKeyExport, TEKSignatureList} from '../proto/export.js';
+import {TemporaryExposureKeyExport, TEKSignatureList} from '../proto/export';
 
 function isZip(fileContent: Buffer): boolean {
   // eslint-disable-next-line no-magic-numbers

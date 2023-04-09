@@ -1,1 +1,1 @@
-export * from './ExposureKeys.js';
+export * from './ExposureKeys';
