@@ -1,12 +1,12 @@
 import {isAfter as isAfterDate, sub as subtractDate} from 'date-fns';
-import {constants as fsConstants, promises as fs} from 'fs';
+import {constants as fsConstants, promises as fs} from 'node:fs';
 import parseUrl from 'parse-url';
 import logdown from 'logdown';
-import * as os from 'os';
-import * as path from 'path';
+import os from 'node:os';
+import path from 'node:path';
 
-import type {Options, RawReleaseInfo} from './ElectronInfo';
-import {HTTPService} from './HTTPService';
+import type {Options, RawReleaseInfo} from './ElectronInfo.js';
+import {HTTPService} from './HTTPService.js';
 
 export class FileService {
   private readonly httpService: HTTPService;

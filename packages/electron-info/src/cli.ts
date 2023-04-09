@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import {program as commander} from 'commander';
-import * as fs from 'fs';
-import * as path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
-import {ElectronInfo, RawDeps, SupportedDependencies} from './ElectronInfo';
+import {ElectronInfo, RawDeps, SupportedDependencies} from './ElectronInfo.js';
 
 const defaultPackageJsonPath = path.join(__dirname, 'package.json');
 const packageJsonPath = fs.existsSync(defaultPackageJsonPath)

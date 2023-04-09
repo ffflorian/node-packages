@@ -1,11 +1,14 @@
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
-import * as fs from 'fs-extra';
-import * as path from 'path';
+import fs from 'fs-extra';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 import * as uuid from 'uuid';
 
-import {ElectronInfo, RawReleaseInfo} from '../src/ElectronInfo';
+import {ElectronInfo, RawReleaseInfo} from '../src/ElectronInfo.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const tempDir = path.resolve(__dirname, '.temp');
 const tempDirDownload = path.resolve(__dirname, '.temp/download');
 const mockUrl = 'http://example.com';

@@ -2,9 +2,14 @@
 
 # electron-info [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/electron-info.svg?style=flat)](https://www.npmjs.com/package/electron-info)
 
-Get useful data about Electron releases. Uses [electron-releases](https://github.com/electron/releases) in the background.
+Get useful data about Electron releases. Uses [electron-releases](https://github.com/electron/releases) in the background.## Prerequisites
+
+- [Node.js](https://nodejs.org) >= 14
+- npm (preinstalled) or [yarn](https://classic.yarnpkg.com) < 2
 
 ## Installation
+
+ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 Just run `npx electron-info`.
 
