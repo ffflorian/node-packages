@@ -26,5 +26,5 @@
     "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
-  "version": "1.1.0"
+  "version": "1.2.0"
 }

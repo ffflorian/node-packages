@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.4.0 (2023-04-09)
+
+
+### Features
+
+* **electron-info:** Create hybrid module ([#83](https://github.com/ffflorian/node-packages/issues/83)) ([b4a9cd4](https://github.com/ffflorian/node-packages/commit/b4a9cd469cdd21da520ce1d02c878359c0546340))
+
+
+
+
+
 # 0.3.0 (2023-04-07)
 
 
