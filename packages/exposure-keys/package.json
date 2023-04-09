@@ -34,9 +34,6 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "exposure-keys",
-  "publishConfig": {
-    "directory": "flattened"
-  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/exposure-keys",
   "scripts": {
     "build": "yarn build:proto && yarn build:ts",

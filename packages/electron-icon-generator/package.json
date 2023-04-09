@@ -46,7 +46,8 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "start": "ts-node-esm src/cli.ts"
+    "start": "ts-node-esm src/cli.ts",
+    "test": "exit 0"
   },
   "type": "module",
   "version": "1.2.0"

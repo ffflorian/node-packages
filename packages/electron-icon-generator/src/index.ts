@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
 import fs from 'fs-extra';
-import icongen from 'icon-gen';
 import Jimp from 'jimp';
 import path from 'node:path';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
+const icongen = require('icon-gen');
 
 // eslint-disable-next-line no-magic-numbers
 const pngSizes = [16, 24, 32, 48, 64, 128, 256, 512, 1024];
