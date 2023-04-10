@@ -9,7 +9,7 @@
   "description": "Get informations about your OS",
   "devDependencies": {
     "rimraf": "5.0.0",
-    "typescript": "5.0.3"
+    "typescript": "5.0.4"
   },
   "engines": {
     "node": ">= 10.9"
