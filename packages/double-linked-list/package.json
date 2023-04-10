@@ -5,7 +5,7 @@
     "rimraf": "5.0.0",
     "touch": "3.1.0",
     "typedoc": "0.24.1",
-    "typescript": "5.0.3"
+    "typescript": "5.0.4"
   },
   "engines": {
     "node": ">= 10.9"
