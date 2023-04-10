@@ -25,7 +25,7 @@
     "lerna": "6.6.1",
     "prettier": "2.8.7",
     "publish-flat": "*",
-    "rimraf": "4.4.1",
+    "rimraf": "5.0.0",
     "ts-node": "10.9.1",
     "typescript": "5.0.3"
   },
