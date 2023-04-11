@@ -54,5 +54,5 @@
     "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
   "type": "module",
-  "version": "3.3.0"
+  "version": "3.3.1"
 }

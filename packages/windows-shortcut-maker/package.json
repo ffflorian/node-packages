@@ -38,5 +38,5 @@
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
     "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version"
   },
-  "version": "2.2.0"
+  "version": "2.2.1"
 }
