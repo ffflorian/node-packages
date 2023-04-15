@@ -9,7 +9,8 @@
     "fs-extra": "11.1.1",
     "jszip": "3.10.1",
     "logdown": "3.3.1",
-    "progress": "2.0.3"
+    "progress": "2.0.3",
+    "glob": "10.0.0"
   },
   "description": "A zip CLI based on jszip.",
   "devDependencies": {
@@ -46,7 +47,7 @@
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
     "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
     "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
   },
   "version": "3.3.1"
 }

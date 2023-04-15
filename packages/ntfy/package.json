@@ -32,7 +32,7 @@
     "flatten": "node ../publish-flat/dist/cli.js -o flattened",
     "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
     "start": "ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
   },
   "version": "1.2.1"
 }
