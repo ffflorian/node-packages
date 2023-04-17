@@ -4,7 +4,7 @@
     "my-timezone": "dist/cli.js"
   },
   "dependencies": {
-    "commander": "10.0.0",
+    "commander": "10.0.1",
     "ntpclient": "1.3.1"
   },
   "description": "Get the exact time based on your location.",
