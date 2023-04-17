@@ -7,7 +7,7 @@
   "dependencies": {
     "@npmcli/arborist": "6.2.7",
     "@types/npmcli__arborist": "5.6.1",
-    "commander": "10.0.0",
+    "commander": "10.0.1",
     "fs-extra": "11.1.1",
     "logdown": "3.3.1",
     "npm-packlist": "7.0.4"
