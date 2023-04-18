@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "commander": "10.0.1",
-    "ntpclient": "1.3.1"
+    "ntpclient": "1.4.0"
   },
   "description": "Get the exact time based on your location.",
   "devDependencies": {
@@ -36,5 +36,5 @@
     "start": "ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
   },
-  "version": "1.2.1"
+  "version": "1.3.0"
 }

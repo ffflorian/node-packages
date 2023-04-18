@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.3.0 (2023-04-18)
+
+
+### Features
+
+* **jszip-cli:** Allow glob inputs for add mode ([#98](https://github.com/ffflorian/node-packages/issues/98)) ([a491cfc](https://github.com/ffflorian/node-packages/commit/a491cfcb04d9abdb8e0b2c9995a0de63f05510d9))
+
+
+
+
+
 ## 3.2.1 (2023-04-11)
 
 **Note:** Version bump only for package @ffflorian/doublelinkedlist
