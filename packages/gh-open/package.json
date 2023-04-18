@@ -51,7 +51,7 @@
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
     "postversion": "exit 0",
     "start": "ts-node-esm src/cli.ts -d",
-    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
   },
   "type": "module",
   "version": "3.3.1"
