@@ -5,7 +5,7 @@ import * as path from 'path';
 import * as progress from 'progress';
 import {FileService} from './FileService';
 import {Entry, TerminalOptions} from './interfaces';
-import * as glob from 'glob';
+import {globSync} from 'glob';
 
 export class BuildService {
   public compressedFilesCount: number;
@@ -44,7 +44,7 @@ export class BuildService {
   public add(rawEntries: string[]): BuildService {
     this.logger.info(`Adding ${rawEntries.length} entr${rawEntries.length === 1 ? 'y' : 'ies'} to ZIP file.`);
     const normalizedEntries = this.normalizePaths(rawEntries);
-    this.entries = glob.globSync(normalizedEntries).map(rawEntry => {
+    this.entries = globSync(normalizedEntries).map(rawEntry => {
       const resolvedPath = path.resolve(rawEntry);
       const baseName = path.basename(rawEntry);
       return {
@@ -76,7 +76,7 @@ export class BuildService {
   }
 
   /**
-   * Note Glob patterns should always use / as a path separator, even on Windows systems,
+   * Note: glob patterns should always use / as a path separator, even on Windows systems,
    * as \ is used to escape glob characters.
    * https://github.com/isaacs/node-glob
    */

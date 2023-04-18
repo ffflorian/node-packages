@@ -10,7 +10,7 @@
     "jszip": "3.10.1",
     "logdown": "3.3.1",
     "progress": "2.0.3",
-    "glob": "10.0.0"
+    "glob": "10.2.1"
   },
   "description": "A zip CLI based on jszip.",
   "devDependencies": {
