@@ -4803,14 +4803,14 @@ mdurl@^1.0.1:
   resolved "https://registry.npmjs.org/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==
 
-megalodon@5.4.4:
-  version "5.4.4"
-  resolved "https://registry.yarnpkg.com/megalodon/-/megalodon-5.4.4.tgz#bbe55d663814c1ce44e21a23d6197b5cb089fbda"
-  integrity sha512-QZDrHGxfkc+ROiULIAxO1U8xHgYxtSGTUOZyIvxfHBamfreQ9jdAod0+VjS5U1O6CjSQ4ofpW7ABXuEh+UthxQ==
+megalodon@5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/megalodon/-/megalodon-5.5.0.tgz#ef2c55b8f676c4eba608449325a5a6c9fe69ed4e"
+  integrity sha512-DSEDSF9PtjgzlfrI3tJtoMZOfo4PBnommCDfiFpb+TVzPe6fNslbYxokoQve/r6zbWO9+uItfKDkt36bpX0wxg==
   dependencies:
     "@types/oauth" "^0.9.0"
     "@types/ws" "^8.5.4"
-    axios "1.3.5"
+    axios "1.3.6"
     dayjs "^1.11.7"
     form-data "^4.0.0"
     https-proxy-agent "^5.0.1"
