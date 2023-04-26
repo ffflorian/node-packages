@@ -1,8 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "pixelflut": "dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "description": "Flood pixels",
   "devDependencies": {
     "rimraf": "5.0.0",

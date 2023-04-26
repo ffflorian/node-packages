@@ -1,8 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "https-proxy": "dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "dependencies": {
     "basic-auth": "2.0.1",
     "commander": "10.0.1",

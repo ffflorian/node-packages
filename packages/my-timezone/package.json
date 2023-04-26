@@ -1,8 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "my-timezone": "dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "dependencies": {
     "commander": "10.0.1",
     "ntpclient": "1.4.0"
