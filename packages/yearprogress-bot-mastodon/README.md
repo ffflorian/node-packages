@@ -10,12 +10,10 @@ Currently deployed to [@year_progress@botsin.space](https://botsin.space/@year_p
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org) >= 14
-- npm (preinstalled) or [yarn](https://classic.yarnpkg.com) < 2
+- [Node.js](https://nodejs.org) >= 10.9
+- [yarn](https://classic.yarnpkg.com) < 2
 
 ## Installation
-
-ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 ```
 yarn
