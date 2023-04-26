@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import {JSZipCLI} from '../src/index.js';
 import type {BuildService} from '../src/BuildService.js';
+import glob from 'glob';
 
 describe('BuildService', () => {
   let jsZipCLI: JSZipCLI;
@@ -14,6 +15,9 @@ describe('BuildService', () => {
   };
 
   beforeEach(() => {
+    spyOn<any>(glob, 'globSync').and.callFake((params: string | string[]) =>
+      typeof params === 'string' ? [params] : params
+    );
     jsZipCLI = new JSZipCLI({
       outputEntry: 'file.zip',
       quiet: true,

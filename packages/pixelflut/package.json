@@ -6,8 +6,8 @@
   "dependencies": {},
   "description": "Flood pixels",
   "devDependencies": {
-    "rimraf": "4.4.1",
-    "typescript": "5.0.3"
+    "rimraf": "5.0.0",
+    "typescript": "5.0.4"
   },
   "files": [
     "dist"
@@ -28,5 +28,5 @@
     "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
   "type": "module",
-  "version": "1.4.0"
+  "version": "1.5.0"
 }

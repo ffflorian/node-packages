@@ -5,8 +5,8 @@
   ],
   "description": "Create Windows shortcuts using a VBScript.",
   "devDependencies": {
-    "rimraf": "4.4.1",
-    "typescript": "5.0.3"
+    "rimraf": "5.0.0",
+    "typescript": "5.0.4"
   },
   "engines": {
     "node": ">= 14.16"
@@ -45,5 +45,5 @@
     "postversion": "exit 0"
   },
   "type": "module",
-  "version": "2.2.0"
+  "version": "2.3.0"
 }

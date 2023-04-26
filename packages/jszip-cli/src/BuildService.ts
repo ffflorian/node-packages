@@ -3,6 +3,7 @@ import JSZip from 'jszip';
 import logdown from 'logdown';
 import path from 'node:path';
 import progress from 'progress';
+import {globSync} from 'glob';
 import {FileService} from './FileService.js';
 import {Entry, TerminalOptions} from './interfaces.js';
 
@@ -42,7 +43,8 @@ export class BuildService {
 
   public add(rawEntries: string[]): BuildService {
     this.logger.info(`Adding ${rawEntries.length} entr${rawEntries.length === 1 ? 'y' : 'ies'} to ZIP file.`);
-    this.entries = rawEntries.map(rawEntry => {
+    const normalizedEntries = this.normalizePaths(rawEntries);
+    this.entries = globSync(normalizedEntries).map(rawEntry => {
       const resolvedPath = path.resolve(rawEntry);
       const baseName = path.basename(rawEntry);
       return {
@@ -71,6 +73,15 @@ export class BuildService {
     }
 
     return this;
+  }
+
+  /**
+   * Note: glob patterns should always use / as a path separator, even on Windows systems,
+   * as \ is used to escape glob characters.
+   * https://github.com/isaacs/node-glob
+   */
+  private normalizePaths(rawEntries: string[]): string[] {
+    return rawEntries.map(entry => entry.replace(/\\/g, '/'));
   }
 
   private async addFile(entry: Entry, isLink = false): Promise<void> {

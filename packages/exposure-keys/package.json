@@ -7,8 +7,8 @@
   "description": "Temporary Exposure Keys (TEK) library",
   "devDependencies": {
     "protobufjs-cli": "1.1.1",
-    "rimraf": "4.4.1",
-    "typescript": "5.0.3"
+    "rimraf": "5.0.0",
+    "typescript": "5.0.4"
   },
   "engines": {
     "node": ">= 10.9"
@@ -42,7 +42,7 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "start": "ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
   },
-  "version": "1.5.0"
+  "version": "1.6.0"
 }
