@@ -1,11 +1,6 @@
-import fs from 'fs-extra';
-import path from 'node:path';
-import {fileURLToPath} from 'node:url';
-
-import {ConfigFileOptions, JSZipCLI, TerminalOptions} from '../src/index.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import * as fs from 'fs-extra';
+import * as path from 'path';
+import {ConfigFileOptions, JSZipCLI, TerminalOptions} from '../src';
 
 const tempDir = path.resolve(__dirname, '.temp');
 const configFilePath = path.resolve(tempDir, 'config.json');

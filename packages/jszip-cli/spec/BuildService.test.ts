@@ -1,7 +1,7 @@
-import fs from 'fs-extra';
-import {JSZipCLI} from '../src/index.js';
-import type {BuildService} from '../src/BuildService.js';
-import {glob} from 'glob';
+import * as fs from 'fs-extra';
+import {JSZipCLI} from '../src';
+import type {BuildService} from '../src/BuildService';
+import * as glob from 'glob';
 
 describe('BuildService', () => {
   let jsZipCLI: JSZipCLI;

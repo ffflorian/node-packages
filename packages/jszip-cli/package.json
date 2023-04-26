@@ -1,7 +1,7 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": {
-    "jszip-cli": "dist/cjs/cli.js"
+    "jszip-cli": "dist/cli.js"
   },
   "dependencies": {
     "commander": "10.0.1",
@@ -22,13 +22,7 @@
     "typescript": "5.0.4"
   },
   "engines": {
-    "node": ">= 14.16"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/mjs/index.js",
-      "require": "./dist/cjs/index.js"
-    }
+    "node": ">= 10.9"
   },
   "files": [
     "dist"
@@ -40,20 +34,20 @@
     "zip"
   ],
   "license": "GPL-3.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/mjs/index.js",
+  "main": "dist/index.js",
   "name": "@ffflorian/jszip-cli",
+  "publishConfig": {
+    "directory": "flattened"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/jszip-cli",
   "scripts": {
-    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:mjs": "tsc -p tsconfig.json",
+    "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
+    "flatten": "node ../publish-flat/dist/cli.js -o flattened",
+    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
     "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" ts-node src/cli.ts",
-    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
   },
-  "type": "module",
   "version": "3.4.0"
 }

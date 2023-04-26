@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 
-import dgram from 'node:dgram';
-import mockudp from '../src/index.js';
+import * as dgram from 'node:dgram';
+import * as mockudp from '../src/index.js';
 const buffer = Buffer.from('hello world');
 
 describe('mock-udp.intercept', () => {
