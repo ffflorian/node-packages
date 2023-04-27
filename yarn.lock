@@ -224,7 +224,7 @@ __metadata:
     rimraf: 5.0.0
     typescript: 5.0.4
   bin:
-    electron-icon-generator: dist/index.js
+    electron-icon-generator: dist/cjs/index.js
   languageName: unknown
   linkType: soft
 
@@ -291,7 +291,7 @@ __metadata:
     tsscmp: 1.0.6
     typescript: 5.0.4
   bin:
-    https-proxy: dist/cli.js
+    https-proxy: dist/cjs/cli.js
   languageName: unknown
   linkType: soft
 
@@ -2560,7 +2560,7 @@ __metadata:
     rimraf: 5.0.0
     typescript: 5.0.4
   bin:
-    auto-approver: dist/cli.js
+    auto-approver: dist/cjs/cli.js
   languageName: unknown
   linkType: soft
 
@@ -3352,8 +3352,8 @@ __metadata:
     rimraf: 5.0.0
     typescript: 5.0.4
   bin:
-    crates-updater: dist/cli.js
-    update-crates: dist/cli.js
+    crates-updater: dist/cjs/cli.js
+    update-crates: dist/cjs/cli.js
   languageName: unknown
   linkType: soft
 
@@ -6960,7 +6960,7 @@ __metadata:
     rimraf: 5.0.0
     typescript: 5.0.4
   bin:
-    my-timezone: dist/cli.js
+    my-timezone: dist/cjs/cli.js
   languageName: unknown
   linkType: soft
 
@@ -7463,7 +7463,7 @@ __metadata:
     rimraf: 5.0.0
     typescript: 5.0.4
   bin:
-    ntpclient: dist/cli.js
+    ntpclient: dist/cjs/cli.js
   languageName: unknown
   linkType: soft
 
@@ -8155,7 +8155,7 @@ __metadata:
     rimraf: 5.0.0
     typescript: 5.0.4
   bin:
-    pixelflut: dist/cli.js
+    pixelflut: dist/cjs/cli.js
   languageName: unknown
   linkType: soft
 
@@ -8429,8 +8429,8 @@ __metadata:
     rimraf: 5.0.0
     typescript: 5.0.4
   bin:
-    publish-flat: dist/cli.js
-    publish-flat-copy: dist/cli-copy.js
+    publish-flat: dist/cjs/cli.js
+    publish-flat-copy: dist/cjs/cli-copy.js
   languageName: unknown
   linkType: soft
 
@@ -10164,7 +10164,7 @@ __metadata:
     rimraf: 5.0.0
     typescript: 5.0.4
   bin:
-    which-os: dist/cli.js
+    which-os: dist/cjs/cli.js
   languageName: unknown
   linkType: soft
 
