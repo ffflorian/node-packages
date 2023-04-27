@@ -1,8 +1,7 @@
 /* eslint-disable no-magic-numbers */
-
 import nock from 'nock';
 
-import {MyTimezone} from '../src/MyTimezone';
+import {MyTimezone} from '../src/MyTimezone.js';
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10 * 1000; // 10 seconds
 const nominatimAPI = 'https://nominatim.openstreetmap.org';
