@@ -41,7 +41,7 @@
     "build:mjs": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
+    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh"
   },
   "type": "module",
   "version": "2.3.0"
