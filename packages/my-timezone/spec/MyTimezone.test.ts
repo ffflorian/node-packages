@@ -7,41 +7,37 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 10 * 1000; // 10 seconds
 const nominatimAPI = 'https://nominatim.openstreetmap.org';
 
 describe('MyTimezone', () => {
-  let tz: MyTimezone;
-
-  beforeEach(() => {
-    let formatted_address: string;
-
-    tz = new MyTimezone({
-      offline: true,
-    });
-
-    nock(nominatimAPI)
-      .get('/search')
-      .query(queryObject => {
-        formatted_address = queryObject.q as string;
-        return true;
-      })
-      .reply(() => [
-        200,
-        [
-          {
-            boundingbox: ['52.3570365', '52.6770365', '13.2288599', '13.5488599'],
-            class: 'place',
-            display_name: formatted_address,
-            icon: 'https://nominatim.openstreetmap.org/images/mapicons/poi_place_city.p.20.png',
-            importance: 1.007539028249136,
-            lat: '52.5170365',
-            licence: 'Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright',
-            lon: '13.3888599',
-            osm_id: 240109189,
-            osm_type: 'node',
-            place_id: 595794,
-            type: 'city',
-          },
-        ],
-      ]);
+  const tz = new MyTimezone({
+    offline: true,
   });
+  let formatted_address: string;
+
+  nock(nominatimAPI)
+    .get('/search')
+    .query(queryObject => {
+      formatted_address = queryObject.q as string;
+      return true;
+    })
+    .reply(() => [
+      200,
+      [
+        {
+          boundingbox: ['52.3570365', '52.6770365', '13.2288599', '13.5488599'],
+          class: 'place',
+          display_name: formatted_address,
+          icon: 'https://nominatim.openstreetmap.org/images/mapicons/poi_place_city.p.20.png',
+          importance: 1.007539028249136,
+          lat: '52.5170365',
+          licence: 'Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright',
+          lon: '13.3888599',
+          osm_id: 240109189,
+          osm_type: 'node',
+          place_id: 595794,
+          type: 'city',
+        },
+      ],
+    ])
+    .persist();
 
   it('returns an address from Nominatim', async () => {
     const location = 'Berlin, Germany';
