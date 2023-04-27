@@ -13,7 +13,7 @@
     "typescript": "5.0.4"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 14.16"
   },
   "files": [
     "dist"
