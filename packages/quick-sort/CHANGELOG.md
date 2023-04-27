@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.1 (2023-04-27)
+
+**Note:** Version bump only for package quick-sort
+
+
+
+
+
 # 0.5.0 (2023-04-18)
 
 
