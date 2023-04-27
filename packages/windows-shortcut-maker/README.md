@@ -13,15 +13,18 @@ This module uses a Windows VBScript file to get native access to the operational
 - Supports all Windows NT 4.0 (and beyond) systems.
 - The module is extremely small and provides access to the entire API.
 
-### Installation:
+## Prerequisites
 
-```
-$ npm install @ffflorian/windows-shortcut-maker
-# or
-$ yarn add @ffflorian/windows-shortcut-maker
-```
+- [Node.js](https://nodejs.org) >= 14
+- npm (preinstalled) or [yarn](https://classic.yarnpkg.com) < 2
 
-## Basic usage:
+## Installation
+
+ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
+
+Run `yarn global add @ffflorian/windows-shortcut-maker` or `npm i -g @ffflorian/windows-shortcut-maker`
+
+## Basic usage
 
 ```ts
 // Requires the Windows Shortcut Maker module
@@ -51,9 +54,9 @@ try {
 }
 ```
 
-# Documentation
+## Documentation
 
-## `make(options)`
+### `make(options)`
 
 > Returns `void` after asynchronously executing the wrapped script which makes the Windows API calls or throws an `Error` if no valid `filepath` parameter property was previously specified.
 
@@ -84,11 +87,3 @@ try {
 > Returns `void` after synchronously executing the wrapped script which makes the Windows API calls or throws an `Error` if no valid `filepath` parameter property was previously specified.
 >
 > The API is the same as `makeSync()`
-
-# License
-
-This project exists under the [GPL-3.0 license](LICENSE).
-
-# Development
-
-1. Add support for making internet shortcuts.

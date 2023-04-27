@@ -2,13 +2,13 @@
 
 import {program as commander} from 'commander';
 import {cosmiconfigSync} from 'cosmiconfig';
-import * as fs from 'fs';
-import * as logdown from 'logdown';
-import * as path from 'path';
-import * as readline from 'readline';
+import logdown from 'logdown';
+import readline from 'node:readline';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 
-import {ApproverConfig, AutoApprover, Repository} from './AutoApprover';
-import {pluralize} from './util';
+import {ApproverConfig, AutoApprover, Repository} from './AutoApprover.js';
+import {pluralize} from './util.js';
 
 const input = readline.createInterface(process.stdin, process.stdout);
 const logger = logdown('auto-approver', {
@@ -17,12 +17,13 @@ const logger = logdown('auto-approver', {
 });
 logger.state.isEnabled = true;
 
-const defaultPackageJsonPath = path.join(__dirname, 'package.json');
-const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
-  ? defaultPackageJsonPath
-  : path.join(__dirname, '../package.json');
+interface PackageJson {
+  bin: Record<string, string>;
+  description: string;
+  version: string;
+}
 
-const {bin, description, version} = require(packageJsonPath);
+const {bin, description, version}: PackageJson = require('../package.json');
 
 commander
   .name(Object.keys(bin)[0])

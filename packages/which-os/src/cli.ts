@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
 import {program as commander} from 'commander';
-import * as fs from 'fs';
-import * as path from 'path';
-import {inspect} from 'util';
+import {inspect} from 'node:util';
+import fs from 'node:fs';
 
-import * as whichOS from './which-os';
+import * as whichOS from './which-os.js';
 
-const defaultPackageJsonPath = path.join(__dirname, 'package.json');
-const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
-  ? defaultPackageJsonPath
-  : path.join(__dirname, '../package.json');
+interface PackageJson {
+  description: string;
+  name: string;
+  version: string;
+}
 
-const {description, name, version}: {description: string; name: string; version: string} = require(packageJsonPath);
+const {description, name, version}: PackageJson = JSON.parse(fs.readFileSync('../package.json', 'utf-8'));
 
 const capitalize = (name: string): string => `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
 

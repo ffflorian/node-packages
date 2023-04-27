@@ -1,2 +1,2 @@
-export * from './NtfyClient';
-export * from './interfaces';
+export * from './NtfyClient.js';
+export * from './interfaces.js';

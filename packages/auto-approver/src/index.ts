@@ -1,1 +1,1 @@
-export * from './AutoApprover';
+export * from './AutoApprover.js';

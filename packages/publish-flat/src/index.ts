@@ -1,2 +1,2 @@
-export * from './PublishFlat';
-export * from './copyJson';
+export * from './PublishFlat.js';
+export * from './copyJson.js';

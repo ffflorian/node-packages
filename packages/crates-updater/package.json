@@ -1,8 +1,8 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": {
-    "crates-updater": "dist/cli.js",
-    "update-crates": "dist/cli.js"
+    "crates-updater": "dist/cjs/cli.js",
+    "update-crates": "dist/cjs/cli.js"
   },
   "dependencies": {
     "commander": "10.0.1",
@@ -15,7 +15,13 @@
     "typescript": "5.0.4"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 14.16"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js"
+    }
   },
   "files": [
     "dist"
@@ -27,19 +33,19 @@
     "cli"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
   "name": "crates-updater",
-  "publishConfig": {
-    "directory": "flattened"
-  },
   "repository": "https://github.com/ffflorian/tree/node-packages/crates-updater",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:mjs": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
-    "start": "ts-node src/cli.ts"
+    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
+    "start": "ts-node-esm src/cli.ts"
   },
+  "type": "module",
   "version": "1.5.0"
 }

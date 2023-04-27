@@ -1,6 +1,7 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": "dist/cli.js",
+  "bin": "dist/cjs/cli.js",
+  "dependencies": {},
   "description": "Flood pixels",
   "devDependencies": {
     "rimraf": "5.0.0",
@@ -10,20 +11,20 @@
     "dist"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
   "name": "pixelflut",
-  "publishConfig": {
-    "directory": "flattened"
-  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/pixelflut",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:mjs": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
-    "start": "ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
+    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
+    "start": "ts-node-esm src/cli.ts",
+    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
+  "type": "module",
   "version": "1.5.0"
 }

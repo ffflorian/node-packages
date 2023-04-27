@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "outDir": "dist/cjs",
+    "rootDir": "src",
+    "module": "es2020"
+  },
+  "exclude": ["dist", "node_modules", "spec"],
+  "extends": "../../tsconfig.json"
+}

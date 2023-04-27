@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 
 import {program as commander} from 'commander';
-import fs from 'fs-extra';
-import path from 'path';
 
-import {PublishFlat} from './PublishFlat';
+import {PublishFlat} from './PublishFlat.js';
 
-const defaultPackageJsonPath = path.join(__dirname, 'package.json');
-const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
-  ? defaultPackageJsonPath
-  : path.join(__dirname, '../package.json');
+interface PackageJson {
+  bin: Record<string, string>;
+  description: string;
+  version: string;
+}
 
-const {bin, description, version} = fs.readJSONSync(packageJsonPath);
+const {bin, description, version}: PackageJson = require('../package.json');
 
 commander
   .name(Object.keys(bin)[0])

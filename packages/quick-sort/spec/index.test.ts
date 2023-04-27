@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 
-import * as QuickSort from '../src';
-import * as utils from '../src/utils';
+import * as QuickSort from '../src/index.js';
+import * as utils from '../src/utils.js';
 
 describe('QuickSort', () => {
   it('sorts 2 numbers', () => {

@@ -1,2 +1,2 @@
-export * from './FileIndex';
-export * from './interfaces';
+export * from './FileIndex.js';
+export * from './interfaces.js';

@@ -1,6 +1,6 @@
 /* eslint-disable no-magic-numbers */
 
-import {LinkedList, ListElement} from '../src/';
+import {LinkedList, ListElement} from '../src/index.js';
 
 describe('ListElement', () => {
   it('has a value', () => {

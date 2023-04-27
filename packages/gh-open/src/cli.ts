@@ -1,24 +1,21 @@
 #!/usr/bin/env node
 
 import path from 'node:path';
-import fs from 'node:fs';
-import {fileURLToPath} from 'node:url';
 import {program as commander} from 'commander';
 import {findUp} from 'find-up';
 import open from 'open';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 
 import {RepositoryService} from './RepositoryService.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+interface PackageJson {
+  description: string;
+  name: string;
+  version: string;
+}
 
-const defaultPackageJsonPath = path.join(__dirname, 'package.json');
-const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
-  ? defaultPackageJsonPath
-  : path.join(__dirname, '../package.json');
-
-const packageJson = fs.readFileSync(packageJsonPath, 'utf-8');
-const {description, name, version}: {description: string; name: string; version: string} = JSON.parse(packageJson);
+const {description, name, version}: PackageJson = require('../package.json');
 
 commander
   .name(name.replace(/^@[^/]+\//, ''))

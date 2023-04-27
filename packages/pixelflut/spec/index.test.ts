@@ -1,6 +1,6 @@
 /* eslint-disable no-magic-numbers */
 
-import {Pixelflut} from '../src';
+import {Pixelflut} from '../src/index.js';
 
 xdescribe('Pixelflut', () => {
   const pf = new Pixelflut('localhost', 8080, 0);

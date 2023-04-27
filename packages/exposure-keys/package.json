@@ -34,9 +34,6 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "exposure-keys",
-  "publishConfig": {
-    "directory": "flattened"
-  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/exposure-keys",
   "scripts": {
     "build": "yarn build:proto && yarn build:ts",
@@ -44,8 +41,6 @@
     "build:ts": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
     "start": "ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
   },

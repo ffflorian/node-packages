@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import {format as formatDate} from 'date-fns';
 import {table as createTable} from 'table';
 import logdown from 'logdown';
-import * as semver from 'semver';
+import semver from 'semver';
 
 import {FileService} from './FileService.js';
 

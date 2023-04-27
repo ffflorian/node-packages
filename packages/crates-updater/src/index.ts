@@ -1,1 +1,1 @@
-export * from './CratesUpdater';
+export * from './CratesUpdater.js';

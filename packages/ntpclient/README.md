@@ -2,9 +2,16 @@
 
 TypeScript implementation of the NTP Client Protocol. Based on [node-ntp-client](https://github.com/moonpyk/node-ntp-client).
 
-## Usage
+## Prerequisites
 
-Add the module to your project with `yarn add ntpclient`.
+- [Node.js](https://nodejs.org) >= 14
+- npm (preinstalled) or [yarn](https://classic.yarnpkg.com) < 2
+
+## Installation
+
+ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
+
+Run `yarn add ntpclient` or `npm i ntpclient`.
 
 ```ts
 import {NTPClient} from 'ntpclient';

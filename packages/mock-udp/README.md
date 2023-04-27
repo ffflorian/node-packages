@@ -2,14 +2,21 @@
 
 Mock dgram udp requests. Based on [node-mock-udp](https://github.com/mattrobenolt/node-mock-udp).
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org) >= 14
+- npm (preinstalled) or [yarn](https://classic.yarnpkg.com) < 2
+
 ## Installation
+
+ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 Run `yarn add @ffflorian/mock-udp` or `npm i @ffflorian/mock-udp`.
 
 ## Usage
 
 ```ts
-import * as dgram from 'dgram';
+import dgram from 'node:dgram';
 import mockudp from '@ffflorian/mock-udp';
 // When imported, Socket gets patched immediately.
 

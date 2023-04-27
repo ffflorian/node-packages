@@ -1,6 +1,6 @@
-import {spawn, spawnSync} from 'child_process';
-import * as fs from 'fs';
-import * as path from 'path';
+import {spawn, spawnSync} from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export interface ShortcutOptions {
   /** the absolute path including the name of which file should the module make a shortcut (required). */
