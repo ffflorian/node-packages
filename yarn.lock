@@ -4802,10 +4802,10 @@ mdurl@^1.0.1:
   resolved "https://registry.npmjs.org/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==
 
-megalodon@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/megalodon/-/megalodon-6.0.0.tgz#167b0414a9155f0635aa2bfe10bbaeaee882a3cc"
-  integrity sha512-1qDocz5BJzhqTYWmwSjv3dmVpvOOfgfBt9C0dCIxtt5nqT96xIM7WHQLstsUA1BQ9vyThBR7YKGLx6S52GAxBA==
+megalodon@6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/megalodon/-/megalodon-6.0.1.tgz#046f5a0237de835cdfa0fba7100456f7a151dcce"
+  integrity sha512-kXDwMfCBCXRbyxPo7yz6WbCi7UFmWFSqbC8RWJl3TuFm1zzrsV1mZveiiiEKeWUq/TWqqo8H9KPQzcuCDKNtTQ==
   dependencies:
     "@types/oauth" "^0.9.0"
     "@types/ws" "^8.5.4"
