@@ -42,7 +42,6 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "postversion": "exit 0"
   },
   "type": "module",
   "version": "2.3.0"

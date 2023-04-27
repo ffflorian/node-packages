@@ -33,8 +33,6 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
     "start": "ts-node src/cli.ts"
   },
   "version": "1.3.0"
