@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import path from 'path';
+import path from 'node:path';
 
 async function checkFile(filePath: string): Promise<void> {
   try {

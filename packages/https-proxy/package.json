@@ -1,7 +1,7 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": {
-    "https-proxy": "dist/cli.js"
+    "https-proxy": "dist/cjs/cli.js"
   },
   "dependencies": {
     "basic-auth": "2.0.1",
@@ -18,7 +18,13 @@
     "typescript": "5.0.4"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 14.16"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js"
+    }
   },
   "files": [
     "dist"
@@ -28,20 +34,20 @@
     "typescript"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
   "name": "@ffflorian/https-proxy",
-  "publishConfig": {
-    "directory": "flattened"
-  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/https-proxy",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:mjs": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "node ../publish-flat/dist/cli.js -o flattened",
-    "postversion": "node ../publish-flat/dist/cli-copy.js -o flattened/package.json version",
-    "start": "ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
+    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
+    "start": "ts-node-esm src/cli.ts",
+    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
   },
+  "type": "module",
   "version": "1.8.0"
 }

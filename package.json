@@ -30,7 +30,7 @@
     "typescript": "5.0.4"
   },
   "engines": {
-    "node": ">= 10.9",
+    "node": ">= 14.16",
     "yarn": ">= 1 < 2"
   },
   "license": "GPL-3.0",
@@ -45,7 +45,6 @@
     "fix": "yarn fix:ts && yarn fix:other",
     "fix:other": "yarn prettier --write",
     "fix:ts": "yarn lint:ts --fix",
-    "flatten": "lerna run flatten",
     "lint": "yarn lint:ts && yarn lint:other",
     "lint:other": "yarn prettier --list-different",
     "lint:ts": "eslint --ignore-path .gitignore --ext .ts packages",

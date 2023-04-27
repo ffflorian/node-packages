@@ -1,7 +1,7 @@
-import * as nock from 'nock';
+import nock from 'nock';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 
-import {AutoApprover, Repository} from '../src/AutoApprover';
+import {AutoApprover, Repository} from '../src/AutoApprover.js';
 
 describe('AutoApprover', () => {
   describe('checkRepository', () => {

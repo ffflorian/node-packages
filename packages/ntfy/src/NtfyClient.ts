@@ -1,6 +1,6 @@
 import axios, {AxiosHeaders, AxiosRequestConfig} from 'axios';
-import {URL} from 'url';
-import {promises as fs} from 'fs';
+import {URL} from 'node:url';
+import {promises as fs} from 'node:fs';
 import type {
   AttachmentConfig,
   BroadcastAction,
@@ -10,7 +10,7 @@ import type {
   MessageConfig,
   ResponseData,
   ViewAction,
-} from './interfaces';
+} from './interfaces.js';
 
 const defaultServerURL = 'https://ntfy.sh';
 

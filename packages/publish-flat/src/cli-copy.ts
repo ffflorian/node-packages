@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 
 import {program as commander} from 'commander';
-import fs from 'fs-extra';
-import path from 'path';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 
-import {copyJson} from './copyJson';
+import {copyJson} from './copyJson.js';
 
-const defaultPackageJsonPath = path.join(__dirname, 'package.json');
-const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
-  ? defaultPackageJsonPath
-  : path.join(__dirname, '../package.json');
+interface PackageJson {
+  bin: Record<string, string>;
+  version: string;
+}
 
-const {bin, version} = fs.readJSONSync(packageJsonPath);
+const {bin, version}: PackageJson = require('../package.json');
 const name = Object.keys(bin)[1];
 
 commander

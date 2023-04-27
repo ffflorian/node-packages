@@ -2,15 +2,16 @@
 
 Send notifications over [ntfy.sh](https://ntfy.sh).
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org) >= 14
+- npm (preinstalled) or [yarn](https://classic.yarnpkg.com) < 2
+
 ## Installation
 
-```
-npm install ntfy
-```
+ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
-```
-yarn add ntft
-```
+Run `yarn add ntfy` or `npm i ntfy`.
 
 ## Usage
 

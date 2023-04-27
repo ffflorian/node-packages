@@ -1,5 +1,5 @@
-import * as os from 'os';
-import * as process from 'process';
+import os from 'node:os';
+import process from 'node:process';
 
 const platform = os.platform();
 

@@ -1,8 +1,8 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": {
-    "publish-flat": "dist/cli.js",
-    "publish-flat-copy": "dist/cli-copy.js"
+    "publish-flat": "dist/cjs/cli.js",
+    "publish-flat-copy": "dist/cjs/cli-copy.js"
   },
   "dependencies": {
     "@npmcli/arborist": "6.2.8",
@@ -27,19 +27,19 @@
     "typescript"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
   "name": "publish-flat",
-  "publishConfig": {
-    "directory": "flattened"
-  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/publish-flat",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:mjs": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "flatten": "node ./dist/cli.js -o flattened",
-    "postversion": "node ./dist/cli-copy.js -o flattened/package.json version",
-    "start": "ts-node src/cli.ts"
+    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
+    "start": "ts-node-esm src/cli.ts"
   },
+  "type": "module",
   "version": "1.7.0"
 }

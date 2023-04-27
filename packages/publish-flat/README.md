@@ -2,13 +2,24 @@
 
 Publish your project flattened. No more `dist` in `require('project/dist/Options')`.
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org) >= 14
+- npm (preinstalled) or [yarn](https://classic.yarnpkg.com) < 2
+
+## Installation
+
+ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
+
+Run `yarn add publish-flat` or `npm i publish-flat`.
+
 ## Description
 
 Here is what it does:
 
 1. Copies your dist files together with the other release files into a temporary directory
-2. Aligns your `package.json` to work with the flattened structure
-3. Publishes your project from the temporary directory (optional)
+1. Aligns your `package.json` to work with the flattened structure
+1. Publishes your project from the temporary directory (optional)
 
 ### Example
 

@@ -42,7 +42,6 @@ jobs:
           yarn lint
           yarn build:ts
           yarn test
-          yarn flatten
 
       - name: Release on npm
         if: |

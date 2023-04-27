@@ -1,9 +1,9 @@
-import * as basicAuth from 'basic-auth';
-import * as http from 'http';
-import * as logdown from 'logdown';
-import * as net from 'net';
-import compare = require('tsscmp');
-import * as url from 'url';
+import basicAuth from 'basic-auth';
+import http from 'node:http';
+import logdown from 'logdown';
+import net from 'node:net';
+import compare from 'tsscmp';
+import url from 'node:url';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 
 export interface Options {

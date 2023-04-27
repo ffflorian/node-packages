@@ -1,8 +1,8 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import {promisify} from 'util';
+import fs from 'node:fs';
+import path from 'node:path';
+import {promisify} from 'node:util';
 
-import {DirEntry} from './interfaces';
+import {DirEntry} from './interfaces.js';
 
 const readdirAsync = promisify(fs.readdir);
 const lstatAsync = promisify(fs.lstat);

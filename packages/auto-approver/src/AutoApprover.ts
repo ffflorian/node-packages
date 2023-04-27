@@ -1,14 +1,14 @@
 import axios, {AxiosError, AxiosInstance} from 'axios';
-import * as fs from 'fs';
-import * as logdown from 'logdown';
-import * as path from 'path';
+import logdown from 'logdown';
+import {createRequire} from 'node:module';
 
-const defaultPackageJsonPath = path.join(__dirname, 'package.json');
-const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
-  ? defaultPackageJsonPath
-  : path.join(__dirname, '../package.json');
+interface PackageJson {
+  bin: Record<string, string>;
+  version: string;
+}
 
-const {bin, version: toolVersion} = require(packageJsonPath);
+const require = createRequire(import.meta.url);
+const {bin, version: toolVersion}: PackageJson = require('../package.json');
 const toolName = Object.keys(bin)[0];
 
 /** @see https://docs.github.com/en/rest/reference/pulls#get-a-pull-request */

@@ -3,7 +3,7 @@ import nock from 'nock';
 import fs from 'fs-extra';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import * as uuid from 'uuid';
+import {v4 as uuid} from 'uuid';
 
 import {ElectronInfo, RawReleaseInfo} from '../src/ElectronInfo.js';
 
@@ -19,7 +19,7 @@ const fullReleasesFile = path.join(fixturesDir, 'electron-releases-full.json');
 const createRandomBody = (): RawReleaseInfo[] => [
   {
     name: 'electron v8.0.0-nightly.20190820',
-    node_id: uuid.v4(),
+    node_id: uuid(),
     npm_dist_tags: [],
     prerelease: !!Math.round(Math.random()),
     published_at: new Date().toUTCString(),
