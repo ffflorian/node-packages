@@ -20,7 +20,7 @@ Run `yarn add ntfy` or `npm i ntfy`.
 ```ts
 import {publish} from 'ntfy';
 
-await ntfyClient.publish({
+await publish({
   message: 'This is an example message.',
   topic: 'mytopic',
 });
@@ -31,7 +31,7 @@ await ntfyClient.publish({
 ```ts
 import {publish, MessagePriority} from 'ntfy';
 
-await ntfyClient.publish({
+await publish({
   actions: [
     {
       clear: true,
