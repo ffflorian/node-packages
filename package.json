@@ -32,6 +32,9 @@
   "engines": {
     "node": ">= 14.16"
   },
+  "resolutions": {
+    "@types/node-fetch": "~2"
+  },
   "license": "GPL-3.0",
   "name": "node-packages",
   "prettier": "@ffflorian/prettier-config",
