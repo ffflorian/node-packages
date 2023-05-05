@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.7.2 (2023-05-05)
+
+**Note:** Version bump only for package publish-flat
+
+
+
+
+
 ## 1.7.1 (2023-04-27)
 
 **Note:** Version bump only for package publish-flat

@@ -44,5 +44,5 @@
     "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
   },
-  "version": "3.4.1"
+  "version": "3.4.2"
 }
