@@ -5,7 +5,7 @@
     "publish-flat-copy": "dist/cjs/cli-copy.js"
   },
   "dependencies": {
-    "@npmcli/arborist": "6.2.8",
+    "@npmcli/arborist": "6.2.9",
     "@types/npmcli__arborist": "5.6.1",
     "commander": "10.0.1",
     "fs-extra": "11.1.1",
