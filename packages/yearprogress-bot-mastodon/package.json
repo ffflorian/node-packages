@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "commander": "10.0.1",
-    "megalodon": "6.0.1"
+    "megalodon": "6.0.2"
   },
   "description": "Toots year's progress every few days to Mastodon.",
   "devDependencies": {
