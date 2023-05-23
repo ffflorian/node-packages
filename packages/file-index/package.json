@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "Generate a file index",
   "devDependencies": {
-    "rimraf": "5.0.0",
+    "rimraf": "5.0.1",
     "typescript": "5.0.4"
   },
   "engines": {

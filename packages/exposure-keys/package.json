@@ -7,7 +7,7 @@
   "description": "Temporary Exposure Keys (TEK) library",
   "devDependencies": {
     "protobufjs-cli": "1.1.1",
-    "rimraf": "5.0.0",
+    "rimraf": "5.0.1",
     "typescript": "5.0.4"
   },
   "engines": {
