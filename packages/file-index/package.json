@@ -37,5 +37,5 @@
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh"
   },
   "type": "module",
-  "version": "2.4.3"
+  "version": "2.4.4"
 }
