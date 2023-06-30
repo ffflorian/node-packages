@@ -22,7 +22,7 @@
     "eslint-plugin-typescript-sort-keys": "2.3.0",
     "eslint-plugin-unused-imports": "1.1.5",
     "jasmine": "5.0.2",
-    "lerna": "6.6.2",
+    "lerna": "7.1.1",
     "prettier": "2.8.8",
     "publish-flat": "*",
     "rimraf": "5.0.1",
