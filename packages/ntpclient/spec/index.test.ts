@@ -1,5 +1,6 @@
 /* eslint-disable no-magic-numbers */
 import {NTPClient} from '../src/index.js';
+import {intercept} from '@ffflorian/mock-udp';
 
 const SECOND_IN_MILLIS = 1000;
 const replyTimeout = 10 * SECOND_IN_MILLIS;
@@ -19,6 +20,7 @@ describe('NTP', () => {
   it(
     'works with another NTP server',
     async () => {
+      intercept();
       const data = await new NTPClient({
         replyTimeout,
         server: '0.pool.ntp.org',

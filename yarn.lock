@@ -342,7 +342,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ffflorian/mock-udp@workspace:packages/mock-udp":
+"@ffflorian/mock-udp@workspace:*, @ffflorian/mock-udp@workspace:packages/mock-udp":
   version: 0.0.0-use.local
   resolution: "@ffflorian/mock-udp@workspace:packages/mock-udp"
   dependencies:
@@ -7598,6 +7598,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
+    "@ffflorian/mock-udp": "workspace:*"
     commander: 10.0.1
     rimraf: 5.0.0
     typescript: 5.0.4

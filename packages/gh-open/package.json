@@ -46,8 +46,8 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "start": "ts-node-esm src/cli.ts -d",
-    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
+    "start": "node --loader ts-node/esm src/cli.ts -d",
+    "test": "node --loader ts-node/esm -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
   },
   "type": "module",
   "version": "3.4.1"
