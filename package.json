@@ -5,7 +5,7 @@
     "@evilmartians/lefthook": "1.4.5",
     "@ffflorian/eslint-config": "0.8.3",
     "@ffflorian/prettier-config": "0.3.1",
-    "@types/jasmine": "4.3.2",
+    "@types/jasmine": "4.3.5",
     "@types/node": "~18",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
