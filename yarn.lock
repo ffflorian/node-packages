@@ -4869,10 +4869,10 @@ mdurl@^1.0.1:
   resolved "https://registry.npmjs.org/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==
 
-megalodon@6.1.4:
-  version "6.1.4"
-  resolved "https://registry.yarnpkg.com/megalodon/-/megalodon-6.1.4.tgz#2da9dcc53429cb0ec314f6e7cf798bb0b85766d8"
-  integrity sha512-6eowFmYts4N+NRxqYPx5o95RRLv0JS1uZs1hkCq+ZXKH8dQegG61JMd3HkaJNzS0ECKSplnKW6uRYoApedqs0Q==
+megalodon@6.1.5:
+  version "6.1.5"
+  resolved "https://registry.yarnpkg.com/megalodon/-/megalodon-6.1.5.tgz#385910e6754531bd44c028e6c61539456577d111"
+  integrity sha512-6+1Lg6XDfKbwpOtvI8YZOV0HBhEfArncdhlbM0ndb8XBtZ8OBWMVR2aFtlxPOzzVs+BMpNR0ob32n5sjFj2JHQ==
   dependencies:
     "@types/oauth" "^0.9.0"
     "@types/ws" "^8.5.5"
