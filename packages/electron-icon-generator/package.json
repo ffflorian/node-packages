@@ -6,7 +6,7 @@
   "dependencies": {
     "commander": "11.0.0",
     "fs-extra": "11.1.1",
-    "icon-gen": "3.0.1",
+    "icon-gen": "4.0.0",
     "jimp": "0.22.8"
   },
   "description": "An icon generator to generate all the icon files needed for electron packaging",
