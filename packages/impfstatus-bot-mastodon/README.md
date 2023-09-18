@@ -14,7 +14,7 @@ Currently deployed to [@impfstatus@botsin.space](https://botsin.space/@impfstatu
 ## Prerequisites
 
 - [Node.js](https://nodejs.org) >= 10.9
-- [yarn](https://classic.yarnpkg.com) < 2
+- [yarn](https://classic.yarnpkg.com)
 
 ## Installation
 

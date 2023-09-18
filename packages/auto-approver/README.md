@@ -5,7 +5,7 @@ Automatically approve all GitHub PRs which match a specific pattern.
 ## Prerequisites
 
 - [Node.js](https://nodejs.org) >= 14
-- npm (preinstalled) or [yarn](https://classic.yarnpkg.com) < 2
+- npm (preinstalled) or [yarn](https://classic.yarnpkg.com)
 
 ## Installation
 
