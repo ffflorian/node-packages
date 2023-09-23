@@ -1,0 +1,38 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "bin": {
+    "applereleases": "dist/cli.js"
+  },
+  "dependencies": {
+    "commander": "11.0.0",
+    "megalodon": "7.0.0",
+    "rss-parser": "3.13.0"
+  },
+  "description": "Toots Apple software releases once they are published.",
+  "devDependencies": {
+    "rimraf": "5.0.1",
+    "typescript": "5.1.6"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "typescript"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "@ffflorian/mastodon-bot-applereleases",
+  "private": true,
+  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/mastodon-bot-applereleases",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "start": "ts-node src/cli.ts"
+  },
+  "version": "1.3.4"
+}

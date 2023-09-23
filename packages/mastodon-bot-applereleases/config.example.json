@@ -1,0 +1,7 @@
+{
+  "accessToken": "secret-token",
+  "baseURL": "https://mastodon.social",
+  "dryRun": true,
+  "forceSending": false,
+  "lastTootDate": "2023-09-18T10:39:14.284Z"
+}
