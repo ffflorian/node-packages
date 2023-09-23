@@ -26,9 +26,9 @@
   ],
   "license": "GPL-3.0",
   "main": "dist/index.js",
-  "name": "@ffflorian/impfstatus-bot-mastodon",
+  "name": "@ffflorian/mastodon-bot-impfstatus",
   "private": true,
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/impfstatus-bot-mastodon",
+  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/mastodon-bot-impfstatus",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
