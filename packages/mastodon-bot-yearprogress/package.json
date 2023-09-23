@@ -24,9 +24,9 @@
   ],
   "license": "GPL-3.0",
   "main": "dist/index.js",
-  "name": "@ffflorian/yearprogress-mastodon-bot",
+  "name": "@ffflorian/mastodon-bot-yearprogress",
   "private": true,
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/yearprogress-bot-mastodon",
+  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/mastodon-bot-yearprogress",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",

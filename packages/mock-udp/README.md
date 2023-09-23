@@ -5,7 +5,7 @@ Mock dgram udp requests. Based on [node-mock-udp](https://github.com/mattrobenol
 ## Prerequisites
 
 - [Node.js](https://nodejs.org) >= 14
-- npm (preinstalled) or [yarn](https://classic.yarnpkg.com) < 2
+- npm (preinstalled) or [yarn](https://classic.yarnpkg.com)
 
 ## Installation
 

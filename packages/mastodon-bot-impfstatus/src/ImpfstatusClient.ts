@@ -115,7 +115,7 @@ export class ImpfstatusClient {
         void ntfyPublish({
           message: errorMessage,
           tags: 'warning',
-          title: 'Error in impfstatus-bot-mastodon',
+          title: 'Error in mastodon-bot-impfstatus',
           topic: this.ntfyTopic,
         });
       }
@@ -200,7 +200,7 @@ export class ImpfstatusClient {
         void ntfyPublish({
           message: errorMessage,
           tags: 'warning',
-          title: 'Error in impfstatus-bot-mastodon',
+          title: 'Error in mastodon-bot-impfstatus',
           topic: this.ntfyTopic,
         });
       }
