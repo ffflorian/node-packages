@@ -7,7 +7,7 @@
     "commander": "11.0.0",
     "cosmiconfig": "8.3.6",
     "fs-extra": "11.1.1",
-    "glob": "10.3.6",
+    "glob": "10.3.7",
     "jszip": "3.10.1",
     "logdown": "3.3.1",
     "progress": "2.0.3"
