@@ -1398,10 +1398,10 @@
   resolved "https://registry.npmjs.org/@types/npm-package-arg/-/npm-package-arg-6.1.1.tgz#9e2d8adc04d39824a3d9f36f738010a3f7da3c1a"
   integrity sha512-452/1Kp9IdM/oR10AyqAgZOxUt7eLbm+EMJ194L6oarMYdZNiFIFAOJ7IIr0OrZXTySgfHjJezh2oiyk2kc3ag==
 
-"@types/npm-packlist@7.0.0":
-  version "7.0.0"
-  resolved "https://registry.npmjs.org/@types/npm-packlist/-/npm-packlist-7.0.0.tgz#a652570aabf5ab5e46e4a604cccbd52245d9cfb5"
-  integrity sha512-07p/B8TueEEGfU199p36KkhD7TfXgCZlT3utDpfsjVqSlwISpTBrRFHjGAb97267TrH2UEK/ve2iuwG1iHWXYQ==
+"@types/npm-packlist@7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@types/npm-packlist/-/npm-packlist-7.0.1.tgz#fd6e0d529a40ee6080f4d35ad026b751a805c222"
+  integrity sha512-yXDRMaiBWpn7ZrWU95DSQwsEMOfPCWgOkJlQzLsDToRzNhRW3v6GxZXGjqMEwq5juziJleS6hNfjvwhTAuNZxQ==
   dependencies:
     "@types/ignore-walk" "*"
     "@types/npmcli__arborist" "*"
