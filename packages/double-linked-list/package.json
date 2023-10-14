@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "TypeScript implementation of a double-linked list",
   "devDependencies": {
-    "rimraf": "5.0.1",
+    "rimraf": "5.0.5",
     "touch": "3.1.0",
     "typedoc": "0.25.1",
     "typescript": "5.1.6"
