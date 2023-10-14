@@ -9,7 +9,7 @@
   },
   "description": "Get the exact time based on your location.",
   "devDependencies": {
-    "axios": "1.5.0",
+    "axios": "1.5.1",
     "nock": "13.3.3",
     "rimraf": "5.0.5",
     "typescript": "5.1.6"
