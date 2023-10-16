@@ -2,8 +2,8 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "Mock dgram udp requests.",
   "devDependencies": {
-    "rimraf": "5.0.1",
-    "typescript": "5.1.6"
+    "rimraf": "5.0.5",
+    "typescript": "5.2.2"
   },
   "engines": {
     "node": ">= 14.16"
