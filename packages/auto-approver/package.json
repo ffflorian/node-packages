@@ -12,7 +12,7 @@
   "description": "Automatically approve all GitHub PRs which match a specific pattern.",
   "devDependencies": {
     "http-status-codes": "2.3.0",
-    "nock": "13.3.3",
+    "nock": "13.3.4",
     "rimraf": "5.0.5",
     "typescript": "5.2.2"
   },
