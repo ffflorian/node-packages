@@ -4,7 +4,7 @@
     "which-os": "dist/cjs/cli.js"
   },
   "dependencies": {
-    "commander": "11.0.0"
+    "commander": "11.1.0"
   },
   "description": "Get informations about your OS",
   "devDependencies": {
