@@ -159,6 +159,11 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@badgateway/oauth2-client@^2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@badgateway/oauth2-client/-/oauth2-client-2.2.4.tgz#6401b1d71f06944a320cfacd4285acbb54788d9d"
+  integrity sha512-R9MJWnf9gT5a38hNmAN4CFBB9yshvEVNYPb9iPgX7JIUAaqHjl3csivDcJESH3riRJMFVOEOqV4BsjamyYbsBg==
+
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.npmjs.org/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
@@ -1443,13 +1448,6 @@
   version "4.1.4"
   resolved "https://registry.npmjs.org/@types/npmlog/-/npmlog-4.1.4.tgz#30eb872153c7ead3e8688c476054ddca004115f6"
   integrity sha512-WKG4gTr8przEZBiJ5r3s8ZIAoMXNbOgQ+j/d5O4X3x6kZJRLNvyUJuUK/KoG3+8BaOHPhp2m7WC6JKKeovDSzQ==
-
-"@types/oauth@^0.9.2":
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/@types/oauth/-/oauth-0.9.2.tgz#846f11d732deadff4303228d81f07a7b377df287"
-  integrity sha512-Nu3/abQ6yR9VlsCdX3aiGsWFkj6OJvJqDvg/36t8Gwf2mFXdBZXPDN3K+2yfeA6Lo2m1Q12F8Qil9TZ48nWhOQ==
-  dependencies:
-    "@types/node" "*"
 
 "@types/pacote@*":
   version "11.1.5"
@@ -4056,7 +4054,7 @@ https-proxy-agent@^5.0.0:
     agent-base "6"
     debug "4"
 
-https-proxy-agent@^7.0.1, https-proxy-agent@^7.0.2:
+https-proxy-agent@^7.0.1:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-7.0.2.tgz#e2645b846b90e96c6e6f347fb5b2e41f1590b09b"
   integrity sha512-NmLNjm6ucYwtcUmL7JQC1ZQ57LmHP4lT15FQ8D61nak1rO6DH+fz5qNK2Ap5UN4ZapYICE3/0KodcLYSPsPbaA==
@@ -5189,23 +5187,19 @@ mdurl@^1.0.1:
   resolved "https://registry.npmjs.org/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==
 
-megalodon@8.1.4:
-  version "8.1.4"
-  resolved "https://registry.yarnpkg.com/megalodon/-/megalodon-8.1.4.tgz#bf660307f964a77306a9a443dc1b318382ebe909"
-  integrity sha512-9XYogBMY/Fc01QedqKRwFB/VrxfARYAEk4BCEK7/iU9iN39JN0ioA927KpwmLghShSiKYupFwnYcCb/a/IkO5A==
+megalodon@9.1.1:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/megalodon/-/megalodon-9.1.1.tgz#0707f58b6323db5328cef7acba63f22859e07dcc"
+  integrity sha512-8WQjRiMFrGtf/IEUP8bJxxjQgXkevBg8fl/vHt4agd6HuGdyEhQg/DHKqXKvXWLH1KipTs9z0278eFTDqOpr2A==
   dependencies:
-    "@types/oauth" "^0.9.2"
+    "@badgateway/oauth2-client" "^2.2.4"
     "@types/ws" "^8.5.5"
     axios "1.5.1"
     dayjs "^1.11.10"
+    events "^3.3.0"
     form-data "^4.0.0"
-    https-proxy-agent "^7.0.2"
     isomorphic-ws "^5.0.0"
-    oauth "^0.10.0"
     object-assign-deep "^0.4.0"
-    parse-link-header "^2.0.0"
-    socks-proxy-agent "^8.0.2"
-    typescript "5.2.2"
     uuid "^9.0.1"
     ws "8.14.2"
 
@@ -5848,11 +5842,6 @@ nx@16.10.0, "nx@>=16.5.1 < 17":
     "@nx/nx-win32-arm64-msvc" "16.10.0"
     "@nx/nx-win32-x64-msvc" "16.10.0"
 
-oauth@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.npmjs.org/oauth/-/oauth-0.10.0.tgz#3551c4c9b95c53ea437e1e21e46b649482339c58"
-  integrity sha512-1orQ9MT1vHFGQxhuy7E/0gECD3fd2fCC+PIX+/jgmU/gI3EpRocXtmtvxCO5x3WZ443FLTLFWNDjl5MPJf9u+Q==
-
 object-assign-deep@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npmjs.org/object-assign-deep/-/object-assign-deep-0.4.0.tgz#43505d3679abb9686ab359b97ac14cc837a9d143"
@@ -6210,13 +6199,6 @@ parse-json@^5.0.0, parse-json@^5.2.0:
     error-ex "^1.3.1"
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
-
-parse-link-header@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/parse-link-header/-/parse-link-header-2.0.0.tgz#949353e284f8aa01f2ac857a98f692b57733f6b7"
-  integrity sha512-xjU87V0VyHZybn2RrCX5TIFGxTVZE6zqqZWMPlIKiSKuWh/X5WZdt+w1Ki1nXB+8L/KtL+nZ4iq+sfI6MrhhMw==
-  dependencies:
-    xtend "~4.0.1"
 
 parse-path@^7.0.0:
   version "7.0.0"
@@ -7057,7 +7039,7 @@ socks-proxy-agent@^7.0.0:
     debug "^4.3.3"
     socks "^2.6.2"
 
-socks-proxy-agent@^8.0.1, socks-proxy-agent@^8.0.2:
+socks-proxy-agent@^8.0.1:
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/socks-proxy-agent/-/socks-proxy-agent-8.0.2.tgz#5acbd7be7baf18c46a3f293a840109a430a640ad"
   integrity sha512-8zuqoLv1aP/66PHF5TqwJ7Czm3Yv32urJQHrVyhD7mmA6d61Zv8cIXQYPTWwmg6qlupnPvs/QKDmfa4P/qct2g==
