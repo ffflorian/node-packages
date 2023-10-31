@@ -12,7 +12,7 @@
   },
   "description": "A simple HTTPS proxy for Node.js with authentication support.",
   "devDependencies": {
-    "@types/basic-auth": "1.1.4",
+    "@types/basic-auth": "1.1.5",
     "@types/tsscmp": "1.0.1",
     "rimraf": "5.0.5",
     "typescript": "5.2.2"
