@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.6.0 (2023-10-31)
+
+
+### Features
+
+* Force publish ([6273ffc](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/6273ffc7fd6b44807c5409f746b5daa91bebbb17))
+
+
+
+
+
 ## 1.5.4 (2023-06-04)
 
 **Note:** Version bump only for package crates-updater
