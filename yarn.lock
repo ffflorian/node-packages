@@ -1298,10 +1298,10 @@
     "@tufjs/canonical-json" "2.0.0"
     minimatch "^9.0.3"
 
-"@types/basic-auth@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@types/basic-auth/-/basic-auth-1.1.4.tgz#bd16d1382b3690c387d0117ad5c61f26e42c0ab8"
-  integrity sha512-UFJ4rxjOIQ1Y9R3Vb2RvnspPMdlsZ6Lcv7BQO1TmgtRdVrfGfuwN57lSpRuOJ9/Bwf61nKY+pnK0RPG3LtVnlw==
+"@types/basic-auth@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@types/basic-auth/-/basic-auth-1.1.5.tgz#2da02c35276f587536b63e1614bcdd8b1265f3e8"
+  integrity sha512-eYnGxbb3KZuTU4ZnrF8cMclnPpnrywEjGVjLbmO9TDBsCQ3wTQyGX0lcYEWpHOHw195kWpJ/YSMvvHUajrSIZw==
   dependencies:
     "@types/node" "*"
 
