@@ -1478,10 +1478,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/tsscmp@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@types/tsscmp/-/tsscmp-1.0.0.tgz#761c885a530f9673ae6fda0cae38253ffd46cba6"
-  integrity sha512-rj18XR6c4Ohds86Lq8MI1NMRrXes4eLo4H06e5bJyKucE1rXGsfBBbFGD2oDC+DSufQCpnU3TTW7QAiwLx+7Yw==
+"@types/tsscmp@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/tsscmp/-/tsscmp-1.0.1.tgz#9f0fcbb2aace8c4cdf8159cbbad008e2957cc490"
+  integrity sha512-aZ2LXADMDCW+W2DGUC3YD4aIf0jziSvnrvIKWXTgxEqkNGP8yoMs84yu+G+WRLsA9D7ld+hNEvjPtWBuQwFv+w==
 
 "@types/uuid@9.0.5":
   version "9.0.5"
