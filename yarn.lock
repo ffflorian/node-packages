@@ -592,21 +592,21 @@
   dependencies:
     lodash "^4.17.21"
 
-"@lerna/child-process@7.4.1":
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/@lerna/child-process/-/child-process-7.4.1.tgz#efacbbe79794ef977feb86873d853bb8708707be"
-  integrity sha512-Bx1cRCZcVcWoz+atDQc4CSVzGuEgGJPOpIAXjQbBEA2cX5nqIBWdbye8eHu31En/F03aH9BhpNEJghs6wy4iTg==
+"@lerna/child-process@7.4.2":
+  version "7.4.2"
+  resolved "https://registry.yarnpkg.com/@lerna/child-process/-/child-process-7.4.2.tgz#a2fd013ac2150dc288270d3e0d0b850c06bec511"
+  integrity sha512-je+kkrfcvPcwL5Tg8JRENRqlbzjdlZXyaR88UcnCdNW0AJ1jX9IfHRys1X7AwSroU2ug8ESNC+suoBw1vX833Q==
   dependencies:
     chalk "^4.1.0"
     execa "^5.0.0"
     strong-log-transformer "^2.1.0"
 
-"@lerna/create@7.4.1":
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/@lerna/create/-/create-7.4.1.tgz#3e4bb7235bf5700e7e63c470eba5619171331c1a"
-  integrity sha512-zPO9GyWceRimtMD+j+aQ8xJgNPYn/Q/SzHf4wYN+4Rj5nrFKMyX+Et7FbWgUNpj0dRgyCCKBDYmTB7xQVVq4gQ==
+"@lerna/create@7.4.2":
+  version "7.4.2"
+  resolved "https://registry.yarnpkg.com/@lerna/create/-/create-7.4.2.tgz#f845fad1480e46555af98bd39af29571605dddc9"
+  integrity sha512-1wplFbQ52K8E/unnqB0Tq39Z4e+NEoNrpovEnl6GpsTUrC6WDp8+w0Le2uCBV0hXyemxChduCkLz4/y1H1wTeg==
   dependencies:
-    "@lerna/child-process" "7.4.1"
+    "@lerna/child-process" "7.4.2"
     "@npmcli/run-script" "6.0.2"
     "@nx/devkit" ">=16.5.1 < 17"
     "@octokit/plugin-enterprise-rest" "6.0.1"
@@ -2526,10 +2526,10 @@ console-control-strings@^1.1.0:
   resolved "https://registry.npmjs.org/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
   integrity sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ==
 
-conventional-changelog-angular@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-angular/-/conventional-changelog-angular-6.0.0.tgz#a9a9494c28b7165889144fd5b91573c4aa9ca541"
-  integrity sha512-6qLgrBF4gueoC7AFVHu51nHL9pF9FRjXrH+ceVf7WmAfH3gs+gEYOkvxhjMPjZu57I4AGUGoNTY8V7Hrgf1uqg==
+conventional-changelog-angular@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-angular/-/conventional-changelog-angular-7.0.0.tgz#5eec8edbff15aa9b1680a8dcfbd53e2d7eb2ba7a"
+  integrity sha512-ROjNchA9LgfNMTTFSIWPzebCwOGFdgkEq45EnvvrmSLvCtAw0HSmrCs7/ty+wAeYUZyNay0YMUNYFTRL72PkBQ==
   dependencies:
     compare-func "^2.0.0"
 
@@ -4784,13 +4784,13 @@ klaw@^3.0.0:
   dependencies:
     graceful-fs "^4.1.9"
 
-lerna@7.4.1:
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/lerna/-/lerna-7.4.1.tgz#d124fa5f0a1fe10ae9a6081bc363d98f3f6caca9"
-  integrity sha512-c6sOO0dlJU689vStIsko+zjRdn2fJOWH8aNjePLNv2AubAdABKqfrDCpE2H/Q7+O80Duo68ZQtWYkUUk7hRWDw==
+lerna@7.4.2:
+  version "7.4.2"
+  resolved "https://registry.yarnpkg.com/lerna/-/lerna-7.4.2.tgz#03497125d7b7c8d463eebfe17a701b16bde2ad09"
+  integrity sha512-gxavfzHfJ4JL30OvMunmlm4Anw7d7Tq6tdVHzUukLdS9nWnxCN/QB21qR+VJYp5tcyXogHKbdUEGh6qmeyzxSA==
   dependencies:
-    "@lerna/child-process" "7.4.1"
-    "@lerna/create" "7.4.1"
+    "@lerna/child-process" "7.4.2"
+    "@lerna/create" "7.4.2"
     "@npmcli/run-script" "6.0.2"
     "@nx/devkit" ">=16.5.1 < 17"
     "@octokit/plugin-enterprise-rest" "6.0.1"
@@ -4800,7 +4800,7 @@ lerna@7.4.1:
     clone-deep "4.0.1"
     cmd-shim "6.0.1"
     columnify "1.6.0"
-    conventional-changelog-angular "6.0.0"
+    conventional-changelog-angular "7.0.0"
     conventional-changelog-core "5.0.1"
     conventional-recommended-bump "7.0.1"
     cosmiconfig "^8.2.0"
@@ -6949,12 +6949,7 @@ signal-exit@3.0.7, signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
-signal-exit@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-4.0.1.tgz#96a61033896120ec9335d96851d902cc98f0ba2a"
-  integrity sha512-uUWsN4aOxJAS8KOuf3QMyFtgm1pkb6I+KRZbRF/ghdf5T7sM+B1lLLzPDxswUjkmHyxQAVzEgG35E3NzDM9GVw==
-
-signal-exit@^4.1.0:
+signal-exit@^4.0.1, signal-exit@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-4.1.0.tgz#952188c1cbd546070e2dd20d0f41c0ae0530cb04"
   integrity sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==
