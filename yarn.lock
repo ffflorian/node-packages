@@ -1478,10 +1478,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/tsscmp@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@types/tsscmp/-/tsscmp-1.0.1.tgz#9f0fcbb2aace8c4cdf8159cbbad008e2957cc490"
-  integrity sha512-aZ2LXADMDCW+W2DGUC3YD4aIf0jziSvnrvIKWXTgxEqkNGP8yoMs84yu+G+WRLsA9D7ld+hNEvjPtWBuQwFv+w==
+"@types/tsscmp@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/tsscmp/-/tsscmp-1.0.2.tgz#5f4679b5681bcf916a383ca9245371ce9748db5a"
+  integrity sha512-cy7BRSU8GYYgxjcx0Py+8lo5MthuDhlyu076KUcYzVNXL23luYgRHkMG2fIFEc6neckeh/ntP82mw+U4QjZq+g==
 
 "@types/uuid@9.0.6":
   version "9.0.6"
