@@ -7,6 +7,6 @@
     "rootDir": "src",
     "target": "ES2017"
   },
-  "exclude": ["dist", "node_modules", "spec"],
+  "exclude": ["dist", "node_modules"],
   "extends": "../../tsconfig.json"
 }

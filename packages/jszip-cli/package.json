@@ -40,7 +40,7 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
+    "test": "vitest run"
   },
   "version": "3.5.1"
 }

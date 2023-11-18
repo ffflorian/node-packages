@@ -41,8 +41,7 @@
     "build:ts": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "start": "ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
+    "start": "ts-node src/cli.ts"
   },
   "version": "1.7.1"
 }

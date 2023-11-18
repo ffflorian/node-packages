@@ -1,6 +1,6 @@
 import {cosmiconfigSync} from 'cosmiconfig';
 import type {CosmiconfigResult} from 'cosmiconfig/dist/types';
-import * as logdown from 'logdown';
+import logdown from 'logdown';
 
 import {BuildService} from './BuildService';
 import {ExtractService} from './ExtractService';

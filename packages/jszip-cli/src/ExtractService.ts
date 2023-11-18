@@ -1,9 +1,9 @@
-import * as fs from 'fs-extra';
-import * as JSZip from 'jszip';
-import * as logdown from 'logdown';
-import * as os from 'os';
-import * as path from 'path';
-import * as progress from 'progress';
+import fs from 'fs-extra';
+import JSZip from 'jszip';
+import logdown from 'logdown';
+import os from 'os';
+import path from 'path';
+import progress from 'progress';
 import {TerminalOptions} from './interfaces';
 
 export class ExtractService {

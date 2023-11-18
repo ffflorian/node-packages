@@ -1,8 +1,8 @@
 import * as fs from 'fs-extra';
-import * as JSZip from 'jszip';
-import * as logdown from 'logdown';
-import * as path from 'path';
-import * as progress from 'progress';
+import JSZip from 'jszip';
+import logdown from 'logdown';
+import path from 'path';
+import progress from 'progress';
 import {FileService} from './FileService';
 import {Entry, TerminalOptions} from './interfaces';
 import {globSync} from 'glob';
@@ -88,12 +88,13 @@ export class BuildService {
     const {resolvedPath, zipPath} = entry;
     let fileStat: fs.Stats;
     let fileData: Buffer | string;
+
     try {
       fileData = isLink ? await fs.readlink(resolvedPath) : await fs.readFile(resolvedPath);
       fileStat = await fs.lstat(resolvedPath);
     } catch (error) {
       if (!this.options.quiet) {
-        console.info(`Can't read file "${entry.resolvedPath}". Ignoring.`);
+        this.logger.info(`Can't read file "${entry.resolvedPath}". Ignoring.`);
       }
       this.logger.info(error);
       return;
@@ -121,7 +122,7 @@ export class BuildService {
         realPath = await fs.realpath(resolvedPath);
       } catch (error) {
         if (!this.options.quiet) {
-          console.info(`Can't read link "${entry.resolvedPath}". Ignoring.`);
+          this.logger.info(`Can't read link "${entry.resolvedPath}". Ignoring.`);
         }
         this.logger.info(error);
         return;
@@ -142,7 +143,7 @@ export class BuildService {
       fileStat = await fs.lstat(entry.resolvedPath);
     } catch (error) {
       if (!this.options.quiet) {
-        console.info(`Can't read file "${entry.resolvedPath}". Ignoring.`);
+        this.logger.info(`Can't read file "${entry.resolvedPath}". Ignoring.`);
       }
       this.logger.info(error);
       return;
@@ -163,6 +164,7 @@ export class BuildService {
       await this.walkDir(entry);
     } else if (fileStat.isFile()) {
       this.logger.info(`Found file "${entry.resolvedPath}".`);
+      this.logger.info(`Found file "${entry.resolvedPath}".`);
       await this.addFile(entry);
     } else if (fileStat.isSymbolicLink()) {
       this.logger.info(`Found symbolic link "${entry.resolvedPath}".`);
@@ -170,7 +172,7 @@ export class BuildService {
     } else {
       this.logger.info('Unknown file type.', {fileStat});
       if (!this.options.quiet) {
-        console.info(`Can't read file "${entry.resolvedPath}". Ignoring.`);
+        this.logger.info(`Can't read file "${entry.resolvedPath}". Ignoring.`);
       }
     }
   }
