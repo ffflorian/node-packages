@@ -1429,10 +1429,10 @@
     "@types/npmlog" "*"
     "@types/ssri" "*"
 
-"@types/npmcli__arborist@*", "@types/npmcli__arborist@5.6.4":
-  version "5.6.4"
-  resolved "https://registry.yarnpkg.com/@types/npmcli__arborist/-/npmcli__arborist-5.6.4.tgz#cf800f174eed88f72ca4a5d799b5724d6d701979"
-  integrity sha512-OBlSpKj2lU5iRENEHi82s52g+Hd4PmjV7ijeOepFz7JRsTo2Fvm+NN6+WgeuGdygy/S7gv+5TsNl4bwhm+R6vA==
+"@types/npmcli__arborist@*", "@types/npmcli__arborist@5.6.5":
+  version "5.6.5"
+  resolved "https://registry.yarnpkg.com/@types/npmcli__arborist/-/npmcli__arborist-5.6.5.tgz#f3129c780c8675c65a8a1636f91853059439d10c"
+  integrity sha512-T5ouyikyoizjmfoi3DQp66YwefKksJpolZ6Wf4Nxz6c+vvBajBjYASqngE1/99eW/O5wpnv7BwdxEmZC8R3M8Q==
   dependencies:
     "@npm/types" "*"
     "@types/cacache" "*"
