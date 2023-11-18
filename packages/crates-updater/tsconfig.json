@@ -2,7 +2,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "NodeNext",
     "outDir": "dist/mjs",
     "rootDir": "src",
     "target": "ES2017"

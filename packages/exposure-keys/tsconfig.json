@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "dist",
+    "module": "ES2020",
+    "moduleResolution": "Node",
     "rootDir": "src",
     "paths": {
       "ntpclient": ["../ntpclient"]

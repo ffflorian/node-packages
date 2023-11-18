@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist/cjs",
     "rootDir": "src",
-    "module": "es2020",
+    "module": "NodeNext",
     "esModuleInterop": true
   },
   "exclude": ["dist", "node_modules"],
