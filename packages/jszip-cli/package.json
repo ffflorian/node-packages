@@ -1,8 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "jszip-cli": "dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "dependencies": {
     "commander": "11.1.0",
     "cosmiconfig": "8.3.6",

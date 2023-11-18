@@ -1,8 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "ntpclient": "dist/cjs/cli.js"
-  },
+  "bin": "dist/cjs/cli.js",
   "dependencies": {
     "commander": "11.1.0"
   },

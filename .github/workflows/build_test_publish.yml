@@ -36,9 +36,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
+      - name: Setup yarn
+        run: |
+          corepack prepare yarn@stable --activate
+          yarn set version 4.0.2
+
       - name: Build, lint and test
         run: |
-          yarn --frozen-lockfile
+          yarn --immutable
           yarn lint
           yarn build:ts
           yarn test

@@ -1,8 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "scrabble-cheater": "dist/cjs/cli.js"
-  },
+  "bin": "dist/cjs/cli.js",
   "dependencies": {
     "clipboardy": "4.0.0",
     "commander": "11.1.0"
