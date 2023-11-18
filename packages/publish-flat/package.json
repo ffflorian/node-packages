@@ -14,7 +14,7 @@
   },
   "description": "Publish your project without the dist directory",
   "devDependencies": {
-    "@types/fs-extra": "11.0.3",
+    "@types/fs-extra": "11.0.4",
     "@types/npm-packlist": "7.0.3",
     "rimraf": "5.0.5",
     "typescript": "5.2.2"
