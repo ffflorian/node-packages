@@ -1963,15 +1963,6 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-axios@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.npmjs.org/axios/-/axios-1.4.0.tgz#38a7bf1224cd308de271146038b551d725f0be1f"
-  integrity sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==
-  dependencies:
-    follow-redirects "^1.15.0"
-    form-data "^4.0.0"
-    proxy-from-env "^1.1.0"
-
 axios@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.5.1.tgz#11fbaa11fc35f431193a9564109c88c1f27b585f"
@@ -2580,12 +2571,12 @@ cosmiconfig@8.3.6, cosmiconfig@^8.2.0:
     parse-json "^5.2.0"
     path-type "^4.0.0"
 
-crates.io@2.2.5:
-  version "2.2.5"
-  resolved "https://registry.npmjs.org/crates.io/-/crates.io-2.2.5.tgz#457583dfc01fa277d1fdb925da968e5c62d2872c"
-  integrity sha512-9lkfUSactpk4J85oiKl5ubNXFQpsakV2gi2SAaDCB3BgbcAfKSiTRqGGjfLVEVzXZKFb820MSaTRWhIbzuJtEA==
+crates.io@2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/crates.io/-/crates.io-2.2.6.tgz#ab2d147e2fa209650442d274b2a6b590e660e13c"
+  integrity sha512-toieE8IhJOedp82vhl34VlR4pRG+o5C6oCBANcOOeYgG9BOsHcAY0xdTBgIYQoBrW8sfVUwn4Z0skz3XyuoIBg==
   dependencies:
-    axios "1.4.0"
+    axios "1.6.1"
 
 create-require@^1.1.0:
   version "1.1.1"
