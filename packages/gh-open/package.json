@@ -47,7 +47,7 @@
     "dist": "yarn clean && yarn build",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
     "start": "ts-node-esm src/cli.ts -d",
-    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
+    "test": "vitest run"
   },
   "type": "module",
   "version": "3.5.1"

@@ -1,5 +1,4 @@
-/* eslint-disable no-magic-numbers */
-import dgram from 'node:dgram';
+import * as dgram from 'dgram';
 
 const TEN_SECONDS_IN_MILLIS = 10_000;
 

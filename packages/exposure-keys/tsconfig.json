@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
     "outDir": "dist",
+    "module": "ES2020",
+    "moduleResolution": "Node",
     "rootDir": "src",
     "paths": {
       "ntpclient": ["../ntpclient"]
     }
   },
-  "exclude": ["dist", "node_modules", "spec"],
+  "exclude": ["dist", "node_modules"],
   "extends": "../../tsconfig.json"
 }

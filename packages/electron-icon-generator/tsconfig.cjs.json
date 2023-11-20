@@ -3,8 +3,8 @@
     "esModuleInterop": true,
     "outDir": "dist/cjs",
     "rootDir": "src",
-    "module": "es2020"
+    "module": "NodeNext"
   },
-  "exclude": ["dist", "node_modules", "spec"],
+  "exclude": ["dist", "node_modules", "*.test.ts"],
   "extends": "../../tsconfig.json"
 }

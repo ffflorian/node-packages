@@ -32,15 +32,20 @@
     "zip"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
   "name": "@ffflorian/jszip-cli",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/jszip-cli",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:mjs": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
+    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
     "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json ../../node_modules/jasmine/bin/jasmine.js"
+    "test": "vitest run"
   },
+  "type": "module",
   "version": "3.5.1"
 }

@@ -36,8 +36,7 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "start": "ts-node-esm src/cli.ts",
-    "test": "ts-node-esm -P tsconfig.jasmine.json ../../node_modules/.bin/jasmine"
+    "start": "ts-node-esm src/cli.ts"
   },
   "type": "module",
   "version": "1.4.1"

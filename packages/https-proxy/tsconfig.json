@@ -2,11 +2,11 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "NodeNext",
     "outDir": "dist/mjs",
     "rootDir": "src",
     "target": "ES2017"
   },
-  "exclude": ["dist", "node_modules", "spec"],
+  "exclude": ["dist", "node_modules"],
   "extends": "../../tsconfig.json"
 }

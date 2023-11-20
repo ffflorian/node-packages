@@ -3,5 +3,5 @@ node_modules
 docs
 package.json
 CHANGELOG.md
-spec/fixtures
+fixtures
 ./packages/exposure-keys/proto/*.ts

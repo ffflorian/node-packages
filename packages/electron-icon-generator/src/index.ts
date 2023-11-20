@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import fs from 'fs-extra';
+import * as fs from 'fs-extra';
 import Jimp from 'jimp';
 import path from 'node:path';
 import {createRequire} from 'node:module';

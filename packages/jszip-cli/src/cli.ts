@@ -4,7 +4,7 @@ import {program as commander} from 'commander';
 import * as fs from 'fs-extra';
 import * as path from 'path';
 
-import {JSZipCLI} from './JSZipCLI';
+import {JSZipCLI} from './JSZipCLI.js';
 
 const defaultPackageJsonPath = path.join(__dirname, 'package.json');
 const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
