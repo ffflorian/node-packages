@@ -5,6 +5,6 @@
     "module": "NodeNext",
     "esModuleInterop": true
   },
-  "exclude": ["dist", "node_modules"],
+  "exclude": ["dist", "node_modules", "*.test.ts"],
   "extends": "../../tsconfig.json"
 }
