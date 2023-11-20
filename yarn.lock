@@ -5097,18 +5097,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unused-imports@npm:1.1.5":
-  version: 1.1.5
-  resolution: "eslint-plugin-unused-imports@npm:1.1.5"
+"eslint-plugin-unused-imports@npm:3.0.0":
+  version: 3.0.0
+  resolution: "eslint-plugin-unused-imports@npm:3.0.0"
   dependencies:
     eslint-rule-composer: "npm:^0.3.0"
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ^4.14.2
-    eslint: ^6.0.0 || ^7.0.0
+    "@typescript-eslint/eslint-plugin": ^6.0.0
+    eslint: ^8.0.0
   peerDependenciesMeta:
     "@typescript-eslint/eslint-plugin":
       optional: true
-  checksum: 57b390b3cb5804f71927b244e52701212c980644845de5bc9d20ef5850779c1395c7979c1886aad1c8797ea5ddbb511f5da8ea7503dc9bcfb6afee159737496a
+  checksum: b1a5f3359e6191e6edbb71480242b1f830f4ffe20778fb9df8e6045ac2bf98211206b104cbfecb3a204b1963cf11decbd28c925ce908068d81959bc037a521ea
   languageName: node
   linkType: hard
 
@@ -8414,7 +8414,7 @@ __metadata:
     eslint-plugin-simple-import-sort: "npm:10.0.0"
     eslint-plugin-sort-keys-fix: "npm:1.1.2"
     eslint-plugin-typescript-sort-keys: "npm:3.1.0"
-    eslint-plugin-unused-imports: "npm:1.1.5"
+    eslint-plugin-unused-imports: "npm:3.0.0"
     lerna: "npm:7.4.2"
     prettier: "npm:3.1.0"
     publish-flat: "npm:*"
