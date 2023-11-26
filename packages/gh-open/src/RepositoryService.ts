@@ -1,5 +1,5 @@
-import {promises as fsAsync} from 'node:fs';
-import path from 'node:path';
+import {promises as fsAsync} from 'fs';
+import path from 'path';
 import logdown from 'logdown';
 
 import {GitHubClient} from './GitHubClient.js';

@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 
 import {assert, expect, describe, test, beforeEach} from 'vitest';
-import * as dgram from 'node:dgram';
+import * as dgram from 'dgram';
 import * as mockudp from './index.js';
 const buffer = Buffer.from('hello world');
 

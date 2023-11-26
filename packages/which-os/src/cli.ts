@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import {program as commander} from 'commander';
-import {inspect} from 'node:util';
-import fs from 'node:fs';
+import {inspect} from 'util';
+import fs from 'fs';
 
 import * as whichOS from './which-os.js';
 

@@ -1,7 +1,7 @@
 import clipboard from 'clipboardy';
-import fs from 'node:fs';
-import readline from 'node:readline';
-import {promisify} from 'node:util';
+import fs from 'fs';
+import readline from 'readline';
+import {promisify} from 'util';
 const readFileAsync = promisify(fs.readFile);
 
 export interface Options {

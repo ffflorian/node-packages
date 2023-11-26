@@ -1,6 +1,6 @@
 import axios, {AxiosError, AxiosInstance} from 'axios';
 import logdown from 'logdown';
-import {createRequire} from 'node:module';
+import {createRequire} from 'module';
 
 interface PackageJson {
   bin: Record<string, string>;

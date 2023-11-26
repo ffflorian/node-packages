@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import path from 'node:path';
+import path from 'path';
 import {program as commander} from 'commander';
 import {findUp} from 'find-up';
 import open from 'open';
-import {createRequire} from 'node:module';
+import {createRequire} from 'module';
 const require = createRequire(import.meta.url);
 
 import {RepositoryService} from './RepositoryService.js';

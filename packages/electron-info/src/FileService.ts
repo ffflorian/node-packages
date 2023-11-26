@@ -1,9 +1,9 @@
 import {isAfter as isAfterDate, sub as subtractDate} from 'date-fns';
-import {constants as fsConstants, promises as fs} from 'node:fs';
+import {constants as fsConstants, promises as fs} from 'fs';
 import parseUrl from 'parse-url';
 import logdown from 'logdown';
-import os from 'node:os';
-import path from 'node:path';
+import os from 'os';
+import path from 'path';
 
 import type {Options, RawReleaseInfo} from './ElectronInfo.js';
 import {HTTPService} from './HTTPService.js';
