@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import {program as commander} from 'commander';
-import {createRequire} from 'node:module';
+import {createRequire} from 'module';
 const require = createRequire(import.meta.url);
 
 import {NTPClient} from './index.js';

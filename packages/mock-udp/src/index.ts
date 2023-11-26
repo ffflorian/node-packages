@@ -1,4 +1,4 @@
-import {Socket} from 'node:dgram';
+import {Socket} from 'dgram';
 
 type SendCallback = (error: Error | null, bytes: number) => void;
 

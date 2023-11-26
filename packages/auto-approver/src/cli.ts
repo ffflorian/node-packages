@@ -3,8 +3,8 @@
 import {program as commander} from 'commander';
 import {cosmiconfigSync} from 'cosmiconfig';
 import logdown from 'logdown';
-import readline from 'node:readline';
-import {createRequire} from 'node:module';
+import readline from 'readline';
+import {createRequire} from 'module';
 const require = createRequire(import.meta.url);
 
 import {ApproverConfig, AutoApprover, Repository} from './AutoApprover.js';

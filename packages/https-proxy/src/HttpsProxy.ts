@@ -1,9 +1,9 @@
 import basicAuth from 'basic-auth';
-import http from 'node:http';
+import http from 'http';
 import logdown from 'logdown';
-import net from 'node:net';
+import net from 'net';
 import compare from 'tsscmp';
-import url from 'node:url';
+import url from 'url';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 
 export interface Options {
