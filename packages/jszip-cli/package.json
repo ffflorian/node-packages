@@ -1,6 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": "dist/cjs/cli.js",
+  "bin": "dist/cli.js",
   "dependencies": {
     "commander": "11.1.0",
     "cosmiconfig": "8.3.6",
@@ -33,20 +33,15 @@
     "zip"
   ],
   "license": "GPL-3.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
   "name": "@ffflorian/jszip-cli",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/jszip-cli",
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esm && yarn generate:packagejson",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
     "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" node --loader ts-node/esm src/cli.ts",
     "test": "vitest run"
   },
-  "type": "module",
   "version": "3.5.5"
 }

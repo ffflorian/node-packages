@@ -3,12 +3,8 @@
 import {program as commander} from 'commander';
 import fs from 'fs-extra';
 import path from 'path';
-import {fileURLToPath} from 'url';
 
-import {JSZipCLI} from './JSZipCLI.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import {JSZipCLI} from './JSZipCLI';
 
 const defaultPackageJsonPath = path.join(__dirname, '../../package.json');
 const packageJsonPath = fs.existsSync(defaultPackageJsonPath)

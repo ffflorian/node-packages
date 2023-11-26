@@ -768,7 +768,7 @@ __metadata:
     typescript: "npm:5.2.2"
     vitest: "npm:0.34.6"
   bin:
-    jszip-cli: dist/cjs/cli.js
+    jszip-cli: dist/cli.js
   languageName: unknown
   linkType: soft
 
