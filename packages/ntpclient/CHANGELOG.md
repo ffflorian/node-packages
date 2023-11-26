@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.5.5 (2023-11-26)
+
+
+### Bug Fixes
+
+* Remove ESM "node:" import ([#329](https://github.com/ffflorian/node-packages/issues/329)) ([2606c65](https://github.com/ffflorian/node-packages/commit/2606c65d32449d2aaa9b33a5bf302c3d31202e7c))
+
+
+
+
+
 ## 1.5.4 (2023-11-26)
 
 
