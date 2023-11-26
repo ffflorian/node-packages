@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.6.4 (2023-11-26)
+
+
+### Bug Fixes
+
+* **jszip-cli:** Update yarn lockfile ([d0f4376](https://github.com/ffflorian/node-packages/commit/d0f43769a11e8ce376cfce0375a17616d48fe6cf))
+
+
+
+
+
 ## 1.6.3 (2023-11-26)
 
 
