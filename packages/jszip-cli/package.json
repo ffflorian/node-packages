@@ -16,8 +16,9 @@
     "@types/progress": "2.0.7",
     "cross-env": "7.0.3",
     "rimraf": "5.0.5",
-    "true": "0.0.4",
-    "typescript": "5.2.2"
+    "ts-node": "10.9.1",
+    "typescript": "5.2.2",
+    "vitest": "0.34.6"
   },
   "engines": {
     "node": ">= 10.9"
@@ -33,17 +34,17 @@
   ],
   "license": "GPL-3.0",
   "main": "dist/cjs/index.js",
-  "module": "dist/mjs/index.js",
+  "module": "dist/esm/index.js",
   "name": "@ffflorian/jszip-cli",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/jszip-cli",
   "scripts": {
-    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
+    "build": "yarn build:cjs && yarn build:esm && yarn generate:packagejson",
     "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:mjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
-    "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" ts-node src/cli.ts",
+    "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" node --loader ts-node/esm src/cli.ts",
     "test": "vitest run"
   },
   "type": "module",

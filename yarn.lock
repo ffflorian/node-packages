@@ -661,6 +661,7 @@ __metadata:
     touch: "npm:3.1.0"
     typedoc: "npm:0.25.3"
     typescript: "npm:5.2.2"
+    vitest: "npm:0.34.6"
   languageName: unknown
   linkType: soft
 
@@ -724,6 +725,7 @@ __metadata:
     open: "npm:9.1.0"
     rimraf: "npm:5.0.5"
     typescript: "npm:5.2.2"
+    vitest: "npm:0.34.6"
   bin:
     gh-open: dist/cjs/cli.js
   languageName: unknown
@@ -762,8 +764,9 @@ __metadata:
     logdown: "npm:3.3.1"
     progress: "npm:2.0.3"
     rimraf: "npm:5.0.5"
-    true: "npm:0.0.4"
+    ts-node: "npm:10.9.1"
     typescript: "npm:5.2.2"
+    vitest: "npm:0.34.6"
   bin:
     jszip-cli: dist/cli.js
   languageName: unknown
@@ -778,6 +781,7 @@ __metadata:
     megalodon: "npm:9.1.1"
     ntfy: "npm:1.4.2"
     rimraf: "npm:5.0.5"
+    ts-node: "npm:10.9.1"
     typescript: "npm:5.2.2"
   bin:
     impfstatus: dist/cli.js
@@ -791,6 +795,7 @@ __metadata:
     commander: "npm:11.1.0"
     megalodon: "npm:9.1.1"
     rimraf: "npm:5.0.5"
+    ts-node: "npm:10.9.1"
     typescript: "npm:5.2.2"
   bin:
     yearprogress: dist/cli.js
@@ -803,6 +808,7 @@ __metadata:
   dependencies:
     rimraf: "npm:5.0.5"
     typescript: "npm:5.2.2"
+    vitest: "npm:0.34.6"
   languageName: unknown
   linkType: soft
 
@@ -3404,6 +3410,7 @@ __metadata:
     nock: "npm:13.3.8"
     rimraf: "npm:5.0.5"
     typescript: "npm:5.2.2"
+    vitest: "npm:0.34.6"
   bin:
     auto-approver: dist/cjs/cli.js
   languageName: unknown
@@ -4684,7 +4691,7 @@ __metadata:
     semver: "npm:7.5.4"
     table: "npm:6.8.1"
     typescript: "npm:5.2.2"
-    uuid: "npm:9.0.1"
+    vitest: "npm:0.34.6"
   bin:
     electron-info: dist/cjs/cli.js
   languageName: unknown
@@ -5452,6 +5459,7 @@ __metadata:
     protobufjs: "npm:7.2.5"
     protobufjs-cli: "npm:1.1.2"
     rimraf: "npm:5.0.5"
+    ts-node: "npm:10.9.1"
     typescript: "npm:5.2.2"
   languageName: unknown
   linkType: soft
@@ -8264,6 +8272,7 @@ __metadata:
     ntpclient: "npm:1.5.2"
     rimraf: "npm:5.0.5"
     typescript: "npm:5.2.2"
+    vitest: "npm:0.34.6"
   bin:
     my-timezone: dist/cjs/cli.js
   languageName: unknown
@@ -8781,6 +8790,7 @@ __metadata:
     commander: "npm:11.1.0"
     rimraf: "npm:5.0.5"
     typescript: "npm:5.2.2"
+    vitest: "npm:0.34.6"
   bin:
     ntpclient: dist/cjs/cli.js
   languageName: unknown
@@ -9510,6 +9520,7 @@ __metadata:
   dependencies:
     rimraf: "npm:5.0.5"
     typescript: "npm:5.2.2"
+    vitest: "npm:0.34.6"
   bin:
     pixelflut: dist/cjs/cli.js
   languageName: unknown
@@ -9849,6 +9860,7 @@ __metadata:
   dependencies:
     rimraf: "npm:5.0.5"
     typescript: "npm:5.2.2"
+    vitest: "npm:0.34.6"
   languageName: unknown
   linkType: soft
 
@@ -10347,6 +10359,7 @@ __metadata:
     commander: "npm:11.1.0"
     rimraf: "npm:5.0.5"
     typescript: "npm:5.2.2"
+    vitest: "npm:0.34.6"
   bin:
     scrabble-cheater: dist/cjs/cli.js
   languageName: unknown
@@ -11223,15 +11236,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"true@npm:0.0.4":
-  version: 0.0.4
-  resolution: "true@npm:0.0.4"
-  bin:
-    true: bin/cli.js
-  checksum: 2cc83e2cac5eb5c142013c85d70b00dde68c7c453eebd9c7bc9fe9343f5a88e156f701048db877a389546a20078d2be8442f5d4d8293d5d291f4fea64f2c0eeb
-  languageName: node
-  linkType: hard
-
 "ts-api-utils@npm:^1.0.1":
   version: 1.0.3
   resolution: "ts-api-utils@npm:1.0.3"
@@ -11691,7 +11695,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:9.0.1, uuid@npm:^9.0.0, uuid@npm:^9.0.1":
+"uuid@npm:^9.0.0, uuid@npm:^9.0.1":
   version: 9.0.1
   resolution: "uuid@npm:9.0.1"
   bin:
