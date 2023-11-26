@@ -2672,13 +2672,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/uuid@npm:9.0.7":
-  version: 9.0.7
-  resolution: "@types/uuid@npm:9.0.7"
-  checksum: b329ebd4f9d1d8e08d4f2cc211be4922d70d1149f73d5772630e4a3acfb5170c6d37b3d7a39a0412f1a56e86e8a844c7f297c798b082f90380608bf766688787
-  languageName: node
-  linkType: hard
-
 "@types/ws@npm:^8.5.5":
   version: 8.5.5
   resolution: "@types/ws@npm:8.5.5"
@@ -4677,7 +4670,6 @@ __metadata:
   dependencies:
     "@types/fs-extra": "npm:11.0.4"
     "@types/semver": "npm:7.5.5"
-    "@types/uuid": "npm:9.0.7"
     axios: "npm:1.6.2"
     chalk: "npm:5.3.0"
     commander: "npm:11.1.0"
