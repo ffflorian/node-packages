@@ -1,7 +1,8 @@
 import fs from 'fs-extra';
 import logdown from 'logdown';
 import path from 'path';
-import type {TerminalOptions} from './interfaces.js';
+
+import type {TerminalOptions} from './interfaces';
 
 export class FileService {
   private readonly logger: logdown.Logger;

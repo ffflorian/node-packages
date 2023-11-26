@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "outDir": "dist/esm",
+    "outDir": "dist",
     "rootDir": "src",
-    "target": "ES2017"
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext"
   },
   "exclude": ["dist", "node_modules", "src/*.test.ts"],
   "extends": "../../tsconfig.json"

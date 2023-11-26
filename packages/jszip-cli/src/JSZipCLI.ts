@@ -2,9 +2,9 @@ import {cosmiconfigSync} from 'cosmiconfig';
 import type {CosmiconfigResult} from 'cosmiconfig';
 import logdown from 'logdown';
 
-import {BuildService} from './BuildService.js';
-import {ExtractService} from './ExtractService.js';
-import type {ConfigFileOptions, TerminalOptions} from './interfaces.js';
+import {BuildService} from './BuildService';
+import {ExtractService} from './ExtractService';
+import type {ConfigFileOptions, TerminalOptions} from './interfaces';
 
 const defaultOptions: Required<TerminalOptions> = {
   compressionLevel: 5,

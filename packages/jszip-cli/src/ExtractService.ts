@@ -4,7 +4,8 @@ import logdown from 'logdown';
 import os from 'os';
 import path from 'path';
 import progress from 'progress';
-import {TerminalOptions} from './interfaces.js';
+
+import {TerminalOptions} from './interfaces';
 
 export class ExtractService {
   public extractedFilesCount: number;
