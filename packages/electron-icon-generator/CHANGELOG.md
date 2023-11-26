@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.4.3 (2023-11-26)
+
+
+### Bug Fixes
+
+* jszip-cli CLI ([#328](https://github.com/ffflorian/node-packages/issues/328)) ([70a6716](https://github.com/ffflorian/node-packages/commit/70a6716697cb85b14af967d0587aca662b90d212))
+
+
+
+
+
 ## 1.4.2 (2023-11-20)
 
 **Note:** Version bump only for package @ffflorian/electron-icon-generator
