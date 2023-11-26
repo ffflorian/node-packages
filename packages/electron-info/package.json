@@ -15,20 +15,19 @@
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
     "@types/semver": "7.5.5",
-    "@types/uuid": "9.0.7",
     "fs-extra": "11.1.1",
     "http-status-codes": "2.3.0",
     "nock": "13.3.8",
     "rimraf": "5.0.5",
     "typescript": "5.2.2",
-    "uuid": "9.0.1"
+    "vitest": "0.34.6"
   },
   "engines": {
-    "node": ">= 14.16"
+    "node": ">= 18.0"
   },
   "exports": {
     ".": {
-      "import": "./dist/mjs/index.js",
+      "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
     }
   },
@@ -45,13 +44,13 @@
   ],
   "license": "GPL-3.0",
   "main": "dist/cjs/index.js",
-  "module": "dist/mjs/index.js",
+  "module": "dist/esm/index.js",
   "name": "electron-info",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/electron-info",
   "scripts": {
-    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
+    "build": "yarn build:cjs && yarn build:esm && yarn generate:packagejson",
     "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:mjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",

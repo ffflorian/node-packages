@@ -10,14 +10,15 @@
     "axios": "1.6.2",
     "nock": "13.3.8",
     "rimraf": "5.0.5",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vitest": "0.34.6"
   },
   "engines": {
-    "node": ">= 14.16"
+    "node": ">= 18.0"
   },
   "exports": {
     ".": {
-      "import": "./dist/mjs/index.js",
+      "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
     }
   },
@@ -26,13 +27,13 @@
   ],
   "license": "GPL-3.0",
   "main": "dist/cjs/index.js",
-  "module": "dist/mjs/index.js",
+  "module": "dist/esm/index.js",
   "name": "my-timezone",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/my-timezone",
   "scripts": {
-    "build": "yarn build:cjs && yarn build:mjs && yarn generate:packagejson",
+    "build": "yarn build:cjs && yarn build:esm && yarn generate:packagejson",
     "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:mjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",

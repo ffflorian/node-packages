@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "outDir": "dist/cjs",
     "rootDir": "src",
-    "module": "NodeNext",
-    "esModuleInterop": true
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext"
   },
   "exclude": ["dist", "node_modules", "src/*.test.ts"],
   "extends": "../../tsconfig.json"
