@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.5.6 (2023-11-26)
+
+
+### Bug Fixes
+
+* **jszip-cli:** Make CLI run globally ([#330](https://github.com/ffflorian/node-packages/issues/330)) ([2998a2d](https://github.com/ffflorian/node-packages/commit/2998a2daa963d392cc46cf7d3059cf945656a803))
+
+
+
+
+
 ## 2.5.5 (2023-11-26)
 
 

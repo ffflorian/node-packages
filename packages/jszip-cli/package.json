@@ -43,5 +43,5 @@
     "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" node --loader ts-node/esm src/cli.ts",
     "test": "vitest run"
   },
-  "version": "3.5.5"
+  "version": "3.5.6"
 }
