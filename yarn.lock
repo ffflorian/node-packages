@@ -721,7 +721,7 @@ __metadata:
     find-up: "npm:7.0.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
-    nock: "npm:13.3.8"
+    nock: "npm:13.4.0"
     open: "npm:9.1.0"
     rimraf: "npm:5.0.5"
     typescript: "npm:5.3.3"
@@ -3452,7 +3452,7 @@ __metadata:
     cosmiconfig: "npm:9.0.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
-    nock: "npm:13.3.8"
+    nock: "npm:13.4.0"
     rimraf: "npm:5.0.5"
     typescript: "npm:5.3.3"
     vitest: "npm:0.34.6"
@@ -4746,7 +4746,7 @@ __metadata:
     fs-extra: "npm:11.2.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
-    nock: "npm:13.3.8"
+    nock: "npm:13.4.0"
     parse-url: "npm:8.1.0"
     rimraf: "npm:5.0.5"
     semver: "npm:7.5.4"
@@ -8349,7 +8349,7 @@ __metadata:
   dependencies:
     axios: "npm:1.6.2"
     commander: "npm:11.1.0"
-    nock: "npm:13.3.8"
+    nock: "npm:13.4.0"
     ntpclient: "npm:1.5.6"
     rimraf: "npm:5.0.5"
     typescript: "npm:5.3.3"
@@ -8403,14 +8403,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nock@npm:13.3.8":
-  version: 13.3.8
-  resolution: "nock@npm:13.3.8"
+"nock@npm:13.4.0":
+  version: 13.4.0
+  resolution: "nock@npm:13.4.0"
   dependencies:
     debug: "npm:^4.1.0"
     json-stringify-safe: "npm:^5.0.1"
     propagate: "npm:^2.0.0"
-  checksum: cf3a7b59495373651a92715c4f31a7d4050a70648e7c111a84805842ab47dd36a5648b4c9440fd2a9b44fa90c245da1641b90e15bbea018f895c45210dfe41f1
+  checksum: b2e4407e71b6e9c42bc74bf631c008b79fa06b17e885d270b8f3ac7081d029dd966cd09024acb96ae5dd77a4737cc86951340715ffabece6893a62dc71ce5b08
   languageName: node
   linkType: hard
 
