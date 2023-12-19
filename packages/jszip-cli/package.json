@@ -3,7 +3,7 @@
   "bin": "dist/cli.js",
   "dependencies": {
     "commander": "11.1.0",
-    "cosmiconfig": "8.3.6",
+    "cosmiconfig": "9.0.0",
     "fs-extra": "11.2.0",
     "glob": "10.3.10",
     "jszip": "3.10.1",
