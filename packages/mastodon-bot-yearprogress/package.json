@@ -10,7 +10,7 @@
   "description": "Toots year's progress every few days to Mastodon.",
   "devDependencies": {
     "rimraf": "5.0.5",
-    "ts-node": "10.9.1",
+    "ts-node": "10.9.2",
     "typescript": "5.2.2"
   },
   "engines": {
