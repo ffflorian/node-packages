@@ -671,7 +671,7 @@ __metadata:
   dependencies:
     "@types/fs-extra": "npm:11.0.4"
     commander: "npm:11.1.0"
-    fs-extra: "npm:11.1.1"
+    fs-extra: "npm:11.2.0"
     icon-gen: "npm:4.0.0"
     jimp: "npm:0.22.10"
     rimraf: "npm:5.0.5"
@@ -758,7 +758,7 @@ __metadata:
     commander: "npm:11.1.0"
     cosmiconfig: "npm:8.3.6"
     cross-env: "npm:7.0.3"
-    fs-extra: "npm:11.1.1"
+    fs-extra: "npm:11.2.0"
     glob: "npm:10.3.10"
     jszip: "npm:3.10.1"
     logdown: "npm:3.3.1"
@@ -4726,7 +4726,7 @@ __metadata:
     chalk: "npm:5.3.0"
     commander: "npm:11.1.0"
     date-fns: "npm:2.30.0"
-    fs-extra: "npm:11.1.1"
+    fs-extra: "npm:11.2.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:13.3.8"
@@ -5760,7 +5760,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:11.1.1, fs-extra@npm:^11.1.0, fs-extra@npm:^11.1.1":
+"fs-extra@npm:11.2.0":
+  version: 11.2.0
+  resolution: "fs-extra@npm:11.2.0"
+  dependencies:
+    graceful-fs: "npm:^4.2.0"
+    jsonfile: "npm:^6.0.1"
+    universalify: "npm:^2.0.0"
+  checksum: d77a9a9efe60532d2e790e938c81a02c1b24904ef7a3efb3990b835514465ba720e99a6ea56fd5e2db53b4695319b644d76d5a0e9988a2beef80aa7b1da63398
+  languageName: node
+  linkType: hard
+
+"fs-extra@npm:^11.1.0, fs-extra@npm:^11.1.1":
   version: 11.1.1
   resolution: "fs-extra@npm:11.1.1"
   dependencies:
@@ -9860,7 +9871,7 @@ __metadata:
     "@types/npm-packlist": "npm:7.0.3"
     "@types/npmcli__arborist": "npm:5.6.5"
     commander: "npm:11.1.0"
-    fs-extra: "npm:11.1.1"
+    fs-extra: "npm:11.2.0"
     logdown: "npm:3.3.1"
     npm-packlist: "npm:8.0.0"
     rimraf: "npm:5.0.5"
