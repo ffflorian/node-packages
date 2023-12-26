@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.6.7 (2023-12-26)
+
+
+### Bug Fixes
+
+* Dependency updates ([77f6e90](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/77f6e90c1e20cb7a37f3e3dcb70910f725266ed5))
+
+
+
+
+
 ## 1.6.6 (2023-11-26)
 
 

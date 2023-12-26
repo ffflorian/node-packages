@@ -26,5 +26,5 @@
     "test": "vitest run"
   },
   "type": "module",
-  "version": "1.6.6"
+  "version": "1.6.7"
 }
