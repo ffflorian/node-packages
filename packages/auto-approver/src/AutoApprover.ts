@@ -127,7 +127,7 @@ export class AutoApprover {
         const matchingPullRequests = repository.pullRequests.filter(pullRequest =>
           new RegExp(regex).test(pullRequest.head.ref)
         );
-        if (!!matchingPullRequests.length) {
+        if (matchingPullRequests.length) {
           return {pullRequests: matchingPullRequests, repositorySlug: repository.repositorySlug};
         }
         return undefined;

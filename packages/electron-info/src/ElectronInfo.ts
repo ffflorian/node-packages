@@ -240,7 +240,7 @@ export class ElectronInfo {
 
     dependencyVersions = releases
       .filter(release => {
-        if (key !== 'electron' && !Boolean(release.deps)) {
+        if (key !== 'electron' && !release.deps) {
           return false;
         }
 

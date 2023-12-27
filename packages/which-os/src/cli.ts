@@ -81,7 +81,7 @@ for (const option of options) {
   const command = `is${capitalize(option.short)}`;
   if (typeof commanderOptions[command] !== 'undefined') {
     const result = option.fn();
-    if (!!commanderOptions.verbose) {
+    if (commanderOptions.verbose) {
       console.info(option.description, result);
     }
     if (option.category === 'archType') {

@@ -86,7 +86,7 @@ void (async () => {
     logger.info('Loading all pull requests ...');
     const allRepositories = await autoApprover.getRepositoriesWithOpenPullRequests();
 
-    if (!!allRepositories.length) {
+    if (allRepositories.length) {
       const repositories = allRepositories
         .sort((repositoryA, repositoryB) => repositoryB.pullRequests.length - repositoryA.pullRequests.length)
         .map(repository => {

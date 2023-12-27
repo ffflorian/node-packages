@@ -57,7 +57,7 @@ commander
         ...(commanderOptions.force && {forceUpdate: true}),
         ...(commanderOptions.latest && {latest: true}),
         ...(commanderOptions.limit && {limit: parseInt(commanderOptions.limit, 10)}),
-        ...(typeof commanderOptions.prereleases !== undefined && {electronPrereleases: commanderOptions.prereleases}),
+        ...(typeof commanderOptions.prereleases !== 'undefined' && {electronPrereleases: commanderOptions.prereleases}),
         ...(commanderOptions.source && {releasesUrl: commanderOptions.source}),
         ...(commanderOptions.timeout && {timeout: parseInt(commanderOptions.timeout, 10)}),
       });
@@ -91,7 +91,7 @@ for (const [dependencyShortName, dependencyFullName] of Object.entries(Supported
           ...(commanderOptions.force && {forceUpdate: true}),
           ...(commanderOptions.latest && {latest: true}),
           ...(commanderOptions.limit && {limit: parseInt(commanderOptions.limit, 10)}),
-          ...(typeof commanderOptions.prereleases !== undefined && {electronPrereleases: commanderOptions.prereleases}),
+          ...(typeof commanderOptions.prereleases !== 'undefined' && {electronPrereleases: commanderOptions.prereleases}),
           ...(commanderOptions.source && {releasesUrl: commanderOptions.source}),
           ...(commanderOptions.timeout && {timeout: commanderOptions.timeout}),
         });
@@ -124,7 +124,7 @@ commander
         ...(commanderOptions.force && {forceUpdate: true}),
         ...(commanderOptions.latest && {latest: true}),
         ...(commanderOptions.limit && {limit: parseInt(commanderOptions.limit, 10)}),
-        ...(typeof commanderOptions.prereleases !== undefined && {electronPrereleases: commanderOptions.prereleases}),
+        ...(typeof commanderOptions.prereleases !== 'undefined' && {electronPrereleases: commanderOptions.prereleases}),
         ...(commanderOptions.source && {releasesUrl: commanderOptions.source}),
         ...(commanderOptions.timeout && {timeout: commanderOptions.timeout}),
       });
