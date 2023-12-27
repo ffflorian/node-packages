@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.6.8 (2023-12-27)
+
+**Note:** Version bump only for package crates-updater
+
+
+
+
+
 ## 1.6.7 (2023-12-26)
 
 
