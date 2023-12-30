@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.12.10 (2023-12-30)
+
+**Note:** Version bump only for package auto-approver
+
+
+
+
+
 ## 1.12.9 (2023-12-30)
 
 
