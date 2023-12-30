@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "commander": "11.1.0",
-    "megalodon": "9.1.1"
+    "megalodon": "9.1.2"
   },
   "description": "Toots year's progress every few days to Mastodon.",
   "devDependencies": {
@@ -34,5 +34,5 @@
     "dist": "yarn clean && yarn build",
     "start": "ts-node src/cli.ts"
   },
-  "version": "1.4.9"
+  "version": "1.4.10"
 }
