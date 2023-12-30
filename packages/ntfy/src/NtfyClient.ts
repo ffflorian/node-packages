@@ -1,8 +1,9 @@
-import axios, {AxiosHeaders, AxiosRequestConfig} from 'axios';
+import axios, {AxiosHeaders, type AxiosRequestConfig} from 'axios';
 import {URL} from 'url';
 import {promises as fs} from 'fs';
 import type {
   AttachmentConfig,
+  BaseConfig,
   BroadcastAction,
   Config,
   FileURL,
@@ -15,18 +16,15 @@ import type {
 const defaultServerURL = 'https://ntfy.sh';
 
 export class NtfyClient {
-  private readonly serverURL: string;
+  private readonly config?: Partial<BaseConfig>;
 
-  /**
-   * @param serverURL Specify your own ntfy Server. See [Self-hosting](https://docs.ntfy.sh/install/).
-   */
-  constructor(serverURL?: string) {
-    this.serverURL = serverURL || defaultServerURL;
+  constructor(config?: Partial<BaseConfig>) {
+    this.config = config;
   }
 
   publish<T extends Config>(config: T): Promise<ResponseData<T>> {
     return publish({
-      server: this.serverURL,
+      ...this.config,
       ...config,
     });
   }
