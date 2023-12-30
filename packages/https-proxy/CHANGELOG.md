@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.10.0 (2023-12-30)
+
+
+### Features
+
+* **ntfy:** Add default config including authorization ([#374](https://github.com/ffflorian/node-packages/issues/374)) ([98ff218](https://github.com/ffflorian/node-packages/commit/98ff218ec07c4f9b57ddf31ff530ef79275f8978))
+
+
+
+
+
 ## 1.9.10 (2023-12-30)
 
 **Note:** Version bump only for package @ffflorian/https-proxy
