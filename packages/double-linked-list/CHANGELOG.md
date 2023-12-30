@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.5.1 (2023-12-30)
+
+
+### Bug Fixes
+
+* **my-timezone:** Add axios as prod dependency ([c975b51](https://github.com/ffflorian/node-packages/commit/c975b5144b83cb10253260760d8508423e33e48a))
+
+
+
+
+
 # 3.5.0 (2023-12-30)
 
 
