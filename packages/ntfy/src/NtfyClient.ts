@@ -24,6 +24,7 @@ export class NtfyClient {
 
   publish<T extends Config>(config: T): Promise<ResponseData<T>> {
     return publish({
+      server: defaultServerURL,
       ...this.config,
       ...config,
     });
