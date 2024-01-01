@@ -675,7 +675,7 @@ __metadata:
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:13.4.0"
-    open: "npm:10.0.1"
+    open: "npm:10.0.2"
     rimraf: "npm:5.0.5"
     typescript: "npm:5.3.3"
     vitest: "npm:1.1.0"
@@ -4293,13 +4293,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"default-browser@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "default-browser@npm:5.2.0"
+"default-browser@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "default-browser@npm:5.2.1"
   dependencies:
     bundle-name: "npm:^4.1.0"
     default-browser-id: "npm:^5.0.0"
-  checksum: 9a7c448b4a3fe735ab2e2178da10feef2ecfaac7e453b3eeee76e869878a3f756cede350f5747d283d5307c16c4c4253526c3cc712198234c53d9434d2558421
+  checksum: 73f17dc3c58026c55bb5538749597db31f9561c0193cd98604144b704a981c95a466f8ecc3c2db63d8bfd04fb0d426904834cfc91ae510c6aeb97e13c5167c4d
   languageName: node
   linkType: hard
 
@@ -8545,15 +8545,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:10.0.1":
-  version: 10.0.1
-  resolution: "open@npm:10.0.1"
+"open@npm:10.0.2":
+  version: 10.0.2
+  resolution: "open@npm:10.0.2"
   dependencies:
-    default-browser: "npm:^5.2.0"
+    default-browser: "npm:^5.2.1"
     define-lazy-prop: "npm:^3.0.0"
     is-inside-container: "npm:^1.0.0"
     is-wsl: "npm:^3.1.0"
-  checksum: 3aef5b45b243c8e53084e8312f8714118002e14f02817b23330bdc0c45fb7af09ece8d32c9eab1a10d45c620bd09200a0cf8cfdc075964875ba29c38e742a7b3
+  checksum: fbbc5d4921eb97d1a786022f7b6540911f427bf0f59729131cf71162d990f4d7c27ed82f95f2dc791a5946c79e2c4f24fb68f69d72e78e0e9364f115bcc69d3d
   languageName: node
   linkType: hard
 
