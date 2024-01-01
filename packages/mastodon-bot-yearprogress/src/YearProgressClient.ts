@@ -77,7 +77,7 @@ export class YearProgressClient {
 
       console.info(`progress: ${lastProgress} / ${percentage}`);
 
-      if (lastProgress < percentage) {
+      if (lastProgress < percentage || percentage === 0) {
         console.info('Progress has changed, time to toot!');
         return true;
       }
