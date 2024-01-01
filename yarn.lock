@@ -4868,9 +4868,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:46.9.1":
-  version: 46.9.1
-  resolution: "eslint-plugin-jsdoc@npm:46.9.1"
+"eslint-plugin-jsdoc@npm:47.0.2":
+  version: 47.0.2
+  resolution: "eslint-plugin-jsdoc@npm:47.0.2"
   dependencies:
     "@es-joy/jsdoccomment": "npm:~0.41.0"
     are-docs-informative: "npm:^0.0.2"
@@ -4882,8 +4882,8 @@ __metadata:
     semver: "npm:^7.5.4"
     spdx-expression-parse: "npm:^4.0.0"
   peerDependencies:
-    eslint: ^7.0.0 || ^8.0.0
-  checksum: d15d68797e85bb7b6fdcfc1170653683c16ab1d62c2e9c537101e774cb3231913e2bc4781f2bb808d074adce5699e5b545e450c6801b637c6434587d226ad6ac
+    eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
+  checksum: 26e53b0a725b635f6aa9c750dc7503bbe45e14103c7569e852f039f65d1d1b81213a5e88b77bdff4dcb0156240a08a5e31889ea101e8870cede2baebddd1d3b0
   languageName: node
   linkType: hard
 
@@ -8043,7 +8043,7 @@ __metadata:
     babel-eslint: "npm:10.1.0"
     eslint-config-prettier: "npm:9.1.0"
     eslint-plugin-import: "npm:2.29.1"
-    eslint-plugin-jsdoc: "npm:46.9.1"
+    eslint-plugin-jsdoc: "npm:47.0.2"
     eslint-plugin-no-unsanitized: "npm:4.0.2"
     eslint-plugin-prettier: "npm:5.1.2"
     eslint-plugin-simple-import-sort: "npm:10.0.0"
