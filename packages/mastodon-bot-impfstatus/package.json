@@ -7,7 +7,7 @@
     "axios": "1.6.3",
     "commander": "11.1.0",
     "megalodon": "9.1.2",
-    "ntfy": "1.5.1"
+    "ntfy": "1.5.2"
   },
   "description": "Toots Germany's COVID-19 vaccination progress to Mastodon.",
   "devDependencies": {
@@ -36,5 +36,5 @@
     "dist": "yarn clean && yarn build",
     "start": "node --loader ts-node/esm src/cli.ts"
   },
-  "version": "1.5.1"
+  "version": "1.5.2"
 }

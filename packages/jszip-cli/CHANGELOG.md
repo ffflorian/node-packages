@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.6.2 (2024-01-01)
+
+
+### Bug Fixes
+
+* **mastodon-bot-yearprogress:** Toot on new year's morning ([bf124da](https://github.com/ffflorian/node-packages/commit/bf124daea3cac47e92d65fbd5e26157430ad9de8))
+
+
+
+
+
 ## 3.6.1 (2023-12-30)
 
 
