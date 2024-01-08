@@ -675,7 +675,7 @@ __metadata:
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:13.4.0"
-    open: "npm:10.0.2"
+    open: "npm:10.0.3"
     rimraf: "npm:5.0.5"
     typescript: "npm:5.3.3"
     vitest: "npm:1.1.1"
@@ -8535,15 +8535,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:10.0.2":
-  version: 10.0.2
-  resolution: "open@npm:10.0.2"
+"open@npm:10.0.3":
+  version: 10.0.3
+  resolution: "open@npm:10.0.3"
   dependencies:
     default-browser: "npm:^5.2.1"
     define-lazy-prop: "npm:^3.0.0"
     is-inside-container: "npm:^1.0.0"
     is-wsl: "npm:^3.1.0"
-  checksum: fbbc5d4921eb97d1a786022f7b6540911f427bf0f59729131cf71162d990f4d7c27ed82f95f2dc791a5946c79e2c4f24fb68f69d72e78e0e9364f115bcc69d3d
+  checksum: c0ac6335a67203fb08485f6cd5311cfbcd1fd202b8acc1518f10d8ec593d171252575e842d43630fe69b59faa266acf89942153e43276939e9a0bf0d4332ecb3
   languageName: node
   linkType: hard
 
