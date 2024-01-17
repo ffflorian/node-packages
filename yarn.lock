@@ -2482,6 +2482,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/parse-path@npm:^7.0.0":
+  version: 7.0.3
+  resolution: "@types/parse-path@npm:7.0.3"
+  checksum: 8344b6c7acba4e4e5a8d542f56f53c297685fa92f9b0c085d7532cc7e1b661432cecfc1c75c76cdb0d161c95679b6ecfe0573d9fef7c836962aacf604150a984
+  languageName: node
+  linkType: hard
+
 "@types/progress@npm:2.0.7":
   version: 2.0.7
   resolution: "@types/progress@npm:2.0.7"
@@ -4516,7 +4523,7 @@ __metadata:
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:13.5.0"
-    parse-url: "npm:8.1.0"
+    parse-url: "npm:9.0.1"
     rimraf: "npm:5.0.5"
     semver: "npm:7.5.4"
     table: "npm:6.8.1"
@@ -8952,7 +8959,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse-url@npm:8.1.0, parse-url@npm:^8.1.0":
+"parse-url@npm:9.0.1":
+  version: 9.0.1
+  resolution: "parse-url@npm:9.0.1"
+  dependencies:
+    "@types/parse-path": "npm:^7.0.0"
+    parse-path: "npm:^7.0.0"
+  checksum: 1097a1b25ed35c24157f5fcd3c9d23a5c4c3fa0ae203403c897ba58e19cbd755b2bb715e2c48c47e7ad209c413c6a6a8c4f0b005f11b7845c08dfc196503bb7c
+  languageName: node
+  linkType: hard
+
+"parse-url@npm:^8.1.0":
   version: 8.1.0
   resolution: "parse-url@npm:8.1.0"
   dependencies:
