@@ -3,7 +3,7 @@
   "description": "My Node.js packages",
   "devDependencies": {
     "@babel/core": "7.23.3",
-    "@babel/eslint-parser": "7.23.3",
+    "@babel/eslint-parser": "7.23.9",
     "@evilmartians/lefthook": "1.6.0",
     "@ffflorian/eslint-config": "0.10.2",
     "@ffflorian/prettier-config": "0.3.2",
