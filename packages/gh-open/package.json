@@ -11,7 +11,7 @@
   "description": "Open a GitHub repository in your browser. Opens pull requests by default.",
   "devDependencies": {
     "http-status-codes": "2.3.0",
-    "nock": "13.5.0",
+    "nock": "13.5.1",
     "rimraf": "5.0.5",
     "typescript": "5.3.3",
     "vitest": "1.2.1"
