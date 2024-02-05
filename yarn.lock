@@ -688,7 +688,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/https-proxy@workspace:packages/https-proxy"
   dependencies:
-    "@types/basic-auth": "npm:1.1.7"
+    "@types/basic-auth": "npm:1.1.8"
     "@types/tsscmp": "npm:1.0.2"
     basic-auth: "npm:2.0.1"
     commander: "npm:11.1.0"
@@ -2278,12 +2278,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/basic-auth@npm:1.1.7":
-  version: 1.1.7
-  resolution: "@types/basic-auth@npm:1.1.7"
+"@types/basic-auth@npm:1.1.8":
+  version: 1.1.8
+  resolution: "@types/basic-auth@npm:1.1.8"
   dependencies:
     "@types/node": "npm:*"
-  checksum: 5527a2d53f206369e6e913f96a7aa4c990c4cac4ca5e1ba3d6a7d43aed0286ff61707ffa75d6b3bf90b635ffccbd7aa4c77ab56946555425bfd082048076cce6
+  checksum: 6eaca98493546a384267eb83a2a2d89555fa541b794efa5173450ddad983f5d179534980f9e98477a57c865adcb48f8350569efe078a05ecf2c087bf3bd112c2
   languageName: node
   linkType: hard
 
