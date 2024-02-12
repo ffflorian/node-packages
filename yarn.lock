@@ -397,10 +397,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@badgateway/oauth2-client@npm:^2.2.4":
-  version: 2.2.4
-  resolution: "@badgateway/oauth2-client@npm:2.2.4"
-  checksum: 1729ec96d5249dfb435412a9a54430d8c1340d6213e9b36aff482adb6dd07aa310f126e264a29c23cac48a54d88e582a925a85bc6f2d1b8fc3a4f9127cf6baef
+"@badgateway/oauth2-client@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@badgateway/oauth2-client@npm:2.3.0"
+  checksum: ee88969b2e15fb5b10ae92605a2e4f2ac63e8de7bfd4b6ce917c0a949f9e0f78468888745fc0b63a3c5dec5de99df5ee7705551d857687b9492c38adad994a0d
   languageName: node
   linkType: hard
 
@@ -731,7 +731,7 @@ __metadata:
   dependencies:
     axios: "npm:1.6.7"
     commander: "npm:12.0.0"
-    megalodon: "npm:9.1.2"
+    megalodon: "npm:9.2.2"
     ntfy: "npm:1.5.2"
     rimraf: "npm:5.0.5"
     ts-node: "npm:10.9.2"
@@ -746,7 +746,7 @@ __metadata:
   resolution: "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress"
   dependencies:
     commander: "npm:12.0.0"
-    megalodon: "npm:9.1.2"
+    megalodon: "npm:9.2.2"
     rimraf: "npm:5.0.5"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.3.3"
@@ -3270,17 +3270,6 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 9b77e030e85e4f9cbcba7bb52fbff67d6ce906c92d213e0bd932346a50140faf83733bf786f55bd58301bd92f9973885c7b87d6348023e10f7eaf286d0791a1d
-  languageName: node
-  linkType: hard
-
-"axios@npm:1.6.3":
-  version: 1.6.3
-  resolution: "axios@npm:1.6.3"
-  dependencies:
-    follow-redirects: "npm:^1.15.0"
-    form-data: "npm:^4.0.0"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: dcc6d982353db33e6893ef01cdf81d0a0548dbd8fba0cb046dc4aee1a6a16226721faa4c2a13b2673d47130509629cdb93bb991b3a2bd4ef17a5ac27a8bba0da
   languageName: node
   linkType: hard
 
@@ -7543,21 +7532,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"megalodon@npm:9.1.2":
-  version: 9.1.2
-  resolution: "megalodon@npm:9.1.2"
+"megalodon@npm:9.2.2":
+  version: 9.2.2
+  resolution: "megalodon@npm:9.2.2"
   dependencies:
-    "@badgateway/oauth2-client": "npm:^2.2.4"
+    "@badgateway/oauth2-client": "npm:^2.3.0"
     "@types/ws": "npm:^8.5.10"
-    axios: "npm:1.6.3"
+    axios: "npm:1.6.7"
     dayjs: "npm:^1.11.10"
     events: "npm:^3.3.0"
     form-data: "npm:^4.0.0"
     isomorphic-ws: "npm:^5.0.0"
     object-assign-deep: "npm:^0.4.0"
     uuid: "npm:^9.0.1"
-    ws: "npm:8.14.2"
-  checksum: 2ced0c9fc208bdaf64d102e353f3d3b387bf54fb7cd33d62bd8f5d00df937f8ba6b751e1acba308c909364f28479f044e1248330ffe977bf2a32791b2fa3c8db
+    ws: "npm:8.16.0"
+  checksum: f0351c97a96125573a43ce5a55815d01bc479405bb1484f0b22e2fdd20a3eb04d773e96f00687691e75294280d2552e298792d62267718100a60853745079edc
   languageName: node
   linkType: hard
 
@@ -11684,9 +11673,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:8.14.2":
-  version: 8.14.2
-  resolution: "ws@npm:8.14.2"
+"ws@npm:8.16.0":
+  version: 8.16.0
+  resolution: "ws@npm:8.16.0"
   peerDependencies:
     bufferutil: ^4.0.1
     utf-8-validate: ">=5.0.2"
@@ -11695,7 +11684,7 @@ __metadata:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: 35b4c2da048b8015c797fd14bcb5a5766216ce65c8a5965616a5440ca7b6c3681ee3cbd0ea0c184a59975556e9d58f2002abf8485a14d11d3371770811050a16
+  checksum: a7783bb421c648b1e622b423409cb2a58ac5839521d2f689e84bc9dc41d59379c692dd405b15a997ea1d4c0c2e5314ad707332d0c558f15232d2bc07c0b4618a
   languageName: node
   linkType: hard
 
