@@ -8,13 +8,13 @@
     "date-fns": "3.3.1",
     "logdown": "3.3.1",
     "parse-url": "8.1.0",
-    "semver": "7.5.4",
+    "semver": "7.6.0",
     "table": "6.8.1"
   },
   "description": "Get useful data about Electron releases.",
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
-    "@types/semver": "7.5.6",
+    "@types/semver": "7.5.7",
     "fs-extra": "11.2.0",
     "http-status-codes": "2.3.0",
     "nock": "13.5.1",
