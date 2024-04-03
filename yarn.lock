@@ -2038,58 +2038,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oxlint/darwin-arm64@npm:0.2.14":
-  version: 0.2.14
-  resolution: "@oxlint/darwin-arm64@npm:0.2.14"
+"@oxlint/darwin-arm64@npm:0.2.15":
+  version: 0.2.15
+  resolution: "@oxlint/darwin-arm64@npm:0.2.15"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@oxlint/darwin-x64@npm:0.2.14":
-  version: 0.2.14
-  resolution: "@oxlint/darwin-x64@npm:0.2.14"
+"@oxlint/darwin-x64@npm:0.2.15":
+  version: 0.2.15
+  resolution: "@oxlint/darwin-x64@npm:0.2.15"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@oxlint/linux-arm64-gnu@npm:0.2.14":
-  version: 0.2.14
-  resolution: "@oxlint/linux-arm64-gnu@npm:0.2.14"
+"@oxlint/linux-arm64-gnu@npm:0.2.15":
+  version: 0.2.15
+  resolution: "@oxlint/linux-arm64-gnu@npm:0.2.15"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@oxlint/linux-arm64-musl@npm:0.2.14":
-  version: 0.2.14
-  resolution: "@oxlint/linux-arm64-musl@npm:0.2.14"
+"@oxlint/linux-arm64-musl@npm:0.2.15":
+  version: 0.2.15
+  resolution: "@oxlint/linux-arm64-musl@npm:0.2.15"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@oxlint/linux-x64-gnu@npm:0.2.14":
-  version: 0.2.14
-  resolution: "@oxlint/linux-x64-gnu@npm:0.2.14"
+"@oxlint/linux-x64-gnu@npm:0.2.15":
+  version: 0.2.15
+  resolution: "@oxlint/linux-x64-gnu@npm:0.2.15"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@oxlint/linux-x64-musl@npm:0.2.14":
-  version: 0.2.14
-  resolution: "@oxlint/linux-x64-musl@npm:0.2.14"
+"@oxlint/linux-x64-musl@npm:0.2.15":
+  version: 0.2.15
+  resolution: "@oxlint/linux-x64-musl@npm:0.2.15"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@oxlint/win32-arm64@npm:0.2.14":
-  version: 0.2.14
-  resolution: "@oxlint/win32-arm64@npm:0.2.14"
+"@oxlint/win32-arm64@npm:0.2.15":
+  version: 0.2.15
+  resolution: "@oxlint/win32-arm64@npm:0.2.15"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@oxlint/win32-x64@npm:0.2.14":
-  version: 0.2.14
-  resolution: "@oxlint/win32-x64@npm:0.2.14"
+"@oxlint/win32-x64@npm:0.2.15":
+  version: 0.2.15
+  resolution: "@oxlint/win32-x64@npm:0.2.15"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -8455,7 +8455,7 @@ __metadata:
     eslint-plugin-typescript-sort-keys: "npm:3.2.0"
     eslint-plugin-unused-imports: "npm:3.1.0"
     lerna: "npm:8.1.2"
-    oxlint: "npm:0.2.14"
+    oxlint: "npm:0.2.15"
     prettier: "npm:3.2.5"
     rimraf: "npm:5.0.5"
     ts-node: "npm:10.9.2"
@@ -9038,18 +9038,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oxlint@npm:0.2.14":
-  version: 0.2.14
-  resolution: "oxlint@npm:0.2.14"
+"oxlint@npm:0.2.15":
+  version: 0.2.15
+  resolution: "oxlint@npm:0.2.15"
   dependencies:
-    "@oxlint/darwin-arm64": "npm:0.2.14"
-    "@oxlint/darwin-x64": "npm:0.2.14"
-    "@oxlint/linux-arm64-gnu": "npm:0.2.14"
-    "@oxlint/linux-arm64-musl": "npm:0.2.14"
-    "@oxlint/linux-x64-gnu": "npm:0.2.14"
-    "@oxlint/linux-x64-musl": "npm:0.2.14"
-    "@oxlint/win32-arm64": "npm:0.2.14"
-    "@oxlint/win32-x64": "npm:0.2.14"
+    "@oxlint/darwin-arm64": "npm:0.2.15"
+    "@oxlint/darwin-x64": "npm:0.2.15"
+    "@oxlint/linux-arm64-gnu": "npm:0.2.15"
+    "@oxlint/linux-arm64-musl": "npm:0.2.15"
+    "@oxlint/linux-x64-gnu": "npm:0.2.15"
+    "@oxlint/linux-x64-musl": "npm:0.2.15"
+    "@oxlint/win32-arm64": "npm:0.2.15"
+    "@oxlint/win32-x64": "npm:0.2.15"
   dependenciesMeta:
     "@oxlint/darwin-arm64":
       optional: true
@@ -9069,7 +9069,7 @@ __metadata:
       optional: true
   bin:
     oxlint: bin/oxlint
-  checksum: 0da41c7633997603f0fb10ffa05f47ba32759cf2f6c360122df4bbaf669aee0f2079346d9bf3a62b71b3cf483e0b6d97b82c59674de92844017c72bd0f811622
+  checksum: c47f45c304c78dff0c69860388560f3675c512b4ae6f0c722a29b230b367b5b69057864ec22ea6ff2857f062fdc50e130522624b67745cfcceb2ac9d35bf6a10
   languageName: node
   linkType: hard
 
