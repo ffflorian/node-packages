@@ -6,7 +6,7 @@
   "description": "Send notifications over ntfy.sh.",
   "devDependencies": {
     "rimraf": "5.0.5",
-    "typescript": "5.4.3"
+    "typescript": "5.4.4"
   },
   "engines": {
     "node": ">= 18.0"
