@@ -11,7 +11,7 @@ updates:
     ignore:
       - dependency-name: '@types/node'
         versions:
-          - '> 20.x'
+          - '> 22.x'
       - dependency-name: 'parse-url'
         versions:
           - '> 8.x'
