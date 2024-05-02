@@ -774,7 +774,7 @@ __metadata:
     rimraf: "npm:5.0.5"
     touch: "npm:3.1.0"
     typedoc: "npm:0.25.13"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   languageName: unknown
   linkType: soft
@@ -789,7 +789,7 @@ __metadata:
     icon-gen: "npm:4.0.0"
     jimp: "npm:0.22.12"
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   bin:
     electron-icon-generator: dist/cjs/index.js
   languageName: unknown
@@ -822,7 +822,7 @@ __metadata:
   resolution: "@ffflorian/file-index@workspace:packages/file-index"
   dependencies:
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -838,7 +838,7 @@ __metadata:
     nock: "npm:13.5.4"
     open: "npm:10.1.0"
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   bin:
     gh-open: dist/cjs/cli.js
@@ -857,7 +857,7 @@ __metadata:
     logdown: "npm:3.3.1"
     rimraf: "npm:5.0.5"
     tsscmp: "npm:1.0.6"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   bin:
     https-proxy: dist/cjs/cli.js
   languageName: unknown
@@ -879,7 +879,7 @@ __metadata:
     progress: "npm:2.0.3"
     rimraf: "npm:5.0.5"
     ts-node: "npm:10.9.2"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   bin:
     jszip-cli: dist/cli.js
@@ -896,7 +896,7 @@ __metadata:
     ntfy: "npm:1.5.3"
     rimraf: "npm:5.0.5"
     ts-node: "npm:10.9.2"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   bin:
     impfstatus: dist/cli.js
   languageName: unknown
@@ -910,7 +910,7 @@ __metadata:
     megalodon: "npm:10.0.1"
     rimraf: "npm:5.0.5"
     ts-node: "npm:10.9.2"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   bin:
     yearprogress: dist/cli.js
   languageName: unknown
@@ -921,7 +921,7 @@ __metadata:
   resolution: "@ffflorian/mock-udp@workspace:packages/mock-udp"
   dependencies:
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   languageName: unknown
   linkType: soft
@@ -940,7 +940,7 @@ __metadata:
   resolution: "@ffflorian/windows-shortcut-maker@workspace:packages/windows-shortcut-maker"
   dependencies:
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -3602,7 +3602,7 @@ __metadata:
     logdown: "npm:3.3.1"
     nock: "npm:13.5.4"
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   bin:
     auto-approver: dist/cjs/cli.js
@@ -4471,7 +4471,7 @@ __metadata:
     compare-versions: "npm:6.1.0"
     crates.io: "npm:2.2.7"
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   bin:
     crates-updater: dist/cjs/cli.js
     update-crates: dist/cjs/cli.js
@@ -4878,7 +4878,7 @@ __metadata:
     rimraf: "npm:5.0.5"
     semver: "npm:7.6.0"
     table: "npm:6.8.2"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   bin:
     electron-info: dist/cjs/cli.js
@@ -5662,7 +5662,7 @@ __metadata:
     protobufjs-cli: "npm:1.1.2"
     rimraf: "npm:5.0.5"
     ts-node: "npm:10.9.2"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -8363,7 +8363,7 @@ __metadata:
     nock: "npm:13.5.4"
     ntpclient: "npm:1.6.3"
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   bin:
     my-timezone: dist/cjs/cli.js
@@ -8526,7 +8526,7 @@ __metadata:
     prettier: "npm:3.2.5"
     rimraf: "npm:5.0.5"
     ts-node: "npm:10.9.2"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vite: "npm:5.2.11"
     vitest: "npm:1.4.0"
   languageName: unknown
@@ -8823,7 +8823,7 @@ __metadata:
   dependencies:
     axios: "npm:1.6.8"
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   languageName: unknown
   linkType: soft
 
@@ -8833,7 +8833,7 @@ __metadata:
   dependencies:
     commander: "npm:12.0.0"
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   bin:
     ntpclient: dist/cjs/cli.js
@@ -9611,7 +9611,7 @@ __metadata:
   resolution: "pixelflut@workspace:packages/pixelflut"
   dependencies:
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   bin:
     pixelflut: dist/cjs/cli.js
@@ -9919,7 +9919,7 @@ __metadata:
     logdown: "npm:3.3.1"
     npm-packlist: "npm:8.0.2"
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   bin:
     publish-flat: dist/cjs/cli.js
     publish-flat-copy: dist/cjs/cli-copy.js
@@ -9969,7 +9969,7 @@ __metadata:
   resolution: "quick-sort@workspace:packages/quick-sort"
   dependencies:
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   languageName: unknown
   linkType: soft
@@ -10517,7 +10517,7 @@ __metadata:
     clipboardy: "npm:4.0.0"
     commander: "npm:12.0.0"
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
     vitest: "npm:1.4.0"
   bin:
     scrabble-cheater: dist/cjs/cli.js
@@ -11675,13 +11675,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.4.4":
-  version: 5.4.4
-  resolution: "typescript@npm:5.4.4"
+"typescript@npm:5.4.5":
+  version: 5.4.5
+  resolution: "typescript@npm:5.4.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/4d8de0291204ed61ca97ad0cba2ce064e09c4988ca1c451c787e4653ba76296ba35177a52694e8a00cf4ef899d0ee83338663b926d8b7d55167ff0ba81549999
+  checksum: 10c0/2954022ada340fd3d6a9e2b8e534f65d57c92d5f3989a263754a78aba549f7e6529acc1921913560a4b816c46dce7df4a4d29f9f11a3dc0d4213bb76d043251e
   languageName: node
   linkType: hard
 
@@ -11695,13 +11695,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.4.4#optional!builtin<compat/typescript>":
-  version: 5.4.4
-  resolution: "typescript@patch:typescript@npm%3A5.4.4#optional!builtin<compat/typescript>::version=5.4.4&hash=5adc0c"
+"typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>":
+  version: 5.4.5
+  resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/1fa41b9964a9ff0ed913b339c90b46031b2d2da3cb1a192af516610733f7f1d5f7f9754a8e22b9ac7076d3d8aedd2c4f84db3f113bad060eac3a95962443a1bf
+  checksum: 10c0/db2ad2a16ca829f50427eeb1da155e7a45e598eec7b086d8b4e8ba44e5a235f758e606d681c66992230d3fc3b8995865e5fd0b22a2c95486d0b3200f83072ec9
   languageName: node
   linkType: hard
 
@@ -12111,7 +12111,7 @@ __metadata:
   dependencies:
     commander: "npm:12.0.0"
     rimraf: "npm:5.0.5"
-    typescript: "npm:5.4.4"
+    typescript: "npm:5.4.5"
   bin:
     which-os: dist/cjs/cli.js
   languageName: unknown
