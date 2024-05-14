@@ -20,7 +20,7 @@
     "nock": "13.5.4",
     "rimraf": "5.0.7",
     "typescript": "5.4.5",
-    "vitest": "1.5.3"
+    "vitest": "1.6.0"
   },
   "engines": {
     "node": ">= 18.0"
