@@ -10,7 +10,7 @@
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
-    "rimraf": "5.0.5",
+    "rimraf": "5.0.7",
     "typescript": "5.4.5"
   },
   "engines": {
