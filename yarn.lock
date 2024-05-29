@@ -644,9 +644,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ffflorian/eslint-config@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@ffflorian/eslint-config@npm:0.10.2"
+"@ffflorian/eslint-config@npm:0.10.3":
+  version: 0.10.3
+  resolution: "@ffflorian/eslint-config@npm:0.10.3"
   peerDependencies:
     "@babel/eslint-parser": ">= 7.0.0"
     "@typescript-eslint/eslint-plugin": ">= 4.14.1"
@@ -662,7 +662,7 @@ __metadata:
     eslint-plugin-sort-keys-fix: ">= 1.1.0"
     eslint-plugin-typescript-sort-keys: ">= 0.8.0"
     eslint-plugin-unused-imports: ">= 1.1.0"
-  checksum: 10c0/197b204f6d66f6a2e7c1292ba2025f5108c36b017af5adfa661dec44aca7c8bf06125aa21e6c13338409ed6797e5fcf8be1afaa86dafa5968bb52a3ea91b0df9
+  checksum: 10c0/85b0136d8156332eb4121eeede271a56254208406c3be631b73b2b62613999a1f86d878f2644634de7d44a399a5ca534b476dde626ceadf5b2de10d5389c5db5
   languageName: node
   linkType: hard
 
@@ -8238,7 +8238,7 @@ __metadata:
     "@babel/core": "npm:7.23.3"
     "@babel/eslint-parser": "npm:7.24.6"
     "@evilmartians/lefthook": "npm:1.6.12"
-    "@ffflorian/eslint-config": "npm:0.10.2"
+    "@ffflorian/eslint-config": "npm:0.10.3"
     "@ffflorian/prettier-config": "npm:0.3.2"
     "@types/babel__core": "npm:7.20.4"
     "@types/node": "npm:~20"
