@@ -775,12 +775,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ffflorian/prettier-config@npm:0.3.2":
-  version: 0.3.2
-  resolution: "@ffflorian/prettier-config@npm:0.3.2"
+"@ffflorian/prettier-config@npm:0.3.3":
+  version: 0.3.3
+  resolution: "@ffflorian/prettier-config@npm:0.3.3"
   peerDependencies:
     prettier: ">= 1.17.0"
-  checksum: 10c0/0f121dc8cbc28f05893937964a16f73a2a2859dd5e84a8c2ecc64567560d32fbc17774ec836c06a76b18a105cc1bd766b6a4285b3437d923e23552513975b36e
+  checksum: 10c0/89106bfe86e449063ac37517b7f75673131796f457c40da564acca0d56513fd5b17a2d496360b18684def227f79e902c6507a9741c8ec45b6e66cc1e0da832c8
   languageName: node
   linkType: hard
 
@@ -8327,7 +8327,7 @@ __metadata:
     "@babel/eslint-parser": "npm:7.24.6"
     "@evilmartians/lefthook": "npm:1.6.13"
     "@ffflorian/eslint-config": "npm:0.10.3"
-    "@ffflorian/prettier-config": "npm:0.3.2"
+    "@ffflorian/prettier-config": "npm:0.3.3"
     "@types/babel__core": "npm:7.20.4"
     "@types/node": "npm:~20"
     "@typescript-eslint/eslint-plugin": "npm:7.11.0"

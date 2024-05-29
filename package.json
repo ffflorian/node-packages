@@ -6,7 +6,7 @@
     "@babel/eslint-parser": "7.24.6",
     "@evilmartians/lefthook": "1.6.13",
     "@ffflorian/eslint-config": "0.10.3",
-    "@ffflorian/prettier-config": "0.3.2",
+    "@ffflorian/prettier-config": "0.3.3",
     "@types/babel__core": "7.20.4",
     "@types/node": "~20",
     "@typescript-eslint/eslint-plugin": "7.11.0",
