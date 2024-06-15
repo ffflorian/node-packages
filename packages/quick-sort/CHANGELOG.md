@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.7.4 (2024-06-15)
+
+
+### Bug Fixes
+
+* Don't publish test files ([5d55d34](https://github.com/ffflorian/node-packages/commit/5d55d3451950e7c317c6084b4cda73bff1651542))
+
+
+
+
+
 ## 0.7.3 (2024-05-02)
 
 **Note:** Version bump only for package quick-sort
