@@ -2773,7 +2773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/npmcli__arborist@npm:*, @types/npmcli__arborist@npm:5.6.5":
+"@types/npmcli__arborist@npm:*":
   version: 5.6.5
   resolution: "@types/npmcli__arborist@npm:5.6.5"
   dependencies:
@@ -2782,6 +2782,19 @@ __metadata:
     "@types/npmcli__package-json": "npm:*"
     "@types/pacote": "npm:*"
   checksum: 10c0/bf2c7621ccbef9110e690022cf315a2ca41a78aed080246b0187ddf1f5a09643bb91b194496bc885f512eed49139d9d3a33da1025d818094fd37cecf5716f8f5
+  languageName: node
+  linkType: hard
+
+"@types/npmcli__arborist@npm:5.6.9":
+  version: 5.6.9
+  resolution: "@types/npmcli__arborist@npm:5.6.9"
+  dependencies:
+    "@npm/types": "npm:*"
+    "@types/cacache": "npm:*"
+    "@types/node": "npm:*"
+    "@types/npmcli__package-json": "npm:*"
+    "@types/pacote": "npm:*"
+  checksum: 10c0/ad0755265962207a142eea40b5e8e4033d39dd9f03cc0ded74ee6b0b9640665d20deb73308c823f1837301c7bddc93e3af4eda5698a692e50010b13fac7f96ad
   languageName: node
   linkType: hard
 
@@ -9940,7 +9953,7 @@ __metadata:
     "@npmcli/arborist": "npm:7.5.3"
     "@types/fs-extra": "npm:11.0.4"
     "@types/npm-packlist": "npm:7.0.3"
-    "@types/npmcli__arborist": "npm:5.6.5"
+    "@types/npmcli__arborist": "npm:5.6.9"
     commander: "npm:12.1.0"
     fs-extra: "npm:11.2.0"
     logdown: "npm:3.3.1"
