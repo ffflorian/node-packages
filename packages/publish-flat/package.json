@@ -17,7 +17,7 @@
     "@types/fs-extra": "11.0.4",
     "@types/npm-packlist": "7.0.3",
     "rimraf": "5.0.7",
-    "typescript": "5.5.2"
+    "typescript": "5.5.3"
   },
   "files": [
     "dist"
