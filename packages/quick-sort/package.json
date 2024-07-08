@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "A TypeScript QuickSort implementation",
   "devDependencies": {
-    "rimraf": "5.0.7",
+    "rimraf": "5.0.8",
     "typescript": "5.5.2",
     "vitest": "1.6.0"
   },

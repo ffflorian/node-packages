@@ -781,7 +781,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/doublelinkedlist@workspace:packages/double-linked-list"
   dependencies:
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     touch: "npm:3.1.1"
     typedoc: "npm:0.25.13"
     typescript: "npm:5.5.2"
@@ -798,7 +798,7 @@ __metadata:
     fs-extra: "npm:11.2.0"
     icon-gen: "npm:4.0.0"
     jimp: "npm:0.22.12"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
   bin:
     electron-icon-generator: dist/cjs/index.js
@@ -831,7 +831,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/file-index@workspace:packages/file-index"
   dependencies:
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
   languageName: unknown
   linkType: soft
@@ -847,7 +847,7 @@ __metadata:
     logdown: "npm:3.3.1"
     nock: "npm:13.5.4"
     open: "npm:10.1.0"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
     vitest: "npm:1.6.0"
   bin:
@@ -865,7 +865,7 @@ __metadata:
     commander: "npm:12.1.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     tsscmp: "npm:1.0.6"
     typescript: "npm:5.5.2"
   bin:
@@ -887,7 +887,7 @@ __metadata:
     jszip: "npm:3.10.1"
     logdown: "npm:3.3.1"
     progress: "npm:2.0.3"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.5.2"
     vitest: "npm:1.6.0"
@@ -904,7 +904,7 @@ __metadata:
     commander: "npm:12.1.0"
     megalodon: "npm:10.0.2"
     ntfy: "npm:1.5.4"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.5.2"
   bin:
@@ -918,7 +918,7 @@ __metadata:
   dependencies:
     commander: "npm:12.1.0"
     megalodon: "npm:10.0.2"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.5.2"
   bin:
@@ -930,7 +930,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/mock-udp@workspace:packages/mock-udp"
   dependencies:
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
     vitest: "npm:1.6.0"
   languageName: unknown
@@ -949,7 +949,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/windows-shortcut-maker@workspace:packages/windows-shortcut-maker"
   dependencies:
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
   languageName: unknown
   linkType: soft
@@ -3584,7 +3584,7 @@ __metadata:
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:13.5.4"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
     vitest: "npm:1.6.0"
   bin:
@@ -4466,7 +4466,7 @@ __metadata:
     commander: "npm:12.1.0"
     compare-versions: "npm:6.1.0"
     crates.io: "npm:2.2.7"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
   bin:
     crates-updater: dist/cjs/cli.js
@@ -4871,7 +4871,7 @@ __metadata:
     logdown: "npm:3.3.1"
     nock: "npm:13.5.4"
     parse-url: "npm:8.1.0"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     semver: "npm:7.6.2"
     table: "npm:6.8.2"
     typescript: "npm:5.5.2"
@@ -5658,7 +5658,7 @@ __metadata:
     jszip: "npm:3.10.1"
     protobufjs: "npm:7.3.2"
     protobufjs-cli: "npm:1.1.2"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.5.2"
   languageName: unknown
@@ -8396,7 +8396,7 @@ __metadata:
     commander: "npm:12.1.0"
     nock: "npm:13.5.4"
     ntpclient: "npm:1.6.4"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
     vitest: "npm:1.6.0"
   bin:
@@ -8558,7 +8558,7 @@ __metadata:
     lerna: "npm:8.1.3"
     oxlint: "npm:0.4.4"
     prettier: "npm:3.3.2"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.5.2"
     vite: "npm:5.3.1"
@@ -8868,7 +8868,7 @@ __metadata:
   resolution: "ntfy@workspace:packages/ntfy"
   dependencies:
     axios: "npm:1.7.2"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
   languageName: unknown
   linkType: soft
@@ -8878,7 +8878,7 @@ __metadata:
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
     commander: "npm:12.1.0"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
     vitest: "npm:1.6.0"
   bin:
@@ -9683,7 +9683,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pixelflut@workspace:packages/pixelflut"
   dependencies:
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
     vitest: "npm:1.6.0"
   bin:
@@ -9980,7 +9980,7 @@ __metadata:
     fs-extra: "npm:11.2.0"
     logdown: "npm:3.3.1"
     npm-packlist: "npm:8.0.2"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
   bin:
     publish-flat: dist/cjs/cli.js
@@ -10030,7 +10030,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "quick-sort@workspace:packages/quick-sort"
   dependencies:
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
     vitest: "npm:1.6.0"
   languageName: unknown
@@ -10343,14 +10343,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:5.0.7":
-  version: 5.0.7
-  resolution: "rimraf@npm:5.0.7"
+"rimraf@npm:5.0.8":
+  version: 5.0.8
+  resolution: "rimraf@npm:5.0.8"
   dependencies:
     glob: "npm:^10.3.7"
   bin:
     rimraf: dist/esm/bin.mjs
-  checksum: 10c0/bd6dbfaa98ae34ce1e54d1e06045d2d63e8859d9a1979bb4a4628b652b459a2d17b17dc20ee072b034bd2d09bd691e801d24c4d9cfe94e16fdbcc8470a1d4807
+  checksum: 10c0/b8782c0443f67814ed29c83f9b34743977535f7228c62885c2db0d2552f94940ef2d6e54056c3344ccc574c1366f768ab62198deafbb61a93eb849d28ced9daa
   languageName: node
   linkType: hard
 
@@ -10528,7 +10528,7 @@ __metadata:
   dependencies:
     clipboardy: "npm:4.0.0"
     commander: "npm:12.1.0"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
     vitest: "npm:1.6.0"
   bin:
@@ -12133,7 +12133,7 @@ __metadata:
   resolution: "which-os@workspace:packages/which-os"
   dependencies:
     commander: "npm:12.1.0"
-    rimraf: "npm:5.0.7"
+    rimraf: "npm:5.0.8"
     typescript: "npm:5.5.2"
   bin:
     which-os: dist/cjs/cli.js

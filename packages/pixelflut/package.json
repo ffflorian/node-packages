@@ -3,7 +3,7 @@
   "bin": "dist/cjs/cli.js",
   "description": "Flood pixels",
   "devDependencies": {
-    "rimraf": "5.0.7",
+    "rimraf": "5.0.8",
     "typescript": "5.5.2",
     "vitest": "1.6.0"
   },
