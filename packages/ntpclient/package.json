@@ -6,7 +6,7 @@
   },
   "description": "A TypeScript implementation of the NTP Client Protocol",
   "devDependencies": {
-    "rimraf": "5.0.7",
+    "rimraf": "6.0.1",
     "typescript": "5.5.4",
     "vitest": "2.0.5"
   },
