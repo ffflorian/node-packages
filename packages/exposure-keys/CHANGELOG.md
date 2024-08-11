@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.8.5 (2024-08-11)
+
+
+### Bug Fixes
+
+* Set TypeScript target to ES2018 ([ed0cdd3](https://github.com/ffflorian/node-packages/commit/ed0cdd35c11ea30fd989785e86406237bb4ac37f))
+
+
+
+
+
 ## 1.8.4 (2024-06-15)
 
 

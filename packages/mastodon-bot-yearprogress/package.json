@@ -34,5 +34,5 @@
     "dist": "yarn clean && yarn build",
     "start": "ts-node src/cli.ts"
   },
-  "version": "1.5.4"
+  "version": "1.5.5"
 }
