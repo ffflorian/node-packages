@@ -5,7 +5,7 @@
     "moduleResolution": "NodeNext",
     "outDir": "dist/esm",
     "rootDir": "src",
-    "target": "ES2017"
+    "target": "ES2018"
   },
   "exclude": ["dist", "node_modules", "*.test.ts"],
   "extends": "../../tsconfig.json"
