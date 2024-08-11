@@ -12,7 +12,7 @@
     "http-status-codes": "2.3.0",
     "nock": "13.5.4",
     "rimraf": "5.0.7",
-    "typescript": "5.5.2",
+    "typescript": "5.5.4",
     "vitest": "1.6.0"
   },
   "engines": {

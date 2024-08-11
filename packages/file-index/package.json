@@ -3,7 +3,7 @@
   "description": "Generate a file index",
   "devDependencies": {
     "rimraf": "5.0.7",
-    "typescript": "5.5.2"
+    "typescript": "5.5.4"
   },
   "engines": {
     "node": ">= 18.0"
