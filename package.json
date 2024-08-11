@@ -22,7 +22,7 @@
     "eslint-plugin-typescript-sort-keys": "3.2.0",
     "eslint-plugin-unused-imports": "3.2.0",
     "lerna": "8.1.8",
-    "oxlint": "0.4.4",
+    "oxlint": "0.7.0",
     "prettier": "3.3.2",
     "rimraf": "5.0.7",
     "ts-node": "10.9.2",
