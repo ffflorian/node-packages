@@ -4249,10 +4249,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"compare-versions@npm:6.1.0":
-  version: 6.1.0
-  resolution: "compare-versions@npm:6.1.0"
-  checksum: 10c0/5378edc8a53ac98ed907da463e1d6c26f1ed2664006d6a0d54bbdf7f046a36c43e244740854fc0edfc1e09253b9a0b7c98d1282dfee9f6f1a87199599f611218
+"compare-versions@npm:6.1.1":
+  version: 6.1.1
+  resolution: "compare-versions@npm:6.1.1"
+  checksum: 10c0/415205c7627f9e4f358f571266422980c9fe2d99086be0c9a48008ef7c771f32b0fbe8e97a441ffedc3910872f917a0675fe0fe3c3b6d331cda6d8690be06338
   languageName: node
   linkType: hard
 
@@ -4428,7 +4428,7 @@ __metadata:
   resolution: "crates-updater@workspace:packages/crates-updater"
   dependencies:
     commander: "npm:12.1.0"
-    compare-versions: "npm:6.1.0"
+    compare-versions: "npm:6.1.1"
     crates.io: "npm:2.2.7"
     rimraf: "npm:5.0.7"
     typescript: "npm:5.5.4"
