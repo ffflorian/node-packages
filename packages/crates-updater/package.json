@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "commander": "12.1.0",
-    "compare-versions": "6.1.0",
+    "compare-versions": "6.1.1",
     "crates.io": "2.2.7"
   },
   "description": "Check your Rust packages for updates.",
