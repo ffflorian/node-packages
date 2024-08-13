@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.23.0 (2024-08-13)
+
+
+### Features
+
+* Create ESM-only packages (BREAKING) ([#688](https://github.com/ffflorian/node-packages/issues/688)) ([6ada581](https://github.com/ffflorian/node-packages/commit/6ada5810eabef36b5cc09e1899d60e55a0f44e1f))
+
+
+
+
+
 ## 1.22.5 (2024-08-11)
 
 
