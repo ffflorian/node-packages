@@ -10,7 +10,7 @@
     "@types/babel__core": "7.20.4",
     "@types/node": "~22",
     "@typescript-eslint/eslint-plugin": "8.1.0",
-    "@typescript-eslint/parser": "8.0.1",
+    "@typescript-eslint/parser": "8.1.0",
     "babel-eslint": "10.1.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
