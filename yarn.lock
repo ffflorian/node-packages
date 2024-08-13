@@ -9155,12 +9155,12 @@ __metadata:
   linkType: hard
 
 "parse-bmfont-xml@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "parse-bmfont-xml@npm:1.1.4"
+  version: 1.1.6
+  resolution: "parse-bmfont-xml@npm:1.1.6"
   dependencies:
     xml-parse-from-string: "npm:^1.0.0"
-    xml2js: "npm:^0.4.5"
-  checksum: 10c0/e2cb81453916bf7f45833006208f5e63adcc879061a05c3d9031de1443d7484656cf22ddc888694b4a8613618bc692ded789deb2a4acca8d7ec1a93c85ce90cc
+    xml2js: "npm:^0.5.0"
+  checksum: 10c0/e18e816a2553d3d34795e5a60b584f64a327d4a92f83b48dcb01b9ec30fc75b5338488d9f9d25cd8b463665c13f59264464f39e73c0e8d8d3665ce7f4f128328
   languageName: node
   linkType: hard
 
@@ -11842,13 +11842,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xml2js@npm:^0.4.5":
-  version: 0.4.23
-  resolution: "xml2js@npm:0.4.23"
+"xml2js@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "xml2js@npm:0.5.0"
   dependencies:
     sax: "npm:>=0.6.0"
     xmlbuilder: "npm:~11.0.0"
-  checksum: 10c0/a3f41c9afc46d5bd0bea4070e5108777b605fd5ce2ebb978a68fd4c75513978ad5939f8135664ffea6f1adb342f391b1ba1584ed7955123b036e9ab8a1d26566
+  checksum: 10c0/c9cd07cd19c5e41c740913bbbf16999a37a204488e11f86eddc2999707d43967197e257014d7ed72c8fc4348c192fa47eb352d1d9d05637cefd0d2e24e9aa4c8
   languageName: node
   linkType: hard
 
