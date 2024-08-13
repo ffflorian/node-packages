@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 import {program as commander} from 'commander';
-import {createRequire} from 'module';
-const require = createRequire(import.meta.url);
 
 import {HttpsProxy} from './HttpsProxy.js';
 
@@ -12,7 +13,11 @@ interface PackageJson {
   version: string;
 }
 
-const {description, name, version}: PackageJson = require('../package.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const packageJsonPath = path.join(__dirname, '../package.json');
+
+const {description, name, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
 commander
   .name(name.replace(/^@[^/]+\//, ''))

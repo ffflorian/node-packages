@@ -9,7 +9,7 @@ Publish your project flattened. No more `dist` in `require('project/dist/Options
 
 ## Installation
 
-ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
+ℹ️ This is a pure [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 Run `yarn add publish-flat` or `npm i publish-flat`.
 

@@ -9,7 +9,7 @@ Run `yarn add exposure-keys` or `npm install exposure-keys`.
 ## Usage
 
 ```ts
-import * as fs from 'fs';
+import * as fs from 'node:fs';
 import {loadZip, loadKeys, loadSignature} from 'exposure-keys';
 
 (async () => {

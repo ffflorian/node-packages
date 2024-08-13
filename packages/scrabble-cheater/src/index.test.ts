@@ -1,6 +1,7 @@
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 import {assert, expect, describe, test} from 'vitest';
-import path from 'path';
-import {fileURLToPath} from 'url';
+
 import {ScrabbleCheater} from './index.js';
 
 const __filename = fileURLToPath(import.meta.url);

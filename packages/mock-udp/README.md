@@ -9,7 +9,7 @@ Mock dgram udp requests. Based on [node-mock-udp](https://github.com/mattrobenol
 
 ## Installation
 
-ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
+ℹ️ This is a pure [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 Run `yarn add @ffflorian/mock-udp` or `npm i @ffflorian/mock-udp`.
 

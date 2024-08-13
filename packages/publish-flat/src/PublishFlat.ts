@@ -1,10 +1,10 @@
-import {execSync} from 'child_process';
+import {execSync} from 'node:child_process';
+import os from 'node:os';
+import path from 'node:path';
 import Arborist from '@npmcli/arborist';
 import fs from 'fs-extra';
 import logdown from 'logdown';
 import packlist from 'npm-packlist';
-import os from 'os';
-import path from 'path';
 
 interface PackageJson {
   bin: Record<string, string> | string;

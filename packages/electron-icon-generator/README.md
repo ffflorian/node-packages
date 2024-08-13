@@ -9,7 +9,7 @@ Based on https://github.com/jaretburkett/electron-icon-maker.
 
 ## Installation
 
-ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
+ℹ️ This is a pure [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 Run `yarn global add @ffflorian/electron-icon-generator` or `npm i -g @ffflorian/electron-icon-generator`
 

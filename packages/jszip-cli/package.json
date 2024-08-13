@@ -16,12 +16,11 @@
     "@types/progress": "2.0.7",
     "cross-env": "7.0.3",
     "rimraf": "6.0.1",
-    "ts-node": "10.9.2",
     "typescript": "5.5.4",
     "vitest": "2.0.5"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 18.0"
   },
   "files": [
     "dist"
@@ -33,7 +32,7 @@
     "zip"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
+  "module": "dist/index.js",
   "name": "@ffflorian/jszip-cli",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/jszip-cli",
   "scripts": {
@@ -43,5 +42,6 @@
     "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" node --loader ts-node/esm src/cli.ts",
     "test": "vitest run"
   },
+  "type": "module",
   "version": "3.6.5"
 }

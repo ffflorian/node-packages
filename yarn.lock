@@ -817,7 +817,7 @@ __metadata:
     rimraf: "npm:6.0.1"
     typescript: "npm:5.5.4"
   bin:
-    electron-icon-generator: dist/cjs/index.js
+    electron-icon-generator: dist/index.js
   languageName: unknown
   linkType: soft
 
@@ -867,7 +867,7 @@ __metadata:
     typescript: "npm:5.5.4"
     vitest: "npm:2.0.5"
   bin:
-    gh-open: dist/cjs/cli.js
+    gh-open: dist/cli.js
   languageName: unknown
   linkType: soft
 
@@ -885,7 +885,7 @@ __metadata:
     tsscmp: "npm:1.0.6"
     typescript: "npm:5.5.4"
   bin:
-    https-proxy: dist/cjs/cli.js
+    https-proxy: dist/cli.js
   languageName: unknown
   linkType: soft
 
@@ -904,7 +904,6 @@ __metadata:
     logdown: "npm:3.3.1"
     progress: "npm:2.0.3"
     rimraf: "npm:6.0.1"
-    ts-node: "npm:10.9.2"
     typescript: "npm:5.5.4"
     vitest: "npm:2.0.5"
   bin:
@@ -921,7 +920,6 @@ __metadata:
     megalodon: "npm:10.0.2"
     ntfy: "npm:1.5.5"
     rimraf: "npm:6.0.1"
-    ts-node: "npm:10.9.2"
     typescript: "npm:5.5.4"
   bin:
     impfstatus: dist/cli.js
@@ -935,7 +933,6 @@ __metadata:
     commander: "npm:12.1.0"
     megalodon: "npm:10.0.2"
     rimraf: "npm:6.0.1"
-    ts-node: "npm:10.9.2"
     typescript: "npm:5.5.4"
   bin:
     yearprogress: dist/cli.js
@@ -3675,7 +3672,7 @@ __metadata:
     typescript: "npm:5.5.4"
     vitest: "npm:2.0.5"
   bin:
-    auto-approver: dist/cjs/cli.js
+    auto-approver: dist/cli.js
   languageName: unknown
   linkType: soft
 
@@ -4494,8 +4491,8 @@ __metadata:
     rimraf: "npm:6.0.1"
     typescript: "npm:5.5.4"
   bin:
-    crates-updater: dist/cjs/cli.js
-    update-crates: dist/cjs/cli.js
+    crates-updater: dist/cli.js
+    update-crates: dist/cli.js
   languageName: unknown
   linkType: soft
 
@@ -4851,14 +4848,13 @@ __metadata:
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:13.5.4"
-    parse-url: "npm:8.1.0"
     rimraf: "npm:6.0.1"
     semver: "npm:7.6.3"
     table: "npm:6.8.2"
     typescript: "npm:5.5.4"
     vitest: "npm:2.0.5"
   bin:
-    electron-info: dist/cjs/cli.js
+    electron-info: dist/cli.js
   languageName: unknown
   linkType: soft
 
@@ -5625,7 +5621,6 @@ __metadata:
     protobufjs: "npm:7.3.2"
     protobufjs-cli: "npm:1.1.2"
     rimraf: "npm:6.0.1"
-    ts-node: "npm:10.9.2"
     typescript: "npm:5.5.4"
   languageName: unknown
   linkType: soft
@@ -8230,7 +8225,7 @@ __metadata:
     typescript: "npm:5.5.4"
     vitest: "npm:2.0.5"
   bin:
-    my-timezone: dist/cjs/cli.js
+    my-timezone: dist/cli.js
   languageName: unknown
   linkType: soft
 
@@ -8622,7 +8617,7 @@ __metadata:
     typescript: "npm:5.5.4"
     vitest: "npm:2.0.5"
   bin:
-    ntpclient: dist/cjs/cli.js
+    ntpclient: dist/cli.js
   languageName: unknown
   linkType: soft
 
@@ -9223,7 +9218,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse-url@npm:8.1.0, parse-url@npm:^8.1.0":
+"parse-url@npm:^8.1.0":
   version: 8.1.0
   resolution: "parse-url@npm:8.1.0"
   dependencies:
@@ -9404,7 +9399,7 @@ __metadata:
     typescript: "npm:5.5.4"
     vitest: "npm:2.0.5"
   bin:
-    pixelflut: dist/cjs/cli.js
+    pixelflut: dist/cli.js
   languageName: unknown
   linkType: soft
 
@@ -9678,8 +9673,8 @@ __metadata:
     rimraf: "npm:6.0.1"
     typescript: "npm:5.5.4"
   bin:
-    publish-flat: dist/cjs/cli.js
-    publish-flat-copy: dist/cjs/cli-copy.js
+    publish-flat: dist/cli.js
+    publish-flat-copy: dist/cli-copy.js
   languageName: unknown
   linkType: soft
 
@@ -10180,7 +10175,7 @@ __metadata:
     typescript: "npm:5.5.4"
     vitest: "npm:2.0.5"
   bin:
-    scrabble-cheater: dist/cjs/cli.js
+    scrabble-cheater: dist/cli.js
   languageName: unknown
   linkType: soft
 
@@ -11659,7 +11654,7 @@ __metadata:
     rimraf: "npm:6.0.1"
     typescript: "npm:5.5.4"
   bin:
-    which-os: dist/cjs/cli.js
+    which-os: dist/cli.js
   languageName: unknown
   linkType: soft
 

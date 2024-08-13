@@ -11,7 +11,7 @@ Of course you shouldn't be using this and I'm not responsible if people call you
 
 ## Setup
 
-ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
+ℹ️ This is a pure [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 ```
 yarn

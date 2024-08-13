@@ -3,7 +3,7 @@
     "esModuleInterop": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "outDir": "dist/esm",
+    "outDir": "dist",
     "rootDir": "src",
     "target": "ES2018"
   },

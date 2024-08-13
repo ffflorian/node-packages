@@ -1,2 +1,2 @@
-export * from './JSZipCLI';
-export * from './interfaces';
+export * from './JSZipCLI.js';
+export * from './interfaces.js';

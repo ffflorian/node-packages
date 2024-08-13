@@ -1,9 +1,9 @@
+import {constants as fsConstants, promises as fs} from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import URL from 'node:url';
 import {isAfter as isAfterDate, sub as subtractDate} from 'date-fns';
-import {constants as fsConstants, promises as fs} from 'fs';
-import parseUrl from 'parse-url';
 import logdown from 'logdown';
-import os from 'os';
-import path from 'path';
 
 import type {Options, RawReleaseInfo} from './ElectronInfo.js';
 import {HTTPService} from './HTTPService.js';
@@ -31,7 +31,7 @@ export class FileService {
 
   async getReleases(): Promise<RawReleaseInfo[]> {
     this.logger.log('Parsing releases URL', {releasesUrl: this.options.releasesUrl});
-    const parsedUrl = parseUrl(this.options.releasesUrl);
+    const parsedUrl = URL.parse(this.options.releasesUrl);
     if (!parsedUrl.href) {
       throw new Error('Invalid releases URL provided');
     }

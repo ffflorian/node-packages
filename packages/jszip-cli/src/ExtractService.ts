@@ -1,11 +1,11 @@
+import os from 'node:os';
+import path from 'node:path';
 import fs from 'fs-extra';
 import JSZip from 'jszip';
 import logdown from 'logdown';
-import os from 'os';
-import path from 'path';
 import progress from 'progress';
 
-import {TerminalOptions} from './interfaces';
+import {TerminalOptions} from './interfaces.js';
 
 export class ExtractService {
   public extractedFilesCount: number;

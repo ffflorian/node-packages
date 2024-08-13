@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
+import {inspect} from 'node:util';
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 import {program as commander} from 'commander';
-import {inspect} from 'util';
-import fs from 'fs';
 
 import * as whichOS from './which-os.js';
 
@@ -12,7 +14,11 @@ interface PackageJson {
   version: string;
 }
 
-const {description, name, version}: PackageJson = JSON.parse(fs.readFileSync('../package.json', 'utf-8'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const packageJsonPath = path.join(__dirname, '../package.json');
+
+const {description, name, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
 const capitalize = (name: string): string => `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
 

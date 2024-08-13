@@ -1,7 +1,8 @@
 import generator from 'megalodon';
 import axios from 'axios';
-import {Config} from './Config';
 import {publish as ntfyPublish} from 'ntfy';
+
+import {Config} from './Config.js';
 
 const CsvHeaders = [
   'Datum',
@@ -223,7 +224,7 @@ export class ImpfstatusClient {
   }
 
   private async toot(text: string): Promise<void> {
-    const client = generator('mastodon', this.baseURL, this.accessToken);
+    const client = generator.default('mastodon', this.baseURL, this.accessToken);
     await client.postStatus(text, {spoiler_text: 'Automatisierter Impfstatus'});
   }
 }

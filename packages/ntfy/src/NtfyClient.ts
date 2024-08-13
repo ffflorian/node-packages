@@ -1,6 +1,7 @@
+import {URL} from 'node:url';
+import {promises as fs} from 'node:fs';
 import axios, {AxiosHeaders, type AxiosRequestConfig} from 'axios';
-import {URL} from 'url';
-import {promises as fs} from 'fs';
+
 import type {
   AttachmentConfig,
   BaseConfig,

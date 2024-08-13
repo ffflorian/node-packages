@@ -10,7 +10,7 @@ Currently deployed to [@year_progress@botsin.space](https://botsin.space/@year_p
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org) >= 10.9
+- [Node.js](https://nodejs.org) >= 18.0
 - [yarn](https://classic.yarnpkg.com)
 
 ## Installation

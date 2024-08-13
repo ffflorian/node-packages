@@ -9,7 +9,7 @@ Get the exact time based on your location by calculating the time difference in 
 
 ## Installation
 
-ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
+ℹ️ This is a pure [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 Add the module to your project with `yarn add my-timezone` or install it globally with `yarn global add my-timezone`.
 

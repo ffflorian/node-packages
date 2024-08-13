@@ -11,28 +11,19 @@
   "engines": {
     "node": ">= 18.0"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    }
-  },
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
   "license": "GPL-3.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "dist/index.js",
   "name": "@ffflorian/doublelinkedlist",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/double-linked-list",
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esm && yarn generate:packagejson",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:docs": "typedoc && npx touch docs/.nojekyll",
-    "build:esm": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
     "test": "vitest run"
   },
   "type": "module",

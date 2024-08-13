@@ -10,11 +10,10 @@
   "description": "Toots year's progress every few days to Mastodon.",
   "devDependencies": {
     "rimraf": "6.0.1",
-    "ts-node": "10.9.2",
     "typescript": "5.5.4"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 18.0"
   },
   "files": [
     "dist"
@@ -24,7 +23,7 @@
     "typescript"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
+  "module": "dist/index.js",
   "name": "@ffflorian/mastodon-bot-yearprogress",
   "private": true,
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/mastodon-bot-yearprogress",
@@ -32,7 +31,8 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "start": "ts-node src/cli.ts"
+    "start": "node --loader ts-node/esm src/cli.ts -d"
   },
+  "type": "module",
   "version": "1.5.5"
 }
