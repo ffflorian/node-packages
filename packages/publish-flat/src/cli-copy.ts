@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 import {program as commander} from 'commander';
-import {createRequire} from 'module';
-const require = createRequire(import.meta.url);
 
 import {copyJson} from './copyJson.js';
 
@@ -11,7 +12,11 @@ interface PackageJson {
   version: string;
 }
 
-const {bin, version}: PackageJson = require('../package.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const packageJsonPath = path.join(__dirname, '../package.json');
+
+const {bin, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 const name = Object.keys(bin)[1];
 
 commander

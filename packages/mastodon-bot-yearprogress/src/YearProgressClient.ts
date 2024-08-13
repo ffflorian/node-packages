@@ -1,5 +1,5 @@
 import generator from 'megalodon';
-import {Config} from './Config';
+import {Config} from './Config.js';
 
 enum ConfigKeys {
   ACCESS_TOKEN = 'accessToken',
@@ -123,7 +123,7 @@ export class YearProgressClient {
   }
 
   private async toot(text: string): Promise<void> {
-    const client = generator('mastodon', this.baseURL, this.accessToken);
+    const client = generator.default('mastodon', this.baseURL, this.accessToken);
     await client.postStatus(text, {spoiler_text: `Year's progress`});
   }
 }

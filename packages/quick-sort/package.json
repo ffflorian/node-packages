@@ -10,18 +10,14 @@
     "dist"
   ],
   "license": "GPL-3.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "dist/index.js",
   "name": "quick-sort",
   "private": true,
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/quick-sort",
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esm && yarn generate:packagejson",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
     "test": "vitest run"
   },
   "type": "module",

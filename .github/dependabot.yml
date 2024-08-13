@@ -12,9 +12,6 @@ updates:
       - dependency-name: '@types/node'
         versions:
           - '> 22.x'
-      - dependency-name: 'parse-url'
-        versions:
-          - '> 8.x'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:

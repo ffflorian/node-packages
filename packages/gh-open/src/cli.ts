@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
-import path from 'path';
+import path from 'node:path';
+import fs from 'node:fs';
+import {fileURLToPath} from 'node:url';
 import {program as commander} from 'commander';
 import {findUp} from 'find-up';
 import open from 'open';
-import {createRequire} from 'module';
-const require = createRequire(import.meta.url);
 
 import {RepositoryService} from './RepositoryService.js';
+
 
 interface PackageJson {
   description: string;
@@ -15,7 +16,10 @@ interface PackageJson {
   version: string;
 }
 
-const {description, name, version}: PackageJson = require('../package.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const packageJsonPath = path.join(__dirname, '../package.json');
+const {description, name, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
 commander
   .name(name.replace(/^@[^/]+\//, ''))

@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
+import type dgram from 'node:dgram';
 import {assert, expect, describe, test, beforeEach, vi, afterEach} from 'vitest';
 import {NTPClient} from './index.js';
-import type dgram from 'dgram';
 
 const SECOND_IN_MILLIS = 1000;
 const replyTimeout = 10 * SECOND_IN_MILLIS;

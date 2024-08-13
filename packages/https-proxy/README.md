@@ -9,7 +9,7 @@ A simple HTTPS proxy for Node.js with authentication support.
 
 ## Installation
 
-ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
+ℹ️ This is a pure [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 Run `yarn global add @ffflorian/https-proxy` or `npm install -g @ffflorian/https-proxy`.
 

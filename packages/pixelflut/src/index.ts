@@ -1,5 +1,5 @@
-import dgram from 'dgram';
-import net from 'net';
+import dgram from 'node:dgram';
+import net from 'node:net';
 
 export class Pixelflut {
   public errors: string[] = [];

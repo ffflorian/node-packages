@@ -1,11 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-import {promisify} from 'util';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import {DirEntry} from './interfaces.js';
-
-const readdirAsync = promisify(fs.readdir);
-const lstatAsync = promisify(fs.lstat);
 
 function getBaseIndex(directory: string): {fileIndex: DirEntry; resolvedDir: string} {
   const resolvedDir = path.resolve(directory);
@@ -32,11 +28,11 @@ export async function generateIndex(directory: string, depth = Infinity): Promis
   }
 
   try {
-    const dirObjects = await readdirAsync(resolvedDir);
+    const dirObjects = await fs.promises.readdir(resolvedDir);
 
     const generateIndices = dirObjects.sort().map(async fileName => {
       const resolvedFile = path.join(resolvedDir, fileName);
-      const lstat = await lstatAsync(resolvedFile);
+      const lstat = await fs.promises.lstat(resolvedFile);
 
       if (lstat.isFile()) {
         fileIndex.files[fileName] = {

@@ -1,12 +1,12 @@
+import path from 'node:path';
 import * as fs from 'fs-extra';
 import JSZip from 'jszip';
 import logdown from 'logdown';
-import path from 'path';
 import progress from 'progress';
-
-import {FileService} from './FileService';
-import {Entry, TerminalOptions} from './interfaces';
 import {globSync} from 'glob';
+
+import {FileService} from './FileService.js';
+import {Entry, TerminalOptions} from './interfaces.js';
 
 export class BuildService {
   public compressedFilesCount: number;

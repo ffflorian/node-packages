@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import {program as commander} from 'commander';
-import * as fs from 'fs';
-import * as path from 'path';
 
-import {YearProgressClient} from './YearProgressClient';
+import {YearProgressClient} from './YearProgressClient.js';
 
 interface CommanderOptions {
   config?: string;
@@ -14,10 +15,9 @@ interface CommanderOptions {
   token?: string;
 }
 
-const defaultPackageJsonPath = path.join(__dirname, 'package.json');
-const packageJsonPath = fs.existsSync(defaultPackageJsonPath)
-  ? defaultPackageJsonPath
-  : path.join(__dirname, '../package.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const packageJsonPath = path.join(__dirname, '../package.json');
 
 const packageJson = fs.readFileSync(packageJsonPath, 'utf-8');
 const {bin, description, version} = JSON.parse(packageJson);

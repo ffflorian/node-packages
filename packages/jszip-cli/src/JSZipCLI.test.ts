@@ -1,6 +1,6 @@
+import * as path from 'node:path';
 import {expect, describe, test, vi, beforeAll, afterAll} from 'vitest';
 import * as fs from 'fs-extra';
-import * as path from 'path';
 import {ConfigFileOptions, JSZipCLI, TerminalOptions} from '.';
 
 const tempDir = path.resolve(__dirname, '.temp');

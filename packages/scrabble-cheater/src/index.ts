@@ -1,8 +1,6 @@
+import {promises as fs} from 'node:fs';
+import readline from 'node:readline';
 import clipboard from 'clipboardy';
-import fs from 'fs';
-import readline from 'readline';
-import {promisify} from 'util';
-const readFileAsync = promisify(fs.readFile);
 
 export interface Options {
   letters?: string;
@@ -73,7 +71,7 @@ export class ScrabbleCheater {
   private async loadWords(): Promise<number> {
     const regex = new RegExp('^[A-Za-z]+$');
 
-    const wordList = await readFileAsync(this.wordListPath, 'utf-8');
+    const wordList = await fs.readFile(this.wordListPath, 'utf-8');
     this.dictionary = wordList.split('\n').filter(value => regex.test(value));
     return this.dictionary.length;
   }

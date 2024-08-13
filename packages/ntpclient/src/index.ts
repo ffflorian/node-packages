@@ -1,4 +1,4 @@
-import * as dgram from 'dgram';
+import * as dgram from 'node:dgram';
 
 const TEN_SECONDS_IN_MILLIS = 10_000;
 

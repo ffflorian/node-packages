@@ -1,6 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": "dist/cjs/cli.js",
+  "bin": "dist/cli.js",
   "dependencies": {
     "axios": "1.7.3",
     "commander": "12.1.0",
@@ -19,12 +19,7 @@
   "engines": {
     "node": ">= 18.0"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    }
-  },
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
@@ -36,17 +31,13 @@
     "typescript"
   ],
   "license": "GPL-3.0",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "dist/index.js",
   "name": "@ffflorian/gh-open",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/gh-open",
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esm && yarn generate:packagejson",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "generate:packagejson": "../../bin/generate-hybrid-package-json.sh",
     "start": "node --loader ts-node/esm src/cli.ts -d",
     "test": "vitest run"
   },

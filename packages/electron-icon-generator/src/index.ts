@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 
+import path from 'node:path';
 import * as fs from 'fs-extra';
 import Jimp from 'jimp';
-import path from 'path';
-import {createRequire} from 'module';
-const require = createRequire(import.meta.url);
-const icongen = require('icon-gen');
+import icongen from 'icon-gen';
 
 // eslint-disable-next-line no-magic-numbers
 const pngSizes = [16, 24, 32, 48, 64, 128, 256, 512, 1024];
@@ -66,7 +64,7 @@ export class IconGenerator {
 
       await fs.ensureDir(macIconsDir);
 
-      await icongen(this.PNGoutputDir, macIconsDir, {
+      await icongen.default(this.PNGoutputDir, macIconsDir, {
         icns: {
           name: 'icon',
           sizes: pngSizes,
@@ -76,7 +74,7 @@ export class IconGenerator {
 
       await fs.ensureDir(winIconsDir);
 
-      await icongen(this.PNGoutputDir, winIconsDir, {
+      await icongen.default(this.PNGoutputDir, winIconsDir, {
         icns: {
           name: 'icon',
           sizes: pngSizes,

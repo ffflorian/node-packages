@@ -17,7 +17,7 @@ A linked list in which every element knows about its predecessor and its success
 
 ## Installation
 
-ℹ️ This is a hybrid [CommonJS](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) / [ESM](https://nodejs.org/api/esm.html#introduction) module.
+ℹ️ This is a pure [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
 Run `yarn add @ffflorian/doublelinkedlist` or `npm i @ffflorian/doublelinkedlist`.
 
