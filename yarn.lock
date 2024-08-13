@@ -4002,6 +4002,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"centra@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "centra@npm:2.7.0"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+  checksum: 10c0/ff0184fb3a8c72532550065dfee15f64ce619517e9e1323f2f2cf31333bd3b5f0b3fa1f10be51c26f43a83ed49b1d6c660d4c793a1e8b896ba1e288f766b7c35
+  languageName: node
+  linkType: hard
+
 "chai@npm:^5.1.1":
   version: 5.1.1
   resolution: "chai@npm:5.1.1"
@@ -7512,18 +7521,18 @@ __metadata:
   linkType: hard
 
 "load-bmfont@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "load-bmfont@npm:1.4.1"
+  version: 1.4.2
+  resolution: "load-bmfont@npm:1.4.2"
   dependencies:
     buffer-equal: "npm:0.0.1"
     mime: "npm:^1.3.4"
     parse-bmfont-ascii: "npm:^1.0.3"
     parse-bmfont-binary: "npm:^1.0.5"
     parse-bmfont-xml: "npm:^1.1.4"
-    phin: "npm:^2.9.1"
+    phin: "npm:^3.7.1"
     xhr: "npm:^2.0.1"
     xtend: "npm:^4.0.0"
-  checksum: 10c0/b4a2201a4e72f9d5822a90a4eb4c0dd099ee961f836dc1211f56c412df39e2ff0b3385cfde63bfb6fc96161bc5670ec19a231543ec4cda960a28bd33fcebacb3
+  checksum: 10c0/bc85401964c5b5640ee98581895ddcda666a5e6420773e65a13ae948e2dd9a3e55206e3deb4c98e9bd4d111719d4eb71fc1ce326b1dd060f20afba942b056373
   languageName: node
   linkType: hard
 
@@ -9329,10 +9338,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"phin@npm:^2.9.1":
-  version: 2.9.3
-  resolution: "phin@npm:2.9.3"
-  checksum: 10c0/5bb94493f1bf1f0b66ca08aee6aaa488c46f4a8af2722d94ef9c8e4aaa3a5952e19aeff37f832ed64a71c98124c73936a30caef42973be21350b36af5fc33ab8
+"phin@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "phin@npm:3.7.1"
+  dependencies:
+    centra: "npm:^2.7.0"
+  checksum: 10c0/114cb1eff5ec817ddaf6748de354b01f02375c755a8da5f2505e0014d2e4eecdb820158e94235cdf9a25fea22c485b113b15ddf053b7699b2e59945bbe3aeaf0
   languageName: node
   linkType: hard
 
