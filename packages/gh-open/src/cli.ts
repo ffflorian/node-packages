@@ -9,7 +9,6 @@ import open from 'open';
 
 import {RepositoryService} from './RepositoryService.js';
 
-
 interface PackageJson {
   description: string;
   name: string;

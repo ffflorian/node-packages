@@ -24,7 +24,7 @@ describe('ScrabbleCheater', () => {
     try {
       await sc.start();
       assert.fail();
-    } catch (error) {
+    } catch (_error) {
       // nothing to do
     }
   });

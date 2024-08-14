@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 async function checkFile(filePath: string): Promise<void> {
   try {
     await fs.access(filePath, fs.constants.F_OK | fs.constants.R_OK);
-  } catch (error) {
+  } catch (_error) {
     throw new Error(`Input file "${filePath} doesn't exist or is not readable.`);
   }
 }
