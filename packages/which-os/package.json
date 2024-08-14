@@ -33,5 +33,5 @@
     "start": "node --loader ts-node/esm src/cli.ts"
   },
   "type": "module",
-  "version": "1.9.0"
+  "version": "1.9.1"
 }
