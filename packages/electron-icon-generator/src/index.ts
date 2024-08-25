@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import path from 'node:path';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import Jimp from 'jimp';
 import icongen from 'icon-gen';
 

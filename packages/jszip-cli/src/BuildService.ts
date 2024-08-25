@@ -1,5 +1,5 @@
 import path from 'node:path';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import JSZip from 'jszip';
 import logdown from 'logdown';
 import progress from 'progress';

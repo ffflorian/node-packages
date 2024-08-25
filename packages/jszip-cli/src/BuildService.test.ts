@@ -7,8 +7,10 @@ describe('BuildService', () => {
 
   beforeAll(() => {
     vi.mock('fs-extra', () => ({
-      lstat: () => Promise.resolve({isDirectory: () => false, isFile: () => true}),
-      readFile: () => {},
+      default: {
+        lstat: () => Promise.resolve({isDirectory: () => false, isFile: () => true}),
+        readFile: () => {},
+      },
     }));
     vi.mock('glob', () => ({
       globSync: (params: string | string[]) => (typeof params === 'string' ? [params] : params),

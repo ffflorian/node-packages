@@ -4,7 +4,7 @@ import {randomUUID} from 'node:crypto';
 import {expect, describe, test, beforeEach, beforeAll, afterAll, afterEach} from 'vitest';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 
 import {ElectronInfo, RawReleaseInfo} from './ElectronInfo.js';
 

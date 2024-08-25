@@ -39,7 +39,7 @@
     "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "start": "cross-env NODE_DEBUG=\"jszip-cli/*\" node --loader ts-node/esm src/cli.ts",
+    "start": "node --loader ts-node/esm src/cli.ts -V",
     "test": "vitest run"
   },
   "type": "module",

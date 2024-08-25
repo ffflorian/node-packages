@@ -29,3 +29,6 @@ spec/.temp
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# System files
+.DS_Store
