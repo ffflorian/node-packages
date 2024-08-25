@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.6.2 (2024-08-25)
+
+
+### Bug Fixes
+
+* **jszip-cli:** Import fs-extra correctly ([47057ec](https://github.com/ffflorian/node-packages/commit/47057ec796d67e2ba9710f4bc5423d4f840eee0c))
+
+
+
+
+
 ## 2.6.1 (2024-08-14)
 
 **Note:** Version bump only for package @ffflorian/windows-shortcut-maker
