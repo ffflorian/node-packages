@@ -8,7 +8,7 @@
   },
   "description": "Get the exact time based on your location.",
   "devDependencies": {
-    "nock": "13.5.4",
+    "nock": "13.5.5",
     "rimraf": "6.0.1",
     "typescript": "5.5.4",
     "vitest": "2.0.5"
