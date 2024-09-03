@@ -4,7 +4,7 @@
     "impfstatus": "dist/cli.js"
   },
   "dependencies": {
-    "axios": "1.7.4",
+    "axios": "1.7.7",
     "commander": "12.1.0",
     "megalodon": "10.0.2",
     "ntfy": "1.6.2"
