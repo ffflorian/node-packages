@@ -5832,7 +5832,7 @@ __metadata:
   resolution: "exposure-keys@workspace:packages/exposure-keys"
   dependencies:
     jszip: "npm:3.10.1"
-    protobufjs: "npm:7.3.2"
+    protobufjs: "npm:7.4.0"
     protobufjs-cli: "npm:1.1.2"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.5.4"
@@ -10009,9 +10009,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs@npm:7.3.2":
-  version: 7.3.2
-  resolution: "protobufjs@npm:7.3.2"
+"protobufjs@npm:7.4.0":
+  version: 7.4.0
+  resolution: "protobufjs@npm:7.4.0"
   dependencies:
     "@protobufjs/aspromise": "npm:^1.1.2"
     "@protobufjs/base64": "npm:^1.1.2"
@@ -10025,7 +10025,7 @@ __metadata:
     "@protobufjs/utf8": "npm:^1.1.0"
     "@types/node": "npm:>=13.7.0"
     long: "npm:^5.0.0"
-  checksum: 10c0/b87e38fffc989793099010439a7ff45a0a57ef5b8f44b5209f06bfa5085ac96a365aa37eb3c79bd6954d6ef1b50fc69da37dae8ea2a31d90b7bc8fb2fa0e3955
+  checksum: 10c0/a5460a63fe596523b9a067cbce39a6b310d1a71750fda261f076535662aada97c24450e18c5bc98a27784f70500615904ff1227e1742183509f0db4fdede669b
   languageName: node
   linkType: hard
 
