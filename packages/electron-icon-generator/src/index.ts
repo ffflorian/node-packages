@@ -2,7 +2,7 @@
 
 import path from 'node:path';
 import fs from 'fs-extra';
-import Jimp from 'jimp';
+import {Jimp} from 'jimp';
 import icongen from 'icon-gen';
 
 // eslint-disable-next-line no-magic-numbers
@@ -34,21 +34,21 @@ export class IconGenerator {
   }
 
   private async createPNG(size: number): Promise<string> {
-    const fileName = `${size.toString()}.png`;
+    const fileName = size.toString();
 
     await fs.ensureDir(this.options.output);
     await fs.ensureDir(this.iconsDir);
     await fs.ensureDir(this.PNGoutputDir);
 
     const image = await Jimp.read(this.options.input);
-    const resizeFile = path.join(this.PNGoutputDir, fileName);
+    const resizeFilePath = path.join(this.PNGoutputDir, fileName);
 
-    await new Promise((resolve, reject) =>
-      image.resize(size, size, (error, result) => (error ? reject(error) : resolve(result)))
-    );
-    await image.writeAsync(resizeFile);
+    // eslint-disable-next-line id-length
+    image.resize({h: size, w: size});
 
-    return `Created "${resizeFile}"`;
+    await image.write(`${resizeFilePath}.png`);
+
+    return `Created "${resizeFilePath}.png"`;
   }
 
   private async createPNGs(position: number): Promise<void> {

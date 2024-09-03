@@ -5,11 +5,12 @@
     "commander": "12.1.0",
     "fs-extra": "11.2.0",
     "icon-gen": "5.0.0",
-    "jimp": "0.22.12"
+    "jimp": "1.0.4"
   },
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
+    "@types/pngjs": "6.0.5",
     "rimraf": "6.0.1",
     "typescript": "5.5.4"
   },
