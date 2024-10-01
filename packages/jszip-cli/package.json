@@ -17,7 +17,7 @@
     "cross-env": "7.0.3",
     "rimraf": "6.0.1",
     "typescript": "5.5.4",
-    "vitest": "2.0.5"
+    "vitest": "2.1.1"
   },
   "engines": {
     "node": ">= 18.0"
