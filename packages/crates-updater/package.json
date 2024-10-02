@@ -12,7 +12,7 @@
   "description": "Check your Rust packages for updates.",
   "devDependencies": {
     "rimraf": "6.0.1",
-    "typescript": "5.5.4"
+    "typescript": "5.6.2"
   },
   "engines": {
     "node": ">= 18.0"
