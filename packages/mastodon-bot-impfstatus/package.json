@@ -12,7 +12,7 @@
   "description": "Toots Germany's COVID-19 vaccination progress to Mastodon.",
   "devDependencies": {
     "rimraf": "6.0.1",
-    "typescript": "5.5.4"
+    "typescript": "5.6.2"
   },
   "engines": {
     "node": ">= 18.0"
