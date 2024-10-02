@@ -397,10 +397,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@badgateway/oauth2-client@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "@badgateway/oauth2-client@npm:2.3.0"
-  checksum: 10c0/ee88969b2e15fb5b10ae92605a2e4f2ac63e8de7bfd4b6ce917c0a949f9e0f78468888745fc0b63a3c5dec5de99df5ee7705551d857687b9492c38adad994a0d
+"@badgateway/oauth2-client@npm:^2.4.1":
+  version: 2.4.2
+  resolution: "@badgateway/oauth2-client@npm:2.4.2"
+  checksum: 10c0/d14373b3c2e5c9163482109a2f88304a3304dcbf55cbf2367d8edb74a600a05bce5bfdad32f6eef82c2f244dec4784f2a72c5549848974c64964143ea198bc77
   languageName: node
   linkType: hard
 
@@ -778,7 +778,7 @@ __metadata:
   dependencies:
     axios: "npm:1.7.7"
     commander: "npm:12.1.0"
-    megalodon: "npm:10.0.2"
+    megalodon: "npm:10.0.4"
     ntfy: "npm:1.6.2"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.5.4"
@@ -792,7 +792,7 @@ __metadata:
   resolution: "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress"
   dependencies:
     commander: "npm:12.1.0"
-    megalodon: "npm:10.0.2"
+    megalodon: "npm:10.0.4"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.5.4"
   bin:
@@ -2868,12 +2868,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ws@npm:^8.5.10":
-  version: 8.5.10
-  resolution: "@types/ws@npm:8.5.10"
+"@types/ws@npm:^8.5.12":
+  version: 8.5.12
+  resolution: "@types/ws@npm:8.5.12"
   dependencies:
     "@types/node": "npm:*"
-  checksum: 10c0/e9af279b984c4a04ab53295a40aa95c3e9685f04888df5c6920860d1dd073fcc57c7bd33578a04b285b2c655a0b52258d34bee0a20569dca8defb8393e1e5d29
+  checksum: 10c0/3fd77c9e4e05c24ce42bfc7647f7506b08c40a40fe2aea236ef6d4e96fc7cb4006a81ed1b28ec9c457e177a74a72924f4768b7b4652680b42dfd52bc380e15f9
   languageName: node
   linkType: hard
 
@@ -4484,10 +4484,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.11.11":
-  version: 1.11.11
-  resolution: "dayjs@npm:1.11.11"
-  checksum: 10c0/0131d10516b9945f05a57e13f4af49a6814de5573a494824e103131a3bbe4cc470b1aefe8e17e51f9a478a22cd116084be1ee5725cedb66ec4c3f9091202dc4b
+"dayjs@npm:^1.11.13":
+  version: 1.11.13
+  resolution: "dayjs@npm:1.11.13"
+  checksum: 10c0/a3caf6ac8363c7dade9d1ee797848ddcf25c1ace68d9fe8678ecf8ba0675825430de5d793672ec87b24a69bf04a1544b176547b2539982275d5542a7955f35b7
   languageName: node
   linkType: hard
 
@@ -7852,21 +7852,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"megalodon@npm:10.0.2":
-  version: 10.0.2
-  resolution: "megalodon@npm:10.0.2"
+"megalodon@npm:10.0.4":
+  version: 10.0.4
+  resolution: "megalodon@npm:10.0.4"
   dependencies:
-    "@badgateway/oauth2-client": "npm:^2.3.0"
-    "@types/ws": "npm:^8.5.10"
-    axios: "npm:1.7.2"
-    dayjs: "npm:^1.11.11"
+    "@badgateway/oauth2-client": "npm:^2.4.1"
+    "@types/ws": "npm:^8.5.12"
+    axios: "npm:1.7.7"
+    dayjs: "npm:^1.11.13"
     events: "npm:^3.3.0"
     form-data: "npm:^4.0.0"
     isomorphic-ws: "npm:^5.0.0"
     object-assign-deep: "npm:^0.4.0"
     uuid: "npm:^10.0.0"
-    ws: "npm:8.17.1"
-  checksum: 10c0/d0dd059a228efa780714436f4f6149dbf84aa7e3015c77ef5ec7c49ac4dc0d316c99cb1c82285291c81d68e082fdb1db855e2bec744eb006cd6d6eb22913b1a7
+    ws: "npm:8.18.0"
+  checksum: 10c0/13fe18442b4bf315b8c3294e4ce68bf4a4d373532dd976f3b303f4112b6157954a021a72741a77c64fd57b3accd0421c390044a7469fe2d761586361704f126d
   languageName: node
   linkType: hard
 
@@ -11822,9 +11822,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:8.17.1":
-  version: 8.17.1
-  resolution: "ws@npm:8.17.1"
+"ws@npm:8.18.0":
+  version: 8.18.0
+  resolution: "ws@npm:8.18.0"
   peerDependencies:
     bufferutil: ^4.0.1
     utf-8-validate: ">=5.0.2"
@@ -11833,7 +11833,7 @@ __metadata:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: 10c0/f4a49064afae4500be772abdc2211c8518f39e1c959640457dcee15d4488628620625c783902a52af2dd02f68558da2868fd06e6fd0e67ebcd09e6881b1b5bfe
+  checksum: 10c0/25eb33aff17edcb90721ed6b0eb250976328533ad3cd1a28a274bd263682e7296a6591ff1436d6cbc50fa67463158b062f9d1122013b361cec99a05f84680e06
   languageName: node
   linkType: hard
 
