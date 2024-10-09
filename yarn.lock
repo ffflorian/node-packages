@@ -8087,9 +8087,9 @@ __metadata:
   linkType: hard
 
 "long@npm:^5.0.0":
-  version: 5.2.1
-  resolution: "long@npm:5.2.1"
-  checksum: 10c0/8252ef50b567aa062059d056dab5077c7bfaf8bd4598bcf96ccb61a27ebc0e879d267137f1c5d293dc259d658033013322931793a9de3f3388e4cda1fb91f79d
+  version: 5.2.3
+  resolution: "long@npm:5.2.3"
+  checksum: 10c0/6a0da658f5ef683b90330b1af76f06790c623e148222da9d75b60e266bbf88f803232dd21464575681638894a84091616e7f89557aa087fd14116c0f4e0e43d9
   languageName: node
   linkType: hard
 
