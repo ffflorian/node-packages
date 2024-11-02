@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.7.3 (2024-11-02)
+
+
+### Bug Fixes
+
+* force release ([c250acc](https://github.com/ffflorian/node-packages/commit/c250acc79d508bf52e0060d0b403d7d15be4c57d))
+
+
+
+
+
 ## 3.7.2 (2024-08-25)
 
 
