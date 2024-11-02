@@ -397,7 +397,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@badgateway/oauth2-client@npm:^2.4.1":
+"@badgateway/oauth2-client@npm:^2.4.2":
   version: 2.4.2
   resolution: "@badgateway/oauth2-client@npm:2.4.2"
   checksum: 10c0/d14373b3c2e5c9163482109a2f88304a3304dcbf55cbf2367d8edb74a600a05bce5bfdad32f6eef82c2f244dec4784f2a72c5549848974c64964143ea198bc77
@@ -778,7 +778,7 @@ __metadata:
   dependencies:
     axios: "npm:1.7.7"
     commander: "npm:12.1.0"
-    megalodon: "npm:10.0.4"
+    megalodon: "npm:10.0.5"
     ntfy: "npm:1.6.2"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.6.2"
@@ -792,7 +792,7 @@ __metadata:
   resolution: "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress"
   dependencies:
     commander: "npm:12.1.0"
-    megalodon: "npm:10.0.4"
+    megalodon: "npm:10.0.5"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.6.2"
   bin:
@@ -8291,11 +8291,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"megalodon@npm:10.0.4":
-  version: 10.0.4
-  resolution: "megalodon@npm:10.0.4"
+"megalodon@npm:10.0.5":
+  version: 10.0.5
+  resolution: "megalodon@npm:10.0.5"
   dependencies:
-    "@badgateway/oauth2-client": "npm:^2.4.1"
+    "@badgateway/oauth2-client": "npm:^2.4.2"
     "@types/ws": "npm:^8.5.12"
     axios: "npm:1.7.7"
     dayjs: "npm:^1.11.13"
@@ -8305,7 +8305,7 @@ __metadata:
     object-assign-deep: "npm:^0.4.0"
     uuid: "npm:^10.0.0"
     ws: "npm:8.18.0"
-  checksum: 10c0/13fe18442b4bf315b8c3294e4ce68bf4a4d373532dd976f3b303f4112b6157954a021a72741a77c64fd57b3accd0421c390044a7469fe2d761586361704f126d
+  checksum: 10c0/799f1a9b84a04f4999d76ce92f34cd9b3a4aa539678e86abe369e3a23da0b8003e82daa89b3af3bedc440051bc594483be07d5d33e9cc4aa159f0b6e976b2423
   languageName: node
   linkType: hard
 
