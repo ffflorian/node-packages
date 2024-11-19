@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.12.0 (2024-11-19)
+
+
+### Features
+
+* **ntfy:** Add access token authentication ([1132e81](https://github.com/ffflorian/node-packages/commit/1132e8124c2fd25a50cdca3d7e7040931aea8163)), closes [#757](https://github.com/ffflorian/node-packages/issues/757)
+
+
+
+
+
 ## 1.11.3 (2024-11-02)
 
 
