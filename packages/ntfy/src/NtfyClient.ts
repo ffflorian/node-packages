@@ -125,7 +125,11 @@ export async function publish<T extends Config>(config: T): Promise<ResponseData
 
   if (config.authorization) {
     axiosConfig.withCredentials = true;
-    axiosConfig.auth = config.authorization;
+    if (typeof config.authorization === 'string') {
+      axiosConfig.headers.Authorization = config.authorization;
+    } else {
+      axiosConfig.auth = config.authorization;
+    }
   }
 
   if (config.delay) {

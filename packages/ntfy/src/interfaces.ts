@@ -1,4 +1,4 @@
-import type {AxiosBasicCredentials as HTTPAuth, Method as HTTPMethod} from 'axios';
+import type {AxiosBasicCredentials, Method as HTTPMethod} from 'axios';
 
 export enum MessagePriority {
   /** Really long vibration bursts, default notification sound with a pop-over notification. */
@@ -141,8 +141,10 @@ export interface BaseConfig {
    * Depending on whether the server is configured to support
    * [access control](https://docs.ntfy.sh/config/#access-control), some topics may be read/write protected so that only
    * users with the correct credentials can subscribe or publish to them.
+   *
+   * Use either basic credentials or an access token.
    */
-  authorization?: HTTPAuth;
+  authorization?: AxiosBasicCredentials | string;
   /**
    * You can define which URL to open when a notification is clicked. This may be useful if your notification is related
    * to a Zabbix alert or a transaction that you'd like to provide the deep-link for. Tapping the notification will open
