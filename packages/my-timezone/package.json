@@ -4,7 +4,7 @@
   "dependencies": {
     "axios": "1.7.7",
     "commander": "12.1.0",
-    "ntpclient": "1.8.0"
+    "ntpclient": "1.8.1"
   },
   "description": "Get the exact time based on your location.",
   "devDependencies": {
@@ -32,5 +32,5 @@
     "test": "vitest run"
   },
   "type": "module",
-  "version": "1.7.0"
+  "version": "1.7.1"
 }

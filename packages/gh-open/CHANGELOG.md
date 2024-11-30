@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.8.1 (2024-11-30)
+
+**Note:** Version bump only for package @ffflorian/gh-open
+
+
+
+
+
 # 3.8.0 (2024-11-19)
 
 
