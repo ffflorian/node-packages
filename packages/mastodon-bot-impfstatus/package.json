@@ -6,7 +6,7 @@
   "dependencies": {
     "axios": "1.7.7",
     "commander": "12.1.0",
-    "megalodon": "10.0.5",
+    "megalodon": "10.0.7",
     "ntfy": "1.7.1"
   },
   "description": "Toots Germany's COVID-19 vaccination progress to Mastodon.",
