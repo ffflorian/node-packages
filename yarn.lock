@@ -806,7 +806,7 @@ __metadata:
   dependencies:
     axios: "npm:1.7.7"
     commander: "npm:12.1.0"
-    megalodon: "npm:10.0.5"
+    megalodon: "npm:10.0.7"
     ntfy: "npm:1.7.1"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.6.3"
@@ -820,7 +820,7 @@ __metadata:
   resolution: "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress"
   dependencies:
     commander: "npm:12.1.0"
-    megalodon: "npm:10.0.5"
+    megalodon: "npm:10.0.7"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.6.3"
   bin:
@@ -3340,12 +3340,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ws@npm:^8.5.12":
-  version: 8.5.12
-  resolution: "@types/ws@npm:8.5.12"
+"@types/ws@npm:^8.5.13":
+  version: 8.5.13
+  resolution: "@types/ws@npm:8.5.13"
   dependencies:
     "@types/node": "npm:*"
-  checksum: 10c0/3fd77c9e4e05c24ce42bfc7647f7506b08c40a40fe2aea236ef6d4e96fc7cb4006a81ed1b28ec9c457e177a74a72924f4768b7b4652680b42dfd52bc380e15f9
+  checksum: 10c0/a5430aa479bde588e69cb9175518d72f9338b6999e3b2ae16fc03d3bdcff8347e486dc031e4ed14601260463c07e1f9a0d7511dfc653712b047c439c680b0b34
   languageName: node
   linkType: hard
 
@@ -8804,21 +8804,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"megalodon@npm:10.0.5":
-  version: 10.0.5
-  resolution: "megalodon@npm:10.0.5"
+"megalodon@npm:10.0.7":
+  version: 10.0.7
+  resolution: "megalodon@npm:10.0.7"
   dependencies:
     "@badgateway/oauth2-client": "npm:^2.4.2"
-    "@types/ws": "npm:^8.5.12"
+    "@types/ws": "npm:^8.5.13"
     axios: "npm:1.7.7"
     dayjs: "npm:^1.11.13"
     events: "npm:^3.3.0"
     form-data: "npm:^4.0.0"
     isomorphic-ws: "npm:^5.0.0"
     object-assign-deep: "npm:^0.4.0"
-    uuid: "npm:^10.0.0"
+    uuid: "npm:^11.0.2"
     ws: "npm:8.18.0"
-  checksum: 10c0/799f1a9b84a04f4999d76ce92f34cd9b3a4aa539678e86abe369e3a23da0b8003e82daa89b3af3bedc440051bc594483be07d5d33e9cc4aa159f0b6e976b2423
+  checksum: 10c0/7d8822ac9a8b812f8d24073087603cd9cca9610c95d2bb5ef1d9a5f4f8e476c743192878d1514a07265bacbf2c5a261cc299df75ab209d4cadc43b6a988adfd0
   languageName: node
   linkType: hard
 
@@ -13086,6 +13086,15 @@ __metadata:
   bin:
     uuid: dist/bin/uuid
   checksum: 10c0/eab18c27fe4ab9fb9709a5d5f40119b45f2ec8314f8d4cf12ce27e4c6f4ffa4a6321dc7db6c515068fa373c075b49691ba969f0010bf37f44c37ca40cd6bf7fe
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^11.0.2":
+  version: 11.0.3
+  resolution: "uuid@npm:11.0.3"
+  bin:
+    uuid: dist/esm/bin/uuid
+  checksum: 10c0/cee762fc76d949a2ff9205770334699e0043d52bb766472593a25f150077c9deed821230251ea3d6ab3943a5ea137d2826678797f1d5f6754c7ce5ce27e9f7a6
   languageName: node
   linkType: hard
 
