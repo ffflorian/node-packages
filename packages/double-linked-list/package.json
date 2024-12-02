@@ -6,7 +6,7 @@
     "touch": "3.1.1",
     "typedoc": "0.26.10",
     "typescript": "5.6.3",
-    "vitest": "2.1.4"
+    "vitest": "2.1.6"
   },
   "engines": {
     "node": ">= 18.0"
