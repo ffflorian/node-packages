@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.7.2 (2024-12-03)
+
+
+### Bug Fixes
+
+* **pixelflut:** Remove unused data variable ([bfc5106](https://github.com/ffflorian/node-packages/commit/bfc5106eaaf737129375fcb37df61426643040fb))
+
+
+
+
+
 ## 1.7.1 (2024-11-30)
 
 **Note:** Version bump only for package @ffflorian/electron-icon-generator
