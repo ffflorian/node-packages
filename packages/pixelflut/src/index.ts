@@ -23,14 +23,16 @@ export class Pixelflut {
     }
   }
 
-  public createTCPConnection(): Promise<string | void> {
+  public createTCPConnection(): Promise<string | undefined> {
     return new Promise((resolve, reject) => {
-      let data: string;
+      let data: string | undefined;
 
       this.tcpSocket = new net.Socket();
 
       this.tcpSocket
-        .on('data', bytes => (data += bytes.toString('utf8')))
+        .on('data', bytes => {
+          data += bytes.toString('utf8');
+        })
         .on('error', error => {
           if (this.failed(error.message)) {
             reject(error);
@@ -53,10 +55,8 @@ export class Pixelflut {
   public createUDPConnection(): Promise<void> {
     return new Promise((resolve, reject) => {
       this.udpSocket = dgram.createSocket('udp4');
-      let data: string;
 
       this.udpSocket
-        .on('data', bytes => (data += bytes.toString('utf8')))
         .on('error', error => {
           if (this.failed(error.message)) {
             reject(error);
