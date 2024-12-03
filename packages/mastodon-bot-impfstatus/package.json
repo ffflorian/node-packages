@@ -4,15 +4,15 @@
     "impfstatus": "dist/cli.js"
   },
   "dependencies": {
-    "axios": "1.7.7",
+    "axios": "1.7.8",
     "commander": "12.1.0",
-    "megalodon": "10.0.5",
+    "megalodon": "10.0.7",
     "ntfy": "1.7.1"
   },
   "description": "Toots Germany's COVID-19 vaccination progress to Mastodon.",
   "devDependencies": {
     "rimraf": "6.0.1",
-    "typescript": "5.6.3"
+    "typescript": "5.7.2"
   },
   "engines": {
     "node": ">= 18.0"

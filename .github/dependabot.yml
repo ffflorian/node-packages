@@ -12,6 +12,9 @@ updates:
       - dependency-name: '@types/node'
         versions:
           - '> 22.x'
+      - dependency-name: '@types/express'
+        versions:
+          - '> 4.x'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
