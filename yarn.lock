@@ -981,7 +981,7 @@ __metadata:
   dependencies:
     axios: "npm:1.7.9"
     commander: "npm:12.1.0"
-    megalodon: "npm:10.0.7"
+    megalodon: "npm:10.0.8"
     ntfy: "npm:1.7.2"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.7.2"
@@ -995,7 +995,7 @@ __metadata:
   resolution: "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress"
   dependencies:
     commander: "npm:12.1.0"
-    megalodon: "npm:10.0.7"
+    megalodon: "npm:10.0.8"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.7.2"
   bin:
@@ -6717,6 +6717,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"form-data@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "form-data@npm:4.0.1"
+  dependencies:
+    asynckit: "npm:^0.4.0"
+    combined-stream: "npm:^1.0.8"
+    mime-types: "npm:^2.1.12"
+  checksum: 10c0/bb102d570be8592c23f4ea72d7df9daa50c7792eb0cf1c5d7e506c1706e7426a4e4ae48a35b109e91c85f1c0ec63774a21ae252b66f4eb981cb8efef7d0463c8
+  languageName: node
+  linkType: hard
+
 "front-matter@npm:^4.0.2":
   version: 4.0.2
   resolution: "front-matter@npm:4.0.2"
@@ -8982,21 +8993,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"megalodon@npm:10.0.7":
-  version: 10.0.7
-  resolution: "megalodon@npm:10.0.7"
+"megalodon@npm:10.0.8":
+  version: 10.0.8
+  resolution: "megalodon@npm:10.0.8"
   dependencies:
     "@badgateway/oauth2-client": "npm:^2.4.2"
     "@types/ws": "npm:^8.5.13"
-    axios: "npm:1.7.7"
+    axios: "npm:1.7.9"
     dayjs: "npm:^1.11.13"
     events: "npm:^3.3.0"
-    form-data: "npm:^4.0.0"
+    form-data: "npm:^4.0.1"
     isomorphic-ws: "npm:^5.0.0"
     object-assign-deep: "npm:^0.4.0"
-    uuid: "npm:^11.0.2"
+    uuid: "npm:^11.0.3"
     ws: "npm:8.18.0"
-  checksum: 10c0/7d8822ac9a8b812f8d24073087603cd9cca9610c95d2bb5ef1d9a5f4f8e476c743192878d1514a07265bacbf2c5a261cc299df75ab209d4cadc43b6a988adfd0
+  checksum: 10c0/2f6a875e72be11b58dbd77688060b9608cfb0c12fda49a3c50ad6427ca6d045d06eb664c03ae847530d17b97075ff9fddc2871ca1d6c59dcd200ab06fc8d30a4
   languageName: node
   linkType: hard
 
@@ -13088,7 +13099,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^11.0.2":
+"uuid@npm:^11.0.3":
   version: 11.0.3
   resolution: "uuid@npm:11.0.3"
   bin:
