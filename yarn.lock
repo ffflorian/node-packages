@@ -862,7 +862,7 @@ __metadata:
   dependencies:
     rimraf: "npm:6.0.1"
     touch: "npm:3.1.1"
-    typedoc: "npm:0.27.2"
+    typedoc: "npm:0.27.6"
     typescript: "npm:5.7.2"
     vitest: "npm:2.1.8"
   languageName: unknown
@@ -12924,9 +12924,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.27.2":
-  version: 0.27.2
-  resolution: "typedoc@npm:0.27.2"
+"typedoc@npm:0.27.6":
+  version: 0.27.6
+  resolution: "typedoc@npm:0.27.6"
   dependencies:
     "@gerrit0/mini-shiki": "npm:^1.24.0"
     lunr: "npm:^2.3.9"
@@ -12937,7 +12937,7 @@ __metadata:
     typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10c0/85184d40760a5528a7f82a6b1a2932973208fc55762a4b8c3445b895c4fbdd65bbfbde9b1c2b335019129b59e36eda294080de9d332df6e1c856500234f0bb4d
+  checksum: 10c0/74af856fc2b9ca151567db8e08737a6ab8b29efb611414510eb833f80723245bc6ade00f2be7a410e335833cfd5e3deb1ae1ecfdb4da3a13c65faedd1f1805b0
   languageName: node
   linkType: hard
 
