@@ -7,7 +7,7 @@
     "commander": "13.1.0",
     "date-fns": "4.1.0",
     "logdown": "3.3.1",
-    "semver": "7.7.0",
+    "semver": "7.7.1",
     "table": "6.9.0"
   },
   "description": "Get useful data about Electron releases.",
