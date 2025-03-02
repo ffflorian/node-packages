@@ -759,7 +759,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/gh-open@workspace:packages/gh-open"
   dependencies:
-    axios: "npm:1.7.9"
+    axios: "npm:1.8.1"
     commander: "npm:13.1.0"
     find-up: "npm:7.0.0"
     http-status-codes: "npm:2.3.0"
@@ -818,7 +818,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/mastodon-bot-impfstatus@workspace:packages/mastodon-bot-impfstatus"
   dependencies:
-    axios: "npm:1.7.9"
+    axios: "npm:1.8.1"
     commander: "npm:13.1.0"
     megalodon: "npm:10.1.1"
     ntfy: "npm:1.7.2"
@@ -4125,7 +4125,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "auto-approver@workspace:packages/auto-approver"
   dependencies:
-    axios: "npm:1.7.9"
+    axios: "npm:1.8.1"
     commander: "npm:13.1.0"
     cosmiconfig: "npm:9.0.0"
     http-status-codes: "npm:2.3.0"
@@ -4181,6 +4181,17 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10c0/b7a41e24b59fee5f0f26c1fc844b45b17442832eb3a0fb42dd4f1430eb4abc571fe168e67913e8a1d91c993232bd1d1ab03e20e4d1fee8c6147649b576fc1b0b
+  languageName: node
+  linkType: hard
+
+"axios@npm:1.8.1":
+  version: 1.8.1
+  resolution: "axios@npm:1.8.1"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/b2e1d5a61264502deee4b50f0a6df0aa3b174c546ccf68c0dff714a2b8863232e0bd8cb5b84f853303e97f242a98260f9bb9beabeafe451ad5af538e9eb7ac22
   languageName: node
   linkType: hard
 
@@ -5413,7 +5424,7 @@ __metadata:
   dependencies:
     "@types/fs-extra": "npm:11.0.4"
     "@types/semver": "npm:7.5.8"
-    axios: "npm:1.7.9"
+    axios: "npm:1.8.1"
     chalk: "npm:5.4.1"
     commander: "npm:13.1.0"
     date-fns: "npm:4.1.0"
@@ -9290,7 +9301,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-timezone@workspace:packages/my-timezone"
   dependencies:
-    axios: "npm:1.7.9"
+    axios: "npm:1.8.1"
     commander: "npm:13.1.0"
     nock: "npm:14.0.1"
     ntpclient: "npm:1.8.2"
@@ -9782,7 +9793,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ntfy@workspace:packages/ntfy"
   dependencies:
-    axios: "npm:1.7.9"
+    axios: "npm:1.8.1"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.7.3"
   languageName: unknown
