@@ -996,7 +996,7 @@ __metadata:
     axios: "npm:1.8.1"
     commander: "npm:13.1.0"
     megalodon: "npm:10.1.1"
-    ntfy: "npm:1.7.3"
+    ntfy: "npm:1.7.4"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.8.2"
   bin:
@@ -9653,7 +9653,7 @@ __metadata:
     axios: "npm:1.8.1"
     commander: "npm:13.1.0"
     nock: "npm:14.0.1"
-    ntpclient: "npm:1.8.3"
+    ntpclient: "npm:1.8.4"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.8.2"
     vitest: "npm:3.0.7"
@@ -10138,7 +10138,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ntfy@npm:1.7.3, ntfy@workspace:packages/ntfy":
+"ntfy@npm:1.7.4, ntfy@workspace:packages/ntfy":
   version: 0.0.0-use.local
   resolution: "ntfy@workspace:packages/ntfy"
   dependencies:
@@ -10148,7 +10148,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ntpclient@npm:1.8.3, ntpclient@workspace:packages/ntpclient":
+"ntpclient@npm:1.8.4, ntpclient@workspace:packages/ntpclient":
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
