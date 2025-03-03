@@ -13,6 +13,6 @@ jobs:
           fetch-depth: 0
       - uses: yesolutions/mirror-action@18fc60c0629185af960c8256ccb650287a350b4e
         with:
-          REMOTE: 'ssh://git@codeberg.org/ffflorian/node-packages.git'
+          REMOTE: 'ssh://git@codeberg.org:ffflorian/node-packages.git'
           GIT_SSH_PRIVATE_KEY: ${{ secrets.CODEBERG_SECRET }}
           GIT_SSH_NO_VERIFY_HOST: "true"
