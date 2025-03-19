@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 async function checkFile(filePath: string): Promise<void> {
   try {
     await fs.access(filePath, fs.constants.F_OK | fs.constants.R_OK);
-  } catch (_error) {
+  } catch {
     throw new Error(`Input file "${filePath} doesn't exist or is not readable.`);
   }
 }
@@ -32,7 +32,7 @@ export async function copyJson(inputFile: string, outputFile: string, values: st
   if (!newJSONRaw) {
     console.info('New JSON file has no content.');
     newJSONRaw = '{}';
-  } else if (/^\{/.test(newJSONRaw)) {
+  } else if (newJSONRaw.startsWith('{')) {
     const spacesMatch = newJSONRaw.match(/^\{[\n\r]?( *)/);
     if (spacesMatch && spacesMatch[1]) {
       spaces = spacesMatch[1].length;

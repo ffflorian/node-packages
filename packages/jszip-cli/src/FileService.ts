@@ -22,11 +22,11 @@ export class FileService {
       try {
         await fs.access(dirPath, fs.constants.W_OK);
         return true;
-      } catch (_error) {
+      } catch {
         this.logger.info(`Directory "${dirPath}" exists but is not writable.`);
         return false;
       }
-    } catch (_error) {
+    } catch {
       this.logger.info(`Directory "${dirPath}" doesn't exist.`, this.options.force ? 'Creating.' : 'Not creating.');
       if (this.options.force) {
         await fs.ensureDir(dirPath);
@@ -42,7 +42,7 @@ export class FileService {
       try {
         await fs.access(filePath, fs.constants.F_OK | fs.constants.R_OK);
         return true;
-      } catch (_error) {
+      } catch {
         return false;
       }
     }
@@ -60,7 +60,7 @@ export class FileService {
           this.options.force ? 'Forcing overwrite.' : 'Not overwriting.'
         );
         return this.options.force;
-      } catch (_error) {
+      } catch {
         return true;
       }
     }

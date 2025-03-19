@@ -79,7 +79,7 @@ export class RepositoryService {
       gitHead = await fsAsync.readFile(gitHeadFile, 'utf-8');
       gitHead = gitHead.trim();
       this.logger.info('Read git head file', {gitHead});
-    } catch (_error) {
+    } catch {
       const errorMessage = `Could not find git HEAD file in "${gitDir}".`;
       throw new Error(errorMessage);
     }
@@ -103,7 +103,7 @@ export class RepositoryService {
       gitConfig = await fsAsync.readFile(gitConfigFile, 'utf-8');
       gitConfig = gitConfig.trim();
       this.logger.info('Read git config file', {gitConfigFile});
-    } catch (_error) {
+    } catch {
       const errorMessage = `Could not find git config file: "${gitConfigFile}"`;
       throw new Error(errorMessage);
     }

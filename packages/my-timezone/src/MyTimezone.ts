@@ -136,7 +136,7 @@ export class MyTimezone {
       try {
         const longitude = parseFloat(parsedRegex.groups.longitude);
         return {longitude};
-      } catch (_error) {
+      } catch {
         throw new Error(`Invalid coordinates: "${coordinates}"`);
       }
     }

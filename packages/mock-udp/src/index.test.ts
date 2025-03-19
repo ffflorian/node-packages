@@ -40,7 +40,7 @@ describe('mock-udp.clean', () => {
       try {
         client.send(buffer, 0, buffer.length, 1000 + index, 'localhost');
         assert.fail();
-      } catch (_error) {}
+      } catch {}
     });
   });
 });
@@ -115,7 +115,7 @@ describe('mock-udp.overriddenSocketSend', () => {
         try {
           client.send(buffer, 0, buffer.length, 1000, 'localhost');
           assert.fail();
-        } catch (_error) {
+        } catch {
           done(void 0);
         }
       });
@@ -128,7 +128,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     try {
       client.send(buffer, buffer.length, buffer.length, 1000, 'localhost');
       assert.fail();
-    } catch (_error) {}
+    } catch {}
     expect(scope.done()).toBe(false);
   });
 
@@ -138,7 +138,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     try {
       client.send(buffer, buffer.length + 1, buffer.length, 1000, 'localhost');
       assert.fail();
-    } catch (_error) {}
+    } catch {}
     expect(scope.done()).toBe(false);
   });
 
@@ -148,7 +148,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     try {
       client.send(buffer, 0, buffer.length + 1, 1000, 'localhost');
       assert.fail();
-    } catch (_error) {}
+    } catch {}
     expect(scope.done()).toBe(false);
   });
 });

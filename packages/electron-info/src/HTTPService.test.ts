@@ -28,7 +28,7 @@ describe('HTTPService', () => {
       try {
         await httpService.downloadReleasesFile(mockUrl, '');
         assert.fail('Should throw on timeout');
-      } catch (_error) {}
+      } catch {}
     });
   });
 });
