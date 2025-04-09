@@ -27,7 +27,7 @@
     "eslint-plugin-unused-imports": "4.1.4",
     "lerna": "8.2.0",
     "oxlint": "0.16.4",
-    "prettier": "3.5.2",
+    "prettier": "3.5.3",
     "rimraf": "6.0.1",
     "ts-node": "10.9.2",
     "typescript": "5.8.2",
