@@ -4499,17 +4499,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.7.7, axios@npm:^1.7.4":
-  version: 1.7.7
-  resolution: "axios@npm:1.7.7"
-  dependencies:
-    follow-redirects: "npm:^1.15.6"
-    form-data: "npm:^4.0.0"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: 10c0/4499efc89e86b0b49ffddc018798de05fab26e3bf57913818266be73279a6418c3ce8f9e934c7d2d707ab8c095e837fc6c90608fb7715b94d357720b5f568af7
-  languageName: node
-  linkType: hard
-
 "axios@npm:1.7.9":
   version: 1.7.9
   resolution: "axios@npm:1.7.9"
@@ -4529,6 +4518,17 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10c0/450993c2ba975ffccaf0d480b68839a3b2435a5469a71fa2fb0b8a55cdb2c2ae47e609360b9c1e2b2534b73dfd69e2733a1cf9f8215bee0bcd729b72f801b0ce
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.7.4":
+  version: 1.7.7
+  resolution: "axios@npm:1.7.7"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/4499efc89e86b0b49ffddc018798de05fab26e3bf57913818266be73279a6418c3ce8f9e934c7d2d707ab8c095e837fc6c90608fb7715b94d357720b5f568af7
   languageName: node
   linkType: hard
 
@@ -5337,7 +5337,7 @@ __metadata:
   dependencies:
     commander: "npm:13.1.0"
     compare-versions: "npm:6.1.1"
-    crates.io: "npm:2.2.9"
+    crates.io: "npm:2.2.10"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.8.2"
   bin:
@@ -5346,12 +5346,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"crates.io@npm:2.2.9":
-  version: 2.2.9
-  resolution: "crates.io@npm:2.2.9"
+"crates.io@npm:2.2.10":
+  version: 2.2.10
+  resolution: "crates.io@npm:2.2.10"
   dependencies:
-    axios: "npm:1.7.7"
-  checksum: 10c0/6fc1f43a8f2dabe05cf5e6a41d96821047871a8809921ab4b5ee33c88b0a78e091ec6c54c59ac4d213362aea079576a039a588254b20f5ea5a0763cc958d245b
+    axios: "npm:1.8.2"
+  checksum: 10c0/9a3c72121b2475a77bdf70fbcd60d5b137880c96cc667c74d97a2cf800b67d6c25ffba53180709f140439fd003eca604591708b50cca341e3de8480c22047a38
   languageName: node
   linkType: hard
 
