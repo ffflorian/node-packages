@@ -999,7 +999,7 @@ __metadata:
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:14.0.3"
-    open: "npm:10.1.0"
+    open: "npm:10.1.2"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.8.2"
     vitest: "npm:3.1.1"
@@ -4507,6 +4507,17 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10c0/b7a41e24b59fee5f0f26c1fc844b45b17442832eb3a0fb42dd4f1430eb4abc571fe168e67913e8a1d91c993232bd1d1ab03e20e4d1fee8c6147649b576fc1b0b
+  languageName: node
+  linkType: hard
+
+"axios@npm:1.8.2":
+  version: 1.8.2
+  resolution: "axios@npm:1.8.2"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/d8c2969e4642dc6d39555ac58effe06c051ba7aac2bd40cad7a9011c019fb2f16ee011c5a6906cb25b8a4f87258c359314eb981f852e60ad445ecaeb793c7aa2
   languageName: node
   linkType: hard
 
@@ -10520,15 +10531,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:10.1.0":
-  version: 10.1.0
-  resolution: "open@npm:10.1.0"
+"open@npm:10.1.2":
+  version: 10.1.2
+  resolution: "open@npm:10.1.2"
   dependencies:
     default-browser: "npm:^5.2.1"
     define-lazy-prop: "npm:^3.0.0"
     is-inside-container: "npm:^1.0.0"
     is-wsl: "npm:^3.1.0"
-  checksum: 10c0/c86d0b94503d5f735f674158d5c5d339c25ec2927562f00ee74590727292ed23e1b8d9336cb41ffa7e1fa4d3641d29b199b4ea37c78cb557d72b511743e90ebb
+  checksum: 10c0/1bee796f06e549ce764f693272100323fbc04da8fa3c5b0402d6c2d11b3d76fa0aac0be7535e710015ff035326638e3b9a563f3b0e7ac3266473ed5663caae6d
   languageName: node
   linkType: hard
 
