@@ -2012,9 +2012,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@npmcli/arborist@npm:9.0.1":
-  version: 9.0.1
-  resolution: "@npmcli/arborist@npm:9.0.1"
+"@npmcli/arborist@npm:9.0.2":
+  version: 9.0.2
+  resolution: "@npmcli/arborist@npm:9.0.2"
   dependencies:
     "@isaacs/string-locale-compare": "npm:^1.1.0"
     "@npmcli/fs": "npm:^4.0.0"
@@ -2052,7 +2052,7 @@ __metadata:
     walk-up-path: "npm:^4.0.0"
   bin:
     arborist: bin/index.js
-  checksum: 10c0/df560157264ed3ff5e1b023938be6a1ecf95aec828341c26b040864914759dd5f1caf5939994591931cc81b9cbd9b0338afc01d3fd6545d9060a8ddc7bfc3f9f
+  checksum: 10c0/af2aec6baa3895a671b2b1821975030badd404fb891b0244e04e7eb5f6f8aaa78c6d4243df9b3ca073c3c17b5f0be56a045162fd5a75c37b1b0bc946fc763620
   languageName: node
   linkType: hard
 
@@ -4507,6 +4507,17 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10c0/b7a41e24b59fee5f0f26c1fc844b45b17442832eb3a0fb42dd4f1430eb4abc571fe168e67913e8a1d91c993232bd1d1ab03e20e4d1fee8c6147649b576fc1b0b
+  languageName: node
+  linkType: hard
+
+"axios@npm:1.8.2":
+  version: 1.8.2
+  resolution: "axios@npm:1.8.2"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/d8c2969e4642dc6d39555ac58effe06c051ba7aac2bd40cad7a9011c019fb2f16ee011c5a6906cb25b8a4f87258c359314eb981f852e60ad445ecaeb793c7aa2
   languageName: node
   linkType: hard
 
@@ -11481,7 +11492,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "publish-flat@workspace:packages/publish-flat"
   dependencies:
-    "@npmcli/arborist": "npm:9.0.1"
+    "@npmcli/arborist": "npm:9.0.2"
     "@types/fs-extra": "npm:11.0.4"
     "@types/npm-packlist": "npm:7.0.3"
     "@types/npmcli__arborist": "npm:5.6.11"
