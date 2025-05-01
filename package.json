@@ -7,7 +7,7 @@
     "@evilmartians/lefthook": "1.11.8",
     "@ffflorian/eslint-config": "0.10.3",
     "@ffflorian/prettier-config": "0.3.3",
-    "@swc/core": "1.11.15",
+    "@swc/core": "1.11.24",
     "@types/babel__core": "7.20.4",
     "@types/eslint": "^8",
     "@types/node": "~22",
