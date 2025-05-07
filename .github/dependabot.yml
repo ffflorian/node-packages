@@ -15,6 +15,12 @@ updates:
       - dependency-name: '@types/express'
         versions:
           - '> 4.x'
+      - dependency-name: '@types/eslint'
+        versions:
+          - '> 8.x'
+      - dependency-name: 'eslint'
+        versions:
+          - '> 8.x'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
