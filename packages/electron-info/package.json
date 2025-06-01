@@ -16,7 +16,7 @@
     "@types/semver": "7.7.0",
     "fs-extra": "11.3.0",
     "http-status-codes": "2.3.0",
-    "nock": "14.0.4",
+    "nock": "14.0.5",
     "rimraf": "6.0.1",
     "typescript": "5.8.3",
     "vitest": "3.1.3"
