@@ -3,7 +3,7 @@
   "bin": "dist/cli.js",
   "dependencies": {
     "basic-auth": "2.0.1",
-    "commander": "13.1.0",
+    "commander": "14.0.0",
     "http-status-codes": "2.3.0",
     "logdown": "3.3.1",
     "tsscmp": "1.0.6"
