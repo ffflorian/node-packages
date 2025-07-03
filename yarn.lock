@@ -833,7 +833,7 @@ __metadata:
   dependencies:
     axios: "npm:1.10.0"
     commander: "npm:14.0.0"
-    megalodon: "npm:10.1.1"
+    megalodon: "npm:10.1.2"
     ntfy: "npm:1.7.5"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.8.3"
@@ -847,7 +847,7 @@ __metadata:
   resolution: "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress"
   dependencies:
     commander: "npm:14.0.0"
-    megalodon: "npm:10.1.1"
+    megalodon: "npm:10.1.2"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.8.3"
   bin:
@@ -9081,9 +9081,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"megalodon@npm:10.1.1":
-  version: 10.1.1
-  resolution: "megalodon@npm:10.1.1"
+"megalodon@npm:10.1.2":
+  version: 10.1.2
+  resolution: "megalodon@npm:10.1.2"
   dependencies:
     "@badgateway/oauth2-client": "npm:^2.4.2"
     "@types/ws": "npm:^8.5.13"
@@ -9095,7 +9095,7 @@ __metadata:
     object-assign-deep: "npm:^0.4.0"
     uuid: "npm:^11.0.3"
     ws: "npm:8.18.0"
-  checksum: 10c0/4d099c6c1c8deeb0f36013fa7d681c29fe0fece58b7e84a2fd27496e574c6e65ca34a5a38bd6d3711b9d5ad5a715f074d14f74502023f6062d000e0cd3d8f913
+  checksum: 10c0/78ea3bfb85cf03a6fe6fad023aa1f8bb9bf224eaf09beae163c85fca28ea15558e3eadf4ab689630be8ba7f3ab4238c5c1a773a066936c6c012dae92a46af63f
   languageName: node
   linkType: hard
 
