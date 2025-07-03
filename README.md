@@ -13,7 +13,6 @@ My Node.js packages
 - [`file-index`](./packages/file-index) [![npm version](https://img.shields.io/npm/v/@ffflorian/file-index.svg)](https://npmjs.com/packages/@ffflorian/file-index)
 - [`gh-open`](./packages/gh-open) [![npm version](https://img.shields.io/npm/v/@ffflorian/gh-open.svg)](https://npmjs.com/packages/@ffflorian/gh-open)
 - [`https-proxy`](./packages/https-proxy) [![npm version](https://img.shields.io/npm/v/@ffflorian/https-proxy.svg)](https://npmjs.com/packages/@ffflorian/https-proxy)
-- [`mastodon-bot-impfstatus`](./packages/mastodon-bot-impfstatus)
 - [`jszip-cli`](./packages/jszip-cli) [![npm version](https://img.shields.io/npm/v/@ffflorian/jszip-cli.svg)](https://npmjs.com/packages/@ffflorian/jszip-cli)
 - [`mock-udp`](./packages/mock-udp) [![npm version](https://img.shields.io/npm/v/@ffflorian/mock-udp.svg)](https://npmjs.com/packages/@ffflorian/mock-udp)
 - [`my-timezone`](./packages/my-timezone) [![npm version](https://img.shields.io/npm/v/my-timezone.svg)](https://npmjs.com/packages/my-timezone)

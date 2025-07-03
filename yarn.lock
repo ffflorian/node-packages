@@ -827,21 +827,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ffflorian/mastodon-bot-impfstatus@workspace:packages/mastodon-bot-impfstatus":
-  version: 0.0.0-use.local
-  resolution: "@ffflorian/mastodon-bot-impfstatus@workspace:packages/mastodon-bot-impfstatus"
-  dependencies:
-    axios: "npm:1.10.0"
-    commander: "npm:14.0.0"
-    megalodon: "npm:10.1.1"
-    ntfy: "npm:1.7.5"
-    rimraf: "npm:6.0.1"
-    typescript: "npm:5.8.3"
-  bin:
-    impfstatus: dist/cli.js
-  languageName: unknown
-  linkType: soft
-
 "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress":
   version: 0.0.0-use.local
   resolution: "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress"
@@ -10595,7 +10580,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ntfy@npm:1.7.5, ntfy@workspace:packages/ntfy":
+"ntfy@workspace:packages/ntfy":
   version: 0.0.0-use.local
   resolution: "ntfy@workspace:packages/ntfy"
   dependencies:
