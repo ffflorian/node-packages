@@ -3254,20 +3254,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/npmcli__arborist@npm:*":
-  version: 5.6.11
-  resolution: "@types/npmcli__arborist@npm:5.6.11"
-  dependencies:
-    "@npm/types": "npm:^1"
-    "@types/cacache": "npm:*"
-    "@types/node": "npm:*"
-    "@types/npmcli__package-json": "npm:*"
-    "@types/pacote": "npm:*"
-  checksum: 10c0/bdd0ec419958e672d25dddcf7a7b90c386db473f5cb2fedefc622d676a159f1eb3a262f25eb9719a545b30a2446345c6800173a8d9db828d70eb01687f19f9cb
-  languageName: node
-  linkType: hard
-
-"@types/npmcli__arborist@npm:6.3.1":
+"@types/npmcli__arborist@npm:*, @types/npmcli__arborist@npm:6.3.1":
   version: 6.3.1
   resolution: "@types/npmcli__arborist@npm:6.3.1"
   dependencies:
