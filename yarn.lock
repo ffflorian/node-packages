@@ -4178,17 +4178,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.8.2":
-  version: 1.8.2
-  resolution: "axios@npm:1.8.2"
-  dependencies:
-    follow-redirects: "npm:^1.15.6"
-    form-data: "npm:^4.0.0"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: 10c0/d8c2969e4642dc6d39555ac58effe06c051ba7aac2bd40cad7a9011c019fb2f16ee011c5a6906cb25b8a4f87258c359314eb981f852e60ad445ecaeb793c7aa2
-  languageName: node
-  linkType: hard
-
 "axios@npm:^1.7.4":
   version: 1.7.7
   resolution: "axios@npm:1.7.7"
@@ -5037,7 +5026,7 @@ __metadata:
   dependencies:
     commander: "npm:14.0.0"
     compare-versions: "npm:6.1.1"
-    crates.io: "npm:2.2.10"
+    crates.io: "npm:2.3.0"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.8.3"
   bin:
@@ -5046,12 +5035,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"crates.io@npm:2.2.10":
-  version: 2.2.10
-  resolution: "crates.io@npm:2.2.10"
+"crates.io@npm:2.3.0":
+  version: 2.3.0
+  resolution: "crates.io@npm:2.3.0"
   dependencies:
-    axios: "npm:1.8.2"
-  checksum: 10c0/9a3c72121b2475a77bdf70fbcd60d5b137880c96cc667c74d97a2cf800b67d6c25ffba53180709f140439fd003eca604591708b50cca341e3de8480c22047a38
+    axios: "npm:1.10.0"
+  checksum: 10c0/4eb1a20a92d7d216d5569f35a14518a03a28e1f13ad6709f4b316af8583fe7c97c621065df975536ced8c323c11deb366d3b05ef46134281f3e0215823fa2865
   languageName: node
   linkType: hard
 
