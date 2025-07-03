@@ -42,7 +42,6 @@
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
-    "build:docs": "lerna run build:docs --concurrency 4",
     "build:ts": "lerna run build --concurrency 4",
     "clean": "lerna run clean",
     "dist": "yarn clean && yarn build:ts",
