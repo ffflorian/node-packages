@@ -123,7 +123,7 @@ export class YearProgressClient {
   }
 
   private async toot(text: string): Promise<void> {
-    const client = generator.default('mastodon', this.baseURL, this.accessToken);
+    const client = generator('mastodon', this.baseURL, this.accessToken);
     await client.postStatus(text, {spoiler_text: `Year's progress`});
   }
 }
