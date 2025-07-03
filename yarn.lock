@@ -1806,9 +1806,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@npmcli/arborist@npm:9.1.1":
-  version: 9.1.1
-  resolution: "@npmcli/arborist@npm:9.1.1"
+"@npmcli/arborist@npm:9.1.2":
+  version: 9.1.2
+  resolution: "@npmcli/arborist@npm:9.1.2"
   dependencies:
     "@isaacs/string-locale-compare": "npm:^1.1.0"
     "@npmcli/fs": "npm:^4.0.0"
@@ -1846,7 +1846,7 @@ __metadata:
     walk-up-path: "npm:^4.0.0"
   bin:
     arborist: bin/index.js
-  checksum: 10c0/21ad37a3b42a52206667ca89f10cf58b87807f0199bf8e9af80541740626e31acb4f1310aaedc1b133f3080ad9105c3475c2084c97d396edc95493e55eb7336a
+  checksum: 10c0/e62656562f437e126a9f0801fa83afd8af474ded0f862fbdebbe8fde53758090496c1ac80a05d89676e4b63af6d51c924c608516fb6540b07546e99c2d3f59c4
   languageName: node
   linkType: hard
 
@@ -11209,7 +11209,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "publish-flat@workspace:packages/publish-flat"
   dependencies:
-    "@npmcli/arborist": "npm:9.1.1"
+    "@npmcli/arborist": "npm:9.1.2"
     "@types/fs-extra": "npm:11.0.4"
     "@types/npm-packlist": "npm:7.0.3"
     "@types/npmcli__arborist": "npm:5.6.11"
