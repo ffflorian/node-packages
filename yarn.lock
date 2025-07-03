@@ -74,9 +74,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/eslint-parser@npm:7.27.1":
-  version: 7.27.1
-  resolution: "@babel/eslint-parser@npm:7.27.1"
+"@babel/eslint-parser@npm:7.28.0":
+  version: 7.28.0
+  resolution: "@babel/eslint-parser@npm:7.28.0"
   dependencies:
     "@nicolo-ribaudo/eslint-scope-5-internals": "npm:5.1.1-v1"
     eslint-visitor-keys: "npm:^2.1.0"
@@ -84,7 +84,7 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.11.0
     eslint: ^7.5.0 || ^8.0.0 || ^9.0.0
-  checksum: 10c0/dedb2bc7ef00307eaf8e40d5ec7f1e8ae4649838fa2e7ec5e1b47eaf9bd8708949503b05175de922e2431ce69a5f3b5fab1c1202003b1d9457d3c0b2c3bdc4ec
+  checksum: 10c0/ca25b8ce38026f22ef875bf45a7bf96601446461d245dabfd8422c4e9d17a8fbe48149b97f5adc58147962118b22acf7f45c54effef8501232f88b3e5eb7c62e
   languageName: node
   linkType: hard
 
@@ -10169,7 +10169,7 @@ __metadata:
   resolution: "node-packages@workspace:."
   dependencies:
     "@babel/core": "npm:7.23.3"
-    "@babel/eslint-parser": "npm:7.27.1"
+    "@babel/eslint-parser": "npm:7.28.0"
     "@evilmartians/lefthook": "npm:1.11.14"
     "@ffflorian/eslint-config": "npm:0.10.3"
     "@ffflorian/prettier-config": "npm:0.3.3"
