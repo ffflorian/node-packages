@@ -4,7 +4,7 @@
   "devDependencies": {
     "@babel/core": "7.23.3",
     "@babel/eslint-parser": "7.28.0",
-    "@evilmartians/lefthook": "1.11.14",
+    "@evilmartians/lefthook": "1.11.15",
     "@ffflorian/eslint-config": "0.10.3",
     "@ffflorian/prettier-config": "0.3.3",
     "@swc/core": "1.12.9",
@@ -19,7 +19,7 @@
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-jsdoc": "51.3.3",
     "eslint-plugin-no-unsanitized": "4.1.2",
-    "eslint-plugin-oxlint": "1.4.0",
+    "eslint-plugin-oxlint": "1.5.0",
     "eslint-plugin-prettier": "5.5.1",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-sort-keys-fix": "1.1.2",
@@ -42,7 +42,6 @@
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
-    "build:docs": "lerna run build:docs --concurrency 4",
     "build:ts": "lerna run build --concurrency 4",
     "clean": "lerna run clean",
     "dist": "yarn clean && yarn build:ts",

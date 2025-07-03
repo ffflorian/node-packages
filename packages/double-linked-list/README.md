@@ -33,8 +33,6 @@ list.add('three');
 list.get(0); // 'one'
 ```
 
-The full API documentation is available at https://ffflorian.github.io/DoubleLinkedList.
-
 ### Testing
 
 First, install the needed packages for testing:
