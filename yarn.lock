@@ -772,7 +772,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/gh-open@workspace:packages/gh-open"
   dependencies:
-    axios: "npm:1.9.0"
+    axios: "npm:1.10.0"
     commander: "npm:14.0.0"
     find-up: "npm:7.0.0"
     http-status-codes: "npm:2.3.0"
@@ -831,7 +831,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/mastodon-bot-impfstatus@workspace:packages/mastodon-bot-impfstatus"
   dependencies:
-    axios: "npm:1.9.0"
+    axios: "npm:1.10.0"
     commander: "npm:14.0.0"
     megalodon: "npm:10.1.1"
     ntfy: "npm:1.7.5"
@@ -4303,7 +4303,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "auto-approver@workspace:packages/auto-approver"
   dependencies:
-    axios: "npm:1.9.0"
+    axios: "npm:1.10.0"
     commander: "npm:14.0.0"
     cosmiconfig: "npm:9.0.0"
     http-status-codes: "npm:2.3.0"
@@ -4340,6 +4340,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:1.10.0":
+  version: 1.10.0
+  resolution: "axios@npm:1.10.0"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/2239cb269cc789eac22f5d1aabd58e1a83f8f364c92c2caa97b6f5cbb4ab2903d2e557d9dc670b5813e9bcdebfb149e783fb8ab3e45098635cd2f559b06bd5d8
+  languageName: node
+  linkType: hard
+
 "axios@npm:1.7.9":
   version: 1.7.9
   resolution: "axios@npm:1.7.9"
@@ -4359,17 +4370,6 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10c0/d8c2969e4642dc6d39555ac58effe06c051ba7aac2bd40cad7a9011c019fb2f16ee011c5a6906cb25b8a4f87258c359314eb981f852e60ad445ecaeb793c7aa2
-  languageName: node
-  linkType: hard
-
-"axios@npm:1.9.0":
-  version: 1.9.0
-  resolution: "axios@npm:1.9.0"
-  dependencies:
-    follow-redirects: "npm:^1.15.6"
-    form-data: "npm:^4.0.0"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: 10c0/9371a56886c2e43e4ff5647b5c2c3c046ed0a3d13482ef1d0135b994a628c41fbad459796f101c655e62f0c161d03883454474d2e435b2e021b1924d9f24994c
   languageName: node
   linkType: hard
 
@@ -5613,7 +5613,7 @@ __metadata:
   dependencies:
     "@types/fs-extra": "npm:11.0.4"
     "@types/semver": "npm:7.7.0"
-    axios: "npm:1.9.0"
+    axios: "npm:1.10.0"
     chalk: "npm:5.4.1"
     commander: "npm:14.0.0"
     date-fns: "npm:4.1.0"
@@ -9499,7 +9499,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-timezone@workspace:packages/my-timezone"
   dependencies:
-    axios: "npm:1.9.0"
+    axios: "npm:1.10.0"
     commander: "npm:14.0.0"
     nock: "npm:14.0.5"
     ntpclient: "npm:1.8.5"
@@ -9986,7 +9986,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ntfy@workspace:packages/ntfy"
   dependencies:
-    axios: "npm:1.9.0"
+    axios: "npm:1.10.0"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.8.3"
   languageName: unknown
