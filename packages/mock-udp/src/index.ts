@@ -11,7 +11,7 @@ const originalSocketSend = Socket.prototype.send;
 class Scope {
   public _done: boolean;
   public address?: string;
-  public buffer?: Buffer | string | Uint8Array | any[];
+  public buffer?: ArrayBuffer | SharedArrayBuffer | NodeJS.TypedArray | string | readonly any[];
   public length?: number;
   public offset?: number;
   public port?: number;
@@ -25,29 +25,20 @@ class Scope {
   }
 }
 
-function overriddenSocketSend(msg: string | Uint8Array | any[], callback?: SendCallback): void;
-function overriddenSocketSend(msg: string | Uint8Array | any[], port?: number, callback?: SendCallback): void;
 function overriddenSocketSend(
-  msg: string | Uint8Array | any[],
+  msg: string | NodeJS.ArrayBufferView | readonly any[],
   port?: number,
   address?: string,
   callback?: SendCallback
 ): void;
 function overriddenSocketSend(
-  msg: string | Uint8Array | any[],
-  offset: number,
-  length: number,
-  callback?: SendCallback
-): void;
-function overriddenSocketSend(
-  msg: string | Uint8Array | any[],
-  offset: number,
-  length: number,
+  msg: string | NodeJS.ArrayBufferView | readonly any[],
   port?: number,
   callback?: SendCallback
 ): void;
+function overriddenSocketSend(msg: string | NodeJS.ArrayBufferView | readonly any[], callback?: SendCallback): void;
 function overriddenSocketSend(
-  msg: string | Uint8Array | any[],
+  msg: string | NodeJS.ArrayBufferView,
   offset: number,
   length: number,
   port?: number,
@@ -55,7 +46,20 @@ function overriddenSocketSend(
   callback?: SendCallback
 ): void;
 function overriddenSocketSend(
-  msg: Buffer | string | Uint8Array | any[],
+  msg: string | NodeJS.ArrayBufferView,
+  offset: number,
+  length: number,
+  port?: number,
+  callback?: SendCallback
+): void;
+function overriddenSocketSend(
+  msg: string | NodeJS.ArrayBufferView,
+  offset: number,
+  length: number,
+  callback?: SendCallback
+): void;
+function overriddenSocketSend(
+  msg: NodeJS.ArrayBufferView | string | readonly any[],
   offsetOrPortOrCallback?: number | SendCallback,
   lengthOrAddressOrCallback?: number | string | SendCallback,
   portOrCallback?: number | SendCallback,
@@ -70,16 +74,18 @@ function overriddenSocketSend(
   const length = hasLengthAndOffset ? (lengthOrAddressOrCallback as number) || 0 : 0;
   const offset = hasLengthAndOffset ? (offsetOrPortOrCallback as number) : 0;
   const port = hasLengthAndOffset ? (portOrCallback as number) : (offsetOrPortOrCallback as number);
+  const msgLength = msg instanceof DataView ? msg.byteLength : msg.length;
 
-  if (offset >= msg.length) {
+  if (offset >= msgLength) {
     throw new Error('Offset into buffer too large.');
   }
 
-  if (offset + length > msg.length) {
+  if (offset + length > msgLength) {
     throw new Error('Offset + length beyond buffer length.');
   }
 
-  const newBuffer = msg.slice(offset, offset + length);
+  const newBuffer =
+    msg instanceof DataView ? msg.buffer.slice(offset, offset + length) : msg.slice(offset, offset + length);
   const host = `${address}:${port}`;
 
   if (intercepts.hasOwnProperty(host)) {
