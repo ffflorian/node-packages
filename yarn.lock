@@ -3201,12 +3201,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=13.7.0, @types/node@npm:~22":
-  version: 22.10.1
-  resolution: "@types/node@npm:22.10.1"
+"@types/node@npm:*, @types/node@npm:>=13.7.0":
+  version: 24.1.0
+  resolution: "@types/node@npm:24.1.0"
   dependencies:
-    undici-types: "npm:~6.20.0"
-  checksum: 10c0/0fbb6d29fa35d807f0223a4db709c598ac08d66820240a2cd6a8a69b8f0bc921d65b339d850a666b43b4e779f967e6ed6cf6f0fca3575e08241e6b900364c234
+    undici-types: "npm:~7.8.0"
+  checksum: 10c0/6c4686bc144f6ce7bffd4cadc3e1196e2217c1da4c639c637213719c8a3ee58b6c596b994befcbffeacd9d9eb0c3bff6529d2bc27da5d1cb9d58b1da0056f9f4
   languageName: node
   linkType: hard
 
@@ -3214,6 +3214,15 @@ __metadata:
   version: 16.9.1
   resolution: "@types/node@npm:16.9.1"
   checksum: 10c0/17877153b2fe748e85dd85432c7d6776cfaced7fd69f1998d005812d4865ac02e192a3adde7869ba8f449550f0a80ea6e3369e449a07c587e71222c56478e7d4
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:~22":
+  version: 22.16.5
+  resolution: "@types/node@npm:22.16.5"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10c0/93a245e96a01f4a6aa38475000070292a9299e17b95bc1fc8180c652fb3a62f9b3b9ec0b78f9fc6a78b9274d3dfce456e80c7bb68b5357c8f7dbf581df4408c1
   languageName: node
   linkType: hard
 
@@ -5015,7 +5024,7 @@ __metadata:
   dependencies:
     commander: "npm:14.0.0"
     compare-versions: "npm:6.1.1"
-    crates.io: "npm:2.3.0"
+    crates.io: "npm:2.3.3"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.8.3"
   bin:
@@ -5024,12 +5033,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"crates.io@npm:2.3.0":
-  version: 2.3.0
-  resolution: "crates.io@npm:2.3.0"
+"crates.io@npm:2.3.3":
+  version: 2.3.3
+  resolution: "crates.io@npm:2.3.3"
   dependencies:
-    axios: "npm:1.10.0"
-  checksum: 10c0/4eb1a20a92d7d216d5569f35a14518a03a28e1f13ad6709f4b316af8583fe7c97c621065df975536ced8c323c11deb366d3b05ef46134281f3e0215823fa2865
+    axios: "npm:1.11.0"
+  checksum: 10c0/3d632bf092831c5214cbed15616de2d39ef004f772949f72f88d4163af581b1371b57607b6207eb182a761d147f8b36ad08aea897baf9b1a23ba211efda0d036
   languageName: node
   linkType: hard
 
@@ -13562,10 +13571,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.20.0":
-  version: 6.20.0
-  resolution: "undici-types@npm:6.20.0"
-  checksum: 10c0/68e659a98898d6a836a9a59e6adf14a5d799707f5ea629433e025ac90d239f75e408e2e5ff086afc3cace26f8b26ee52155293564593fbb4a2f666af57fc59bf
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~7.8.0":
+  version: 7.8.0
+  resolution: "undici-types@npm:7.8.0"
+  checksum: 10c0/9d9d246d1dc32f318d46116efe3cfca5a72d4f16828febc1918d94e58f6ffcf39c158aa28bf5b4fc52f410446bc7858f35151367bd7a49f21746cab6497b709b
   languageName: node
   linkType: hard
 
