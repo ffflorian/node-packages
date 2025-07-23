@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.8.6 (2025-07-23)
+
+
+### Bug Fixes
+
+* **mock-udp:** New Node.js API ([e7595e0](https://github.com/ffflorian/node-packages/commit/e7595e0e91a77c2f73c1d8f3dba7816679d52098))
+
+
+
+
+
 ## 3.8.5 (2025-03-19)
 
 **Note:** Version bump only for package @ffflorian/jszip-cli
