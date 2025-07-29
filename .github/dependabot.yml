@@ -11,7 +11,7 @@ updates:
     ignore:
       - dependency-name: '@types/node'
         versions:
-          - '> 22.x'
+          - '> 24.x'
       - dependency-name: '@types/express'
         versions:
           - '> 4.x'
