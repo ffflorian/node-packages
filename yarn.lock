@@ -6169,12 +6169,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-oxlint@npm:1.5.0":
-  version: 1.5.0
-  resolution: "eslint-plugin-oxlint@npm:1.5.0"
+"eslint-plugin-oxlint@npm:1.9.0":
+  version: 1.9.0
+  resolution: "eslint-plugin-oxlint@npm:1.9.0"
   dependencies:
     jsonc-parser: "npm:^3.3.1"
-  checksum: 10c0/2693e3f6f19a705220344290be89628a94059007477d7374dec54f5b3405a2e7bf22d377b45cd0e49e7119b7f0362d9c1189ae3550bd8a1a3f10ebe8439d13d7
+  checksum: 10c0/0c969ae2a67bf92438a051a1e30c4b3b62c20eda943d551b24f86a38d1886077b12b145febe0b8b549fb3486ff622fa35a6cfa04905c5082a5f0ad3ab508a481
   languageName: node
   linkType: hard
 
@@ -9953,7 +9953,7 @@ __metadata:
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-jsdoc: "npm:52.0.0"
     eslint-plugin-no-unsanitized: "npm:4.1.2"
-    eslint-plugin-oxlint: "npm:1.5.0"
+    eslint-plugin-oxlint: "npm:1.9.0"
     eslint-plugin-prettier: "npm:5.5.1"
     eslint-plugin-simple-import-sort: "npm:12.1.1"
     eslint-plugin-sort-keys-fix: "npm:1.1.2"
