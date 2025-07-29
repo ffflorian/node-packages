@@ -27,7 +27,7 @@ jobs:
       - name: Setup yarn
         run: |
           corepack prepare yarn@stable --activate
-          yarn set version 4.2.1
+          yarn set version berry
 
       - name: Build, lint and test
         run: |
