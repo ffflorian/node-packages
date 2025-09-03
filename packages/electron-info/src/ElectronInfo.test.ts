@@ -4,7 +4,7 @@ import {randomUUID} from 'node:crypto';
 import {expect, describe, test, beforeEach, beforeAll, afterAll, afterEach} from 'vitest';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
-import fs from 'fs-extra';
+import {promises as fs} from 'node:fs';
 
 import {ElectronInfo, RawReleaseInfo} from './ElectronInfo.js';
 
@@ -32,14 +32,16 @@ const createRandomBody = (): RawReleaseInfo[] => [
 ];
 
 const provideReleaseFile = async () => {
-  await fs.copy(fullReleasesFile, path.join(tempDirDownload, 'latest.json'));
+  await fs.cp(fullReleasesFile, path.join(tempDirDownload, 'latest.json'));
 };
 
 describe('ElectronInfo', () => {
   let releases: string;
 
   beforeAll(async () => {
-    await fs.ensureDir(tempDir);
+    try {
+      await fs.mkdir(tempDir);
+    } catch {}
     releases = await fs.readFile(fullReleasesFile, 'utf8');
   });
 
@@ -47,7 +49,7 @@ describe('ElectronInfo', () => {
     nock(mockUrl).get('/').reply(HTTP_STATUS.OK, releases);
   });
 
-  afterAll(() => fs.remove(tempDir));
+  afterAll(() => fs.rm(tempDir, {force: true, recursive: true}));
 
   afterEach(() => nock.cleanAll());
 

@@ -1,6 +1,6 @@
+import {promises as fs} from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import fs from 'fs-extra';
 import JSZip from 'jszip';
 import logdown from 'logdown';
 import progress from 'progress';
@@ -37,7 +37,9 @@ export class ExtractService {
     for (const entry of rawEntries) {
       const jszip = new JSZip();
       if (this.outputDir) {
-        await fs.ensureDir(this.outputDir);
+        try {
+          await fs.mkdir(this.outputDir);
+        } catch {}
       }
 
       const resolvedPath = path.resolve(entry);
@@ -64,7 +66,9 @@ export class ExtractService {
         entries.map(async ([filePath, entry], index) => {
           const resolvedFilePath = path.join(this.outputDir!, filePath);
           if (entry.dir) {
-            await fs.ensureDir(resolvedFilePath);
+            try {
+              await fs.mkdir(resolvedFilePath);
+            } catch {}
           } else {
             const data = await entry.async('nodebuffer');
             await fs.writeFile(resolvedFilePath, data, {

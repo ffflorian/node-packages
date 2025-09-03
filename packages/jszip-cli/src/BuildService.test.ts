@@ -1,12 +1,12 @@
 import {expect, describe, test, vi, beforeEach, beforeAll} from 'vitest';
-import {JSZipCLI} from '.';
-import type {BuildService} from './BuildService';
+import {JSZipCLI} from './index.js';
+import type {BuildService} from './BuildService.js';
 
 describe('BuildService', () => {
   let jsZipCLI: JSZipCLI;
 
   beforeAll(() => {
-    vi.mock('fs-extra', () => ({
+    vi.mock('fs', () => ({
       default: {
         lstat: () => Promise.resolve({isDirectory: () => false, isFile: () => true}),
         readFile: () => {},

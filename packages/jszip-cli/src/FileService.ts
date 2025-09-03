@@ -1,5 +1,5 @@
+import {promises as fs} from 'node:fs';
 import path from 'node:path';
-import fs from 'fs-extra';
 import logdown from 'logdown';
 
 import type {TerminalOptions} from './interfaces.js';
@@ -29,7 +29,9 @@ export class FileService {
     } catch {
       this.logger.info(`Directory "${dirPath}" doesn't exist.`, this.options.force ? 'Creating.' : 'Not creating.');
       if (this.options.force) {
-        await fs.ensureDir(dirPath);
+        try {
+          await fs.mkdir(dirPath);
+        } catch {}
         return true;
       }
       return false;

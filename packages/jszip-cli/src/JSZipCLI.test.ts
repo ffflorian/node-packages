@@ -1,7 +1,7 @@
+import {promises as fs} from 'node:fs';
 import * as path from 'node:path';
 import {expect, describe, test, vi, beforeAll, afterAll} from 'vitest';
-import fs from 'fs-extra';
-import {ConfigFileOptions, JSZipCLI, TerminalOptions} from '.';
+import {ConfigFileOptions, JSZipCLI, TerminalOptions} from './index.js';
 
 const tempDir = path.resolve(__dirname, '.temp');
 const configFilePath = path.resolve(tempDir, 'config.json');
@@ -28,13 +28,17 @@ async function buildOptions(additionalConfig?: Partial<AllOptions>): Promise<All
     ...additionalConfig,
   };
 
-  await fs.writeJSON(configFilePath, fileConfig);
+  await fs.writeFile(configFilePath, JSON.stringify(fileConfig), 'utf-8');
   return fileConfig;
 }
 
 describe('JSZipCLI', () => {
-  beforeAll(() => fs.ensureDir(tempDir));
-  afterAll(() => fs.remove(tempDir));
+  beforeAll(async () => {
+    try {
+      await fs.mkdir(tempDir);
+    } catch {}
+  });
+  afterAll(() => fs.rm(tempDir, {force: true, recursive: true}));
 
   test('can read from a configuration file', async () => {
     const builtOptions = await buildOptions();

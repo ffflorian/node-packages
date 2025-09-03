@@ -1,5 +1,5 @@
+import {promises as fs} from 'node:fs';
 import path from 'node:path';
-import fs from 'fs-extra';
 
 async function checkFile(filePath: string): Promise<void> {
   try {
@@ -22,9 +22,8 @@ export async function copyJson(inputFile: string, outputFile: string, values: st
   const outputResolved = path.resolve(outputFile);
 
   await checkFile(inputResolved);
-  await fs.ensureFile(outputResolved);
 
-  const originalJSON: packageJson = await fs.readJSON(inputResolved);
+  const originalJSON: packageJson = JSON.parse(await fs.readFile(inputResolved, 'utf-8'));
   let newJSONRaw = await fs.readFile(outputResolved, 'utf-8');
 
   let spaces = 2;
@@ -47,5 +46,5 @@ export async function copyJson(inputFile: string, outputFile: string, values: st
     }
   }
 
-  await fs.writeJSON(outputResolved, newJSON, {spaces});
+  await fs.writeFile(outputResolved, JSON.stringify(newJSON, null, spaces));
 }
