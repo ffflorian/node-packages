@@ -4,7 +4,7 @@
   "dependencies": {
     "commander": "14.0.0",
     "cosmiconfig": "9.0.0",
-    "fs-extra": "11.3.0",
+    "fs-extra": "11.3.1",
     "glob": "11.0.3",
     "jszip": "3.10.1",
     "logdown": "3.3.1",
