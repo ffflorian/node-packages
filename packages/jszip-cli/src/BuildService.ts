@@ -1,5 +1,5 @@
 import path from 'node:path';
-import fs from 'fs-extra';
+import {promises as fs, Stats as fsStats} from 'node:fs';
 import JSZip from 'jszip';
 import logdown from 'logdown';
 import progress from 'progress';
@@ -87,7 +87,7 @@ export class BuildService {
 
   private async addFile(entry: Entry, isLink = false): Promise<void> {
     const {resolvedPath, zipPath} = entry;
-    let fileStat: fs.Stats;
+    let fileStat: fsStats;
     let fileData: Buffer | string;
 
     try {
@@ -139,7 +139,7 @@ export class BuildService {
   }
 
   private async checkEntry(entry: Entry): Promise<void> {
-    let fileStat: fs.Stats;
+    let fileStat: fsStats;
     try {
       fileStat = await fs.lstat(entry.resolvedPath);
     } catch (error) {

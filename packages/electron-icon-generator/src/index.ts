@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
+import {promises as fs} from 'node:fs';
 import path from 'node:path';
-import fs from 'fs-extra';
 import {Jimp} from 'jimp';
 import icongen from 'icon-gen';
 
@@ -36,9 +36,17 @@ export class IconGenerator {
   private async createPNG(size: number): Promise<string> {
     const fileName = size.toString();
 
-    await fs.ensureDir(this.options.output);
-    await fs.ensureDir(this.iconsDir);
-    await fs.ensureDir(this.PNGoutputDir);
+    try {
+      await fs.mkdir(this.options.output);
+    } catch {}
+
+    try {
+      await fs.mkdir(this.iconsDir);
+    } catch {}
+
+    try {
+      await fs.mkdir(this.PNGoutputDir);
+    } catch {}
 
     const image = await Jimp.read(this.options.input);
     const resizeFilePath = path.join(this.PNGoutputDir, fileName);
@@ -62,7 +70,9 @@ export class IconGenerator {
       const macIconsDir = path.join(this.iconsDir, 'mac');
       const winIconsDir = path.join(this.iconsDir, 'win');
 
-      await fs.ensureDir(macIconsDir);
+      try {
+        await fs.mkdir(macIconsDir);
+      } catch {}
 
       await icongen.default(this.PNGoutputDir, macIconsDir, {
         icns: {
@@ -72,7 +82,9 @@ export class IconGenerator {
         report: !this.options.silent,
       });
 
-      await fs.ensureDir(winIconsDir);
+      try {
+        await fs.mkdir(winIconsDir);
+      } catch {}
 
       await icongen.default(this.PNGoutputDir, winIconsDir, {
         icns: {

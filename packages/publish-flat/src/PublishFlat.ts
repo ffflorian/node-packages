@@ -1,8 +1,8 @@
 import {execSync} from 'node:child_process';
+import {promises as fs} from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import Arborist from '@npmcli/arborist';
-import fs from 'fs-extra';
 import logdown from 'logdown';
 import packlist from 'npm-packlist';
 
@@ -80,11 +80,11 @@ export class PublishFlat {
     const outputDir = this.options.outputDir ? path.resolve(this.options.outputDir) : await this.createTempDir();
 
     for (const file of normalFiles) {
-      await fs.copy(path.join(this.packageDir, file), path.join(outputDir, file));
+      await fs.cp(path.join(this.packageDir, file), path.join(outputDir, file));
     }
 
     for (const {fileName, replacedFilename} of filesInFlattenedDir) {
-      await fs.copy(path.join(this.packageDir, fileName), path.join(outputDir, replacedFilename));
+      await fs.cp(path.join(this.packageDir, fileName), path.join(outputDir, replacedFilename));
     }
 
     this.logger.info(`Flattened ${files.length} files in "${outputDir}".`);
@@ -110,7 +110,7 @@ export class PublishFlat {
       this.logger.info(stdout);
     }
 
-    await fs.remove(tempDir);
+    await fs.rm(tempDir, {force: true, recursive: true});
   }
 
   private cleanDirName(dirName: string): string {
@@ -123,7 +123,7 @@ export class PublishFlat {
   }
 
   private async cleanPackageJson(filePath: string, filesInFlattenedDir: FilesInFlattenedDir): Promise<void> {
-    const packageJson: PackageJson = await fs.readJSON(filePath);
+    const packageJson: PackageJson = JSON.parse(await fs.readFile(filePath, 'utf-8'));
 
     if (Array.isArray(packageJson.files)) {
       packageJson.files = packageJson.files

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
+import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {program as commander} from 'commander';
-import fs from 'fs-extra';
 
 import {JSZipCLI} from './JSZipCLI.js';
 
@@ -11,8 +11,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const packageJsonPath = path.join(__dirname, '../package.json');
 
-const {description, name, version}: {description: string; name: string; version: string} =
-  fs.readJSONSync(packageJsonPath);
+const {description, name, version}: {description: string; name: string; version: string} = JSON.parse(
+  fs.readFileSync(packageJsonPath, 'utf-8')
+);
 
 interface CLIOptions {
   config?: string;

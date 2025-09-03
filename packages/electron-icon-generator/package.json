@@ -3,13 +3,11 @@
   "bin": "dist/index.js",
   "dependencies": {
     "commander": "14.0.0",
-    "fs-extra": "11.3.0",
     "icon-gen": "5.0.0",
     "jimp": "1.6.0"
   },
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "devDependencies": {
-    "@types/fs-extra": "11.0.4",
     "@types/pngjs": "6.0.5",
     "rimraf": "6.0.1",
     "typescript": "5.9.2"
