@@ -5246,7 +5246,7 @@ __metadata:
   dependencies:
     commander: "npm:14.0.0"
     compare-versions: "npm:6.1.1"
-    crates.io: "npm:2.3.3"
+    crates.io: "npm:2.3.5"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.9.2"
   bin:
@@ -5255,12 +5255,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"crates.io@npm:2.3.3":
-  version: 2.3.3
-  resolution: "crates.io@npm:2.3.3"
+"crates.io@npm:2.3.5":
+  version: 2.3.5
+  resolution: "crates.io@npm:2.3.5"
   dependencies:
     axios: "npm:1.11.0"
-  checksum: 10c0/3d632bf092831c5214cbed15616de2d39ef004f772949f72f88d4163af581b1371b57607b6207eb182a761d147f8b36ad08aea897baf9b1a23ba211efda0d036
+  checksum: 10c0/a5c79c1d01e14e849c3d206a53cb1d4caa9f398add6269ca3f9d9ff2dc1f2bc3a7dd0d75a8b59e998c7276a445f75128e68340d8b3b05a0b7d0fc094d1fa62cd
   languageName: node
   linkType: hard
 
