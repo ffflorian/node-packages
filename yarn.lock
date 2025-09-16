@@ -778,7 +778,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/gh-open@workspace:packages/gh-open"
   dependencies:
-    axios: "npm:1.12.0"
+    axios: "npm:1.12.2"
     commander: "npm:14.0.1"
     find-up: "npm:8.0.0"
     http-status-codes: "npm:2.3.0"
@@ -4342,7 +4342,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "auto-approver@workspace:packages/auto-approver"
   dependencies:
-    axios: "npm:1.12.0"
+    axios: "npm:1.12.2"
     commander: "npm:14.0.1"
     cosmiconfig: "npm:9.0.0"
     http-status-codes: "npm:2.3.0"
@@ -4387,17 +4387,6 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10c0/2239cb269cc789eac22f5d1aabd58e1a83f8f364c92c2caa97b6f5cbb4ab2903d2e557d9dc670b5813e9bcdebfb149e783fb8ab3e45098635cd2f559b06bd5d8
-  languageName: node
-  linkType: hard
-
-"axios@npm:1.12.0":
-  version: 1.12.0
-  resolution: "axios@npm:1.12.0"
-  dependencies:
-    follow-redirects: "npm:^1.15.6"
-    form-data: "npm:^4.0.4"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: 10c0/44a1e4cfb69a2d59aa12bbc441a336e5c18e87c02b904c509fd33607d94e8cb8cc221c17e9d53f67841a4efe13abf1aa1497c85df390cdb8681ee723998d11b0
   languageName: node
   linkType: hard
 
@@ -5734,7 +5723,7 @@ __metadata:
   dependencies:
     "@types/fs-extra": "npm:11.0.4"
     "@types/semver": "npm:7.7.1"
-    axios: "npm:1.12.0"
+    axios: "npm:1.12.2"
     chalk: "npm:5.6.2"
     commander: "npm:14.0.1"
     date-fns: "npm:4.1.0"
@@ -10015,7 +10004,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-timezone@workspace:packages/my-timezone"
   dependencies:
-    axios: "npm:1.12.0"
+    axios: "npm:1.12.2"
     commander: "npm:14.0.1"
     nock: "npm:14.0.10"
     ntpclient: "npm:1.8.6"
@@ -10502,7 +10491,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ntfy@workspace:packages/ntfy"
   dependencies:
-    axios: "npm:1.12.0"
+    axios: "npm:1.12.2"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.9.2"
   languageName: unknown
