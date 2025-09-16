@@ -40,5 +40,5 @@
     "test": "exit 0"
   },
   "type": "module",
-  "version": "1.7.6"
+  "version": "1.7.7"
 }

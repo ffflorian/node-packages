@@ -9927,7 +9927,7 @@ __metadata:
     axios: "npm:1.12.2"
     commander: "npm:14.0.1"
     nock: "npm:14.0.10"
-    ntpclient: "npm:1.8.6"
+    ntpclient: "npm:1.8.7"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.9.2"
     vitest: "npm:3.2.4"
@@ -10417,7 +10417,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ntpclient@npm:1.8.6, ntpclient@workspace:packages/ntpclient":
+"ntpclient@npm:1.8.7, ntpclient@workspace:packages/ntpclient":
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
