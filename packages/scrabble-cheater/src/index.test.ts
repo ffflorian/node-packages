@@ -1,11 +1,9 @@
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
 import {assert, expect, describe, test} from 'vitest';
 
 import {ScrabbleCheater} from './index.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = import.meta.dirname;
 
 const wordList = path.resolve(__dirname, '../fixtures/wordlist.txt');
 const emptyList = path.resolve(__dirname, '../fixtures/empty.txt');

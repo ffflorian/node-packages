@@ -3,7 +3,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline';
-import {fileURLToPath} from 'node:url';
 import {program as commander} from 'commander';
 import {cosmiconfigSync} from 'cosmiconfig';
 import logdown from 'logdown';
@@ -24,8 +23,7 @@ interface PackageJson {
   version: string;
 }
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 
 const {bin, description, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));

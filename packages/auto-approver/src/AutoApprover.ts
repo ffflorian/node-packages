@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
 import axios, {AxiosError, AxiosInstance} from 'axios';
 import logdown from 'logdown';
 
@@ -9,8 +8,7 @@ interface PackageJson {
   version: string;
 }
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 
 const {bin, version: toolVersion}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
