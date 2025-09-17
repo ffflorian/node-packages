@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.10.8 (2025-09-17)
+
+
+### Bug Fixes
+
+* **mastodon-bot-yearprogress:** Add missing types for ws ([c7ad973](https://github.com/ffflorian/node-packages/commit/c7ad9735516ea5411c1694b2d1b1bf4f56747901))
+
+
+
+
+
 ## 1.10.7 (2025-09-16)
 
 
