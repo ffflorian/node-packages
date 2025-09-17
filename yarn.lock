@@ -830,6 +830,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress"
   dependencies:
+    "@types/ws": "npm:8.18.1"
     commander: "npm:14.0.1"
     masto: "npm:7.2.0"
     rimraf: "npm:6.0.1"
@@ -3344,6 +3345,15 @@ __metadata:
   version: 1.0.2
   resolution: "@types/tsscmp@npm:1.0.2"
   checksum: 10c0/7e6c3e7f77334753eec014927fb046d5c6395e9d6e325c9bde2b9cfca88ff98eaa24719aaae37ed6243ea75bb40a5bba38e426769ac6e9830b27536bf2c1d984
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:8.18.1":
+  version: 8.18.1
+  resolution: "@types/ws@npm:8.18.1"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/61aff1129143fcc4312f083bc9e9e168aa3026b7dd6e70796276dcfb2c8211c4292603f9c4864fae702f2ed86e4abd4d38aa421831c2fd7f856c931a481afbab
   languageName: node
   linkType: hard
 
