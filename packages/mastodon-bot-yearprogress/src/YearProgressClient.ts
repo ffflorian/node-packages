@@ -1,4 +1,4 @@
-import generator from 'megalodon';
+import {createRestAPIClient} from 'masto';
 import {Config} from './Config.js';
 
 enum ConfigKeys {
@@ -123,7 +123,14 @@ export class YearProgressClient {
   }
 
   private async toot(text: string): Promise<void> {
-    const client = generator('mastodon', this.baseURL, this.accessToken);
-    await client.postStatus(text, {spoiler_text: `Year's progress`});
+    const masto = createRestAPIClient({
+      accessToken: this.accessToken,
+      url: this.baseURL,
+    });
+
+    await masto.v1.statuses.create({
+      spoilerText: `Year's progress`,
+      status: text,
+    });
   }
 }
