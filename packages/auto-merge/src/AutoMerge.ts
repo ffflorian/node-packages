@@ -140,7 +140,9 @@ export class AutoMerge {
     const matchingRepositories = this.getMatchingRepositories(allRepositories, regex);
 
     const resultPromises = matchingRepositories.map(async ({pullRequests, repositorySlug}) => {
-      const actionPromises = pullRequests.map(pullRequest => this.mergePullRequest(repositorySlug, pullRequest.number));
+      const actionPromises = pullRequests.map(pullRequest =>
+        this.mergePullRequest(repositorySlug, pullRequest.number, this.config.squash)
+      );
       const actionResults = await Promise.all(actionPromises);
       return {actionResults, repositorySlug};
     });
@@ -165,7 +167,7 @@ export class AutoMerge {
     return actionResult;
   }
 
-  async mergePullRequest(repositorySlug: string, pullNumber: number, squash?: boolean): Promise<ActionResult> {
+  async mergePullRequest(repositorySlug: string, pullNumber: number, squash: boolean = false): Promise<ActionResult> {
     const actionResult: ActionResult = {pullNumber, status: 'good'};
 
     try {

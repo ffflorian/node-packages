@@ -54,8 +54,8 @@ describe('AutoMerge', () => {
         .persist();
 
       nock(autoMerge['apiClient'].defaults.baseURL!)
-        .post(/^\/repos\/[^/]+\/[^/]+\/issues\/\d+\/comments\/?$/)
-        .reply(HTTP_STATUS.CREATED, {data: 'not-used'})
+        .put(/^\/repos\/[^/]+\/[^/]+\/pulls\/\d+\/merge\/?$/)
+        .reply(HTTP_STATUS.OK, {data: 'not-used'})
         .persist();
     });
 
@@ -106,20 +106,22 @@ describe('AutoMerge', () => {
 
     describe('mergeByMatch', () => {
       test('merge matching PRs', async () => {
-        vi.spyOn<any, any>(autoMerge, 'postMerge');
+        vi.spyOn<any, any>(autoMerge, 'putMerge');
 
         await autoMerge.mergeByMatch(/eslint/gi, repositories);
         const expectedRepositoryESLint = repositories[0];
-        expect(autoMerge['postMerge']).toHaveBeenCalledWith(
+        expect(autoMerge['putMerge']).toHaveBeenCalledWith(
           expectedRepositoryESLint.repositorySlug,
-          expectedRepositoryESLint.pullRequests[0].number
+          expectedRepositoryESLint.pullRequests[0].number,
+          false
         );
 
         await autoMerge.mergeByMatch(/typescript-4.0.3/gi, repositories);
         const expectedRepositoryTypescript = repositories[1];
-        expect(autoMerge['postMerge']).toHaveBeenCalledWith(
+        expect(autoMerge['putMerge']).toHaveBeenCalledWith(
           expectedRepositoryTypescript.repositorySlug,
-          expectedRepositoryTypescript.pullRequests[0].number
+          expectedRepositoryTypescript.pullRequests[0].number,
+          false
         );
       });
     });
