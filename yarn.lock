@@ -4123,9 +4123,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"auto-approver@workspace:packages/auto-approver":
+"auto-merge@workspace:packages/auto-merge":
   version: 0.0.0-use.local
-  resolution: "auto-approver@workspace:packages/auto-approver"
+  resolution: "auto-merge@workspace:packages/auto-merge"
   dependencies:
     axios: "npm:1.12.2"
     commander: "npm:14.0.1"
@@ -4137,7 +4137,7 @@ __metadata:
     typescript: "npm:5.9.2"
     vitest: "npm:3.2.4"
   bin:
-    auto-approver: dist/cli.js
+    auto-merge: dist/cli.js
   languageName: unknown
   linkType: soft
 

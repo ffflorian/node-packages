@@ -1,9 +1,0 @@
-{
-  "authToken": "my-secret-token",
-  "dryRun": false,
-  "keepDrafts": true,
-  "projects": {
-    "gitHub": ["ffflorian/auto-approver", "ffflorian/ts-boilerplate"]
-  },
-  "useComment": "@dependabot squash and merge"
-}

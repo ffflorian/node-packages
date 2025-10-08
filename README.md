@@ -4,7 +4,7 @@ My Node.js packages
 
 ## Packages
 
-- [`auto-approver`](./packages/auto-approver) [![npm version](https://img.shields.io/npm/v/auto-approver.svg)](https://npmjs.com/packages/auto-approver)
+- [`auto-merge`](./packages/auto-merge) [![npm version](https://img.shields.io/npm/v/auto-merge.svg)](https://npmjs.com/packages/auto-merge)
 - [`crates-updater`](./packages/crates-updater) [![npm version](https://img.shields.io/npm/v/crates-updater.svg)](https://npmjs.com/packages/crates-updater)
 - [`double-linked-list`](./packages/double-linked-list) [![npm version](https://img.shields.io/npm/v/@ffflorian/doublelinkedlist.svg)](https://npmjs.com/packages/@ffflorian/doublelinkedlist)
 - [`electron-icon-generator`](./packages/electron-icon-generator) [![npm version](https://img.shields.io/npm/v/@ffflorian/electron-icon-generator.svg)](https://npmjs.com/packages/@ffflorian/electron-icon-generator)

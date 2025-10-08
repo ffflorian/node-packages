@@ -35,25 +35,22 @@ export interface ActionResult {
   status: 'bad' | 'good';
 }
 
-export interface ApproverConfig {
+export interface AutoMergeConfig {
   /** The GitHub auth token */
   authToken: string;
+  /** Approve before merging */
+  autoApprove?: boolean;
   /** Don't send any data */
   dryRun?: boolean;
-  /** Include draft PRs */
-  keepDrafts?: boolean;
+  /** Merge draft PRs */
+  mergeDrafts?: boolean;
   /** All projects to include */
   projects: {
     /** All projects hosted on GitHub in the format `user/repo` */
     gitHub: string[];
   };
-  /** Post a comment on the PRs instead of approving them */
-  useComment?: string;
-  /**
-   * Currently not in use
-   * @deprecated
-   */
-  verbose?: boolean;
+  /** Squash when merging */
+  squash?: boolean;
 }
 
 export interface Repository {
@@ -66,14 +63,14 @@ export interface RepositoryResult {
   repositorySlug: string;
 }
 
-export class AutoApprover {
+export class AutoMerge {
   private readonly apiClient: AxiosInstance;
-  private readonly config: ApproverConfig;
+  private readonly config: AutoMergeConfig;
   private readonly logger: logdown.Logger;
 
-  constructor(config: ApproverConfig) {
+  constructor(config: AutoMergeConfig) {
     this.config = config;
-    this.logger = logdown('auto-approver', {
+    this.logger = logdown('auto-merge', {
       logger: console,
       markdown: false,
     });
@@ -88,7 +85,7 @@ export class AutoApprover {
     this.checkConfig(this.config);
   }
 
-  private checkConfig(config: ApproverConfig): void {
+  private checkConfig(config: AutoMergeConfig): void {
     if (!config.projects?.gitHub || config.projects.gitHub.length < 1) {
       throw new Error('No projects in config file specified');
     }
@@ -138,14 +135,12 @@ export class AutoApprover {
       .filter(Boolean) as Repository[];
   }
 
-  async commentByMatch(regex: RegExp, comment: string, repositories?: Repository[]): Promise<RepositoryResult[]> {
+  async mergeByMatch(regex: RegExp, repositories?: Repository[]): Promise<RepositoryResult[]> {
     const allRepositories = repositories || (await this.getRepositoriesWithOpenPullRequests());
     const matchingRepositories = this.getMatchingRepositories(allRepositories, regex);
 
     const resultPromises = matchingRepositories.map(async ({pullRequests, repositorySlug}) => {
-      const actionPromises = pullRequests.map(pullRequest =>
-        this.commentOnPullRequest(repositorySlug, pullRequest.number, comment)
-      );
+      const actionPromises = pullRequests.map(pullRequest => this.mergePullRequest(repositorySlug, pullRequest.number));
       const actionResults = await Promise.all(actionPromises);
       return {actionResults, repositorySlug};
     });
@@ -170,16 +165,16 @@ export class AutoApprover {
     return actionResult;
   }
 
-  async commentOnPullRequest(repositorySlug: string, pullNumber: number, comment: string): Promise<ActionResult> {
+  async mergePullRequest(repositorySlug: string, pullNumber: number, squash?: boolean): Promise<ActionResult> {
     const actionResult: ActionResult = {pullNumber, status: 'good'};
 
     try {
       if (!this.config.dryRun) {
-        await this.postComment(repositorySlug, pullNumber, comment);
+        await this.putMerge(repositorySlug, pullNumber, squash);
       }
     } catch (error) {
       this.logger.error(
-        `Could not comment on pull request #${pullNumber} in "${repositorySlug}": ${(error as AxiosError).message}`
+        `Could not merge pull request #${pullNumber} in "${repositorySlug}": ${(error as AxiosError).message}`
       );
       actionResult.status = 'bad';
       actionResult.error = (error as AxiosError).toString();
@@ -217,16 +212,16 @@ export class AutoApprover {
   }
 
   /** @see https://docs.github.com/en/rest/reference/issues#create-an-issue-comment */
-  private async postComment(repositorySlug: string, pullNumber: number, comment: string): Promise<void> {
-    const resourceUrl = `/repos/${repositorySlug}/issues/${pullNumber}/comments`;
-    await this.apiClient.post(resourceUrl, {body: comment});
+  private async putMerge(repositorySlug: string, pullNumber: number, squash?: boolean): Promise<void> {
+    const resourceUrl = `/repos/${repositorySlug}/pulls/${pullNumber}/merge`;
+    await this.apiClient.put(resourceUrl, squash ? {merge_method: 'squash'} : undefined);
   }
 
   private async getPullRequestsBySlug(repositorySlug: string): Promise<GitHubPullRequest[]> {
     const resourceUrl = `/repos/${repositorySlug}/pulls`;
     const params = {state: 'open'};
     const response = await this.apiClient.get<GitHubPullRequest[]>(resourceUrl, {params});
-    if (!this.config.keepDrafts) {
+    if (this.config.mergeDrafts) {
       response.data = response.data.filter(pr => !pr.draft);
     }
     return response.data;

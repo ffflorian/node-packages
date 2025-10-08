@@ -7,7 +7,7 @@
     "cosmiconfig": "9.0.0",
     "logdown": "3.3.1"
   },
-  "description": "Automatically approve all GitHub PRs which match a specific pattern.",
+  "description": "Automatically merge (and optionally approve) all GitHub PRs which match a specific pattern.",
   "devDependencies": {
     "http-status-codes": "2.3.0",
     "nock": "14.0.10",
@@ -28,8 +28,8 @@
   ],
   "license": "GPL-3.0",
   "module": "dist/index.js",
-  "name": "auto-approver",
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/auto-approver",
+  "name": "auto-merge",
+  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/auto-merge",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
@@ -38,5 +38,5 @@
     "test": "vitest run"
   },
   "type": "module",
-  "version": "1.15.8"
+  "version": "1.0.0"
 }
