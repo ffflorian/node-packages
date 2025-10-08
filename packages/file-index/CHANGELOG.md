@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.8.10 (2025-10-08)
+
+
+### Bug Fixes
+
+* yarn lockfile ([6877829](https://github.com/ffflorian/node-packages/commit/6877829b8c223d469d44beb0d4c332f2a3e626a9))
+
+
+
+
+
 ## 2.8.9 (2025-10-08)
 
 
