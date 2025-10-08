@@ -708,6 +708,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ffflorian/auto-merge@workspace:packages/auto-merge":
+  version: 0.0.0-use.local
+  resolution: "@ffflorian/auto-merge@workspace:packages/auto-merge"
+  dependencies:
+    axios: "npm:1.12.2"
+    commander: "npm:14.0.1"
+    cosmiconfig: "npm:9.0.0"
+    http-status-codes: "npm:2.3.0"
+    logdown: "npm:3.3.1"
+    nock: "npm:14.0.10"
+    rimraf: "npm:6.0.1"
+    typescript: "npm:5.9.2"
+    vitest: "npm:3.2.4"
+  bin:
+    auto-merge: dist/cli.js
+  languageName: unknown
+  linkType: soft
+
 "@ffflorian/doublelinkedlist@workspace:packages/double-linked-list":
   version: 0.0.0-use.local
   resolution: "@ffflorian/doublelinkedlist@workspace:packages/double-linked-list"
@@ -4122,24 +4140,6 @@ __metadata:
   checksum: 10c0/d73e2ddf20c4eb9337e1b3df1a0f6159481050a5de457c55b14ea2e5cb6d90bb69e004c9af54737a5ee0917fcf2c9e25de67777bbe58261847846066ba75bc9d
   languageName: node
   linkType: hard
-
-"auto-merge@workspace:packages/auto-merge":
-  version: 0.0.0-use.local
-  resolution: "auto-merge@workspace:packages/auto-merge"
-  dependencies:
-    axios: "npm:1.12.2"
-    commander: "npm:14.0.1"
-    cosmiconfig: "npm:9.0.0"
-    http-status-codes: "npm:2.3.0"
-    logdown: "npm:3.3.1"
-    nock: "npm:14.0.10"
-    rimraf: "npm:6.0.1"
-    typescript: "npm:5.9.2"
-    vitest: "npm:3.2.4"
-  bin:
-    auto-merge: dist/cli.js
-  languageName: unknown
-  linkType: soft
 
 "available-typed-arrays@npm:^1.0.5":
   version: 1.0.5
