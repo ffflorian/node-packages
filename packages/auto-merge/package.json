@@ -28,7 +28,7 @@
   ],
   "license": "GPL-3.0",
   "module": "dist/index.js",
-  "name": "auto-merge",
+  "name": "@ffflorian/auto-merge",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/auto-merge",
   "scripts": {
     "build": "tsc -p tsconfig.json",

@@ -29,7 +29,7 @@ const packageJsonPath = path.join(__dirname, '../package.json');
 const {description, name, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
 commander
-  .name(name)
+  .name(name.replace(/^@[^/]+\//, ''))
   .description(description)
   .option('-a, --approve', 'approve before merging')
   .option('-c, --config <path>', 'specify a configuration file (default: .automergerc.json)')

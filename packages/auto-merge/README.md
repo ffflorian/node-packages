@@ -1,4 +1,4 @@
-# auto-merge [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/auto-merge.svg?style=flat)](https://www.npmjs.com/package/auto-merge)
+# auto-merge [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![npm version](https://img.shields.io/npm/v/@ffflorian/auto-merge.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/auto-merge)
 
 Automatically merge (and optionally approve) all GitHub PRs which match a specific pattern.
 
@@ -11,7 +11,7 @@ Automatically merge (and optionally approve) all GitHub PRs which match a specif
 
 ℹ️ This is a pure [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
-Run `yarn global add auto-merge` or `npm i -g auto-merge`.
+Run `yarn global add @ffflorian/auto-merge` or `npm i -g @ffflorian/auto-merge`.
 
 ## Usage
 
