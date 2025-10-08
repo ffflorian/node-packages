@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.9.9 (2025-10-08)
+
+
+### Bug Fixes
+
+* **auto-merge:** Forward squash config ([060d663](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/060d6630ebff0e878f98f586c655483c3576c354))
+
+
+
+
+
 ## 1.9.8 (2025-09-17)
 
 
