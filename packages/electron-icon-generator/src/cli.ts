@@ -7,19 +7,19 @@ import {program as commander} from 'commander';
 import {IconGenerator} from './index.js';
 
 interface PackageJson {
-  bin: Record<string, string>;
   description: string;
+  name: string;
   version: string;
 }
 
 const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 
-const {bin, description, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+const {description, name, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
 commander
+  .name(name.replace(/^@[^/]+\//, ''))
   .description(description)
-  .name(Object.keys(bin)[0])
   .version(version)
   .option('-i, --input <file>', 'Input PNG file (recommended size: 1024x1024)', './icon.png')
   .option('-o, --output <folder>', 'Folder to output new icons folder', './')

@@ -7,18 +7,18 @@ import {program as commander} from 'commander';
 import {Options, ScrabbleCheater} from './index.js';
 
 interface PackageJson {
-  bin: Record<string, string>;
   description: string;
+  name: string;
   version: string;
 }
 
 const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 
-const {bin, description, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+const {description, name, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
 commander
-  .name(Object.keys(bin)[0])
+  .name(name)
   .version(version)
   .description(description)
   .option('-w, --wordlist <file>', 'Specify a wordlist file (mandatory)')
