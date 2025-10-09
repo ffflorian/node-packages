@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.9.11 (2025-10-09)
+
+
+### Bug Fixes
+
+* **auto-merge:** Warn if no PRs could be merged ([0f19f0a](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/0f19f0a6f16c0caa5b288aefa4bc58de239b8734))
+
+
+
+
+
 ## 1.9.10 (2025-10-08)
 
 
