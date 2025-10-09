@@ -70,9 +70,18 @@ async function runAction(autoMerge: AutoMerge, repositories: Repository[], pullR
     return count + repository.actionResults.length;
   }, 0);
 
-  const prPluralized = pluralize('PR', actedRepositories);
+  const successRepositories = [...approveResults, ...mergeResults].filter(repository => {
+    return repository.actionResults.some(result => result.error === undefined);
+  }).length;
+
+  const prPluralized = pluralize('PR', successRepositories);
   const doAction = configFileData.autoApprove ? 'Approved and merged' : 'Merged';
-  logger.info(`${doAction} ${actedRepositories} ${prPluralized} matching "${regex}".`);
+  const infoMessage = `${doAction} ${successRepositories} ${prPluralized} matching "${regex}".`;
+  if (actedRepositories === 0) {
+    logger.warn(infoMessage);
+  } else {
+    logger.info(infoMessage);
+  }
 }
 
 function askQuestion(question: string): Promise<string> {
