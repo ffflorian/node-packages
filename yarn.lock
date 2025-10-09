@@ -10220,12 +10220,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-packlist@npm:10.0.1":
-  version: 10.0.1
-  resolution: "npm-packlist@npm:10.0.1"
+"npm-packlist@npm:10.0.2":
+  version: 10.0.2
+  resolution: "npm-packlist@npm:10.0.2"
   dependencies:
     ignore-walk: "npm:^8.0.0"
-  checksum: 10c0/64397de9e1c8c90d63dfb37604a49e642106f086ebc84d1b1fc7519e35d7c599a246bb75396d5b62f307e35e849c879aebf5f6da505453d7f2d619cf5362d8b3
+    proc-log: "npm:^5.0.0"
+  checksum: 10c0/55d6e8a158278c23105d39959db002c4b7453096470ba2942c544fe0cbc0c66621201ea3ef0199d4039bfe6a22ea444da6fbe9085fc4f9085e9d2a675623c1bc
   languageName: node
   linkType: hard
 
@@ -11639,7 +11640,7 @@ __metadata:
     commander: "npm:14.0.1"
     fs-extra: "npm:11.3.2"
     logdown: "npm:3.3.1"
-    npm-packlist: "npm:10.0.1"
+    npm-packlist: "npm:10.0.2"
     rimraf: "npm:6.0.1"
     typescript: "npm:5.9.3"
   bin:
