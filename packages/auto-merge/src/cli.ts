@@ -66,18 +66,15 @@ async function runAction(autoMerge: AutoMerge, repositories: Repository[], pullR
 
   const mergeResults = await autoMerge.mergeByMatch(regex, repositories);
 
-  const actedRepositories = [...approveResults, ...mergeResults].reduce((count, repository) => {
-    return count + repository.actionResults.length;
-  }, 0);
-
-  const successRepositories = [...approveResults, ...mergeResults].filter(repository => {
+  const successCount = [...approveResults, ...mergeResults].filter(repository => {
     return repository.actionResults.some(result => result.error === undefined);
   }).length;
 
-  const prPluralized = pluralize('PR', successRepositories);
+  const prPluralized = pluralize('PR', successCount);
   const doAction = configFileData.autoApprove ? 'Approved and merged' : 'Merged';
-  const infoMessage = `${doAction} ${successRepositories} ${prPluralized} matching "${regex}".`;
-  if (actedRepositories === 0) {
+  const infoMessage = `${doAction} ${successCount} ${prPluralized} matching "${regex}".`;
+
+  if (successCount === 0) {
     logger.warn(infoMessage);
   } else {
     logger.info(infoMessage);
