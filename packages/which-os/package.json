@@ -7,6 +7,7 @@
   "description": "Get informations about your OS",
   "devDependencies": {
     "rimraf": "6.0.1",
+    "tsx": "4.20.6",
     "typescript": "5.9.3"
   },
   "engines": {
@@ -30,7 +31,7 @@
     "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "start": "node --loader ts-node/esm src/cli.ts"
+    "start": "tsx src/cli.ts"
   },
   "type": "module",
   "version": "1.10.11"

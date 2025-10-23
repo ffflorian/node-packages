@@ -11,6 +11,7 @@
   "devDependencies": {
     "@types/ws": "8.18.1",
     "rimraf": "6.0.1",
+    "tsx": "4.20.6",
     "typescript": "5.9.3"
   },
   "engines": {
@@ -32,7 +33,7 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "start": "node --loader ts-node/esm src/cli.ts -d"
+    "start": "tsx src/cli.ts -d"
   },
   "type": "module",
   "version": "1.7.11"

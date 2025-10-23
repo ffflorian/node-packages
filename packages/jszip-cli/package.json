@@ -16,6 +16,7 @@
     "@types/progress": "2.0.7",
     "cross-env": "10.1.0",
     "rimraf": "6.0.1",
+    "tsx": "4.20.6",
     "typescript": "5.9.3",
     "vitest": "3.2.4"
   },
@@ -39,7 +40,7 @@
     "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "start": "node --loader ts-node/esm src/cli.ts -V",
+    "start": "tsx src/cli.ts -V",
     "test": "vitest run"
   },
   "type": "module",

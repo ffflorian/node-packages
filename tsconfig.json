@@ -15,8 +15,5 @@
     "strict": true,
     "strictFunctionTypes": true,
     "target": "ES2018"
-  },
-  "ts-node": {
-    "swc": true
   }
 }
