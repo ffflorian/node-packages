@@ -25,7 +25,7 @@
     "eslint-plugin-typescript-sort-keys": "3.3.0",
     "eslint-plugin-unused-imports": "4.2.0",
     "lerna": "9.0.0",
-    "oxlint": "1.19.0",
+    "oxlint": "1.25.0",
     "prettier": "3.6.2",
     "rimraf": "6.0.1",
     "typescript": "5.9.3",
