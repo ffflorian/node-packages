@@ -1,4 +1,4 @@
-import {promises as fs} from 'node:fs';
+import fs from 'node:fs/promises';
 import {inspect} from 'node:util';
 import axios from 'axios';
 import logdown from 'logdown';
