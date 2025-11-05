@@ -1,4 +1,4 @@
-import {promises as fsAsync} from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import logdown from 'logdown';
 
@@ -76,7 +76,7 @@ export class RepositoryService {
     let gitHead: string;
 
     try {
-      gitHead = await fsAsync.readFile(gitHeadFile, 'utf-8');
+      gitHead = await fs.readFile(gitHeadFile, 'utf-8');
       gitHead = gitHead.trim();
       this.logger.info('Read git head file', {gitHead});
     } catch {
@@ -100,7 +100,7 @@ export class RepositoryService {
     let gitConfig: string;
 
     try {
-      gitConfig = await fsAsync.readFile(gitConfigFile, 'utf-8');
+      gitConfig = await fs.readFile(gitConfigFile, 'utf-8');
       gitConfig = gitConfig.trim();
       this.logger.info('Read git config file', {gitConfigFile});
     } catch {
