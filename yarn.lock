@@ -891,7 +891,7 @@ __metadata:
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:14.0.10"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
     vitest: "npm:3.2.4"
@@ -904,7 +904,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/doublelinkedlist@workspace:packages/double-linked-list"
   dependencies:
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     touch: "npm:3.1.1"
     typescript: "npm:5.9.3"
     vitest: "npm:3.2.4"
@@ -921,7 +921,7 @@ __metadata:
     fs-extra: "npm:11.3.2"
     icon-gen: "npm:5.0.0"
     jimp: "npm:1.6.0"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
   bin:
@@ -955,7 +955,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/file-index@workspace:packages/file-index"
   dependencies:
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -971,7 +971,7 @@ __metadata:
     logdown: "npm:3.3.1"
     nock: "npm:14.0.10"
     open: "npm:10.2.0"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
     vitest: "npm:3.2.4"
@@ -990,7 +990,7 @@ __metadata:
     commander: "npm:14.0.1"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsscmp: "npm:1.0.6"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
@@ -1013,7 +1013,7 @@ __metadata:
     jszip: "npm:3.10.1"
     logdown: "npm:3.3.1"
     progress: "npm:2.0.3"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
     vitest: "npm:3.2.4"
@@ -1029,7 +1029,7 @@ __metadata:
     "@types/ws": "npm:8.18.1"
     commander: "npm:14.0.1"
     masto: "npm:7.2.0"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
   bin:
@@ -1041,7 +1041,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/mock-udp@workspace:packages/mock-udp"
   dependencies:
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     typescript: "npm:5.9.3"
     vitest: "npm:3.2.4"
   languageName: unknown
@@ -1060,7 +1060,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/windows-shortcut-maker@workspace:packages/windows-shortcut-maker"
   dependencies:
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -5280,7 +5280,7 @@ __metadata:
     commander: "npm:14.0.1"
     compare-versions: "npm:6.1.1"
     crates.io: "npm:2.3.6"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
   bin:
@@ -5744,7 +5744,7 @@ __metadata:
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:14.0.10"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     semver: "npm:7.7.2"
     table: "npm:6.9.0"
     tsx: "npm:4.20.6"
@@ -6816,7 +6816,7 @@ __metadata:
     jszip: "npm:3.10.1"
     protobufjs: "npm:7.5.4"
     protobufjs-cli: "npm:1.2.0"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -7549,22 +7549,6 @@ __metadata:
   bin:
     glob: dist/esm/bin.mjs
   checksum: 10c0/19a9759ea77b8e3ca0a43c2f07ecddc2ad46216b786bb8f993c445aee80d345925a21e5280c7b7c6c59e860a0154b84e4b2b60321fea92cd3c56b4a7489f160e
-  languageName: node
-  linkType: hard
-
-"glob@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "glob@npm:11.0.0"
-  dependencies:
-    foreground-child: "npm:^3.1.0"
-    jackspeak: "npm:^4.0.1"
-    minimatch: "npm:^10.0.0"
-    minipass: "npm:^7.1.2"
-    package-json-from-dist: "npm:^1.0.0"
-    path-scurry: "npm:^2.0.0"
-  bin:
-    glob: dist/esm/bin.mjs
-  checksum: 10c0/419866015d8795258a8ac51de5b9d1a99c72634fc3ead93338e4da388e89773ab21681e494eac0fbc4250b003451ca3110bb4f1c9393d15d14466270094fdb4e
   languageName: node
   linkType: hard
 
@@ -8835,19 +8819,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jackspeak@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "jackspeak@npm:4.0.1"
-  dependencies:
-    "@isaacs/cliui": "npm:^8.0.2"
-    "@pkgjs/parseargs": "npm:^0.11.0"
-  dependenciesMeta:
-    "@pkgjs/parseargs":
-      optional: true
-  checksum: 10c0/c87997d9c9c5b7366259b1f2a444ef148692f8eedad5307caca939babbb60af2b47d306e5c63bf9d5fefbab2ab48d4da275188c3de525d0e716cc21b784bbccb
-  languageName: node
-  linkType: hard
-
 "jackspeak@npm:^4.1.1":
   version: 4.1.1
   resolution: "jackspeak@npm:4.1.1"
@@ -9798,15 +9769,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^10.0.0":
-  version: 10.0.1
-  resolution: "minimatch@npm:10.0.1"
-  dependencies:
-    brace-expansion: "npm:^2.0.1"
-  checksum: 10c0/e6c29a81fe83e1877ad51348306be2e8aeca18c88fdee7a99df44322314279e15799e41d7cb274e4e8bb0b451a3bc622d6182e157dfa1717d6cda75e9cd8cd5d
-  languageName: node
-  linkType: hard
-
 "minimatch@npm:^10.0.3":
   version: 10.0.3
   resolution: "minimatch@npm:10.0.3"
@@ -10078,7 +10040,7 @@ __metadata:
     commander: "npm:14.0.1"
     nock: "npm:14.0.10"
     ntpclient: "npm:1.8.11"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
     vitest: "npm:3.2.4"
@@ -10228,7 +10190,7 @@ __metadata:
     lerna: "npm:9.0.0"
     oxlint: "npm:1.25.0"
     prettier: "npm:3.6.2"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     typescript: "npm:5.9.3"
     vite: "npm:7.1.11"
     vitest: "npm:3.2.4"
@@ -10468,7 +10430,7 @@ __metadata:
   resolution: "ntfy@workspace:packages/ntfy"
   dependencies:
     axios: "npm:1.12.2"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -10478,7 +10440,7 @@ __metadata:
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
     commander: "npm:14.0.1"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
     vitest: "npm:3.2.4"
@@ -10998,6 +10960,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"package-json-from-dist@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "package-json-from-dist@npm:1.0.1"
+  checksum: 10c0/62ba2785eb655fec084a257af34dbe24292ab74516d6aecef97ef72d4897310bc6898f6c85b5cd22770eaa1ce60d55a0230e150fb6a966e3ecd6c511e23d164b
+  languageName: node
+  linkType: hard
+
 "pacote@npm:21.0.1":
   version: 21.0.1
   resolution: "pacote@npm:21.0.1"
@@ -11399,7 +11368,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pixelflut@workspace:packages/pixelflut"
   dependencies:
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
     vitest: "npm:3.2.4"
@@ -11673,7 +11642,7 @@ __metadata:
     fs-extra: "npm:11.3.2"
     logdown: "npm:3.3.1"
     npm-packlist: "npm:10.0.2"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
   bin:
@@ -11707,7 +11676,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "quick-sort@workspace:packages/quick-sort"
   dependencies:
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     typescript: "npm:5.9.3"
     vitest: "npm:3.2.4"
   languageName: unknown
@@ -12038,15 +12007,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:6.0.1":
-  version: 6.0.1
-  resolution: "rimraf@npm:6.0.1"
+"rimraf@npm:6.1.0":
+  version: 6.1.0
+  resolution: "rimraf@npm:6.1.0"
   dependencies:
-    glob: "npm:^11.0.0"
-    package-json-from-dist: "npm:^1.0.0"
+    glob: "npm:^11.0.3"
+    package-json-from-dist: "npm:^1.0.1"
   bin:
     rimraf: dist/esm/bin.mjs
-  checksum: 10c0/b30b6b072771f0d1e73b4ca5f37bb2944ee09375be9db5f558fcd3310000d29dfcfa93cf7734d75295ad5a7486dc8e40f63089ced1722a664539ffc0c3ece8c6
+  checksum: 10c0/19658c91a08e43cd5f930384410135a1194082d5e73e0863137bc02c03d684817e30848f734ef05ec84094fe5e3eb9ffd6814ecec65d8fc2e234f5c391ab42e0
   languageName: node
   linkType: hard
 
@@ -12307,7 +12276,7 @@ __metadata:
   dependencies:
     clipboardy: "npm:5.0.0"
     commander: "npm:14.0.1"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
     vitest: "npm:3.2.4"
@@ -14222,7 +14191,7 @@ __metadata:
   resolution: "which-os@workspace:packages/which-os"
   dependencies:
     commander: "npm:14.0.1"
-    rimraf: "npm:6.0.1"
+    rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
   bin:

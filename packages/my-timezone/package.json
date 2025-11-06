@@ -9,7 +9,7 @@
   "description": "Get the exact time based on your location.",
   "devDependencies": {
     "nock": "14.0.10",
-    "rimraf": "6.0.1",
+    "rimraf": "6.1.0",
     "tsx": "4.20.6",
     "typescript": "5.9.3",
     "vitest": "3.2.4"
