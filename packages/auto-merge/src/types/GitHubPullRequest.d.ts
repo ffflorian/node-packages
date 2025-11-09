@@ -1,10 +1,9 @@
-/**
- * Pull Request Simple
- */
-export interface GitHubSimplePullRequest {
+/** see https://docs.github.com/en/rest/pulls/pulls#get-a-pull-request */
+export interface GitHubPullRequest {
   _links: Links;
-  active_lock_reason?: string | null;
-  assignee: PurpleSimpleUser | null;
+  active_lock_reason?: null | string;
+  additions: number;
+  assignee: null | PurpleSimpleUser;
   assignees?: AssigneeElement[] | null;
   /**
    * How the author is associated with the repository.
@@ -13,13 +12,17 @@ export interface GitHubSimplePullRequest {
   /**
    * The status of auto merging a pull request.
    */
-  auto_merge: AutoMerge | null;
+  auto_merge: null | AutoMerge;
   base: Base;
-  body: string | null;
+  body: null | string;
+  changed_files: number;
   closed_at: Date | null;
+  comments: number;
   comments_url: string;
+  commits: number;
   commits_url: string;
   created_at: Date;
+  deletions: number;
   diff_url: string;
   /**
    * Indicates whether or not the pull request is a draft.
@@ -31,22 +34,44 @@ export interface GitHubSimplePullRequest {
   issue_url: string;
   labels: Label[];
   locked: boolean;
-  merge_commit_sha: string | null;
+  /**
+   * Indicates whether maintainers can modify the pull request.
+   */
+  maintainer_can_modify: boolean;
+  merge_commit_sha: null | string;
+  mergeable: boolean | null;
+  mergeable_state: 'clean' | 'dirty' | 'blocked' | 'unstable' | 'unknown';
+  merged: boolean;
   merged_at: Date | null;
-  milestone: Milestone | null;
+  merged_by: null | FluffySimpleUser;
+  milestone: null | Milestone;
   node_id: string;
+  /**
+   * Number uniquely identifying the pull request within its repository.
+   */
   number: number;
   patch_url: string;
+  rebaseable?: boolean | null;
   requested_reviewers?: RequestedReviewerElement[] | null;
-  requested_teams?: Team[] | null;
+  requested_teams?: TeamSimple[] | null;
   review_comment_url: string;
+  review_comments: number;
   review_comments_url: string;
-  state: string;
+  /**
+   * State of this Pull Request. Either `open` or `closed`.
+   */
+  state: State;
   statuses_url: string;
+  /**
+   * The title of the pull request.
+   */
   title: string;
   updated_at: Date;
   url: string;
-  user: FluffySimpleUser | null;
+  /**
+   * A GitHub user.
+   */
+  user: PullRequestUser;
 }
 
 export interface Links {
@@ -145,16 +170,16 @@ export interface StatusesObject {
  */
 export interface PurpleSimpleUser {
   avatar_url: string;
-  email?: string | null;
+  email?: null | string;
   events_url: string;
   followers_url: string;
   following_url: string;
   gists_url: string;
-  gravatar_id: string | null;
+  gravatar_id: null | string;
   html_url: string;
   id: number;
   login: string;
-  name?: string | null;
+  name?: null | string;
   node_id: string;
   organizations_url: string;
   received_events_url: string;
@@ -173,16 +198,16 @@ export interface PurpleSimpleUser {
  */
 export interface AssigneeElement {
   avatar_url: string;
-  email?: string | null;
+  email?: null | string;
   events_url: string;
   followers_url: string;
   following_url: string;
   gists_url: string;
-  gravatar_id: string | null;
+  gravatar_id: null | string;
   html_url: string;
   id: number;
   login: string;
-  name?: string | null;
+  name?: null | string;
   node_id: string;
   organizations_url: string;
   received_events_url: string;
@@ -234,16 +259,16 @@ export interface AutoMerge {
  */
 export interface EnabledByObject {
   avatar_url: string;
-  email?: string | null;
+  email?: null | string;
   events_url: string;
   followers_url: string;
   following_url: string;
   gists_url: string;
-  gravatar_id: string | null;
+  gravatar_id: null | string;
   html_url: string;
   id: number;
   login: string;
-  name?: string | null;
+  name?: null | string;
   node_id: string;
   organizations_url: string;
   received_events_url: string;
@@ -274,7 +299,10 @@ export interface Base {
    */
   repo: BaseRepo;
   sha: string;
-  user: BaseSimpleUser | null;
+  /**
+   * A GitHub user.
+   */
+  user: BaseUser;
 }
 
 /**
@@ -339,7 +367,7 @@ export interface BaseRepo {
    */
   delete_branch_on_merge?: boolean;
   deployments_url: string;
-  description: string | null;
+  description: null | string;
   /**
    * Returns whether or not this repository disabled.
    */
@@ -376,7 +404,7 @@ export interface BaseRepo {
    * Whether the wiki is enabled.
    */
   has_wiki: boolean;
-  homepage: string | null;
+  homepage: null | string;
   hooks_url: string;
   html_url: string;
   /**
@@ -392,9 +420,9 @@ export interface BaseRepo {
   issues_url: string;
   keys_url: string;
   labels_url: string;
-  language: string | null;
+  language: null | string;
   languages_url: string;
-  license: PurpleLicenseSimple | null;
+  license: null | PurpleLicenseSimple;
   master_branch?: string;
   /**
    * The default value for a merge commit message.
@@ -414,7 +442,7 @@ export interface BaseRepo {
   merge_commit_title?: MergeCommitTitle;
   merges_url: string;
   milestones_url: string;
-  mirror_url: string | null;
+  mirror_url: null | string;
   /**
    * The name of the repository.
    */
@@ -504,8 +532,8 @@ export interface PurpleLicenseSimple {
   key: string;
   name: string;
   node_id: string;
-  spdx_id: string | null;
-  url: string | null;
+  spdx_id: null | string;
+  url: null | string;
 }
 
 /**
@@ -538,16 +566,16 @@ export enum MergeCommitTitle {
  */
 export interface TentacledSimpleUser {
   avatar_url: string;
-  email?: string | null;
+  email?: null | string;
   events_url: string;
   followers_url: string;
   following_url: string;
   gists_url: string;
-  gravatar_id: string | null;
+  gravatar_id: null | string;
   html_url: string;
   id: number;
   login: string;
-  name?: string | null;
+  name?: null | string;
   node_id: string;
   organizations_url: string;
   received_events_url: string;
@@ -597,18 +625,18 @@ export enum SquashMergeCommitTitle {
 /**
  * A GitHub user.
  */
-export interface BaseSimpleUser {
+export interface BaseUser {
   avatar_url: string;
-  email?: string | null;
+  email?: null | string;
   events_url: string;
   followers_url: string;
   following_url: string;
   gists_url: string;
-  gravatar_id: string | null;
+  gravatar_id: null | string;
   html_url: string;
   id: number;
   login: string;
-  name?: string | null;
+  name?: null | string;
   node_id: string;
   organizations_url: string;
   received_events_url: string;
@@ -630,7 +658,10 @@ export interface Head {
    */
   repo: HeadRepo;
   sha: string;
-  user: HeadSimpleUser | null;
+  /**
+   * A GitHub user.
+   */
+  user: HeadUser;
 }
 
 /**
@@ -695,7 +726,7 @@ export interface HeadRepo {
    */
   delete_branch_on_merge?: boolean;
   deployments_url: string;
-  description: string | null;
+  description: null | string;
   /**
    * Returns whether or not this repository disabled.
    */
@@ -732,7 +763,7 @@ export interface HeadRepo {
    * Whether the wiki is enabled.
    */
   has_wiki: boolean;
-  homepage: string | null;
+  homepage: null | string;
   hooks_url: string;
   html_url: string;
   /**
@@ -748,9 +779,9 @@ export interface HeadRepo {
   issues_url: string;
   keys_url: string;
   labels_url: string;
-  language: string | null;
+  language: null | string;
   languages_url: string;
-  license: FluffyLicenseSimple | null;
+  license: null | FluffyLicenseSimple;
   master_branch?: string;
   /**
    * The default value for a merge commit message.
@@ -770,7 +801,7 @@ export interface HeadRepo {
   merge_commit_title?: MergeCommitTitle;
   merges_url: string;
   milestones_url: string;
-  mirror_url: string | null;
+  mirror_url: null | string;
   /**
    * The name of the repository.
    */
@@ -860,8 +891,8 @@ export interface FluffyLicenseSimple {
   key: string;
   name: string;
   node_id: string;
-  spdx_id: string | null;
-  url: string | null;
+  spdx_id: null | string;
+  url: null | string;
 }
 
 /**
@@ -869,16 +900,16 @@ export interface FluffyLicenseSimple {
  */
 export interface StickySimpleUser {
   avatar_url: string;
-  email?: string | null;
+  email?: null | string;
   events_url: string;
   followers_url: string;
   following_url: string;
   gists_url: string;
-  gravatar_id: string | null;
+  gravatar_id: null | string;
   html_url: string;
   id: number;
   login: string;
-  name?: string | null;
+  name?: null | string;
   node_id: string;
   organizations_url: string;
   received_events_url: string;
@@ -903,18 +934,18 @@ export interface FluffyPermissions {
 /**
  * A GitHub user.
  */
-export interface HeadSimpleUser {
+export interface HeadUser {
   avatar_url: string;
-  email?: string | null;
+  email?: null | string;
   events_url: string;
   followers_url: string;
   following_url: string;
   gists_url: string;
-  gravatar_id: string | null;
+  gravatar_id: null | string;
   html_url: string;
   id: number;
   login: string;
-  name?: string | null;
+  name?: null | string;
   node_id: string;
   organizations_url: string;
   received_events_url: string;
@@ -931,11 +962,39 @@ export interface HeadSimpleUser {
 export interface Label {
   color: string;
   default: boolean;
-  description: string;
+  description: null | string;
   id: number;
   name: string;
   node_id: string;
   url: string;
+}
+
+/**
+ * A GitHub user.
+ */
+export interface FluffySimpleUser {
+  avatar_url: string;
+  email?: null | string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: null | string;
+  html_url: string;
+  id: number;
+  login: string;
+  name?: null | string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_at?: string;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+  user_view_type?: string;
 }
 
 /**
@@ -945,8 +1004,8 @@ export interface Milestone {
   closed_at: Date | null;
   closed_issues: number;
   created_at: Date;
-  creator: MilestoneSimpleUser | null;
-  description: string | null;
+  creator: null | MilestoneSimpleUser;
+  description: null | string;
   due_on: Date | null;
   html_url: string;
   id: number;
@@ -974,16 +1033,16 @@ export interface Milestone {
  */
 export interface MilestoneSimpleUser {
   avatar_url: string;
-  email?: string | null;
+  email?: null | string;
   events_url: string;
   followers_url: string;
   following_url: string;
   gists_url: string;
-  gravatar_id: string | null;
+  gravatar_id: null | string;
   html_url: string;
   id: number;
   login: string;
-  name?: string | null;
+  name?: null | string;
   node_id: string;
   organizations_url: string;
   received_events_url: string;
@@ -999,6 +1058,8 @@ export interface MilestoneSimpleUser {
 
 /**
  * The state of the milestone.
+ *
+ * State of this Pull Request. Either `open` or `closed`.
  */
 export enum State {
   Closed = 'closed',
@@ -1010,16 +1071,16 @@ export enum State {
  */
 export interface RequestedReviewerElement {
   avatar_url: string;
-  email?: string | null;
+  email?: null | string;
   events_url: string;
   followers_url: string;
   following_url: string;
   gists_url: string;
-  gravatar_id: string | null;
+  gravatar_id: null | string;
   html_url: string;
   id: number;
   login: string;
-  name?: string | null;
+  name?: null | string;
   node_id: string;
   organizations_url: string;
   received_events_url: string;
@@ -1036,43 +1097,11 @@ export interface RequestedReviewerElement {
 /**
  * Groups of organization members that gives permissions on specified repositories.
  */
-export interface Team {
-  description: string | null;
-  /**
-   * Unique identifier of the enterprise to which this team belongs
-   */
-  enterprise_id?: number;
-  html_url: string;
-  id: number;
-  members_url: string;
-  name: string;
-  node_id: string;
-  notification_setting?: string;
-  /**
-   * Unique identifier of the organization to which this team belongs
-   */
-  organization_id?: number;
-  parent: TeamSimple | null;
-  permission: string;
-  permissions?: RequestedTeamPermissions;
-  privacy?: string;
-  repositories_url: string;
-  slug: string;
-  /**
-   * The ownership type of the team
-   */
-  type: Type;
-  url: string;
-}
-
-/**
- * Groups of organization members that gives permissions on specified repositories.
- */
 export interface TeamSimple {
   /**
    * Description of the team
    */
-  description: string | null;
+  description: null | string;
   /**
    * Unique identifier of the enterprise to which this team belongs
    */
@@ -1128,29 +1157,21 @@ export enum Type {
   Organization = 'organization',
 }
 
-export interface RequestedTeamPermissions {
-  admin: boolean;
-  maintain: boolean;
-  pull: boolean;
-  push: boolean;
-  triage: boolean;
-}
-
 /**
  * A GitHub user.
  */
-export interface FluffySimpleUser {
+export interface PullRequestUser {
   avatar_url: string;
-  email?: string | null;
+  email?: null | string;
   events_url: string;
   followers_url: string;
   following_url: string;
   gists_url: string;
-  gravatar_id: string | null;
+  gravatar_id: null | string;
   html_url: string;
   id: number;
   login: string;
-  name?: string | null;
+  name?: null | string;
   node_id: string;
   organizations_url: string;
   received_events_url: string;

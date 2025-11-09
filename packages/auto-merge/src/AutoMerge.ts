@@ -3,13 +3,7 @@ import path from 'node:path';
 import axios, {AxiosError, AxiosInstance} from 'axios';
 import logdown from 'logdown';
 
-import type {
-  AutoMergeConfig,
-  ActionResult,
-  GitHubSimplePullRequest,
-  Repository,
-  RepositoryResult,
-} from './types/index.js';
+import type {AutoMergeConfig, ActionResult, GitHubPullRequest, Repository, RepositoryResult} from './types/index.js';
 
 interface PackageJson {
   bin: Record<string, string>;
@@ -97,8 +91,8 @@ export class AutoMerge {
 
   private async isPullRequestMergeable(repositorySlug: string, pullNumber: number): Promise<boolean> {
     const resourceUrl = `/repos/${repositorySlug}/pulls/${pullNumber}`;
-    const response = await this.apiClient.get<{mergeable: boolean | null}>(resourceUrl);
-    return response.data.mergeable === true;
+    const response = await this.apiClient.get<GitHubPullRequest>(resourceUrl);
+    return response.data.mergeable_state === 'clean';
   }
 
   async mergeByMatch(regex: RegExp, repositories?: Repository[]): Promise<RepositoryResult[]> {
@@ -192,10 +186,10 @@ export class AutoMerge {
     await this.apiClient.put(resourceUrl, squash ? {merge_method: 'squash'} : undefined);
   }
 
-  private async getPullRequestsBySlug(repositorySlug: string): Promise<GitHubSimplePullRequest[]> {
+  private async getPullRequestsBySlug(repositorySlug: string): Promise<GitHubPullRequest[]> {
     const resourceUrl = `/repos/${repositorySlug}/pulls`;
     const params = {per_page: 100, state: 'open'};
-    const response = await this.apiClient.get<GitHubSimplePullRequest[]>(resourceUrl, {params});
+    const response = await this.apiClient.get<GitHubPullRequest[]>(resourceUrl, {params});
     return response.data;
   }
 }
