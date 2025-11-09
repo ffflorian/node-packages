@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.1.0 (2025-11-09)
+
+
+### Features
+
+* **auto-merge:** Check if PR is mergeable before merging ([#1035](https://github.com/ffflorian/node-packages/issues/1035)) ([2bd1e3d](https://github.com/ffflorian/node-packages/commit/2bd1e3d8cf1711b59d383a5990bd6aff01d595a9))
+
+
+
+
+
 ## 1.0.3 (2025-10-09)
 
 
