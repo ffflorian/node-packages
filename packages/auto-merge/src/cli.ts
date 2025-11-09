@@ -7,7 +7,8 @@ import {program as commander} from 'commander';
 import {cosmiconfigSync} from 'cosmiconfig';
 import logdown from 'logdown';
 
-import {AutoMergeConfig, AutoMerge, Repository, RepositoryResult} from './AutoMerge.js';
+import {AutoMerge} from './AutoMerge.js';
+import type {AutoMergeConfig, Repository, RepositoryResult} from './types/index.js';
 import {pluralize} from './util.js';
 
 const input = readline.createInterface(process.stdin, process.stdout);
@@ -52,7 +53,6 @@ const configFileData: AutoMergeConfig = {
   ...configResult.config,
   ...(commanderOptions.approve && {autoApprove: commanderOptions.approve}),
   ...(commanderOptions.dryRun && {dryRun: commanderOptions.dryRun}),
-  ...(commanderOptions.mergeDrafts && {mergeDrafts: commanderOptions.mergeDrafts}),
 };
 
 async function runAction(autoMerge: AutoMerge, repositories: Repository[], pullRequestSlug: string): Promise<void> {
@@ -67,7 +67,7 @@ async function runAction(autoMerge: AutoMerge, repositories: Repository[], pullR
   const mergeResults = await autoMerge.mergeByMatch(regex, repositories);
 
   const successCount = [...approveResults, ...mergeResults].filter(repository => {
-    return repository.actionResults.some(result => result.error === undefined);
+    return repository.actionResults.some(result => typeof result.error === 'undefined');
   }).length;
 
   const prPluralized = pluralize('PR', successCount);
