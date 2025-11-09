@@ -886,7 +886,7 @@ __metadata:
   resolution: "@ffflorian/auto-merge@workspace:packages/auto-merge"
   dependencies:
     axios: "npm:1.13.2"
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     cosmiconfig: "npm:9.0.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
@@ -917,7 +917,7 @@ __metadata:
   dependencies:
     "@types/fs-extra": "npm:11.0.4"
     "@types/pngjs": "npm:6.0.5"
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     fs-extra: "npm:11.3.2"
     icon-gen: "npm:5.0.0"
     jimp: "npm:1.6.0"
@@ -965,7 +965,7 @@ __metadata:
   resolution: "@ffflorian/gh-open@workspace:packages/gh-open"
   dependencies:
     axios: "npm:1.13.2"
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     find-up: "npm:8.0.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
@@ -987,7 +987,7 @@ __metadata:
     "@types/basic-auth": "npm:1.1.8"
     "@types/tsscmp": "npm:1.0.2"
     basic-auth: "npm:2.0.1"
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     rimraf: "npm:6.1.0"
@@ -1005,7 +1005,7 @@ __metadata:
   dependencies:
     "@types/fs-extra": "npm:11.0.4"
     "@types/progress": "npm:2.0.7"
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     cosmiconfig: "npm:9.0.0"
     cross-env: "npm:10.1.0"
     fs-extra: "npm:11.3.2"
@@ -1027,7 +1027,7 @@ __metadata:
   resolution: "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress"
   dependencies:
     "@types/ws": "npm:8.18.1"
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     masto: "npm:7.2.0"
     rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
@@ -5055,10 +5055,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:14.0.1":
-  version: 14.0.1
-  resolution: "commander@npm:14.0.1"
-  checksum: 10c0/64439c0651ddd01c1d0f48c8f08e97c18a0a1fa693879451f1203ad01132af2c2aa85da24cf0d8e098ab9e6dc385a756be670d2999a3c628ec745c3ec124587b
+"commander@npm:14.0.2":
+  version: 14.0.2
+  resolution: "commander@npm:14.0.2"
+  checksum: 10c0/245abd1349dbad5414cb6517b7b5c584895c02c4f7836ff5395f301192b8566f9796c82d7bd6c92d07eba8775fe4df86602fca5d86d8d10bcc2aded1e21c2aeb
   languageName: node
   linkType: hard
 
@@ -5265,7 +5265,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "crates-updater@workspace:packages/crates-updater"
   dependencies:
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     compare-versions: "npm:6.1.1"
     crates.io: "npm:2.3.8"
     rimraf: "npm:6.1.0"
@@ -5719,7 +5719,7 @@ __metadata:
     "@types/semver": "npm:7.7.1"
     axios: "npm:1.13.2"
     chalk: "npm:5.6.2"
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     date-fns: "npm:4.1.0"
     fs-extra: "npm:11.3.2"
     http-status-codes: "npm:2.3.0"
@@ -9976,7 +9976,7 @@ __metadata:
   resolution: "my-timezone@workspace:packages/my-timezone"
   dependencies:
     axios: "npm:1.13.2"
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     nock: "npm:14.0.10"
     ntpclient: "npm:1.8.11"
     rimraf: "npm:6.1.0"
@@ -10378,7 +10378,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
@@ -11570,7 +11570,7 @@ __metadata:
     "@types/fs-extra": "npm:11.0.4"
     "@types/npm-packlist": "npm:7.0.3"
     "@types/npmcli__arborist": "npm:6.3.1"
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     fs-extra: "npm:11.3.2"
     logdown: "npm:3.3.1"
     npm-packlist: "npm:10.0.2"
@@ -12207,7 +12207,7 @@ __metadata:
   resolution: "scrabble-cheater@workspace:packages/scrabble-cheater"
   dependencies:
     clipboardy: "npm:5.0.0"
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
@@ -14077,7 +14077,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "which-os@workspace:packages/which-os"
   dependencies:
-    commander: "npm:14.0.1"
+    commander: "npm:14.0.2"
     rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
