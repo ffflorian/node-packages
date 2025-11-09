@@ -5256,7 +5256,7 @@ __metadata:
   dependencies:
     commander: "npm:14.0.1"
     compare-versions: "npm:6.1.1"
-    crates.io: "npm:2.3.6"
+    crates.io: "npm:2.3.8"
     rimraf: "npm:6.1.0"
     tsx: "npm:4.20.6"
     typescript: "npm:5.9.3"
@@ -5266,12 +5266,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"crates.io@npm:2.3.6":
-  version: 2.3.6
-  resolution: "crates.io@npm:2.3.6"
+"crates.io@npm:2.3.8":
+  version: 2.3.8
+  resolution: "crates.io@npm:2.3.8"
   dependencies:
     axios: "npm:1.12.2"
-  checksum: 10c0/bc58615e60455cf6c9220bf2298f812dfa114785dd6edfd59f03d1181635c5b472108ebfdb366971cede46d70cebf42a9540b79b58512a647b2dcd2b19cec0e8
+  checksum: 10c0/71d15423a9314cf38ff28bfcaaa4f244c57f2a38739ea39dd7f1ca62b5774817b886b95074e7268f124e8c05c75d72f6d5743ac62ad5a0369ae45b50e7b195d3
   languageName: node
   linkType: hard
 
