@@ -1,6 +1,6 @@
-import type {GitHubSimplePullRequest} from './GitHubSimplePullRequest.js';
+import type {GitHubPullRequest} from './GitHubPullRequest.js';
 
 export interface Repository {
-  pullRequests: GitHubSimplePullRequest[];
+  pullRequests: GitHubPullRequest[];
   repositorySlug: string;
 }
