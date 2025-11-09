@@ -3,6 +3,9 @@ import path from 'node:path';
 import axios, {AxiosError, AxiosInstance} from 'axios';
 import logdown from 'logdown';
 
+import type {PullRequest as GitHubPullRequest} from './types/PullRequest.js';
+import type {AutoMergeConfig} from './types/AutoMergeConfig.js';
+
 interface PackageJson {
   bin: Record<string, string>;
   version: string;
@@ -14,43 +17,10 @@ const packageJsonPath = path.join(__dirname, '../package.json');
 const {bin, version: toolVersion}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 const toolName = Object.keys(bin)[0];
 
-/** @see https://docs.github.com/en/rest/reference/pulls#get-a-pull-request */
-interface GitHubPullRequest {
-  draft: boolean;
-  head: {
-    /** The branch name */
-    ref: string;
-    /** The commit SHA-1 hash */
-    sha: string;
-  };
-  /** The pull request number */
-  number: number;
-  /** The pull request title */
-  title: string;
-}
-
 export interface ActionResult {
   error?: string;
   pullNumber: number;
   status: 'bad' | 'good';
-}
-
-export interface AutoMergeConfig {
-  /** The GitHub auth token */
-  authToken: string;
-  /** Approve before merging */
-  autoApprove?: boolean;
-  /** Don't send any data */
-  dryRun?: boolean;
-  /** Merge draft PRs */
-  mergeDrafts?: boolean;
-  /** All projects to include */
-  projects: {
-    /** All projects hosted on GitHub in the format `user/repo` */
-    gitHub: string[];
-  };
-  /** Squash when merging */
-  squash?: boolean;
 }
 
 export interface Repository {
@@ -189,17 +159,18 @@ export class AutoMerge {
       this.checkRepositorySlug(repositorySlug)
     );
 
-    const repositoriesPromises = repositorySlugs.map(async repositorySlug => {
+    const repositories: Repository[] = [];
+
+    for (const repositorySlug of repositorySlugs) {
       try {
         const pullRequests = await this.getPullRequestsBySlug(repositorySlug);
-        return {pullRequests, repositorySlug};
+        repositories.push({pullRequests, repositorySlug});
       } catch (error) {
         this.logger.error(`Could not get pull requests for "${repositorySlug}": ${(error as AxiosError).message}`);
-        return undefined;
       }
-    });
+    }
 
-    return (await Promise.all(repositoriesPromises)).filter(Boolean) as Repository[];
+    return repositories;
   }
 
   async getRepositoriesWithOpenPullRequests(): Promise<Repository[]> {
@@ -223,9 +194,6 @@ export class AutoMerge {
     const resourceUrl = `/repos/${repositorySlug}/pulls`;
     const params = {state: 'open'};
     const response = await this.apiClient.get<GitHubPullRequest[]>(resourceUrl, {params});
-    if (this.config.mergeDrafts) {
-      response.data = response.data.filter(pr => !pr.draft);
-    }
-    return response.data;
+    return response.data.filter(pr => pr.mergeable_state === 'clean');
   }
 }

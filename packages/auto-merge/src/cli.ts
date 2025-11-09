@@ -7,7 +7,8 @@ import {program as commander} from 'commander';
 import {cosmiconfigSync} from 'cosmiconfig';
 import logdown from 'logdown';
 
-import {AutoMergeConfig, AutoMerge, Repository, RepositoryResult} from './AutoMerge.js';
+import {AutoMerge, Repository, RepositoryResult} from './AutoMerge.js';
+import type {AutoMergeConfig} from './types/AutoMergeConfig.js';
 import {pluralize} from './util.js';
 
 const input = readline.createInterface(process.stdin, process.stdout);
@@ -52,7 +53,6 @@ const configFileData: AutoMergeConfig = {
   ...configResult.config,
   ...(commanderOptions.approve && {autoApprove: commanderOptions.approve}),
   ...(commanderOptions.dryRun && {dryRun: commanderOptions.dryRun}),
-  ...(commanderOptions.mergeDrafts && {mergeDrafts: commanderOptions.mergeDrafts}),
 };
 
 async function runAction(autoMerge: AutoMerge, repositories: Repository[], pullRequestSlug: string): Promise<void> {

@@ -47,14 +47,12 @@ The structure of the configuration file is the following:
   autoApprove?: boolean;
   /** Don't send any data */
   dryRun?: boolean;
-  /** Merge draft PRs */
-  mergeDrafts?: boolean;
   /** All projects to include */
   projects: {
     /** All projects hosted on GitHub in the format `user/repo` */
     gitHub: string[];
   };
-  /* Squash when merging */
+  /** Squash when merging */
   squash?: boolean;
 }
 ```
