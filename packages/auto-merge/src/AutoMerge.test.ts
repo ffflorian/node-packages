@@ -3,7 +3,7 @@ import nock from 'nock';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 
 import {AutoMerge} from './AutoMerge.js';
-import type {GitHubSimplePullRequest, Repository} from './types/index.js';
+import type {GitHubPullRequest, Repository} from './types/index.js';
 
 describe('AutoMerge', () => {
   describe('checkRepository', () => {
@@ -22,7 +22,7 @@ describe('AutoMerge', () => {
             number: 253,
             title: 'chore: bump eslint-plugin-typescript-sort-keys from 1.3.0 to 1.5.0',
           },
-        ] as GitHubSimplePullRequest[],
+        ] as GitHubPullRequest[],
         repositorySlug: validRepositoryNames[0],
       },
       {
@@ -36,7 +36,7 @@ describe('AutoMerge', () => {
             number: 252,
             title: 'chore: bump typescript from 4.0.2 to 4.0.3',
           },
-        ] as GitHubSimplePullRequest[],
+        ] as GitHubPullRequest[],
         repositorySlug: validRepositoryNames[1],
       },
     ];
@@ -50,12 +50,17 @@ describe('AutoMerge', () => {
       });
 
       nock(autoMerge['apiClient'].defaults.baseURL!)
-        .post(/^\/repos\/[^/]+\/[^/]+\/pulls\/\d+\/reviews\/?$/)
+        .post(/^\/repos\/.+?\/.+?\/pulls\/\d+\/reviews\/?$/)
         .reply(HTTP_STATUS.OK, {data: 'not-used'})
         .persist();
 
       nock(autoMerge['apiClient'].defaults.baseURL!)
-        .put(/^\/repos\/[^/]+\/[^/]+\/pulls\/\d+\/merge\/?$/)
+        .get(/^\/repos\/.+?\/.+?\/pulls\/\d+\/?$/)
+        .reply(HTTP_STATUS.OK, {data: 'not-used'})
+        .persist();
+
+      nock(autoMerge['apiClient'].defaults.baseURL!)
+        .put(/^\/repos\/.+?\/.+?\/pulls\/\d+\/merge\/?$/)
         .reply(HTTP_STATUS.OK, {data: 'not-used'})
         .persist();
     });
