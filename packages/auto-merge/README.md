@@ -27,7 +27,6 @@ Options:
   -a, --approve        approve before merging
   -c, --config <path>  specify a configuration file (default: .automergerc.json)
   -d, --dry-run        don't send any data
-  -f, --merge-drafts   merge draft PRs (default: false)
   -s, --squash         squash when merging (default: false)
   -V, --version        output the version number
   -h, --help           display help for command
@@ -41,7 +40,7 @@ The structure of the configuration file is the following:
 
 ```ts
 {
-  /** The GitHub auth token */
+  /** The GitHub auth token (needs read access to metadata and read and write access to code and pull requests) */
   authToken: string;
   /** Approve before merging */
   autoApprove?: boolean;

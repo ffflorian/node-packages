@@ -3,7 +3,13 @@ import path from 'node:path';
 import axios, {AxiosError, AxiosInstance} from 'axios';
 import logdown from 'logdown';
 
-import type {AutoMergeConfig, ActionResult, GitHubPullRequest, Repository, RepositoryResult} from './types/index.js';
+import type {
+  AutoMergeConfig,
+  ActionResult,
+  GitHubSimplePullRequest,
+  Repository,
+  RepositoryResult,
+} from './types/index.js';
 
 interface PackageJson {
   bin: Record<string, string>;
@@ -31,6 +37,7 @@ export class AutoMerge {
     this.apiClient = axios.create({
       baseURL: 'https://api.github.com',
       headers: {
+        Accept: 'application/vnd.github+json',
         Authorization: `token ${this.config.authToken}`,
         'User-Agent': `${toolName} v${toolVersion}`,
       },
@@ -88,6 +95,12 @@ export class AutoMerge {
     return matchingRepositories;
   }
 
+  private async isPullRequestMergeable(repositorySlug: string, pullNumber: number): Promise<boolean> {
+    const resourceUrl = `/repos/${repositorySlug}/pulls/${pullNumber}`;
+    const response = await this.apiClient.get<{mergeable: boolean | null}>(resourceUrl);
+    return response.data.mergeable === true;
+  }
+
   async mergeByMatch(regex: RegExp, repositories?: Repository[]): Promise<RepositoryResult[]> {
     const allRepositories = repositories || (await this.getRepositoriesWithOpenPullRequests());
     const matchingRepositories = this.getMatchingRepositories(allRepositories, regex);
@@ -96,6 +109,11 @@ export class AutoMerge {
     for (const {pullRequests, repositorySlug} of matchingRepositories) {
       const actionResults: ActionResult[] = [];
       for (const pullRequest of pullRequests) {
+        const isMergeable = this.isPullRequestMergeable(repositorySlug, pullRequest.number);
+        if (!isMergeable) {
+          this.logger.warn(`Pull request #${pullRequest.number} in "${repositorySlug}" is not mergeable. Skipping.`);
+          continue;
+        }
         actionResults.push(await this.mergePullRequest(repositorySlug, pullRequest.number, this.config.squash));
       }
       processedRepositories.push({actionResults, repositorySlug});
@@ -174,10 +192,10 @@ export class AutoMerge {
     await this.apiClient.put(resourceUrl, squash ? {merge_method: 'squash'} : undefined);
   }
 
-  private async getPullRequestsBySlug(repositorySlug: string): Promise<GitHubPullRequest[]> {
+  private async getPullRequestsBySlug(repositorySlug: string): Promise<GitHubSimplePullRequest[]> {
     const resourceUrl = `/repos/${repositorySlug}/pulls`;
-    const params = {state: 'open'};
-    const response = await this.apiClient.get<GitHubPullRequest[]>(resourceUrl, {params});
-    return response.data.filter(pr => pr.mergeable_state === 'clean');
+    const params = {per_page: 100, state: 'open'};
+    const response = await this.apiClient.get<GitHubSimplePullRequest[]>(resourceUrl, {params});
+    return response.data;
   }
 }
