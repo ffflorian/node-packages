@@ -67,7 +67,7 @@ async function runAction(autoMerge: AutoMerge, repositories: Repository[], pullR
   const mergeResults = await autoMerge.mergeByMatch(regex, repositories);
 
   const successCount = [...approveResults, ...mergeResults].filter(repository => {
-    return repository.actionResults.some(result => result.error === undefined);
+    return repository.actionResults.some(result => typeof result.error === 'undefined');
   }).length;
 
   const prPluralized = pluralize('PR', successCount);

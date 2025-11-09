@@ -80,44 +80,45 @@ export class AutoMerge {
     const allRepositories = repositories || (await this.getRepositoriesWithOpenPullRequests());
     const matchingRepositories = this.getMatchingRepositories(allRepositories, regex);
 
-    const resultPromises = matchingRepositories.map(async ({pullRequests, repositorySlug}) => {
-      const actionPromises = pullRequests.map(pullRequest =>
-        this.approveByPullNumber(repositorySlug, pullRequest.number)
-      );
-      const actionResults = await Promise.all(actionPromises);
-      return {actionResults, repositorySlug};
-    });
+    const processedRepositories: RepositoryResult[] = [];
+    for (const {pullRequests, repositorySlug} of matchingRepositories) {
+      const actionResults: ActionResult[] = [];
+      for (const pullRequest of pullRequests) {
+        actionResults.push(await this.approveByPullNumber(repositorySlug, pullRequest.number));
+      }
+      processedRepositories.push({actionResults, repositorySlug});
+    }
 
-    return Promise.all(resultPromises);
+    return processedRepositories;
   }
 
   private getMatchingRepositories(repositories: Repository[], regex: RegExp): Repository[] {
-    return repositories
-      .map(repository => {
-        const matchingPullRequests = repository.pullRequests.filter(pullRequest =>
-          new RegExp(regex).test(pullRequest.head.ref)
-        );
-        if (matchingPullRequests.length) {
-          return {pullRequests: matchingPullRequests, repositorySlug: repository.repositorySlug};
-        }
-        return undefined;
-      })
-      .filter(Boolean) as Repository[];
+    const matchingRepositories: Repository[] = [];
+    for (const repository of repositories) {
+      const matchingPullRequests = repository.pullRequests.filter(pullRequest =>
+        new RegExp(regex).test(pullRequest.head.ref)
+      );
+      if (matchingPullRequests.length) {
+        matchingRepositories.push({pullRequests: matchingPullRequests, repositorySlug: repository.repositorySlug});
+      }
+    }
+    return matchingRepositories;
   }
 
   async mergeByMatch(regex: RegExp, repositories?: Repository[]): Promise<RepositoryResult[]> {
     const allRepositories = repositories || (await this.getRepositoriesWithOpenPullRequests());
     const matchingRepositories = this.getMatchingRepositories(allRepositories, regex);
 
-    const resultPromises = matchingRepositories.map(async ({pullRequests, repositorySlug}) => {
-      const actionPromises = pullRequests.map(pullRequest =>
-        this.mergePullRequest(repositorySlug, pullRequest.number, this.config.squash)
-      );
-      const actionResults = await Promise.all(actionPromises);
-      return {actionResults, repositorySlug};
-    });
+    const processedRepositories: RepositoryResult[] = [];
+    for (const {pullRequests, repositorySlug} of matchingRepositories) {
+      const actionResults: ActionResult[] = [];
+      for (const pullRequest of pullRequests) {
+        actionResults.push(await this.mergePullRequest(repositorySlug, pullRequest.number, this.config.squash));
+      }
+      processedRepositories.push({actionResults, repositorySlug});
+    }
 
-    return Promise.all(resultPromises);
+    return processedRepositories;
   }
 
   async approveByPullNumber(repositorySlug: string, pullNumber: number): Promise<ActionResult> {
