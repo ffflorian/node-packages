@@ -40,7 +40,7 @@ The structure of the configuration file is the following:
 
 ```ts
 {
-  /** The GitHub auth token (needs read access to metadata and read and write access to code and pull requests) */
+  /** The GitHub auth token (needs read and write access to code and pull requests) */
   authToken: string;
   /** Approve before merging */
   autoApprove?: boolean;
