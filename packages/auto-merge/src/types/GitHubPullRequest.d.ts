@@ -1,5 +1,5 @@
 /** see https://docs.github.com/en/rest/pulls/pulls#get-a-pull-request */
-export interface PullRequest {
+export interface GitHubPullRequest {
   _links: Links;
   active_lock_reason?: null | string;
   additions: number;

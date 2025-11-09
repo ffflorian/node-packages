@@ -7,8 +7,8 @@ import {program as commander} from 'commander';
 import {cosmiconfigSync} from 'cosmiconfig';
 import logdown from 'logdown';
 
-import {AutoMerge, Repository, RepositoryResult} from './AutoMerge.js';
-import type {AutoMergeConfig} from './types/AutoMergeConfig.js';
+import {AutoMerge} from './AutoMerge.js';
+import type {AutoMergeConfig, Repository, RepositoryResult} from './types/index.js';
 import {pluralize} from './util.js';
 
 const input = readline.createInterface(process.stdin, process.stdout);

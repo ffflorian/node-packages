@@ -3,8 +3,7 @@ import path from 'node:path';
 import axios, {AxiosError, AxiosInstance} from 'axios';
 import logdown from 'logdown';
 
-import type {PullRequest as GitHubPullRequest} from './types/PullRequest.js';
-import type {AutoMergeConfig} from './types/AutoMergeConfig.js';
+import type {AutoMergeConfig, ActionResult, GitHubPullRequest, Repository, RepositoryResult} from './types/index.js';
 
 interface PackageJson {
   bin: Record<string, string>;
@@ -16,22 +15,6 @@ const packageJsonPath = path.join(__dirname, '../package.json');
 
 const {bin, version: toolVersion}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 const toolName = Object.keys(bin)[0];
-
-export interface ActionResult {
-  error?: string;
-  pullNumber: number;
-  status: 'bad' | 'good';
-}
-
-export interface Repository {
-  pullRequests: GitHubPullRequest[];
-  repositorySlug: string;
-}
-
-export interface RepositoryResult {
-  actionResults: ActionResult[];
-  repositorySlug: string;
-}
 
 export class AutoMerge {
   private readonly apiClient: AxiosInstance;

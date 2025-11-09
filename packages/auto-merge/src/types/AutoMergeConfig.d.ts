@@ -5,11 +5,6 @@ export interface AutoMergeConfig {
   autoApprove?: boolean;
   /** Don't send any data */
   dryRun?: boolean;
-  /** Merge draft PRs (default is false) */
-  /** Merge PRs with failed pipeline (default is false) */
-  mergeFailedPipeline: boolean;
-  /** Merge PRs without completed pipeline (default is false) */
-  mergeNoPipeline: boolean;
   /** All projects to include */
   projects: {
     /** All projects hosted on GitHub in the format `user/repo` */
