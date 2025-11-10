@@ -17,6 +17,7 @@
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "@ffflorian/doublelinkedlist",
+  "private": true,
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/double-linked-list",
   "scripts": {
     "build": "tsc -p tsconfig.json",

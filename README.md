@@ -6,7 +6,7 @@ My Node.js packages
 
 - [`auto-merge`](./packages/auto-merge) [![npm version](https://img.shields.io/npm/v/@ffflorian/auto-merge.svg)](https://npmjs.com/packages/@ffflorian/auto-merge)
 - [`crates-updater`](./packages/crates-updater) [![npm version](https://img.shields.io/npm/v/crates-updater.svg)](https://npmjs.com/packages/crates-updater)
-- [`double-linked-list`](./packages/double-linked-list) [![npm version](https://img.shields.io/npm/v/@ffflorian/doublelinkedlist.svg)](https://npmjs.com/packages/@ffflorian/doublelinkedlist)
+- [`double-linked-list`](./packages/double-linked-list)
 - [`electron-icon-generator`](./packages/electron-icon-generator) [![npm version](https://img.shields.io/npm/v/@ffflorian/electron-icon-generator.svg)](https://npmjs.com/packages/@ffflorian/electron-icon-generator)
 - [`electron-info`](./packages/electron-info) [![npm version](https://img.shields.io/npm/v/electron-info.svg)](https://npmjs.com/packages/electron-info)
 - [`exposure-keys`](./packages/exposure-keys) [![npm version](https://img.shields.io/npm/v/exposure-keys.svg)](https://npmjs.com/packages/exposure-keys)
