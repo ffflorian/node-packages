@@ -1,4 +1,4 @@
-import {execSync} from 'node:child_process';
+import {execFileSync} from 'node:child_process';
 import os from 'node:os';
 import path from 'node:path';
 import Arborist from '@npmcli/arborist';
@@ -100,11 +100,9 @@ export class PublishFlat {
     const executor = this.options.useYarn ? 'yarn' : 'npm';
     const args = ['publish', `"${tempDir}"`].concat(this.options.publishArguments || []);
 
-    const command = `${executor} ${args.join(' ')}`;
+    this.logger.info(`Running "${executor} ${args.join(' ')}" ...`);
 
-    this.logger.info(`Running "${command}" ...`);
-
-    const stdout = execSync(command).toString().trim();
+    const stdout = execFileSync(executor, args).toString().trim();
 
     if (stdout) {
       this.logger.info(stdout);
