@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.13.1 (2025-11-10)
+
+**Note:** Version bump only for package @ffflorian/https-proxy
+
+
+
+
+
 # 1.13.0 (2025-11-09)
 
 
