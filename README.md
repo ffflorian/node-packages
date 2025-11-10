@@ -10,7 +10,6 @@ My Node.js packages
 - [`electron-icon-generator`](./packages/electron-icon-generator) [![npm version](https://img.shields.io/npm/v/@ffflorian/electron-icon-generator.svg)](https://npmjs.com/packages/@ffflorian/electron-icon-generator)
 - [`electron-info`](./packages/electron-info) [![npm version](https://img.shields.io/npm/v/electron-info.svg)](https://npmjs.com/packages/electron-info)
 - [`exposure-keys`](./packages/exposure-keys) [![npm version](https://img.shields.io/npm/v/exposure-keys.svg)](https://npmjs.com/packages/exposure-keys)
-- [`file-index`](./packages/file-index) [![npm version](https://img.shields.io/npm/v/@ffflorian/file-index.svg)](https://npmjs.com/packages/@ffflorian/file-index)
 - [`gh-open`](./packages/gh-open) [![npm version](https://img.shields.io/npm/v/@ffflorian/gh-open.svg)](https://npmjs.com/packages/@ffflorian/gh-open)
 - [`https-proxy`](./packages/https-proxy) [![npm version](https://img.shields.io/npm/v/@ffflorian/https-proxy.svg)](https://npmjs.com/packages/@ffflorian/https-proxy)
 - [`jszip-cli`](./packages/jszip-cli) [![npm version](https://img.shields.io/npm/v/@ffflorian/jszip-cli.svg)](https://npmjs.com/packages/@ffflorian/jszip-cli)
