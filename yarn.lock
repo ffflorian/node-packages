@@ -958,15 +958,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ffflorian/file-index@workspace:packages/file-index":
-  version: 0.0.0-use.local
-  resolution: "@ffflorian/file-index@workspace:packages/file-index"
-  dependencies:
-    rimraf: "npm:6.1.0"
-    typescript: "npm:5.9.3"
-  languageName: unknown
-  linkType: soft
-
 "@ffflorian/gh-open@workspace:packages/gh-open":
   version: 0.0.0-use.local
   resolution: "@ffflorian/gh-open@workspace:packages/gh-open"
