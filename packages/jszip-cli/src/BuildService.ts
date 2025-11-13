@@ -3,7 +3,7 @@ import {promises as fs, Stats as fsStats} from 'node:fs';
 import JSZip from 'jszip';
 import logdown from 'logdown';
 import progress from 'progress';
-import {globSync} from 'glob';
+import {glob} from 'glob';
 
 import {FileService} from './FileService.js';
 import {Entry, TerminalOptions} from './interfaces.js';
@@ -42,17 +42,18 @@ export class BuildService {
     this.compressedFilesCount = 0;
   }
 
-  public add(rawEntries: string[]): BuildService {
+  public async add(rawEntries: string[]): Promise<BuildService> {
     this.logger.info(`Adding ${rawEntries.length} entr${rawEntries.length === 1 ? 'y' : 'ies'} to ZIP file.`);
     const normalizedEntries = this.normalizePaths(rawEntries);
-    this.entries = globSync(normalizedEntries).map(rawEntry => {
+    this.entries = [];
+    for (const rawEntry of await glob(normalizedEntries)) {
       const resolvedPath = path.resolve(rawEntry);
       const baseName = path.basename(rawEntry);
-      return {
+      this.entries.push({
         resolvedPath,
         zipPath: baseName,
-      };
-    });
+      });
+    }
     return this;
   }
 
