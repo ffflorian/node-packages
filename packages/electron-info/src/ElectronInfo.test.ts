@@ -1,5 +1,4 @@
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
 import {randomUUID} from 'node:crypto';
 import {expect, describe, test, beforeEach, beforeAll, afterAll, afterEach} from 'vitest';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
@@ -8,8 +7,7 @@ import {promises as fs} from 'node:fs';
 
 import {ElectronInfo, RawReleaseInfo} from './ElectronInfo.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = import.meta.dirname;
 const tempDir = path.resolve(__dirname, '.temp');
 const tempDirDownload = path.resolve(__dirname, '.temp/download');
 const mockUrl = 'http://example.com';

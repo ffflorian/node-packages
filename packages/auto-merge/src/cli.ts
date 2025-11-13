@@ -3,44 +3,45 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline';
-import {fileURLToPath} from 'node:url';
 import {program as commander} from 'commander';
 import {cosmiconfigSync} from 'cosmiconfig';
 import logdown from 'logdown';
 
-import {ApproverConfig, AutoApprover, Repository} from './AutoApprover.js';
+import {AutoMerge} from './AutoMerge.js';
+import type {AutoMergeConfig, Repository, RepositoryResult} from './types/index.js';
 import {pluralize} from './util.js';
 
 const input = readline.createInterface(process.stdin, process.stdout);
-const logger = logdown('auto-approver', {
+const logger = logdown('auto-merge', {
   logger: console,
   markdown: false,
 });
 logger.state.isEnabled = true;
 
 interface PackageJson {
-  bin: Record<string, string>;
   description: string;
+  name: string;
   version: string;
 }
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 
-const {bin, description, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+const {description, name, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
 commander
-  .name(Object.keys(bin)[0])
+  .name(name.replace(/^@[^/]+\//, ''))
   .description(description)
-  .option('-m, --message <text>', 'comment on PRs instead of approving them')
-  .option('-c, --config <path>', 'specify a configuration file (default: .approverrc.json)')
+  .option('-a, --approve', 'approve before merging')
+  .option('-c, --config <path>', 'specify a configuration file (default: .automergerc.json)')
   .option('-d, --dry-run', `don't send any data`)
+  .option('-f, --merge-drafts', 'merge draft PRs', false)
+  .option('-s, --squash', 'squash when merging', false)
   .version(version)
   .parse(process.argv);
 
 const commanderOptions = commander.opts();
-const configExplorer = cosmiconfigSync('approver');
+const configExplorer = cosmiconfigSync('automerge');
 const configResult = commanderOptions.config ? configExplorer.load(commanderOptions.config) : configExplorer.search();
 
 if (!configResult || configResult.isEmpty) {
@@ -48,29 +49,36 @@ if (!configResult || configResult.isEmpty) {
   commander.help();
 }
 
-const configFileData: ApproverConfig = {
+const configFileData: AutoMergeConfig = {
   ...configResult.config,
-  ...(commanderOptions.message && {useComment: commanderOptions.message}),
+  ...(commanderOptions.approve && {autoApprove: commanderOptions.approve}),
   ...(commanderOptions.dryRun && {dryRun: commanderOptions.dryRun}),
 };
 
-async function runAction(
-  autoApprover: AutoApprover,
-  repositories: Repository[],
-  pullRequestSlug: string
-): Promise<void> {
+async function runAction(autoMerge: AutoMerge, repositories: Repository[], pullRequestSlug: string): Promise<void> {
   const regex = new RegExp(pullRequestSlug, 'gi');
-  const action = configFileData.useComment ? 'Commented on' : 'Approved';
-  const actionResult = configFileData.useComment
-    ? await autoApprover.commentByMatch(regex, configFileData.useComment, repositories)
-    : await autoApprover.approveByMatch(regex, repositories);
 
-  const actedRepositories = actionResult.reduce((count, repository) => {
-    return count + repository.actionResults.length;
-  }, 0);
+  let approveResults: RepositoryResult[] = [];
 
-  const prPluralized = pluralize('PR', actedRepositories);
-  logger.info(`${action} ${actedRepositories} ${prPluralized} matching "${regex}".`);
+  if (configFileData.autoApprove) {
+    approveResults = await autoMerge.approveByMatch(regex, repositories);
+  }
+
+  const mergeResults = await autoMerge.mergeByMatch(regex, repositories);
+
+  const successCount = [...approveResults, ...mergeResults].filter(repository => {
+    return repository.actionResults.some(result => typeof result.error === 'undefined');
+  }).length;
+
+  const prPluralized = pluralize('PR', successCount);
+  const doAction = configFileData.autoApprove ? 'Approved and merged' : 'Merged';
+  const infoMessage = `${doAction} ${successCount} ${prPluralized} matching "${regex}".`;
+
+  if (successCount === 0) {
+    logger.warn(infoMessage);
+  } else {
+    logger.info(infoMessage);
+  }
 }
 
 function askQuestion(question: string): Promise<string> {
@@ -79,15 +87,17 @@ function askQuestion(question: string): Promise<string> {
   });
 }
 
-async function askAction(autoApprover: AutoApprover, repositories: Repository[], doAction: string): Promise<void> {
-  const answer = await askQuestion(`ℹ️  auto-approver Which PR would you like to ${doAction} (enter a branch name)? `);
+async function askAction(autoApprover: AutoMerge, repositories: Repository[]): Promise<void> {
+  const doAction = configFileData.autoApprove ? 'approve and merge' : 'merge';
+  const answer = await askQuestion(`ℹ️  auto-merge Which PR would you like to ${doAction} (enter a branch name)? `);
+
   await runAction(autoApprover, repositories, answer);
-  await askAction(autoApprover, repositories, doAction);
+  await askAction(autoApprover, repositories);
 }
 
 void (async () => {
   try {
-    const autoApprover = new AutoApprover(configFileData);
+    const autoApprover = new AutoMerge(configFileData);
     logger.info('Loading all pull requests ...');
     const allRepositories = await autoApprover.getRepositoriesWithOpenPullRequests();
 
@@ -100,9 +110,7 @@ void (async () => {
         });
 
       logger.info('Found the following repositories to check:', repositories);
-
-      const doAction = configFileData.useComment ? 'comment on' : 'approve';
-      await askAction(autoApprover, allRepositories, doAction);
+      await askAction(autoApprover, allRepositories);
     } else {
       logger.info('Could not find any repositories with open pull requests.');
     }

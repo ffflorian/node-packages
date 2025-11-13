@@ -1,0 +1,9 @@
+{
+  "authToken": "my-secret-token",
+  "autoApprove": true,
+  "dryRun": false,
+  "projects": {
+    "gitHub": ["ffflorian/node-packages", "ffflorian/ts-boilerplate"]
+  },
+  "squash": true
+}

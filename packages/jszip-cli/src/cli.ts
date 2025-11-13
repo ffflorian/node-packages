@@ -2,13 +2,11 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
 import {program as commander} from 'commander';
 
 import {JSZipCLI} from './JSZipCLI.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 
 const {description, name, version}: {description: string; name: string; version: string} = JSON.parse(

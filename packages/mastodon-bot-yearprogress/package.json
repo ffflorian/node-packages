@@ -4,13 +4,15 @@
     "yearprogress": "dist/cli.js"
   },
   "dependencies": {
-    "commander": "14.0.0",
-    "megalodon": "10.1.3"
+    "commander": "14.0.2",
+    "masto": "7.4.0"
   },
   "description": "Toots year's progress every few days to Mastodon.",
   "devDependencies": {
-    "rimraf": "6.0.1",
-    "typescript": "5.9.2"
+    "@types/ws": "8.18.1",
+    "rimraf": "6.1.0",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
   },
   "engines": {
     "node": ">= 18.0"
@@ -31,8 +33,8 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "start": "node --loader ts-node/esm src/cli.ts -d"
+    "start": "tsx src/cli.ts -d"
   },
   "type": "module",
-  "version": "1.7.6"
+  "version": "1.8.1"
 }

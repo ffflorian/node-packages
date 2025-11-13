@@ -60,39 +60,40 @@ export class ExtractService {
           entries.push([filePath, entry]);
         }
       });
+
       let lastPercent = 0;
+      let index = 0;
 
-      await Promise.all(
-        entries.map(async ([filePath, entry], index) => {
-          const resolvedFilePath = path.join(this.outputDir!, filePath);
-          if (entry.dir) {
-            try {
-              await fs.mkdir(resolvedFilePath);
-            } catch {}
-          } else {
-            const data = await entry.async('nodebuffer');
-            await fs.writeFile(resolvedFilePath, data, {
-              encoding: 'utf-8',
-            });
+      for (const [filePath, entry] of entries) {
+        const resolvedFilePath = path.join(this.outputDir!, filePath);
+        if (entry.dir) {
+          try {
+            await fs.mkdir(resolvedFilePath);
+          } catch {}
+        } else {
+          const data = await entry.async('nodebuffer');
+          await fs.writeFile(resolvedFilePath, data, {
+            encoding: 'utf-8',
+          });
 
-            this.extractedFilesCount++;
+          this.extractedFilesCount++;
 
-            const diff = Math.floor(index / entries.length) - Math.floor(lastPercent);
-            if (diff && !this.options.quiet) {
-              this.progressBar.tick(diff);
-              lastPercent = Math.floor(index / entries.length);
-            }
+          const diff = Math.floor(index / entries.length) - Math.floor(lastPercent);
+          if (diff && !this.options.quiet) {
+            this.progressBar.tick(diff);
+            lastPercent = Math.floor(index / entries.length);
           }
+        }
 
-          if (isWin32) {
-            if (entry.dosPermissions) {
-              await fs.chmod(resolvedFilePath, entry.dosPermissions);
-            }
-          } else if (entry.unixPermissions) {
-            await fs.chmod(resolvedFilePath, entry.unixPermissions);
+        if (isWin32) {
+          if (entry.dosPermissions) {
+            await fs.chmod(resolvedFilePath, entry.dosPermissions);
           }
-        })
-      );
+        } else if (entry.unixPermissions) {
+          await fs.chmod(resolvedFilePath, entry.unixPermissions);
+        }
+        index++;
+      }
     }
     return this;
   }

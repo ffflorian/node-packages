@@ -3,6 +3,80 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.9.1 (2025-11-10)
+
+**Note:** Version bump only for package ntpclient
+
+
+
+
+
+# 1.9.0 (2025-11-09)
+
+
+### Features
+
+* **auto-merge:** Check if PR is mergeable before merging ([#1035](https://github.com/ffflorian/node-packages/issues/1035)) ([2bd1e3d](https://github.com/ffflorian/node-packages/commit/2bd1e3d8cf1711b59d383a5990bd6aff01d595a9))
+
+
+
+
+
+## 1.8.11 (2025-10-09)
+
+
+### Bug Fixes
+
+* **auto-merge:** Warn if no PRs could be merged ([0f19f0a](https://github.com/ffflorian/node-packages/commit/0f19f0a6f16c0caa5b288aefa4bc58de239b8734))
+
+
+
+
+
+## 1.8.10 (2025-10-08)
+
+
+### Bug Fixes
+
+* yarn lockfile ([6877829](https://github.com/ffflorian/node-packages/commit/6877829b8c223d469d44beb0d4c332f2a3e626a9))
+
+
+
+
+
+## 1.8.9 (2025-10-08)
+
+
+### Bug Fixes
+
+* **auto-merge:** Forward squash config ([060d663](https://github.com/ffflorian/node-packages/commit/060d6630ebff0e878f98f586c655483c3576c354))
+
+
+
+
+
+## 1.8.8 (2025-09-17)
+
+
+### Bug Fixes
+
+* **mastodon-bot-yearprogress:** Add missing types for ws ([c7ad973](https://github.com/ffflorian/node-packages/commit/c7ad9735516ea5411c1694b2d1b1bf4f56747901))
+
+
+
+
+
+## 1.8.7 (2025-09-16)
+
+
+### Bug Fixes
+
+* Force release ([3994a34](https://github.com/ffflorian/node-packages/commit/3994a34f4bc3b392f249ea25dc8732fae78e6b79))
+
+
+
+
+
 ## 1.8.6 (2025-07-23)
 
 

@@ -2,13 +2,14 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": "dist/cli.js",
   "dependencies": {
-    "commander": "14.0.0"
+    "commander": "14.0.2"
   },
   "description": "A TypeScript implementation of the NTP Client Protocol",
   "devDependencies": {
-    "rimraf": "6.0.1",
-    "typescript": "5.9.2",
-    "vitest": "3.2.4"
+    "rimraf": "6.1.0",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vitest": "4.0.6"
   },
   "engines": {
     "node": ">= 18.0"
@@ -25,9 +26,9 @@
     "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "start": "node --loader ts-node/esm src/cli.ts",
+    "start": "tsx src/cli.ts",
     "test": "vitest run"
   },
   "type": "module",
-  "version": "1.8.6"
+  "version": "1.9.1"
 }

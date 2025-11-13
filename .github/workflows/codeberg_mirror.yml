@@ -1,4 +1,6 @@
 name: Mirror to Codeberg
+permissions:
+  contents: read
 
 on:
   push:
@@ -8,11 +10,11 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - uses: yesolutions/mirror-action@662fce0eced8996f64d7fa264d76cddd84827f33
         with:
           REMOTE: 'ssh://git@codeberg.org/ffflorian/node-packages.git'
           GIT_SSH_PRIVATE_KEY: ${{ secrets.CODEBERG_SECRET }}
-          GIT_SSH_NO_VERIFY_HOST: "true"
+          GIT_SSH_NO_VERIFY_HOST: 'true'

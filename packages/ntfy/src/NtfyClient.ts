@@ -1,5 +1,5 @@
 import {URL} from 'node:url';
-import {promises as fs} from 'node:fs';
+import fs from 'node:fs/promises';
 import axios, {AxiosHeaders, type AxiosRequestConfig} from 'axios';
 
 import type {
