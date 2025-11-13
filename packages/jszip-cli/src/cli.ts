@@ -70,7 +70,7 @@ commander
         ...(options.quiet && {quiet: options.quiet}),
         ...(options.verbose && {verbose: options.verbose}),
       });
-      jszip.add(entries);
+      await jszip.add(entries);
       const {outputFile, compressedFilesCount} = await jszip.save();
 
       if (options.output && !options.quiet) {
