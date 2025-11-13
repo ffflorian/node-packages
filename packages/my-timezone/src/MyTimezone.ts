@@ -1,4 +1,3 @@
-import axios, {AxiosError, AxiosRequestConfig} from 'axios';
 import {NTPClient} from 'ntpclient';
 
 export enum DIRECTION {
@@ -75,28 +74,30 @@ export class MyTimezone {
   }
 
   public async getLocationByName(address: string, radius?: string): Promise<Location> {
-    const requestConfig: AxiosRequestConfig = {
-      method: 'get',
-      params: {
-        format: 'json',
-        limit: 9,
-        // eslint-disable-next-line id-length
-        q: address,
-      },
-      url: `${nominatimAPI}/search`,
-    };
+    const url = new URL(`${nominatimAPI}/search`);
+
+    const params = new URLSearchParams({
+      format: 'json',
+      limit: '9',
+      // eslint-disable-next-line id-length
+      q: address,
+    });
 
     if (radius) {
-      requestConfig.params.radius = radius;
+      params.append('radius', radius);
     }
+    url.search = params.toString();
 
     let results: OSMResult[];
 
     try {
-      const response = await axios.request<OSMResult[]>(requestConfig);
-      results = response.data;
+      const response = await fetch(url, {});
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      results = (await response.json()) as OSMResult[];
     } catch (error) {
-      throw new Error(`Nominatim API Error: ${(error as AxiosError).message}`);
+      throw new Error(`Nominatim API Error: ${(error as Error).message}`);
     }
 
     if (!results.length) {

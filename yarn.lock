@@ -9879,7 +9879,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-timezone@workspace:packages/my-timezone"
   dependencies:
-    axios: "npm:1.13.2"
     commander: "npm:14.0.2"
     nock: "npm:14.0.10"
     ntpclient: "npm:1.10.1"
