@@ -922,10 +922,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/electron-icon-generator@workspace:packages/electron-icon-generator"
   dependencies:
-    "@types/fs-extra": "npm:11.0.4"
     "@types/pngjs": "npm:6.0.5"
     commander: "npm:14.0.2"
-    fs-extra: "npm:11.3.2"
     icon-gen: "npm:5.0.0"
     jimp: "npm:1.6.0"
     rimraf: "npm:6.1.0"
@@ -1001,12 +999,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/jszip-cli@workspace:packages/jszip-cli"
   dependencies:
-    "@types/fs-extra": "npm:11.0.4"
     "@types/progress": "npm:2.0.7"
     commander: "npm:14.0.2"
     cosmiconfig: "npm:9.0.0"
     cross-env: "npm:10.1.0"
-    fs-extra: "npm:11.3.2"
     glob: "npm:11.0.3"
     jszip: "npm:3.10.1"
     logdown: "npm:3.3.1"
@@ -3349,16 +3345,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/fs-extra@npm:11.0.4":
-  version: 11.0.4
-  resolution: "@types/fs-extra@npm:11.0.4"
-  dependencies:
-    "@types/jsonfile": "npm:*"
-    "@types/node": "npm:*"
-  checksum: 10c0/9e34f9b24ea464f3c0b18c3f8a82aefc36dc524cc720fc2b886e5465abc66486ff4e439ea3fb2c0acebf91f6d3f74e514f9983b1f02d4243706bdbb7511796ad
-  languageName: node
-  linkType: hard
-
 "@types/ignore-walk@npm:*":
   version: 4.0.0
   resolution: "@types/ignore-walk@npm:4.0.0"
@@ -3386,15 +3372,6 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: 10c0/6bf5337bc447b706bb5b4431d37686aa2ea6d07cfd6f79cc31de80170d6ff9b1c7384a9c0ccbc45b3f512bae9e9f75c2e12109806a15331dc94e8a8db6dbb4ac
-  languageName: node
-  linkType: hard
-
-"@types/jsonfile@npm:*":
-  version: 6.1.1
-  resolution: "@types/jsonfile@npm:6.1.1"
-  dependencies:
-    "@types/node": "npm:*"
-  checksum: 10c0/96dfca37e856978eaf256bf5200c46a01a27a0455b9323a72598e8d59ddd81095934bf15e9c84d6a30125cf63e1464aef6d70ab4a35f34ee2cdfa1fe0db0720b
   languageName: node
   linkType: hard
 
@@ -5672,13 +5649,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "electron-info@workspace:packages/electron-info"
   dependencies:
-    "@types/fs-extra": "npm:11.0.4"
     "@types/semver": "npm:7.7.1"
     axios: "npm:1.13.2"
     chalk: "npm:5.6.2"
     commander: "npm:14.0.2"
     date-fns: "npm:4.1.0"
-    fs-extra: "npm:11.3.2"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:14.0.10"
@@ -7058,17 +7033,6 @@ __metadata:
   version: 1.0.0
   resolution: "fs-constants@npm:1.0.0"
   checksum: 10c0/a0cde99085f0872f4d244e83e03a46aa387b74f5a5af750896c6b05e9077fac00e9932fdf5aef84f2f16634cd473c63037d7a512576da7d5c2b9163d1909f3a8
-  languageName: node
-  linkType: hard
-
-"fs-extra@npm:11.3.2":
-  version: 11.3.2
-  resolution: "fs-extra@npm:11.3.2"
-  dependencies:
-    graceful-fs: "npm:^4.2.0"
-    jsonfile: "npm:^6.0.1"
-    universalify: "npm:^2.0.0"
-  checksum: 10c0/f5d629e1bb646d5dedb4d8b24c5aad3deb8cc1d5438979d6f237146cd10e113b49a949ae1b54212c2fbc98e2d0995f38009a9a1d0520f0287943335e65fe919b
   languageName: node
   linkType: hard
 
@@ -11482,11 +11446,9 @@ __metadata:
   resolution: "publish-flat@workspace:packages/publish-flat"
   dependencies:
     "@npmcli/arborist": "npm:9.1.6"
-    "@types/fs-extra": "npm:11.0.4"
     "@types/npm-packlist": "npm:7.0.3"
     "@types/npmcli__arborist": "npm:6.3.1"
     commander: "npm:14.0.2"
-    fs-extra: "npm:11.3.2"
     logdown: "npm:3.3.1"
     npm-packlist: "npm:10.0.3"
     rimraf: "npm:6.1.0"
@@ -11873,7 +11835,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^3.0.2":
+"rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
   dependencies:
@@ -13083,9 +13045,11 @@ __metadata:
   linkType: hard
 
 "tmp@npm:^0.2.1, tmp@npm:~0.2.1":
-  version: 0.2.5
-  resolution: "tmp@npm:0.2.5"
-  checksum: 10c0/cee5bb7d674bb4ba3ab3f3841c2ca7e46daeb2109eec395c1ec7329a91d52fcb21032b79ac25161a37b2565c4858fefab927af9735926a113ef7bac9091a6e0e
+  version: 0.2.1
+  resolution: "tmp@npm:0.2.1"
+  dependencies:
+    rimraf: "npm:^3.0.0"
+  checksum: 10c0/67607aa012059c9ce697bee820ee51bc0f39b29a8766def4f92d3f764d67c7cf9205d537d24e0cb1ce9685c40d4c628ead010910118ea18348666b5c46ed9123
   languageName: node
   linkType: hard
 

@@ -1,15 +1,15 @@
 import {expect, describe, test, vi, beforeEach, beforeAll} from 'vitest';
-import {JSZipCLI} from '.';
-import type {BuildService} from './BuildService';
+import {JSZipCLI} from './index.js';
+import type {BuildService} from './BuildService.js';
 
 describe('BuildService', () => {
   let jsZipCLI: JSZipCLI;
 
   beforeAll(() => {
-    vi.mock('fs-extra', () => ({
-      default: {
-        lstat: () => Promise.resolve({isDirectory: () => false, isFile: () => true}),
-        readFile: () => {},
+    vi.mock('fs', () => ({
+      promises: {
+        lstat: async () => ({isDirectory: () => false, isFile: () => true}),
+        readFile: async () => {},
       },
     }));
     vi.mock('glob', () => ({
@@ -18,7 +18,7 @@ describe('BuildService', () => {
   });
 
   const addDefaultSpies = (buildService: BuildService) => {
-    vi.spyOn<any, any>(buildService, 'checkOutput').mockReturnValue(() => Promise.resolve());
+    vi.spyOn<any, any>(buildService, 'checkOutput').mockReturnValue(async () => {});
     vi.spyOn<any, any>(buildService, 'addFile');
     vi.spyOn<any, any>(buildService['fileService'], 'writeFile').mockReturnValue(Promise.resolve());
   };
