@@ -13,7 +13,7 @@ describe('BuildService', () => {
       },
     }));
     vi.mock('glob', () => ({
-      globSync: (params: string | string[]) => (typeof params === 'string' ? [params] : params),
+      glob: async (params: string | string[]) => (typeof params === 'string' ? [params] : params),
     }));
   });
 
@@ -33,7 +33,7 @@ describe('BuildService', () => {
 
   test('adds specified files', async () => {
     const files = ['a.js', 'b.js'];
-    const buildService = jsZipCLI.add(files);
+    const buildService = await jsZipCLI.add(files);
 
     addDefaultSpies(buildService);
 
@@ -53,7 +53,7 @@ describe('BuildService', () => {
       verbose: false,
     });
     const files = ['a.js', 'b.js', 'b.js.map'];
-    const buildService = jsZipCLI.add(files);
+    const buildService = await jsZipCLI.add(files);
 
     addDefaultSpies(buildService);
 
@@ -74,7 +74,7 @@ describe('BuildService', () => {
       verbose: false,
     });
     const files = ['a.js', 'b.js', 'b.js.map'];
-    const buildService = jsZipCLI.add(files);
+    const buildService = await jsZipCLI.add(files);
 
     addDefaultSpies(buildService);
 
