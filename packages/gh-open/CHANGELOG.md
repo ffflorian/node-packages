@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.10.0 (2025-11-13)
+
+
+### Features
+
+* Remove fs-extra ([#977](https://github.com/ffflorian/node-packages/issues/977)) ([d1434d9](https://github.com/ffflorian/node-packages/commit/d1434d9709396d9a9856cda0a0025afd33d3b400))
+
+
+
+
+
 ## 3.9.1 (2025-11-10)
 
 **Note:** Version bump only for package @ffflorian/gh-open
