@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import {promises as fs} from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import {Jimp} from 'jimp';
 import icongen from 'icon-gen';
@@ -37,15 +37,15 @@ export class IconGenerator {
     const fileName = size.toString();
 
     try {
-      await fs.mkdir(this.options.output);
+      await fs.mkdir(this.options.output, {recursive: true});
     } catch {}
 
     try {
-      await fs.mkdir(this.iconsDir);
+      await fs.mkdir(this.iconsDir, {recursive: true});
     } catch {}
 
     try {
-      await fs.mkdir(this.PNGoutputDir);
+      await fs.mkdir(this.PNGoutputDir, {recursive: true});
     } catch {}
 
     const image = await Jimp.read(this.options.input);
@@ -71,7 +71,7 @@ export class IconGenerator {
       const winIconsDir = path.join(this.iconsDir, 'win');
 
       try {
-        await fs.mkdir(macIconsDir);
+        await fs.mkdir(macIconsDir, {recursive: true});
       } catch {}
 
       await icongen.default(this.PNGoutputDir, macIconsDir, {
@@ -83,7 +83,7 @@ export class IconGenerator {
       });
 
       try {
-        await fs.mkdir(winIconsDir);
+        await fs.mkdir(winIconsDir, {recursive: true});
       } catch {}
 
       await icongen.default(this.PNGoutputDir, winIconsDir, {

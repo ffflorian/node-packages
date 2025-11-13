@@ -1,4 +1,4 @@
-import {promises as fs} from 'node:fs';
+import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import {expect, describe, test, vi, beforeAll, afterAll} from 'vitest';
 import {ConfigFileOptions, JSZipCLI, TerminalOptions} from './index.js';

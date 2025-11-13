@@ -1,4 +1,4 @@
-import {promises as fs} from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 
 async function checkFile(filePath: string): Promise<void> {

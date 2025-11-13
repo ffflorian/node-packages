@@ -1,9 +1,9 @@
 import path from 'node:path';
 import {randomUUID} from 'node:crypto';
+import fs from 'node:fs/promises';
 import {expect, describe, test, beforeEach, beforeAll, afterAll, afterEach} from 'vitest';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
-import {promises as fs} from 'node:fs';
 
 import {ElectronInfo, RawReleaseInfo} from './ElectronInfo.js';
 

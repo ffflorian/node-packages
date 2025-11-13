@@ -1,4 +1,4 @@
-import {promises as fs} from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import logdown from 'logdown';
 
@@ -30,7 +30,7 @@ export class FileService {
       this.logger.info(`Directory "${dirPath}" doesn't exist.`, this.options.force ? 'Creating.' : 'Not creating.');
       if (this.options.force) {
         try {
-          await fs.mkdir(dirPath);
+          await fs.mkdir(dirPath, {recursive: true});
         } catch {}
         return true;
       }
