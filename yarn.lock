@@ -5650,7 +5650,6 @@ __metadata:
   resolution: "electron-info@workspace:packages/electron-info"
   dependencies:
     "@types/semver": "npm:7.7.1"
-    axios: "npm:1.13.2"
     chalk: "npm:5.6.2"
     commander: "npm:14.0.2"
     date-fns: "npm:4.1.0"
