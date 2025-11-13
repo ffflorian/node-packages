@@ -7,9 +7,9 @@ describe('BuildService', () => {
 
   beforeAll(() => {
     vi.mock('fs', () => ({
-      default: {
-        lstat: () => Promise.resolve({isDirectory: () => false, isFile: () => true}),
-        readFile: () => {},
+      promises: {
+        lstat: async () => ({isDirectory: () => false, isFile: () => true}),
+        readFile: async () => {},
       },
     }));
     vi.mock('glob', () => ({
@@ -18,7 +18,7 @@ describe('BuildService', () => {
   });
 
   const addDefaultSpies = (buildService: BuildService) => {
-    vi.spyOn<any, any>(buildService, 'checkOutput').mockReturnValue(() => Promise.resolve());
+    vi.spyOn<any, any>(buildService, 'checkOutput').mockReturnValue(async () => {});
     vi.spyOn<any, any>(buildService, 'addFile');
     vi.spyOn<any, any>(buildService['fileService'], 'writeFile').mockReturnValue(Promise.resolve());
   };
