@@ -892,7 +892,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/auto-merge@workspace:packages/auto-merge"
   dependencies:
-    axios: "npm:1.13.2"
     commander: "npm:14.0.2"
     cosmiconfig: "npm:9.0.0"
     http-status-codes: "npm:2.3.0"

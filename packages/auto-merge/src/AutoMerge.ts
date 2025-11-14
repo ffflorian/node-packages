@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import axios, {AxiosError, AxiosInstance} from 'axios';
 import logdown from 'logdown';
 
 import type {AutoMergeConfig, ActionResult, GitHubPullRequest, Repository, RepositoryResult} from './types/index.js';
@@ -17,9 +16,10 @@ const {bin, version: toolVersion}: PackageJson = JSON.parse(fs.readFileSync(pack
 const toolName = Object.keys(bin)[0];
 
 export class AutoMerge {
-  private readonly apiClient: AxiosInstance;
+  private readonly baseHeaders: Record<string, string>;
   private readonly config: AutoMergeConfig;
   private readonly logger: logdown.Logger;
+  private readonly baseURL: string;
 
   constructor(config: AutoMergeConfig) {
     this.config = config;
@@ -28,14 +28,12 @@ export class AutoMerge {
       markdown: false,
     });
     this.logger.state.isEnabled = true;
-    this.apiClient = axios.create({
-      baseURL: 'https://api.github.com',
-      headers: {
-        Accept: 'application/vnd.github+json',
-        Authorization: `token ${this.config.authToken}`,
-        'User-Agent': `${toolName} v${toolVersion}`,
-      },
-    });
+    this.baseURL = 'https://api.github.com';
+    this.baseHeaders = {
+      Accept: 'application/vnd.github+json',
+      Authorization: `token ${this.config.authToken}`,
+      'User-Agent': `${toolName} v${toolVersion}`,
+    };
     this.checkConfig(this.config);
   }
 
@@ -90,9 +88,12 @@ export class AutoMerge {
   }
 
   private async isPullRequestMergeable(repositorySlug: string, pullNumber: number): Promise<boolean> {
-    const resourceUrl = `/repos/${repositorySlug}/pulls/${pullNumber}`;
-    const response = await this.apiClient.get<GitHubPullRequest>(resourceUrl);
-    return response.data.mergeable_state === 'clean';
+    const resourceUrl = new URL(`/repos/${repositorySlug}/pulls/${pullNumber}`, this.baseURL);
+    const response = await fetch(resourceUrl, {headers: this.baseHeaders});
+    if (!response.ok) {
+      throw new Error(`Error while checking merge request: ${response.statusText}`);
+    }
+    return (await response.json()).mergeable_state === 'clean';
   }
 
   async mergeByMatch(regex: RegExp, repositories?: Repository[]): Promise<RepositoryResult[]> {
@@ -124,11 +125,9 @@ export class AutoMerge {
         await this.postReview(repositorySlug, pullNumber);
       }
     } catch (error) {
-      this.logger.error(
-        `Could not approve request #${pullNumber} in "${repositorySlug}": ${(error as AxiosError).message}`
-      );
+      this.logger.error(`Could not approve request #${pullNumber} in "${repositorySlug}": ${(error as Error).message}`);
       actionResult.status = 'bad';
-      actionResult.error = (error as AxiosError).toString();
+      actionResult.error = (error as Error).toString();
     }
     return actionResult;
   }
@@ -142,10 +141,10 @@ export class AutoMerge {
       }
     } catch (error) {
       this.logger.error(
-        `Could not merge pull request #${pullNumber} in "${repositorySlug}": ${(error as AxiosError).message}`
+        `Could not merge pull request #${pullNumber} in "${repositorySlug}": ${(error as Error).message}`
       );
       actionResult.status = 'bad';
-      actionResult.error = (error as AxiosError).toString();
+      actionResult.error = (error as Error).toString();
     }
     return actionResult;
   }
@@ -162,7 +161,7 @@ export class AutoMerge {
         const pullRequests = await this.getPullRequestsBySlug(repositorySlug);
         repositories.push({pullRequests, repositorySlug});
       } catch (error) {
-        this.logger.error(`Could not get pull requests for "${repositorySlug}": ${(error as AxiosError).message}`);
+        this.logger.error(`Could not get pull requests for "${repositorySlug}": ${(error as Error).message}`);
       }
     }
 
@@ -176,20 +175,34 @@ export class AutoMerge {
 
   /** @see https://docs.github.com/en/rest/reference/pulls#create-a-review-for-a-pull-request */
   private async postReview(repositorySlug: string, pullNumber: number): Promise<void> {
-    const resourceUrl = `/repos/${repositorySlug}/pulls/${pullNumber}/reviews`;
-    await this.apiClient.post(resourceUrl, {event: 'APPROVE'});
+    const resourceUrl = new URL(`/repos/${repositorySlug}/pulls/${pullNumber}/reviews`, this.baseURL);
+    resourceUrl.search = new URLSearchParams({event: 'APPROVE'}).toString();
+    const response = await fetch(resourceUrl, {headers: this.baseHeaders, method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Error while approving pull request: ${response.statusText}`);
+    }
   }
 
   /** @see https://docs.github.com/en/rest/reference/issues#create-an-issue-comment */
   private async putMerge(repositorySlug: string, pullNumber: number, squash?: boolean): Promise<void> {
-    const resourceUrl = `/repos/${repositorySlug}/pulls/${pullNumber}/merge`;
-    await this.apiClient.put(resourceUrl, squash ? {merge_method: 'squash'} : undefined);
+    const resourceUrl = new URL(`/repos/${repositorySlug}/pulls/${pullNumber}/merge`, this.baseURL);
+    if (squash) {
+      resourceUrl.search = new URLSearchParams({merge_method: 'squash'}).toString();
+    }
+
+    const response = await fetch(resourceUrl, {headers: this.baseHeaders, method: 'PUT'});
+    if (!response.ok) {
+      throw new Error(`Error while merging pull request: ${response.statusText}`);
+    }
   }
 
   private async getPullRequestsBySlug(repositorySlug: string): Promise<GitHubPullRequest[]> {
-    const resourceUrl = `/repos/${repositorySlug}/pulls`;
-    const params = {per_page: 100, state: 'open'};
-    const response = await this.apiClient.get<GitHubPullRequest[]>(resourceUrl, {params});
-    return response.data;
+    const resourceUrl = new URL(`/repos/${repositorySlug}/pulls`, this.baseURL);
+    resourceUrl.search = new URLSearchParams({per_page: '100', state: 'open'}).toString();
+    const response = await fetch(resourceUrl, {headers: this.baseHeaders});
+    if (!response.ok) {
+      throw new Error(`Error while fetching pull requests: ${response.statusText}`);
+    }
+    return response.json();
   }
 }
