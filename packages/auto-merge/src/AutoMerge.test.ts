@@ -1,5 +1,5 @@
 import {expect, describe, test, beforeEach, afterEach, vi} from 'vitest';
-import * as nock from 'nock';
+import nock from 'nock';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 
 import {AutoMerge} from './AutoMerge.js';

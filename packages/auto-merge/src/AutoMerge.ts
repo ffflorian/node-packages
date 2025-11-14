@@ -19,7 +19,7 @@ export class AutoMerge {
   private readonly baseHeaders: Record<string, string>;
   private readonly config: AutoMergeConfig;
   private readonly logger: logdown.Logger;
-  private readonly baseURL: string;
+  public baseURL: string;
 
   constructor(config: AutoMergeConfig) {
     this.config = config;

@@ -21,7 +21,7 @@ describe('GitHubClient', () => {
         await gitHubClient.getPullRequests('user', 'repository');
         assert.fail('Should not have resolved');
       } catch (error) {
-        expect((error as Error).message).toBe('timeout of 500ms exceeded');
+        expect((error as Error).message).toBe('The operation was aborted due to timeout');
       } finally {
         nock.cleanAll();
       }
