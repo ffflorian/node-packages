@@ -1,6 +1,5 @@
 import fs from 'node:fs/promises';
 import {inspect} from 'node:util';
-import axios from 'axios';
 import logdown from 'logdown';
 
 import type {Options, RawReleaseInfo} from './ElectronInfo.js';
@@ -29,8 +28,11 @@ export class HTTPService {
     let releases = [];
 
     try {
-      const response = await axios.get<RawReleaseInfo[]>(downloadUrl, {timeout: this.options.timeout});
-      releases = response.data;
+      const response = await fetch(downloadUrl, {signal: AbortSignal.timeout(this.options.timeout)});
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      releases = (await response.json()) as RawReleaseInfo[];
     } catch (error) {
       throw new Error(`Request failed: "${(error as Error).message}"`);
     }

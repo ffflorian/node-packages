@@ -892,7 +892,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/auto-merge@workspace:packages/auto-merge"
   dependencies:
-    axios: "npm:1.13.2"
     commander: "npm:14.0.2"
     cosmiconfig: "npm:9.0.0"
     http-status-codes: "npm:2.3.0"
@@ -960,7 +959,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/gh-open@workspace:packages/gh-open"
   dependencies:
-    axios: "npm:1.13.2"
     commander: "npm:14.0.2"
     find-up: "npm:8.0.0"
     http-status-codes: "npm:2.3.0"
@@ -4415,17 +4413,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.13.2":
-  version: 1.13.2
-  resolution: "axios@npm:1.13.2"
-  dependencies:
-    follow-redirects: "npm:^1.15.6"
-    form-data: "npm:^4.0.4"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: 10c0/e8a42e37e5568ae9c7a28c348db0e8cf3e43d06fcbef73f0048669edfe4f71219664da7b6cc991b0c0f01c28a48f037c515263cb79be1f1ae8ff034cd813867b
-  languageName: node
-  linkType: hard
-
 "babel-eslint@npm:10.1.0":
   version: 10.1.0
   resolution: "babel-eslint@npm:10.1.0"
@@ -5650,7 +5637,6 @@ __metadata:
   resolution: "electron-info@workspace:packages/electron-info"
   dependencies:
     "@types/semver": "npm:7.7.1"
-    axios: "npm:1.13.2"
     chalk: "npm:5.6.2"
     commander: "npm:14.0.2"
     date-fns: "npm:4.1.0"
@@ -9879,7 +9865,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-timezone@workspace:packages/my-timezone"
   dependencies:
-    axios: "npm:1.13.2"
     commander: "npm:14.0.2"
     nock: "npm:14.0.10"
     ntpclient: "npm:1.10.1"
@@ -10272,7 +10257,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ntfy@workspace:packages/ntfy"
   dependencies:
-    axios: "npm:1.13.2"
     rimraf: "npm:6.1.0"
     typescript: "npm:5.9.3"
   languageName: unknown

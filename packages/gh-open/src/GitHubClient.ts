@@ -1,5 +1,3 @@
-import axios, {AxiosInstance} from 'axios';
-
 export interface PullRequest {
   _links: {
     html: {
@@ -14,10 +12,12 @@ export interface PullRequest {
 const TWO_SECONDS_IN_MILLIS = 2000;
 
 export class GitHubClient {
-  private readonly apiClient: AxiosInstance;
+  private readonly baseURL: string;
+  private readonly timeout: number;
 
   constructor(timeout: number = TWO_SECONDS_IN_MILLIS) {
-    this.apiClient = axios.create({baseURL: 'https://api.github.com', timeout});
+    this.baseURL = 'https://api.github.com';
+    this.timeout = timeout;
   }
 
   async getPullRequestByBranch(user: string, repository: string, branch: string): Promise<PullRequest | undefined> {
@@ -29,14 +29,15 @@ export class GitHubClient {
    * @see https://developer.github.com/v3/pulls/#list-pull-requests
    */
   async getPullRequests(user: string, repository: string): Promise<PullRequest[]> {
-    const resourceUrl = `repos/${user}/${repository}/pulls`;
+    const resourceUrl = new URL(`repos/${user}/${repository}/pulls`, this.baseURL);
+    resourceUrl.search = new URLSearchParams({per_page: '100', state: 'open'}).toString();
 
-    const response = await this.apiClient.get(resourceUrl, {
-      params: {
-        state: 'open',
-      },
-    });
+    const response = await fetch(resourceUrl, {signal: AbortSignal.timeout(this.timeout)});
 
-    return response.data;
+    if (!response.ok) {
+      throw new Error(`Error while fetching pull requests: ${response.statusText}`);
+    }
+
+    return response.json();
   }
 }

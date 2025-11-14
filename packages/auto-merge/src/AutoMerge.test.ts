@@ -49,17 +49,17 @@ describe('AutoMerge', () => {
         },
       });
 
-      nock(autoMerge['apiClient'].defaults.baseURL!)
+      nock(autoMerge['baseURL']!)
         .post(/^\/repos\/.+?\/.+?\/pulls\/\d+\/reviews\/?$/)
         .reply(HTTP_STATUS.OK, {data: 'not-used'})
         .persist();
 
-      nock(autoMerge['apiClient'].defaults.baseURL!)
+      nock(autoMerge['baseURL']!)
         .get(/^\/repos\/.+?\/.+?\/pulls\/\d+\/?$/)
         .reply(HTTP_STATUS.OK, {data: 'not-used'})
         .persist();
 
-      nock(autoMerge['apiClient'].defaults.baseURL!)
+      nock(autoMerge['baseURL']!)
         .put(/^\/repos\/.+?\/.+?\/pulls\/\d+\/merge\/?$/)
         .reply(HTTP_STATUS.OK, {data: 'not-used'})
         .persist();

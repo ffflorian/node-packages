@@ -1,5 +1,3 @@
-import type {AxiosBasicCredentials, Method as HTTPMethod} from 'axios';
-
 export enum MessagePriority {
   /** Really long vibration bursts, default notification sound with a pop-over notification. */
   MAX = 5,
@@ -42,6 +40,28 @@ export interface BroadcastAction {
   /** Label of the action button in the notification. */
   label: string;
 }
+
+export type HTTPMethod =
+  | 'get'
+  | 'GET'
+  | 'delete'
+  | 'DELETE'
+  | 'head'
+  | 'HEAD'
+  | 'options'
+  | 'OPTIONS'
+  | 'post'
+  | 'POST'
+  | 'put'
+  | 'PUT'
+  | 'patch'
+  | 'PATCH'
+  | 'purge'
+  | 'PURGE'
+  | 'link'
+  | 'LINK'
+  | 'unlink'
+  | 'UNLINK';
 
 export interface HTTPAction {
   /** HTTP body. */
@@ -144,7 +164,7 @@ export interface BaseConfig {
    *
    * Use either basic credentials or an access token.
    */
-  authorization?: AxiosBasicCredentials | string;
+  authorization?: {password: string; username: string} | string;
   /**
    * You can define which URL to open when a notification is clicked. This may be useful if your notification is related
    * to a Zabbix alert or a transaction that you'd like to provide the deep-link for. Tapping the notification will open
