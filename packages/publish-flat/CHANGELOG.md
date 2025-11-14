@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.14.0 (2025-11-14)
+
+
+### Features
+
+* Remove axios ([#1040](https://github.com/ffflorian/node-packages/issues/1040)) ([cb36f9e](https://github.com/ffflorian/node-packages/commit/cb36f9e7c0742aff185183f75f377b3ff67be3ef))
+
+
+
+
+
 ## 1.13.1 (2025-11-13)
 
 **Note:** Version bump only for package publish-flat

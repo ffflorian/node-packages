@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.12.0 (2025-11-14)
+
+
+### Features
+
+* Remove axios ([#1040](https://github.com/ffflorian/tree/node-packages/crates-updater/issues/1040)) ([cb36f9e](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/cb36f9e7c0742aff185183f75f377b3ff67be3ef))
+
+
+
+
+
 ## 1.11.1 (2025-11-13)
 
 **Note:** Version bump only for package crates-updater
