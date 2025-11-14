@@ -1,13 +1,11 @@
 import {URL} from 'node:url';
 import fs from 'node:fs/promises';
-import axios, {AxiosHeaders, type AxiosRequestConfig} from 'axios';
 
 import type {
   AttachmentConfig,
   BaseConfig,
   BroadcastAction,
   Config,
-  FileURL,
   HTTPAction,
   MessageConfig,
   ResponseData,
@@ -94,98 +92,105 @@ function buildViewActionString(action: ViewAction & {type: 'view'}): string {
   return str;
 }
 
-export async function publish<T extends Config>(config: T): Promise<ResponseData<T>> {
-  const axiosConfig: AxiosRequestConfig & {headers: AxiosHeaders} = {headers: new AxiosHeaders()};
+export async function publish<T extends Config>(publishConfig: T): Promise<ResponseData<T>> {
+  const requestConfig: {headers: Record<string, string>; withCredentials?: boolean} = {headers: {}};
 
   let postData: any;
 
-  if (config.actions && config.actions.length) {
-    axiosConfig.headers.set(
-      'X-Actions',
-      config.actions
-        .map(action => {
-          switch (action.type) {
-            case 'broadcast': {
-              return buildBroadcastActionString(action);
-            }
-            case 'http': {
-              return buildHTTPActionString(action);
-            }
-            case 'view': {
-              return buildViewActionString(action);
-            }
-            default: {
-              return '';
-            }
+  if (publishConfig.actions && publishConfig.actions.length) {
+    requestConfig.headers['X-Actions'] = publishConfig.actions
+      .map(action => {
+        switch (action.type) {
+          case 'broadcast': {
+            return buildBroadcastActionString(action);
           }
-        })
-        .join('; ')
-    );
+          case 'http': {
+            return buildHTTPActionString(action);
+          }
+          case 'view': {
+            return buildViewActionString(action);
+          }
+          default: {
+            return '';
+          }
+        }
+      })
+      .join('; ');
   }
 
-  if (config.authorization) {
-    axiosConfig.withCredentials = true;
-    if (typeof config.authorization === 'string') {
-      axiosConfig.headers.Authorization = config.authorization;
+  if (publishConfig.authorization) {
+    requestConfig.withCredentials = true;
+    if (typeof publishConfig.authorization === 'string') {
+      requestConfig.headers.Authorization = `Basic ${publishConfig.authorization}`;
     } else {
-      axiosConfig.auth = config.authorization;
+      const credentials = `${publishConfig.authorization.username}:${publishConfig.authorization.password}`;
+      requestConfig.headers.Authorization = `Basic ${Buffer.from(credentials).toString('base64')}`;
     }
   }
 
-  if (config.delay) {
-    axiosConfig.headers.set('X-Delay', config.delay);
+  if (publishConfig.delay) {
+    requestConfig.headers['X-Delay'] = publishConfig.delay;
   }
 
-  if (config.disableCache) {
-    axiosConfig.headers.set('X-Cache', 'no');
+  if (publishConfig.disableCache) {
+    requestConfig.headers['X-Cache'] = 'no';
   }
 
-  if (config.disableFirebase) {
-    axiosConfig.headers.set('X-Firebase', 'no');
+  if (publishConfig.disableFirebase) {
+    requestConfig.headers['X-Firebase'] = 'no';
   }
 
-  if (config.emailAddress) {
-    axiosConfig.headers.set('X-Email', config.emailAddress);
+  if (publishConfig.emailAddress) {
+    requestConfig.headers['X-Email'] = publishConfig.emailAddress;
   }
 
-  if (ConfigHasMessage(config) && config.fileURL) {
-    if (typeof config.fileURL === 'string') {
-      axiosConfig.headers.set('X-Attach', config.fileURL as string);
+  if (ConfigHasMessage(publishConfig) && publishConfig.fileURL) {
+    if (typeof publishConfig.fileURL === 'string') {
+      requestConfig.headers['X-Attach'] = publishConfig.fileURL;
+    } else {
+      requestConfig.headers['X-Attach'] = publishConfig.fileURL.url;
+      requestConfig.headers['X-Filename'] = publishConfig.fileURL.filename;
     }
-    axiosConfig.headers.set('X-Attach', (config.fileURL as FileURL).url);
-    axiosConfig.headers.set('X-Filename', (config.fileURL as FileURL).filename);
   }
 
-  if (ConfigHasAttachment(config)) {
+  if (ConfigHasAttachment(publishConfig)) {
     try {
-      postData = await fs.readFile(config.fileAttachment);
+      postData = await fs.readFile(publishConfig.fileAttachment);
     } catch (error: unknown) {
       console.error('Error while reading file:', (error as Error).message);
     }
-  } else if (config.message) {
-    postData = config.message;
+  } else if (publishConfig.message) {
+    postData = publishConfig.message;
   } else {
     throw new Error('No message or file attachment specified');
   }
 
-  if (config.iconURL) {
-    axiosConfig.headers.set('X-Icon', config.iconURL);
+  if (publishConfig.iconURL) {
+    requestConfig.headers['X-Icon'] = publishConfig.iconURL;
   }
 
-  if (config.priority) {
-    axiosConfig.headers.set('X-Priority', config.priority);
+  if (publishConfig.priority) {
+    requestConfig.headers['X-Priority'] = publishConfig.priority.toString();
   }
 
-  if (config.tags && config.tags.length) {
-    axiosConfig.headers.set('X-Tags', typeof config.tags === 'string' ? config.tags : config.tags.join(','));
+  if (publishConfig.tags && publishConfig.tags.length) {
+    requestConfig.headers['X-Tags'] =
+      typeof publishConfig.tags === 'string' ? publishConfig.tags : publishConfig.tags.join(',');
   }
 
-  if (config.title) {
-    axiosConfig.headers.set('X-Title', config.title);
+  if (publishConfig.title) {
+    requestConfig.headers['X-Title'] = publishConfig.title;
   }
 
-  const url = new URL(config.topic, config.server || defaultServerURL);
+  const url = new URL(publishConfig.topic, publishConfig.server || defaultServerURL);
 
-  const {data} = await axios.post(url.href, postData, axiosConfig);
-  return data;
+  const response = await fetch(url.href, {
+    body: JSON.stringify(postData),
+    headers: requestConfig.headers,
+    method: 'POST',
+  });
+  if (!response.ok) {
+    throw new Error(`Error while publishing message: ${response.statusText}`);
+  }
+  return response.json();
 }
