@@ -156,7 +156,7 @@ export async function publish<T extends Config>(publishConfig: T): Promise<Respo
   if (ConfigHasAttachment(publishConfig)) {
     try {
       postData = await fs.readFile(publishConfig.fileAttachment);
-    } catch (error: unknown) {
+    } catch (error) {
       console.error('Error while reading file:', (error as Error).message);
     }
   } else if (publishConfig.message) {
@@ -185,7 +185,8 @@ export async function publish<T extends Config>(publishConfig: T): Promise<Respo
   const url = new URL(publishConfig.topic, publishConfig.server || defaultServerURL);
 
   const response = await fetch(url.href, {
-    body: JSON.stringify(postData),
+    body: postData,
+    credentials: requestConfig.withCredentials ? 'include' : 'omit',
     headers: requestConfig.headers,
     method: 'POST',
   });
