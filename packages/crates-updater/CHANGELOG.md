@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.12.1 (2025-11-18)
+
+
+### Bug Fixes
+
+* Do not build test files ([e0b1e50](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/e0b1e50bd572a9d3bd8e01d76b248b5a33283860))
+
+
+
+
+
 # 1.12.0 (2025-11-14)
 
 
