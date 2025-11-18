@@ -21,7 +21,7 @@
   "name": "ntfy",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/ntfy",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build"
   },

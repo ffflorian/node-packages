@@ -7,6 +7,6 @@
     "rootDir": "src",
     "target": "ES2018"
   },
-  "exclude": ["dist", "node_modules", "**/*.test.ts"],
+  "exclude": ["dist", "node_modules"],
   "extends": "../../tsconfig.json"
 }

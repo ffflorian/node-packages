@@ -30,7 +30,7 @@
   "private": true,
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/mastodon-bot-yearprogress",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "start": "tsx src/cli.ts -d"

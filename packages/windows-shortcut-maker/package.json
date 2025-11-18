@@ -30,7 +30,7 @@
   "name": "@ffflorian/windows-shortcut-maker",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/windows-shortcut-maker",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build"
   },

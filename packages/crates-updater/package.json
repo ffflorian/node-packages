@@ -33,7 +33,7 @@
   "name": "crates-updater",
   "repository": "https://github.com/ffflorian/tree/node-packages/crates-updater",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "start": "tsx src/cli.ts"

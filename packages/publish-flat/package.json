@@ -6,7 +6,6 @@
   },
   "dependencies": {
     "@npmcli/arborist": "9.1.6",
-    "@types/npmcli__arborist": "6.3.1",
     "commander": "14.0.2",
     "logdown": "3.3.1",
     "npm-packlist": "10.0.3"
@@ -14,6 +13,7 @@
   "description": "Publish your project without the dist directory",
   "devDependencies": {
     "@types/npm-packlist": "7.0.3",
+    "@types/npmcli__arborist": "6.3.1",
     "rimraf": "6.1.0",
     "tsx": "4.20.6",
     "typescript": "5.9.3"
@@ -30,7 +30,7 @@
   "name": "publish-flat",
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/publish-flat",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "start": "tsx src/cli.ts"

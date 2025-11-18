@@ -38,7 +38,7 @@
   "scripts": {
     "build": "yarn build:proto && yarn build:ts",
     "build:proto": "pbjs --t static-module -w commonjs -o proto/export.js proto/export.proto && pbts --out proto/export.d.ts --no-comments proto/export.js",
-    "build:ts": "tsc",
+    "build:ts": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "start": "tsx src/cli.ts -d"
