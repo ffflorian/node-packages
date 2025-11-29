@@ -94,7 +94,7 @@ export class APIClient {
 
     const response = await fetch(url, requestOptions);
     if (!response.ok) {
-      throw new Error(`${options.method.toUpperCase()} request failed: ${response.statusText}`);
+      throw new Error(`Request failed with status code ${response.status}`);
     }
 
     if (this.interceptors.response.length > 0) {
