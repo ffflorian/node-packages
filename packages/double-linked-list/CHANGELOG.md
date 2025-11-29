@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.11.0 (2025-11-29)
+
+
+### Features
+
+* **api-client:** Add api-client ([#1043](https://github.com/ffflorian/node-packages/issues/1043)) ([68bf8b9](https://github.com/ffflorian/node-packages/commit/68bf8b9e6b9ce14dfa674fabcd34f573bab5b0cd))
+
+
+
+
+
 ## 3.10.2 (2025-11-20)
 
 **Note:** Version bump only for package @ffflorian/doublelinkedlist
