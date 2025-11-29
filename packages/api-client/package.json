@@ -13,6 +13,8 @@
     "dist"
   ],
   "keywords": [
+    "api-client",
+    "fetch",
     "cli",
     "typescript"
   ],
