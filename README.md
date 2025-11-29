@@ -4,6 +4,7 @@ My Node.js packages
 
 ## Packages
 
+- [`api-client`](./packages/api-client) [![npm version](https://img.shields.io/npm/v/@ffflorian/api-client.svg)](https://npmjs.com/packages/@ffflorian/api-client)
 - [`auto-merge`](./packages/auto-merge) [![npm version](https://img.shields.io/npm/v/@ffflorian/auto-merge.svg)](https://npmjs.com/packages/@ffflorian/auto-merge)
 - [`crates-updater`](./packages/crates-updater) [![npm version](https://img.shields.io/npm/v/crates-updater.svg)](https://npmjs.com/packages/crates-updater)
 - [`double-linked-list`](./packages/double-linked-list)
