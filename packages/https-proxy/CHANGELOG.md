@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.16.2 (2025-11-29)
+
+
+### Bug Fixes
+
+* **api-client:** Set correct keywords ([b02bdc1](https://github.com/ffflorian/node-packages/commit/b02bdc11d7ee7294c240a94dc661c6b2b642aa59))
+
+
+
+
+
 ## 1.16.1 (2025-11-29)
 
 
