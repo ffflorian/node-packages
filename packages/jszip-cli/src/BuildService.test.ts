@@ -1,6 +1,6 @@
 import {expect, describe, test, vi, beforeEach, beforeAll} from 'vitest';
 import {JSZipCLI} from './index.js';
-import type {BuildService} from './BuildService.js';
+import {BuildService} from './BuildService.js';
 
 describe('BuildService', () => {
   let jsZipCLI: JSZipCLI;
@@ -13,7 +13,7 @@ describe('BuildService', () => {
       },
     }));
     vi.mock('glob', () => ({
-      glob: async (params: string | string[]) => (typeof params === 'string' ? [params] : params),
+      glob: async (params: string | string[]) => [params].flat(),
     }));
   });
 

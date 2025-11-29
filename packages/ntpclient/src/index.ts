@@ -1,4 +1,4 @@
-import * as dgram from 'node:dgram';
+import dgram from 'node:dgram';
 
 const TEN_SECONDS_IN_MILLIS = 10_000;
 
@@ -11,14 +11,14 @@ export interface NTPConfig {
   server?: string;
 }
 
-const defaultConfig: Required<NTPConfig> = {
+const defaultConfig: NTPConfig = {
   port: 123,
   replyTimeout: TEN_SECONDS_IN_MILLIS,
   server: 'pool.ntp.org',
 };
 
 export class NTPClient {
-  private readonly config: Required<NTPConfig>;
+  private readonly config: NTPConfig;
 
   constructor(server?: string, port?: number, timeout?: number);
   constructor(config?: NTPConfig);
