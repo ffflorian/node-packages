@@ -4,7 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import readline from 'node:readline';
 import {program as commander} from 'commander';
-import {lilconfig} from 'lilconfig';
+import {cosmiconfig} from 'cosmiconfig';
 import logdown from 'logdown';
 
 import {AutoMerge} from './AutoMerge.js';
@@ -41,7 +41,7 @@ commander
   .parse(process.argv);
 
 const commanderOptions = commander.opts();
-const configExplorer = lilconfig('automerge');
+const configExplorer = cosmiconfig('automerge');
 const configResult = commanderOptions.config
   ? await configExplorer.load(commanderOptions.config)
   : await configExplorer.search();
