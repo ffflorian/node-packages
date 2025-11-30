@@ -2,7 +2,6 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "Send notifications over ntfy.sh.",
   "devDependencies": {
-    "rimraf": "6.1.0",
     "typescript": "5.9.3"
   },
   "engines": {
@@ -22,7 +21,7 @@
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/ntfy",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "clean": "rimraf dist",
+    "clean": "rm -rf dist",
     "dist": "yarn clean && yarn build"
   },
   "type": "module",

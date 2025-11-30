@@ -14,7 +14,6 @@
     "@types/semver": "7.7.1",
     "http-status-codes": "2.3.0",
     "nock": "14.0.10",
-    "rimraf": "6.1.0",
     "tsx": "4.20.6",
     "typescript": "5.9.3",
     "vitest": "4.0.6"
@@ -40,7 +39,7 @@
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/electron-info",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "clean": "rimraf dist",
+    "clean": "rm -rf dist",
     "dist": "yarn clean && yarn build",
     "start": "tsx src/cli.ts -d",
     "test": "vitest run"

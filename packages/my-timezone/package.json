@@ -8,7 +8,6 @@
   "description": "Get the exact time based on your location.",
   "devDependencies": {
     "nock": "14.0.10",
-    "rimraf": "6.1.0",
     "tsx": "4.20.6",
     "typescript": "5.9.3",
     "vitest": "4.0.6"
@@ -26,7 +25,7 @@
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/my-timezone",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "clean": "rimraf dist",
+    "clean": "rm -rf dist",
     "dist": "yarn clean && yarn build",
     "start": "tsx src/cli.ts",
     "test": "vitest run"

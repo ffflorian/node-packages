@@ -24,10 +24,8 @@
     "eslint-plugin-sort-keys-fix": "1.1.2",
     "eslint-plugin-typescript-sort-keys": "3.3.0",
     "eslint-plugin-unused-imports": "4.3.0",
-    "lerna": "9.0.1",
     "oxlint": "1.25.0",
     "prettier": "3.6.2",
-    "rimraf": "6.1.0",
     "typescript": "5.9.3",
     "vite": "7.2.1",
     "vitest": "4.0.6"
@@ -40,8 +38,8 @@
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
-    "build:ts": "lerna run build --concurrency 4",
-    "clean": "lerna run clean",
+    "build:ts": "yarn workspaces foreach --all run build",
+    "clean": "yarn workspaces foreach --all run clean",
     "dist": "yarn clean && yarn build:ts",
     "fix": "yarn fix:ts && yarn fix:other",
     "fix:other": "yarn prettier --write",
@@ -50,9 +48,9 @@
     "lint:other": "yarn prettier --list-different",
     "lint:ts": "oxlint --ignore-path .gitignore packages && eslint --ignore-path .gitignore packages",
     "prettier": "prettier \"*.{json,md,yml}\"",
-    "release": "lerna publish",
+    "release": "yarn workspaces foreach --no-private --since run release",
     "test": "yarn lint && yarn test:all",
-    "test:all": "lerna run test --concurrency 4"
+    "test:all": "yarn workspaces foreach --all run test"
   },
   "workspaces": [
     "packages/*"
