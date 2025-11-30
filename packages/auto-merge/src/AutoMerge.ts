@@ -1,19 +1,18 @@
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import logdown from 'logdown';
 
 import type {AutoMergeConfig, ActionResult, GitHubPullRequest, Repository, RepositoryResult} from './types/index.js';
 
 interface PackageJson {
-  bin: Record<string, string>;
+  name: string;
   version: string;
 }
 
 const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 
-const {bin, version: toolVersion}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
-const toolName = Object.keys(bin)[0];
+const {name: toolName, version: toolVersion}: PackageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
 
 export class AutoMerge {
   private readonly baseHeaders: Record<string, string>;

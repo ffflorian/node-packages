@@ -11,7 +11,7 @@ Currently deployed to [@year_progress@botsin.space](https://botsin.space/@year_p
 ## Prerequisites
 
 - [Node.js](https://nodejs.org) >= 18.0
-- [yarn](https://classic.yarnpkg.com)
+- [yarn](https://yarnpkg.com)
 
 ## Installation
 

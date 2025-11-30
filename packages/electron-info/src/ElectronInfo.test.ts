@@ -5,7 +5,8 @@ import {expect, describe, test, beforeEach, beforeAll, afterAll, afterEach} from
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
 
-import {ElectronInfo, RawReleaseInfo} from './ElectronInfo.js';
+import {ElectronInfo} from './ElectronInfo.js';
+import type {RawReleaseInfo} from './interfaces.js';
 
 const __dirname = import.meta.dirname;
 const tempDir = path.resolve(__dirname, '.temp');

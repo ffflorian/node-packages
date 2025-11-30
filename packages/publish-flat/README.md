@@ -4,8 +4,8 @@ Publish your project flattened. No more `dist` in `require('project/dist/Options
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org) >= 14
-- npm (preinstalled) or [yarn](https://classic.yarnpkg.com)
+- [Node.js](https://nodejs.org)
+- npm (preinstalled) or [yarn](https://yarnpkg.com)
 
 ## Installation
 

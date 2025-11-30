@@ -6,8 +6,8 @@ Of course you shouldn't be using this and I'm not responsible if people call you
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org) >= 14
-- [yarn](https://classic.yarnpkg.com)
+- [Node.js](https://nodejs.org)
+- [yarn](https://yarnpkg.com)
 
 ## Setup
 

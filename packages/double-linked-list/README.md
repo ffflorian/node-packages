@@ -12,8 +12,8 @@ A linked list in which every element knows about its predecessor and its success
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org) >= 14
-- npm (preinstalled) or [yarn](https://classic.yarnpkg.com)
+- [Node.js](https://nodejs.org)
+- npm (preinstalled) or [yarn](https://yarnpkg.com)
 
 ## Installation
 

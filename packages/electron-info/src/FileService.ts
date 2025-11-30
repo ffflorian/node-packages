@@ -5,8 +5,8 @@ import URL from 'node:url';
 import {isAfter as isAfterDate, sub as subtractDate} from 'date-fns';
 import logdown from 'logdown';
 
-import type {Options, RawReleaseInfo} from './ElectronInfo.js';
 import {HTTPService} from './HTTPService.js';
+import type {Options, RawReleaseInfo} from './interfaces.js';
 
 export class FileService {
   private readonly httpService: HTTPService;

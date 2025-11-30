@@ -1,5 +1,4 @@
-import {cosmiconfigSync} from 'cosmiconfig';
-import type {CosmiconfigResult} from 'cosmiconfig';
+import {cosmiconfigSync, type CosmiconfigResult} from 'cosmiconfig';
 import logdown from 'logdown';
 
 import {BuildService} from './BuildService.js';
@@ -23,22 +22,23 @@ export class JSZipCLI {
   private readonly configFile?: string;
   private readonly extractService: ExtractService;
   private readonly logger: logdown.Logger;
-  private options: Required<TerminalOptions> & Partial<ConfigFileOptions>;
-  private readonly terminalOptions?: TerminalOptions;
+  private readonly options: Required<TerminalOptions> & Partial<ConfigFileOptions>;
 
   constructor(options?: TerminalOptions) {
-    this.terminalOptions = options;
     this.logger = logdown('jszip-cli/index', {
       logger: console,
       markdown: false,
     });
     this.configExplorer = cosmiconfigSync('jszip');
 
-    this.options = {...defaultOptions, ...this.terminalOptions};
-    this.logger.state.isEnabled = this.options.verbose;
-    this.logger.info('Merged options', this.options);
+    this.options = {...defaultOptions, ...options};
 
-    this.checkConfigFile();
+    if (this.options.configFile) {
+      const configFileData = this.checkConfigFile();
+      this.options = {...defaultOptions, ...configFileData, ...options};
+    }
+
+    this.logger.state.isEnabled = this.options.verbose;
 
     this.logger.info('Loaded options', this.options);
 
@@ -111,12 +111,7 @@ export class JSZipCLI {
     return this.buildService.save();
   }
 
-  private checkConfigFile(): void {
-    if (!this.options.configFile) {
-      this.logger.info('Not using any configuration file.');
-      return;
-    }
-
+  private checkConfigFile(): ConfigFileOptions | void {
     let configResult: CosmiconfigResult = null;
 
     if (typeof this.options.configFile === 'string') {
@@ -134,7 +129,7 @@ export class JSZipCLI {
     }
 
     if (!configResult || configResult.isEmpty) {
-      this.logger.info('Not using any configuration file.');
+      this.logger.info('Configuration file not found or empty.');
       return;
     }
 
@@ -142,7 +137,6 @@ export class JSZipCLI {
 
     this.logger.info(`Using configuration file ${configResult.filepath}`);
 
-    this.options = {...defaultOptions, ...configFileData, ...this.terminalOptions};
-    this.logger.state.isEnabled = this.options.verbose;
+    return configFileData;
   }
 }

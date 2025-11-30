@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import readline from 'node:readline';
 import {program as commander} from 'commander';
-import {cosmiconfigSync} from 'cosmiconfig';
+import {cosmiconfig} from 'cosmiconfig';
 import logdown from 'logdown';
 
 import {AutoMerge} from './AutoMerge.js';
@@ -27,7 +27,7 @@ interface PackageJson {
 const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 
-const {description, name, version}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+const {description, name, version}: PackageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
 
 commander
   .name(name.replace(/^@[^/]+\//, ''))
@@ -41,8 +41,10 @@ commander
   .parse(process.argv);
 
 const commanderOptions = commander.opts();
-const configExplorer = cosmiconfigSync('automerge');
-const configResult = commanderOptions.config ? configExplorer.load(commanderOptions.config) : configExplorer.search();
+const configExplorer = cosmiconfig('automerge');
+const configResult = commanderOptions.config
+  ? await configExplorer.load(commanderOptions.config)
+  : await configExplorer.search();
 
 if (!configResult || configResult.isEmpty) {
   logger.error('No valid configuration file found.');

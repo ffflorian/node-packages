@@ -4,8 +4,8 @@ Get the exact time based on your location by calculating the time difference in 
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org) >= 14
-- npm (preinstalled) or [yarn](https://classic.yarnpkg.com)
+- [Node.js](https://nodejs.org)
+- npm (preinstalled) or [yarn](https://yarnpkg.com)
 
 ## Installation
 
