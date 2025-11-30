@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline';
 import {program as commander} from 'commander';
-import {cosmiconfigSync} from 'cosmiconfig';
+import {lilconfigSync} from 'lilconfig';
 import logdown from 'logdown';
 
 import {AutoMerge} from './AutoMerge.js';
@@ -41,7 +41,7 @@ commander
   .parse(process.argv);
 
 const commanderOptions = commander.opts();
-const configExplorer = cosmiconfigSync('automerge');
+const configExplorer = lilconfigSync('automerge');
 const configResult = commanderOptions.config ? configExplorer.load(commanderOptions.config) : configExplorer.search();
 
 if (!configResult || configResult.isEmpty) {

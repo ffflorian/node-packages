@@ -1,5 +1,4 @@
-import {cosmiconfigSync} from 'cosmiconfig';
-import type {CosmiconfigResult} from 'cosmiconfig';
+import {lilconfigSync, LilconfigResult, SyncSearcher} from 'lilconfig';
 import logdown from 'logdown';
 
 import {BuildService} from './BuildService.js';
@@ -19,7 +18,7 @@ const defaultOptions: Required<TerminalOptions> = {
 
 export class JSZipCLI {
   private readonly buildService: BuildService;
-  private readonly configExplorer: ReturnType<typeof cosmiconfigSync>;
+  private readonly configExplorer: SyncSearcher;
   private readonly configFile?: string;
   private readonly extractService: ExtractService;
   private readonly logger: logdown.Logger;
@@ -32,7 +31,7 @@ export class JSZipCLI {
       logger: console,
       markdown: false,
     });
-    this.configExplorer = cosmiconfigSync('jszip');
+    this.configExplorer = lilconfigSync('jszip');
 
     this.options = {...defaultOptions, ...this.terminalOptions};
     this.logger.state.isEnabled = this.options.verbose;
@@ -117,7 +116,7 @@ export class JSZipCLI {
       return;
     }
 
-    let configResult: CosmiconfigResult = null;
+    let configResult: LilconfigResult = null;
 
     if (typeof this.options.configFile === 'string') {
       try {
