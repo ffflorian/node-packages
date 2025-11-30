@@ -2,7 +2,6 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "Mock dgram udp requests.",
   "devDependencies": {
-    "rimraf": "6.1.0",
     "typescript": "5.9.3",
     "vitest": "4.0.6"
   },
@@ -19,7 +18,7 @@
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/mock-udp",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "clean": "rimraf dist",
+    "clean": "rm -rf dist",
     "dist": "yarn clean && yarn build",
     "test": "vitest run"
   },

@@ -11,7 +11,6 @@
   },
   "description": "Check your Rust packages for updates.",
   "devDependencies": {
-    "rimraf": "6.1.0",
     "tsx": "4.20.6",
     "typescript": "5.9.3"
   },
@@ -34,7 +33,7 @@
   "repository": "https://github.com/ffflorian/tree/node-packages/crates-updater",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "clean": "rimraf dist",
+    "clean": "rm -rf dist",
     "dist": "yarn clean && yarn build",
     "start": "tsx src/cli.ts"
   },
