@@ -4,7 +4,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {program as commander} from 'commander';
 
-import {ElectronInfo, RawDeps, SupportedDependencies} from './ElectronInfo.js';
+import {ElectronInfo, SupportedDependencies} from './ElectronInfo.js';
+import type {RawDeps} from './interfaces.js';
 
 interface PackageJson {
   description: string;

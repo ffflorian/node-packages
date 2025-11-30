@@ -2,9 +2,7 @@ import fs from 'node:fs/promises';
 import {inspect} from 'node:util';
 import logdown from 'logdown';
 
-import type {Options, RawReleaseInfo} from './ElectronInfo.js';
-
-export type HTTPOptions = Pick<Options, 'debug' | 'timeout'>;
+import type {HTTPOptions, RawReleaseInfo} from './interfaces.js';
 
 export class HTTPService {
   private readonly logger: logdown.Logger;
