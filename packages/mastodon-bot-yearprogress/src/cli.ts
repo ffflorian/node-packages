@@ -19,9 +19,10 @@ const packageJsonPath = path.join(__dirname, '../package.json');
 
 const packageJson = fs.readFileSync(packageJsonPath, 'utf-8');
 const {bin, description, version} = JSON.parse(packageJson);
+const [toolName] = Object.keys(bin);
 
 commander
-  .name(Object.keys(bin)[0])
+  .name(toolName)
   .version(version)
   .description(description)
   .option('-s, --server <host>', 'Specify a Mastodon server (e.g. https://mastodon.social)')

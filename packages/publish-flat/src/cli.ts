@@ -15,9 +15,10 @@ interface PackageJson {
 const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 const {bin, description, version}: PackageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
+const [toolName] = Object.keys(bin);
 
 commander
-  .name(Object.keys(bin)[0])
+  .name(toolName)
   .version(version)
   .description(description)
   .option('-y, --yarn', 'Use yarn for publishing (default: false)')

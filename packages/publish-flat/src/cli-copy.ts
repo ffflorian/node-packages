@@ -15,12 +15,12 @@ const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 
 const {bin, version}: PackageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
-const name = Object.keys(bin)[1];
+const toolName = Object.keys(bin)[1];
 
 commander
-  .name(name)
+  .name(toolName)
   .version(version)
-  .description(`Copy entries from one JSON file to the other (example: "${name} version")`)
+  .description(`Copy entries from one JSON file to the other (example: "${toolName} version")`)
   .option('-i, --input <file>', 'Set the input JSON file', './package.json')
   .option('-o, --output <file>', 'Set the output JSON file', '../package.json')
   .parse(process.argv);
