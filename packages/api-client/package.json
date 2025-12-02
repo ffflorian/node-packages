@@ -29,5 +29,5 @@
     "test": "exit 0"
   },
   "type": "module",
-  "version": "2.1.4"
+  "version": "2.1.5"
 }

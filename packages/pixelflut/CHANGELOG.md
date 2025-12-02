@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.13.5 (2025-12-02)
+
+
+### Bug Fixes
+
+* **auto-merge:** Use body in PUT request, fix tool name ([b1e1b2c](https://github.com/ffflorian/node-packages/commit/b1e1b2caa3a0df89b9f9293db5f4e4f9ca2849a9))
+
+
+
+
+
 ## 1.13.4 (2025-12-02)
 
 **Note:** Version bump only for package pixelflut
