@@ -5,15 +5,14 @@ import logdown from 'logdown';
 import type {AutoMergeConfig, ActionResult, GitHubPullRequest, Repository, RepositoryResult} from './types/index.js';
 
 interface PackageJson {
-  bin: Record<string, string>;
+  name: string;
   version: string;
 }
 
 const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
 
-const {bin, version: toolVersion}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
-const toolName = Object.keys(bin)[0];
+const {name: toolName, version: toolVersion}: PackageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
 export class AutoMerge {
   private readonly baseHeaders: Record<string, string>;
@@ -31,8 +30,9 @@ export class AutoMerge {
     this.baseURL = 'https://api.github.com';
     this.baseHeaders = {
       Accept: 'application/vnd.github+json',
-      Authorization: `token ${this.config.authToken}`,
+      Authorization: `Bearer ${this.config.authToken}`,
       'User-Agent': `${toolName} v${toolVersion}`,
+      'X-GitHub-Api-Version': '2022-11-28',
     };
     this.checkConfig(this.config);
   }
@@ -135,17 +135,21 @@ export class AutoMerge {
   async mergePullRequest(repositorySlug: string, pullNumber: number, squash: boolean = false): Promise<ActionResult> {
     const actionResult: ActionResult = {pullNumber, status: 'good'};
 
-    try {
-      if (!this.config.dryRun) {
-        await this.putMerge(repositorySlug, pullNumber, squash);
+    if (!this.config.dryRun) {
+      try {
+        const isMerged = await this.putMerge(repositorySlug, pullNumber, squash);
+        if (!isMerged) {
+          actionResult.status = 'bad';
+        }
+      } catch (error) {
+        this.logger.error(
+          `Could not merge pull request #${pullNumber} in "${repositorySlug}": ${(error as Error).message}`
+        );
+        actionResult.status = 'bad';
+        actionResult.error = (error as Error).toString();
       }
-    } catch (error) {
-      this.logger.error(
-        `Could not merge pull request #${pullNumber} in "${repositorySlug}": ${(error as Error).message}`
-      );
-      actionResult.status = 'bad';
-      actionResult.error = (error as Error).toString();
     }
+
     return actionResult;
   }
 
@@ -176,24 +180,30 @@ export class AutoMerge {
   /** @see https://docs.github.com/en/rest/reference/pulls#create-a-review-for-a-pull-request */
   private async postReview(repositorySlug: string, pullNumber: number): Promise<void> {
     const resourceUrl = new URL(`/repos/${repositorySlug}/pulls/${pullNumber}/reviews`, this.baseURL);
-    resourceUrl.search = new URLSearchParams({event: 'APPROVE'}).toString();
-    const response = await fetch(resourceUrl, {headers: this.baseHeaders, method: 'POST'});
+    const body = JSON.stringify({event: 'APPROVE'});
+    const response = await fetch(resourceUrl, {body, headers: this.baseHeaders, method: 'POST'});
     if (!response.ok) {
       throw new Error(`Error while approving pull request: ${response.statusText}`);
     }
   }
 
   /** @see https://docs.github.com/en/rest/reference/issues#create-an-issue-comment */
-  private async putMerge(repositorySlug: string, pullNumber: number, squash?: boolean): Promise<void> {
+  private async putMerge(repositorySlug: string, pullNumber: number, squash?: boolean): Promise<boolean> {
     const resourceUrl = new URL(`/repos/${repositorySlug}/pulls/${pullNumber}/merge`, this.baseURL);
+    const config: RequestInit = {headers: this.baseHeaders, method: 'PUT'};
+
     if (squash) {
-      resourceUrl.search = new URLSearchParams({merge_method: 'squash'}).toString();
+      const mergeMethod = {merge_method: 'squash'};
+      config.body = JSON.stringify(mergeMethod);
     }
 
-    const response = await fetch(resourceUrl, {headers: this.baseHeaders, method: 'PUT'});
+    const response = await fetch(resourceUrl, config);
     if (!response.ok) {
       throw new Error(`Error while merging pull request: ${response.statusText}`);
     }
+
+    const {merged} = await response.json();
+    return merged;
   }
 
   private async getPullRequestsBySlug(repositorySlug: string): Promise<GitHubPullRequest[]> {
