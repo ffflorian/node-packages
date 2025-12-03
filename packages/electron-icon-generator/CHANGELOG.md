@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.11.6 (2025-12-03)
+
+**Note:** Version bump only for package @ffflorian/electron-icon-generator
+
+
+
+
+
 ## 1.11.5 (2025-12-02)
 
 

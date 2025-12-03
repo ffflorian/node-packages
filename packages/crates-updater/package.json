@@ -39,5 +39,5 @@
     "start": "tsx src/cli.ts"
   },
   "type": "module",
-  "version": "1.13.5"
+  "version": "1.13.6"
 }
