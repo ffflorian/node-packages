@@ -4817,15 +4817,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clipboardy@npm:5.0.0":
-  version: 5.0.0
-  resolution: "clipboardy@npm:5.0.0"
+"clipboardy@npm:5.0.1":
+  version: 5.0.1
+  resolution: "clipboardy@npm:5.0.1"
   dependencies:
     execa: "npm:^9.6.0"
     is-wayland: "npm:^0.1.0"
     is-wsl: "npm:^3.1.0"
     is64bit: "npm:^2.0.0"
-  checksum: 10c0/a0e4d458198d90f995f601776bb9abebb2c97a02e6ff6e3808cddc0dd007050479cd75a367f0861965bd7e8c2af28e9f795bb54e56f4f9831acaa4ac2b165247
+  checksum: 10c0/e0244a2b9c6ce7ffc3dc9439375bf2d4cb32add72358608ec995d0664f9fc62e84328f821e1bbbbb2b607217c1f934031311a6c8b7d6a5282e4339b5252441dc
   languageName: node
   linkType: hard
 
@@ -12041,7 +12041,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "scrabble-cheater@workspace:packages/scrabble-cheater"
   dependencies:
-    clipboardy: "npm:5.0.0"
+    clipboardy: "npm:5.0.1"
     commander: "npm:14.0.2"
     rimraf: "npm:6.1.0"
     tsx: "npm:4.21.0"
