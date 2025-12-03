@@ -10105,7 +10105,7 @@ __metadata:
     prettier: "npm:3.7.3"
     rimraf: "npm:6.1.2"
     typescript: "npm:5.9.3"
-    vite: "npm:7.2.1"
+    vite: "npm:7.2.6"
     vitest: "npm:4.0.15"
   languageName: unknown
   linkType: soft
@@ -13830,9 +13830,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:7.2.1":
-  version: 7.2.1
-  resolution: "vite@npm:7.2.1"
+"vite@npm:7.2.6":
+  version: 7.2.6
+  resolution: "vite@npm:7.2.6"
   dependencies:
     esbuild: "npm:^0.25.0"
     fdir: "npm:^6.5.0"
@@ -13881,7 +13881,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/25fbcfc67b1598fa6152f3ed0a7355144a2ac203859ad3b6a2e466b0930ec1081c19cc6f0d83104897517ecf30c0aac3e4a50c4e5e2980d3659decb1d9e41a28
+  checksum: 10c0/d444a159ab8f0f854d596d1938f201b449d59ed4d336e587be9dc89005467214d85848c212c2495f76a8421372ffe4d061d023d659600f1aaa3ba5ac13e804f7
   languageName: node
   linkType: hard
 
