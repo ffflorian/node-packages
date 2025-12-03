@@ -93,7 +93,8 @@ export class AutoMerge {
     if (!response.ok) {
       throw new Error(`Error while checking merge request: ${response.statusText}`);
     }
-    return (await response.json()).mergeable_state === 'clean';
+    const pullRequestData: GitHubPullRequest = await response.json();
+    return pullRequestData.mergeable_state === 'clean';
   }
 
   async mergeByMatch(regex: RegExp, repositories?: Repository[]): Promise<RepositoryResult[]> {
@@ -104,7 +105,7 @@ export class AutoMerge {
     for (const {pullRequests, repositorySlug} of matchingRepositories) {
       const actionResults: ActionResult[] = [];
       for (const pullRequest of pullRequests) {
-        const isMergeable = this.isPullRequestMergeable(repositorySlug, pullRequest.number);
+        const isMergeable = await this.isPullRequestMergeable(repositorySlug, pullRequest.number);
         if (!isMergeable) {
           this.logger.warn(`Pull request #${pullRequest.number} in "${repositorySlug}" is not mergeable. Skipping.`);
           continue;
@@ -129,6 +130,7 @@ export class AutoMerge {
       actionResult.status = 'bad';
       actionResult.error = (error as Error).toString();
     }
+
     return actionResult;
   }
 
