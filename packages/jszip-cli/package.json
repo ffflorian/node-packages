@@ -13,7 +13,7 @@
   "devDependencies": {
     "@types/progress": "2.0.7",
     "cross-env": "10.1.0",
-    "rimraf": "6.1.0",
+    "rimraf": "6.1.2",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
     "vitest": "4.0.6"
