@@ -1,6 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "description": "Simple API client using fetch",
+  "description": "A simple API client using fetch",
   "devDependencies": {
     "rimraf": "6.1.2",
     "typescript": "5.9.3"
@@ -15,12 +15,14 @@
   "keywords": [
     "api-client",
     "fetch",
-    "cli",
     "typescript"
   ],
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "@ffflorian/api-client",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/api-client",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
