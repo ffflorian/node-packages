@@ -20,9 +20,6 @@
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "@ffflorian/api-client",
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/api-client",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",

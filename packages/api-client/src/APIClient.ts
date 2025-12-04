@@ -2,14 +2,13 @@ import type {
   APIResponse,
   BasicRequestOptions,
   ApiClientConfig,
-  RequestInterceptor,
-  ResponseInterceptor,
+  Interceptors,
   RequestInitWithMethod,
   RequestOptions,
 } from './types.js';
 
 export class APIClient {
-  public interceptors: {request: RequestInterceptor[]; response: ResponseInterceptor[]} = {
+  public interceptors: Interceptors = {
     request: [],
     response: [],
   };
