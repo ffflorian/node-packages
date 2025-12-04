@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.12.7 (2025-12-04)
+
+
+### Bug Fixes
+
+* **api-client:** Fix automatic publishing ([ae43cd2](https://github.com/ffflorian/node-packages/commit/ae43cd2bf35e8fd5d93c9930f1443b8f1ee09a48))
+
+
+
+
+
 ## 3.12.6 (2025-12-03)
 
 **Note:** Version bump only for package @ffflorian/gh-open
