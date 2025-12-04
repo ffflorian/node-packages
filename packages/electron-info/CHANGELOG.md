@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.28.8 (2025-12-04)
+
+**Note:** Version bump only for package electron-info
+
+
+
+
+
 ## 1.28.7 (2025-12-04)
 
 
