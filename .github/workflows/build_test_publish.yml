@@ -18,6 +18,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Verify actions lockfile
+        uses: gjtorikian/gh-actions-lockfile@v1.0.0
+        with:
+          mode: verify
+
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
