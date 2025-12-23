@@ -3,7 +3,7 @@ import type {
   BasicRequestOptions,
   ApiClientConfig,
   Interceptors,
-  RequestInitWithMethod,
+  RequestInitWithMethodAndURL,
   RequestOptions,
 } from './types.js';
 
@@ -42,7 +42,7 @@ export class APIClient {
   }
 
   async request(endpoint: string, options: RequestOptions): Promise<Response> {
-    const url = new URL(endpoint, this.baseUrl);
+    let url = new URL(endpoint, this.baseUrl);
 
     if (options.params) {
       for (const [key, param] of Object.entries(options.params)) {
@@ -52,8 +52,9 @@ export class APIClient {
       }
     }
 
-    let requestOptions: RequestInitWithMethod = {
+    let requestOptions: RequestInitWithMethodAndURL = {
       method: options.method.toUpperCase(),
+      url,
       ...this.config,
     };
 
@@ -87,9 +88,11 @@ export class APIClient {
 
     if (this.interceptors.request.length > 0) {
       for (const interceptor of this.interceptors.request) {
-        requestOptions = await interceptor(url, requestOptions);
+        requestOptions = {...requestOptions, ...(await interceptor({...requestOptions, url}))};
       }
     }
+
+    url = requestOptions.url;
 
     const response = await fetch(url, requestOptions);
     if (!response.ok) {

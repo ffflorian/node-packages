@@ -35,11 +35,13 @@ export interface Interceptors {
   response: ResponseInterceptor[];
 }
 
-export type RequestInitWithMethod = Required<Pick<RequestInit, 'method'>> & Omit<RequestInit, 'method'>;
+export type RequestInitWithMethodAndURL = Required<Pick<RequestInit, 'method'>> &
+  Omit<RequestInit, 'method'> & {
+    url: URL;
+  };
 
 export type RequestInterceptor = (
-  url: URL,
-  options: RequestInitWithMethod
-) => RequestInitWithMethod | Promise<RequestInitWithMethod>;
+  options: RequestInitWithMethodAndURL
+) => RequestInitWithMethodAndURL | Promise<RequestInitWithMethodAndURL>;
 
 export type ResponseInterceptor = (response: Response) => void | Promise<void>;
