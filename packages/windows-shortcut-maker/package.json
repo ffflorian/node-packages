@@ -35,5 +35,5 @@
     "dist": "yarn clean && yarn build"
   },
   "type": "module",
-  "version": "2.11.8"
+  "version": "2.12.0"
 }

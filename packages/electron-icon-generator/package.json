@@ -39,5 +39,5 @@
     "test": "exit 0"
   },
   "type": "module",
-  "version": "1.11.8"
+  "version": "1.12.0"
 }

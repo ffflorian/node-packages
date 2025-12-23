@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.13.0 (2025-12-23)
+
+
+### Features
+
+* **api-client:** Move URL to config in interceptor ([8351abf](https://github.com/ffflorian/node-packages/commit/8351abf2efd5252a3c173478906bc2a6a83ed7c1))
+
+
+
+
+
 ## 3.12.8 (2025-12-04)
 
 **Note:** Version bump only for package scrabble-cheater
