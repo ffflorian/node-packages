@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "commander": "14.0.2",
-    "masto": "7.7.1"
+    "masto": "7.10.0"
   },
   "description": "Toots year's progress every few days to Mastodon.",
   "devDependencies": {
