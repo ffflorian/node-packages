@@ -16,7 +16,7 @@
     "rimraf": "6.1.2",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "vitest": "4.0.15"
+    "vitest": "4.0.16"
   },
   "engines": {
     "node": ">= 18.0"
