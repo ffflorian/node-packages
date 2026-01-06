@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.14.1 (2026-01-06)
+
+
+### Bug Fixes
+
+* Force release ([37ee800](https://github.com/ffflorian/node-packages/commit/37ee8008e20c191b3fa4c3b40578714bc5e31336))
+
+
+
+
+
 # 1.14.0 (2025-12-23)
 
 
