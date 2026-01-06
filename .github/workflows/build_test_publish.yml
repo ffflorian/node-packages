@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 permissions:
+  id-token: write
   contents: write
-  packages: write
 
 jobs:
   build_test_publish:
@@ -35,10 +35,7 @@ jobs:
         if: |
           github.event_name != 'pull_request' &&
           !startsWith(github.event.head_commit.message, 'chore')
-        env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
         run: |
           git config "user.name" "ffflobot"
           git config "user.email" "ffflobot@users.noreply.github.com"
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           yarn release
