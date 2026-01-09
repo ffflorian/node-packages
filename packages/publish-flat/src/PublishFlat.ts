@@ -47,12 +47,8 @@ export class PublishFlat {
 
     this.packageDir = path.resolve(this.options.packageDir);
     this.dirToFlatten = this.cleanDirName(this.options.dirToFlatten);
-    const escapedDirToFlatten = PublishFlat.escapeRegExp(this.dirToFlatten);
+    const escapedDirToFlatten = this.dirToFlatten.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     this.dirToFlattenRegex = new RegExp(`${escapedDirToFlatten}[\\/]`);
-  }
-
-  private static escapeRegExp(value: string): string {
-    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
   async build(): Promise<string | void> {
