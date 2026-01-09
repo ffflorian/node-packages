@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.15.1 (2026-01-09)
+
+
+### Bug Fixes
+
+* **publish-flat:** Regular expression injection ([#1081](https://github.com/ffflorian/node-packages/issues/1081)) ([c2af9b7](https://github.com/ffflorian/node-packages/commit/c2af9b70ee86c27b90cb4ba4a429df82c0a2b02e))
+
+
+
+
+
 # 1.15.0 (2026-01-09)
 
 
