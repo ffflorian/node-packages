@@ -31,7 +31,7 @@
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "crates-updater",
-  "repository": "https://github.com/ffflorian/tree/node-packages/crates-updater",
+  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/crates-updater",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
