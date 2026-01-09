@@ -35,7 +35,12 @@ jobs:
         if: |
           github.event_name != 'pull_request' &&
           !startsWith(github.event.head_commit.message, 'chore')
+        env:
+          GIT_AUTHOR_NAME: Florian Imdahl
+          GIT_AUTHOR_EMAIL: ffflorian@users.noreply.github.com
         run: |
-          git config "user.name" "ffflobot"
-          git config "user.email" "ffflobot@users.noreply.github.com"
+          export GIT_COMMITTER_NAME="${GIT_AUTHOR_NAME}"
+          export GIT_COMMITTER_EMAIL="${GIT_AUTHOR_EMAIL}"
+          git config --global "user.email" "${GIT_AUTHOR_EMAIL}"
+          git config --global "user.name" "${GIT_AUTHOR_NAME}"
           yarn release
