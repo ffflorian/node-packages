@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.16.0 (2026-01-09)
+
+
+### Features
+
+* **api-client:** Add error text ([b7751a1](https://github.com/ffflorian/node-packages/commit/b7751a1a208454ab69e8806c27ef7dda7f7a1811))
+
+
+
+
+
 ## 1.15.1 (2026-01-06)
 
 
