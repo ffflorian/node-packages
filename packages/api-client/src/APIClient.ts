@@ -95,8 +95,21 @@ export class APIClient {
     url = requestOptions.url;
 
     const response = await fetch(url, requestOptions);
+
     if (!response.ok) {
-      throw new Error(`Request failed with status code ${response.status}`);
+      let errorText: string;
+
+      try {
+        errorText = await response.text();
+      } catch {
+        errorText = response.statusText;
+      }
+
+      if (errorText) {
+        throw new Error(`Request failed with status code ${response.status}: ${errorText}`);
+      } else {
+        throw new Error(`Request failed with status code ${response.status}`);
+      }
     }
 
     if (this.interceptors.response.length > 0) {
