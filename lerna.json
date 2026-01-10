@@ -1,4 +1,5 @@
 {
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "command": {
     "publish": {
       "allowBranch": "main",
@@ -12,6 +13,5 @@
   "npmClient": "yarn",
   "registry": "https://registry.npmjs.org/",
   "version": "independent",
-  "yes": true,
-  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
+  "yes": true
 }
