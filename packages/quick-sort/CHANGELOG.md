@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.15.2 (2026-01-16)
+
+
+### Bug Fixes
+
+* Add readme to package.json and fix repository link ([bf055a0](https://github.com/ffflorian/node-packages/commit/bf055a0777b4b4d1fd51afa07bfef31d3da23aee))
+
+
+
+
+
 ## 0.15.1 (2026-01-09)
 
 
