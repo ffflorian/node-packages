@@ -34,7 +34,8 @@
   ],
   "license": "GPL-3.0",
   "name": "exposure-keys",
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/exposure-keys",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "yarn build:proto && yarn build:ts",
     "build:proto": "pbjs --t static-module -w commonjs -o proto/export.js proto/export.proto && pbts --out proto/export.d.ts --no-comments proto/export.js",

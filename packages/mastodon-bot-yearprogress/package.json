@@ -28,7 +28,8 @@
   "module": "dist/index.js",
   "name": "@ffflorian/mastodon-bot-yearprogress",
   "private": true,
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/mastodon-bot-yearprogress",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",

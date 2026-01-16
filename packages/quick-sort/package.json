@@ -13,7 +13,8 @@
   "module": "dist/index.js",
   "name": "quick-sort",
   "private": true,
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/quick-sort",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",

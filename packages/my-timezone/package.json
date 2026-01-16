@@ -23,7 +23,8 @@
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "my-timezone",
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/my-timezone",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
