@@ -33,7 +33,7 @@
     "vitest": "4.0.16"
   },
   "engines": {
-    "node": ">= 21.0"
+    "node": ">= 18.0"
   },
   "license": "GPL-3.0",
   "name": "node-packages",

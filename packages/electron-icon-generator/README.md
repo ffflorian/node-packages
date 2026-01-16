@@ -4,8 +4,8 @@ Based on https://github.com/jaretburkett/electron-icon-maker.
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org) >= 14
-- npm (preinstalled) or [yarn](https://classic.yarnpkg.com)
+- [Node.js](https://nodejs.org)
+- npm (preinstalled) or [yarn](https://yarnpkg.com)
 
 ## Installation
 
