@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.14.0 (2026-01-18)
+
+
+### Features
+
+* Use async/await, update engine requirements, fix tool names ([#1045](https://github.com/ffflorian/node-packages/issues/1045)) ([ca955c2](https://github.com/ffflorian/node-packages/commit/ca955c23ae4b91b103d41d22ae9e00f46d7788dc))
+
+
+
+
+
 ## 3.13.3 (2026-01-16)
 
 **Note:** Version bump only for package @ffflorian/doublelinkedlist
