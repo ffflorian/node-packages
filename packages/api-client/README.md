@@ -11,7 +11,7 @@ A simple API client using fetch ([Node.js](https://nodejs.org/api/globals.html#f
 
 ℹ️ This is a pure [ESM](https://nodejs.org/api/esm.html#introduction) module.
 
-Run `yarn global add @ffflorian/api-client` or `npm i -g @ffflorian/api-client`.
+Run `yarn add @ffflorian/api-client` or `npm i @ffflorian/api-client`.
 
 ## Usage
 

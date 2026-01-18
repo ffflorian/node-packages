@@ -1,6 +1,6 @@
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import {expect, describe, test, vi, beforeAll, afterAll} from 'vitest';
+import {expect, describe, test, vi, beforeAll, afterAll, afterEach} from 'vitest';
 import {ConfigFileOptions, JSZipCLI, TerminalOptions} from './index.js';
 
 const tempDir = path.resolve(__dirname, '.temp');
@@ -40,6 +40,8 @@ describe('JSZipCLI', () => {
   });
   afterAll(() => fs.rm(tempDir, {force: true, recursive: true}));
 
+  afterEach(() => fs.rm(configFilePath));
+
   test('can read from a configuration file', async () => {
     const builtOptions = await buildOptions();
 
@@ -75,6 +77,7 @@ describe('JSZipCLI', () => {
   });
 
   test('sets verbose logging correctly', async () => {
+    await buildOptions();
     const jsZipCLI = new JSZipCLI({verbose: false});
     expect(jsZipCLI['logger'].state.isEnabled).toBe(false);
   });

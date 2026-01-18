@@ -19,7 +19,7 @@
     "vitest": "4.0.16"
   },
   "engines": {
-    "node": ">= 18.0"
+    "node": ">= 18"
   },
   "files": [
     "dist"
