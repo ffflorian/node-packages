@@ -12,7 +12,7 @@
     "vitest": "4.0.16"
   },
   "engines": {
-    "node": ">= 18"
+    "node": ">= 21"
   },
   "exports": "./dist/index.js",
   "files": [

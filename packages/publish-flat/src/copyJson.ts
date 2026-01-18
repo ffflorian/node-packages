@@ -9,8 +9,8 @@ async function checkFile(filePath: string): Promise<void> {
   }
 }
 
-export interface packageJson {
-  [key: string]: string | packageJson;
+export interface PackageJson {
+  [key: string]: string | PackageJson;
 }
 
 export async function copyJson(inputFile: string, outputFile: string, values: string[]): Promise<void> {
@@ -23,7 +23,7 @@ export async function copyJson(inputFile: string, outputFile: string, values: st
 
   await checkFile(inputResolved);
 
-  const originalJSON: packageJson = JSON.parse(await fs.readFile(inputResolved, 'utf-8'));
+  const originalJSON: PackageJson = JSON.parse(await fs.readFile(inputResolved, 'utf-8'));
   let newJSONRaw = await fs.readFile(outputResolved, 'utf-8');
 
   let spaces = 2;
@@ -38,7 +38,7 @@ export async function copyJson(inputFile: string, outputFile: string, values: st
     }
   }
 
-  const newJSON: packageJson = JSON.parse(newJSONRaw);
+  const newJSON: PackageJson = JSON.parse(newJSONRaw);
 
   for (const value of values) {
     if (value in originalJSON) {
