@@ -5,13 +5,13 @@
   },
   "dependencies": {
     "commander": "14.0.2",
-    "masto": "7.4.0"
+    "masto": "7.10.0"
   },
   "description": "Toots year's progress every few days to Mastodon.",
   "devDependencies": {
     "@types/ws": "8.18.1",
-    "rimraf": "6.1.0",
-    "tsx": "4.20.6",
+    "rimraf": "6.1.2",
+    "tsx": "4.21.0",
     "typescript": "5.9.3"
   },
   "engines": {
@@ -28,7 +28,8 @@
   "module": "dist/index.js",
   "name": "@ffflorian/mastodon-bot-yearprogress",
   "private": true,
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/mastodon-bot-yearprogress",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
@@ -36,5 +37,5 @@
     "start": "tsx src/cli.ts -d"
   },
   "type": "module",
-  "version": "1.11.2"
+  "version": "1.13.3"
 }

@@ -9,8 +9,8 @@
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "devDependencies": {
     "@types/pngjs": "6.0.5",
-    "rimraf": "6.1.0",
-    "tsx": "4.20.6",
+    "rimraf": "6.1.2",
+    "tsx": "4.21.0",
     "typescript": "5.9.3"
   },
   "engines": {
@@ -30,7 +30,8 @@
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "@ffflorian/electron-icon-generator",
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/electron-icon-generator",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
@@ -39,5 +40,5 @@
     "test": "exit 0"
   },
   "type": "module",
-  "version": "1.11.2"
+  "version": "1.13.3"
 }

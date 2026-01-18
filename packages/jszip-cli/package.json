@@ -4,7 +4,7 @@
   "dependencies": {
     "commander": "14.0.2",
     "cosmiconfig": "9.0.0",
-    "glob": "11.1.0",
+    "glob": "13.0.0",
     "jszip": "3.10.1",
     "logdown": "3.3.1",
     "progress": "2.0.3"
@@ -13,10 +13,10 @@
   "devDependencies": {
     "@types/progress": "2.0.7",
     "cross-env": "10.1.0",
-    "rimraf": "6.1.0",
-    "tsx": "4.20.6",
+    "rimraf": "6.1.2",
+    "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "vitest": "4.0.6"
+    "vitest": "4.0.16"
   },
   "engines": {
     "node": ">= 18"
@@ -27,13 +27,13 @@
   "keywords": [
     "cli",
     "jszip",
-    "typescript",
     "zip"
   ],
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "@ffflorian/jszip-cli",
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/jszip-cli",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
@@ -42,5 +42,5 @@
     "test": "vitest run"
   },
   "type": "module",
-  "version": "3.12.2"
+  "version": "3.14.3"
 }

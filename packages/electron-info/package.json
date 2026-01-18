@@ -14,10 +14,10 @@
     "@types/semver": "7.7.1",
     "http-status-codes": "2.3.0",
     "nock": "14.0.10",
-    "rimraf": "6.1.0",
-    "tsx": "4.20.6",
+    "rimraf": "6.1.2",
+    "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "vitest": "4.0.6"
+    "vitest": "4.0.16"
   },
   "engines": {
     "node": ">= 21"
@@ -37,7 +37,8 @@
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "electron-info",
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/electron-info",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
@@ -46,5 +47,5 @@
     "test": "vitest run"
   },
   "type": "module",
-  "version": "1.28.2"
+  "version": "1.30.3"
 }

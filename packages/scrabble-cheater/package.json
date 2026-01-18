@@ -2,15 +2,15 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": "dist/cli.js",
   "dependencies": {
-    "clipboardy": "5.0.0",
+    "clipboardy": "5.0.2",
     "commander": "14.0.2"
   },
   "description": "A simple Scrabble cheating tool.",
   "devDependencies": {
-    "rimraf": "6.1.0",
-    "tsx": "4.20.6",
+    "rimraf": "6.1.2",
+    "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "vitest": "4.0.6"
+    "vitest": "4.0.16"
   },
   "engines": {
     "node": ">= 18"
@@ -28,7 +28,8 @@
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "scrabble-cheater",
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/scrabble-cheater",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
@@ -37,5 +38,5 @@
     "test": "vitest run"
   },
   "type": "module",
-  "version": "3.12.2"
+  "version": "3.14.3"
 }

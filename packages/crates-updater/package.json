@@ -7,12 +7,12 @@
   "dependencies": {
     "commander": "14.0.2",
     "compare-versions": "6.1.1",
-    "crates.io": "2.3.8"
+    "crates.io": "2.4.1"
   },
   "description": "Check your Rust packages for updates.",
   "devDependencies": {
-    "rimraf": "6.1.0",
-    "tsx": "4.20.6",
+    "rimraf": "6.1.2",
+    "tsx": "4.21.0",
     "typescript": "5.9.3"
   },
   "engines": {
@@ -23,7 +23,6 @@
     "dist"
   ],
   "keywords": [
-    "typescript",
     "cratesio",
     "rust",
     "cli"
@@ -31,7 +30,8 @@
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "crates-updater",
-  "repository": "https://github.com/ffflorian/tree/node-packages/crates-updater",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
@@ -39,5 +39,5 @@
     "start": "tsx src/cli.ts"
   },
   "type": "module",
-  "version": "1.13.2"
+  "version": "1.15.3"
 }

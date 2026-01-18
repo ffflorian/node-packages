@@ -19,6 +19,7 @@ describe('AutoMerge', () => {
               ref: 'dependabot/npm_and_yarn/eslint-plugin-typescript-sort-keys-1.5.0',
               sha: 'cd3ae10104a2ed9d937869b892457003ad68df74',
             },
+            mergeable_state: 'clean',
             number: 253,
             title: 'chore: bump eslint-plugin-typescript-sort-keys from 1.3.0 to 1.5.0',
           },
@@ -33,6 +34,7 @@ describe('AutoMerge', () => {
               ref: 'dependabot/npm_and_yarn/typescript-4.0.3',
               sha: 'e59a374b357763fab5d3e61b0fdab66f4746b097',
             },
+            mergeable_state: 'clean',
             number: 252,
             title: 'chore: bump typescript from 4.0.2 to 4.0.3',
           },
@@ -50,18 +52,13 @@ describe('AutoMerge', () => {
       });
 
       nock(autoMerge['baseURL']!)
-        .post(/^\/repos\/.+?\/.+?\/pulls\/\d+\/reviews\/?$/)
+        .post(/^\/repos\/.+?\/.+?\/pulls\/\d+(\/(reviews|merge))?\/?$/)
         .reply(HTTP_STATUS.OK, {data: 'not-used'})
         .persist();
 
       nock(autoMerge['baseURL']!)
         .get(/^\/repos\/.+?\/.+?\/pulls\/\d+\/?$/)
-        .reply(HTTP_STATUS.OK, {data: 'not-used'})
-        .persist();
-
-      nock(autoMerge['baseURL']!)
-        .put(/^\/repos\/.+?\/.+?\/pulls\/\d+\/merge\/?$/)
-        .reply(HTTP_STATUS.OK, {data: 'not-used'})
+        .reply(HTTP_STATUS.OK, {mergeable_state: 'clean'})
         .persist();
     });
 

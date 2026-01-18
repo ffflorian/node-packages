@@ -3,6 +3,123 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.15.3 (2026-01-16)
+
+**Note:** Version bump only for package crates-updater
+
+
+
+
+
+## 1.15.2 (2026-01-16)
+
+
+### Bug Fixes
+
+* Add readme to package.json and fix repository link ([bf055a0](https://github.com/ffflorian/node-packages/commit/bf055a0777b4b4d1fd51afa07bfef31d3da23aee))
+
+
+
+
+
+## 1.15.1 (2026-01-09)
+
+
+### Bug Fixes
+
+* **publish-flat:** Regular expression injection ([#1081](https://github.com/ffflorian/node-packages/issues/1081)) ([c2af9b7](https://github.com/ffflorian/node-packages/commit/c2af9b70ee86c27b90cb4ba4a429df82c0a2b02e))
+
+
+
+
+
+# 1.15.0 (2026-01-09)
+
+
+### Features
+
+* **api-client:** Add error text ([b7751a1](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/b7751a1a208454ab69e8806c27ef7dda7f7a1811))
+
+
+
+
+
+## 1.14.1 (2026-01-06)
+
+
+### Bug Fixes
+
+* Force release ([37ee800](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/37ee8008e20c191b3fa4c3b40578714bc5e31336))
+
+
+
+
+
+# 1.14.0 (2025-12-23)
+
+
+### Features
+
+* **api-client:** Move URL to config in interceptor ([8351abf](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/8351abf2efd5252a3c173478906bc2a6a83ed7c1))
+
+
+
+
+
+## 1.13.8 (2025-12-04)
+
+**Note:** Version bump only for package crates-updater
+
+
+
+
+
+## 1.13.7 (2025-12-04)
+
+
+### Bug Fixes
+
+* **api-client:** Fix automatic publishing ([ae43cd2](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/ae43cd2bf35e8fd5d93c9930f1443b8f1ee09a48))
+
+
+
+
+
+## 1.13.6 (2025-12-03)
+
+**Note:** Version bump only for package crates-updater
+
+
+
+
+
+## 1.13.5 (2025-12-02)
+
+
+### Bug Fixes
+
+* **auto-merge:** Use body in PUT request, fix tool name ([b1e1b2c](https://github.com/ffflorian/tree/node-packages/crates-updater/commit/b1e1b2caa3a0df89b9f9293db5f4e4f9ca2849a9))
+
+
+
+
+
+## 1.13.4 (2025-12-02)
+
+**Note:** Version bump only for package crates-updater
+
+
+
+
+
+## 1.13.3 (2025-12-02)
+
+**Note:** Version bump only for package crates-updater
+
+
+
+
+
 ## 1.13.2 (2025-11-29)
 
 

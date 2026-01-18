@@ -6,8 +6,8 @@
   },
   "description": "Get informations about your OS",
   "devDependencies": {
-    "rimraf": "6.1.0",
-    "tsx": "4.20.6",
+    "rimraf": "6.1.2",
+    "tsx": "4.21.0",
     "typescript": "5.9.3"
   },
   "engines": {
@@ -26,7 +26,8 @@
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "which-os",
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/which-os",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
@@ -34,5 +35,5 @@
     "start": "tsx src/cli.ts"
   },
   "type": "module",
-  "version": "1.14.2"
+  "version": "1.16.3"
 }

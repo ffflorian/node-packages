@@ -2,14 +2,13 @@ import type {
   APIResponse,
   BasicRequestOptions,
   ApiClientConfig,
-  RequestInterceptor,
-  ResponseInterceptor,
-  RequestInitWithMethod,
+  Interceptors,
+  RequestInitWithMethodAndURL,
   RequestOptions,
 } from './types.js';
 
 export class APIClient {
-  public interceptors: {request: RequestInterceptor[]; response: ResponseInterceptor[]} = {
+  public interceptors: Interceptors = {
     request: [],
     response: [],
   };
@@ -43,7 +42,7 @@ export class APIClient {
   }
 
   async request(endpoint: string, options: RequestOptions): Promise<Response> {
-    const url = new URL(endpoint, this.baseUrl);
+    let url = new URL(endpoint, this.baseUrl);
 
     if (options.params) {
       for (const [key, param] of Object.entries(options.params)) {
@@ -53,8 +52,9 @@ export class APIClient {
       }
     }
 
-    let requestOptions: RequestInitWithMethod = {
+    let requestOptions: RequestInitWithMethodAndURL = {
       method: options.method.toUpperCase(),
+      url,
       ...this.config,
     };
 
@@ -88,13 +88,28 @@ export class APIClient {
 
     if (this.interceptors.request.length > 0) {
       for (const interceptor of this.interceptors.request) {
-        requestOptions = await interceptor(url, requestOptions);
+        requestOptions = {...requestOptions, ...(await interceptor({...requestOptions, url}))};
       }
     }
 
+    url = requestOptions.url;
+
     const response = await fetch(url, requestOptions);
+
     if (!response.ok) {
-      throw new Error(`Request failed with status code ${response.status}`);
+      let errorText: string;
+
+      try {
+        errorText = await response.text();
+      } catch {
+        errorText = response.statusText;
+      }
+
+      if (errorText) {
+        throw new Error(`Request failed with status code ${response.status}: ${errorText}`);
+      } else {
+        throw new Error(`Request failed with status code ${response.status}`);
+      }
     }
 
     if (this.interceptors.response.length > 0) {

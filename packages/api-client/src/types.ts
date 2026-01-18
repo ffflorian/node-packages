@@ -22,19 +22,26 @@ export interface RequestOptions {
 
 export type ApiClientConfig = Partial<Omit<RequestInit, 'method'>> & {auth?: {password: string; username: string}};
 
-export type BasicRequestOptions = Omit<RequestOptions, 'method'>;
-
-export type RequestInitWithMethod = Required<Pick<RequestInit, 'method'>> & Omit<RequestInit, 'method'>;
-
-export type RequestInterceptor = (
-  url: URL,
-  options: RequestInitWithMethod
-) => RequestInitWithMethod | Promise<RequestInitWithMethod>;
-
-export type ResponseInterceptor = (response: Response) => void | Promise<void>;
-
 export interface APIResponse<T> {
   data: T;
   headers: Headers;
   status: number;
 }
+
+export type BasicRequestOptions = Omit<RequestOptions, 'method'>;
+
+export interface Interceptors {
+  request: RequestInterceptor[];
+  response: ResponseInterceptor[];
+}
+
+export type RequestInitWithMethodAndURL = Required<Pick<RequestInit, 'method'>> &
+  Omit<RequestInit, 'method'> & {
+    url: URL;
+  };
+
+export type RequestInterceptor = (
+  options: RequestInitWithMethodAndURL
+) => RequestInitWithMethodAndURL | Promise<RequestInitWithMethodAndURL>;
+
+export type ResponseInterceptor = (response: Response) => void | Promise<void>;

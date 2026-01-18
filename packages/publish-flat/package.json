@@ -5,7 +5,7 @@
     "publish-flat-copy": "dist/cli-copy.js"
   },
   "dependencies": {
-    "@npmcli/arborist": "9.1.6",
+    "@npmcli/arborist": "9.1.9",
     "commander": "14.0.2",
     "logdown": "3.3.1",
     "npm-packlist": "10.0.3"
@@ -14,8 +14,8 @@
   "devDependencies": {
     "@types/npm-packlist": "7.0.3",
     "@types/npmcli__arborist": "6.3.1",
-    "rimraf": "6.1.0",
-    "tsx": "4.20.6",
+    "rimraf": "6.1.2",
+    "tsx": "4.21.0",
     "typescript": "5.9.3"
   },
   "files": [
@@ -28,7 +28,8 @@
   "license": "GPL-3.0",
   "module": "dist/index.js",
   "name": "publish-flat",
-  "repository": "https://github.com/ffflorian/node-packages/tree/main/packages/publish-flat",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": "https://github.com/ffflorian/node-packages.git",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
@@ -36,5 +37,5 @@
     "start": "tsx src/cli.ts"
   },
   "type": "module",
-  "version": "1.15.2"
+  "version": "1.17.3"
 }
