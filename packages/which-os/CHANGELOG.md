@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.17.1 (2026-01-22)
+
+
+### Bug Fixes
+
+* **ntfy:** Authorization using a Token ([#1082](https://github.com/ffflorian/node-packages/issues/1082)) ([b75c0d9](https://github.com/ffflorian/node-packages/commit/b75c0d97f17affecde5c877cff0ae47182d2c355))
+
+
+
+
+
 # 1.17.0 (2026-01-18)
 
 

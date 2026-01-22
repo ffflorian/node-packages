@@ -31,5 +31,5 @@
     "test": "vitest run"
   },
   "type": "module",
-  "version": "1.15.0"
+  "version": "1.15.1"
 }
