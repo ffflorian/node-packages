@@ -121,7 +121,7 @@ export async function publish<T extends Config>(publishConfig: T): Promise<Respo
   if (publishConfig.authorization) {
     requestConfig.withCredentials = true;
     if (typeof publishConfig.authorization === 'string') {
-      requestConfig.headers.Authorization = `Basic ${publishConfig.authorization}`;
+      requestConfig.headers.Authorization = `Bearer ${publishConfig.authorization}`;
     } else {
       const credentials = `${publishConfig.authorization.username}:${publishConfig.authorization.password}`;
       requestConfig.headers.Authorization = `Basic ${Buffer.from(credentials).toString('base64')}`;
