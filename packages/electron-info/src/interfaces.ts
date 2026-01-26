@@ -8,18 +8,16 @@ export interface RawDeps {
   zlib: string;
 }
 
-export interface RawReleaseInfo {
-  deps?: RawDeps;
-  name: string;
-  node_id: string;
-  npm_dist_tags: string[];
-  npm_package_name?: string;
-  prerelease: boolean;
-  published_at: string;
-  tag_name: string;
-  total_downloads: number;
+export interface BasicReleaseInfo {
+  date: string;
+  files: string[];
+  fullDate: string;
+  modules: string;
+  openssl: string;
   version: string;
 }
+
+export type RawReleaseInfo = BasicReleaseInfo & RawDeps;
 
 export interface Options {
   /** Enable debug logging. Default: `false`. */
@@ -40,7 +38,7 @@ export interface Options {
   limit?: number;
   /**
    * Can be a URL or a local path. Default:
-   * https://raw.githubusercontent.com/electron/releases/master/lite.json.
+   * https://releases.electronjs.org/releases.json.
    */
   releasesUrl?: string;
   /**

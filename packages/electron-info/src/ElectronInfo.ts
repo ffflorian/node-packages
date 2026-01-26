@@ -1,5 +1,4 @@
 import chalk from 'chalk';
-import {format as formatDate} from 'date-fns';
 import {table as createTable} from 'table';
 import logdown from 'logdown';
 import semver from 'semver';
@@ -13,7 +12,7 @@ const defaultOptions: Required<Options> = {
   forceUpdate: false,
   latest: false,
   limit: 0,
-  releasesUrl: 'https://raw.githubusercontent.com/electron/releases/master/lite.json',
+  releasesUrl: 'https://releases.electronjs.org/releases.json',
   tempDirectory: '',
   timeout: 2000,
 };
@@ -45,6 +44,7 @@ export class ElectronInfo {
     }
     this.fileService = new FileService(this.options);
     this.logger.log('Initialized', this.options);
+    console.log({limit: this.options.limit});
   }
 
   async getAllReleases(formatted: true, colored?: boolean): Promise<string>;
@@ -72,9 +72,7 @@ export class ElectronInfo {
     this.logger.log('Getting dependency releases:', {colored, dependency, formatted, version});
     const allReleases = await this.fileService.getReleases();
     const dependencyVersions = await this.getVersions(allReleases, dependency, version);
-    const filteredReleases = allReleases.filter(
-      release => release.deps && dependencyVersions.includes(release.deps[dependency])
-    );
+    const filteredReleases = allReleases.filter(release => dependencyVersions.includes(release[dependency]));
 
     const limitedReleases = this.limitReleases(filteredReleases);
     return formatted ? this.formatDependencyReleases(limitedReleases, colored) : limitedReleases;
@@ -107,26 +105,21 @@ export class ElectronInfo {
     const coloredOrNot = (text: string, style: typeof chalk): string => (colored ? style(text) : text);
 
     return releases.map(release => {
-      const electronVersion = `${release.version}${release.prerelease ? ' (prerelease)' : ''}`;
-      const parsedDate = new Date(release.published_at);
-      const releaseDate = formatDate(parsedDate, 'yyyy-MM-dd');
       const table = [
-        [coloredOrNot('Electron', chalk.bold), electronVersion],
-        [coloredOrNot('Published on', chalk.bold), releaseDate],
+        [coloredOrNot('Electron', chalk.bold), release.version],
+        [coloredOrNot('Published on', chalk.bold), release.date],
       ];
 
-      if (release.deps) {
-        table.push(
-          [coloredOrNot(SupportedDependencies.node, chalk.bold.red), release.deps.node],
-          [coloredOrNot(SupportedDependencies.chrome, chalk.bold.green), release.deps.chrome],
-          [coloredOrNot(SupportedDependencies.openssl, chalk.bold.blue), release.deps.openssl],
-          [coloredOrNot(SupportedDependencies.modules, chalk.bold.yellow), release.deps.modules],
-          [coloredOrNot(SupportedDependencies.uv, chalk.bold.cyan), release.deps.uv],
-          // eslint-disable-next-line no-magic-numbers
-          [coloredOrNot(SupportedDependencies.v8, chalk.bold.rgb(150, 150, 150)), release.deps.v8],
-          [coloredOrNot(SupportedDependencies.zlib, chalk.bold.magenta), release.deps.zlib]
-        );
-      }
+      table.push(
+        [coloredOrNot(SupportedDependencies.node, chalk.bold.red), release.node],
+        [coloredOrNot(SupportedDependencies.chrome, chalk.bold.green), release.chrome],
+        [coloredOrNot(SupportedDependencies.openssl, chalk.bold.blue), release.openssl],
+        [coloredOrNot(SupportedDependencies.modules, chalk.bold.yellow), release.modules],
+        [coloredOrNot(SupportedDependencies.uv, chalk.bold.cyan), release.uv],
+        // eslint-disable-next-line no-magic-numbers
+        [coloredOrNot(SupportedDependencies.v8, chalk.bold.rgb(150, 150, 150)), release.v8],
+        [coloredOrNot(SupportedDependencies.zlib, chalk.bold.magenta), release.zlib]
+      );
 
       return table;
     });
@@ -134,7 +127,6 @@ export class ElectronInfo {
 
   private formatDependencyReleases(releases: RawReleaseInfo[], colored?: boolean): string {
     this.logger.log('Formatting dependency releases:', {colored, releasesLength: releases.length});
-    releases = releases.filter(release => !!release.deps);
 
     if (!releases.length) {
       return this.buildFoundString(releases);
@@ -187,7 +179,7 @@ export class ElectronInfo {
 
     dependencyVersions = releases
       .filter(release => {
-        if (key !== 'electron' && !release.deps) {
+        if (key !== 'electron' && !release[key]) {
           return false;
         }
 
@@ -195,15 +187,11 @@ export class ElectronInfo {
           return true;
         }
 
-        if (key === 'electron' && release.npm_dist_tags && release.npm_dist_tags.includes(inputVersion)) {
-          return true;
-        }
-
         return key === 'electron'
           ? satisfiesVersion(release.version, inputVersion)
-          : satisfiesVersion(release.deps![key], inputVersion);
+          : satisfiesVersion(release[key], inputVersion);
       })
-      .map(release => (key === 'electron' ? release.version : release.deps![key]));
+      .map(release => (key === 'electron' ? release.version : release[key]));
 
     return dependencyVersions;
   }
