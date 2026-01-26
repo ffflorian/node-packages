@@ -153,5 +153,5 @@ Found 2 releases.
 
 ## TypeScript Usage
 
-- [see definitions](https://unpkg.com/browse/electron-info@latest/dist/ElectronInfo.d.ts)
+- [see definitions](src/interfaces.ts)
 - [see CLI](./src/cli.ts)
