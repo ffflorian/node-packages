@@ -9,7 +9,7 @@
     "rimraf": "6.1.2",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "vitest": "4.0.16"
+    "vitest": "4.0.18"
   },
   "engines": {
     "node": ">= 21"
