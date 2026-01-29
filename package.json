@@ -4,7 +4,7 @@
   "devDependencies": {
     "@babel/core": "7.23.3",
     "@babel/eslint-parser": "7.28.5",
-    "@evilmartians/lefthook": "2.0.13",
+    "@evilmartians/lefthook": "2.0.16",
     "@ffflorian/eslint-config": "0.11.1",
     "@ffflorian/prettier-config": "0.4.1",
     "@types/babel__core": "7.20.4",
