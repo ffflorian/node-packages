@@ -2,7 +2,6 @@ import {loadAsync} from 'jszip';
 import {TemporaryExposureKeyExport, TEKSignatureList} from '../proto/export';
 
 function isZip(fileContent: Buffer): boolean {
-  // eslint-disable-next-line no-magic-numbers
   const zipHeader = [0x50, 0x4b];
   return Buffer.from(zipHeader).compare(fileContent, 0, 2) === 0;
 }

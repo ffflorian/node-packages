@@ -35,7 +35,6 @@ export class HTTPService {
       throw new Error(`Request failed: "${(error as Error).message}"`);
     }
 
-    // eslint-disable-next-line no-magic-numbers
     this.logger.info('Received data from server:', inspect(releases).toString().slice(0, 40), '...');
 
     if (!Array.isArray(releases)) {

@@ -1,4 +1,3 @@
-/* eslint-disable no-magic-numbers */
 import {describe, test} from 'vitest';
 import {Pixelflut} from './index.js';
 

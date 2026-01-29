@@ -36,7 +36,9 @@ describe('JSZipCLI', () => {
   beforeAll(async () => {
     try {
       await fs.mkdir(tempDir);
-    } catch {}
+    } catch {
+      // no-op
+    }
   });
   afterAll(() => fs.rm(tempDir, {force: true, recursive: true}));
 

@@ -1,5 +1,3 @@
-/* eslint-disable no-magic-numbers */
-
 import * as dgram from 'node:dgram';
 import {assert, expect, describe, test, beforeEach} from 'vitest';
 import * as mockudp from './index.js';
@@ -40,7 +38,9 @@ describe('mock-udp.clean', () => {
       try {
         client.send(buffer, 0, buffer.length, 1000 + index, 'localhost');
         assert.fail();
-      } catch {}
+      } catch {
+        // no-op
+      }
     });
   });
 });
@@ -128,7 +128,9 @@ describe('mock-udp.overriddenSocketSend', () => {
     try {
       client.send(buffer, buffer.length, buffer.length, 1000, 'localhost');
       assert.fail();
-    } catch {}
+    } catch {
+      // no-op
+    }
     expect(scope.done()).toBe(false);
   });
 
@@ -138,7 +140,9 @@ describe('mock-udp.overriddenSocketSend', () => {
     try {
       client.send(buffer, buffer.length + 1, buffer.length, 1000, 'localhost');
       assert.fail();
-    } catch {}
+    } catch {
+      // no-op
+    }
     expect(scope.done()).toBe(false);
   });
 
@@ -148,7 +152,9 @@ describe('mock-udp.overriddenSocketSend', () => {
     try {
       client.send(buffer, 0, buffer.length + 1, 1000, 'localhost');
       assert.fail();
-    } catch {}
+    } catch {
+      // no-op
+    }
     expect(scope.done()).toBe(false);
   });
 });

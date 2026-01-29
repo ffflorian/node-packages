@@ -1,4 +1,3 @@
-/* eslint-disable no-magic-numbers */
 import {expect, describe, test, vi} from 'vitest';
 import nock from 'nock';
 

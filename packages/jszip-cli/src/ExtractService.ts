@@ -39,7 +39,9 @@ export class ExtractService {
       if (this.outputDir) {
         try {
           await fs.mkdir(this.outputDir, {recursive: true});
-        } catch {}
+        } catch {
+          // no-op
+        }
       }
 
       const resolvedPath = path.resolve(entry);
@@ -69,7 +71,9 @@ export class ExtractService {
         if (entry.dir) {
           try {
             await fs.mkdir(resolvedFilePath, {recursive: true});
-          } catch {}
+          } catch {
+            // no-op
+          }
         } else {
           const data = await entry.async('nodebuffer');
           await fs.writeFile(resolvedFilePath, data, {

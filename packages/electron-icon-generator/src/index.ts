@@ -5,7 +5,6 @@ import path from 'node:path';
 import {Jimp} from 'jimp';
 import icongen from 'icon-gen';
 
-// eslint-disable-next-line no-magic-numbers
 const pngSizes = [16, 24, 32, 48, 64, 128, 256, 512, 1024];
 
 export interface Options {
@@ -51,7 +50,6 @@ export class IconGenerator {
     const image = await Jimp.read(this.options.input);
     const resizeFilePath = path.join(this.PNGoutputDir, fileName);
 
-    // eslint-disable-next-line id-length
     image.resize({h: size, w: size});
 
     await image.write(`${resizeFilePath}.png`);

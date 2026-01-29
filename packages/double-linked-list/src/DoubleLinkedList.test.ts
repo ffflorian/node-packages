@@ -1,4 +1,3 @@
-/* eslint-disable no-magic-numbers */
 import {expect, describe, test, beforeEach, assert} from 'vitest';
 import {LinkedList, ListElement} from './index.js';
 

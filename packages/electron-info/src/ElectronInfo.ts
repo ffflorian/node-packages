@@ -122,7 +122,7 @@ export class ElectronInfo {
           [coloredOrNot(SupportedDependencies.openssl, chalk.bold.blue), release.deps.openssl],
           [coloredOrNot(SupportedDependencies.modules, chalk.bold.yellow), release.deps.modules],
           [coloredOrNot(SupportedDependencies.uv, chalk.bold.cyan), release.deps.uv],
-          // eslint-disable-next-line no-magic-numbers
+
           [coloredOrNot(SupportedDependencies.v8, chalk.bold.rgb(150, 150, 150)), release.deps.v8],
           [coloredOrNot(SupportedDependencies.zlib, chalk.bold.magenta), release.deps.zlib]
         );

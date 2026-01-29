@@ -1,7 +1,6 @@
-/* eslint-disable no-magic-numbers */
 import {describe, expect, test} from 'vitest';
-import * as QuickSort from './index.js';
 import * as utils from './utils.js';
+import * as QuickSort from './index.js';
 
 describe('QuickSort', () => {
   test('sorts 2 numbers', () => {

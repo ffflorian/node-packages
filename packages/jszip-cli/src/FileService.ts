@@ -31,7 +31,9 @@ export class FileService {
       if (this.options.force) {
         try {
           await fs.mkdir(dirPath, {recursive: true});
-        } catch {}
+        } catch {
+          // no-op
+        }
         return true;
       }
       return false;

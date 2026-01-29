@@ -79,7 +79,7 @@ export class MyTimezone {
     const params = new URLSearchParams({
       format: 'json',
       limit: '9',
-      // eslint-disable-next-line id-length
+
       q: address,
     });
 

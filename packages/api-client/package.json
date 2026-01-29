@@ -2,6 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "A simple API client using fetch",
   "devDependencies": {
+    "@types/node": "~24",
     "rimraf": "6.1.2",
     "typescript": "5.9.3"
   },

@@ -24,7 +24,7 @@ const createRandomBody = (): RawReleaseInfo[] => [
     prerelease: !!Math.round(Math.random()),
     published_at: new Date().toUTCString(),
     tag_name: 'v8.0.0-nightly.20190820',
-    // eslint-disable-next-line no-magic-numbers
+
     total_downloads: Math.round(Math.random() * 1000),
     version: '8.0.0-nightly.20190820',
   },
@@ -40,7 +40,9 @@ describe('ElectronInfo', () => {
   beforeAll(async () => {
     try {
       await fs.mkdir(tempDir);
-    } catch {}
+    } catch {
+      // no-op
+    }
     releases = await fs.readFile(fullReleasesFile, 'utf8');
   });
 
@@ -69,7 +71,6 @@ describe('ElectronInfo', () => {
         tempDirectory: tempDir,
       }).getElectronReleases('^5');
 
-      // eslint-disable-next-line no-magic-numbers
       expect(result.length).toBe(23);
     });
 
@@ -127,7 +128,6 @@ describe('ElectronInfo', () => {
         tempDirectory: tempDir,
       }).getDependencyReleases('chrome', '~66');
 
-      // eslint-disable-next-line no-magic-numbers
       expect(result.length).toBe(56);
     });
 
