@@ -7,7 +7,7 @@
   "dependencies": {
     "commander": "14.0.2",
     "compare-versions": "6.1.1",
-    "crates.io": "2.4.1"
+    "crates.io": "2.4.5"
   },
   "description": "Check your Rust packages for updates.",
   "devDependencies": {
