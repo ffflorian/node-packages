@@ -1070,10 +1070,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ffflorian/api-client@npm:2.1.2":
-  version: 2.1.2
-  resolution: "@ffflorian/api-client@npm:2.1.2"
-  checksum: 10c0/16467e2aa3645d1ac2903a9b3b7d2a91cdc5cdda7da8a5401be03a3a473386dc5a0e36f7e27c28c5ed708e3951a5f64b93d843385381d74b7f1cf6ad633e988a
+"@ffflorian/api-client@npm:2.2.0":
+  version: 2.2.0
+  resolution: "@ffflorian/api-client@npm:2.2.0"
+  checksum: 10c0/70e868fb4ed211ce60bfc5eb2ab27a345cf9562b20d330d132732bfc16248d6040207aa3fa5b773ffe5d58d4a6d58abce0851b89b49c6d2b9ad2f27d99c8d9b1
   languageName: node
   linkType: hard
 
@@ -5392,7 +5392,7 @@ __metadata:
   dependencies:
     commander: "npm:14.0.2"
     compare-versions: "npm:6.1.1"
-    crates.io: "npm:2.4.1"
+    crates.io: "npm:2.4.5"
     rimraf: "npm:6.1.2"
     tsx: "npm:4.21.0"
     typescript: "npm:5.9.3"
@@ -5402,12 +5402,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"crates.io@npm:2.4.1":
-  version: 2.4.1
-  resolution: "crates.io@npm:2.4.1"
+"crates.io@npm:2.4.5":
+  version: 2.4.5
+  resolution: "crates.io@npm:2.4.5"
   dependencies:
-    "@ffflorian/api-client": "npm:2.1.2"
-  checksum: 10c0/d9c09dbe77aa72784834569580af841deb7336cd53528f88a52eae2ee2aadff1ba00a85f9bd444223d7c22b44a80bb134c36cc42a83f8fcd1541269b22957145
+    "@ffflorian/api-client": "npm:2.2.0"
+  checksum: 10c0/eace8158c8c2422e2dd9d4eba042d576ca91143917708cdd487a32bcce51206a610d5a0a45f7a80383ad7eac051b429aec15e0e8e1952393c4c71ec2b1adf45e
   languageName: node
   linkType: hard
 
