@@ -1218,7 +1218,7 @@ __metadata:
   dependencies:
     "@types/ws": "npm:8.18.1"
     commander: "npm:14.0.2"
-    masto: "npm:7.10.0"
+    masto: "npm:7.10.1"
     rimraf: "npm:6.1.2"
     tsx: "npm:4.21.0"
     typescript: "npm:5.9.3"
@@ -9759,16 +9759,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"masto@npm:7.10.0":
-  version: 7.10.0
-  resolution: "masto@npm:7.10.0"
+"masto@npm:7.10.1":
+  version: 7.10.1
+  resolution: "masto@npm:7.10.1"
   dependencies:
     change-case: "npm:^5.4.4"
     events-to-async: "npm:^2.0.2"
     isomorphic-ws: "npm:^5.0.0"
     ts-custom-error: "npm:^3.3.1"
     ws: "npm:^8.18.3"
-  checksum: 10c0/dd0022ff24e9e39bae604ce26cf49e1958be4ca78efedd0d0ff184572200365ac16e7c00c0f9c7ef2ac3979983c33a9582dc955fc466c0edd193857c076b96cc
+  checksum: 10c0/895857e8151f3ba22091c999e2ccc4e3d7811a8f3f8bc88646d86ba3143ade5c4cf11a050204d8a7d00126457a6384d16809ebb80115ab7b10918d3294020035
   languageName: node
   linkType: hard
 
