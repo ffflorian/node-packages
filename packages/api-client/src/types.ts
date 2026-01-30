@@ -1,26 +1,4 @@
-export interface RequestOptions {
-  data?: any;
-  headers?: HeadersInit;
-  method:
-    | 'GET'
-    | 'POST'
-    | 'PUT'
-    | 'DELETE'
-    | 'PATCH'
-    | 'HEAD'
-    | 'OPTIONS'
-    | 'get'
-    | 'post'
-    | 'put'
-    | 'delete'
-    | 'patch'
-    | 'head'
-    | 'options';
-  params?: object;
-  responseType?: 'arraybuffer' | 'json' | 'text' | 'blob';
-}
-
-export type ApiClientConfig = Partial<Omit<RequestInit, 'method'>> & {auth?: {password: string; username: string}};
+export type ApiClientConfig = {auth?: {password: string; username: string}} & Partial<Omit<RequestInit, 'method'>>;
 
 export interface APIResponse<T> {
   data: T;
@@ -35,13 +13,35 @@ export interface Interceptors {
   response: ResponseInterceptor[];
 }
 
-export type RequestInitWithMethodAndURL = Required<Pick<RequestInit, 'method'>> &
-  Omit<RequestInit, 'method'> & {
-    url: URL;
-  };
+export type RequestInitWithMethodAndURL = {
+  url: URL;
+} & Omit<RequestInit, 'method'> &
+  Required<Pick<RequestInit, 'method'>>;
 
 export type RequestInterceptor = (
   options: RequestInitWithMethodAndURL
-) => RequestInitWithMethodAndURL | Promise<RequestInitWithMethodAndURL>;
+) => Promise<RequestInitWithMethodAndURL> | RequestInitWithMethodAndURL;
 
-export type ResponseInterceptor = (response: Response) => void | Promise<void>;
+export interface RequestOptions {
+  data?: any;
+  headers?: HeadersInit;
+  method:
+    | 'DELETE'
+    | 'delete'
+    | 'GET'
+    | 'get'
+    | 'HEAD'
+    | 'head'
+    | 'OPTIONS'
+    | 'options'
+    | 'PATCH'
+    | 'patch'
+    | 'POST'
+    | 'post'
+    | 'PUT'
+    | 'put';
+  params?: object;
+  responseType?: 'arraybuffer' | 'blob' | 'json' | 'text';
+}
+
+export type ResponseInterceptor = (response: Response) => Promise<void> | void;

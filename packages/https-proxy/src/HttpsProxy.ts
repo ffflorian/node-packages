@@ -1,17 +1,10 @@
+import basicAuth from 'basic-auth';
+import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
+import logdown from 'logdown';
 import http from 'node:http';
 import net from 'node:net';
 import url from 'node:url';
-import basicAuth from 'basic-auth';
-import logdown from 'logdown';
 import compare from 'tsscmp';
-import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
-
-export interface Options {
-  /** Default is `8080`. */
-  port?: number;
-  /** If not set, the requested URL will be used. */
-  target?: string;
-}
 
 export interface AuthenticationOptions extends Options {
   /** If not set, no authentication will be required. */
@@ -22,6 +15,13 @@ export interface AuthenticationOptions extends Options {
   target?: string;
   /** If not set, no authentication will be required. */
   username: string;
+}
+
+export interface Options {
+  /** Default is `8080`. */
+  port?: number;
+  /** If not set, the requested URL will be used. */
+  target?: string;
 }
 
 const defaultOptions: Required<AuthenticationOptions> = {
@@ -37,7 +37,7 @@ export class HttpsProxy {
   private readonly options: Required<AuthenticationOptions>;
   private readonly server: http.Server;
 
-  constructor(options?: Options | AuthenticationOptions) {
+  constructor(options?: AuthenticationOptions | Options) {
     this.options = {...defaultOptions, ...options};
     this.logger = logdown('https-proxy', {
       logger: console,
@@ -93,7 +93,7 @@ export class HttpsProxy {
       }
     }
 
-    const {port, hostname} = url.parse(this.options.target || `//${req.url}`, false, true);
+    const {hostname, port} = url.parse(this.options.target || `//${req.url}`, false, true);
     const parsedPort = parseInt(port || '443', 10);
 
     if (!hostname) {

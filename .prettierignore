@@ -4,4 +4,4 @@ docs
 package.json
 CHANGELOG.md
 fixtures
-./packages/exposure-keys/proto/*.ts
+./packages/exposure-keys/proto/*

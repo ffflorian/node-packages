@@ -6,6 +6,7 @@
   },
   "description": "Get informations about your OS",
   "devDependencies": {
+    "@types/node": "~24",
     "rimraf": "6.1.2",
     "tsx": "4.21.0",
     "typescript": "5.9.3"

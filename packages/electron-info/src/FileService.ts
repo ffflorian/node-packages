@@ -1,12 +1,13 @@
-import {constants as fsConstants, promises as fs} from 'node:fs';
+import {isAfter as isAfterDate, sub as subtractDate} from 'date-fns';
+import logdown from 'logdown';
+import {promises as fs, constants as fsConstants} from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import URL from 'node:url';
-import {isAfter as isAfterDate, sub as subtractDate} from 'date-fns';
-import logdown from 'logdown';
+
+import type {Options, RawReleaseInfo} from './interfaces.js';
 
 import {HTTPService} from './HTTPService.js';
-import type {Options, RawReleaseInfo} from './interfaces.js';
 
 export class FileService {
   private readonly httpService: HTTPService;

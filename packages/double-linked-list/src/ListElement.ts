@@ -1,4 +1,4 @@
-export type ListElementValue = string | number | object | null;
+export type ListElementValue = null | number | object | string;
 
 /**
  * A list element. By default the head and the tail are set to `null` since they

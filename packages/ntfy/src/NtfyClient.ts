@@ -1,5 +1,5 @@
-import {URL} from 'node:url';
 import fs from 'node:fs/promises';
+import {URL} from 'node:url';
 
 import type {
   AttachmentConfig,
@@ -28,68 +28,6 @@ export class NtfyClient {
       ...config,
     });
   }
-}
-
-function buildBroadcastActionString(action: BroadcastAction & {type: 'broadcast'}): string {
-  let str = `${action.type}, ${action.label}`;
-
-  if (action.clear) {
-    str += ', clear=true';
-  }
-
-  if (action.extras && Object.keys(action.extras).length) {
-    str += `, ${Object.entries(action.extras)
-      .map(([key, value]) => `extras.${key}=${value}`)
-      .join(', ')}`;
-  }
-
-  if (action.intent) {
-    str += `, intent=${action.intent}`;
-  }
-
-  return str;
-}
-
-function ConfigHasAttachment(config: any): config is AttachmentConfig {
-  return !!config.fileAttachment;
-}
-
-function ConfigHasMessage(config: any): config is MessageConfig {
-  return !!config.message;
-}
-
-function buildHTTPActionString(action: HTTPAction & {type: 'http'}): string {
-  let str = `${action.type}, ${action.label}, ${action.url}`;
-
-  if (action.method) {
-    str += `, method=${action.method.toUpperCase()}`;
-  }
-
-  if (action.clear) {
-    str += ', clear=true';
-  }
-
-  if (action.headers && Object.keys(action.headers).length) {
-    str += `, ${Object.entries(action.headers)
-      .map(([key, value]) => `headers.${key}=${value}`)
-      .join(', ')}`;
-  }
-
-  if (action.body) {
-    str += `, ${action.body}`;
-  }
-
-  return str;
-}
-
-function buildViewActionString(action: ViewAction & {type: 'view'}): string {
-  let str = `${action.type}, ${action.label}, ${action.url}`;
-
-  if (action.clear) {
-    str += ', clear=true';
-  }
-
-  return str;
 }
 
 export async function publish<T extends Config>(publishConfig: T): Promise<ResponseData<T>> {
@@ -194,4 +132,66 @@ export async function publish<T extends Config>(publishConfig: T): Promise<Respo
     throw new Error(`Error while publishing message: ${response.statusText}`);
   }
   return response.json();
+}
+
+function buildBroadcastActionString(action: {type: 'broadcast'} & BroadcastAction): string {
+  let str = `${action.type}, ${action.label}`;
+
+  if (action.clear) {
+    str += ', clear=true';
+  }
+
+  if (action.extras && Object.keys(action.extras).length) {
+    str += `, ${Object.entries(action.extras)
+      .map(([key, value]) => `extras.${key}=${value}`)
+      .join(', ')}`;
+  }
+
+  if (action.intent) {
+    str += `, intent=${action.intent}`;
+  }
+
+  return str;
+}
+
+function buildHTTPActionString(action: {type: 'http'} & HTTPAction): string {
+  let str = `${action.type}, ${action.label}, ${action.url}`;
+
+  if (action.method) {
+    str += `, method=${action.method.toUpperCase()}`;
+  }
+
+  if (action.clear) {
+    str += ', clear=true';
+  }
+
+  if (action.headers && Object.keys(action.headers).length) {
+    str += `, ${Object.entries(action.headers)
+      .map(([key, value]) => `headers.${key}=${value}`)
+      .join(', ')}`;
+  }
+
+  if (action.body) {
+    str += `, ${action.body}`;
+  }
+
+  return str;
+}
+
+function buildViewActionString(action: {type: 'view'} & ViewAction): string {
+  let str = `${action.type}, ${action.label}, ${action.url}`;
+
+  if (action.clear) {
+    str += ', clear=true';
+  }
+
+  return str;
+}
+
+function ConfigHasAttachment(config: any): config is AttachmentConfig {
+  return !!config.fileAttachment;
+}
+
+function ConfigHasMessage(config: any): config is MessageConfig {
+  return !!config.message;
 }

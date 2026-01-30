@@ -1,12 +1,13 @@
-import path from 'node:path';
-import {randomUUID} from 'node:crypto';
-import fs from 'node:fs/promises';
-import {expect, describe, test, beforeEach, beforeAll, afterAll, afterEach} from 'vitest';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
+import {randomUUID} from 'node:crypto';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {afterAll, afterEach, beforeAll, beforeEach, describe, expect, test} from 'vitest';
+
+import type {RawReleaseInfo} from './interfaces.js';
 
 import {ElectronInfo} from './ElectronInfo.js';
-import type {RawReleaseInfo} from './interfaces.js';
 
 const __dirname = import.meta.dirname;
 const tempDir = path.resolve(__dirname, '.temp');
@@ -24,6 +25,7 @@ const createRandomBody = (): RawReleaseInfo[] => [
     prerelease: !!Math.round(Math.random()),
     published_at: new Date().toUTCString(),
     tag_name: 'v8.0.0-nightly.20190820',
+
     // eslint-disable-next-line no-magic-numbers
     total_downloads: Math.round(Math.random() * 1000),
     version: '8.0.0-nightly.20190820',
@@ -40,7 +42,9 @@ describe('ElectronInfo', () => {
   beforeAll(async () => {
     try {
       await fs.mkdir(tempDir);
-    } catch {}
+    } catch {
+      // no-op
+    }
     releases = await fs.readFile(fullReleasesFile, 'utf8');
   });
 

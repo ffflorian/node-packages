@@ -1,12 +1,13 @@
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import {expect, describe, test, vi, beforeAll, afterAll, afterEach} from 'vitest';
+import {afterAll, afterEach, beforeAll, describe, expect, test, vi} from 'vitest';
+
 import {ConfigFileOptions, JSZipCLI, TerminalOptions} from './index.js';
 
 const tempDir = path.resolve(__dirname, '.temp');
 const configFilePath = path.resolve(tempDir, 'config.json');
 
-type AllOptions = Required<TerminalOptions> & Partial<ConfigFileOptions>;
+type AllOptions = Partial<ConfigFileOptions> & Required<TerminalOptions>;
 
 const defaultOptions: Required<TerminalOptions> = {
   compressionLevel: 9,
@@ -36,7 +37,9 @@ describe('JSZipCLI', () => {
   beforeAll(async () => {
     try {
       await fs.mkdir(tempDir);
-    } catch {}
+    } catch {
+      // no-op
+    }
   });
   afterAll(() => fs.rm(tempDir, {force: true, recursive: true}));
 

@@ -1,13 +1,15 @@
-/* eslint-disable no-magic-numbers */
-import {expect, describe, test, vi} from 'vitest';
 import nock from 'nock';
+import {describe, expect, test, vi} from 'vitest';
 
 import {MyTimezone} from './MyTimezone.js';
 
 vi.setConfig({
+  // eslint-disable-next-line no-magic-numbers
   testTimeout: 10 * 1000, // 10 seconds
 });
+
 const nominatimAPI = 'https://nominatim.openstreetmap.org';
+const HTTP_OK = 200;
 
 describe('MyTimezone', () => {
   const myTimezone = new MyTimezone({
@@ -22,7 +24,7 @@ describe('MyTimezone', () => {
       const formattedAddress = parsedURL.searchParams.get('q');
 
       return [
-        200,
+        HTTP_OK,
         [
           {
             boundingbox: ['52.3570365', '52.6770365', '13.2288599', '13.5488599'],
@@ -52,7 +54,9 @@ describe('MyTimezone', () => {
   });
 
   test('returns the correct time for a location', async () => {
+    // eslint-disable-next-line no-magic-numbers
     const berlinTime = await myTimezone.getDateByLongitude(13.40803);
+    // eslint-disable-next-line no-magic-numbers
     const frankfurtTime = await myTimezone.getDateByLongitude(8.67931);
 
     expect(frankfurtTime.getTime() < berlinTime.getTime()).toBe(true);

@@ -1,6 +1,7 @@
-import {expect, describe, test, vi, beforeEach, beforeAll} from 'vitest';
-import {JSZipCLI} from './index.js';
+import {beforeAll, beforeEach, describe, expect, test, vi} from 'vitest';
+
 import {BuildService} from './BuildService.js';
+import {JSZipCLI} from './index.js';
 
 describe('BuildService', () => {
   let jsZipCLI: JSZipCLI;

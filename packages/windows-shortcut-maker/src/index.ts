@@ -25,6 +25,36 @@ export interface ShortcutOptions {
   linkWindowMode?: number;
 }
 
+export function make(options: ShortcutOptions | string): Promise<void> {
+  const checkedOptions = prepare(options);
+  return new Promise((resolve, reject) => {
+    spawn('wscript', buildArgs(checkedOptions))
+      .on('error', reject)
+      .on('exit', () => resolve());
+  });
+}
+
+export function makeSync(options: ShortcutOptions | string): void {
+  const checkedOptions = prepare(options);
+  spawnSync('wscript', buildArgs(checkedOptions));
+}
+
+function buildArgs(options: Required<ShortcutOptions>): readonly string[] {
+  const scriptPath = path.join(__dirname, '../scripts/createLink.vbs');
+  return [
+    scriptPath,
+    options.filepath,
+    options.linkFilepath,
+    options.linkName,
+    options.linkArgs,
+    options.linkDescription,
+    options.linkCwd,
+    options.linkIcon,
+    options.linkWindowMode.toString(),
+    options.linkHotkey,
+  ];
+}
+
 function mergeOptions(options: ShortcutOptions): Required<ShortcutOptions> {
   const rawName = path.basename(options.filepath).replace(/(.*)\..*$/, '$1');
   const defaultOptions = {
@@ -65,34 +95,4 @@ function prepare(options: ShortcutOptions | string): Required<ShortcutOptions> {
   }
 
   return checkedOptions;
-}
-
-function buildArgs(options: Required<ShortcutOptions>): readonly string[] {
-  const scriptPath = path.join(__dirname, '../scripts/createLink.vbs');
-  return [
-    scriptPath,
-    options.filepath,
-    options.linkFilepath,
-    options.linkName,
-    options.linkArgs,
-    options.linkDescription,
-    options.linkCwd,
-    options.linkIcon,
-    options.linkWindowMode.toString(),
-    options.linkHotkey,
-  ];
-}
-
-export function makeSync(options: ShortcutOptions | string): void {
-  const checkedOptions = prepare(options);
-  spawnSync('wscript', buildArgs(checkedOptions));
-}
-
-export function make(options: ShortcutOptions | string): Promise<void> {
-  const checkedOptions = prepare(options);
-  return new Promise((resolve, reject) => {
-    spawn('wscript', buildArgs(checkedOptions))
-      .on('error', reject)
-      .on('exit', () => resolve());
-  });
 }

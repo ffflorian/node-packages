@@ -1,6 +1,6 @@
+import logdown from 'logdown';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import logdown from 'logdown';
 
 import {GitHubClient} from './GitHubClient.js';
 
@@ -55,7 +55,7 @@ export class RepositoryService {
       throw new Error(errorMessage);
     }
 
-    const {user, project, branch} = match.groups;
+    const {branch, project, user} = match.groups;
 
     try {
       const response = await this.gitHubClient.getPullRequestByBranch(user, project, branch);

@@ -1,11 +1,12 @@
 import chalk from 'chalk';
 import {format as formatDate} from 'date-fns';
-import {table as createTable} from 'table';
 import logdown from 'logdown';
 import semver from 'semver';
+import {table as createTable} from 'table';
+
+import type {Options, RawDeps, RawReleaseInfo} from './interfaces.js';
 
 import {FileService} from './FileService.js';
-import type {Options, RawDeps, RawReleaseInfo} from './interfaces.js';
 
 const defaultOptions: Required<Options> = {
   debug: false,
@@ -122,6 +123,7 @@ export class ElectronInfo {
           [coloredOrNot(SupportedDependencies.openssl, chalk.bold.blue), release.deps.openssl],
           [coloredOrNot(SupportedDependencies.modules, chalk.bold.yellow), release.deps.modules],
           [coloredOrNot(SupportedDependencies.uv, chalk.bold.cyan), release.deps.uv],
+
           // eslint-disable-next-line no-magic-numbers
           [coloredOrNot(SupportedDependencies.v8, chalk.bold.rgb(150, 150, 150)), release.deps.v8],
           [coloredOrNot(SupportedDependencies.zlib, chalk.bold.magenta), release.deps.zlib]

@@ -1,6 +1,6 @@
+import logdown from 'logdown';
 import fs from 'node:fs/promises';
 import {inspect} from 'node:util';
-import logdown from 'logdown';
 
 import type {HTTPOptions, RawReleaseInfo} from './interfaces.js';
 

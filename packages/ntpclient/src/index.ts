@@ -22,7 +22,7 @@ export class NTPClient {
 
   constructor(server?: string, port?: number, timeout?: number);
   constructor(config?: NTPConfig);
-  constructor(configOrServer?: string | NTPConfig, port?: number, replyTimeout?: number) {
+  constructor(configOrServer?: NTPConfig | string, port?: number, replyTimeout?: number) {
     this.config = defaultConfig;
 
     if (typeof configOrServer === 'string') {
@@ -49,6 +49,7 @@ export class NTPClient {
 
     return new Promise((resolve, reject) => {
       const client = dgram.createSocket('udp4');
+      // eslint-disable-next-line no-magic-numbers
       const ntpData = Buffer.alloc(48);
 
       // RFC 2030 -> LI = 0 (no warning, 2 bits), VN = 3 (IPv4 only, 3 bits), Mode = 3 (Client Mode, 3 bits) -> 1 byte
@@ -103,15 +104,20 @@ export class NTPClient {
           let fractpart = 0;
 
           // Get the seconds part
+          // eslint-disable-next-line no-magic-numbers
           for (let index = 0; index <= 3; index++) {
+            // eslint-disable-next-line no-magic-numbers
             intpart = 256 * intpart + msg[offsetTransmitTime + index];
           }
 
           // Get the seconds fraction
+          // eslint-disable-next-line no-magic-numbers
           for (let index = 4; index <= 7; index++) {
+            // eslint-disable-next-line no-magic-numbers
             fractpart = 256 * fractpart + msg[offsetTransmitTime + index];
           }
 
+          // eslint-disable-next-line no-magic-numbers
           const milliseconds = intpart * 1000 + (fractpart * 1000) / 0x100_000_000;
 
           // **UTC** time

@@ -1,16 +1,10 @@
-import fs from 'node:fs/promises';
-import {execFileSync} from 'node:child_process';
-import os from 'node:os';
-import path from 'node:path';
 import Arborist from '@npmcli/arborist';
 import logdown from 'logdown';
+import {execFileSync} from 'node:child_process';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
 import packlist from 'npm-packlist';
-
-interface PackageJson {
-  bin: Record<string, string> | string;
-  files: string[];
-  main?: string;
-}
 
 export interface PublishOptions {
   /** Which directory to flatten (e.g. to move dist/main.js => main.js, use `dist`) */
@@ -23,11 +17,17 @@ export interface PublishOptions {
   useYarn?: boolean;
 }
 
-type FilesInFlattenedDir = Array<{fileName: string; replacedFilename: string}>;
-
 interface Categorized {
   filesInFlattenedDir: FilesInFlattenedDir;
   normalFiles: string[];
+}
+
+type FilesInFlattenedDir = Array<{fileName: string; replacedFilename: string}>;
+
+interface PackageJson {
+  bin: Record<string, string> | string;
+  files: string[];
+  main?: string;
 }
 
 export class PublishFlat {
@@ -65,7 +65,7 @@ export class PublishFlat {
       throw new Error(`Files don't include a "package.json" file`);
     }
 
-    const {normalFiles, filesInFlattenedDir} = files.reduce(
+    const {filesInFlattenedDir, normalFiles} = files.reduce(
       (result: Categorized, fileName: string) => {
         if (this.dirToFlattenRegex.test(fileName)) {
           const replacedFilename = fileName.replace(this.dirToFlattenRegex, '');

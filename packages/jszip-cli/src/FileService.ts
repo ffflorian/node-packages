@@ -1,6 +1,6 @@
+import logdown from 'logdown';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import logdown from 'logdown';
 
 import type {TerminalOptions} from './interfaces.js';
 
@@ -31,7 +31,9 @@ export class FileService {
       if (this.options.force) {
         try {
           await fs.mkdir(dirPath, {recursive: true});
-        } catch {}
+        } catch {
+          // no-op
+        }
         return true;
       }
       return false;

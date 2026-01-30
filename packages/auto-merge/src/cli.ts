@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 
-import fs from 'node:fs/promises';
-import path from 'node:path';
-import readline from 'node:readline';
 import {program as commander} from 'commander';
 import {cosmiconfig} from 'cosmiconfig';
 import logdown from 'logdown';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import readline from 'node:readline';
+
+import type {AutoMergeConfig, Repository, RepositoryResult} from './types/index.js';
 
 import {AutoMerge} from './AutoMerge.js';
-import type {AutoMergeConfig, Repository, RepositoryResult} from './types/index.js';
 import {pluralize} from './util.js';
 
 const input = readline.createInterface(process.stdin, process.stdout);
@@ -57,6 +58,20 @@ const configFileData: AutoMergeConfig = {
   ...(commanderOptions.dryRun && {dryRun: commanderOptions.dryRun}),
 };
 
+async function askAction(autoApprover: AutoMerge, repositories: Repository[]): Promise<void> {
+  const doAction = configFileData.autoApprove ? 'approve and merge' : 'merge';
+  const answer = await askQuestion(`ℹ️  auto-merge Which PR would you like to ${doAction} (enter a branch name)? `);
+
+  await runAction(autoApprover, repositories, answer);
+  await askAction(autoApprover, repositories);
+}
+
+function askQuestion(question: string): Promise<string> {
+  return new Promise(resolve => {
+    input.question(question, answer => resolve(answer));
+  });
+}
+
 async function runAction(autoMerge: AutoMerge, repositories: Repository[], pullRequestSlug: string): Promise<void> {
   const regex = new RegExp(pullRequestSlug, 'gi');
 
@@ -81,20 +96,6 @@ async function runAction(autoMerge: AutoMerge, repositories: Repository[], pullR
   } else {
     logger.info(infoMessage);
   }
-}
-
-function askQuestion(question: string): Promise<string> {
-  return new Promise(resolve => {
-    input.question(question, answer => resolve(answer));
-  });
-}
-
-async function askAction(autoApprover: AutoMerge, repositories: Repository[]): Promise<void> {
-  const doAction = configFileData.autoApprove ? 'approve and merge' : 'merge';
-  const answer = await askQuestion(`ℹ️  auto-merge Which PR would you like to ${doAction} (enter a branch name)? `);
-
-  await runAction(autoApprover, repositories, answer);
-  await askAction(autoApprover, repositories);
 }
 
 void (async () => {
