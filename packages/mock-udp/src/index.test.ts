@@ -1,5 +1,6 @@
 import * as dgram from 'node:dgram';
-import {assert, expect, describe, test, beforeEach} from 'vitest';
+import {assert, beforeEach, describe, expect, test} from 'vitest';
+
 import * as mockudp from './index.js';
 const buffer = Buffer.from('hello world');
 
@@ -29,6 +30,7 @@ describe('mock-udp.add', () => {
 
 describe('mock-udp.clean', () => {
   test('should clean all interceptions', () => {
+    // eslint-disable-next-line no-magic-numbers
     const range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     range.forEach(index => mockudp.add(`localhost:100${index}`));
     mockudp.intercept();
@@ -36,6 +38,7 @@ describe('mock-udp.clean', () => {
     const client = dgram.createSocket('udp4');
     range.forEach(index => {
       try {
+        // eslint-disable-next-line no-magic-numbers
         client.send(buffer, 0, buffer.length, 1000 + index, 'localhost');
         assert.fail();
       } catch {
@@ -55,6 +58,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     return new Promise(done => {
       const scope = mockudp.add('localhost:1000');
       const client = dgram.createSocket('udp4');
+      // eslint-disable-next-line no-magic-numbers
       client.send(buffer, 0, buffer.length, 1000, 'localhost', () => {
         scope.done();
         done(void 0);
@@ -65,6 +69,7 @@ describe('mock-udp.overriddenSocketSend', () => {
   test('should not throw an exception with a missing callback', () => {
     mockudp.add('localhost:1000');
     const client = dgram.createSocket('udp4');
+    // eslint-disable-next-line no-magic-numbers
     client.send(buffer, 0, buffer.length, 1000, 'localhost');
   });
 
@@ -72,7 +77,9 @@ describe('mock-udp.overriddenSocketSend', () => {
     return new Promise(done => {
       mockudp.add('localhost:1000');
       const client = dgram.createSocket('udp4');
+      // eslint-disable-next-line no-magic-numbers
       client.send(buffer, 0, 5, 1000, 'localhost', (_, bytes) => {
+        // eslint-disable-next-line no-magic-numbers
         expect(bytes).toBe(5);
         done(void 0);
       });
@@ -83,6 +90,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     return new Promise(done => {
       const scope = mockudp.add('localhost:1000');
       const client = dgram.createSocket('udp4');
+      // eslint-disable-next-line no-magic-numbers
       client.send(buffer, 1, 6, 1000, 'localhost', () => {
         if (!scope.buffer) {
           return assert.fail();
@@ -98,6 +106,7 @@ describe('mock-udp.overriddenSocketSend', () => {
       const scope1 = mockudp.add('localhost:1000');
       const scope2 = mockudp.add('localhost:1000');
       const client = dgram.createSocket('udp4');
+      // eslint-disable-next-line no-magic-numbers
       client.send(buffer, 0, buffer.length, 1000, 'localhost', () => {
         scope1.done();
         scope2.done();
@@ -110,9 +119,11 @@ describe('mock-udp.overriddenSocketSend', () => {
     return new Promise(done => {
       const scope = mockudp.add('localhost:1000');
       const client = dgram.createSocket('udp4');
+      // eslint-disable-next-line no-magic-numbers
       client.send(buffer, 0, buffer.length, 1000, 'localhost', () => {
         scope.done();
         try {
+          // eslint-disable-next-line no-magic-numbers
           client.send(buffer, 0, buffer.length, 1000, 'localhost');
           assert.fail();
         } catch {
@@ -126,6 +137,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     const scope = mockudp.add('localhost:1000');
     const client = dgram.createSocket('udp4');
     try {
+      // eslint-disable-next-line no-magic-numbers
       client.send(buffer, buffer.length, buffer.length, 1000, 'localhost');
       assert.fail();
     } catch {
@@ -138,6 +150,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     const scope = mockudp.add('localhost:1000');
     const client = dgram.createSocket('udp4');
     try {
+      // eslint-disable-next-line no-magic-numbers
       client.send(buffer, buffer.length + 1, buffer.length, 1000, 'localhost');
       assert.fail();
     } catch {
@@ -150,6 +163,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     const scope = mockudp.add('localhost:1000');
     const client = dgram.createSocket('udp4');
     try {
+      // eslint-disable-next-line no-magic-numbers
       client.send(buffer, 0, buffer.length + 1, 1000, 'localhost');
       assert.fail();
     } catch {

@@ -5,6 +5,10 @@ export enum DIRECTION {
   WEST = 'W',
 }
 
+export interface Coordinates {
+  longitude: number;
+}
+
 export interface CustomDate {
   day: string;
   hours: string;
@@ -14,11 +18,20 @@ export interface CustomDate {
   year: string;
 }
 
+export interface Location extends Coordinates {
+  formattedAddress?: string;
+}
+
+export interface MyTimezoneConfig {
+  ntpServer?: string;
+  offline?: boolean;
+}
+
 export interface OSMResult {
-  boundingbox?: string[] | null;
+  boundingbox?: null | string[];
   class: string;
   display_name: string;
-  icon?: string | null;
+  icon?: null | string;
   importance: number;
   lat: string;
   licence: string;
@@ -27,19 +40,6 @@ export interface OSMResult {
   osm_type: string;
   place_id: number;
   type: string;
-}
-
-export interface MyTimezoneConfig {
-  ntpServer?: string;
-  offline?: boolean;
-}
-
-export interface Coordinates {
-  longitude: number;
-}
-
-export interface Location extends Coordinates {
-  formattedAddress?: string;
 }
 
 const defaultConfig: Required<MyTimezoneConfig> = {
@@ -61,6 +61,23 @@ export class MyTimezone {
     this.ntpClient = new NTPClient(this.config.ntpServer);
   }
 
+  public async getDateByAddress(address: string): Promise<Date> {
+    const {longitude} = await this.getLocationByName(address);
+    return this.getDateByLongitude(longitude);
+  }
+
+  public async getDateByLongitude(longitude: number): Promise<Date> {
+    const direction = longitude < 0 ? DIRECTION.WEST : DIRECTION.EAST;
+    const utcDate = await this.getUTCDate();
+    const offsetMillis = this.getOffsetMillis(longitude, direction);
+
+    const calculatedDate =
+      direction === DIRECTION.EAST
+        ? new Date(utcDate.getTime() + offsetMillis)
+        : new Date(utcDate.getTime() - offsetMillis);
+    return calculatedDate;
+  }
+
   public async getLocation(location: string): Promise<Location> {
     try {
       const coordinates = this.parseCoordinates(location);
@@ -79,7 +96,7 @@ export class MyTimezone {
     const params = new URLSearchParams({
       format: 'json',
       limit: '9',
-
+      // eslint-disable-next-line id-length
       q: address,
     });
 
@@ -113,23 +130,6 @@ export class MyTimezone {
     };
   }
 
-  public async getDateByAddress(address: string): Promise<Date> {
-    const {longitude} = await this.getLocationByName(address);
-    return this.getDateByLongitude(longitude);
-  }
-
-  public async getDateByLongitude(longitude: number): Promise<Date> {
-    const direction = longitude < 0 ? DIRECTION.WEST : DIRECTION.EAST;
-    const utcDate = await this.getUTCDate();
-    const offsetMillis = this.getOffsetMillis(longitude, direction);
-
-    const calculatedDate =
-      direction === DIRECTION.EAST
-        ? new Date(utcDate.getTime() + offsetMillis)
-        : new Date(utcDate.getTime() - offsetMillis);
-    return calculatedDate;
-  }
-
   public parseCoordinates(coordinates: string): Coordinates {
     const longitudeRegex = new RegExp('[-?\\W\\d\\.]+,(?<longitude>[-?\\W\\d\\.]+)');
     const parsedRegex = longitudeRegex.exec(coordinates);
@@ -152,7 +152,7 @@ export class MyTimezone {
     if (!parsedString?.groups) {
       throw new Error('Could not parse date');
     }
-    const {year, month, day, hours, minutes, seconds} = parsedString.groups!;
+    const {day, hours, minutes, month, seconds, year} = parsedString.groups!;
     return {day, hours, minutes, month, seconds, year};
   }
 

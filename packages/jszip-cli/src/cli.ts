@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
+import {program as commander} from 'commander';
 import fs from 'node:fs';
 import path from 'node:path';
-import {program as commander} from 'commander';
 
 import {JSZipCLI} from './JSZipCLI.js';
 
@@ -71,7 +71,7 @@ commander
         ...(options.verbose && {verbose: options.verbose}),
       });
       await jszip.add(entries);
-      const {outputFile, compressedFilesCount} = await jszip.save();
+      const {compressedFilesCount, outputFile} = await jszip.save();
 
       if (options.output && !options.quiet) {
         console.info(`Done compressing ${compressedFilesCount} files to "${outputFile}".`);
@@ -97,7 +97,7 @@ commander
   .action(async (archives: string[]) => {
     const options = commander.opts() as CLIOptions;
     try {
-      const {outputDir, extractedFilesCount} = await new JSZipCLI({
+      const {extractedFilesCount, outputDir} = await new JSZipCLI({
         ...((options.config && {configFile: options.config}) || (options.noconfig && {configFile: false})),
         ...(options.force && {force: options.force}),
         ...(options.ignore && {ignoreEntries: [options.ignore]}),

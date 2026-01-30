@@ -1,4 +1,5 @@
 import {createRestAPIClient} from 'masto';
+
 import {Config} from './Config.js';
 
 enum ConfigKeys {
@@ -10,11 +11,11 @@ enum ConfigKeys {
   LAST_TOOT_DATE = 'lastTootDate',
 }
 
-export type CmdConfig = Partial<Record<ConfigKeys, string | boolean>> & {configFile?: string};
+export type CmdConfig = {configFile?: string} & Partial<Record<ConfigKeys, boolean | string>>;
 
 export class YearProgressClient {
-  private readonly baseURL: string;
   private readonly accessToken: string;
+  private readonly baseURL: string;
   private readonly config: Config<ConfigKeys>;
   private readonly dryRun?: boolean;
   private readonly forceSending?: boolean;
@@ -35,11 +36,27 @@ export class YearProgressClient {
     }
   }
 
-  private generateProgressbar(percentage: number): string {
-    const numChars = 15;
-    const numFilled = Math.round((percentage / 100) * numChars);
-    const numEmpty = numChars - numFilled;
-    return `${'▓'.repeat(numFilled)}${'░'.repeat(numEmpty)}`;
+  async run() {
+    // eslint-disable-next-line no-magic-numbers
+    const date = new Date().toISOString().slice(0, 10);
+    const percentage = this.calculatePercentage(date);
+    if (isNaN(percentage)) {
+      throw new Error(`Invalid percentage calculated: ${percentage}`);
+    }
+
+    console.info('Created message:\n');
+    const progressMessage = this.generateMessage(percentage);
+    console.info(progressMessage);
+
+    const shouldSend = this.checkIfShouldToot(percentage, date);
+
+    console.info('Send toot?', shouldSend, '\n');
+
+    if (shouldSend) {
+      console.info('Sending toot ...');
+      await this.toot(progressMessage);
+    }
+    this.saveState(percentage, date);
   }
 
   private calculatePercentage(date: string): number {
@@ -51,12 +68,8 @@ export class YearProgressClient {
     const totalDuration = yearEnd.getTime() - yearStart.getTime();
     const currentDuration = now.getTime() - yearStart.getTime();
 
+    // eslint-disable-next-line no-magic-numbers
     return Number(((currentDuration / totalDuration) * 100).toFixed());
-  }
-
-  private generateMessage(percentage: number): string {
-    const progressBar = this.generateProgressbar(percentage);
-    return `${progressBar} ${percentage}%`;
   }
 
   private checkIfShouldToot(percentage: number, date: string): boolean {
@@ -88,6 +101,19 @@ export class YearProgressClient {
     return false;
   }
 
+  private generateMessage(percentage: number): string {
+    const progressBar = this.generateProgressbar(percentage);
+    return `${progressBar} ${percentage}%`;
+  }
+
+  private generateProgressbar(percentage: number): string {
+    const numChars = 15;
+    // eslint-disable-next-line no-magic-numbers
+    const numFilled = Math.round((percentage / 100) * numChars);
+    const numEmpty = numChars - numFilled;
+    return `${'▓'.repeat(numFilled)}${'░'.repeat(numEmpty)}`;
+  }
+
   private saveState(percentage: number, currentDate: string): void {
     if (this.dryRun) {
       console.info('\n[DRY RUN] Not updating the state configuration\n');
@@ -98,28 +124,6 @@ export class YearProgressClient {
 
     this.config.set(ConfigKeys.LAST_TOOT_DATE, currentDate);
     this.config.set(ConfigKeys.LAST_PROGRESS, percentage);
-  }
-
-  async run() {
-    const date = new Date().toISOString().slice(0, 10);
-    const percentage = this.calculatePercentage(date);
-    if (isNaN(percentage)) {
-      throw new Error(`Invalid percentage calculated: ${percentage}`);
-    }
-
-    console.info('Created message:\n');
-    const progressMessage = this.generateMessage(percentage);
-    console.info(progressMessage);
-
-    const shouldSend = this.checkIfShouldToot(percentage, date);
-
-    console.info('Send toot?', shouldSend, '\n');
-
-    if (shouldSend) {
-      console.info('Sending toot ...');
-      await this.toot(progressMessage);
-    }
-    this.saveState(percentage, date);
   }
 
   private async toot(text: string): Promise<void> {

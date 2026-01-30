@@ -1,16 +1,16 @@
-import path from 'node:path';
-import {promises as fs, Stats as fsStats} from 'node:fs';
+import {glob} from 'glob';
 import JSZip from 'jszip';
 import logdown from 'logdown';
+import {promises as fs, Stats as fsStats} from 'node:fs';
+import path from 'node:path';
 import progress from 'progress';
-import {glob} from 'glob';
 
 import {FileService} from './FileService.js';
 import {Entry, TerminalOptions} from './interfaces.js';
 
 export class BuildService {
   public compressedFilesCount: number;
-  public outputFile: string | null;
+  public outputFile: null | string;
   private entries: Entry[];
   private readonly fileService: FileService;
   private readonly ignoreEntries: RegExp[];
@@ -75,15 +75,6 @@ export class BuildService {
     }
 
     return this;
-  }
-
-  /**
-   * Note: glob patterns should always use / as a path separator, even on Windows systems,
-   * as \ is used to escape glob characters.
-   * https://github.com/isaacs/node-glob
-   */
-  private normalizePaths(rawEntries: string[]): string[] {
-    return rawEntries.map(entry => entry.replace(/\\/g, '/'));
   }
 
   private async addFile(entry: Entry, isLink = false): Promise<void> {
@@ -222,6 +213,15 @@ export class BuildService {
         }
       }
     );
+  }
+
+  /**
+   * Note: glob patterns should always use / as a path separator, even on Windows systems,
+   * as \ is used to escape glob characters.
+   * https://github.com/isaacs/node-glob
+   */
+  private normalizePaths(rawEntries: string[]): string[] {
+    return rawEntries.map(entry => entry.replace(/\\/g, '/'));
   }
 
   private async walkDir(entry: Entry): Promise<void> {

@@ -1,6 +1,6 @@
-import {assert, expect, describe, test} from 'vitest';
-import nock from 'nock';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
+import nock from 'nock';
+import {assert, describe, expect, test} from 'vitest';
 
 import {GitHubClient, PullRequest} from './GitHubClient.js';
 

@@ -1,9 +1,10 @@
-import {expect, describe, test, beforeEach, afterEach, vi} from 'vitest';
-import nock from 'nock';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
+import nock from 'nock';
+import {afterEach, beforeEach, describe, expect, test, vi} from 'vitest';
+
+import type {GitHubPullRequest, Repository} from './types/index.js';
 
 import {AutoMerge} from './AutoMerge.js';
-import type {GitHubPullRequest, Repository} from './types/index.js';
 
 describe('AutoMerge', () => {
   describe('checkRepository', () => {

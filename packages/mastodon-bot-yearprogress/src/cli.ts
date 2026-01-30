@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
+import {program as commander} from 'commander';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import {program as commander} from 'commander';
 
 import {YearProgressClient} from './YearProgressClient.js';
 

@@ -1,6 +1,6 @@
+import clipboard from 'clipboardy';
 import fs from 'node:fs/promises';
 import readline from 'node:readline';
-import clipboard from 'clipboardy';
 
 export interface Options {
   letters?: string;

@@ -266,7 +266,7 @@ export class LinkedList {
    * @throws `Error` if the passed index is not within the bounds of the list.
    * @throws `TypeError` if the argument is not a `string` or a `number`.
    */
-  remove(position: string | number): ListElementValue {
+  remove(position: number | string): ListElementValue {
     if (typeof position === 'string') {
       const element = this.getFirstElement(position);
 

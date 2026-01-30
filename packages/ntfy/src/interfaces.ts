@@ -1,124 +1,30 @@
+/* eslint-disable no-magic-numbers */
 export enum MessagePriority {
-  /** Really long vibration bursts, default notification sound with a pop-over notification. */
-  MAX = 5,
-  /** Long vibration burst, default notification sound with a pop-over notification. */
-  HIGH = 4,
-  /** Short default vibration and sound. Default notification behavior. */
-  DEFAULT = 3,
-  /** No vibration or sound. Notification will not visibly show up until notification drawer is pulled down. */
-  LOW = 2,
   /** No vibration or sound. The notification will be under the fold in "Other notifications". */
   MIN = 1,
+  /** No vibration or sound. Notification will not visibly show up until notification drawer is pulled down. */
+  LOW = 2,
+  /** Short default vibration and sound. Default notification behavior. */
+  DEFAULT = 3,
+  /** Long vibration burst, default notification sound with a pop-over notification. */
+  HIGH = 4,
+  /** Really long vibration bursts, default notification sound with a pop-over notification. */
+  MAX = 5,
 }
-
-export type ResponseData<T extends Config> = T & {
-  id: string;
-  time: number;
-};
-
-export interface FileURL {
-  filename: string;
-  url: string;
-}
-
-/**
- * The broadcast action sends an Android broadcast intent when the action button is tapped. This allows integration
- * into automation apps such as MacroDroid or Tasker, which basically means you can do everything your phone is
- * capable of. Examples include taking pictures, launching/killing apps, change device settings, write/read files,
- * etc.
- *
- * By default, the intent action **`io.heckel.ntfy.USER_ACTION`** is broadcast, though this can be changed with the
- * `intent` parameter. To send extras, use the `extras` parameter. Currently, only string extras are supported.
- */
-export interface BroadcastAction {
-  /** Clear notification after action button is tapped, default is `false`. */
-  clear?: boolean;
-  /** Android intent extras. */
-  extras?: Record<string, string>;
-  /** Android intent name, default is `io.heckel.ntfy.USER_ACTION`. */
-  intent?: string;
-  /** Label of the action button in the notification. */
-  label: string;
-}
-
-export type HTTPMethod =
-  | 'get'
-  | 'GET'
-  | 'delete'
-  | 'DELETE'
-  | 'head'
-  | 'HEAD'
-  | 'options'
-  | 'OPTIONS'
-  | 'post'
-  | 'POST'
-  | 'put'
-  | 'PUT'
-  | 'patch'
-  | 'PATCH'
-  | 'purge'
-  | 'PURGE'
-  | 'link'
-  | 'LINK'
-  | 'unlink'
-  | 'UNLINK';
-
-export interface HTTPAction {
-  /** HTTP body. */
-  body?: string;
-  /**
-   * Clear notification after HTTP request succeeds. If the request fails, the notification is not cleared.
-   * Default is `false`.
-   */
-  clear?: boolean;
-  /** HTTP headers to pass in request. */
-  headers?: Record<string, string>;
-  /** Label of the action button in the notification. */
-  label: string;
-  /** HTTP method to use for request, default is POST ⚠️. */
-  method?: HTTPMethod;
-  /** URL to which the HTTP request will be sent. */
-  url: string;
-}
-
-/**
- * The view action **opens a website or app when the action button is tapped**, e.g. a browser, a Google Maps location,
- * or even a deep link into Twitter or a show ntfy topic. How exactly the action is handled depends on how Android and
- * your desktop browser treat the links. Normally it'll just open a link in the browser.
- *
- * Examples:
- *
- * * `http://` or `https://` will open your browser (or an app if it registered for a URL)
- * * `mailto:` links will open your mail app, e.g. `mailto:phil@example.com`
- * * `geo:` links will open Google Maps, e.g. `geo:0,0?q=1600+Amphitheatre+Parkway,+Mountain+View,+CA`
- * * `ntfy://` links will open ntfy (see [ntfy:// links](https://docs.ntfy.sh/subscribe/phone/#ntfy-links)), e.g.
- * `ntfy://ntfy.sh/stats`
- * * `twitter://` links will open Twitter, e.g. `twitter://user?screen_name=..`
- * * ...
- */
-export interface ViewAction {
-  /** Clear notification after action button is tapped, default is `false`. */
-  clear?: boolean;
-  /** Label of the action button in the notification */
-  label: string;
-  /** URL to open when action is tapped */
-  url: string;
-}
+/* eslint-enable no-magic-numbers */
 
 export type Action =
-  | ({
-      type: 'view';
-    } & ViewAction)
   | ({
       type: 'broadcast';
     } & BroadcastAction)
   | ({
       type: 'http';
-    } & HTTPAction);
+    } & HTTPAction)
+  | ({
+      type: 'view';
+    } & ViewAction);
 
-export type Config = AttachmentConfig | MessageConfig;
-
-export type AttachmentConfig = Omit<BaseConfig, 'fileURL'> & {
+export type AttachmentConfig = {
   /**
    * You can send images and other files to your phone as attachments to a notification. The attachments are then
    * downloaded onto your phone (depending on size and setting automatically), and can be used from the Downloads
@@ -130,14 +36,7 @@ export type AttachmentConfig = Omit<BaseConfig, 'fileURL'> & {
    * * or by passing an external URL as an attachment, e.g. `https://f-droid.org/F-Droid.apk`
    */
   fileAttachment: string;
-};
-
-export type MessageConfig = BaseConfig & {
-  /**
-   * Main body of the message as shown in the notification.
-   */
-  message: string;
-};
+} & Omit<BaseConfig, 'fileURL'>;
 
 export interface BaseConfig {
   /**
@@ -260,7 +159,7 @@ export interface BaseConfig {
    * ntfy will automatically try to derive the file name from the URL (e.g https://example.com/flower.jpg will yield a
    * filename flower.jpg). To override this filename, you may send use the `FileURL` object.
    */
-  fileURL?: string | FileURL;
+  fileURL?: FileURL | string;
   /**
    * You can include an icon that will appear next to the text of the notification. Simply specify the URL that the icon
    * is located at. The client will automatically download the icon (unless it is already cached locally, and less than
@@ -297,4 +196,107 @@ export interface BaseConfig {
    * something that's not easily guessable.
    */
   topic: string;
+}
+
+/**
+ * The broadcast action sends an Android broadcast intent when the action button is tapped. This allows integration
+ * into automation apps such as MacroDroid or Tasker, which basically means you can do everything your phone is
+ * capable of. Examples include taking pictures, launching/killing apps, change device settings, write/read files,
+ * etc.
+ *
+ * By default, the intent action **`io.heckel.ntfy.USER_ACTION`** is broadcast, though this can be changed with the
+ * `intent` parameter. To send extras, use the `extras` parameter. Currently, only string extras are supported.
+ */
+export interface BroadcastAction {
+  /** Clear notification after action button is tapped, default is `false`. */
+  clear?: boolean;
+  /** Android intent extras. */
+  extras?: Record<string, string>;
+  /** Android intent name, default is `io.heckel.ntfy.USER_ACTION`. */
+  intent?: string;
+  /** Label of the action button in the notification. */
+  label: string;
+}
+
+export type Config = AttachmentConfig | MessageConfig;
+
+export interface FileURL {
+  filename: string;
+  url: string;
+}
+
+export interface HTTPAction {
+  /** HTTP body. */
+  body?: string;
+  /**
+   * Clear notification after HTTP request succeeds. If the request fails, the notification is not cleared.
+   * Default is `false`.
+   */
+  clear?: boolean;
+  /** HTTP headers to pass in request. */
+  headers?: Record<string, string>;
+  /** Label of the action button in the notification. */
+  label: string;
+  /** HTTP method to use for request, default is POST ⚠️. */
+  method?: HTTPMethod;
+  /** URL to which the HTTP request will be sent. */
+  url: string;
+}
+
+export type HTTPMethod =
+  | 'delete'
+  | 'DELETE'
+  | 'get'
+  | 'GET'
+  | 'head'
+  | 'HEAD'
+  | 'link'
+  | 'LINK'
+  | 'options'
+  | 'OPTIONS'
+  | 'patch'
+  | 'PATCH'
+  | 'post'
+  | 'POST'
+  | 'purge'
+  | 'PURGE'
+  | 'put'
+  | 'PUT'
+  | 'unlink'
+  | 'UNLINK';
+
+export type MessageConfig = {
+  /**
+   * Main body of the message as shown in the notification.
+   */
+  message: string;
+} & BaseConfig;
+
+export type ResponseData<T extends Config> = {
+  id: string;
+  time: number;
+} & T;
+
+/**
+ * The view action **opens a website or app when the action button is tapped**, e.g. a browser, a Google Maps location,
+ * or even a deep link into Twitter or a show ntfy topic. How exactly the action is handled depends on how Android and
+ * your desktop browser treat the links. Normally it'll just open a link in the browser.
+ *
+ * Examples:
+ *
+ * * `http://` or `https://` will open your browser (or an app if it registered for a URL)
+ * * `mailto:` links will open your mail app, e.g. `mailto:phil@example.com`
+ * * `geo:` links will open Google Maps, e.g. `geo:0,0?q=1600+Amphitheatre+Parkway,+Mountain+View,+CA`
+ * * `ntfy://` links will open ntfy (see [ntfy:// links](https://docs.ntfy.sh/subscribe/phone/#ntfy-links)), e.g.
+ * `ntfy://ntfy.sh/stats`
+ * * `twitter://` links will open Twitter, e.g. `twitter://user?screen_name=..`
+ * * ...
+ */
+export interface ViewAction {
+  /** Clear notification after action button is tapped, default is `false`. */
+  clear?: boolean;
+  /** Label of the action button in the notification */
+  label: string;
+  /** URL to open when action is tapped */
+  url: string;
 }

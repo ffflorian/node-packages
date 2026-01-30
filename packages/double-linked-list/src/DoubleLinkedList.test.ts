@@ -1,4 +1,5 @@
-import {expect, describe, test, beforeEach, assert} from 'vitest';
+import {assert, beforeEach, describe, expect, test} from 'vitest';
+
 import {LinkedList, ListElement} from './index.js';
 
 describe('ListElement', () => {
@@ -103,6 +104,7 @@ describe('LinkedList', () => {
     expect(list.get(0)).toEqual('zero');
     expect(list.get(1)).toEqual('one');
     expect(list.get(2)).toEqual('two');
+    // eslint-disable-next-line no-magic-numbers
     expect(list.get(3)).toEqual('three');
   });
 
@@ -115,6 +117,7 @@ describe('LinkedList', () => {
     expect(list.get(0)).toEqual('zero');
     expect(list.get(1)).toEqual('one');
     expect(list.get(2)).toEqual('two');
+    // eslint-disable-next-line no-magic-numbers
     expect(list.get(3)).toEqual('three');
   });
 
@@ -181,6 +184,7 @@ describe('LinkedList', () => {
     list.add('one');
     list.add('two');
 
+    // eslint-disable-next-line no-magic-numbers
     expect(list.getSize()).toEqual(3);
   });
 

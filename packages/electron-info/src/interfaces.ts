@@ -1,25 +1,4 @@
-export interface RawDeps {
-  chrome: string;
-  modules: string;
-  node: string;
-  openssl: string;
-  uv: string;
-  v8: string;
-  zlib: string;
-}
-
-export interface RawReleaseInfo {
-  deps?: RawDeps;
-  name: string;
-  node_id: string;
-  npm_dist_tags: string[];
-  npm_package_name?: string;
-  prerelease: boolean;
-  published_at: string;
-  tag_name: string;
-  total_downloads: number;
-  version: string;
-}
+export type HTTPOptions = Pick<Options, 'debug' | 'timeout'>;
 
 export interface Options {
   /** Enable debug logging. Default: `false`. */
@@ -52,4 +31,25 @@ export interface Options {
   timeout?: number;
 }
 
-export type HTTPOptions = Pick<Options, 'debug' | 'timeout'>;
+export interface RawDeps {
+  chrome: string;
+  modules: string;
+  node: string;
+  openssl: string;
+  uv: string;
+  v8: string;
+  zlib: string;
+}
+
+export interface RawReleaseInfo {
+  deps?: RawDeps;
+  name: string;
+  node_id: string;
+  npm_dist_tags: string[];
+  npm_package_name?: string;
+  prerelease: boolean;
+  published_at: string;
+  tag_name: string;
+  total_downloads: number;
+  version: string;
+}

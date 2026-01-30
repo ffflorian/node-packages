@@ -11,7 +11,7 @@ const originalSocketSend = Socket.prototype.send;
 class Scope {
   public _done: boolean;
   public address?: string;
-  public buffer?: ArrayBuffer | SharedArrayBuffer | NodeJS.TypedArray | string | readonly any[];
+  public buffer?: ArrayBuffer | NodeJS.TypedArray | readonly any[] | SharedArrayBuffer | string;
   public length?: number;
   public offset?: number;
   public port?: number;
@@ -26,19 +26,19 @@ class Scope {
 }
 
 function overriddenSocketSend(
-  msg: string | NodeJS.ArrayBufferView | readonly any[],
+  msg: NodeJS.ArrayBufferView | readonly any[] | string,
   port?: number,
   address?: string,
   callback?: SendCallback
 ): void;
 function overriddenSocketSend(
-  msg: string | NodeJS.ArrayBufferView | readonly any[],
+  msg: NodeJS.ArrayBufferView | readonly any[] | string,
   port?: number,
   callback?: SendCallback
 ): void;
-function overriddenSocketSend(msg: string | NodeJS.ArrayBufferView | readonly any[], callback?: SendCallback): void;
+function overriddenSocketSend(msg: NodeJS.ArrayBufferView | readonly any[] | string, callback?: SendCallback): void;
 function overriddenSocketSend(
-  msg: string | NodeJS.ArrayBufferView,
+  msg: NodeJS.ArrayBufferView | string,
   offset: number,
   length: number,
   port?: number,
@@ -46,24 +46,24 @@ function overriddenSocketSend(
   callback?: SendCallback
 ): void;
 function overriddenSocketSend(
-  msg: string | NodeJS.ArrayBufferView,
+  msg: NodeJS.ArrayBufferView | string,
   offset: number,
   length: number,
   port?: number,
   callback?: SendCallback
 ): void;
 function overriddenSocketSend(
-  msg: string | NodeJS.ArrayBufferView,
+  msg: NodeJS.ArrayBufferView | string,
   offset: number,
   length: number,
   callback?: SendCallback
 ): void;
 function overriddenSocketSend(
-  msg: NodeJS.ArrayBufferView | string | readonly any[],
+  msg: NodeJS.ArrayBufferView | readonly any[] | string,
   offsetOrPortOrCallback?: number | SendCallback,
-  lengthOrAddressOrCallback?: number | string | SendCallback,
+  lengthOrAddressOrCallback?: number | SendCallback | string,
   portOrCallback?: number | SendCallback,
-  addressOrCallback?: string | SendCallback,
+  addressOrCallback?: SendCallback | string,
   callbackOrUndefined?: SendCallback
 ): void {
   const hasLengthAndOffset = typeof portOrCallback === 'number';
@@ -142,9 +142,9 @@ interceptSocketSend();
 export default add;
 export {
   add,
-  restoreSocketSend as revert,
-  interceptSocketSend as intercept,
   cleanInterceptions as clean,
+  interceptSocketSend as intercept,
   isMocked,
+  restoreSocketSend as revert,
   Scope,
 };

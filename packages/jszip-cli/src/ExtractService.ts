@@ -1,15 +1,15 @@
+import JSZip from 'jszip';
+import logdown from 'logdown';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import JSZip from 'jszip';
-import logdown from 'logdown';
 import progress from 'progress';
 
 import {TerminalOptions} from './interfaces.js';
 
 export class ExtractService {
   public extractedFilesCount: number;
-  public outputDir: string | null;
+  public outputDir: null | string;
   private readonly logger: logdown.Logger;
   private readonly options: Required<TerminalOptions>;
   private readonly progressBar: progress;

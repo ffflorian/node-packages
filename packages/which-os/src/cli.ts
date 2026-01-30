@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import {inspect} from 'node:util';
+import {program as commander} from 'commander';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {program as commander} from 'commander';
+import {inspect} from 'node:util';
 
 import * as whichOS from './which-os.js';
 

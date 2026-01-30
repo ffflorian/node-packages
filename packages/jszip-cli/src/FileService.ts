@@ -1,6 +1,6 @@
+import logdown from 'logdown';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import logdown from 'logdown';
 
 import type {TerminalOptions} from './interfaces.js';
 

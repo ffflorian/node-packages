@@ -1,6 +1,6 @@
-import {assert, describe, test, beforeEach, afterEach} from 'vitest';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
+import {afterEach, assert, beforeEach, describe, test} from 'vitest';
 
 import {HTTPService} from './HTTPService.js';
 

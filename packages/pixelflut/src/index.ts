@@ -10,6 +10,7 @@ export class Pixelflut {
   private readonly udp: boolean = false;
   private udpSocket?: dgram.Socket;
 
+  // eslint-disable-next-line no-magic-numbers
   constructor(server: string, port: number, errorTolerance: number = 10, udp: boolean = false) {
     this.server = server;
     this.port = port;

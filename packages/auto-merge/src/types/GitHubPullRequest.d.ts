@@ -1,196 +1,92 @@
-/** see https://docs.github.com/en/rest/pulls/pulls#get-a-pull-request */
-export interface GitHubPullRequest {
-  _links: Links;
-  active_lock_reason?: null | string;
-  additions: number;
-  assignee: null | PurpleSimpleUser;
-  assignees?: AssigneeElement[] | null;
-  /**
-   * How the author is associated with the repository.
-   */
-  author_association: AuthorAssociation;
-  /**
-   * The status of auto merging a pull request.
-   */
-  auto_merge: null | AutoMerge;
-  base: Base;
-  body: null | string;
-  changed_files: number;
-  closed_at: Date | null;
-  comments: number;
-  comments_url: string;
-  commits: number;
-  commits_url: string;
-  created_at: Date;
-  deletions: number;
-  diff_url: string;
-  /**
-   * Indicates whether or not the pull request is a draft.
-   */
-  draft?: boolean;
-  head: Head;
-  html_url: string;
-  id: number;
-  issue_url: string;
-  labels: Label[];
-  locked: boolean;
-  /**
-   * Indicates whether maintainers can modify the pull request.
-   */
-  maintainer_can_modify: boolean;
-  merge_commit_sha: null | string;
-  mergeable: boolean | null;
-  mergeable_state: 'clean' | 'dirty' | 'blocked' | 'unstable' | 'unknown';
-  merged: boolean;
-  merged_at: Date | null;
-  merged_by: null | FluffySimpleUser;
-  milestone: null | Milestone;
-  node_id: string;
-  /**
-   * Number uniquely identifying the pull request within its repository.
-   */
-  number: number;
-  patch_url: string;
-  rebaseable?: boolean | null;
-  requested_reviewers?: RequestedReviewerElement[] | null;
-  requested_teams?: TeamSimple[] | null;
-  review_comment_url: string;
-  review_comments: number;
-  review_comments_url: string;
-  /**
-   * State of this Pull Request. Either `open` or `closed`.
-   */
-  state: State;
-  statuses_url: string;
-  /**
-   * The title of the pull request.
-   */
-  title: string;
-  updated_at: Date;
-  url: string;
-  /**
-   * A GitHub user.
-   */
-  user: PullRequestUser;
-}
-
-export interface Links {
-  /**
-   * Hypermedia Link
-   */
-  comments: CommentsObject;
-  /**
-   * Hypermedia Link
-   */
-  commits: CommitsObject;
-  /**
-   * Hypermedia Link
-   */
-  html: HTMLObject;
-  /**
-   * Hypermedia Link
-   */
-  issue: IssueObject;
-  /**
-   * Hypermedia Link
-   */
-  review_comment: ReviewCommentObject;
-  /**
-   * Hypermedia Link
-   */
-  review_comments: ReviewCommentsObject;
-  /**
-   * Hypermedia Link
-   */
-  self: SelfObject;
-  /**
-   * Hypermedia Link
-   */
-  statuses: StatusesObject;
+/**
+ * How the author is associated with the repository.
+ */
+export enum AuthorAssociation {
+  Collaborator = 'COLLABORATOR',
+  Contributor = 'CONTRIBUTOR',
+  FirstTimeContributor = 'FIRST_TIME_CONTRIBUTOR',
+  FirstTimer = 'FIRST_TIMER',
+  Mannequin = 'MANNEQUIN',
+  Member = 'MEMBER',
+  None = 'NONE',
+  Owner = 'OWNER',
 }
 
 /**
- * Hypermedia Link
+ * The default value for a merge commit message.
+ *
+ * - `PR_TITLE` - default to the pull request's title.
+ * - `PR_BODY` - default to the pull request's body.
+ * - `BLANK` - default to a blank commit message.
  */
-export interface CommentsObject {
-  href: string;
+export enum MergeCommitMessage {
+  Blank = 'BLANK',
+  PRBody = 'PR_BODY',
+  PRTitle = 'PR_TITLE',
 }
 
 /**
- * Hypermedia Link
+ * The default value for a merge commit title.
+ *
+ * - `PR_TITLE` - default to the pull request's title.
+ * - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull
+ * request #123 from branch-name).
  */
-export interface CommitsObject {
-  href: string;
+export enum MergeCommitTitle {
+  MergeMessage = 'MERGE_MESSAGE',
+  PRTitle = 'PR_TITLE',
 }
 
 /**
- * Hypermedia Link
+ * The merge method to use.
  */
-export interface HTMLObject {
-  href: string;
+export enum MergeMethod {
+  Merge = 'merge',
+  Rebase = 'rebase',
+  Squash = 'squash',
 }
 
 /**
- * Hypermedia Link
+ * The default value for a squash merge commit message:
+ *
+ * - `PR_BODY` - default to the pull request's body.
+ * - `COMMIT_MESSAGES` - default to the branch's commit messages.
+ * - `BLANK` - default to a blank commit message.
  */
-export interface IssueObject {
-  href: string;
+export enum SquashMergeCommitMessage {
+  Blank = 'BLANK',
+  CommitMessages = 'COMMIT_MESSAGES',
+  PRBody = 'PR_BODY',
 }
 
 /**
- * Hypermedia Link
+ * The default value for a squash merge commit title:
+ *
+ * - `PR_TITLE` - default to the pull request's title.
+ * - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull
+ * request's title (when more than one commit).
  */
-export interface ReviewCommentObject {
-  href: string;
+export enum SquashMergeCommitTitle {
+  CommitOrPRTitle = 'COMMIT_OR_PR_TITLE',
+  PRTitle = 'PR_TITLE',
 }
 
 /**
- * Hypermedia Link
+ * The state of the milestone.
+ *
+ * State of this Pull Request. Either `open` or `closed`.
  */
-export interface ReviewCommentsObject {
-  href: string;
+export enum State {
+  Closed = 'closed',
+  Open = 'open',
 }
 
 /**
- * Hypermedia Link
+ * The ownership type of the team
  */
-export interface SelfObject {
-  href: string;
-}
-
-/**
- * Hypermedia Link
- */
-export interface StatusesObject {
-  href: string;
-}
-
-/**
- * A GitHub user.
- */
-export interface PurpleSimpleUser {
-  avatar_url: string;
-  email?: null | string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: null | string;
-  html_url: string;
-  id: number;
-  login: string;
-  name?: null | string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_at?: string;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-  user_view_type?: string;
+export enum Type {
+  Enterprise = 'enterprise',
+  Organization = 'organization',
 }
 
 /**
@@ -221,20 +117,6 @@ export interface AssigneeElement {
   user_view_type?: string;
 }
 
-/**
- * How the author is associated with the repository.
- */
-export enum AuthorAssociation {
-  Collaborator = 'COLLABORATOR',
-  Contributor = 'CONTRIBUTOR',
-  FirstTimeContributor = 'FIRST_TIME_CONTRIBUTOR',
-  FirstTimer = 'FIRST_TIMER',
-  Mannequin = 'MANNEQUIN',
-  Member = 'MEMBER',
-  None = 'NONE',
-  Owner = 'OWNER',
-}
-
 export interface AutoMerge {
   /**
    * Commit message for the merge commit.
@@ -252,43 +134,6 @@ export interface AutoMerge {
    * The merge method to use.
    */
   merge_method: MergeMethod;
-}
-
-/**
- * A GitHub user.
- */
-export interface EnabledByObject {
-  avatar_url: string;
-  email?: null | string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: null | string;
-  html_url: string;
-  id: number;
-  login: string;
-  name?: null | string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_at?: string;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-  user_view_type?: string;
-}
-
-/**
- * The merge method to use.
- */
-export enum MergeMethod {
-  Merge = 'merge',
-  Rebase = 'rebase',
-  Squash = 'squash',
 }
 
 export interface Base {
@@ -517,112 +362,6 @@ export interface BaseRepo {
 }
 
 /**
- * The status of the code search index for this repository
- */
-export interface PurpleCodeSearchIndexStatus {
-  lexical_commit_sha?: string;
-  lexical_search_ok?: boolean;
-}
-
-/**
- * License Simple
- */
-export interface PurpleLicenseSimple {
-  html_url?: string;
-  key: string;
-  name: string;
-  node_id: string;
-  spdx_id: null | string;
-  url: null | string;
-}
-
-/**
- * The default value for a merge commit message.
- *
- * - `PR_TITLE` - default to the pull request's title.
- * - `PR_BODY` - default to the pull request's body.
- * - `BLANK` - default to a blank commit message.
- */
-export enum MergeCommitMessage {
-  Blank = 'BLANK',
-  PRBody = 'PR_BODY',
-  PRTitle = 'PR_TITLE',
-}
-
-/**
- * The default value for a merge commit title.
- *
- * - `PR_TITLE` - default to the pull request's title.
- * - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull
- * request #123 from branch-name).
- */
-export enum MergeCommitTitle {
-  MergeMessage = 'MERGE_MESSAGE',
-  PRTitle = 'PR_TITLE',
-}
-
-/**
- * A GitHub user.
- */
-export interface TentacledSimpleUser {
-  avatar_url: string;
-  email?: null | string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: null | string;
-  html_url: string;
-  id: number;
-  login: string;
-  name?: null | string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_at?: string;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-  user_view_type?: string;
-}
-
-export interface PurplePermissions {
-  admin: boolean;
-  maintain?: boolean;
-  pull: boolean;
-  push: boolean;
-  triage?: boolean;
-}
-
-/**
- * The default value for a squash merge commit message:
- *
- * - `PR_BODY` - default to the pull request's body.
- * - `COMMIT_MESSAGES` - default to the branch's commit messages.
- * - `BLANK` - default to a blank commit message.
- */
-export enum SquashMergeCommitMessage {
-  Blank = 'BLANK',
-  CommitMessages = 'COMMIT_MESSAGES',
-  PRBody = 'PR_BODY',
-}
-
-/**
- * The default value for a squash merge commit title:
- *
- * - `PR_TITLE` - default to the pull request's title.
- * - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull
- * request's title (when more than one commit).
- */
-export enum SquashMergeCommitTitle {
-  CommitOrPRTitle = 'COMMIT_OR_PR_TITLE',
-  PRTitle = 'PR_TITLE',
-}
-
-/**
  * A GitHub user.
  */
 export interface BaseUser {
@@ -648,6 +387,180 @@ export interface BaseUser {
   type: string;
   url: string;
   user_view_type?: string;
+}
+
+/**
+ * Hypermedia Link
+ */
+export interface CommentsObject {
+  href: string;
+}
+
+/**
+ * Hypermedia Link
+ */
+export interface CommitsObject {
+  href: string;
+}
+
+/**
+ * A GitHub user.
+ */
+export interface EnabledByObject {
+  avatar_url: string;
+  email?: null | string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: null | string;
+  html_url: string;
+  id: number;
+  login: string;
+  name?: null | string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_at?: string;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+  user_view_type?: string;
+}
+
+/**
+ * The status of the code search index for this repository
+ */
+export interface FluffyCodeSearchIndexStatus {
+  lexical_commit_sha?: string;
+  lexical_search_ok?: boolean;
+}
+
+/**
+ * License Simple
+ */
+export interface FluffyLicenseSimple {
+  html_url?: string;
+  key: string;
+  name: string;
+  node_id: string;
+  spdx_id: null | string;
+  url: null | string;
+}
+
+export interface FluffyPermissions {
+  admin: boolean;
+  maintain?: boolean;
+  pull: boolean;
+  push: boolean;
+  triage?: boolean;
+}
+
+/**
+ * A GitHub user.
+ */
+export interface FluffySimpleUser {
+  avatar_url: string;
+  email?: null | string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: null | string;
+  html_url: string;
+  id: number;
+  login: string;
+  name?: null | string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_at?: string;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+  user_view_type?: string;
+}
+
+/** see https://docs.github.com/en/rest/pulls/pulls#get-a-pull-request */
+export interface GitHubPullRequest {
+  _links: Links;
+  active_lock_reason?: null | string;
+  additions: number;
+  assignee: null | PurpleSimpleUser;
+  assignees?: AssigneeElement[] | null;
+  /**
+   * How the author is associated with the repository.
+   */
+  author_association: AuthorAssociation;
+  /**
+   * The status of auto merging a pull request.
+   */
+  auto_merge: AutoMerge | null;
+  base: Base;
+  body: null | string;
+  changed_files: number;
+  closed_at: Date | null;
+  comments: number;
+  comments_url: string;
+  commits: number;
+  commits_url: string;
+  created_at: Date;
+  deletions: number;
+  diff_url: string;
+  /**
+   * Indicates whether or not the pull request is a draft.
+   */
+  draft?: boolean;
+  head: Head;
+  html_url: string;
+  id: number;
+  issue_url: string;
+  labels: Label[];
+  locked: boolean;
+  /**
+   * Indicates whether maintainers can modify the pull request.
+   */
+  maintainer_can_modify: boolean;
+  merge_commit_sha: null | string;
+  mergeable: boolean | null;
+  mergeable_state: 'blocked' | 'clean' | 'dirty' | 'unknown' | 'unstable';
+  merged: boolean;
+  merged_at: Date | null;
+  merged_by: FluffySimpleUser | null;
+  milestone: Milestone | null;
+  node_id: string;
+  /**
+   * Number uniquely identifying the pull request within its repository.
+   */
+  number: number;
+  patch_url: string;
+  rebaseable?: boolean | null;
+  requested_reviewers?: null | RequestedReviewerElement[];
+  requested_teams?: null | TeamSimple[];
+  review_comment_url: string;
+  review_comments: number;
+  review_comments_url: string;
+  /**
+   * State of this Pull Request. Either `open` or `closed`.
+   */
+  state: State;
+  statuses_url: string;
+  /**
+   * The title of the pull request.
+   */
+  title: string;
+  updated_at: Date;
+  url: string;
+  /**
+   * A GitHub user.
+   */
+  user: PullRequestUser;
 }
 
 export interface Head {
@@ -781,7 +694,7 @@ export interface HeadRepo {
   labels_url: string;
   language: null | string;
   languages_url: string;
-  license: null | FluffyLicenseSimple;
+  license: FluffyLicenseSimple | null;
   master_branch?: string;
   /**
    * The default value for a merge commit message.
@@ -876,62 +789,6 @@ export interface HeadRepo {
 }
 
 /**
- * The status of the code search index for this repository
- */
-export interface FluffyCodeSearchIndexStatus {
-  lexical_commit_sha?: string;
-  lexical_search_ok?: boolean;
-}
-
-/**
- * License Simple
- */
-export interface FluffyLicenseSimple {
-  html_url?: string;
-  key: string;
-  name: string;
-  node_id: string;
-  spdx_id: null | string;
-  url: null | string;
-}
-
-/**
- * A GitHub user.
- */
-export interface StickySimpleUser {
-  avatar_url: string;
-  email?: null | string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: null | string;
-  html_url: string;
-  id: number;
-  login: string;
-  name?: null | string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_at?: string;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-  user_view_type?: string;
-}
-
-export interface FluffyPermissions {
-  admin: boolean;
-  maintain?: boolean;
-  pull: boolean;
-  push: boolean;
-  triage?: boolean;
-}
-
-/**
  * A GitHub user.
  */
 export interface HeadUser {
@@ -959,6 +816,20 @@ export interface HeadUser {
   user_view_type?: string;
 }
 
+/**
+ * Hypermedia Link
+ */
+export interface HTMLObject {
+  href: string;
+}
+
+/**
+ * Hypermedia Link
+ */
+export interface IssueObject {
+  href: string;
+}
+
 export interface Label {
   color: string;
   default: boolean;
@@ -969,32 +840,39 @@ export interface Label {
   url: string;
 }
 
-/**
- * A GitHub user.
- */
-export interface FluffySimpleUser {
-  avatar_url: string;
-  email?: null | string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: null | string;
-  html_url: string;
-  id: number;
-  login: string;
-  name?: null | string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_at?: string;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-  user_view_type?: string;
+export interface Links {
+  /**
+   * Hypermedia Link
+   */
+  comments: CommentsObject;
+  /**
+   * Hypermedia Link
+   */
+  commits: CommitsObject;
+  /**
+   * Hypermedia Link
+   */
+  html: HTMLObject;
+  /**
+   * Hypermedia Link
+   */
+  issue: IssueObject;
+  /**
+   * Hypermedia Link
+   */
+  review_comment: ReviewCommentObject;
+  /**
+   * Hypermedia Link
+   */
+  review_comments: ReviewCommentsObject;
+  /**
+   * Hypermedia Link
+   */
+  self: SelfObject;
+  /**
+   * Hypermedia Link
+   */
+  statuses: StatusesObject;
 }
 
 /**
@@ -1004,7 +882,7 @@ export interface Milestone {
   closed_at: Date | null;
   closed_issues: number;
   created_at: Date;
-  creator: null | MilestoneSimpleUser;
+  creator: MilestoneSimpleUser | null;
   description: null | string;
   due_on: Date | null;
   html_url: string;
@@ -1057,19 +935,149 @@ export interface MilestoneSimpleUser {
 }
 
 /**
- * The state of the milestone.
- *
- * State of this Pull Request. Either `open` or `closed`.
+ * A GitHub user.
  */
-export enum State {
-  Closed = 'closed',
-  Open = 'open',
+export interface PullRequestUser {
+  avatar_url: string;
+  email?: null | string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: null | string;
+  html_url: string;
+  id: number;
+  login: string;
+  name?: null | string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_at?: string;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+  user_view_type?: string;
+}
+
+/**
+ * The status of the code search index for this repository
+ */
+export interface PurpleCodeSearchIndexStatus {
+  lexical_commit_sha?: string;
+  lexical_search_ok?: boolean;
+}
+
+/**
+ * License Simple
+ */
+export interface PurpleLicenseSimple {
+  html_url?: string;
+  key: string;
+  name: string;
+  node_id: string;
+  spdx_id: null | string;
+  url: null | string;
+}
+
+export interface PurplePermissions {
+  admin: boolean;
+  maintain?: boolean;
+  pull: boolean;
+  push: boolean;
+  triage?: boolean;
+}
+
+/**
+ * A GitHub user.
+ */
+export interface PurpleSimpleUser {
+  avatar_url: string;
+  email?: null | string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: null | string;
+  html_url: string;
+  id: number;
+  login: string;
+  name?: null | string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_at?: string;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+  user_view_type?: string;
 }
 
 /**
  * A GitHub user.
  */
 export interface RequestedReviewerElement {
+  avatar_url: string;
+  email?: null | string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: null | string;
+  html_url: string;
+  id: number;
+  login: string;
+  name?: null | string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_at?: string;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+  user_view_type?: string;
+}
+
+/**
+ * Hypermedia Link
+ */
+export interface ReviewCommentObject {
+  href: string;
+}
+
+/**
+ * Hypermedia Link
+ */
+export interface ReviewCommentsObject {
+  href: string;
+}
+
+/**
+ * Hypermedia Link
+ */
+export interface SelfObject {
+  href: string;
+}
+
+/**
+ * Hypermedia Link
+ */
+export interface StatusesObject {
+  href: string;
+}
+
+/**
+ * A GitHub user.
+ */
+export interface StickySimpleUser {
   avatar_url: string;
   email?: null | string;
   events_url: string;
@@ -1150,17 +1158,9 @@ export interface TeamSimple {
 }
 
 /**
- * The ownership type of the team
- */
-export enum Type {
-  Enterprise = 'enterprise',
-  Organization = 'organization',
-}
-
-/**
  * A GitHub user.
  */
-export interface PullRequestUser {
+export interface TentacledSimpleUser {
   avatar_url: string;
   email?: null | string;
   events_url: string;
