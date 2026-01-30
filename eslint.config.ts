@@ -6,12 +6,18 @@ import oxlint from 'eslint-plugin-oxlint';
 import importPlugin from 'eslint-plugin-import';
 
 export default defineConfig([
-  globalIgnores(['**/node_modules/**', '**/dist/**', '**/docs/**']),
+  globalIgnores(['**/node_modules/**', '**/dist/**', '**/docs/**', 'packages/exposure-keys/proto/**']),
+  js.configs.recommended,
   tseslintConfigs.recommended,
   {
-    extends: [js.configs.recommended, importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
+    extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
-    languageOptions: {globals: {...globals.browser, ...globals.node}},
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
     plugins: {js},
     settings: {
       'import/resolver': {
@@ -19,10 +25,13 @@ export default defineConfig([
       },
     },
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-empty-object-type': 'off',
-      '@typescript-eslint/no-unused-vars': ['error'],
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-redeclare': 'error',
+      '@typescript-eslint/no-unused-vars': 'error',
       'import/order': 'error',
+      'no-prototype-builtins': 'off',
+      'no-redeclare': 'off',
       'no-unused-vars': 'off',
     },
   },

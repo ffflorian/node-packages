@@ -1,5 +1,5 @@
 import {loadAsync} from 'jszip';
-import {TemporaryExposureKeyExport, TEKSignatureList} from '../proto/export';
+import {TemporaryExposureKeyExport, TEKSignatureList} from '../proto/export.js';
 
 function isZip(fileContent: Buffer): boolean {
   const zipHeader = [0x50, 0x4b];

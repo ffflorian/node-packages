@@ -37,15 +37,21 @@ export class IconGenerator {
 
     try {
       await fs.mkdir(this.options.output, {recursive: true});
-    } catch {}
+    } catch {
+      // no-op
+    }
 
     try {
       await fs.mkdir(this.iconsDir, {recursive: true});
-    } catch {}
+    } catch {
+      // no-op
+    }
 
     try {
       await fs.mkdir(this.PNGoutputDir, {recursive: true});
-    } catch {}
+    } catch {
+      // no-op
+    }
 
     const image = await Jimp.read(this.options.input);
     const resizeFilePath = path.join(this.PNGoutputDir, fileName);
@@ -70,7 +76,9 @@ export class IconGenerator {
 
       try {
         await fs.mkdir(macIconsDir, {recursive: true});
-      } catch {}
+      } catch {
+        // no-op
+      }
 
       await icongen.default(this.PNGoutputDir, macIconsDir, {
         icns: {
@@ -82,7 +90,9 @@ export class IconGenerator {
 
       try {
         await fs.mkdir(winIconsDir, {recursive: true});
-      } catch {}
+      } catch {
+        // no-op
+      }
 
       await icongen.default(this.PNGoutputDir, winIconsDir, {
         icns: {
