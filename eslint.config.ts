@@ -1,39 +1,4 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import {configs as tseslintConfigs} from 'typescript-eslint';
-import {defineConfig, globalIgnores} from 'eslint/config';
-import oxlint from 'eslint-plugin-oxlint';
-import importPlugin from 'eslint-plugin-import';
+import config from '@ffflorian/eslint-config';
+import {defineConfig} from 'eslint/config';
 
-export default defineConfig([
-  globalIgnores(['**/node_modules/**', '**/dist/**', '**/docs/**', 'packages/exposure-keys/proto/**']),
-  js.configs.recommended,
-  tseslintConfigs.recommended,
-  {
-    extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-    plugins: {js},
-    settings: {
-      'import/resolver': {
-        typescript: {},
-      },
-    },
-    rules: {
-      '@typescript-eslint/no-empty-object-type': 'off',
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-redeclare': 'error',
-      '@typescript-eslint/no-unused-vars': 'error',
-      'import/order': 'error',
-      'no-prototype-builtins': 'off',
-      'no-redeclare': 'off',
-      'no-unused-vars': 'off',
-    },
-  },
-  ...oxlint.configs['flat/recommended'],
-]);
+export default defineConfig([config]);
