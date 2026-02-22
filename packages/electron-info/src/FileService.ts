@@ -3,7 +3,7 @@ import logdown from 'logdown';
 import {promises as fs, constants as fsConstants} from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import URL from 'node:url';
+import {URL} from 'node:url';
 
 import type {Options, RawReleaseInfo} from './interfaces.js';
 
@@ -32,7 +32,7 @@ export class FileService {
 
   async getReleases(): Promise<RawReleaseInfo[]> {
     this.logger.log('Parsing releases URL', {releasesUrl: this.options.releasesUrl});
-    const parsedUrl = URL.parse(this.options.releasesUrl);
+    const parsedUrl = new URL(this.options.releasesUrl);
     if (!parsedUrl.href) {
       throw new Error('Invalid releases URL provided');
     }
