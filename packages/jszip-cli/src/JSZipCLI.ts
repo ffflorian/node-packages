@@ -1,9 +1,10 @@
-import {cosmiconfigSync, type CosmiconfigResult} from 'cosmiconfig';
+import {type CosmiconfigResult, cosmiconfigSync} from 'cosmiconfig';
 import logdown from 'logdown';
+
+import type {ConfigFileOptions, TerminalOptions} from './interfaces.js';
 
 import {BuildService} from './BuildService.js';
 import {ExtractService} from './ExtractService.js';
-import type {ConfigFileOptions, TerminalOptions} from './interfaces.js';
 
 const defaultOptions: Required<TerminalOptions> = {
   compressionLevel: 5,
@@ -22,7 +23,7 @@ export class JSZipCLI {
   private readonly configFile?: string;
   private readonly extractService: ExtractService;
   private readonly logger: logdown.Logger;
-  private readonly options: Required<TerminalOptions> & Partial<ConfigFileOptions>;
+  private readonly options: Partial<ConfigFileOptions> & Required<TerminalOptions>;
 
   constructor(options?: TerminalOptions) {
     this.logger = logdown('jszip-cli/index', {
@@ -88,7 +89,7 @@ export class JSZipCLI {
     }
     if (this.options.mode === 'add') {
       const buildService = await this.add();
-      const {outputFile, compressedFilesCount} = await buildService.save();
+      const {compressedFilesCount, outputFile} = await buildService.save();
 
       if (this.options.outputEntry && !this.options.quiet) {
         console.info(`Done compressing ${compressedFilesCount} files to "${outputFile}".`);
@@ -96,7 +97,7 @@ export class JSZipCLI {
 
       return this;
     } else if (this.options.mode === 'extract') {
-      const {outputDir, extractedFilesCount} = await this.extract();
+      const {extractedFilesCount, outputDir} = await this.extract();
 
       if (this.options.outputEntry && !this.options.quiet) {
         console.info(`Done extracting ${extractedFilesCount} files to "${outputDir}".`);

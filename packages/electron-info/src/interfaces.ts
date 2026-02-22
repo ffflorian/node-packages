@@ -1,13 +1,3 @@
-export interface RawDeps {
-  chrome: string;
-  modules: string;
-  node: string;
-  openssl: string;
-  uv: string;
-  v8: string;
-  zlib: string;
-}
-
 export interface BasicReleaseInfo {
   date: string;
   files: string[];
@@ -17,7 +7,7 @@ export interface BasicReleaseInfo {
   version: string;
 }
 
-export type RawReleaseInfo = BasicReleaseInfo & RawDeps;
+export type HTTPOptions = Pick<Options, 'debug' | 'timeout'>;
 
 export interface Options {
   /** Enable debug logging. Default: `false`. */
@@ -50,4 +40,14 @@ export interface Options {
   timeout?: number;
 }
 
-export type HTTPOptions = Pick<Options, 'debug' | 'timeout'>;
+export interface RawDeps {
+  chrome: string;
+  modules: string;
+  node: string;
+  openssl: string;
+  uv: string;
+  v8: string;
+  zlib: string;
+}
+
+export type RawReleaseInfo = BasicReleaseInfo & RawDeps;

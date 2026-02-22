@@ -1,13 +1,8 @@
 module.exports = {
   compressionLevel: 9,
-  entries: [
-    'dist.zip'
-  ],
+  entries: ['dist.zip'],
   force: true,
-  ignoreEntries: [
-    '*.map',
-    new RegExp('\\.html?$')
-  ],
+  ignoreEntries: ['*.map', new RegExp('\\.html?$')],
   mode: 'extract',
   outputEntry: 'dist/',
   quiet: false,

@@ -1,7 +1,7 @@
 import type {
+  ApiClientConfig,
   APIResponse,
   BasicRequestOptions,
-  ApiClientConfig,
   Interceptors,
   RequestInitWithMethodAndURL,
   RequestOptions,
@@ -18,27 +18,46 @@ export class APIClient {
     private config?: ApiClientConfig
   ) {}
 
-  setBaseURL(baseUrl: string): void {
-    this.baseUrl = baseUrl;
+  async delete<T = any>(endpoint: string, options?: BasicRequestOptions): Promise<APIResponse<T>> {
+    const request = await this.request(endpoint, {...options, method: 'DELETE'});
+    const requestData = await this.formatData(request, options);
+    return {data: requestData, headers: request.headers, status: request.status};
   }
 
-  setConfig(config: Partial<RequestInit>): void {
-    this.config = config;
+  async get<T = any>(endpoint: string, options?: BasicRequestOptions): Promise<APIResponse<T>> {
+    const request = await this.request(endpoint, {...options, method: 'GET'});
+    const requestData = await this.formatData(request, options);
+    return {data: requestData, headers: request.headers, status: request.status};
   }
 
-  private formatData(response: Response, options?: BasicRequestOptions): Promise<any> {
-    const responseType = options?.responseType || 'json';
-    switch (responseType) {
-      case 'arraybuffer':
-        return response.arrayBuffer();
-      case 'blob':
-        return response.blob();
-      case 'text':
-        return response.text();
-      case 'json':
-      default:
-        return response.json();
-    }
+  async head<T = any>(endpoint: string, options?: BasicRequestOptions): Promise<APIResponse<T>> {
+    const request = await this.request(endpoint, {...options, method: 'HEAD'});
+    const requestData = await this.formatData(request, options);
+    return {data: requestData, headers: request.headers, status: request.status};
+  }
+
+  async options<T = any>(endpoint: string, options?: BasicRequestOptions): Promise<APIResponse<T>> {
+    const request = await this.request(endpoint, {...options, method: 'OPTIONS'});
+    const requestData = await this.formatData(request, options);
+    return {data: requestData, headers: request.headers, status: request.status};
+  }
+
+  async patch<T = any>(endpoint: string, data?: any, options?: BasicRequestOptions): Promise<APIResponse<T>> {
+    const request = await this.request(endpoint, {...options, data, method: 'PATCH'});
+    const requestData = await this.formatData(request, options);
+    return {data: requestData, headers: request.headers, status: request.status};
+  }
+
+  async post<T = any>(endpoint: string, data?: any, options?: BasicRequestOptions): Promise<APIResponse<T>> {
+    const request = await this.request(endpoint, {data, ...options, method: 'POST'});
+    const requestData = await this.formatData(request, options);
+    return {data: requestData, headers: request.headers, status: request.status};
+  }
+
+  async put<T = any>(endpoint: string, data?: any, options?: BasicRequestOptions): Promise<APIResponse<T>> {
+    const request = await this.request(endpoint, {data, ...options, method: 'PUT'});
+    const requestData = await this.formatData(request, options);
+    return {data: requestData, headers: request.headers, status: request.status};
   }
 
   async request(endpoint: string, options: RequestOptions): Promise<Response> {
@@ -66,7 +85,7 @@ export class APIClient {
     }
 
     if (this.config?.auth) {
-      const {username, password} = this.config.auth;
+      const {password, username} = this.config.auth;
       const encoded = btoa(`${username}:${password}`);
 
       requestOptions.headers = {
@@ -121,45 +140,26 @@ export class APIClient {
     return response;
   }
 
-  async delete<T = any>(endpoint: string, options?: BasicRequestOptions): Promise<APIResponse<T>> {
-    const request = await this.request(endpoint, {...options, method: 'DELETE'});
-    const requestData = await this.formatData(request, options);
-    return {data: requestData, headers: request.headers, status: request.status};
+  setBaseURL(baseUrl: string): void {
+    this.baseUrl = baseUrl;
   }
 
-  async get<T = any>(endpoint: string, options?: BasicRequestOptions): Promise<APIResponse<T>> {
-    const request = await this.request(endpoint, {...options, method: 'GET'});
-    const requestData = await this.formatData(request, options);
-    return {data: requestData, headers: request.headers, status: request.status};
+  setConfig(config: Partial<RequestInit>): void {
+    this.config = config;
   }
 
-  async head<T = any>(endpoint: string, options?: BasicRequestOptions): Promise<APIResponse<T>> {
-    const request = await this.request(endpoint, {...options, method: 'HEAD'});
-    const requestData = await this.formatData(request, options);
-    return {data: requestData, headers: request.headers, status: request.status};
-  }
-
-  async patch<T = any>(endpoint: string, data?: any, options?: BasicRequestOptions): Promise<APIResponse<T>> {
-    const request = await this.request(endpoint, {...options, data, method: 'PATCH'});
-    const requestData = await this.formatData(request, options);
-    return {data: requestData, headers: request.headers, status: request.status};
-  }
-
-  async options<T = any>(endpoint: string, options?: BasicRequestOptions): Promise<APIResponse<T>> {
-    const request = await this.request(endpoint, {...options, method: 'OPTIONS'});
-    const requestData = await this.formatData(request, options);
-    return {data: requestData, headers: request.headers, status: request.status};
-  }
-
-  async post<T = any>(endpoint: string, data?: any, options?: BasicRequestOptions): Promise<APIResponse<T>> {
-    const request = await this.request(endpoint, {data, ...options, method: 'POST'});
-    const requestData = await this.formatData(request, options);
-    return {data: requestData, headers: request.headers, status: request.status};
-  }
-
-  async put<T = any>(endpoint: string, data?: any, options?: BasicRequestOptions): Promise<APIResponse<T>> {
-    const request = await this.request(endpoint, {data, ...options, method: 'PUT'});
-    const requestData = await this.formatData(request, options);
-    return {data: requestData, headers: request.headers, status: request.status};
+  private formatData(response: Response, options?: BasicRequestOptions): Promise<any> {
+    const responseType = options?.responseType || 'json';
+    switch (responseType) {
+      case 'arraybuffer':
+        return response.arrayBuffer();
+      case 'blob':
+        return response.blob();
+      case 'text':
+        return response.text();
+      case 'json':
+      default:
+        return response.json();
+    }
   }
 }

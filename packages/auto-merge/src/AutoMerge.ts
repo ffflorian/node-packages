@@ -1,8 +1,8 @@
+import logdown from 'logdown';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import logdown from 'logdown';
 
-import type {AutoMergeConfig, ActionResult, GitHubPullRequest, Repository, RepositoryResult} from './types/index.js';
+import type {ActionResult, AutoMergeConfig, GitHubPullRequest, Repository, RepositoryResult} from './types/index.js';
 
 interface PackageJson {
   name: string;
@@ -16,9 +16,9 @@ const {name: toolName, version: toolVersion}: PackageJson = JSON.parse(await fs.
 
 export class AutoMerge {
   private readonly baseHeaders: Record<string, string>;
+  private readonly baseURL: string;
   private readonly config: AutoMergeConfig;
   private readonly logger: logdown.Logger;
-  private readonly baseURL: string;
 
   constructor(config: AutoMergeConfig) {
     this.config = config;
@@ -37,27 +37,6 @@ export class AutoMerge {
     this.checkConfig(this.config);
   }
 
-  private checkConfig(config: AutoMergeConfig): void {
-    if (!config.projects?.gitHub || config.projects.gitHub.length < 1) {
-      throw new Error('No projects in config file specified');
-    }
-
-    if (!config.authToken) {
-      throw new Error('No authentication token in config file specified');
-    }
-  }
-
-  private checkRepositorySlug(repositorySlug: string): boolean {
-    const gitHubUsernameRegex = /^\w+(?:-?\w+){0,37}\w$/i;
-    const gitHubRepositoryRegex = /^[\w-.]{0,99}\w$/i;
-    const [userName, repositoryName] = repositorySlug.trim().replace(/^\//, '').replace(/\/$/, '').split('/');
-    if (!repositoryName || !gitHubUsernameRegex.test(userName) || !gitHubRepositoryRegex.test(repositoryName)) {
-      this.logger.warn(`Invalid GitHub repository slug "${repositorySlug}". Skipping.`);
-      return false;
-    }
-    return true;
-  }
-
   async approveByMatch(regex: RegExp, repositories?: Repository[]): Promise<RepositoryResult[]> {
     const allRepositories = repositories || (await this.getRepositoriesWithOpenPullRequests());
     const matchingRepositories = this.getMatchingRepositories(allRepositories, regex);
@@ -67,50 +46,6 @@ export class AutoMerge {
       const actionResults: ActionResult[] = [];
       for (const pullRequest of pullRequests) {
         actionResults.push(await this.approveByPullNumber(repositorySlug, pullRequest.number));
-      }
-      processedRepositories.push({actionResults, repositorySlug});
-    }
-
-    return processedRepositories;
-  }
-
-  private getMatchingRepositories(repositories: Repository[], regex: RegExp): Repository[] {
-    const matchingRepositories: Repository[] = [];
-    for (const repository of repositories) {
-      const matchingPullRequests = repository.pullRequests.filter(pullRequest =>
-        new RegExp(regex).test(pullRequest.head.ref)
-      );
-      if (matchingPullRequests.length) {
-        matchingRepositories.push({pullRequests: matchingPullRequests, repositorySlug: repository.repositorySlug});
-      }
-    }
-    return matchingRepositories;
-  }
-
-  private async isPullRequestMergeable(repositorySlug: string, pullNumber: number): Promise<boolean> {
-    const resourceUrl = new URL(`/repos/${repositorySlug}/pulls/${pullNumber}`, this.baseURL);
-    const response = await fetch(resourceUrl, {headers: this.baseHeaders});
-    if (!response.ok) {
-      throw new Error(`Error while checking merge request: ${response.statusText}`);
-    }
-    const pullRequestData: GitHubPullRequest = await response.json();
-    return pullRequestData.mergeable_state === 'clean';
-  }
-
-  async mergeByMatch(regex: RegExp, repositories?: Repository[]): Promise<RepositoryResult[]> {
-    const allRepositories = repositories || (await this.getRepositoriesWithOpenPullRequests());
-    const matchingRepositories = this.getMatchingRepositories(allRepositories, regex);
-
-    const processedRepositories: RepositoryResult[] = [];
-    for (const {pullRequests, repositorySlug} of matchingRepositories) {
-      const actionResults: ActionResult[] = [];
-      for (const pullRequest of pullRequests) {
-        const isMergeable = await this.isPullRequestMergeable(repositorySlug, pullRequest.number);
-        if (!isMergeable) {
-          this.logger.warn(`Pull request #${pullRequest.number} in "${repositorySlug}" is not mergeable. Skipping.`);
-          continue;
-        }
-        actionResults.push(await this.mergePullRequest(repositorySlug, pullRequest.number, this.config.squash));
       }
       processedRepositories.push({actionResults, repositorySlug});
     }
@@ -129,27 +64,6 @@ export class AutoMerge {
       this.logger.error(`Could not approve request #${pullNumber} in "${repositorySlug}": ${(error as Error).message}`);
       actionResult.status = 'bad';
       actionResult.error = (error as Error).toString();
-    }
-
-    return actionResult;
-  }
-
-  async mergePullRequest(repositorySlug: string, pullNumber: number, squash: boolean = false): Promise<ActionResult> {
-    const actionResult: ActionResult = {pullNumber, status: 'good'};
-
-    if (!this.config.dryRun) {
-      try {
-        const isMerged = await this.putMerge(repositorySlug, pullNumber, squash);
-        if (!isMerged) {
-          actionResult.status = 'bad';
-        }
-      } catch (error) {
-        this.logger.error(
-          `Could not merge pull request #${pullNumber} in "${repositorySlug}": ${(error as Error).message}`
-        );
-        actionResult.status = 'bad';
-        actionResult.error = (error as Error).toString();
-      }
     }
 
     return actionResult;
@@ -179,6 +93,102 @@ export class AutoMerge {
     return allRepositories.filter(repository => !!repository.pullRequests.length);
   }
 
+  async mergeByMatch(regex: RegExp, repositories?: Repository[]): Promise<RepositoryResult[]> {
+    const allRepositories = repositories || (await this.getRepositoriesWithOpenPullRequests());
+    const matchingRepositories = this.getMatchingRepositories(allRepositories, regex);
+
+    const processedRepositories: RepositoryResult[] = [];
+    for (const {pullRequests, repositorySlug} of matchingRepositories) {
+      const actionResults: ActionResult[] = [];
+      for (const pullRequest of pullRequests) {
+        const isMergeable = await this.isPullRequestMergeable(repositorySlug, pullRequest.number);
+        if (!isMergeable) {
+          this.logger.warn(`Pull request #${pullRequest.number} in "${repositorySlug}" is not mergeable. Skipping.`);
+          continue;
+        }
+        actionResults.push(await this.mergePullRequest(repositorySlug, pullRequest.number, this.config.squash));
+      }
+      processedRepositories.push({actionResults, repositorySlug});
+    }
+
+    return processedRepositories;
+  }
+
+  async mergePullRequest(repositorySlug: string, pullNumber: number, squash: boolean = false): Promise<ActionResult> {
+    const actionResult: ActionResult = {pullNumber, status: 'good'};
+
+    if (!this.config.dryRun) {
+      try {
+        const isMerged = await this.putMerge(repositorySlug, pullNumber, squash);
+        if (!isMerged) {
+          actionResult.status = 'bad';
+        }
+      } catch (error) {
+        this.logger.error(
+          `Could not merge pull request #${pullNumber} in "${repositorySlug}": ${(error as Error).message}`
+        );
+        actionResult.status = 'bad';
+        actionResult.error = (error as Error).toString();
+      }
+    }
+
+    return actionResult;
+  }
+
+  private checkConfig(config: AutoMergeConfig): void {
+    if (!config.projects?.gitHub || config.projects.gitHub.length < 1) {
+      throw new Error('No projects in config file specified');
+    }
+
+    if (!config.authToken) {
+      throw new Error('No authentication token in config file specified');
+    }
+  }
+
+  private checkRepositorySlug(repositorySlug: string): boolean {
+    const gitHubUsernameRegex = /^\w+(?:-?\w+){0,37}\w$/i;
+    const gitHubRepositoryRegex = /^[\w-.]{0,99}\w$/i;
+    const [userName, repositoryName] = repositorySlug.trim().replace(/^\//, '').replace(/\/$/, '').split('/');
+    if (!repositoryName || !gitHubUsernameRegex.test(userName) || !gitHubRepositoryRegex.test(repositoryName)) {
+      this.logger.warn(`Invalid GitHub repository slug "${repositorySlug}". Skipping.`);
+      return false;
+    }
+    return true;
+  }
+
+  private getMatchingRepositories(repositories: Repository[], regex: RegExp): Repository[] {
+    const matchingRepositories: Repository[] = [];
+    for (const repository of repositories) {
+      const matchingPullRequests = repository.pullRequests.filter(pullRequest =>
+        new RegExp(regex).test(pullRequest.head.ref)
+      );
+      if (matchingPullRequests.length) {
+        matchingRepositories.push({pullRequests: matchingPullRequests, repositorySlug: repository.repositorySlug});
+      }
+    }
+    return matchingRepositories;
+  }
+
+  private async getPullRequestsBySlug(repositorySlug: string): Promise<GitHubPullRequest[]> {
+    const resourceUrl = new URL(`/repos/${repositorySlug}/pulls`, this.baseURL);
+    resourceUrl.search = new URLSearchParams({per_page: '100', state: 'open'}).toString();
+    const response = await fetch(resourceUrl, {headers: this.baseHeaders});
+    if (!response.ok) {
+      throw new Error(`Error while fetching pull requests: ${response.statusText}`);
+    }
+    return response.json();
+  }
+
+  private async isPullRequestMergeable(repositorySlug: string, pullNumber: number): Promise<boolean> {
+    const resourceUrl = new URL(`/repos/${repositorySlug}/pulls/${pullNumber}`, this.baseURL);
+    const response = await fetch(resourceUrl, {headers: this.baseHeaders});
+    if (!response.ok) {
+      throw new Error(`Error while checking merge request: ${response.statusText}`);
+    }
+    const pullRequestData: GitHubPullRequest = await response.json();
+    return pullRequestData.mergeable_state === 'clean';
+  }
+
   /** @see https://docs.github.com/en/rest/reference/pulls#create-a-review-for-a-pull-request */
   private async postReview(repositorySlug: string, pullNumber: number): Promise<void> {
     const resourceUrl = new URL(`/repos/${repositorySlug}/pulls/${pullNumber}/reviews`, this.baseURL);
@@ -206,15 +216,5 @@ export class AutoMerge {
 
     const {merged} = await response.json();
     return merged;
-  }
-
-  private async getPullRequestsBySlug(repositorySlug: string): Promise<GitHubPullRequest[]> {
-    const resourceUrl = new URL(`/repos/${repositorySlug}/pulls`, this.baseURL);
-    resourceUrl.search = new URLSearchParams({per_page: '100', state: 'open'}).toString();
-    const response = await fetch(resourceUrl, {headers: this.baseHeaders});
-    if (!response.ok) {
-      throw new Error(`Error while fetching pull requests: ${response.statusText}`);
-    }
-    return response.json();
   }
 }

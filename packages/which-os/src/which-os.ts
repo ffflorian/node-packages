@@ -37,7 +37,7 @@ export function getOsInfo(): OSInfo {
         if (key.startsWith('set')) {
           return map;
         }
-        // eslint-disable-next-line
+
         map[key] = (value as any)();
       } else {
         map[key] = JSON.parse(JSON.stringify(value));

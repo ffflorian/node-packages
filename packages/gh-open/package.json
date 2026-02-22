@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": "dist/cli.js",
   "dependencies": {
-    "commander": "14.0.2",
+    "commander": "14.0.3",
     "find-up": "8.0.0",
     "logdown": "3.3.1",
     "open": "11.0.0"
@@ -14,7 +14,7 @@
     "rimraf": "6.1.2",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "vitest": "4.0.16"
+    "vitest": "4.0.18"
   },
   "engines": {
     "node": ">= 21"

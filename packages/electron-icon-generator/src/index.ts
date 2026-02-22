@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
+import icongen from 'icon-gen';
+import {Jimp} from 'jimp';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {Jimp} from 'jimp';
-import icongen from 'icon-gen';
 
 // eslint-disable-next-line no-magic-numbers
 const pngSizes = [16, 24, 32, 48, 64, 128, 256, 512, 1024];
@@ -38,15 +38,21 @@ export class IconGenerator {
 
     try {
       await fs.mkdir(this.options.output, {recursive: true});
-    } catch {}
+    } catch {
+      // no-op
+    }
 
     try {
       await fs.mkdir(this.iconsDir, {recursive: true});
-    } catch {}
+    } catch {
+      // no-op
+    }
 
     try {
       await fs.mkdir(this.PNGoutputDir, {recursive: true});
-    } catch {}
+    } catch {
+      // no-op
+    }
 
     const image = await Jimp.read(this.options.input);
     const resizeFilePath = path.join(this.PNGoutputDir, fileName);
@@ -72,7 +78,9 @@ export class IconGenerator {
 
       try {
         await fs.mkdir(macIconsDir, {recursive: true});
-      } catch {}
+      } catch {
+        // no-op
+      }
 
       await icongen.default(this.PNGoutputDir, macIconsDir, {
         icns: {
@@ -84,7 +92,9 @@ export class IconGenerator {
 
       try {
         await fs.mkdir(winIconsDir, {recursive: true});
-      } catch {}
+      } catch {
+        // no-op
+      }
 
       await icongen.default(this.PNGoutputDir, winIconsDir, {
         icns: {

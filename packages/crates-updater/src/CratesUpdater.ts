@@ -3,7 +3,7 @@ import {CratesIO, Version as CrateVersion} from 'crates.io';
 
 const cratesIO = new CratesIO();
 
-export async function checkForUpdate(packageName: string, version: string): Promise<string | null> {
+export async function checkForUpdate(packageName: string, version: string): Promise<null | string> {
   const latestVersion = await getLatestVersion(packageName);
   if (compareVersions(latestVersion.num, version) > 0) {
     return latestVersion.num;

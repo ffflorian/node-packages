@@ -1,16 +1,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-async function checkFile(filePath: string): Promise<void> {
-  try {
-    await fs.access(filePath, fs.constants.F_OK | fs.constants.R_OK);
-  } catch {
-    throw new Error(`Input file "${filePath} doesn't exist or is not readable.`);
-  }
-}
-
 export interface PackageJson {
-  [key: string]: string | PackageJson;
+  [key: string]: PackageJson | string;
 }
 
 export async function copyJson(inputFile: string, outputFile: string, values: string[]): Promise<void> {
@@ -47,4 +39,12 @@ export async function copyJson(inputFile: string, outputFile: string, values: st
   }
 
   await fs.writeFile(outputResolved, JSON.stringify(newJSON, null, spaces));
+}
+
+async function checkFile(filePath: string): Promise<void> {
+  try {
+    await fs.access(filePath, fs.constants.F_OK | fs.constants.R_OK);
+  } catch {
+    throw new Error(`Input file "${filePath} doesn't exist or is not readable.`);
+  }
 }

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import fs from 'node:fs/promises';
-import path from 'node:path';
 import {program as commander} from 'commander';
 import {findUp} from 'find-up';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import open from 'open';
 
 import {RepositoryService} from './RepositoryService.js';

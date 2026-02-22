@@ -1,10 +1,11 @@
 import chalk from 'chalk';
-import {table as createTable} from 'table';
 import logdown from 'logdown';
 import semver from 'semver';
+import {table as createTable} from 'table';
+
+import type {Options, RawDeps, RawReleaseInfo} from './interfaces.js';
 
 import {FileService} from './FileService.js';
-import type {Options, RawDeps, RawReleaseInfo} from './interfaces.js';
 
 const defaultOptions: Required<Options> = {
   debug: false,
@@ -44,7 +45,6 @@ export class ElectronInfo {
     }
     this.fileService = new FileService(this.options);
     this.logger.log('Initialized', this.options);
-    console.log({limit: this.options.limit});
   }
 
   async getAllReleases(formatted: true, colored?: boolean): Promise<string>;

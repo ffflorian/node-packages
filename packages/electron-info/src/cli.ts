@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
+import {program as commander} from 'commander';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {program as commander} from 'commander';
+
+import type {RawDeps} from './interfaces.js';
 
 import {ElectronInfo, SupportedDependencies} from './ElectronInfo.js';
-import type {RawDeps} from './interfaces.js';
 
 interface PackageJson {
   description: string;

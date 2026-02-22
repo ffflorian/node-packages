@@ -5,7 +5,7 @@
     "rimraf": "6.1.2",
     "touch": "3.1.1",
     "typescript": "5.9.3",
-    "vitest": "4.0.16"
+    "vitest": "4.0.18"
   },
   "engines": {
     "node": ">= 18"

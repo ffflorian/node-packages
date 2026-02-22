@@ -1,4 +1,15 @@
 /**
+ * Sort an array with QuickSort.
+ * @param arr The array to sort
+ * @returns The sorted array
+ */
+export function sort(arr: number[]): number[] {
+  const arrayCopy = arr.slice(0);
+  _sort(arrayCopy, 0, arr.length - 1);
+  return arrayCopy;
+}
+
+/**
  * Recursive quick sort
  * @param arr The array to sort
  * @param left The left side of the partly sorted array
@@ -44,15 +55,4 @@ function _sort(arr: number[], left: number, right: number): void {
   // recursively sort the rest of the array
   _sort(arr, left, rightIndex);
   _sort(arr, leftIndex, right);
-}
-
-/**
- * Sort an array with QuickSort.
- * @param arr The array to sort
- * @returns The sorted array
- */
-export function sort(arr: number[]): number[] {
-  const arrayCopy = arr.slice(0);
-  _sort(arrayCopy, 0, arr.length - 1);
-  return arrayCopy;
 }

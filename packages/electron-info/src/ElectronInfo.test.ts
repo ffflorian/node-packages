@@ -1,11 +1,12 @@
-import path from 'node:path';
-import fs from 'node:fs/promises';
-import {expect, describe, test, beforeEach, beforeAll, afterAll, afterEach} from 'vitest';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {afterAll, afterEach, beforeAll, beforeEach, describe, expect, test} from 'vitest';
+
+import type {RawReleaseInfo} from './interfaces.js';
 
 import {ElectronInfo} from './ElectronInfo.js';
-import type {RawReleaseInfo} from './interfaces.js';
 
 const __dirname = import.meta.dirname;
 const tempDir = path.resolve(__dirname, '.temp');
@@ -41,7 +42,9 @@ describe('ElectronInfo', () => {
   beforeAll(async () => {
     try {
       await fs.mkdir(tempDir);
-    } catch {}
+    } catch {
+      // no-op
+    }
     releases = await fs.readFile(fullReleasesFile, 'utf8');
   });
 

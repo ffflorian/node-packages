@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
+import {program as commander} from 'commander';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {program as commander} from 'commander';
 
 import {IconGenerator} from './index.js';
 
