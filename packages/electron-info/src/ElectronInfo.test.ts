@@ -43,7 +43,7 @@ describe('ElectronInfo', () => {
     try {
       await fs.mkdir(tempDir);
     } catch {
-      // directory exists
+      // directory already exists
     }
     releases = await fs.readFile(fullReleasesFile, 'utf8');
   });

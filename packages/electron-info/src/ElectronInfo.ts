@@ -7,6 +7,8 @@ import type {Options, RawDeps, RawReleaseInfo} from './interfaces.js';
 
 import {FileService} from './FileService.js';
 
+const TWO_SECONDS_IN_MILLIS = 2000;
+
 const defaultOptions: Required<Options> = {
   debug: false,
   electronPrereleases: true,
@@ -15,7 +17,7 @@ const defaultOptions: Required<Options> = {
   limit: 0,
   releasesUrl: 'https://releases.electronjs.org/releases.json',
   tempDirectory: '',
-  timeout: 2000,
+  timeout: TWO_SECONDS_IN_MILLIS,
 };
 
 export const SupportedDependencies: RawDeps = {
