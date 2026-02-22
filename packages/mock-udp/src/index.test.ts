@@ -38,7 +38,7 @@ describe('mock-udp.clean', () => {
     const client = dgram.createSocket('udp4');
     range.forEach(index => {
       // eslint-disable-next-line no-magic-numbers
-      expect(client.send(buffer, 0, buffer.length, 1000 + index, 'localhost')).toThrowError();
+      expect(() => client.send(buffer, 0, buffer.length, 1000 + index, 'localhost')).toThrowError();
     });
   });
 });
@@ -120,7 +120,7 @@ describe('mock-udp.overriddenSocketSend', () => {
       client.send(buffer, 0, buffer.length, 1000, 'localhost', () => {
         scope.done();
         // eslint-disable-next-line no-magic-numbers
-        expect(client.send(buffer, 0, buffer.length, 1000, 'localhost')).toThrowError();
+        expect(() => client.send(buffer, 0, buffer.length, 1000, 'localhost')).toThrowError();
         done(void 0);
       });
     });
@@ -131,7 +131,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     const client = dgram.createSocket('udp4');
 
     // eslint-disable-next-line no-magic-numbers
-    expect(client.send(buffer, buffer.length, buffer.length, 1000, 'localhost')).toThrowError();
+    expect(() => client.send(buffer, buffer.length, buffer.length, 1000, 'localhost')).toThrowError();
     expect(scope.done()).toBe(false);
   });
 
@@ -140,7 +140,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     const client = dgram.createSocket('udp4');
 
     // eslint-disable-next-line no-magic-numbers
-    expect(client.send(buffer, buffer.length + 1, buffer.length, 1000, 'localhost')).toThrowError();
+    expect(() => client.send(buffer, buffer.length + 1, buffer.length, 1000, 'localhost')).toThrowError();
     expect(scope.done()).toBe(false);
   });
 
@@ -149,7 +149,7 @@ describe('mock-udp.overriddenSocketSend', () => {
     const client = dgram.createSocket('udp4');
 
     // eslint-disable-next-line no-magic-numbers
-    expect(client.send(buffer, 0, buffer.length + 1, 1000, 'localhost')).toThrowError();
+    expect(() => client.send(buffer, 0, buffer.length + 1, 1000, 'localhost')).toThrowError();
     expect(scope.done()).toBe(false);
   });
 });

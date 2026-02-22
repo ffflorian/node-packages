@@ -35,21 +35,25 @@ describe('ListElement', () => {
 
   test(`doesn't connect an invalid next element`, () => {
     const element1 = new ListElement('one');
-    expect(element1.setNext('error' as any)).toThrowError('Invalid next element.');
+    // @ts-expect-error test invalid value
+    expect(() => element1.setNext('error')).toThrowError('Invalid next element.');
   });
 
   test(`doesn't connect an invalid previous element`, () => {
     const element1 = new ListElement('one');
-    expect(element1.setPrev('error' as any)).toThrowError('Invalid previous element.');
+    // @ts-expect-error test invalid value
+    expect(() => element1.setPrev('error')).toThrowError('Invalid previous element.');
   });
 
   test(`doesn't accept an invalid value`, () => {
-    expect(new (ListElement as any)()).toThrowError('Invalid value.');
-    expect(new ListElement(null)).toThrowError('Invalid value.');
+    // @ts-expect-error test invalid value
+    expect(() => new ListElement()).toThrowError('Invalid value.');
+    expect(() => new ListElement(null)).toThrowError('Invalid value.');
 
     const element1 = new ListElement('');
-    expect(element1.setValue(undefined as any)).toThrowError('Invalid value.');
-    expect(element1.setValue(null)).toThrowError('Invalid value.');
+    // @ts-expect-error test invalid value
+    expect(() => element1.setValue(undefined)).toThrowError('Invalid value.');
+    expect(() => element1.setValue(null)).toThrowError('Invalid value.');
   });
 });
 
@@ -98,13 +102,13 @@ describe('LinkedList', () => {
   });
 
   test(`doesn't go outside the list's bounds`, () => {
-    expect(list.get(0)).toThrowError('Index 0 is out of bounds.');
+    expect(() => list.get(0)).toThrowError('Index 0 is out of bounds.');
 
     list.add('zero');
 
-    expect(list.get(2)).toThrowError('Index 2 is out of bounds.');
+    expect(() => list.get(2)).toThrowError('Index 2 is out of bounds.');
 
-    expect(list.remove(2)).toThrowError('Index 2 is out of bounds.');
+    expect(() => list.remove(2)).toThrowError('Index 2 is out of bounds.');
   });
 
   test(`gets the list's head and tail`, () => {

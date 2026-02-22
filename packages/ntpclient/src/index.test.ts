@@ -58,6 +58,6 @@ describe.skip('NTP', () => {
       replyTimeout: SECOND_IN_MILLIS,
       server: 'google.com',
     });
-    await expect(ntpClient.getNetworkTime()).rejects.toThrowError();
+    await expect(ntpClient.getNetworkTime()).rejects.toThrowError(/Timeout/);
   });
 });
