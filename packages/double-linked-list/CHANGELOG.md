@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.14.2 (2026-02-22)
+
+
+### Bug Fixes
+
+* **electron-info:** New Electron Releases URL ([#1084](https://github.com/ffflorian/node-packages/issues/1084)) ([efb96cd](https://github.com/ffflorian/node-packages/commit/efb96cdc47b8e04f7d62f9e9d8abfb46494ab98d))
+
+
+
+
+
 ## 3.14.1 (2026-01-22)
 
 
