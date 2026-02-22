@@ -35,56 +35,21 @@ describe('ListElement', () => {
 
   test(`doesn't connect an invalid next element`, () => {
     const element1 = new ListElement('one');
-
-    try {
-      element1.setNext('error' as any);
-      assert.fail();
-    } catch (error) {
-      expect((error as Error).message).toBe('Invalid next element.');
-    }
+    expect(element1.setNext('error' as any)).toThrowError('Invalid next element.');
   });
 
   test(`doesn't connect an invalid previous element`, () => {
     const element1 = new ListElement('one');
-
-    try {
-      element1.setPrev('error' as any);
-      assert.fail();
-    } catch (error) {
-      expect((error as Error).message).toBe('Invalid previous element.');
-    }
+    expect(element1.setPrev('error' as any)).toThrowError('Invalid previous element.');
   });
 
   test(`doesn't accept an invalid value`, () => {
-    try {
-      new (ListElement as any)();
-      assert.fail();
-    } catch (error) {
-      expect((error as Error).message).toBe('Invalid value.');
-    }
-
-    try {
-      new ListElement(null);
-      assert.fail();
-    } catch (error) {
-      expect((error as Error).message).toBe('Invalid value.');
-    }
+    expect(new (ListElement as any)()).toThrowError('Invalid value.');
+    expect(new ListElement(null)).toThrowError('Invalid value.');
 
     const element1 = new ListElement('');
-
-    try {
-      element1.setValue(undefined as any);
-      assert.fail();
-    } catch (error) {
-      expect((error as Error).message).toBe('Invalid value.');
-    }
-
-    try {
-      element1.setValue(null);
-      assert.fail();
-    } catch (error) {
-      expect((error as Error).message).toBe('Invalid value.');
-    }
+    expect(element1.setValue(undefined as any)).toThrowError('Invalid value.');
+    expect(element1.setValue(null)).toThrowError('Invalid value.');
   });
 });
 
@@ -133,28 +98,13 @@ describe('LinkedList', () => {
   });
 
   test(`doesn't go outside the list's bounds`, () => {
-    try {
-      list.get(0);
-      assert.fail();
-    } catch (error) {
-      expect((error as Error).message).toBe('Index 0 is out of bounds.');
-    }
+    expect(list.get(0)).toThrowError('Index 0 is out of bounds.');
 
     list.add('zero');
 
-    try {
-      list.get(2);
-      assert.fail();
-    } catch (error) {
-      expect((error as Error).message).toBe('Index 2 is out of bounds.');
-    }
+    expect(list.get(2)).toThrowError('Index 2 is out of bounds.');
 
-    try {
-      list.remove(2);
-      assert.fail();
-    } catch (error) {
-      expect((error as Error).message).toBe('Index 2 is out of bounds.');
-    }
+    expect(list.remove(2)).toThrowError('Index 2 is out of bounds.');
   });
 
   test(`gets the list's head and tail`, () => {

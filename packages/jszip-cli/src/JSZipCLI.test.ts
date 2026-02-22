@@ -38,7 +38,7 @@ describe('JSZipCLI', () => {
     try {
       await fs.mkdir(tempDir);
     } catch {
-      // no-op
+      // directory already exists
     }
   });
   afterAll(() => fs.rm(tempDir, {force: true, recursive: true}));
