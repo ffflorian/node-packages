@@ -43,7 +43,7 @@ describe('ElectronInfo', () => {
     try {
       await fs.mkdir(tempDir);
     } catch {
-      // no-op
+      // directory exists
     }
     releases = await fs.readFile(fullReleasesFile, 'utf8');
   });
@@ -118,20 +118,21 @@ describe('ElectronInfo', () => {
       const result = await new ElectronInfo({
         releasesUrl: mockUrl,
         tempDirectory: tempDir,
-      }).getDependencyReleases('chrome', '71.0.3578.98');
+      }).getDependencyReleases('chrome', '146.0.7666.0');
 
-      expect(result.length).toBe(2);
-      expect(result[0].chrome).toBe('71.0.3578.98');
+      // eslint-disable-next-line no-magic-numbers
+      expect(result.length).toBe(3);
+      expect(result[0].chrome).toBe('146.0.7666.0');
     });
 
     test('parses Chrome SemVer', async () => {
       const result = await new ElectronInfo({
         releasesUrl: mockUrl,
         tempDirectory: tempDir,
-      }).getDependencyReleases('chrome', '~66');
+      }).getDependencyReleases('chrome', '~146');
 
       // eslint-disable-next-line no-magic-numbers
-      expect(result.length).toBe(56);
+      expect(result.length).toBe(21);
     });
 
     test('returns nothing for invalid versions', async () => {
@@ -174,7 +175,7 @@ describe('ElectronInfo', () => {
       }).getElectronReleases('all');
 
       expect(result.length).toBe(1);
-      expect(result[0].version).toBe('8.0.0-nightly.20190820');
+      expect(result[0].version).toBe('42.0.0-nightly.20260220');
     });
   });
 });
