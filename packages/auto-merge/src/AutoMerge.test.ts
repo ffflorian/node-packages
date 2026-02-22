@@ -53,7 +53,12 @@ describe('AutoMerge', () => {
       });
 
       nock(autoMerge['baseURL']!)
-        .post(/^\/repos\/.+?\/.+?\/pulls\/\d+(\/(reviews|merge))?\/?$/)
+        .post(/^\/repos\/.+?\/.+?\/pulls\/\d+(\/reviews)?\/?$/)
+        .reply(HTTP_STATUS.OK, {data: 'not-used'})
+        .persist();
+
+      nock(autoMerge['baseURL']!)
+        .put(/^\/repos\/.+?\/.+?\/pulls\/\d+(\/merge)?\/?$/)
         .reply(HTTP_STATUS.OK, {data: 'not-used'})
         .persist();
 
