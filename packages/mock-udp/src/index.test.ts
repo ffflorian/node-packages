@@ -37,13 +37,8 @@ describe('mock-udp.clean', () => {
     mockudp.clean();
     const client = dgram.createSocket('udp4');
     range.forEach(index => {
-      try {
-        // eslint-disable-next-line no-magic-numbers
-        client.send(buffer, 0, buffer.length, 1000 + index, 'localhost');
-        assert.fail();
-      } catch {
-        // no-op
-      }
+      // eslint-disable-next-line no-magic-numbers
+      expect(() => client.send(buffer, 0, buffer.length, 1000 + index, 'localhost')).toThrowError();
     });
   });
 });
@@ -106,6 +101,7 @@ describe('mock-udp.overriddenSocketSend', () => {
       const scope1 = mockudp.add('localhost:1000');
       const scope2 = mockudp.add('localhost:1000');
       const client = dgram.createSocket('udp4');
+
       // eslint-disable-next-line no-magic-numbers
       client.send(buffer, 0, buffer.length, 1000, 'localhost', () => {
         scope1.done();
@@ -119,16 +115,13 @@ describe('mock-udp.overriddenSocketSend', () => {
     return new Promise(done => {
       const scope = mockudp.add('localhost:1000');
       const client = dgram.createSocket('udp4');
+
       // eslint-disable-next-line no-magic-numbers
       client.send(buffer, 0, buffer.length, 1000, 'localhost', () => {
         scope.done();
-        try {
-          // eslint-disable-next-line no-magic-numbers
-          client.send(buffer, 0, buffer.length, 1000, 'localhost');
-          assert.fail();
-        } catch {
-          done(void 0);
-        }
+        // eslint-disable-next-line no-magic-numbers
+        expect(() => client.send(buffer, 0, buffer.length, 1000, 'localhost')).toThrowError();
+        done(void 0);
       });
     });
   });
@@ -136,39 +129,27 @@ describe('mock-udp.overriddenSocketSend', () => {
   test('should throw an error if offset is equal to the length of the buffer', () => {
     const scope = mockudp.add('localhost:1000');
     const client = dgram.createSocket('udp4');
-    try {
-      // eslint-disable-next-line no-magic-numbers
-      client.send(buffer, buffer.length, buffer.length, 1000, 'localhost');
-      assert.fail();
-    } catch {
-      // no-op
-    }
+
+    // eslint-disable-next-line no-magic-numbers
+    expect(() => client.send(buffer, buffer.length, buffer.length, 1000, 'localhost')).toThrowError();
     expect(scope.done()).toBe(false);
   });
 
   test('should throw an error if offset is greater than the length of the buffer', () => {
     const scope = mockudp.add('localhost:1000');
     const client = dgram.createSocket('udp4');
-    try {
-      // eslint-disable-next-line no-magic-numbers
-      client.send(buffer, buffer.length + 1, buffer.length, 1000, 'localhost');
-      assert.fail();
-    } catch {
-      // no-op
-    }
+
+    // eslint-disable-next-line no-magic-numbers
+    expect(() => client.send(buffer, buffer.length + 1, buffer.length, 1000, 'localhost')).toThrowError();
     expect(scope.done()).toBe(false);
   });
 
   test('should throw an error if the length is greater than the length of the buffer', () => {
     const scope = mockudp.add('localhost:1000');
     const client = dgram.createSocket('udp4');
-    try {
-      // eslint-disable-next-line no-magic-numbers
-      client.send(buffer, 0, buffer.length + 1, 1000, 'localhost');
-      assert.fail();
-    } catch {
-      // no-op
-    }
+
+    // eslint-disable-next-line no-magic-numbers
+    expect(() => client.send(buffer, 0, buffer.length + 1, 1000, 'localhost')).toThrowError();
     expect(scope.done()).toBe(false);
   });
 });

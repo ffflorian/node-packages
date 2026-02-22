@@ -19,11 +19,6 @@ describe('ScrabbleCheater', () => {
 
   test(`Doesn't accept an empty file`, async () => {
     const sc = new ScrabbleCheater(emptyList);
-    try {
-      await sc.start();
-      assert.fail();
-    } catch {
-      // nothing to do
-    }
+    await expect(sc.start()).rejects.toThrowError();
   });
 });

@@ -54,15 +54,10 @@ describe.skip('NTP', () => {
   );
 
   it("doesn't work with an invalid NTP server", async () => {
-    try {
-      const ntpClient = new NTPClient({
-        replyTimeout: SECOND_IN_MILLIS,
-        server: 'google.com',
-      });
-      await ntpClient.getNetworkTime();
-      assert.fail();
-    } catch (error) {
-      expect((error as Error).message).toContain('Timeout');
-    }
+    const ntpClient = new NTPClient({
+      replyTimeout: SECOND_IN_MILLIS,
+      server: 'google.com',
+    });
+    await expect(ntpClient.getNetworkTime()).rejects.toThrowError(/Timeout/);
   });
 });
