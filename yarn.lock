@@ -9250,7 +9250,7 @@ __metadata:
   dependencies:
     commander: "npm:14.0.3"
     nock: "npm:14.0.10"
-    ntpclient: "npm:1.15.2"
+    ntpclient: "npm:1.15.3"
     rimraf: "npm:6.1.2"
     tsx: "npm:4.21.0"
     typescript: "npm:5.9.3"
@@ -9614,7 +9614,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ntpclient@npm:1.15.2, ntpclient@workspace:packages/ntpclient":
+"ntpclient@npm:1.15.3, ntpclient@workspace:packages/ntpclient":
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
