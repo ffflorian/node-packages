@@ -1,6 +1,6 @@
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
-import {afterEach, assert, beforeEach, describe, test} from 'vitest';
+import {afterEach, beforeEach, describe, expect, test} from 'vitest';
 
 import {HTTPService} from './HTTPService.js';
 
@@ -17,7 +17,7 @@ describe('HTTPService', () => {
   beforeEach(() => {
     nock(mockUrl)
       .get('/')
-      .delayConnection(FIVE_SECONDS_IN_MILLIS)
+      .delay(FIVE_SECONDS_IN_MILLIS)
       .reply(HTTP_STATUS.OK, [{data: 'invalid'}]);
   });
 
@@ -25,12 +25,7 @@ describe('HTTPService', () => {
 
   describe('downloadReleasesFile', () => {
     test('honors a custom timeout', async () => {
-      try {
-        await httpService.downloadReleasesFile(mockUrl, '');
-        assert.fail('Should throw on timeout');
-      } catch {
-        // no-op
-      }
+      await expect(httpService.downloadReleasesFile(mockUrl, '')).rejects.toThrowError();
     });
   });
 });
