@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "Send notifications over ntfy.sh.",
   "devDependencies": {
-    "rimraf": "6.1.2",
+    "rimraf": "6.1.3",
     "typescript": "5.9.3"
   },
   "engines": {
