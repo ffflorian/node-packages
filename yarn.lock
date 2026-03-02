@@ -4609,16 +4609,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clipboardy@npm:5.1.0":
-  version: 5.1.0
-  resolution: "clipboardy@npm:5.1.0"
+"clipboard-image@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "clipboard-image@npm:0.1.0"
   dependencies:
+    run-jxa: "npm:^3.0.0"
+  bin:
+    clipboard-image: cli.js
+  checksum: 10c0/d2cacc3471721e5d17c4c461621f09e73b1267e6c53e4d8e449e328f9da367b2629137f3ee2e5a819ec534557da4fa1ed3a7e254891f0345e685f00c603fa230
+  languageName: node
+  linkType: hard
+
+"clipboardy@npm:5.3.1":
+  version: 5.3.1
+  resolution: "clipboardy@npm:5.3.1"
+  dependencies:
+    clipboard-image: "npm:^0.1.0"
     execa: "npm:^9.6.1"
     is-wayland: "npm:^0.1.0"
     is-wsl: "npm:^3.1.0"
     is64bit: "npm:^2.0.0"
     powershell-utils: "npm:^0.2.0"
-  checksum: 10c0/648e1dce279d429a8777a7b81db25c3dfd582d26436d2700312382c3d8b84f3c1f022384afa6ca9c3e21906eead8e1cdf16c0bae0418fc40c52dbee233fd784c
+  checksum: 10c0/3ca79dd0c972ac430e65480965e89ab325889db2bb43e75703a218d80e881c22f13cc59b9425c36d66c260f2d9387a6f42563f25f3453506f075a0273762c180
   languageName: node
   linkType: hard
 
@@ -4986,6 +4998,15 @@ __metadata:
     shebang-command: "npm:^2.0.0"
     which: "npm:^2.0.1"
   checksum: 10c0/053ea8b2135caff68a9e81470e845613e374e7309a47731e81639de3eaeb90c3d01af0e0b44d2ab9d50b43467223b88567dfeb3262db942dc063b9976718ffc1
+  languageName: node
+  linkType: hard
+
+"crypto-random-string@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "crypto-random-string@npm:4.0.0"
+  dependencies:
+    type-fest: "npm:^1.0.1"
+  checksum: 10c0/16e11a3c8140398f5408b7fded35a961b9423c5dac39a60cbbd08bd3f0e07d7de130e87262adea7db03ec1a7a4b7551054e0db07ee5408b012bac5400cfc07a5
   languageName: node
   linkType: hard
 
@@ -6041,6 +6062,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"escape-string-regexp@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "escape-string-regexp@npm:5.0.0"
+  checksum: 10c0/6366f474c6f37a802800a435232395e04e9885919873e382b157ab7e8f0feb8fed71497f84a6f6a81a49aab41815522f5839112bd38026d203aea0c91622df95
+  languageName: node
+  linkType: hard
+
 "escodegen@npm:^1.13.0":
   version: 1.14.3
   resolution: "escodegen@npm:1.14.3"
@@ -6376,6 +6404,23 @@ __metadata:
     signal-exit: "npm:^3.0.3"
     strip-final-newline: "npm:^2.0.0"
   checksum: 10c0/e110add7ca0de63aea415385ebad7236c8de281d5d9a916dbd69f59009dac3d5d631e6252c2ea5d0258220b0d22acf25649b2caf05fa162eaa1401339fc69ba4
+  languageName: node
+  linkType: hard
+
+"execa@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "execa@npm:5.1.1"
+  dependencies:
+    cross-spawn: "npm:^7.0.3"
+    get-stream: "npm:^6.0.0"
+    human-signals: "npm:^2.1.0"
+    is-stream: "npm:^2.0.0"
+    merge-stream: "npm:^2.0.0"
+    npm-run-path: "npm:^4.0.1"
+    onetime: "npm:^5.1.2"
+    signal-exit: "npm:^3.0.3"
+    strip-final-newline: "npm:^2.0.0"
+  checksum: 10c0/c8e615235e8de4c5addf2fa4c3da3e3aa59ce975a3e83533b4f6a71750fb816a2e79610dc5f1799b6e28976c9ae86747a36a606655bf8cb414a74d8d507b304f
   languageName: node
   linkType: hard
 
@@ -8900,6 +8945,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"macos-version@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "macos-version@npm:6.0.0"
+  dependencies:
+    semver: "npm:^7.3.5"
+  checksum: 10c0/7c60c22d26c5eb3451d404b35fc404dc018e6491b0cc9730db76be16d1c570373260dcc8560ff2a78112314d569e4801e3e0b577c89f7309fd9887060d4ad1fe
+  languageName: node
+  linkType: hard
+
 "magic-string@npm:^0.30.21":
   version: 0.30.21
   resolution: "magic-string@npm:0.30.21"
@@ -11380,6 +11434,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"run-jxa@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "run-jxa@npm:3.0.0"
+  dependencies:
+    execa: "npm:^5.1.1"
+    macos-version: "npm:^6.0.0"
+    subsume: "npm:^4.0.0"
+    type-fest: "npm:^2.0.0"
+  checksum: 10c0/f9edf02b9370c1a081ba97b8afe0fd63b871eb523c2e3b97d817b1baba34c36ce75a4c68dc24d241557d77331d10354a2cf66e258ef0638fef8a4d040929e120
+  languageName: node
+  linkType: hard
+
 "rxjs@npm:^7.8.2":
   version: 7.8.2
   resolution: "rxjs@npm:7.8.2"
@@ -11501,7 +11567,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "scrabble-cheater@workspace:packages/scrabble-cheater"
   dependencies:
-    clipboardy: "npm:5.1.0"
+    clipboardy: "npm:5.3.1"
     commander: "npm:14.0.3"
     rimraf: "npm:6.1.3"
     tsx: "npm:4.21.0"
@@ -12245,6 +12311,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"subsume@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "subsume@npm:4.0.0"
+  dependencies:
+    escape-string-regexp: "npm:^5.0.0"
+    unique-string: "npm:^3.0.0"
+  checksum: 10c0/f77349c6e1216ebd9142d6b2c2a3c4f9bb09c374f95893b5deb3f009381f58d8c71b61bcf9d5a37e732759785c690db86a1e13499daa3fb378a6adb0a2bfafd0
+  languageName: node
+  linkType: hard
+
 "supports-color@npm:^5.3.0":
   version: 5.5.0
   resolution: "supports-color@npm:5.5.0"
@@ -12590,6 +12666,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"type-fest@npm:^1.0.1":
+  version: 1.4.0
+  resolution: "type-fest@npm:1.4.0"
+  checksum: 10c0/a3c0f4ee28ff6ddf800d769eafafcdeab32efa38763c1a1b8daeae681920f6e345d7920bf277245235561d8117dab765cb5f829c76b713b4c9de0998a5397141
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^2.0.0":
+  version: 2.19.0
+  resolution: "type-fest@npm:2.19.0"
+  checksum: 10c0/a5a7ecf2e654251613218c215c7493574594951c08e52ab9881c9df6a6da0aeca7528c213c622bc374b4e0cb5c443aa3ab758da4e3c959783ce884c3194e12cb
+  languageName: node
+  linkType: hard
+
 "typed-array-buffer@npm:^1.0.0":
   version: 1.0.0
   resolution: "typed-array-buffer@npm:1.0.0"
@@ -12895,6 +12985,15 @@ __metadata:
   dependencies:
     imurmurhash: "npm:^0.1.4"
   checksum: 10c0/d324c5a44887bd7e105ce800fcf7533d43f29c48757ac410afd42975de82cc38ea2035c0483f4de82d186691bf3208ef35c644f73aa2b1b20b8e651be5afd293
+  languageName: node
+  linkType: hard
+
+"unique-string@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "unique-string@npm:3.0.0"
+  dependencies:
+    crypto-random-string: "npm:^4.0.0"
+  checksum: 10c0/b35ea034b161b2a573666ec16c93076b4b6106b8b16c2415808d747ab3a0566b5db0c4be231d4b11cfbc16d7fd915c9d8a45884bff0e2db11b799775b2e1e017
   languageName: node
   linkType: hard
 
