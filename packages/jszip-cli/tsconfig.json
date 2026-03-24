@@ -3,7 +3,7 @@
     "esModuleInterop": true,
     "outDir": "dist",
     "rootDir": "src",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "nodenext",
     "module": "NodeNext"
   },
   "exclude": ["dist", "node_modules"],
