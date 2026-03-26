@@ -114,7 +114,7 @@ export class MyTimezone {
       }
       results = (await response.json()) as OSMResult[];
     } catch (error) {
-      throw new Error(`Nominatim API Error: ${(error as Error).message}`);
+      throw new Error(`Nominatim API Error: ${(error as Error).message}`, {cause: error});
     }
 
     if (!results.length) {

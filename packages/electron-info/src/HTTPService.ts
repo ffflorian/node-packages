@@ -23,6 +23,7 @@ export class HTTPService {
   public async downloadReleasesFile(downloadUrl: string, targetFile: string): Promise<RawReleaseInfo[]> {
     this.logger.log('Downloading releases file:', {downloadUrl, targetFile});
 
+    // eslint-disable-next-line no-useless-assignment
     let releases = [];
 
     try {
@@ -32,7 +33,7 @@ export class HTTPService {
       }
       releases = (await response.json()) as RawReleaseInfo[];
     } catch (error) {
-      throw new Error(`Request failed: "${(error as Error).message}"`);
+      throw new Error(`Request failed: "${(error as Error).message}"`, {cause: error});
     }
 
     // eslint-disable-next-line no-magic-numbers
