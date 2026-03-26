@@ -12,18 +12,27 @@ import type {AutoMergeConfig, Repository, RepositoryResult} from './types/index.
 import {AutoMerge} from './AutoMerge.js';
 import {pluralize} from './util.js';
 
-const input = readline.createInterface(process.stdin, process.stdout);
-const logger = logdown('auto-merge', {
-  logger: console,
-  markdown: false,
-});
-logger.state.isEnabled = true;
+interface CLIConfig {
+  approve?: boolean;
+  config?: string;
+  dryRun?: boolean;
+  mergeDrafts?: boolean;
+  squash?: boolean;
+  token?: string;
+}
 
 interface PackageJson {
   description: string;
   name: string;
   version: string;
 }
+
+const input = readline.createInterface(process.stdin, process.stdout);
+const logger = logdown('auto-merge', {
+  logger: console,
+  markdown: false,
+});
+logger.state.isEnabled = true;
 
 const __dirname = import.meta.dirname;
 const packageJsonPath = path.join(__dirname, '../package.json');
@@ -38,10 +47,11 @@ commander
   .option('-d, --dry-run', `don't send any data`)
   .option('-f, --merge-drafts', 'merge draft PRs', false)
   .option('-s, --squash', 'squash when merging', false)
+  .option('-t, --token <token>', 'GitHub auth token (needs read and write access to repository and pull requests)')
   .version(version)
   .parse(process.argv);
 
-const commanderOptions = commander.opts();
+const commanderOptions = commander.opts() as CLIConfig;
 const configExplorer = cosmiconfig('automerge');
 const configResult = commanderOptions.config
   ? await configExplorer.load(commanderOptions.config)
@@ -54,6 +64,7 @@ if (!configResult || configResult.isEmpty) {
 
 const configFileData: AutoMergeConfig = {
   ...configResult.config,
+  ...(commanderOptions.token && {authToken: commanderOptions.token}),
   ...(commanderOptions.approve && {autoApprove: commanderOptions.approve}),
   ...(commanderOptions.dryRun && {dryRun: commanderOptions.dryRun}),
 };

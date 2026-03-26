@@ -137,11 +137,11 @@ export class AutoMerge {
 
   private checkConfig(config: AutoMergeConfig): void {
     if (!config.projects?.gitHub || config.projects.gitHub.length < 1) {
-      throw new Error('No projects in config file specified');
+      throw new Error('No projects specified');
     }
 
     if (!config.authToken) {
-      throw new Error('No authentication token in config file specified');
+      throw new Error('No authentication token specified');
     }
   }
 
