@@ -3,7 +3,7 @@
   "description": "A TypeScript QuickSort implementation",
   "devDependencies": {
     "typescript": "6.0.2",
-    "vitest": "4.0.18"
+    "vitest": "4.1.0"
   },
   "files": [
     "dist"
