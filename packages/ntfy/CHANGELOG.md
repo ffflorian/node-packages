@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.14.4 (2026-03-26)
+
+
+### Bug Fixes
+
+* **deps:** bump picomatch from 4.0.2 to 4.0.4 ([#1134](https://github.com/ffflorian/node-packages/issues/1134)) ([ab2bdd3](https://github.com/ffflorian/node-packages/commit/ab2bdd3194d309db4006ec7bb727c8c665ded216))
+
+
+
+
+
 ## 1.14.3 (2026-02-22)
 
 **Note:** Version bump only for package ntfy
