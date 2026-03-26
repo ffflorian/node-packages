@@ -1,6 +1,6 @@
 export interface AutoMergeConfig {
-  /** The GitHub auth token (needs read and write access to code and pull requests) */
-  authToken: string;
+  /** The GitHub auth token (needs read and write access to repository and pull requests) */
+  authToken?: string;
   /** Approve before merging */
   autoApprove?: boolean;
   /** Don't send any data */
