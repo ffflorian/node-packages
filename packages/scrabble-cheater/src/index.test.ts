@@ -1,5 +1,5 @@
 import path from 'node:path';
-import {assert, describe, expect, test} from 'vitest';
+import {describe, expect, test} from 'vitest';
 
 import {ScrabbleCheater} from './index.js';
 

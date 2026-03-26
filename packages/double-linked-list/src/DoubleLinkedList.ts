@@ -329,6 +329,7 @@ export class LinkedList {
     }
 
     // Set the old element to null so the garbage collector can remove it.
+    // eslint-disable-next-line no-useless-assignment
     element = null as any;
     this.size--;
   }

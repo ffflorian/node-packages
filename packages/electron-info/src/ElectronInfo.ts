@@ -168,8 +168,6 @@ export class ElectronInfo {
       });
     };
 
-    let dependencyVersions: string[] = [];
-
     if (!this.options.electronPrereleases) {
       const tempReleaseNumber = releases.length;
       releases = releases.filter(release => semver.prerelease(release.version) === null);
@@ -179,7 +177,7 @@ export class ElectronInfo {
       });
     }
 
-    dependencyVersions = releases
+    const dependencyVersions = releases
       .filter(release => {
         if (key !== 'electron' && !release[key]) {
           return false;

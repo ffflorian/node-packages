@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 
 import * as dgram from 'node:dgram';
-import {afterEach, assert, beforeEach, describe, expect, it, vi} from 'vitest';
+import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
 
 import {NTPClient} from './index.js';
 
