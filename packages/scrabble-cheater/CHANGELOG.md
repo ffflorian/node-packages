@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.16.0 (2026-03-26)
+
+
+### Features
+
+* **auto-merge:** Add GitHub token as input option ([#1136](https://github.com/ffflorian/node-packages/issues/1136)) ([c1bf0c0](https://github.com/ffflorian/node-packages/commit/c1bf0c003bc8bafee04c7790123707ff6409a0ca))
+
+
+
+
+
 ## 3.15.5 (2026-03-26)
 
 **Note:** Version bump only for package scrabble-cheater
