@@ -7,6 +7,6 @@
     "rootDir": "src",
     "target": "ES2018"
   },
-  "exclude": ["dist", "node_modules"],
+  "exclude": ["dist", "node_modules", "vitest.config.ts"],
   "extends": "../../tsconfig.json"
 }
