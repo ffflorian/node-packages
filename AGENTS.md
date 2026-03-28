@@ -71,7 +71,8 @@ Each package supports `build`, `clean`, and `test` scripts run via `yarn workspa
 - **Formatting**: Prettier with `@ffflorian/prettier-config`
 - **Git hooks**: Lefthook (`lefthook.yml`) — runs prettier, oxlint, and eslint with auto-fix on staged files before commit
 - **Versioning**: Independent versioning via conventional commits
-- **Publishing**: `multi-semantic-release` (`@qiwi/multi-semantic-release`) publishes to npm; only packages whose files changed are released. Only allowed from `main` branch.
+- **Publishing**: `multi-semantic-release` (dhoulb) publishes to npm; only packages whose files changed are released. Private packages are excluded via `--ignore-private-packages`. Only allowed from `main` branch.
+- **Cross-repo deps**: When a package in this repo depends on another package in this repo, use `*` as the version — multi-semantic-release replaces it with the correct version at publish time.
 - **Release config**: Root `.releaserc.json` extends `@ffflorian/semantic-release-config`
 
 ## Dependencies
