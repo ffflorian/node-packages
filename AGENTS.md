@@ -103,6 +103,8 @@ docs/<short-description>
 refactor/<short-description>
 ```
 
+Do **not** include references to Claude, AI agents, or tool-generated identifiers in branch names. Use only the semantic prefix and a short human-readable description of the change.
+
 ## CI/CD
 
 GitHub Actions workflow (`.github/workflows/build_test_publish.yml`):
