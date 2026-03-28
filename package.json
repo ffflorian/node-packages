@@ -35,8 +35,8 @@
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
-    "build:ts": "yarn workspaces foreach -pt run build",
-    "clean": "yarn workspaces foreach -p run clean",
+    "build:ts": "yarn workspaces foreach -Apt run build",
+    "clean": "yarn workspaces foreach -Ap run clean",
     "dist": "yarn clean && yarn build:ts",
     "fix": "yarn fix:ts && yarn fix:other",
     "fix:other": "yarn prettier --write",
@@ -49,7 +49,7 @@
     "prettier": "prettier .",
     "release": "multi-semantic-release",
     "test": "yarn test:all",
-    "test:all": "yarn workspaces foreach -p run test"
+    "test:all": "yarn workspaces foreach -Ap run test"
   },
   "workspaces": [
     "packages/*"

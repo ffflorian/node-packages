@@ -131,7 +131,14 @@ GitHub Actions workflow (`.github/workflows/build_test_publish.yml`):
 
 ## Before Committing
 
-Always run `yarn fix` before committing to auto-fix linting and formatting errors:
+After implementing any change, always run build and tests to verify correctness:
+
+```sh
+yarn build:ts
+yarn test
+```
+
+Then run `yarn fix` to auto-fix linting and formatting errors before committing:
 
 ```sh
 yarn fix
