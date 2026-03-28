@@ -1,3 +1,10 @@
+## my-timezone [1.15.2](https://github.com/ffflorian/node-packages/compare/my-timezone@1.15.1...my-timezone@1.15.2) (2026-03-28)
+
+
+### Bug Fixes
+
+* **my-timezone:** clarify solar time semantics and fix stale API names ([#1158](https://github.com/ffflorian/node-packages/issues/1158)) ([828c91b](https://github.com/ffflorian/node-packages/commit/828c91bb56d0aadfe39d98ff919368f6b140c056))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
