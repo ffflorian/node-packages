@@ -7,7 +7,6 @@
     "@ffflorian/eslint-config": "0.13.7",
     "@ffflorian/prettier-config": "0.6.7",
     "@ffflorian/semantic-release-config": "0.10.7",
-    "@qiwi/multi-semantic-release": "7.1.2",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@types/node": "~24",
@@ -24,7 +23,8 @@
     "typescript": "6.0.2",
     "typescript-eslint": "8.57.1",
     "vite": "8.0.1",
-    "vitest": "4.1.0"
+    "vitest": "4.1.0",
+    "zx-bulk-release": "2.15.39"
   },
   "engines": {
     "node": ">= 18.0"
@@ -47,7 +47,7 @@
     "lint:ts:eslint": "eslint packages/",
     "lint:ts:oxlint": "oxlint --ignore-path .gitignore packages/",
     "prettier": "prettier .",
-    "release": "multi-semantic-release",
+    "release": "zx-bulk-release",
     "test": "yarn test:all",
     "test:all": "yarn workspaces foreach -Ap --exclude node-packages run test"
   },
