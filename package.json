@@ -6,6 +6,10 @@
     "@evilmartians/lefthook": "2.1.4",
     "@ffflorian/eslint-config": "0.13.7",
     "@ffflorian/prettier-config": "0.6.7",
+    "@ffflorian/semantic-release-config": "0.10.7",
+    "@qiwi/multi-semantic-release": "7.1.2",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
     "@types/node": "~24",
     "eslint": "10.1.0",
     "eslint-import-resolver-typescript": "4.4.4",
@@ -16,11 +20,11 @@
     "jiti": "2.6.1",
     "oxlint": "1.56.0",
     "prettier": "3.8.1",
+    "semantic-release": "25.0.3",
     "typescript": "6.0.2",
     "typescript-eslint": "8.57.1",
     "vite": "8.0.1",
-    "vitest": "4.1.0",
-    "zx-bulk-release": "2.15.39"
+    "vitest": "4.1.0"
   },
   "engines": {
     "node": ">= 18.0"
@@ -43,7 +47,7 @@
     "lint:ts:eslint": "eslint packages/",
     "lint:ts:oxlint": "oxlint --ignore-path .gitignore packages/",
     "prettier": "prettier .",
-    "release": "zx-bulk-release",
+    "release": "multi-semantic-release",
     "test": "yarn test:all",
     "test:all": "yarn workspaces foreach -Ap --exclude node-packages run test"
   },
