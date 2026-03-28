@@ -4,11 +4,11 @@ This file contains knowledge and conventions for AI agents working in this repos
 
 ## Project Overview
 
-This is a Yarn workspaces monorepo managed by [Lerna](https://lerna.js.org/), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
+This is a yarn workspaces monorepo managed by [multi-semantic-release](https://github.com/qiwi/multi-semantic-release), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
 
 - **License**: GPL-3.0
 - **Node.js requirement**: >= 18.0 (CI uses Node.js 24.x)
-- **Package manager**: Yarn 4.12.0 (Berry)
+- **Package manager**: yarn 4.12.0 (Berry)
 
 ## Packages
 
@@ -60,18 +60,24 @@ yarn workspace @ffflorian/<package-name> add -D <dep>
 
 ### Per-package scripts
 
-Each package supports `build`, `clean`, and `test` scripts run via Lerna.
+Each package supports `build`, `clean`, and `test` scripts run via `yarn workspaces foreach`.
 
 ## Tooling
 
 - **Build**: TypeScript (`tsc`) via per-package `tsconfig.build.json`
-- **Bundler**: Vite (used in some packages)
-- **Testing**: Vitest
+- **Bundler**: vite (used in some packages)
+- **Testing**: vitest
 - **Linting**: oxlint + ESLint with `@ffflorian/eslint-config`, run in that order
-- **Formatting**: Prettier with `@ffflorian/prettier-config`
-- **Git hooks**: Lefthook (`lefthook.yml`) — runs prettier, oxlint, and eslint with auto-fix on staged files before commit
-- **Versioning**: Lerna independent versioning with conventional commits
-- **Publishing**: Lerna publishes to npm registry; only allowed from `main` branch
+- **Formatting**: prettier with `@ffflorian/prettier-config`
+- **Git hooks**: lefthook (`lefthook.yml`) — runs prettier, oxlint, and eslint with auto-fix on staged files before commit
+- **Versioning**: Independent versioning via conventional commits
+- **Publishing**: `multi-semantic-release` (dhoulb) publishes to npm; only packages whose files changed are released. Private packages are excluded via `--ignore-private-packages`. Only allowed from `main` branch.
+- **Cross-repo deps**: When a package in this repo depends on another package in this repo, use `*` as the version — multi-semantic-release replaces it with the correct version at publish time.
+- **Release config**: Root `.releaserc.json` extends `@ffflorian/semantic-release-config`
+
+## Dependencies
+
+**Always use pinned (exact) versions in `package.json`.** Do not use `^`, `~`, or other range specifiers for dependencies. This is enforced by `defaultSemverRangePrefix: ''` in `.yarnrc.yml`.
 
 ## Commit Messages
 
@@ -89,7 +95,8 @@ ci: CI/CD configuration changes
 ```
 
 - Do **not** include references to Claude or AI tools in commit messages or PR descriptions.
-- Lerna uses conventional commits to determine version bumps and generate changelogs.
+- `multi-semantic-release` uses conventional commits to determine version bumps and generate changelogs.
+- Only packages with commits touching their own directory are released — unrelated packages are never published.
 
 ## Branch Naming
 
@@ -111,7 +118,8 @@ GitHub Actions workflow (`.github/workflows/build_test_publish.yml`):
 
 1. Runs on pushes and PRs to `main`
 2. Steps: install (`yarn --immutable`), build, lint, test
-3. On push to `main` (non-`chore` commits): publishes changed packages to npm via `yarn release`
+3. On push to `main`: runs `yarn release` (`multi-semantic-release`) which publishes only changed packages to npm
+4. Requires `GITHUB_TOKEN` and OIDC for npm auth; checkout uses `fetch-depth: 0` for full git history
 
 ## Code Style
 
@@ -124,7 +132,14 @@ GitHub Actions workflow (`.github/workflows/build_test_publish.yml`):
 
 ## Before Committing
 
-Always run `yarn fix` before committing to auto-fix linting and formatting errors:
+After implementing any change, always run build and tests to verify correctness:
+
+```sh
+yarn build:ts
+yarn test
+```
+
+Then run `yarn fix` to auto-fix linting and formatting errors before committing:
 
 ```sh
 yarn fix

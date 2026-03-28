@@ -3,7 +3,7 @@
   "bin": "dist/cli.js",
   "dependencies": {
     "commander": "14.0.3",
-    "ntpclient": "1.16.1"
+    "ntpclient": "*"
   },
   "description": "Get the exact time based on your location.",
   "devDependencies": {
