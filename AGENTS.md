@@ -4,11 +4,11 @@ This file contains knowledge and conventions for AI agents working in this repos
 
 ## Project Overview
 
-This is a Yarn workspaces monorepo managed by [multi-semantic-release](https://github.com/qiwi/multi-semantic-release), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
+This is a yarn workspaces monorepo managed by [multi-semantic-release](https://github.com/qiwi/multi-semantic-release), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
 
 - **License**: GPL-3.0
 - **Node.js requirement**: >= 18.0 (CI uses Node.js 24.x)
-- **Package manager**: Yarn 4.12.0 (Berry)
+- **Package manager**: yarn 4.12.0 (Berry)
 
 ## Packages
 
@@ -65,11 +65,11 @@ Each package supports `build`, `clean`, and `test` scripts run via `yarn workspa
 ## Tooling
 
 - **Build**: TypeScript (`tsc`) via per-package `tsconfig.build.json`
-- **Bundler**: Vite (used in some packages)
-- **Testing**: Vitest
+- **Bundler**: vite (used in some packages)
+- **Testing**: vitest
 - **Linting**: oxlint + ESLint with `@ffflorian/eslint-config`, run in that order
-- **Formatting**: Prettier with `@ffflorian/prettier-config`
-- **Git hooks**: Lefthook (`lefthook.yml`) — runs prettier, oxlint, and eslint with auto-fix on staged files before commit
+- **Formatting**: prettier with `@ffflorian/prettier-config`
+- **Git hooks**: lefthook (`lefthook.yml`) — runs prettier, oxlint, and eslint with auto-fix on staged files before commit
 - **Versioning**: Independent versioning via conventional commits
 - **Publishing**: `multi-semantic-release` (dhoulb) publishes to npm; only packages whose files changed are released. Private packages are excluded via `--ignore-private-packages`. Only allowed from `main` branch.
 - **Cross-repo deps**: When a package in this repo depends on another package in this repo, use `*` as the version — multi-semantic-release replaces it with the correct version at publish time.
