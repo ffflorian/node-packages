@@ -72,7 +72,6 @@ Each package supports `build`, `clean`, and `test` scripts run via `yarn workspa
 - **Git hooks**: Lefthook (`lefthook.yml`) — runs prettier, oxlint, and eslint with auto-fix on staged files before commit
 - **Versioning**: Independent versioning via conventional commits
 - **Publishing**: `zx-bulk-release` publishes to npm; only packages whose files changed are released. Only allowed from `main` branch.
-- **Release config**: Root `.releaserc.json` extends `@ffflorian/semantic-release-config`
 
 ## Dependencies
 
