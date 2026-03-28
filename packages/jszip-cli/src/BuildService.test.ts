@@ -1,22 +1,20 @@
-import {beforeAll, beforeEach, describe, expect, test, vi} from 'vitest';
+import {beforeEach, describe, expect, test, vi} from 'vitest';
 
 import {BuildService} from './BuildService.js';
 import {JSZipCLI} from './index.js';
 
+vi.mock('fs', () => ({
+  promises: {
+    lstat: async () => ({isDirectory: () => false, isFile: () => true}),
+    readFile: async () => {},
+  },
+}));
+vi.mock('glob', () => ({
+  glob: async (params: string | string[]) => [params].flat(),
+}));
+
 describe('BuildService', () => {
   let jsZipCLI: JSZipCLI;
-
-  beforeAll(() => {
-    vi.mock('fs', () => ({
-      promises: {
-        lstat: async () => ({isDirectory: () => false, isFile: () => true}),
-        readFile: async () => {},
-      },
-    }));
-    vi.mock('glob', () => ({
-      glob: async (params: string | string[]) => [params].flat(),
-    }));
-  });
 
   const addDefaultSpies = (buildService: BuildService) => {
     vi.spyOn<any, any>(buildService, 'checkOutput').mockReturnValue(async () => {});
