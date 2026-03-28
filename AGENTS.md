@@ -4,7 +4,7 @@ This file contains knowledge and conventions for AI agents working in this repos
 
 ## Project Overview
 
-This is a Yarn workspaces monorepo managed by [Lerna](https://lerna.js.org/), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
+This is a Yarn workspaces monorepo managed by [multi-semantic-release](https://github.com/qiwi/multi-semantic-release), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
 
 - **License**: GPL-3.0
 - **Node.js requirement**: >= 18.0 (CI uses Node.js 24.x)
@@ -60,7 +60,7 @@ yarn workspace @ffflorian/<package-name> add -D <dep>
 
 ### Per-package scripts
 
-Each package supports `build`, `clean`, and `test` scripts run via Lerna.
+Each package supports `build`, `clean`, and `test` scripts run via `yarn workspaces foreach`.
 
 ## Tooling
 
@@ -70,8 +70,13 @@ Each package supports `build`, `clean`, and `test` scripts run via Lerna.
 - **Linting**: oxlint + ESLint with `@ffflorian/eslint-config`, run in that order
 - **Formatting**: Prettier with `@ffflorian/prettier-config`
 - **Git hooks**: Lefthook (`lefthook.yml`) — runs prettier, oxlint, and eslint with auto-fix on staged files before commit
-- **Versioning**: Lerna independent versioning with conventional commits
-- **Publishing**: Lerna publishes to npm registry; only allowed from `main` branch
+- **Versioning**: Independent versioning via semantic-release with conventional commits
+- **Publishing**: `multi-semantic-release` (`@qiwi/multi-semantic-release`) publishes to npm; only packages whose files changed are released. Only allowed from `main` branch.
+- **Release config**: Root `.releaserc.json` extends `@ffflorian/semantic-release-config`
+
+## Dependencies
+
+**Always use pinned (exact) versions in `package.json`.** Do not use `^`, `~`, or other range specifiers for dependencies. This is enforced by `defaultSemverRangePrefix: ''` in `.yarnrc.yml`.
 
 ## Commit Messages
 
@@ -89,7 +94,8 @@ ci: CI/CD configuration changes
 ```
 
 - Do **not** include references to Claude or AI tools in commit messages or PR descriptions.
-- Lerna uses conventional commits to determine version bumps and generate changelogs.
+- `multi-semantic-release` uses conventional commits to determine version bumps and generate changelogs.
+- Only packages with commits touching their own directory are released — unrelated packages are never published.
 
 ## Branch Naming
 
@@ -111,7 +117,8 @@ GitHub Actions workflow (`.github/workflows/build_test_publish.yml`):
 
 1. Runs on pushes and PRs to `main`
 2. Steps: install (`yarn --immutable`), build, lint, test
-3. On push to `main` (non-`chore` commits): publishes changed packages to npm via `yarn release`
+3. On push to `main`: runs `yarn release` (`multi-semantic-release`) which publishes only changed packages to npm
+4. Requires `NPM_TOKEN` and `GITHUB_TOKEN` secrets; checkout uses `fetch-depth: 0` for full git history
 
 ## Code Style
 
