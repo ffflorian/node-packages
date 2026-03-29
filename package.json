@@ -30,12 +30,12 @@
   },
   "license": "GPL-3.0",
   "name": "node-packages",
-  "packageManager": "yarn@4.12.0",
+  "packageManager": "yarn@4.13.0",
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
-    "build:ts": "yarn workspaces foreach -Apt --exclude node-packages run build",
-    "clean": "yarn workspaces foreach -Ap --exclude node-packages run clean",
+    "build:ts": "yarn workspaces foreach --all --parallel --topological --exclude node-packages run build",
+    "clean": "yarn workspaces foreach --all --parallel --exclude node-packages run clean",
     "dist": "yarn clean && yarn build:ts",
     "fix": "yarn fix:ts && yarn fix:other",
     "fix:other": "yarn prettier --write",
@@ -48,7 +48,7 @@
     "prettier": "prettier .",
     "release": "multi-semantic-release --ignore-private-packages",
     "test": "yarn test:all",
-    "test:all": "yarn workspaces foreach -Ap --exclude node-packages run test"
+    "test:all": "yarn workspaces foreach --all --parallel --exclude node-packages run test"
   },
   "workspaces": [
     "packages/*"

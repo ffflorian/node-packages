@@ -47,5 +47,13 @@ jobs:
           export GIT_COMMITTER_EMAIL="${GIT_AUTHOR_EMAIL}"
           git config --global "user.email" "${GIT_AUTHOR_EMAIL}"
           git config --global "user.name" "${GIT_AUTHOR_NAME}"
-          yarn release
+          set -o pipefail
+          yarn release 2>&1 | tee /tmp/release.log
           git diff --quiet || git commit -am "chore(release): publish [skip ci]" && git push
+
+      - name: Upload release log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-log
+          path: /tmp/release.log

@@ -5,7 +5,7 @@
     "commander": "14.0.3",
     "ntpclient": "*"
   },
-  "description": "Get the exact time based on your location.",
+  "description": "Calculate the true solar time at any geographic location.",
   "devDependencies": {
     "nock": "14.0.11",
     "tsx": "4.21.0",
@@ -32,5 +32,5 @@
     "test": "vitest run"
   },
   "type": "module",
-  "version": "1.15.1"
+  "version": "1.15.2"
 }
