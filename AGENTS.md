@@ -4,7 +4,7 @@ This file contains knowledge and conventions for AI agents working in this repos
 
 ## Project Overview
 
-This is a yarn workspaces monorepo managed by [multi-semantic-release](https://github.com/qiwi/multi-semantic-release), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
+This is a yarn workspaces monorepo managed by [multi-semantic-release](https://github.com/dhoulb/multi-semantic-release), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
 
 - **License**: GPL-3.0
 - **Node.js requirement**: >= 18.0 (CI uses Node.js 24.x)
@@ -73,7 +73,7 @@ Each package supports `build`, `clean`, and `test` scripts run via `yarn workspa
 - **Versioning**: Independent versioning via conventional commits
 - **Publishing**: `multi-semantic-release` (dhoulb) publishes to npm; only packages whose files changed are released. Private packages are excluded via `--ignore-private-packages`. Only allowed from `main` branch.
 - **Cross-repo deps**: When a package in this repo depends on another package in this repo, use `*` as the version — multi-semantic-release replaces it with the correct version at publish time.
-- **Release config**: Root `.releaserc.json` extends `@ffflorian/semantic-release-config`
+- **Release config**: Root `.releaserc.json` with explicit plugin list (no `@semantic-release/git`); a single post-release commit is created by CI instead
 
 ## Dependencies
 

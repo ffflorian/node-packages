@@ -3984,12 +3984,12 @@ __metadata:
   linkType: hard
 
 "brace-expansion@npm:^1.1.7":
-  version: 1.1.13
-  resolution: "brace-expansion@npm:1.1.13"
+  version: 1.1.11
+  resolution: "brace-expansion@npm:1.1.11"
   dependencies:
     balanced-match: "npm:^1.0.0"
     concat-map: "npm:0.0.1"
-  checksum: 10c0/384c61bb329b6adfdcc0cbbdd108dc19fb5f3e84ae15a02a74f94c6c791b5a9b035aae73b2a51929a8a478e2f0f212a771eb6a8b5b514cccfb8d0c9f2ce8cbd8
+  checksum: 10c0/695a56cd058096a7cb71fb09d9d6a7070113c7be516699ed361317aca2ec169f618e28b8af352e02ab4233fb54eb0168460a40dc320bab0034b36ab59aaad668
   languageName: node
   linkType: hard
 
@@ -9159,7 +9159,7 @@ __metadata:
   dependencies:
     commander: "npm:14.0.3"
     nock: "npm:14.0.11"
-    ntpclient: "npm:1.16.1"
+    ntpclient: "npm:*"
     tsx: "npm:4.21.0"
     typescript: "npm:6.0.2"
     vitest: "npm:4.1.0"
@@ -9670,7 +9670,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ntpclient@npm:1.16.1, ntpclient@workspace:packages/ntpclient":
+"ntpclient@npm:*, ntpclient@workspace:packages/ntpclient":
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
