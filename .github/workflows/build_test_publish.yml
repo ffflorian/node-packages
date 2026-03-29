@@ -49,7 +49,6 @@ jobs:
           git config --global "user.name" "${GIT_AUTHOR_NAME}"
           set -o pipefail
           yarn release 2>&1 | tee /tmp/release.log
-          git diff --quiet || git commit -am "chore(release): publish [skip ci]" && git push
 
       - name: Upload release log
         if: failure()

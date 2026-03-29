@@ -2393,6 +2393,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@semantic-release/git@npm:10.0.1":
+  version: 10.0.1
+  resolution: "@semantic-release/git@npm:10.0.1"
+  dependencies:
+    "@semantic-release/error": "npm:^3.0.0"
+    aggregate-error: "npm:^3.0.0"
+    debug: "npm:^4.0.0"
+    dir-glob: "npm:^3.0.0"
+    execa: "npm:^5.0.0"
+    lodash: "npm:^4.17.4"
+    micromatch: "npm:^4.0.0"
+    p-reduce: "npm:^2.0.0"
+  peerDependencies:
+    semantic-release: ">=18.0.0"
+  checksum: 10c0/90077068b97ff894e5f6bea05d0c7482929d3bae64c242a1556bc85db4d8f0a52b71215300472539b95248778cdf239a3f8cbad5effaaba719a32bf347dbdd93
+  languageName: node
+  linkType: hard
+
 "@semantic-release/github@npm:^12.0.0":
   version: 12.0.6
   resolution: "@semantic-release/github@npm:12.0.6"
@@ -4886,7 +4904,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dir-glob@npm:^3.0.1":
+"dir-glob@npm:^3.0.0, dir-glob@npm:^3.0.1":
   version: 3.0.1
   resolution: "dir-glob@npm:3.0.1"
   dependencies:
@@ -5874,7 +5892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"execa@npm:^5.1.1":
+"execa@npm:^5.0.0, execa@npm:^5.1.1":
   version: 5.1.1
   resolution: "execa@npm:5.1.1"
   dependencies:
@@ -8820,7 +8838,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.2, micromatch@npm:^4.0.8":
+"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2, micromatch@npm:^4.0.8":
   version: 4.0.8
   resolution: "micromatch@npm:4.0.8"
   dependencies:
@@ -9287,6 +9305,7 @@ __metadata:
     "@ffflorian/prettier-config": "npm:0.6.7"
     "@ffflorian/semantic-release-config": "npm:0.10.7"
     "@semantic-release/changelog": "npm:6.0.3"
+    "@semantic-release/git": "npm:10.0.1"
     "@types/node": "npm:~24"
     eslint: "npm:10.1.0"
     eslint-import-resolver-typescript: "npm:4.4.4"
@@ -10061,6 +10080,13 @@ __metadata:
   version: 7.0.2
   resolution: "p-map@npm:7.0.2"
   checksum: 10c0/e10548036648d1c043153f9997112fe5a7de54a319210238628f8ea22ee36587fd6ee740811f88b60bbf29d932e23ae35df7fced40df477116c84c18e797047e
+  languageName: node
+  linkType: hard
+
+"p-reduce@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "p-reduce@npm:2.1.0"
+  checksum: 10c0/27b8ff0fb044995507a06cd6357dffba0f2b98862864745972562a21885d7906ce5c794036d2aaa63ef6303158e41e19aed9f19651dfdafb38548ecec7d0de15
   languageName: node
   linkType: hard
 
