@@ -2,7 +2,7 @@
 
 Calculate the true solar time at any geographic location based on its longitude.
 
-This is **not** political timezone data (UTC+1, DST, etc.) — it is [local mean time](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time): the astronomically correct time at a given longitude, where every degree equals exactly 4 minutes of offset from UTC. See [CS4FN](http://www.cs4fn.org/mobile/owntimezone.php) for a good explanation of the underlying concept.
+This is **not** political timezone data (UTC+1, DST, etc.) — it is [local mean time](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time): the astronomically correct time at a given longitude, where every degree equals exactly 4 minutes of offset from UTC. See [this article on CS4FN](https://web.archive.org/web/20250914163157/http://www.cs4fn.org/mobile/owntimezone.php) for a good explanation of the underlying concept.
 
 ## Prerequisites
 
