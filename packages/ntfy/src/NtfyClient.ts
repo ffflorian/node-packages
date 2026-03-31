@@ -83,7 +83,7 @@ export async function publish<T extends Config>(publishConfig: T): Promise<Respo
   }
 
   if (publishConfig.markdown) {
-    requestConfig.headers['X-Markdown'] = publishConfig.markdown;
+    requestConfig.headers['X-Markdown'] = publishConfig.markdown.toString();
   }
 
   if (ConfigHasMessage(publishConfig) && publishConfig.fileURL) {
