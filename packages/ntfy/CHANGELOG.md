@@ -1,3 +1,11 @@
+## ntfy [1.15.2](https://github.com/ffflorian/node-packages/compare/ntfy@1.15.1...ntfy@1.15.2) (2026-03-31)
+
+
+### Bug Fixes
+
+* **ntfy:** add markdown header support ([#1135](https://github.com/ffflorian/node-packages/issues/1135)) [ci skip] ([f28279c](https://github.com/ffflorian/node-packages/commit/f28279c8a4d4cbfbc24143d3a0ff13b34c17b69f))
+* **ntfy:** Use stringified boolean value ([ea43165](https://github.com/ffflorian/node-packages/commit/ea431653185e646722c6054fc5c959e93b430469))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
