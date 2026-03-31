@@ -168,6 +168,20 @@ export interface BaseConfig {
    */
   iconURL?: string;
   /**
+   * By default, messages sent to ntfy are rendered as plain text.
+   *
+   * You can format messages using Markdown 🤩. That means you can use bold text, italicized text, links, images, and more. Supported Markdown features (web app only for now):
+   * - Emphasis such as bold (**bold**), italics (*italics*)
+   * - Links ([some tool](https://ntfy.sh))
+   * - Images (![some image](https://bing.com/logo.png))
+   * - Code blocks (```code blocks```) and inline code (`inline code`)
+   * - Headings (# headings, ## headings, etc.)
+   * - Lists (- lists, 1. lists, etc.)
+   * - Blockquotes (> blockquotes)
+   * - Horizontal rules (---)
+   */
+  markdown?: boolean;
+  /**
    * All messages have a priority, which defines how urgently your phone notifies you. On Android, you can set custom
    * notification sounds and vibration patterns on your phone to map to these priorities (see
    * [Android config](https://docs.ntfy.sh/subscribe/phone/)).

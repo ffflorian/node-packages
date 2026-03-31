@@ -82,6 +82,10 @@ export async function publish<T extends Config>(publishConfig: T): Promise<Respo
     requestConfig.headers['X-Email'] = publishConfig.emailAddress;
   }
 
+  if (publishConfig.markdown) {
+    requestConfig.headers['X-Markdown'] = publishConfig.markdown;
+  }
+
   if (ConfigHasMessage(publishConfig) && publishConfig.fileURL) {
     if (typeof publishConfig.fileURL === 'string') {
       requestConfig.headers['X-Attach'] = publishConfig.fileURL;
