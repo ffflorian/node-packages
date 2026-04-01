@@ -2811,16 +2811,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/npmcli__arborist@npm:6.3.2":
-  version: 6.3.2
-  resolution: "@types/npmcli__arborist@npm:6.3.2"
+"@types/npmcli__arborist@npm:6.3.3":
+  version: 6.3.3
+  resolution: "@types/npmcli__arborist@npm:6.3.3"
   dependencies:
     "@npm/types": "npm:^1"
     "@types/cacache": "npm:*"
     "@types/node": "npm:*"
     "@types/npmcli__package-json": "npm:*"
     "@types/pacote": "npm:*"
-  checksum: 10c0/2eaf7d9f00bfe070839daf2cc59bccad62c2eacc46a4e6d2b153c19009dc0f2773a0a15fd4027d3c7e0294f37612b78fcf7a51b3a69e45496eb93628a0fd07ec
+  checksum: 10c0/f3222485dd2ca697bc3377f6a480eadbfd87486ed831a3304f3ea0e7748feb7168e71139121a09f8d3ad924b4c1b78c514e8353f18338c36c1236c801f51e947
   languageName: node
   linkType: hard
 
@@ -10536,7 +10536,7 @@ __metadata:
   dependencies:
     "@npmcli/arborist": "npm:9.4.2"
     "@types/npm-packlist": "npm:7.0.3"
-    "@types/npmcli__arborist": "npm:6.3.2"
+    "@types/npmcli__arborist": "npm:6.3.3"
     commander: "npm:14.0.3"
     logdown: "npm:3.3.1"
     npm-packlist: "npm:10.0.4"
