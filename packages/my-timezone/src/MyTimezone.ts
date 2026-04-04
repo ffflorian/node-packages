@@ -131,8 +131,8 @@ export class MyTimezone {
   }
 
   public parseCoordinates(coordinates: string): Coordinates {
-    const longitudeRegex = new RegExp('[-?\\W\\d\\.]+,(?<longitude>[-?\\W\\d\\.]+)');
-    const parsedRegex = longitudeRegex.exec(coordinates);
+    const coordinatesRegex = new RegExp('([-?\\W\\d\\.]+,)?(?<longitude>[-?\\W\\d\\.]+)');
+    const parsedRegex = coordinatesRegex.exec(coordinates);
     if (parsedRegex?.groups?.longitude) {
       try {
         const longitude = parseFloat(parsedRegex.groups.longitude);
