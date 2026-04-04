@@ -45,7 +45,7 @@ new MyTimezone()
 Usage: my-timezone [options] <location>
 
 Get the true solar time based on your location.
-Use a city name or longitude value as location.
+Use a city name or longitude value (e.g. "13.39") as location.
 
 Options:
 

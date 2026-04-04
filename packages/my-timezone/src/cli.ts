@@ -20,7 +20,7 @@ const {description, name, version}: PackageJson = JSON.parse(await fs.readFile(p
 commander
   .name(name)
   .version(version)
-  .description(`${description}\nUse a city name or longitude value as location.`)
+  .description(`${description}\nUse a city name or longitude value (e.g. "13.39") as location.`)
   .option('-o, --offline', 'Work offline (default is false)')
   .option('-s, --server <server>', 'Specify the NTP server (default is "pool.ntp.org")')
   .argument('<location>')
