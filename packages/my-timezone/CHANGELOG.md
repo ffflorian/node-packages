@@ -1,3 +1,10 @@
+## my-timezone [1.15.3](https://github.com/ffflorian/node-packages/compare/my-timezone@1.15.2...my-timezone@1.15.3) (2026-04-04)
+
+
+### Bug Fixes
+
+* **my-timezone:** Make latitude optional ([9438ac2](https://github.com/ffflorian/node-packages/commit/9438ac2d0e3b4cd79a4943972d06f84ef5a6182a))
+
 ## my-timezone [1.15.2](https://github.com/ffflorian/node-packages/compare/my-timezone@1.15.1...my-timezone@1.15.2) (2026-03-28)
 
 
