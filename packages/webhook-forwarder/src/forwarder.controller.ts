@@ -2,6 +2,7 @@ import type {NextFunction, Request, Response} from 'express';
 
 import {HttpStatus, Injectable, NestMiddleware} from '@nestjs/common';
 import logdown from 'logdown';
+import {createHmac, timingSafeEqual} from 'node:crypto';
 
 import {ForwarderService} from './forwarder.service.js';
 
@@ -25,6 +26,27 @@ export class ForwarderMiddleware implements NestMiddleware {
       return;
     }
 
+    const body = await this.collectBody(req);
+
+    if (route.secret) {
+      const signatureHeader = req.headers['x-hub-signature-256'] as string | undefined;
+      if (!signatureHeader) {
+        this.logger.warn(`Missing X-Hub-Signature-256 header for ${requestPath}`);
+        res.status(HttpStatus.UNAUTHORIZED).type('text/plain').send('Missing signature');
+        return;
+      }
+
+      const expectedSignature = `sha256=${createHmac('sha256', route.secret).update(body).digest('hex')}`;
+      const expected = Buffer.from(expectedSignature);
+      const received = Buffer.from(signatureHeader);
+
+      if (expected.length !== received.length || !timingSafeEqual(expected, received)) {
+        this.logger.warn(`Invalid signature for ${requestPath}`);
+        res.status(HttpStatus.UNAUTHORIZED).type('text/plain').send('Invalid signature');
+        return;
+      }
+    }
+
     const forwardHeaders: Record<string, string> = {};
     for (const [key, value] of Object.entries(req.headers)) {
       const lowerKey = key.toLowerCase();
@@ -38,8 +60,6 @@ export class ForwarderMiddleware implements NestMiddleware {
         forwardHeaders[key] = Array.isArray(value) ? value.join(', ') : value;
       }
     }
-
-    const body = await this.collectBody(req);
 
     this.logger.info(`Received ${req.method} ${requestPath} (${body.length} bytes)`);
 

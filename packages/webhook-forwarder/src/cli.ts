@@ -28,6 +28,11 @@ commander
     process.env.WEBHOOK_FORWARDER_TARGET
   )
   .option('-P, --path <path>', 'set the path for a single-route setup (used with --target)', '/')
+  .option(
+    '-s, --secret <secret>',
+    'set the webhook secret for signature validation (used with --target)',
+    process.env.WEBHOOK_FORWARDER_SECRET
+  )
   .option('-T, --timeout <ms>', 'set the forwarding request timeout in ms', process.env.WEBHOOK_FORWARDER_TIMEOUT)
   .option('-c, --config <path>', 'use a configuration file')
   .option('--noconfig', "don't look for a configuration file")
@@ -40,7 +45,9 @@ const forwarder = new WebhookForwarder({
   ...(options.noconfig ? {configFile: false} : options.config ? {configFile: options.config} : {}),
   ...(options.host && {host: options.host}),
   ...(options.port && {port: parseInt(options.port, 10)}),
-  ...(options.target && {routes: [{path: options.path || '/', target: options.target}]}),
+  ...(options.target && {
+    routes: [{path: options.path || '/', secret: options.secret, target: options.target}],
+  }),
   ...(options.timeout && {timeout: parseInt(options.timeout, 10)}),
 });
 

@@ -1,4 +1,5 @@
 import {HttpStatus} from '@nestjs/common';
+import {createHmac} from 'node:crypto';
 import http from 'node:http';
 import {afterEach, describe, expect, it} from 'vitest';
 
@@ -236,5 +237,129 @@ describe('WebhookForwarder', () => {
     });
 
     await expect(forwarder.start()).rejects.toThrow('No routes configured');
+  });
+
+  it('accepts requests with a valid X-Hub-Signature-256', async () => {
+    const secret = 'test-webhook-secret';
+    const payload = '{"action":"opened"}';
+    const signature = `sha256=${createHmac('sha256', secret).update(payload).digest('hex')}`;
+
+    const target = await createTargetServer((_req, res) => {
+      res.writeHead(HttpStatus.OK, {'Content-Type': 'application/json'});
+      res.end(JSON.stringify({ok: true}));
+    });
+
+    targetServer = target.server;
+
+    forwarder = new WebhookForwarder({
+      configFile: false,
+      host: '127.0.0.1',
+      port: 0,
+      routes: [{path: '/', secret, target: `http://127.0.0.1:${target.port}`}],
+    });
+
+    await forwarder.start();
+    const port = getAppPort(forwarder);
+
+    const response = await sendRequest(port, {
+      body: payload,
+      headers: {'content-type': 'application/json', 'x-hub-signature-256': signature},
+    });
+
+    expect(response.statusCode).toBe(HttpStatus.OK);
+    expect(response.body).toBe('{"ok":true}');
+  });
+
+  it('rejects requests with an invalid X-Hub-Signature-256', async () => {
+    const secret = 'test-webhook-secret';
+    const payload = '{"action":"opened"}';
+
+    const target = await createTargetServer((_req, res) => {
+      res.writeHead(HttpStatus.OK);
+      res.end('ok');
+    });
+
+    targetServer = target.server;
+
+    forwarder = new WebhookForwarder({
+      configFile: false,
+      host: '127.0.0.1',
+      port: 0,
+      routes: [{path: '/', secret, target: `http://127.0.0.1:${target.port}`}],
+    });
+
+    await forwarder.start();
+    const port = getAppPort(forwarder);
+
+    const response = await sendRequest(port, {
+      body: payload,
+      headers: {'content-type': 'application/json', 'x-hub-signature-256': 'sha256=invalid'},
+    });
+
+    expect(response.statusCode).toBe(HttpStatus.UNAUTHORIZED);
+  });
+
+  it('rejects requests with a missing X-Hub-Signature-256 when secret is configured', async () => {
+    const secret = 'test-webhook-secret';
+
+    const target = await createTargetServer((_req, res) => {
+      res.writeHead(HttpStatus.OK);
+      res.end('ok');
+    });
+
+    targetServer = target.server;
+
+    forwarder = new WebhookForwarder({
+      configFile: false,
+      host: '127.0.0.1',
+      port: 0,
+      routes: [{path: '/', secret, target: `http://127.0.0.1:${target.port}`}],
+    });
+
+    await forwarder.start();
+    const port = getAppPort(forwarder);
+
+    const response = await sendRequest(port, {
+      body: '{"action":"opened"}',
+      headers: {'content-type': 'application/json'},
+    });
+
+    expect(response.statusCode).toBe(HttpStatus.UNAUTHORIZED);
+  });
+
+  it('forwards GitHub-specific headers to the target', async () => {
+    let receivedHeaders: http.IncomingHttpHeaders = {};
+
+    const target = await createTargetServer((req, res) => {
+      receivedHeaders = req.headers;
+      res.writeHead(HttpStatus.OK);
+      res.end('ok');
+    });
+
+    targetServer = target.server;
+
+    forwarder = new WebhookForwarder({
+      configFile: false,
+      host: '127.0.0.1',
+      port: 0,
+      routes: [{path: '/', target: `http://127.0.0.1:${target.port}`}],
+    });
+
+    await forwarder.start();
+    const port = getAppPort(forwarder);
+
+    await sendRequest(port, {
+      body: '{}',
+      headers: {
+        'content-type': 'application/json',
+        'x-github-delivery': '72d3162e-cc78-11e3-81ab-4c9367dc0958',
+        'x-github-event': 'push',
+        'x-github-hook-id': '292430182',
+      },
+    });
+
+    expect(receivedHeaders['x-github-event']).toBe('push');
+    expect(receivedHeaders['x-github-delivery']).toBe('72d3162e-cc78-11e3-81ab-4c9367dc0958');
+    expect(receivedHeaders['x-github-hook-id']).toBe('292430182');
   });
 });

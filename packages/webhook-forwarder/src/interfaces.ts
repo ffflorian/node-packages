@@ -12,6 +12,8 @@ export interface ConfigFile {
 export interface Route {
   /** Path to listen on for this route. */
   path: string;
+  /** GitHub webhook secret for signature validation. If set, the `X-Hub-Signature-256` header is verified. */
+  secret?: string;
   /** Target URL to forward webhooks to. */
   target: string;
   /** Forwarding request timeout in milliseconds. Default is `30000`. */
