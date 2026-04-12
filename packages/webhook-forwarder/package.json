@@ -36,7 +36,7 @@
   ],
   "license": "GPL-3.0",
   "module": "dist/index.js",
-  "name": "webhook-forwarder",
+  "name": "@ffflorian/webhook-forwarder",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",
