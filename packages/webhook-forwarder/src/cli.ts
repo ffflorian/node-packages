@@ -18,7 +18,7 @@ const packageJsonPath = path.join(__dirname, '../package.json');
 const {description, name, version}: PackageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
 
 commander
-  .name(name)
+  .name(name.replace(/^@.*\//, ''))
   .description(description)
   .option('-H, --host <host>', 'set the host to listen on', process.env.WEBHOOK_FORWARDER_HOST)
   .option('-p, --port <port>', 'set the port to listen on', process.env.WEBHOOK_FORWARDER_PORT)

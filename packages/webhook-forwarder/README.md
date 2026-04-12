@@ -19,7 +19,7 @@ npm install -g @ffflorian/webhook-forwarder
 ### CLI
 
 ```
-Usage: @ffflorian/webhook-forwarder [options]
+Usage: webhook-forwarder [options]
 
 Receive webhooks and forward them to a specific URL.
 
