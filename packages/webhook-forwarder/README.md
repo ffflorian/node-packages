@@ -97,6 +97,31 @@ const forwarder = new WebhookForwarder({
 await forwarder.start();
 ```
 
+### Docker
+
+Build the image from the repository root:
+
+```
+docker build -f packages/webhook-forwarder/Dockerfile -t webhook-forwarder .
+```
+
+Run with environment variables:
+
+```
+docker run -p 8080:8080 \
+  -e WEBHOOK_FORWARDER_TARGET=https://example.com/hooks/github \
+  -e WEBHOOK_FORWARDER_SECRET=your-webhook-secret \
+  webhook-forwarder
+```
+
+Or mount a configuration file:
+
+```
+docker run -p 8080:8080 \
+  -v $(pwd)/.webhook-forwarderrc.json:/app/.webhook-forwarderrc.json \
+  webhook-forwarder
+```
+
 ## License
 
 GPL-3.0
