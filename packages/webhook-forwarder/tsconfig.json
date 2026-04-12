@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
+    "emitDecoratorMetadata": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "outDir": "dist",

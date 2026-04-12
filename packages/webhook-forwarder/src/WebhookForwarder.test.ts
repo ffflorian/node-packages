@@ -1,7 +1,16 @@
+import {HttpStatus} from '@nestjs/common';
 import http from 'node:http';
-import {afterEach, beforeEach, describe, expect, it} from 'vitest';
+import {afterEach, describe, expect, it} from 'vitest';
 
 import {WebhookForwarder} from './WebhookForwarder.js';
+
+import 'reflect-metadata';
+
+function closeServer(server: http.Server): Promise<void> {
+  return new Promise(resolve => {
+    server.close(() => resolve());
+  });
+}
 
 function createTargetServer(
   handler: (req: http.IncomingMessage, res: http.ServerResponse) => void
@@ -17,19 +26,20 @@ function createTargetServer(
   });
 }
 
-function closeServer(server: http.Server): Promise<void> {
-  return new Promise(resolve => {
-    server.close(() => resolve());
-  });
+function getAppPort(forwarder: WebhookForwarder): number {
+  const app = (forwarder as any).app;
+  const server = app.getHttpServer();
+  return server.address().port;
 }
 
 function sendRequest(
   port: number,
-  options: {body?: string; method?: string; path?: string} = {}
+  options: {body?: string; headers?: Record<string, string>; method?: string; path?: string} = {}
 ): Promise<{body: string; statusCode: number}> {
   return new Promise((resolve, reject) => {
     const req = http.request(
       {
+        headers: options.headers,
         hostname: '127.0.0.1',
         method: options.method || 'POST',
         path: options.path || '/',
@@ -57,8 +67,6 @@ function sendRequest(
 describe('WebhookForwarder', () => {
   let forwarder: WebhookForwarder;
   let targetServer: http.Server;
-  let targetPort: number;
-  let forwarderPort: number;
 
   afterEach(async () => {
     await forwarder?.stop();
@@ -77,27 +85,26 @@ describe('WebhookForwarder', () => {
       req.on('data', (chunk: Buffer) => chunks.push(chunk));
       req.on('end', () => {
         receivedBody = Buffer.concat(chunks).toString();
-        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.writeHead(HttpStatus.OK, {'Content-Type': 'application/json'});
         res.end(JSON.stringify({ok: true}));
       });
     });
 
     targetServer = target.server;
-    targetPort = target.port;
 
     forwarder = new WebhookForwarder({
+      configFile: false,
       host: '127.0.0.1',
       port: 0,
-      targetUrl: `http://127.0.0.1:${targetPort}`,
+      routes: [{path: '/', target: `http://127.0.0.1:${target.port}`}],
     });
 
     await forwarder.start();
-    const address = (forwarder as any).server.address();
-    forwarderPort = address.port;
+    const port = getAppPort(forwarder);
 
-    const response = await sendRequest(forwarderPort, {body: '{"event":"push"}'});
+    const response = await sendRequest(port, {body: '{"event":"push"}'});
 
-    expect(response.statusCode).toBe(200);
+    expect(response.statusCode).toBe(HttpStatus.OK);
     expect(response.body).toBe('{"ok":true}');
     expect(receivedMethod).toBe('POST');
     expect(receivedBody).toBe('{"event":"push"}');
@@ -108,39 +115,25 @@ describe('WebhookForwarder', () => {
 
     const target = await createTargetServer((req, res) => {
       receivedHeaders = req.headers;
-      res.writeHead(200);
+      res.writeHead(HttpStatus.OK);
       res.end('ok');
     });
 
     targetServer = target.server;
-    targetPort = target.port;
 
     forwarder = new WebhookForwarder({
+      configFile: false,
       host: '127.0.0.1',
       port: 0,
-      targetUrl: `http://127.0.0.1:${targetPort}`,
+      routes: [{path: '/', target: `http://127.0.0.1:${target.port}`}],
     });
 
     await forwarder.start();
-    const address = (forwarder as any).server.address();
-    forwarderPort = address.port;
+    const port = getAppPort(forwarder);
 
-    await new Promise<void>((resolve, reject) => {
-      const req = http.request(
-        {
-          headers: {'content-type': 'application/json', 'x-custom-header': 'test-value'},
-          hostname: '127.0.0.1',
-          method: 'POST',
-          path: '/',
-          port: forwarderPort,
-        },
-        res => {
-          res.on('data', () => {});
-          res.on('end', resolve);
-        }
-      );
-      req.on('error', reject);
-      req.end('{}');
+    await sendRequest(port, {
+      body: '{}',
+      headers: {'content-type': 'application/json', 'x-custom-header': 'test-value'},
     });
 
     expect(receivedHeaders['content-type']).toBe('application/json');
@@ -149,40 +142,99 @@ describe('WebhookForwarder', () => {
 
   it('returns 404 for non-matching paths', async () => {
     const target = await createTargetServer((_req, res) => {
-      res.writeHead(200);
+      res.writeHead(HttpStatus.OK);
       res.end('ok');
     });
 
     targetServer = target.server;
-    targetPort = target.port;
 
     forwarder = new WebhookForwarder({
+      configFile: false,
       host: '127.0.0.1',
-      path: '/webhook',
       port: 0,
-      targetUrl: `http://127.0.0.1:${targetPort}`,
+      routes: [{path: '/webhook', target: `http://127.0.0.1:${target.port}`}],
     });
 
     await forwarder.start();
-    const address = (forwarder as any).server.address();
-    forwarderPort = address.port;
+    const port = getAppPort(forwarder);
 
-    const response = await sendRequest(forwarderPort, {path: '/other'});
-    expect(response.statusCode).toBe(404);
+    const response = await sendRequest(port, {path: '/other'});
+    expect(response.statusCode).toBe(HttpStatus.NOT_FOUND);
   });
 
   it('returns 502 when target is unreachable', async () => {
     forwarder = new WebhookForwarder({
+      configFile: false,
       host: '127.0.0.1',
       port: 0,
-      targetUrl: 'http://127.0.0.1:1',
+      routes: [{path: '/', target: 'http://127.0.0.1:1'}],
     });
 
     await forwarder.start();
-    const address = (forwarder as any).server.address();
-    forwarderPort = address.port;
+    const port = getAppPort(forwarder);
 
-    const response = await sendRequest(forwarderPort, {body: 'test'});
-    expect(response.statusCode).toBe(502);
+    const response = await sendRequest(port, {body: 'test'});
+    expect(response.statusCode).toBe(HttpStatus.BAD_GATEWAY);
+  });
+
+  it('routes different paths to different targets', async () => {
+    let target1Received = '';
+    let target2Received = '';
+
+    const target1 = await createTargetServer((req, res) => {
+      const chunks: Buffer[] = [];
+      req.on('data', (chunk: Buffer) => chunks.push(chunk));
+      req.on('end', () => {
+        target1Received = Buffer.concat(chunks).toString();
+        res.writeHead(HttpStatus.OK, {'Content-Type': 'text/plain'});
+        res.end('target1');
+      });
+    });
+
+    const target2 = await createTargetServer((req, res) => {
+      const chunks: Buffer[] = [];
+      req.on('data', (chunk: Buffer) => chunks.push(chunk));
+      req.on('end', () => {
+        target2Received = Buffer.concat(chunks).toString();
+        res.writeHead(HttpStatus.OK, {'Content-Type': 'text/plain'});
+        res.end('target2');
+      });
+    });
+
+    targetServer = target1.server;
+    const targetServer2 = target2.server;
+
+    forwarder = new WebhookForwarder({
+      configFile: false,
+      host: '127.0.0.1',
+      port: 0,
+      routes: [
+        {path: '/hook1', target: `http://127.0.0.1:${target1.port}`},
+        {path: '/hook2', target: `http://127.0.0.1:${target2.port}`},
+      ],
+    });
+
+    await forwarder.start();
+    const port = getAppPort(forwarder);
+
+    const res1 = await sendRequest(port, {body: 'payload1', path: '/hook1'});
+    const res2 = await sendRequest(port, {body: 'payload2', path: '/hook2'});
+
+    expect(res1.body).toBe('target1');
+    expect(res2.body).toBe('target2');
+    expect(target1Received).toBe('payload1');
+    expect(target2Received).toBe('payload2');
+
+    await closeServer(targetServer2);
+  });
+
+  it('throws when no routes are configured', async () => {
+    forwarder = new WebhookForwarder({
+      configFile: false,
+      host: '127.0.0.1',
+      port: 0,
+    });
+
+    await expect(forwarder.start()).rejects.toThrow('No routes configured');
   });
 });

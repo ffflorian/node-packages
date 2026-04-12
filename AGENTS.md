@@ -81,6 +81,7 @@ This is a yarn workspaces monorepo managed by [multi-semantic-release](https://g
 | `publish-flat` | `publish-flat` | Publish npm packages with a flat directory structure |
 | `quick-sort` | (unpublished) | Quick sort algorithm implementation |
 | `scrabble-cheater` | `scrabble-cheater` | Scrabble word finder |
+| `webhook-forwarder` | `webhook-forwarder` | Receive webhooks and forward them to a specific URL (NestJS) |
 | `which-os` | `which-os` | Detect operating system |
 | `windows-shortcut-maker` | `@ffflorian/windows-shortcut-maker` | Create Windows shortcuts |
 

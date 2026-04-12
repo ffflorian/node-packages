@@ -1,13 +1,3 @@
-/** A single route mapping a webhook path to a target URL. */
-export interface Route {
-  /** Path to listen on for this route. */
-  path: string;
-  /** Target URL to forward webhooks to. */
-target: string;
-  /** Forwarding request timeout in milliseconds. Default is `30000`. */
-  timeout?: number;
-}
-
 /** Config file structure loaded by cosmiconfig. */
 export interface ConfigFile {
   /** Host to listen on. Default is `0.0.0.0`. */
@@ -16,6 +6,16 @@ export interface ConfigFile {
   port?: number;
   /** Route definitions mapping webhook paths to target URLs. */
   routes: Route[];
+}
+
+/** A single route mapping a webhook path to a target URL. */
+export interface Route {
+  /** Path to listen on for this route. */
+  path: string;
+  /** Target URL to forward webhooks to. */
+  target: string;
+  /** Forwarding request timeout in milliseconds. Default is `30000`. */
+  timeout?: number;
 }
 
 export interface WebhookForwarderOptions {
