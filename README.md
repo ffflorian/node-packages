@@ -24,6 +24,7 @@ My Node.js packages
 | [`publish-flat`](./packages/publish-flat) | [![npm version](https://img.shields.io/npm/v/publish-flat.svg)](https://npmjs.com/packages/publish-flat) |
 | [`quick-sort`](./packages/quick-sort) |  |
 | [`scrabble-cheater`](./packages/scrabble-cheater) | [![npm version](https://img.shields.io/npm/v/scrabble-cheater.svg)](https://npmjs.com/packages/scrabble-cheater) |
+| [`webhook-forwarder`](./packages/webhook-forwarder) | [![npm version](https://img.shields.io/npm/v/@ffflorian/webhook-forwarder.svg)](https://npmjs.com/packages/@ffflorian/webhook-forwarder) |
 | [`which-os`](./packages/which-os) | [![npm version](https://img.shields.io/npm/v/which-os.svg)](https://npmjs.com/packages/which-os) |
 | [`windows-shortcut-maker`](./packages/windows-shortcut-maker) | [![npm version](https://img.shields.io/npm/v/@ffflorian/windows-shortcut-maker.svg)](https://npmjs.com/packages/@ffflorian/windows-shortcut-maker) |
 | [`mastodon-bot-yearprogress`](./packages/mastodon-bot-yearprogress) |  |

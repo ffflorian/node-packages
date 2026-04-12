@@ -1,0 +1,15 @@
+{
+  "host": "0.0.0.0",
+  "port": 8080,
+  "routes": [
+    {
+      "path": "/github",
+      "target": "https://example.com/hooks/github"
+    },
+    {
+      "path": "/gitlab",
+      "target": "https://example.com/hooks/gitlab",
+      "timeout": 60000
+    }
+  ]
+}
