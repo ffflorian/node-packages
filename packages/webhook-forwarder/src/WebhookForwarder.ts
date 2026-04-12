@@ -35,7 +35,7 @@ export class WebhookForwarder {
   }
 
   async start(): Promise<void> {
-    const routes = this.options.routes ?? [];
+    const routes = this.options.routes || [];
 
     if (routes.length === 0) {
       throw new Error('No routes configured. Provide routes via CLI, config file, or constructor options.');
