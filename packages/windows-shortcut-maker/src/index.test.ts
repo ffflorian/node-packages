@@ -38,7 +38,7 @@ describe('windows-shortcut-maker', () => {
     existsSyncMock.mockReturnValue(false);
     const {make} = await modulePromise;
 
-    await expect(make({filepath: 'C:/missing.exe'})).rejects.toThrow('does not exist');
+    expect(() => make({filepath: 'C:/missing.exe'})).toThrow('does not exist');
   });
 
   test('make resolves when spawn exits', async () => {

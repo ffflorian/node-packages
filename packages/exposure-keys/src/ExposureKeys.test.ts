@@ -1,8 +1,9 @@
+/* eslint-disable no-magic-numbers */
+
 import JSZip from 'jszip';
 import {describe, expect, test} from 'vitest';
 
 import {TEKSignatureList, TemporaryExposureKeyExport} from '../proto/export.js';
-
 import {loadKeys, loadSignature, loadZip, riskCount} from './ExposureKeys.js';
 
 const header = Buffer.from('EK Export v1    ', 'utf-8');

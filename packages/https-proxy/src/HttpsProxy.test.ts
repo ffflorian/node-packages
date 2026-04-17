@@ -1,3 +1,5 @@
+/* eslint-disable no-magic-numbers */
+
 import {describe, expect, test, vi} from 'vitest';
 
 import {HttpsProxy} from './HttpsProxy.js';

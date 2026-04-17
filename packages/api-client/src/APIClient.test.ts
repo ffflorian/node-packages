@@ -1,3 +1,5 @@
+/* eslint-disable no-magic-numbers */
+
 import {afterEach, describe, expect, test, vi} from 'vitest';
 
 import {APIClient} from './APIClient.js';
@@ -12,10 +14,10 @@ describe('APIClient', () => {
     vi.stubGlobal('fetch', fetchMock);
     const client = new APIClient('https://example.com');
 
-    await client.get('/users', {params: {a: 1, b: null, c: undefined, d: 'x'}});
+    await client.get('/users', {params: {alpha: 1, beta: null, delta: 'x', gamma: undefined}});
 
     expect(fetchMock).toHaveBeenCalledTimes(1);
-    expect(fetchMock.mock.calls[0][0].toString()).toContain('/users?a=1&d=x');
+    expect(fetchMock.mock.calls[0][0].toString()).toContain('/users?alpha=1&delta=x');
   });
 
   test('sets authorization header from auth config', async () => {

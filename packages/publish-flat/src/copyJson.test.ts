@@ -58,6 +58,6 @@ describe('copyJson', () => {
     const output = path.join(dir, 'output.json');
     await fs.writeFile(output, '{}', 'utf-8');
 
-    await expect(copyJson(input, output, ['name'])).rejects.toThrow(`Input file "${input} doesn't exist`);
+    await expect(copyJson(input, output, ['name'])).rejects.toThrow("doesn't exist or is not readable");
   });
 });

@@ -1,5 +1,7 @@
+/* eslint-disable id-length, no-magic-numbers */
+
 import path from 'node:path';
-import {describe, expect, test, vi} from 'vitest';
+import {beforeEach, describe, expect, test, vi} from 'vitest';
 
 const mkdirMock = vi.hoisted(() => vi.fn());
 const renameMock = vi.hoisted(() => vi.fn());
@@ -14,7 +16,9 @@ vi.mock('node:fs/promises', () => ({
 }));
 
 vi.mock('icon-gen', () => ({
-  default: iconGenMock,
+  default: {
+    default: iconGenMock,
+  },
 }));
 
 vi.mock('jimp', () => ({
@@ -26,6 +30,10 @@ vi.mock('jimp', () => ({
 const modulePromise = import('./index.js');
 
 describe('IconGenerator', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
   test('resolves constructor input and output paths', async () => {
     const {IconGenerator} = await modulePromise;
     const generator = new IconGenerator({input: './in.png', output: './out', silent: true});

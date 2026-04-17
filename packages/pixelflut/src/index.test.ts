@@ -1,7 +1,7 @@
+/* eslint-disable no-magic-numbers */
+
 import {describe, expect, test, vi} from 'vitest';
 
-const connectMock = vi.hoisted(() => vi.fn());
-const createSocketMock = vi.hoisted(() => vi.fn());
 const socketWriteMock = vi.hoisted(() => vi.fn());
 
 class SocketDouble {
@@ -16,25 +16,19 @@ class SocketDouble {
     return this;
   }
 
+  trigger(event: string, ...args: any[]): void {
+    this.handlers[event]?.(...args);
+  }
+
   write(message: string, callback: (error?: Error) => void): void {
     socketWriteMock(message);
     callback();
-  }
-
-  trigger(event: string, ...args: any[]): void {
-    this.handlers[event]?.(...args);
   }
 }
 
 vi.mock('node:net', () => ({
   default: {
     Socket: SocketDouble,
-  },
-}));
-
-vi.mock('node:dgram', () => ({
-  default: {
-    createSocket: createSocketMock,
   },
 }));
 
