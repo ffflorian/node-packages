@@ -1,61 +1,96 @@
 /* eslint-disable no-magic-numbers */
 
-import * as dgram from 'node:dgram';
-import {afterEach, describe, expect, it, vi} from 'vitest';
+import {describe, expect, test, vi} from 'vitest';
 
-import {NTPClient} from './index.js';
+const createSocketMock = vi.hoisted(() => vi.fn());
 
-vi.mock('node:dgram', async () => ({
-  ...(await vi.importActual<typeof dgram>('node:dgram')),
-  send: () => {
-    const socket = dgram.createSocket('udp4');
-    socket.emit(
-      'message',
-      Buffer.from([
-        0x1c, 0x02, 0x03, 0xe8, 0x00, 0x00, 0x02, 0x1a, 0x00, 0x00, 0x05, 0x12, 0xc0, 0x35, 0x67, 0x6c, 0xe9, 0x03,
-        0x76, 0xff, 0xff, 0x97, 0x0f, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe9, 0x03, 0x78, 0x0f,
-        0xe9, 0xd6, 0x4e, 0x10, 0xe9, 0x03, 0x78, 0x0f, 0xea, 0x03, 0x93, 0xf5,
-      ])
-    );
+vi.mock('node:dgram', () => ({
+  default: {
+    createSocket: createSocketMock,
   },
 }));
 
-const SECOND_IN_MILLIS = 1000;
-const replyTimeout = 5 * SECOND_IN_MILLIS;
+const modulePromise = import('./index.js');
 
-describe.skip('NTP', () => {
-  afterEach(() => {
-    vi.resetAllMocks();
+function createSocketDouble() {
+  const handlers: Record<string, (value?: any) => void> = {};
+  return {
+    close: vi.fn(),
+    emit(event: string, value?: any) {
+      handlers[event]?.(value);
+    },
+    on(event: string, callback: (value?: any) => void) {
+      handlers[event] = callback;
+      return this;
+    },
+    once(event: string, callback: (value?: any) => void) {
+      handlers[event] = callback;
+      return this;
+    },
+    send: vi.fn(),
+  };
+}
+
+function makeNtpResponse(secondsSince1900: number): Buffer {
+  const buffer = Buffer.alloc(48);
+  buffer.writeUInt32BE(secondsSince1900, 40);
+  buffer.writeUInt32BE(0, 44);
+  return buffer;
+}
+
+describe('NTPClient', () => {
+  test('uses default configuration values', async () => {
+    const {NTPClient} = await modulePromise;
+    const client = new NTPClient();
+    expect((client as any).config.server).toBe('pool.ntp.org');
+    expect((client as any).config.port).toBe(123);
   });
 
-  it(
-    'returns the current time',
-    async () => {
-      const ntpClient = new NTPClient({replyTimeout});
-      const data = await ntpClient.getNetworkTime();
-      expect(data).toEqual(expect.any(Date));
-    },
-    replyTimeout
-  );
+  test('applies constructor server and port arguments', async () => {
+    const {NTPClient} = await modulePromise;
+    const client = new NTPClient('time.example.com', 321);
+    expect((client as any).config.server).toBe('time.example.com');
+    expect((client as any).config.port).toBe(321);
+  });
 
-  it(
-    'works with another NTP server',
-    async () => {
-      const ntpClient = new NTPClient({
-        replyTimeout,
-        server: '0.pool.ntp.org',
-      });
-      const data = await ntpClient.getNetworkTime();
-      expect(data).toEqual(expect.any(Date));
-    },
-    replyTimeout
-  );
-
-  it("doesn't work with an invalid NTP server", async () => {
-    const ntpClient = new NTPClient({
-      replyTimeout: SECOND_IN_MILLIS,
-      server: 'google.com',
+  test('resolves a Date from NTP response message', async () => {
+    const socket = createSocketDouble();
+    socket.send.mockImplementation((_msg, _offset, _length, _port, _server, callback) => {
+      callback();
+      queueMicrotask(() => socket.emit('message', makeNtpResponse(2_208_988_800)));
     });
-    await expect(ntpClient.getNetworkTime()).rejects.toThrowError(/Timeout/);
+    createSocketMock.mockReturnValue(socket);
+    const {NTPClient} = await modulePromise;
+    const client = new NTPClient({replyTimeout: 100, server: 'time.example.com'});
+
+    const date = await client.getNetworkTime();
+
+    expect(date).toBeInstanceOf(Date);
+    expect(socket.close).toHaveBeenCalled();
+  });
+
+  test('rejects when socket send fails', async () => {
+    const socket = createSocketDouble();
+    socket.send.mockImplementation((_msg, _offset, _length, _port, _server, callback) => {
+      callback(new Error('send failed'));
+    });
+    createSocketMock.mockReturnValue(socket);
+    const {NTPClient} = await modulePromise;
+    const client = new NTPClient({replyTimeout: 100});
+
+    await expect(client.getNetworkTime()).rejects.toThrow('send failed');
+  });
+
+  test('rejects when socket emits error event', async () => {
+    const socket = createSocketDouble();
+    socket.send.mockImplementation((_msg, _offset, _length, _port, _server, callback) => {
+      callback();
+      queueMicrotask(() => socket.emit('error', new Error('socket broke')));
+    });
+    createSocketMock.mockReturnValue(socket);
+    const {NTPClient} = await modulePromise;
+    const client = new NTPClient({replyTimeout: 100});
+
+    await expect(client.getNetworkTime()).rejects.toThrow('socket broke');
   });
 });

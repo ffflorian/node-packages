@@ -21,4 +21,21 @@ describe('ScrabbleCheater', () => {
     const sc = new ScrabbleCheater(emptyList);
     await expect(sc.start()).rejects.toThrowError();
   });
+
+  test('setLetters returns current instance for chaining', () => {
+    const sc = new ScrabbleCheater(wordList, {quietMode: true});
+    expect(sc.setLetters('abc')).toBe(sc);
+  });
+
+  test('applies maximum option to returned matches', async () => {
+    const sc = new ScrabbleCheater(wordList, {letters: 'her', maximum: 1, quietMode: true});
+    const matches = await sc.start();
+    expect(matches).toHaveLength(1);
+  });
+
+  test('normalizes letters by removing non-alphabet characters', async () => {
+    const sc = new ScrabbleCheater(wordList, {letters: 'h!e-r', quietMode: true});
+    const matches = await sc.start();
+    expect(matches.includes('her')).toBe(true);
+  });
 });
