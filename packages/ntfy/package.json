@@ -23,7 +23,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",
-    "dist": "yarn clean && yarn build"
+    "dist": "yarn clean && yarn build",
+    "test": "vitest run"
   },
   "type": "module",
   "version": "1.15.2"

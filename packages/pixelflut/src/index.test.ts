@@ -1,30 +1,87 @@
-import {describe, test} from 'vitest';
+import {describe, expect, test, vi} from 'vitest';
 
-import {Pixelflut} from './index.js';
+const connectMock = vi.hoisted(() => vi.fn());
+const createSocketMock = vi.hoisted(() => vi.fn());
+const socketWriteMock = vi.hoisted(() => vi.fn());
 
-describe.skip('Pixelflut', () => {
-  // eslint-disable-next-line no-magic-numbers
-  const pf = new Pixelflut('localhost', 8080, 0);
+class SocketDouble {
+  private handlers: Record<string, (...args: any[]) => void> = {};
 
-  test('sends a pixel', async () => {
-    // eslint-disable-next-line no-magic-numbers
-    const data = await pf.sendPixel(200, 200, 'ff0000');
-    if (data) {
-      console.info(data);
-    }
+  on(event: string, handler: (...args: any[]) => void): this {
+    this.handlers[event] = handler;
+    return this;
+  }
+
+  pipe(): this {
+    return this;
+  }
+
+  write(message: string, callback: (error?: Error) => void): void {
+    socketWriteMock(message);
+    callback();
+  }
+
+  trigger(event: string, ...args: any[]): void {
+    this.handlers[event]?.(...args);
+  }
+}
+
+vi.mock('node:net', () => ({
+  default: {
+    Socket: SocketDouble,
+  },
+}));
+
+vi.mock('node:dgram', () => ({
+  default: {
+    createSocket: createSocketMock,
+  },
+}));
+
+const modulePromise = import('./index.js');
+
+describe('Pixelflut', () => {
+  test('forces TCP when udp flag is true', async () => {
+    const {Pixelflut} = await modulePromise;
+    const pixelflut = new Pixelflut('localhost', 1234, 1, true);
+    expect((pixelflut as any).udp).toBe(false);
   });
 
-  test('sends many pixels', async () => {
-    // eslint-disable-next-line no-magic-numbers
-    const pixels = Array.from(Array(100), (_, index) => ({
-      color: '00ff00',
-      xPosition: index,
-      yPosition: index,
-    }));
+  test('sendPixel writes a PX command over tcp', async () => {
+    const {Pixelflut} = await modulePromise;
+    const pixelflut = new Pixelflut('localhost', 1234);
+    vi.spyOn(pixelflut, 'createTCPConnection').mockResolvedValue(undefined);
+    vi.spyOn(pixelflut as any, 'writeToTCP').mockResolvedValue(undefined);
 
-    const data = await pf.sendPixels(pixels);
-    if (data) {
-      console.info('data', data);
-    }
+    await pixelflut.sendPixel(5, 7, 'ff0000');
+
+    expect((pixelflut as any).writeToTCP).toHaveBeenCalledWith('PX 5 7 ff0000\n');
+  });
+
+  test('sendPixels writes one PX command for each pixel', async () => {
+    const {Pixelflut} = await modulePromise;
+    const pixelflut = new Pixelflut('localhost', 1234);
+    vi.spyOn(pixelflut, 'createTCPConnection').mockResolvedValue(undefined);
+    vi.spyOn(pixelflut as any, 'writeToTCP').mockResolvedValue(undefined);
+
+    await pixelflut.sendPixels([
+      {color: 'ff0000', xPosition: 1, yPosition: 2},
+      {color: '00ff00', xPosition: 3, yPosition: 4},
+    ]);
+
+    expect((pixelflut as any).writeToTCP).toHaveBeenCalledTimes(2);
+  });
+
+  test('writeToUDP rejects when no udp socket is present', async () => {
+    const {Pixelflut} = await modulePromise;
+    const pixelflut = new Pixelflut('localhost', 1234);
+    await expect(pixelflut.writeToUDP('PX 1 1 ffffff\n')).rejects.toThrow('No UDP socket available');
+  });
+
+  test('failed tracks errors and returns true after tolerance is exceeded', async () => {
+    const {Pixelflut} = await modulePromise;
+    const pixelflut = new Pixelflut('localhost', 1234, 1);
+    expect((pixelflut as any).failed('first')).toBe(false);
+    expect((pixelflut as any).failed('second')).toBe(true);
   });
 });

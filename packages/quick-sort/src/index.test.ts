@@ -35,4 +35,12 @@ describe('QuickSort', () => {
     expect(sortedArray).toEqual([]);
     expect(utils.isArraySortedAscending(sortedArray)).toEqual(true);
   });
+
+  test('does not mutate original array', () => {
+    const unsortedArray = [3, 2, 1];
+    const originalCopy = [...unsortedArray];
+    const sortedArray = QuickSort.sort(unsortedArray);
+    expect(unsortedArray).toEqual(originalCopy);
+    expect(sortedArray).toEqual([1, 2, 3]);
+  });
 });

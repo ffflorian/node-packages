@@ -32,7 +32,8 @@
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",
     "dist": "yarn clean && yarn build",
-    "start": "tsx src/cli.ts"
+    "start": "tsx src/cli.ts",
+    "test": "vitest run"
   },
   "type": "module",
   "version": "1.18.1"

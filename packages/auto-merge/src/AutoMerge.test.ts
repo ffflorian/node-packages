@@ -7,6 +7,16 @@ import type {GitHubPullRequest, Repository} from './types/index.js';
 import {AutoMerge} from './AutoMerge.js';
 
 describe('AutoMerge', () => {
+  test('throws when auth token is missing', () => {
+    expect(
+      () =>
+        new AutoMerge({
+          authToken: '',
+          projects: {gitHub: ['ffflorian/example-project']},
+        })
+    ).toThrow('No authentication token specified');
+  });
+
   describe('checkRepository', () => {
     let autoMerge: AutoMerge;
 
