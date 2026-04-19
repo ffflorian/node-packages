@@ -1,17 +1,17 @@
 name: Build
 
+permissions: {}
+
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
-permissions:
-  id-token: write
-  contents: write
-
 jobs:
   build_test_publish:
+    permissions:
+      id-token: write
+      contents: write
     name: Build, test and publish
     runs-on: ubuntu-latest
     steps:
