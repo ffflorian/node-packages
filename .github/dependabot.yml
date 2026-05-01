@@ -19,6 +19,7 @@ updates:
       default-days: 5
       exclude:
         - '@ffflorian/*'
+        - 'crates.io'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
