@@ -3,7 +3,7 @@
   "description": "A simple API client using fetch",
   "devDependencies": {
     "@types/node": "~24",
-    "typescript": "6.0.2"
+    "typescript": "6.0.3"
   },
   "engines": {
     "node": ">= 21"
