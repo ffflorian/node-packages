@@ -1,6 +1,8 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": "dist/cli.js",
+  "bin": {
+    "my-timezone": "dist/cli.js"
+  },
   "dependencies": {
     "commander": "14.0.3",
     "ntpclient": "1.16.1"
@@ -23,7 +25,10 @@
   "module": "dist/index.js",
   "name": "my-timezone",
   "readme": "https://github.com/ffflorian/node-packages#readme",
-  "repository": "https://github.com/ffflorian/node-packages.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/node-packages.git"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",

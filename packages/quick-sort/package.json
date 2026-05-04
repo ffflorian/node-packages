@@ -13,7 +13,10 @@
   "name": "quick-sort",
   "private": true,
   "readme": "https://github.com/ffflorian/node-packages#readme",
-  "repository": "https://github.com/ffflorian/node-packages.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/node-packages.git"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",

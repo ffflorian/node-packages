@@ -1,6 +1,8 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": "dist/cli.js",
+  "bin": {
+    "electron-info": "dist/cli.js"
+  },
   "dependencies": {
     "chalk": "5.6.2",
     "commander": "14.0.3",
@@ -37,7 +39,10 @@
   "module": "dist/index.js",
   "name": "electron-info",
   "readme": "https://github.com/ffflorian/node-packages#readme",
-  "repository": "https://github.com/ffflorian/node-packages.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/node-packages.git"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",

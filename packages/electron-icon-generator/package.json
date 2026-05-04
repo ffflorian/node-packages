@@ -1,6 +1,8 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": "dist/index.js",
+  "bin": {
+    "electron-icon-generator": "dist/index.js"
+  },
   "dependencies": {
     "commander": "14.0.3",
     "icon-gen": "5.0.0",
@@ -30,7 +32,10 @@
   "module": "dist/index.js",
   "name": "@ffflorian/electron-icon-generator",
   "readme": "https://github.com/ffflorian/node-packages#readme",
-  "repository": "https://github.com/ffflorian/node-packages.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/node-packages.git"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",

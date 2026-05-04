@@ -1,6 +1,8 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": "dist/cli.js",
+  "bin": {
+    "https-proxy": "dist/cli.js"
+  },
   "dependencies": {
     "basic-auth": "2.0.1",
     "commander": "14.0.3",
@@ -30,7 +32,10 @@
   "module": "dist/index.js",
   "name": "@ffflorian/https-proxy",
   "readme": "https://github.com/ffflorian/node-packages#readme",
-  "repository": "https://github.com/ffflorian/node-packages.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/node-packages.git"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",
