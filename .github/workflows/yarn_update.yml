@@ -23,3 +23,4 @@ jobs:
         uses: ffflorian/actions/yarn-update@f06ed1e06d898a98e4a130ba534c12d44bda9ded
         with:
           git_authorship: 'Florian Imdahl <git@ffflorian.de>'
+          release_cooldown_days: '5'
