@@ -5998,7 +5998,7 @@ __metadata:
   dependencies:
     jszip: "npm:3.10.1"
     protobufjs: "npm:8.0.2"
-    protobufjs-cli: "npm:2.0.1"
+    protobufjs-cli: "npm:2.0.2"
     tsx: "npm:4.21.0"
     typescript: "npm:6.0.3"
   languageName: unknown
@@ -10658,9 +10658,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs-cli@npm:2.0.1":
-  version: 2.0.1
-  resolution: "protobufjs-cli@npm:2.0.1"
+"protobufjs-cli@npm:2.0.2":
+  version: 2.0.2
+  resolution: "protobufjs-cli@npm:2.0.2"
   dependencies:
     chalk: "npm:^4.0.0"
     escodegen: "npm:^1.13.0"
@@ -10677,7 +10677,7 @@ __metadata:
   bin:
     pbjs: bin/pbjs
     pbts: bin/pbts
-  checksum: 10c0/c18e7136b8cc5c29cf02f18b82869a5bbda3a55ed4740827c59adde95f563d9861edb7cdacb355b401025187801a80acff63ece1609dc1f4ab24c6f35fa4ee9a
+  checksum: 10c0/6b027bb0d0b6902b07b425535a5411adbb1c78abf87f57e928b450efa9ce3bd496f6e1064866652e58a1294b733ebfad31cd3731320b1e09b89f103594dd8934
   languageName: node
   linkType: hard
 
