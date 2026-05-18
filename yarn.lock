@@ -5998,7 +5998,7 @@ __metadata:
   dependencies:
     jszip: "npm:3.10.1"
     protobufjs: "npm:8.2.0"
-    protobufjs-cli: "npm:2.0.2"
+    protobufjs-cli: "npm:2.2.1"
     tsx: "npm:4.21.0"
     typescript: "npm:6.0.3"
   languageName: unknown
@@ -8990,7 +8990,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.2.5":
+"minimist@npm:^1.2.5, minimist@npm:^1.2.8":
   version: 1.2.8
   resolution: "minimist@npm:1.2.8"
   checksum: 10c0/19d3fcdca050087b84c2029841a093691a91259a47def2f18222f41e7645a0b7c44ef4b40e88a1e58a40c84d2ef0ee6047c55594d298146d0eb3f6b737c20ce6
@@ -10658,9 +10658,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs-cli@npm:2.0.2":
-  version: 2.0.2
-  resolution: "protobufjs-cli@npm:2.0.2"
+"protobufjs-cli@npm:2.2.1":
+  version: 2.2.1
+  resolution: "protobufjs-cli@npm:2.2.1"
   dependencies:
     chalk: "npm:^4.0.0"
     escodegen: "npm:^1.13.0"
@@ -10668,16 +10668,17 @@ __metadata:
     estraverse: "npm:^5.1.0"
     glob: "npm:^8.0.0"
     jsdoc: "npm:^4.0.0"
-    minimist: "npm:^1.2.0"
+    minimist: "npm:^1.2.8"
     semver: "npm:^7.1.2"
     tmp: "npm:^0.2.1"
     uglify-js: "npm:^3.7.7"
   peerDependencies:
-    protobufjs: ^8.0.0
+    protobufjs: ">=8.2.1 <9"
   bin:
     pbjs: bin/pbjs
     pbts: bin/pbts
-  checksum: 10c0/6b027bb0d0b6902b07b425535a5411adbb1c78abf87f57e928b450efa9ce3bd496f6e1064866652e58a1294b733ebfad31cd3731320b1e09b89f103594dd8934
+    protoc-gen-pbjs: bin/protoc-gen-pbjs
+  checksum: 10c0/35865b466c60ac04be6ca3b991daac7035e8c2af5129f9b0c4c6eecbf14b69b833b952a7734e8b92cf3623e5dc7c1dcaa4eae45fe51588b33a85d0ec0331dbd4
   languageName: node
   linkType: hard
 
