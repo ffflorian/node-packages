@@ -8,6 +8,10 @@ updates:
     assignees:
       - ffflorian
     versioning-strategy: increase
+    groups:
+      protobufjs:
+        patterns:
+          - 'protobufjs*'
     ignore:
       - dependency-name: '@types/node'
         versions:
