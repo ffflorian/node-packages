@@ -6080,7 +6080,7 @@ __metadata:
   resolution: "exposure-keys@workspace:packages/exposure-keys"
   dependencies:
     jszip: "npm:3.10.1"
-    protobufjs: "npm:8.2.0"
+    protobufjs: "npm:8.2.1"
     protobufjs-cli: "npm:2.2.1"
     tsx: "npm:4.21.0"
     typescript: "npm:6.0.3"
@@ -10785,13 +10785,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs@npm:8.2.0":
-  version: 8.2.0
-  resolution: "protobufjs@npm:8.2.0"
+"protobufjs@npm:8.2.1":
+  version: 8.2.1
+  resolution: "protobufjs@npm:8.2.1"
   dependencies:
     "@types/node": "npm:>=13.7.0"
     long: "npm:^5.0.0"
-  checksum: 10c0/010775548a00e3ce60db0fabf92b3dc6fcd4bd70d2f0a246bc2be984fd7d3a72b89ac184520b47b35ca08e0cb9a585cdef3828e4093c8ddd0ddc0ff679e1efe1
+  checksum: 10c0/6b3ee8f9a2388a112e462bb0d12273bb3789084f2cbc14aa1b1ab05684ef1062da2164dfff426977b7a7e59a739283a895ad8ecb0fc887a3f488ac5c2c6529fa
   languageName: node
   linkType: hard
 
