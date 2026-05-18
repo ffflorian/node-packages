@@ -1,8 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "electron-icon-generator": "dist/index.js"
-  },
+  "bin": "dist/index.js",
   "dependencies": {
     "commander": "14.0.3",
     "icon-gen": "5.0.0",

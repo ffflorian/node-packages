@@ -1,8 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "jszip-cli": "dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "dependencies": {
     "commander": "14.0.3",
     "cosmiconfig": "9.0.1",
@@ -13,7 +11,7 @@
   },
   "description": "A zip CLI based on jszip.",
   "devDependencies": {
-    "@types/node": "~24",
+    "@types/node": "~25",
     "@types/progress": "2.0.7",
     "cross-env": "10.1.0",
     "tsx": "4.21.0",

@@ -1,14 +1,12 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "which-os": "dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "dependencies": {
     "commander": "14.0.3"
   },
   "description": "Get informations about your OS",
   "devDependencies": {
-    "@types/node": "~24",
+    "@types/node": "~25",
     "tsx": "4.21.0",
     "typescript": "6.0.3"
   },

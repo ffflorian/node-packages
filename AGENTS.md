@@ -55,7 +55,7 @@ This file explains how coding agents should work in this repository.
 This is a yarn workspaces monorepo managed by [multi-semantic-release](https://github.com/dhoulb/multi-semantic-release), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
 
 - **License**: GPL-3.0
-- **Node.js requirement**: >= 18.0 (CI uses Node.js 24.x)
+- **Node.js requirement**: >= 18.0
 - **Package manager**: yarn 4.12.0 (Berry)
 
 ## Packages
