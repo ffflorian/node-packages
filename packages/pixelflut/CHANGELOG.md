@@ -1,3 +1,10 @@
+## pixelflut [1.17.2](https://github.com/ffflorian/node-packages/compare/pixelflut@1.17.1...pixelflut@1.17.2) (2026-05-21)
+
+
+### Bug Fixes
+
+* Use Node 26 ([b8918e0](https://github.com/ffflorian/node-packages/commit/b8918e0aa562bbdfe7aa03fa67c489861434795d))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
