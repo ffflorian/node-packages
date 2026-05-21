@@ -11,7 +11,7 @@
   },
   "description": "Check your Rust packages for updates.",
   "devDependencies": {
-    "tsx": "4.21.0",
+    "tsx": "4.22.0",
     "typescript": "6.0.3"
   },
   "engines": {

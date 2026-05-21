@@ -9,7 +9,7 @@
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "devDependencies": {
     "@types/pngjs": "6.0.5",
-    "tsx": "4.21.0",
+    "tsx": "4.22.0",
     "typescript": "6.0.3"
   },
   "engines": {
