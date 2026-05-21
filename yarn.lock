@@ -7143,6 +7143,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ignore-walk@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "ignore-walk@npm:9.0.0"
+  dependencies:
+    minimatch: "npm:^10.0.3"
+  checksum: 10c0/1ee9a0bc0c9057f61bebd46335b266dc4ab96ea73f25297710dae2691200db96d9512bc723a99935f4e33a065e27e8bc9f8d4b09befc7b0241050585d232f137
+  languageName: node
+  linkType: hard
+
 "ignore@npm:^5.1.4":
   version: 5.3.2
   resolution: "ignore@npm:5.3.2"
@@ -9613,13 +9622,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-packlist@npm:10.0.4":
-  version: 10.0.4
-  resolution: "npm-packlist@npm:10.0.4"
+"npm-packlist@npm:11.0.0":
+  version: 11.0.0
+  resolution: "npm-packlist@npm:11.0.0"
   dependencies:
-    ignore-walk: "npm:^8.0.0"
-    proc-log: "npm:^6.0.0"
-  checksum: 10c0/500ec00ed5edc3f7136255a8c17dfd36fb718182af61a86a68768aa3b325f69739953fe8888fa8e4765db00e7892a9d0a30093b145d091b23e96b7d1bbf1187e
+    glob: "npm:^13.0.6"
+    ignore-walk: "npm:^9.0.0"
+    proc-log: "npm:^7.0.0"
+  checksum: 10c0/9740107f34711f5e393cde4e394b9018e7a1442a5d20753314147d68472992c6548efa14db76bc6918817744c20b260de5b8a8176db2f8affadba31970165dac
   languageName: node
   linkType: hard
 
@@ -10693,6 +10703,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"proc-log@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "proc-log@npm:7.0.0"
+  checksum: 10c0/b89c2d862604f35fec795477b0c7e376feab3ba0d4f4d291c4e959567442697cf451ac557d0623c1cc38af45a78128b983410f397a10c5d3a67f76c33de4754b
+  languageName: node
+  linkType: hard
+
 "process-nextick-args@npm:~2.0.0":
   version: 2.0.1
   resolution: "process-nextick-args@npm:2.0.1"
@@ -10811,7 +10828,7 @@ __metadata:
     "@types/npmcli__arborist": "npm:6.3.3"
     commander: "npm:14.0.3"
     logdown: "npm:3.3.1"
-    npm-packlist: "npm:10.0.4"
+    npm-packlist: "npm:11.0.0"
     tsx: "npm:4.21.0"
     typescript: "npm:6.0.3"
   bin:
