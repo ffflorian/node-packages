@@ -1,3 +1,17 @@
+## my-timezone [1.15.4](https://github.com/ffflorian/node-packages/compare/my-timezone@1.15.3...my-timezone@1.15.4) (2026-05-22)
+
+
+### Bug Fixes
+
+* **my-timezone:** Coordinate parsing regex ([#1237](https://github.com/ffflorian/node-packages/issues/1237)) ([a03592c](https://github.com/ffflorian/node-packages/commit/a03592c160c29ea464c9442f87e23ec8467756a7))
+* **my-timezone:** Set ntpclient dependency version to '*' ([#1238](https://github.com/ffflorian/node-packages/issues/1238)) ([baea54f](https://github.com/ffflorian/node-packages/commit/baea54f6aaaeba54d505afbbe2de4be4e63a707d))
+* Use Node 26 ([b8918e0](https://github.com/ffflorian/node-packages/commit/b8918e0aa562bbdfe7aa03fa67c489861434795d))
+
+
+### Dependencies
+
+* **ntpclient:** upgraded to 1.16.2
+
 ## my-timezone [1.15.3](https://github.com/ffflorian/node-packages/compare/my-timezone@1.15.2...my-timezone@1.15.3) (2026-04-04)
 
 
