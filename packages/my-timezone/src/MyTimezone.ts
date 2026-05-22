@@ -131,17 +131,20 @@ export class MyTimezone {
   }
 
   public parseCoordinates(coordinates: string): Coordinates {
-    const coordinatesRegex = new RegExp('([-?\\W\\d\\.]+,)?(?<longitude>[-?\\W\\d\\.]+)');
+    const coordinatesRegex =
+      /^(?:\s*[+-]?(?:\d+(?:\.\d*)?|\.\d+)\s*,)?\s*(?<longitude>[+-]?(?:\d+(?:\.\d*)?|\.\d+))\s*$/;
     const parsedRegex = coordinatesRegex.exec(coordinates);
-    if (parsedRegex?.groups?.longitude) {
-      try {
-        const longitude = parseFloat(parsedRegex.groups.longitude);
-        return {longitude};
-      } catch {
-        throw new Error(`Invalid coordinates: "${coordinates}"`);
-      }
+    if (!parsedRegex?.groups?.longitude) {
+      throw new Error(`No coordinates parsed: "${coordinates}"`);
     }
-    throw new Error(`No coordinates parsed: "${coordinates}"`);
+
+    const longitude = parseFloat(parsedRegex.groups.longitude);
+
+    if (Number.isNaN(longitude)) {
+      throw new Error(`Invalid coordinates: "${coordinates}"`);
+    }
+
+    return {longitude};
   }
 
   public parseDate(date: Date): CustomDate {

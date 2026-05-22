@@ -70,6 +70,22 @@ describe('MyTimezone', () => {
     expect(dataMinsk).toBeDefined();
   });
 
+  describe('parseCoordinates', () => {
+    test('parses a longitude value', () => {
+      const {longitude} = myTimezone.parseCoordinates('13.3888599');
+      expect(longitude).toBe(13.3888599);
+    });
+
+    test('parses longitude from latitude,longitude input', () => {
+      const {longitude} = myTimezone.parseCoordinates('52.5170365,13.3888599');
+      expect(longitude).toBe(13.3888599);
+    });
+
+    test('throws on non-numeric coordinate input', () => {
+      expect(() => myTimezone.parseCoordinates('----------------')).toThrow('No coordinates parsed');
+    });
+  });
+
   describe('getDateByLongitude offset accuracy', () => {
     // Fix a known UTC time to make offset assertions deterministic
     const knownUTC = new Date('2024-06-21T12:00:00.000Z'); // noon UTC
