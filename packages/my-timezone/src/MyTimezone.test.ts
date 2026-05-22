@@ -15,6 +15,8 @@ describe('MyTimezone', () => {
   const myTimezone = new MyTimezone({
     offline: true,
   });
+  const BERLIN_LONGITUDE = 13.3888599;
+  const BERLIN_LATITUDE = 52.5170365;
 
   nock(nominatimAPI)
     .get('/search')
@@ -68,6 +70,22 @@ describe('MyTimezone', () => {
 
     const dataMinsk = await myTimezone.getDateByAddress('Minsk, Belarus');
     expect(dataMinsk).toBeDefined();
+  });
+
+  describe('parseCoordinates', () => {
+    test('parses a longitude value', () => {
+      const {longitude} = myTimezone.parseCoordinates(`${BERLIN_LONGITUDE}`);
+      expect(longitude).toBe(BERLIN_LONGITUDE);
+    });
+
+    test('parses longitude from latitude,longitude input', () => {
+      const {longitude} = myTimezone.parseCoordinates(`${BERLIN_LATITUDE},${BERLIN_LONGITUDE}`);
+      expect(longitude).toBe(BERLIN_LONGITUDE);
+    });
+
+    test('throws on non-numeric coordinate input', () => {
+      expect(() => myTimezone.parseCoordinates('----------------')).toThrow('No coordinates parsed');
+    });
   });
 
   describe('getDateByLongitude offset accuracy', () => {
