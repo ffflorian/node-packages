@@ -612,7 +612,7 @@ __metadata:
     tsx: "npm:4.22.0"
     typescript: "npm:6.0.3"
   bin:
-    electron-icon-generator: dist/index.js
+    electron-icon-generator: dist/cli.js
   languageName: unknown
   linkType: soft
 

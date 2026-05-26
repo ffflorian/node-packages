@@ -1,6 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": "dist/index.js",
+  "bin": "dist/cli.js",
   "dependencies": {
     "commander": "14.0.3",
     "icon-gen": "5.0.0",
