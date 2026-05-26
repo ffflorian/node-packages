@@ -1,3 +1,10 @@
+## @ffflorian/electron-icon-generator [1.15.3](https://github.com/ffflorian/node-packages/compare/@ffflorian/electron-icon-generator@1.15.2...@ffflorian/electron-icon-generator@1.15.3) (2026-05-26)
+
+
+### Bug Fixes
+
+* **electron-icon-generator:** bin entry and import ([#1240](https://github.com/ffflorian/node-packages/issues/1240)) ([110a2f7](https://github.com/ffflorian/node-packages/commit/110a2f774a53573c09687c1cb396f43ea39e8677))
+
 ## @ffflorian/electron-icon-generator [1.15.2](https://github.com/ffflorian/node-packages/compare/@ffflorian/electron-icon-generator@1.15.1...@ffflorian/electron-icon-generator@1.15.2) (2026-05-18)
 
 
