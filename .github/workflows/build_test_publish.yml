@@ -7,6 +7,8 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+
 jobs:
   build_test_publish:
     permissions:
@@ -14,6 +16,7 @@ jobs:
       contents: write
     name: Build, test and publish
     runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_dispatch'
     steps:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
@@ -56,3 +59,17 @@ jobs:
         with:
           name: release-log
           path: /tmp/release.log
+
+  force-release:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+
+      - uses: ffflorian/actions/force-release@a0a2ae06249e17b033c28d9be811158e873f3d3b
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git_authorship: 'Florian Imdahl <git@ffflorian.de>'
