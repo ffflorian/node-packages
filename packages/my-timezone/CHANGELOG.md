@@ -1,3 +1,15 @@
+## my-timezone [1.15.5](https://github.com/ffflorian/node-packages/compare/my-timezone@1.15.4...my-timezone@1.15.5) (2026-05-28)
+
+
+### Bug Fixes
+
+* Force release ([648b236](https://github.com/ffflorian/node-packages/commit/648b2369bd639a9f160c7a0515639ba04e139c52))
+
+
+### Dependencies
+
+* **ntpclient:** upgraded to 1.16.3
+
 ## my-timezone [1.15.4](https://github.com/ffflorian/node-packages/compare/my-timezone@1.15.3...my-timezone@1.15.4) (2026-05-22)
 
 
