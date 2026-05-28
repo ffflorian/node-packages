@@ -1,3 +1,10 @@
+## electron-info [1.32.3](https://github.com/ffflorian/node-packages/compare/electron-info@1.32.2...electron-info@1.32.3) (2026-05-28)
+
+
+### Bug Fixes
+
+* Force release ([648b236](https://github.com/ffflorian/node-packages/commit/648b2369bd639a9f160c7a0515639ba04e139c52))
+
 ## electron-info [1.32.2](https://github.com/ffflorian/node-packages/compare/electron-info@1.32.1...electron-info@1.32.2) (2026-05-18)
 
 
