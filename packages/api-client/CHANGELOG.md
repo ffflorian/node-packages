@@ -1,3 +1,10 @@
+## @ffflorian/api-client [2.5.3](https://github.com/ffflorian/node-packages/compare/@ffflorian/api-client@2.5.2...@ffflorian/api-client@2.5.3) (2026-05-28)
+
+
+### Bug Fixes
+
+* Force release ([648b236](https://github.com/ffflorian/node-packages/commit/648b2369bd639a9f160c7a0515639ba04e139c52))
+
 ## @ffflorian/api-client [2.5.2](https://github.com/ffflorian/node-packages/compare/@ffflorian/api-client@2.5.1...@ffflorian/api-client@2.5.2) (2026-05-18)
 
 
