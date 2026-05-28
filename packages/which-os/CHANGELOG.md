@@ -1,3 +1,10 @@
+## which-os [1.18.3](https://github.com/ffflorian/node-packages/compare/which-os@1.18.2...which-os@1.18.3) (2026-05-28)
+
+
+### Bug Fixes
+
+* Force release ([648b236](https://github.com/ffflorian/node-packages/commit/648b2369bd639a9f160c7a0515639ba04e139c52))
+
 ## which-os [1.18.2](https://github.com/ffflorian/node-packages/compare/which-os@1.18.1...which-os@1.18.2) (2026-05-21)
 
 
