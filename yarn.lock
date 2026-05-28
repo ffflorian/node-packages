@@ -5917,8 +5917,8 @@ __metadata:
   resolution: "exposure-keys@workspace:packages/exposure-keys"
   dependencies:
     jszip: "npm:3.10.1"
-    protobufjs: "npm:8.3.0"
-    protobufjs-cli: "npm:2.3.0"
+    protobufjs: "npm:8.4.2"
+    protobufjs-cli: "npm:2.4.2"
     tsx: "npm:4.22.0"
     typescript: "npm:6.0.3"
   languageName: unknown
@@ -8645,10 +8645,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"long@npm:^5.0.0":
-  version: 5.2.3
-  resolution: "long@npm:5.2.3"
-  checksum: 10c0/6a0da658f5ef683b90330b1af76f06790c623e148222da9d75b60e266bbf88f803232dd21464575681638894a84091616e7f89557aa087fd14116c0f4e0e43d9
+"long@npm:^5.3.2":
+  version: 5.3.2
+  resolution: "long@npm:5.3.2"
+  checksum: 10c0/7130fe1cbce2dca06734b35b70d380ca3f70271c7f8852c922a7c62c86c4e35f0c39290565eca7133c625908d40e126ac57c02b1b1a4636b9457d77e1e60b981
   languageName: node
   linkType: hard
 
@@ -9231,7 +9231,7 @@ __metadata:
   dependencies:
     commander: "npm:14.0.3"
     nock: "npm:14.0.15"
-    ntpclient: "npm:1.16.2"
+    ntpclient: "npm:1.16.3"
     tsx: "npm:4.22.0"
     typescript: "npm:6.0.3"
     vitest: "npm:4.1.6"
@@ -9743,7 +9743,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ntpclient@npm:1.16.2, ntpclient@workspace:packages/ntpclient":
+"ntpclient@npm:1.16.3, ntpclient@workspace:packages/ntpclient":
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
@@ -10705,9 +10705,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs-cli@npm:2.3.0":
-  version: 2.3.0
-  resolution: "protobufjs-cli@npm:2.3.0"
+"protobufjs-cli@npm:2.4.2":
+  version: 2.4.2
+  resolution: "protobufjs-cli@npm:2.4.2"
   dependencies:
     chalk: "npm:^4.0.0"
     escodegen: "npm:^1.13.0"
@@ -10720,21 +10720,21 @@ __metadata:
     tmp: "npm:^0.2.1"
     uglify-js: "npm:^3.7.7"
   peerDependencies:
-    protobufjs: ">=8.2.1 <9"
+    protobufjs: ^8.4.2
   bin:
     pbjs: bin/pbjs
     pbts: bin/pbts
     protoc-gen-pbjs: bin/protoc-gen-pbjs
-  checksum: 10c0/ab91ef4b4359ec866c20075518820de4fdd5ee80bd9b704effe1460f0f5324a328292b3b23c2f3837f0bee34bbc4b4895e9de3d998ce66ce83a2d69012e5bb32
+  checksum: 10c0/36abd1b7f1113c6a2dc508031d00244f79aeb9ee3712eae8f6c86751545a0383ca9e04907a24ca64252245bb0c5b399803fa9ba869ae21d5f363fb347575128b
   languageName: node
   linkType: hard
 
-"protobufjs@npm:8.3.0":
-  version: 8.3.0
-  resolution: "protobufjs@npm:8.3.0"
+"protobufjs@npm:8.4.2":
+  version: 8.4.2
+  resolution: "protobufjs@npm:8.4.2"
   dependencies:
-    long: "npm:^5.0.0"
-  checksum: 10c0/dfdb7224b44cff678e971671b6edff6653f29970b4c593b43f220a433ca30a1468465064761b8360488f2531c34651289421af3d60275485582194b21131d639
+    long: "npm:^5.3.2"
+  checksum: 10c0/f97c7f8f1dba8b71f5ea7443a9672ce205497a574687e3fec48d27421a420f8558653cf4387368bc6147ac479262b356a001c83d8040376460828cc63c69dbfb
   languageName: node
   linkType: hard
 
