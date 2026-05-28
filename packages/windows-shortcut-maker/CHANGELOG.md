@@ -1,3 +1,10 @@
+## @ffflorian/windows-shortcut-maker [2.15.2](https://github.com/ffflorian/node-packages/compare/@ffflorian/windows-shortcut-maker@2.15.1...@ffflorian/windows-shortcut-maker@2.15.2) (2026-05-28)
+
+
+### Bug Fixes
+
+* Force release ([648b236](https://github.com/ffflorian/node-packages/commit/648b2369bd639a9f160c7a0515639ba04e139c52))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
