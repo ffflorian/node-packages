@@ -9231,7 +9231,7 @@ __metadata:
   dependencies:
     commander: "npm:14.0.3"
     nock: "npm:14.0.15"
-    ntpclient: "npm:1.16.2"
+    ntpclient: "npm:1.16.3"
     tsx: "npm:4.22.0"
     typescript: "npm:6.0.3"
     vitest: "npm:4.1.6"
@@ -9553,14 +9553,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-packlist@npm:11.0.0":
-  version: 11.0.0
-  resolution: "npm-packlist@npm:11.0.0"
+"npm-packlist@npm:11.1.0":
+  version: 11.1.0
+  resolution: "npm-packlist@npm:11.1.0"
   dependencies:
     glob: "npm:^13.0.6"
     ignore-walk: "npm:^9.0.0"
     proc-log: "npm:^7.0.0"
-  checksum: 10c0/9740107f34711f5e393cde4e394b9018e7a1442a5d20753314147d68472992c6548efa14db76bc6918817744c20b260de5b8a8176db2f8affadba31970165dac
+  checksum: 10c0/b64a3d113750f0f8b66e7b8de919fbb9c829f040c2740ca6384dad91fd2e3c8df80d1e519a352bb127b2738ea140055df755cf57915db010570aa565ff68bfdf
   languageName: node
   linkType: hard
 
@@ -9743,7 +9743,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ntpclient@npm:1.16.2, ntpclient@workspace:packages/ntpclient":
+"ntpclient@npm:1.16.3, ntpclient@workspace:packages/ntpclient":
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
@@ -10747,7 +10747,7 @@ __metadata:
     "@types/npmcli__arborist": "npm:6.3.3"
     commander: "npm:14.0.3"
     logdown: "npm:3.3.1"
-    npm-packlist: "npm:11.0.0"
+    npm-packlist: "npm:11.1.0"
     tsx: "npm:4.22.0"
     typescript: "npm:6.0.3"
   bin:
