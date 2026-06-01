@@ -12,6 +12,10 @@ updates:
       protobufjs:
         patterns:
           - 'protobufjs*'
+      oxlint:
+        patterns:
+          - 'oxlint'
+          - 'eslint-plugin-oxlint'
     ignore:
       - dependency-name: '@types/node'
         versions:
