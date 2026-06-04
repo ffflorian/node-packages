@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": "dist/cli.js",
   "dependencies": {
-    "commander": "14.0.3",
+    "commander": "15.0.0",
     "cosmiconfig": "9.0.1",
     "glob": "13.0.6",
     "jszip": "3.10.1",

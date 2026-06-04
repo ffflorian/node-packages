@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": "dist/cli.js",
   "dependencies": {
-    "commander": "14.0.3",
+    "commander": "15.0.0",
     "ntpclient": "1.16.3"
   },
   "description": "Calculate the true solar time at any geographic location.",

@@ -3,7 +3,7 @@
   "bin": "dist/cli.js",
   "dependencies": {
     "chalk": "5.6.2",
-    "commander": "14.0.3",
+    "commander": "15.0.0",
     "date-fns": "4.4.0",
     "logdown": "3.3.1",
     "semver": "7.8.1",
