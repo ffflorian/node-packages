@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": "dist/cli.js",
   "dependencies": {
-    "commander": "14.0.3"
+    "commander": "15.0.0"
   },
   "description": "Get informations about your OS",
   "devDependencies": {
@@ -11,7 +11,7 @@
     "typescript": "6.0.3"
   },
   "engines": {
-    "node": ">= 21"
+    "node": ">= 22.12.0"
   },
   "exports": "./dist/index.js",
   "files": [
