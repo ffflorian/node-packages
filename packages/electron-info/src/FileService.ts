@@ -1,4 +1,3 @@
-import {isAfter as isAfterDate, sub as subtractDate} from 'date-fns';
 import logdown from 'logdown';
 import {promises as fs, constants as fsConstants} from 'node:fs';
 import os from 'node:os';
@@ -89,8 +88,7 @@ export class FileService {
     const {mtime: fileModifiedDate} = await fs.stat(fileName);
     this.logger.log(`File "${fileName}" is from "${fileModifiedDate.toString()}"`);
 
-    const yesterday = subtractDate(new Date(), {days: 1});
-    return isAfterDate(fileModifiedDate, yesterday);
+    return isWithinLastDay(fileModifiedDate);
   }
 
   private async isPathReadable(filePath: string): Promise<boolean> {
@@ -114,4 +112,10 @@ export class FileService {
 
     return releases;
   }
+}
+
+export function isWithinLastDay(date: Date, now = new Date()): boolean {
+  const yesterday = new Date(now);
+  yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+  return date > yesterday;
 }

@@ -4656,13 +4656,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:4.4.0":
-  version: 4.4.0
-  resolution: "date-fns@npm:4.4.0"
-  checksum: 10c0/988f0a13db183f5dfc85c36bbb6847a9c135a9225888bbea4005876ec15539a8613c21a07370a4e7ea543918d5a1cafb423c528b42cdbbde5fdfddb178126b21
-  languageName: node
-  linkType: hard
-
 "debug@npm:4, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
@@ -4924,7 +4917,6 @@ __metadata:
     "@types/semver": "npm:7.7.1"
     chalk: "npm:5.6.2"
     commander: "npm:15.0.0"
-    date-fns: "npm:4.4.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:14.0.15"
