@@ -1,3 +1,10 @@
+## electron-info [1.32.4](https://github.com/ffflorian/node-packages/compare/electron-info@1.32.3...electron-info@1.32.4) (2026-06-05)
+
+
+### Bug Fixes
+
+* **electron-info:** replace date-fns with native Date API ([#1269](https://github.com/ffflorian/node-packages/issues/1269)) ([6ae3d39](https://github.com/ffflorian/node-packages/commit/6ae3d3927acfb901d3e025faf828e38b2ee58d28))
+
 ## electron-info [1.32.3](https://github.com/ffflorian/node-packages/compare/electron-info@1.32.2...electron-info@1.32.3) (2026-05-28)
 
 
