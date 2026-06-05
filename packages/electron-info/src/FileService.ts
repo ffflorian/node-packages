@@ -88,9 +88,7 @@ export class FileService {
     const {mtime: fileModifiedDate} = await fs.stat(fileName);
     this.logger.log(`File "${fileName}" is from "${fileModifiedDate.toString()}"`);
 
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    return fileModifiedDate > yesterday;
+    return isWithinLastDay(fileModifiedDate);
   }
 
   private async isPathReadable(filePath: string): Promise<boolean> {
@@ -114,4 +112,10 @@ export class FileService {
 
     return releases;
   }
+}
+
+export function isWithinLastDay(date: Date, now = new Date()): boolean {
+  const yesterday = new Date(now);
+  yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+  return date > yesterday;
 }
