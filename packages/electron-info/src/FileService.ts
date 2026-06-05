@@ -1,4 +1,3 @@
-import {isAfter as isAfterDate, sub as subtractDate} from 'date-fns';
 import logdown from 'logdown';
 import {promises as fs, constants as fsConstants} from 'node:fs';
 import os from 'node:os';
@@ -89,8 +88,9 @@ export class FileService {
     const {mtime: fileModifiedDate} = await fs.stat(fileName);
     this.logger.log(`File "${fileName}" is from "${fileModifiedDate.toString()}"`);
 
-    const yesterday = subtractDate(new Date(), {days: 1});
-    return isAfterDate(fileModifiedDate, yesterday);
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    return fileModifiedDate > yesterday;
   }
 
   private async isPathReadable(filePath: string): Promise<boolean> {
