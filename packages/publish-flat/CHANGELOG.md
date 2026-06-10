@@ -1,3 +1,10 @@
+## publish-flat [1.19.3](https://github.com/ffflorian/node-packages/compare/publish-flat@1.19.2...publish-flat@1.19.3) (2026-06-10)
+
+
+### Bug Fixes
+
+* **deps:** bump npm-packlist from 11.1.0 to 11.2.0 ([#1280](https://github.com/ffflorian/node-packages/issues/1280)) [ci skip] ([901c4db](https://github.com/ffflorian/node-packages/commit/901c4dbdceca38c06a3a63e0f9040a88b7251098))
+
 ## publish-flat [1.19.2](https://github.com/ffflorian/node-packages/compare/publish-flat@1.19.1...publish-flat@1.19.2) (2026-05-28)
 
 
