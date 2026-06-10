@@ -1,3 +1,10 @@
+## electron-info [1.32.5](https://github.com/ffflorian/node-packages/compare/electron-info@1.32.4...electron-info@1.32.5) (2026-06-10)
+
+
+### Bug Fixes
+
+* **deps:** bump semver from 7.8.1 to 7.8.2 ([#1278](https://github.com/ffflorian/node-packages/issues/1278)) ([f7ae08f](https://github.com/ffflorian/node-packages/commit/f7ae08fc5a0df09024427ed76c025378427dc982))
+
 ## electron-info [1.32.4](https://github.com/ffflorian/node-packages/compare/electron-info@1.32.3...electron-info@1.32.4) (2026-06-05)
 
 
