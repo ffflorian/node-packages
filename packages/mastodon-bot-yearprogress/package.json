@@ -10,7 +10,7 @@
   "description": "Toots year's progress every few days to Mastodon.",
   "devDependencies": {
     "@types/ws": "8.18.1",
-    "tsx": "4.22.3",
+    "tsx": "4.22.4",
     "typescript": "6.0.3"
   },
   "engines": {
