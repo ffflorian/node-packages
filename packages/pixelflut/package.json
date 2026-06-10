@@ -6,7 +6,7 @@
     "@types/node": "~25",
     "tsx": "4.22.3",
     "typescript": "6.0.3",
-    "vitest": "4.1.7"
+    "vitest": "4.1.8"
   },
   "files": [
     "dist"
