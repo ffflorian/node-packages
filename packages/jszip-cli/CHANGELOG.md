@@ -1,3 +1,10 @@
+## @ffflorian/jszip-cli [3.16.4](https://github.com/ffflorian/node-packages/compare/@ffflorian/jszip-cli@3.16.3...@ffflorian/jszip-cli@3.16.4) (2026-06-18)
+
+
+### Bug Fixes
+
+* **deps:** bump cosmiconfig from 9.0.1 to 9.0.2 ([#1291](https://github.com/ffflorian/node-packages/issues/1291)) [ci skip] ([def09e2](https://github.com/ffflorian/node-packages/commit/def09e20164aefef3740a4016824df682019331a))
+
 ## @ffflorian/jszip-cli [3.16.3](https://github.com/ffflorian/node-packages/compare/@ffflorian/jszip-cli@3.16.2...@ffflorian/jszip-cli@3.16.3) (2026-05-28)
 
 
