@@ -3,7 +3,7 @@
   "description": "My Node.js packages",
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "@ffflorian/eslint-config": "0.14.2",
+    "@ffflorian/eslint-config": "1.0.1",
     "@ffflorian/prettier-config": "0.8.2",
     "@ffflorian/semantic-release-config": "0.12.5",
     "@semantic-release/changelog": "6.0.3",
