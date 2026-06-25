@@ -1,3 +1,10 @@
+## exposure-keys [1.18.5](https://github.com/ffflorian/node-packages/compare/exposure-keys@1.18.4...exposure-keys@1.18.5) (2026-06-25)
+
+
+### Bug Fixes
+
+* **deps:** bump the protobufjs group with 2 updates ([#1303](https://github.com/ffflorian/node-packages/issues/1303)) ([9da3f88](https://github.com/ffflorian/node-packages/commit/9da3f881bc8d9bf90eb7c9e5a4c61cd782418452))
+
 ## exposure-keys [1.18.4](https://github.com/ffflorian/node-packages/compare/exposure-keys@1.18.3...exposure-keys@1.18.4) (2026-06-18)
 
 
