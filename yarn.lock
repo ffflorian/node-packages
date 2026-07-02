@@ -9240,14 +9240,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-packlist@npm:11.2.0":
-  version: 11.2.0
-  resolution: "npm-packlist@npm:11.2.0"
+"npm-packlist@npm:11.3.0":
+  version: 11.3.0
+  resolution: "npm-packlist@npm:11.3.0"
   dependencies:
     glob: "npm:^13.0.6"
     ignore-walk: "npm:^9.0.0"
     proc-log: "npm:^7.0.0"
-  checksum: 10c0/b08d9b04cee62f4a6d5b8b878850389fadc198558eda572cca0e6c555447775bca3a0d3b28b65a04460b77950e6c6c8845c409a6f012f153d4cf52a270a1c347
+  checksum: 10c0/abdeea53e1eddc33ae1707f368579db17ee3377a8e15e2e850aa048f5810b9b1043cf67df20f6a51c7afc257e7219a5843aaa36739bbf7f15ccdad520bfba060
   languageName: node
   linkType: hard
 
@@ -10435,7 +10435,7 @@ __metadata:
     "@types/npmcli__arborist": "npm:6.3.3"
     commander: "npm:15.0.0"
     logdown: "npm:3.3.1"
-    npm-packlist: "npm:11.2.0"
+    npm-packlist: "npm:11.3.0"
     tsx: "npm:4.22.4"
     typescript: "npm:6.0.3"
   bin:
