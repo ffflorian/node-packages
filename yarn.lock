@@ -9223,7 +9223,7 @@ __metadata:
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-oxlint: "npm:1.70.0"
     eslint-plugin-perfectionist: "npm:5.9.1"
-    globals: "npm:17.6.0"
+    globals: "npm:17.7.0"
     jiti: "npm:2.7.0"
     lefthook: "npm:2.1.9"
     multi-semantic-release: "npm:3.1.0"
