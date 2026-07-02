@@ -573,7 +573,7 @@ __metadata:
     cosmiconfig: "npm:9.0.2"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     tsx: "npm:4.22.4"
     typescript: "npm:6.0.3"
     vitest: "npm:4.1.9"
@@ -634,7 +634,7 @@ __metadata:
     find-up: "npm:8.0.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     open: "npm:11.0.0"
     tsx: "npm:4.22.4"
     typescript: "npm:6.0.3"
@@ -4747,7 +4747,7 @@ __metadata:
     commander: "npm:15.0.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     semver: "npm:7.8.5"
     table: "npm:6.9.0"
     tsx: "npm:4.22.4"
@@ -9070,7 +9070,7 @@ __metadata:
   resolution: "my-timezone@workspace:packages/my-timezone"
   dependencies:
     commander: "npm:15.0.0"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     ntpclient: "npm:1.16.3"
     tsx: "npm:4.22.4"
     typescript: "npm:6.0.3"
@@ -9144,14 +9144,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nock@npm:14.0.15":
-  version: 14.0.15
-  resolution: "nock@npm:14.0.15"
+"nock@npm:14.0.16":
+  version: 14.0.16
+  resolution: "nock@npm:14.0.16"
   dependencies:
     "@mswjs/interceptors": "npm:^0.41.0"
     json-stringify-safe: "npm:^5.0.1"
     propagate: "npm:^2.0.0"
-  checksum: 10c0/f3bac19b3173d37e2f730ffac1ec2bd5c0bff153cae2f81e68504310a7830d765749908e3fe40eeab70de4adcb82fcb514a4fcef1ffdc8e7710ab070e92d879d
+  checksum: 10c0/c275834df286244c12fa1d456eee1bcfab09d2ce56ca27bf1009c8ba171979dcc0d3b373c352b6772afa37b26f4a6a01501e9fcd81b3be81c480b3bb7c8c64bc
   languageName: node
   linkType: hard
 
