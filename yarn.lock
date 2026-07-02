@@ -9231,7 +9231,7 @@ __metadata:
     prettier: "npm:3.8.4"
     semantic-release: "npm:25.0.5"
     typescript: "npm:6.0.3"
-    typescript-eslint: "npm:8.61.1"
+    typescript-eslint: "npm:8.62.0"
     vite: "npm:8.1.1"
     vitest: "npm:4.1.9"
   languageName: unknown
