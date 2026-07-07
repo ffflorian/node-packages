@@ -11,7 +11,7 @@
   },
   "description": "A zip CLI based on jszip.",
   "devDependencies": {
-    "@types/node": "~25",
+    "@types/node": "~26",
     "@types/progress": "2.0.7",
     "cross-env": "10.1.0",
     "tsx": "4.22.4",
