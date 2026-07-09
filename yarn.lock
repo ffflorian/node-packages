@@ -607,22 +607,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ffflorian/eslint-config@npm:1.0.2":
-  version: 1.0.2
-  resolution: "@ffflorian/eslint-config@npm:1.0.2"
+"@ffflorian/eslint-config@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@ffflorian/eslint-config@npm:1.0.3"
   dependencies:
     "@eslint/js": "npm:10.0.1"
     eslint: "npm:9.39.4"
     eslint-import-resolver-typescript: "npm:4.4.5"
     eslint-plugin-import: "npm:2.32.0"
-    eslint-plugin-oxlint: "npm:1.71.0"
+    eslint-plugin-oxlint: "npm:1.72.0"
     eslint-plugin-perfectionist: "npm:5.9.1"
     globals: "npm:17.7.0"
     jiti: "npm:2.7.0"
-    typescript-eslint: "npm:8.62.0"
+    typescript-eslint: "npm:8.62.1"
   peerDependencies:
     eslint: ">=8.x || <10.x"
-  checksum: 10c0/f1c235d294050ced4cd560f24a2205576824d942646a5600ca68735bc2f38b6cb60de618bbbc5954da2cfb7a24322fb402bf1fe702a04e722c56dbe7bc9ea977
+  checksum: 10c0/88393e136ecdc92a38fb6b6075ef62e121a7a023c5ec720af32f45009827943eca0819a5b7d6b93a35d18aca9b97921f85a81917975256a98768e5c06b9068db
   languageName: node
   linkType: hard
 
@@ -9212,7 +9212,7 @@ __metadata:
   resolution: "node-packages@workspace:."
   dependencies:
     "@eslint/js": "npm:10.0.1"
-    "@ffflorian/eslint-config": "npm:1.0.2"
+    "@ffflorian/eslint-config": "npm:1.0.3"
     "@ffflorian/prettier-config": "npm:1.0.0"
     "@ffflorian/semantic-release-config": "npm:1.0.0"
     "@semantic-release/changelog": "npm:6.0.3"
