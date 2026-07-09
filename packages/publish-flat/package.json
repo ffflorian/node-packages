@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/npm-packlist": "7.0.3",
     "@types/npmcli__arborist": "6.3.3",
-    "tsx": "4.22.4",
+    "tsx": "4.23.0",
     "typescript": "6.0.3"
   },
   "engines": {
