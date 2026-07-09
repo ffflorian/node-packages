@@ -1,3 +1,10 @@
+## publish-flat [1.19.6](https://github.com/ffflorian/node-packages/compare/publish-flat@1.19.5...publish-flat@1.19.6) (2026-07-09)
+
+
+### Bug Fixes
+
+* **deps:** bump @npmcli/arborist from 9.8.0 to 9.9.0 ([#1335](https://github.com/ffflorian/node-packages/issues/1335)) [ci skip] ([5984374](https://github.com/ffflorian/node-packages/commit/5984374d130f2f82a910a16577d2e51ab4bf2905))
+
 ## publish-flat [1.19.5](https://github.com/ffflorian/node-packages/compare/publish-flat@1.19.4...publish-flat@1.19.5) (2026-07-02)
 
 
