@@ -5,7 +5,7 @@
     "publish-flat-copy": "dist/cli-copy.js"
   },
   "dependencies": {
-    "@npmcli/arborist": "9.9.0",
+    "@npmcli/arborist": "10.0.1",
     "commander": "15.0.0",
     "logdown": "3.3.1",
     "npm-packlist": "11.3.0"
