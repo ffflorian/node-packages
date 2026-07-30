@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": "dist/cli.js",
   "dependencies": {
-    "clipboardy": "5.3.1",
+    "clipboardy": "5.3.2",
     "commander": "15.0.0"
   },
   "description": "A simple Scrabble cheating tool.",
