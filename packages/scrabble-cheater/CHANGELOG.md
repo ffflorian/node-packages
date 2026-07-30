@@ -1,3 +1,10 @@
+## scrabble-cheater [3.16.4](https://github.com/ffflorian/node-packages/compare/scrabble-cheater@3.16.3...scrabble-cheater@3.16.4) (2026-07-30)
+
+
+### Bug Fixes
+
+* **deps:** bump clipboardy from 5.3.1 to 5.3.2 ([#1373](https://github.com/ffflorian/node-packages/issues/1373)) [ci skip] ([329da5f](https://github.com/ffflorian/node-packages/commit/329da5f6ec83bdb556de8444b79b06593ea10ddc))
+
 ## scrabble-cheater [3.16.3](https://github.com/ffflorian/node-packages/compare/scrabble-cheater@3.16.2...scrabble-cheater@3.16.3) (2026-05-28)
 
 
