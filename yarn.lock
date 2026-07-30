@@ -4295,9 +4295,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clipboardy@npm:5.3.1":
-  version: 5.3.1
-  resolution: "clipboardy@npm:5.3.1"
+"clipboardy@npm:5.3.2":
+  version: 5.3.2
+  resolution: "clipboardy@npm:5.3.2"
   dependencies:
     clipboard-image: "npm:^0.1.0"
     execa: "npm:^9.6.1"
@@ -4305,7 +4305,7 @@ __metadata:
     is-wsl: "npm:^3.1.0"
     is64bit: "npm:^2.0.0"
     powershell-utils: "npm:^0.2.0"
-  checksum: 10c0/3ca79dd0c972ac430e65480965e89ab325889db2bb43e75703a218d80e881c22f13cc59b9425c36d66c260f2d9387a6f42563f25f3453506f075a0273762c180
+  checksum: 10c0/a970a6b7d35bc599a213b11ad0ffec4f8913a462afbc9a010c4d370181d744367e41c9a2fdfa20cba3e329d6cfb2676a6f968517e9f45d653338cb41256ed233
   languageName: node
   linkType: hard
 
@@ -11696,7 +11696,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "scrabble-cheater@workspace:packages/scrabble-cheater"
   dependencies:
-    clipboardy: "npm:5.3.1"
+    clipboardy: "npm:5.3.2"
     commander: "npm:15.0.0"
     tsx: "npm:4.23.1"
     typescript: "npm:6.0.3"
