@@ -12,7 +12,7 @@
     "http-status-codes": "2.3.0",
     "nock": "14.0.16",
     "tsx": "4.23.1",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "vitest": "4.1.10"
   },
   "engines": {
