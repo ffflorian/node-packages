@@ -18,9 +18,6 @@ updates:
       - dependency-name: '@types/node'
         update-types:
           - version-update:semver-major
-      - dependency-name: '@types/express'
-        update-types:
-          - version-update:semver-major
     open-pull-requests-limit: 99
     package-ecosystem: npm
     schedule:
