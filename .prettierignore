@@ -7,3 +7,4 @@ fixtures
 ./packages/exposure-keys/proto/*
 .yarnrc.yml
 CLAUDE.md
+.claude

@@ -11,10 +11,6 @@ updates:
         - crates.io
     directory: /
     groups:
-      oxlint:
-        patterns:
-          - oxlint
-          - eslint-plugin-oxlint
       protobufjs:
         patterns:
           - protobufjs*
