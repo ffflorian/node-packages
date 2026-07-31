@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "My Node.js packages",
   "devDependencies": {
-    "@ffflorian/oxlint-config": "1.0.2",
+    "@ffflorian/oxlint-config": "1.0.3",
     "@ffflorian/prettier-config": "1.0.0",
     "@ffflorian/semantic-release-config": "1.0.0",
     "@semantic-release/changelog": "7.0.0",

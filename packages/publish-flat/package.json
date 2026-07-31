@@ -15,7 +15,7 @@
     "@types/npm-packlist": "7.0.3",
     "@types/npmcli__arborist": "6.3.3",
     "tsx": "4.23.1",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   },
   "engines": {
     "node": ">= 22.12.0"

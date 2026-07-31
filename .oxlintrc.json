@@ -1,4 +1,5 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "ignorePatterns": ["dist/**", "temp/**", "schemas/**", ".cache/**"]
+  "extends": ["./node_modules/@ffflorian/oxlint-config/index.json"],
+  "ignorePatterns": ["**/dist/**"]
 }
