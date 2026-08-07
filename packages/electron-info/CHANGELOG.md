@@ -1,3 +1,10 @@
+## electron-info [1.32.8](https://github.com/ffflorian/node-packages/compare/electron-info@1.32.7...electron-info@1.32.8) (2026-08-07)
+
+
+### Bug Fixes
+
+* **deps:** bump chalk from 5.6.2 to 6.0.0 ([#1389](https://github.com/ffflorian/node-packages/issues/1389)) [ci skip] ([f32be4c](https://github.com/ffflorian/node-packages/commit/f32be4c76ed8978947fe996885de56fd6c2a78c0))
+
 ## electron-info [1.32.7](https://github.com/ffflorian/node-packages/compare/electron-info@1.32.6...electron-info@1.32.7) (2026-06-25)
 
 
