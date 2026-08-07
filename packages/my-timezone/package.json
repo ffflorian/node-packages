@@ -7,7 +7,7 @@
   },
   "description": "Calculate the true solar time at any geographic location.",
   "devDependencies": {
-    "nock": "14.0.16",
+    "nock": "14.0.17",
     "tsx": "4.23.1",
     "typescript": "7.0.2",
     "vitest": "4.1.10"
