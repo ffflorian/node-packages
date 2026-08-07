@@ -1,3 +1,10 @@
+## publish-flat [1.19.8](https://github.com/ffflorian/node-packages/compare/publish-flat@1.19.7...publish-flat@1.19.8) (2026-08-07)
+
+
+### Bug Fixes
+
+* **deps:** bump @npmcli/arborist from 10.0.1 to 10.0.2 ([#1391](https://github.com/ffflorian/node-packages/issues/1391)) ([539c408](https://github.com/ffflorian/node-packages/commit/539c4081572664d79c1774cf4109114a304ed894))
+
 ## publish-flat [1.19.7](https://github.com/ffflorian/node-packages/compare/publish-flat@1.19.6...publish-flat@1.19.7) (2026-07-16)
 
 
