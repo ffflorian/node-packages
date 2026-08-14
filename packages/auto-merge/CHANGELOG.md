@@ -1,3 +1,10 @@
+## @ffflorian/auto-merge [1.8.5](https://github.com/ffflorian/node-packages/compare/@ffflorian/auto-merge@1.8.4...@ffflorian/auto-merge@1.8.5) (2026-08-14)
+
+
+### Bug Fixes
+
+* **deps:** bump cosmiconfig from 9.0.2 to 10.0.0 ([#1399](https://github.com/ffflorian/node-packages/issues/1399)) [ci skip] ([f31c1e0](https://github.com/ffflorian/node-packages/commit/f31c1e04c86534fb20009dd3ff4125ee90c78543))
+
 ## @ffflorian/auto-merge [1.8.4](https://github.com/ffflorian/node-packages/compare/@ffflorian/auto-merge@1.8.3...@ffflorian/auto-merge@1.8.4) (2026-06-18)
 
 
