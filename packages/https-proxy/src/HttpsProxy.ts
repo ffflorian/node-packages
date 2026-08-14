@@ -1,4 +1,4 @@
-import basicAuth from 'basic-auth';
+import {parse as parseBasicAuth} from 'basic-auth';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import logdown from 'logdown';
 import http from 'node:http';
@@ -150,7 +150,7 @@ export class HttpsProxy {
   };
 
   private validateAuthorization(auth: string): boolean {
-    const credentials = basicAuth.parse(auth);
+    const credentials = parseBasicAuth(auth);
     return (
       !!credentials &&
       compare(credentials.name, this.options.username) &&
