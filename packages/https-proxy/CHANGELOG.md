@@ -1,3 +1,10 @@
+## @ffflorian/https-proxy [1.20.4](https://github.com/ffflorian/node-packages/compare/@ffflorian/https-proxy@1.20.3...@ffflorian/https-proxy@1.20.4) (2026-08-14)
+
+
+### Bug Fixes
+
+* **deps:** bump basic-auth from 2.0.1 to 3.0.0 ([#1395](https://github.com/ffflorian/node-packages/issues/1395)) ([0a9bb91](https://github.com/ffflorian/node-packages/commit/0a9bb91282b37d077d444412e31216960d70a76f))
+
 ## @ffflorian/https-proxy [1.20.3](https://github.com/ffflorian/node-packages/compare/@ffflorian/https-proxy@1.20.2...@ffflorian/https-proxy@1.20.3) (2026-05-28)
 
 
