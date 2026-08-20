@@ -1,3 +1,10 @@
+## @ffflorian/gh-open [3.16.4](https://github.com/ffflorian/node-packages/compare/@ffflorian/gh-open@3.16.3...@ffflorian/gh-open@3.16.4) (2026-08-20)
+
+
+### Bug Fixes
+
+* **deps:** bump open from 11.0.0 to 11.0.1 ([#1404](https://github.com/ffflorian/node-packages/issues/1404)) ([65ae390](https://github.com/ffflorian/node-packages/commit/65ae3908b8b9a2f57918f74c2bb4fa48383ce377))
+
 ## @ffflorian/gh-open [3.16.3](https://github.com/ffflorian/node-packages/compare/@ffflorian/gh-open@3.16.2...@ffflorian/gh-open@3.16.3) (2026-05-28)
 
 
