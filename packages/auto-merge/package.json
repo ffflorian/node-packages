@@ -10,7 +10,7 @@
   "devDependencies": {
     "http-status-codes": "2.3.0",
     "nock": "14.0.17",
-    "tsx": "4.23.11",
+    "tsx": "4.23.12",
     "typescript": "7.0.2",
     "vitest": "4.1.10"
   },
