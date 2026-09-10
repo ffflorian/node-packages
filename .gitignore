@@ -11,6 +11,9 @@ pids
 # Dependency directories
 node_modules
 
+# Nx
+.nx
+
 # TypeScript output
 dist
 

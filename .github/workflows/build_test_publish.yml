@@ -40,7 +40,7 @@ jobs:
           yarn lint
           yarn test
 
-      - name: Release on npm
+      - name: Release with Nx
         if: github.event_name != 'pull_request'
         env:
           GIT_AUTHOR_NAME: Florian Imdahl
@@ -52,7 +52,7 @@ jobs:
           git config --global "user.email" "${GIT_AUTHOR_EMAIL}"
           git config --global "user.name" "${GIT_AUTHOR_NAME}"
           set -o pipefail
-          yarn release 2>&1 | tee /tmp/release.log
+          yarn nx release --yes 2>&1 | tee /tmp/release.log
 
       - name: Upload release log
         if: failure()
