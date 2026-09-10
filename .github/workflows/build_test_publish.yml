@@ -8,6 +8,15 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      specifier:
+        description: Version bump to force for all packages
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: patch
 
 jobs:
   build_test_publish:
@@ -40,7 +49,7 @@ jobs:
           yarn lint
           yarn test
 
-      - name: Release on npm
+      - name: Release with Nx
         if: github.event_name != 'pull_request'
         env:
           GIT_AUTHOR_NAME: Florian Imdahl
@@ -52,7 +61,7 @@ jobs:
           git config --global "user.email" "${GIT_AUTHOR_EMAIL}"
           git config --global "user.name" "${GIT_AUTHOR_NAME}"
           set -o pipefail
-          yarn release 2>&1 | tee /tmp/release.log
+          yarn nx release --yes 2>&1 | tee /tmp/release.log
 
       - name: Upload release log
         if: failure()
@@ -63,14 +72,48 @@ jobs:
 
   force-release:
     permissions:
+      id-token: write
       contents: write
+      issues: write
+    name: Force release all packages
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-
-      - uses: ffflorian/actions/force-release@bd0f6230f0235903981da2bd4a16e7154261ef33
         with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 26
+          cache: yarn
+
+      - name: Install packages
+        run: |
+          yarn --immutable
+
+      - name: Build
+        run: |
+          yarn build:ts
+
+      - name: Force release with Nx
+        env:
+          GIT_AUTHOR_NAME: Florian Imdahl
+          GIT_AUTHOR_EMAIL: ffflorian@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          git_authorship: 'Florian Imdahl <git@ffflorian.de>'
+        run: |
+          export GIT_COMMITTER_NAME="${GIT_AUTHOR_NAME}"
+          export GIT_COMMITTER_EMAIL="${GIT_AUTHOR_EMAIL}"
+          git config --global "user.email" "${GIT_AUTHOR_EMAIL}"
+          git config --global "user.name" "${GIT_AUTHOR_NAME}"
+          set -o pipefail
+          yarn nx release "${{ inputs.specifier }}" --yes 2>&1 | tee /tmp/release.log
+
+      - name: Upload release log
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: force-release-log
+          path: /tmp/release.log
