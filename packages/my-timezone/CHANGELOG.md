@@ -1,3 +1,9 @@
+## 1.15.6 (2026-09-10)
+
+### 🧱 Updated Dependencies
+
+- Updated ntpclient to 1.16.4
+
 ## my-timezone [1.15.5](https://github.com/ffflorian/node-packages/compare/my-timezone@1.15.4...my-timezone@1.15.5) (2026-05-28)
 
 

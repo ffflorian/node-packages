@@ -1,3 +1,7 @@
+## 2.5.4 (2026-09-10)
+
+This was a version bump only for @ffflorian/api-client to align it with other projects, there were no code changes.
+
 ## @ffflorian/api-client [2.5.3](https://github.com/ffflorian/node-packages/compare/@ffflorian/api-client@2.5.2...@ffflorian/api-client@2.5.3) (2026-05-28)
 
 

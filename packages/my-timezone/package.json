@@ -3,7 +3,7 @@
   "bin": "dist/cli.js",
   "dependencies": {
     "commander": "15.0.0",
-    "ntpclient": "1.16.3"
+    "ntpclient": "1.16.4"
   },
   "description": "Calculate the true solar time at any geographic location.",
   "devDependencies": {
@@ -35,5 +35,5 @@
     "test": "vitest run"
   },
   "type": "module",
-  "version": "1.15.5"
+  "version": "1.15.6"
 }

@@ -1,3 +1,7 @@
+## 1.19.9 (2026-09-10)
+
+This was a version bump only for publish-flat to align it with other projects, there were no code changes.
+
 ## publish-flat [1.19.8](https://github.com/ffflorian/node-packages/compare/publish-flat@1.19.7...publish-flat@1.19.8) (2026-08-07)
 
 

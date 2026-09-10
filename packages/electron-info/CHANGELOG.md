@@ -1,3 +1,7 @@
+## 1.32.9 (2026-09-10)
+
+This was a version bump only for electron-info to align it with other projects, there were no code changes.
+
 ## electron-info [1.32.8](https://github.com/ffflorian/node-packages/compare/electron-info@1.32.7...electron-info@1.32.8) (2026-08-07)
 
 

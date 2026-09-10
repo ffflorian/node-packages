@@ -1,3 +1,7 @@
+## 3.16.5 (2026-09-10)
+
+This was a version bump only for scrabble-cheater to align it with other projects, there were no code changes.
+
 ## scrabble-cheater [3.16.4](https://github.com/ffflorian/node-packages/compare/scrabble-cheater@3.16.3...scrabble-cheater@3.16.4) (2026-07-30)
 
 

@@ -1,3 +1,7 @@
+## 1.17.3 (2026-09-10)
+
+This was a version bump only for crates-updater to align it with other projects, there were no code changes.
+
 ## crates-updater [1.17.2](https://github.com/ffflorian/node-packages/compare/crates-updater@1.17.1...crates-updater@1.17.2) (2026-05-28)
 
 

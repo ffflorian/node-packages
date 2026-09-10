@@ -1,3 +1,7 @@
+## 1.17.4 (2026-09-10)
+
+This was a version bump only for pixelflut to align it with other projects, there were no code changes.
+
 ## pixelflut [1.17.3](https://github.com/ffflorian/node-packages/compare/pixelflut@1.17.2...pixelflut@1.17.3) (2026-05-28)
 
 

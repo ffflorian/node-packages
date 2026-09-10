@@ -1,3 +1,7 @@
+## 1.16.4 (2026-09-10)
+
+This was a version bump only for ntpclient to align it with other projects, there were no code changes.
+
 ## ntpclient [1.16.3](https://github.com/ffflorian/node-packages/compare/ntpclient@1.16.2...ntpclient@1.16.3) (2026-05-28)
 
 

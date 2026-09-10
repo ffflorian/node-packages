@@ -1,3 +1,7 @@
+## 1.15.4 (2026-09-10)
+
+This was a version bump only for @ffflorian/mock-udp to align it with other projects, there were no code changes.
+
 ## @ffflorian/mock-udp [1.15.3](https://github.com/ffflorian/node-packages/compare/@ffflorian/mock-udp@1.15.2...@ffflorian/mock-udp@1.15.3) (2026-05-28)
 
 

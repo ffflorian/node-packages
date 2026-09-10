@@ -1,3 +1,7 @@
+## 1.18.4 (2026-09-10)
+
+This was a version bump only for which-os to align it with other projects, there were no code changes.
+
 ## which-os [1.18.3](https://github.com/ffflorian/node-packages/compare/which-os@1.18.2...which-os@1.18.3) (2026-05-28)
 
 

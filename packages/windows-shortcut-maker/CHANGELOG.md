@@ -1,3 +1,7 @@
+## 2.15.3 (2026-09-10)
+
+This was a version bump only for @ffflorian/windows-shortcut-maker to align it with other projects, there were no code changes.
+
 ## @ffflorian/windows-shortcut-maker [2.15.2](https://github.com/ffflorian/node-packages/compare/@ffflorian/windows-shortcut-maker@2.15.1...@ffflorian/windows-shortcut-maker@2.15.2) (2026-05-28)
 
 

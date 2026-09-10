@@ -1,3 +1,7 @@
+## 1.15.5 (2026-09-10)
+
+This was a version bump only for @ffflorian/electron-icon-generator to align it with other projects, there were no code changes.
+
 ## @ffflorian/electron-icon-generator [1.15.4](https://github.com/ffflorian/node-packages/compare/@ffflorian/electron-icon-generator@1.15.3...@ffflorian/electron-icon-generator@1.15.4) (2026-05-28)
 
 

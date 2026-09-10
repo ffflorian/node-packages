@@ -1,3 +1,7 @@
+## 1.15.4 (2026-09-10)
+
+This was a version bump only for ntfy to align it with other projects, there were no code changes.
+
 ## ntfy [1.15.3](https://github.com/ffflorian/node-packages/compare/ntfy@1.15.2...ntfy@1.15.3) (2026-05-28)
 
 
