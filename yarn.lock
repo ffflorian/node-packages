@@ -460,7 +460,7 @@ __metadata:
   resolution: "@ffflorian/auto-merge@workspace:packages/auto-merge"
   dependencies:
     commander: "npm:15.0.0"
-    cosmiconfig: "npm:10.0.0"
+    cosmiconfig: "npm:10.0.1"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:14.0.17"
@@ -540,7 +540,7 @@ __metadata:
     "@types/node": "npm:~26"
     "@types/progress": "npm:2.0.7"
     commander: "npm:15.0.0"
-    cosmiconfig: "npm:10.0.0"
+    cosmiconfig: "npm:10.0.1"
     cross-env: "npm:10.1.0"
     glob: "npm:13.0.6"
     jszip: "npm:3.10.1"
@@ -4076,13 +4076,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cosmiconfig@npm:10.0.0":
-  version: 10.0.0
-  resolution: "cosmiconfig@npm:10.0.0"
+"cosmiconfig@npm:10.0.1":
+  version: 10.0.1
+  resolution: "cosmiconfig@npm:10.0.1"
   dependencies:
     env-paths: "npm:^2.2.1"
-    js-yaml: "npm:^4.1.0"
-  checksum: 10c0/93d8a38d8d24678fa162fc4c1678e1fbd725ddf61e447a3626833931b8c468019423219323a8931b89cd581fea101865aa714935b6dff367645da5b9f0d582ad
+    js-yaml: "npm:^5.4.1"
+  checksum: 10c0/8a5fe8574f7b4515f13187b43e7e28082af8406584af7d9149d3b64dbe3e267bf1dbed05c0ebd11b57003f38b9462c121ea8cb8c94b08a1945b9b545280b8f83
   languageName: node
   linkType: hard
 
@@ -6253,6 +6253,17 @@ __metadata:
   bin:
     js-yaml: bin/js-yaml.js
   checksum: 10c0/1916456c118746603b067d74bbcbb0445d9a1d5e474ad4ae775e7b20525bed902e01d9d97dd0c81fcd8d4f596162309d0eb057f4aa38f3e9647f14075e9dea45
+  languageName: node
+  linkType: hard
+
+"js-yaml@npm:^5.4.1":
+  version: 5.4.1
+  resolution: "js-yaml@npm:5.4.1"
+  dependencies:
+    argparse: "npm:^2.0.1"
+  bin:
+    js-yaml: bin/js-yaml.mjs
+  checksum: 10c0/efe9dfaf222809694d375ad5ecca825561d2432eb55bc0f628911c0dfa4dbce98a71dcbc3252f630208bbdf5f4e9ac363847e4a7f49845b577ae2548b8fcf147
   languageName: node
   linkType: hard
 
