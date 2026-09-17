@@ -5,7 +5,7 @@
     "commander": "15.0.0",
     "cosmiconfig": "10.0.1",
     "glob": "13.0.6",
-    "jszip": "3.10.1",
+    "jszip": "3.10.2",
     "logdown": "3.3.1",
     "progress": "2.0.3"
   },
