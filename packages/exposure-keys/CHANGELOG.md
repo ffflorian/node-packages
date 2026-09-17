@@ -1,3 +1,9 @@
+## 1.18.12 (2026-09-17)
+
+### 🩹 Fixes
+
+- **deps:** bump jszip from 3.10.1 to 3.10.2  [ci skip] ([#1435](https://github.com/ffflorian/node-packages/pull/1435))
+
 ## exposure-keys [1.18.11](https://github.com/ffflorian/node-packages/compare/exposure-keys@1.18.10...exposure-keys@1.18.11) (2026-09-03)
 
 

@@ -1,3 +1,9 @@
+## 1.17.4 (2026-09-17)
+
+### 🩹 Fixes
+
+- **deps:** bump crates.io from 2.5.0 to 2.5.2  [ci skip] ([#1429](https://github.com/ffflorian/node-packages/pull/1429))
+
 ## 1.17.3 (2026-09-10)
 
 This was a version bump only for crates-updater to align it with other projects, there were no code changes.

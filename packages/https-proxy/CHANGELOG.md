@@ -1,3 +1,7 @@
+## 1.20.5 (2026-09-17)
+
+This was a version bump only for @ffflorian/https-proxy to align it with other projects, there were no code changes.
+
 ## @ffflorian/https-proxy [1.20.4](https://github.com/ffflorian/node-packages/compare/@ffflorian/https-proxy@1.20.3...@ffflorian/https-proxy@1.20.4) (2026-08-14)
 
 

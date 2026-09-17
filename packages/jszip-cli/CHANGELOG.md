@@ -1,3 +1,9 @@
+## 3.16.7 (2026-09-17)
+
+### 🩹 Fixes
+
+- **deps:** bump jszip from 3.10.1 to 3.10.2  [ci skip] ([#1435](https://github.com/ffflorian/node-packages/pull/1435))
+
 ## @ffflorian/jszip-cli [3.16.6](https://github.com/ffflorian/node-packages/compare/@ffflorian/jszip-cli@3.16.5...@ffflorian/jszip-cli@3.16.6) (2026-09-10)
 
 

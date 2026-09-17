@@ -1,3 +1,7 @@
+## 1.32.10 (2026-09-17)
+
+This was a version bump only for electron-info to align it with other projects, there were no code changes.
+
 ## 1.32.9 (2026-09-10)
 
 This was a version bump only for electron-info to align it with other projects, there were no code changes.

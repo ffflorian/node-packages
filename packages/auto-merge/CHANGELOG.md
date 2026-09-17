@@ -1,3 +1,7 @@
+## 1.8.7 (2026-09-17)
+
+This was a version bump only for @ffflorian/auto-merge to align it with other projects, there were no code changes.
+
 ## @ffflorian/auto-merge [1.8.6](https://github.com/ffflorian/node-packages/compare/@ffflorian/auto-merge@1.8.5...@ffflorian/auto-merge@1.8.6) (2026-09-10)
 
 

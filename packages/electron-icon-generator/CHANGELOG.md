@@ -1,3 +1,7 @@
+## 1.15.6 (2026-09-17)
+
+This was a version bump only for @ffflorian/electron-icon-generator to align it with other projects, there were no code changes.
+
 ## 1.15.5 (2026-09-10)
 
 This was a version bump only for @ffflorian/electron-icon-generator to align it with other projects, there were no code changes.
