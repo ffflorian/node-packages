@@ -18,5 +18,5 @@
     "target": "es2018",
     "types": ["node"]
   },
-  "exclude": ["**/*.test.ts", "**/dist/*"]
+  "exclude": ["**/*.test.ts", "**/dist/*", "oxfmt.config.ts"]
 }
