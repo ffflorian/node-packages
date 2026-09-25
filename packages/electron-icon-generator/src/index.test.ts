@@ -5,20 +5,25 @@ import {beforeEach, describe, expect, test, vi} from 'vitest';
 
 const mkdirMock = vi.hoisted(() => vi.fn());
 const renameMock = vi.hoisted(() => vi.fn());
-const iconGenMock = vi.hoisted(() => vi.fn());
+const readFileMock = vi.hoisted(() => vi.fn());
+const writeFileMock = vi.hoisted(() => vi.fn());
+const createICNSMock = vi.hoisted(() => vi.fn());
+const createICOMock = vi.hoisted(() => vi.fn());
 const jimpReadMock = vi.hoisted(() => vi.fn());
 
 vi.mock('node:fs/promises', () => ({
   default: {
     mkdir: mkdirMock,
+    readFile: readFileMock,
     rename: renameMock,
+    writeFile: writeFileMock,
   },
 }));
 
-vi.mock('icon-gen', () => ({
-  default: {
-    default: iconGenMock,
-  },
+vi.mock('png2icons', () => ({
+  BICUBIC2: 5,
+  createICNS: createICNSMock,
+  createICO: createICOMock,
 }));
 
 vi.mock('jimp', () => ({
@@ -84,7 +89,10 @@ describe('IconGenerator', () => {
   test('start runs generation and icon conversion', async () => {
     mkdirMock.mockResolvedValue(undefined);
     renameMock.mockResolvedValue(undefined);
-    iconGenMock.mockResolvedValue(undefined);
+    readFileMock.mockResolvedValue(Buffer.from('png'));
+    writeFileMock.mockResolvedValue(undefined);
+    createICNSMock.mockReturnValue(Buffer.from('icns'));
+    createICOMock.mockReturnValue(Buffer.from('ico'));
     const writeMock = vi.fn().mockResolvedValue(undefined);
     const resizeMock = vi.fn();
     jimpReadMock.mockResolvedValue({resize: resizeMock, write: writeMock});
@@ -93,7 +101,9 @@ describe('IconGenerator', () => {
 
     await generator.start();
 
-    expect(iconGenMock).toHaveBeenCalledTimes(2);
+    expect(createICNSMock).toHaveBeenCalledTimes(1);
+    expect(createICOMock).toHaveBeenCalledTimes(1);
+    expect(writeFileMock).toHaveBeenCalledTimes(2);
     expect(renameMock).toHaveBeenCalledTimes(9);
   });
 });

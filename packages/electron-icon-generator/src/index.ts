@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 
-import importedIcongen from 'icon-gen';
 import {Jimp} from 'jimp';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-
-// compatibility with cjs and esm
-const icongen = importedIcongen.default ?? importedIcongen;
+import {BICUBIC2, createICNS, createICO} from 'png2icons';
 
 // eslint-disable-next-line no-magic-numbers
 const pngSizes = [16, 24, 32, 48, 64, 128, 256, 512, 1024];
@@ -85,27 +82,26 @@ export class IconGenerator {
         // no-op
       }
 
-      await icongen(this.PNGoutputDir, macIconsDir, {
-        icns: {
-          name: 'icon',
-          sizes: pngSizes,
-        },
-        report: !this.options.silent,
-      });
-
       try {
         await fs.mkdir(winIconsDir, {recursive: true});
       } catch {
         // no-op
       }
 
-      await icongen(this.PNGoutputDir, winIconsDir, {
-        icns: {
-          name: 'icon',
-          sizes: pngSizes,
-        },
-        report: !this.options.silent,
-      });
+      const largestPNGPath = path.join(this.PNGoutputDir, `${pngSizes[pngSizes.length - 1]}.png`);
+      const largestPNG = await fs.readFile(largestPNGPath);
+
+      const icnsBuffer = createICNS(largestPNG, BICUBIC2, 0);
+      if (icnsBuffer) {
+        await fs.writeFile(path.join(macIconsDir, 'icon.icns'), icnsBuffer);
+        this.logConsole(`Created "${path.join(macIconsDir, 'icon.icns')}"`);
+      }
+
+      const icoBuffer = createICO(largestPNG, BICUBIC2, 0, false, true);
+      if (icoBuffer) {
+        await fs.writeFile(path.join(winIconsDir, 'icon.ico'), icoBuffer);
+        this.logConsole(`Created "${path.join(winIconsDir, 'icon.ico')}"`);
+      }
 
       this.logConsole('Renaming PNGs to Electron Format');
       await this.renamePNGs(0);
