@@ -1,3 +1,9 @@
+## 3.16.7 (2026-09-25)
+
+### 🩹 Fixes
+
+- **deps:** bump open from 11.0.3 to 11.0.4  [ci skip] ([#1439](https://github.com/ffflorian/node-packages/pull/1439))
+
 ## 3.16.6 (2026-09-17)
 
 ### 🩹 Fixes
