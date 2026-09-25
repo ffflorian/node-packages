@@ -1701,7 +1701,7 @@ __metadata:
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:14.0.17"
-    open: "npm:11.0.3"
+    open: "npm:11.0.4"
     tsx: "npm:4.23.13"
     typescript: "npm:7.0.2"
     vite: "npm:8.3.0"
@@ -7757,9 +7757,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:11.0.3":
-  version: 11.0.3
-  resolution: "open@npm:11.0.3"
+"open@npm:11.0.4":
+  version: 11.0.4
+  resolution: "open@npm:11.0.4"
   dependencies:
     default-browser: "npm:^5.5.1"
     define-lazy-prop: "npm:^3.0.0"
@@ -7767,7 +7767,7 @@ __metadata:
     is-inside-container: "npm:^1.0.0"
     powershell-utils: "npm:^0.2.1"
     wsl-utils: "npm:^1.0.0"
-  checksum: 10c0/46e628edc5fddd52ad925899915fdfda8b2388e205be0682884d06d3ba3813a161f42f7c8e9ca4cce9ec378efa04450836c98440c78d083625b0b46cd4e56d7d
+  checksum: 10c0/5be0a902323ea9266cf7323edf8d714b516f739519485e98b2508e38e1ffe6f98e3426aeb182fc88239bf98777258b27abbfe5cb1938bff8dbccec2fd603aca5
   languageName: node
   linkType: hard
 
