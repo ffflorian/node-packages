@@ -1,3 +1,7 @@
+## 3.16.8 (2026-10-02)
+
+This was a version bump only for @ffflorian/gh-open to align it with other projects, there were no code changes.
+
 ## 3.16.7 (2026-09-25)
 
 ### 🩹 Fixes
