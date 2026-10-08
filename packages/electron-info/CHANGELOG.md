@@ -1,3 +1,9 @@
+## 1.32.13 (2026-10-08)
+
+### 🩹 Fixes
+
+- **deps:** bump chalk from 6.0.0 to 6.0.1  [ci skip] ([#1472](https://github.com/ffflorian/node-packages/pull/1472))
+
 ## 1.32.12 (2026-10-02)
 
 This was a version bump only for electron-info to align it with other projects, there were no code changes.

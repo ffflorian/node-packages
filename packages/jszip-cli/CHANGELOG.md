@@ -1,3 +1,7 @@
+## 3.16.10 (2026-10-08)
+
+This was a version bump only for @ffflorian/jszip-cli to align it with other projects, there were no code changes.
+
 ## 3.16.9 (2026-10-02)
 
 This was a version bump only for @ffflorian/jszip-cli to align it with other projects, there were no code changes.

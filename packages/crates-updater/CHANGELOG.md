@@ -1,3 +1,9 @@
+## 1.17.7 (2026-10-08)
+
+### 🩹 Fixes
+
+- **deps:** bump crates.io from 2.5.3 to 2.5.5 ([#1468](https://github.com/ffflorian/node-packages/pull/1468))
+
 ## 1.17.6 (2026-10-02)
 
 ### 🩹 Fixes

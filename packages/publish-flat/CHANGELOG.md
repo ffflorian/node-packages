@@ -1,3 +1,7 @@
+## 1.19.14 (2026-10-08)
+
+This was a version bump only for publish-flat to align it with other projects, there were no code changes.
+
 ## 1.19.13 (2026-10-02)
 
 ### 🩹 Fixes
