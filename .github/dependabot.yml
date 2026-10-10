@@ -11,6 +11,10 @@ updates:
         - crates.io
     directory: /
     groups:
+      oxc:
+        patterns:
+          - oxfmt
+          - oxlint
       protobufjs:
         patterns:
           - protobufjs*
