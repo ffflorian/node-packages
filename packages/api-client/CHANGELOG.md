@@ -1,3 +1,7 @@
+## 2.5.8 (2026-10-15)
+
+This was a version bump only for @ffflorian/api-client to align it with other projects, there were no code changes.
+
 ## 2.5.7 (2026-10-08)
 
 This was a version bump only for @ffflorian/api-client to align it with other projects, there were no code changes.
