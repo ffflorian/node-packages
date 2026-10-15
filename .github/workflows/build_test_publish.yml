@@ -65,7 +65,7 @@ jobs:
 
       - name: Upload release log
         if: failure()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: release-log
           path: /tmp/release.log
@@ -113,7 +113,7 @@ jobs:
 
       - name: Upload release log
         if: failure()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: force-release-log
           path: /tmp/release.log
