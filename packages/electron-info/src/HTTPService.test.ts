@@ -1,5 +1,6 @@
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 import nock from 'nock';
+import {setTimeout} from 'node:timers/promises';
 import {afterEach, beforeEach, describe, expect, test} from 'vitest';
 
 import {HTTPService} from './HTTPService.js';
@@ -17,8 +18,10 @@ describe('HTTPService', () => {
   beforeEach(() => {
     nock(mockUrl)
       .get('/')
-      .delay(FIVE_SECONDS_IN_MILLIS)
-      .reply(HTTP_STATUS.OK, [{data: 'invalid'}]);
+      .reply(async () => {
+        await setTimeout(FIVE_SECONDS_IN_MILLIS);
+        return [HTTP_STATUS.OK, [{data: 'invalid'}]];
+      });
   });
 
   afterEach(() => nock.cleanAll());

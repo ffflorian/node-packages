@@ -21,9 +21,8 @@ describe('MyTimezone', () => {
   nock(nominatimAPI)
     .get('/search')
     .query(true)
-    .reply(function () {
-      const parsedURL = new URL(this.req.path, 'http://example.com');
-      const formattedAddress = parsedURL.searchParams.get('q');
+    .reply(request => {
+      const formattedAddress = new URL(request.url).searchParams.get('q');
 
       return [
         HTTP_OK,
