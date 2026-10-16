@@ -1,3 +1,7 @@
+## 3.16.11 (2026-10-16)
+
+This was a version bump only for scrabble-cheater to align it with other projects, there were no code changes.
+
 ## 3.16.10 (2026-10-15)
 
 This was a version bump only for scrabble-cheater to align it with other projects, there were no code changes.

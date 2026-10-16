@@ -6984,7 +6984,7 @@ __metadata:
   dependencies:
     commander: "npm:15.0.0"
     nock: "npm:15.0.1"
-    ntpclient: "npm:1.16.9"
+    ntpclient: "npm:1.16.10"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
     vite: "npm:8.3.2"
@@ -7225,7 +7225,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ntpclient@npm:1.16.9, ntpclient@workspace:packages/ntpclient":
+"ntpclient@npm:1.16.10, ntpclient@workspace:packages/ntpclient":
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
