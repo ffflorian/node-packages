@@ -1650,7 +1650,7 @@ __metadata:
     nock: "npm:15.0.1"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   bin:
     auto-merge: dist/cli.js
@@ -1663,7 +1663,7 @@ __metadata:
   dependencies:
     touch: "npm:3.1.1"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   languageName: unknown
   linkType: soft
@@ -1695,7 +1695,7 @@ __metadata:
     open: "npm:11.0.4"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   bin:
     gh-open: dist/cli.js
@@ -1735,7 +1735,7 @@ __metadata:
     progress: "npm:2.0.3"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   bin:
     jszip-cli: dist/cli.js
@@ -1762,7 +1762,7 @@ __metadata:
   dependencies:
     "@types/node": "npm:~26"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   languageName: unknown
   linkType: soft
@@ -4683,7 +4683,7 @@ __metadata:
     table: "npm:6.9.0"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   bin:
     electron-info: dist/cli.js
@@ -6987,7 +6987,7 @@ __metadata:
     ntpclient: "npm:1.16.10"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   bin:
     my-timezone: dist/cli.js
@@ -7088,7 +7088,7 @@ __metadata:
     oxfmt: "npm:0.72.0"
     oxlint: "npm:1.87.0"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   languageName: unknown
   linkType: soft
@@ -7232,7 +7232,7 @@ __metadata:
     commander: "npm:15.0.0"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   bin:
     ntpclient: dist/cli.js
@@ -7875,7 +7875,7 @@ __metadata:
     "@types/node": "npm:~26"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   bin:
     pixelflut: dist/cli.js
@@ -8121,7 +8121,7 @@ __metadata:
   resolution: "quick-sort@workspace:packages/quick-sort"
   dependencies:
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   languageName: unknown
   linkType: soft
@@ -8420,7 +8420,7 @@ __metadata:
     commander: "npm:15.0.0"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
-    vite: "npm:8.3.2"
+    vite: "npm:8.3.3"
     vitest: "npm:5.0.3"
   bin:
     scrabble-cheater: dist/cli.js
@@ -9319,9 +9319,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:8.3.2":
-  version: 8.3.2
-  resolution: "vite@npm:8.3.2"
+"vite@npm:8.3.3":
+  version: 8.3.3
+  resolution: "vite@npm:8.3.3"
   dependencies:
     fsevents: "npm:~2.3.3"
     lightningcss: "npm:^1.33.0"
@@ -9372,7 +9372,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/bc2dc5b9077624686a0e4ddfdbfca9d35bf97a32c53966bf1cdd7f355a8f2c488c0422d1b02328a959cfd06b490f98c7e24938f8a251a1039adf2219f2da552e
+  checksum: 10c0/a1fa945ad1dd98d43e45d491eee11505083b19e00f8c5549cd0771273717f7bdb431eef71ef3568d1effa6ba63719811e5151f3fbec84be5a017d4975470a0d9
   languageName: node
   linkType: hard
 
