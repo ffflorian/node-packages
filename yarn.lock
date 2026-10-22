@@ -1623,7 +1623,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ffflorian/api-client@npm:2.5.8, @ffflorian/api-client@workspace:packages/api-client":
+"@ffflorian/api-client@npm:2.5.8":
+  version: 2.5.8
+  resolution: "@ffflorian/api-client@npm:2.5.8"
+  checksum: 10c0/3a73e068b637327b6abe9ac0ea4a399a553892375dcb7edb3562fafbcdd720a33750e8c98511f7ee68be1b172a79cb8737bcff01acebeb94997346afc691bded
+  languageName: node
+  linkType: hard
+
+"@ffflorian/api-client@workspace:packages/api-client":
   version: 0.0.0-use.local
   resolution: "@ffflorian/api-client@workspace:packages/api-client"
   dependencies:
@@ -6980,7 +6987,7 @@ __metadata:
   dependencies:
     commander: "npm:15.0.0"
     nock: "npm:15.0.2"
-    ntpclient: "npm:1.16.10"
+    ntpclient: "npm:1.16.11"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
     vite: "npm:8.3.4"
@@ -7221,7 +7228,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ntpclient@npm:1.16.10, ntpclient@workspace:packages/ntpclient":
+"ntpclient@npm:1.16.11, ntpclient@workspace:packages/ntpclient":
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:

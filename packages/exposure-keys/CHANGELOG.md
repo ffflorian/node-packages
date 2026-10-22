@@ -1,3 +1,9 @@
+## 1.18.19 (2026-10-22)
+
+### 🩹 Fixes
+
+- **deps:** bump the protobufjs group with 2 updates ([#1502](https://github.com/ffflorian/node-packages/pull/1502))
+
 ## 1.18.18 (2026-10-21)
 
 This was a version bump only for exposure-keys to align it with other projects, there were no code changes.

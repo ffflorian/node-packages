@@ -1,3 +1,9 @@
+## 1.19.17 (2026-10-22)
+
+### 🩹 Fixes
+
+- **deps:** bump @npmcli/arborist from 10.0.3 to 10.0.4  [ci skip] ([#1506](https://github.com/ffflorian/node-packages/pull/1506))
+
 ## 1.19.16 (2026-10-16)
 
 This was a version bump only for publish-flat to align it with other projects, there were no code changes.
