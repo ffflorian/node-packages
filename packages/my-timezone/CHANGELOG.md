@@ -1,3 +1,9 @@
+## 1.15.14 (2026-10-22)
+
+### 🧱 Updated Dependencies
+
+- Updated ntpclient to 1.16.12
+
 ## 1.15.13 (2026-10-22)
 
 ### 🧱 Updated Dependencies
