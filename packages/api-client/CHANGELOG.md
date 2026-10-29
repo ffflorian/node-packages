@@ -1,3 +1,7 @@
+## 2.5.10 (2026-10-29)
+
+This was a version bump only for @ffflorian/api-client to align it with other projects, there were no code changes.
+
 ## 2.5.9 (2026-10-22)
 
 This was a version bump only for @ffflorian/api-client to align it with other projects, there were no code changes.

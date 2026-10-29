@@ -1,3 +1,7 @@
+## 1.17.14 (2026-10-29)
+
+This was a version bump only for pixelflut to align it with other projects, there were no code changes.
+
 ## 1.17.13 (2026-10-25)
 
 This was a version bump only for pixelflut to align it with other projects, there were no code changes.

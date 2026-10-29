@@ -1,3 +1,7 @@
+## 2.15.9 (2026-10-29)
+
+This was a version bump only for @ffflorian/windows-shortcut-maker to align it with other projects, there were no code changes.
+
 ## 2.15.8 (2026-10-22)
 
 This was a version bump only for @ffflorian/windows-shortcut-maker to align it with other projects, there were no code changes.
