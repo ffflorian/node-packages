@@ -1,3 +1,9 @@
+## 3.16.17 (2026-11-05)
+
+### 🩹 Fixes
+
+- **deps:** bump glob from 13.0.6 to 14.0.3 ([#1527](https://github.com/ffflorian/node-packages/pull/1527))
+
 ## 3.16.16 (2026-10-29)
 
 This was a version bump only for @ffflorian/jszip-cli to align it with other projects, there were no code changes.

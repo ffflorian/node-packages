@@ -1,3 +1,7 @@
+## 1.15.11 (2026-11-05)
+
+This was a version bump only for ntfy to align it with other projects, there were no code changes.
+
 ## 1.15.10 (2026-10-29)
 
 This was a version bump only for ntfy to align it with other projects, there were no code changes.

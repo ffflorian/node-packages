@@ -1,3 +1,7 @@
+## 1.8.17 (2026-11-05)
+
+This was a version bump only for @ffflorian/auto-merge to align it with other projects, there were no code changes.
+
 ## 1.8.16 (2026-10-29)
 
 This was a version bump only for @ffflorian/auto-merge to align it with other projects, there were no code changes.
