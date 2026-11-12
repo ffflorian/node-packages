@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": "dist/cli.js",
   "dependencies": {
-    "commander": "15.0.0",
+    "commander": "15.1.0",
     "jimp": "1.6.1",
     "png2icons": "2.0.1"
   },

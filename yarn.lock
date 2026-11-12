@@ -1643,7 +1643,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/auto-merge@workspace:packages/auto-merge"
   dependencies:
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     cosmiconfig: "npm:10.0.1"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
@@ -1673,7 +1673,7 @@ __metadata:
   resolution: "@ffflorian/electron-icon-generator@workspace:packages/electron-icon-generator"
   dependencies:
     "@types/pngjs": "npm:6.0.5"
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     jimp: "npm:1.6.1"
     png2icons: "npm:2.0.1"
     tsx: "npm:4.23.15"
@@ -1687,7 +1687,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/gh-open@workspace:packages/gh-open"
   dependencies:
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     find-up: "npm:8.0.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
@@ -1709,7 +1709,7 @@ __metadata:
     "@types/basic-auth": "npm:1.1.8"
     "@types/tsscmp": "npm:1.0.2"
     basic-auth: "npm:3.0.0"
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     tsscmp: "npm:1.0.6"
@@ -1726,7 +1726,7 @@ __metadata:
   dependencies:
     "@types/node": "npm:~26"
     "@types/progress": "npm:2.0.7"
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     cosmiconfig: "npm:10.0.1"
     cross-env: "npm:10.1.0"
     glob: "npm:14.0.3"
@@ -1747,7 +1747,7 @@ __metadata:
   resolution: "@ffflorian/mastodon-bot-yearprogress@workspace:packages/mastodon-bot-yearprogress"
   dependencies:
     "@types/ws": "npm:8.18.2"
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     masto: "npm:8.0.0"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
@@ -4367,10 +4367,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:15.0.0":
-  version: 15.0.0
-  resolution: "commander@npm:15.0.0"
-  checksum: 10c0/539229c171914ea1ccd45ee5f10d924289a12a684ea3a7a44147abe54003c35ed6de9ae4ad198d88c29fdf403dca0428451a388234e6dc01b6faa978fb207206
+"commander@npm:15.1.0":
+  version: 15.1.0
+  resolution: "commander@npm:15.1.0"
+  checksum: 10c0/dd1013291d3e8779c726313616fa23174abc962182d0894ac73017c55d8b1ffe4a72401d91a1173974050536576896dc5279db07d37f929dbad469a16a12c54e
   languageName: node
   linkType: hard
 
@@ -4438,7 +4438,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "crates-updater@workspace:packages/crates-updater"
   dependencies:
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     compare-versions: "npm:6.1.1"
     crates.io: "npm:2.5.10"
     tsx: "npm:4.23.15"
@@ -4665,7 +4665,7 @@ __metadata:
   dependencies:
     "@types/semver": "npm:7.8.0"
     chalk: "npm:6.0.1"
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
     nock: "npm:15.0.6"
@@ -7003,7 +7003,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-timezone@workspace:packages/my-timezone"
   dependencies:
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     nock: "npm:15.0.6"
     ntpclient: "npm:1.16.15"
     tsx: "npm:4.23.15"
@@ -7250,7 +7250,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ntpclient@workspace:packages/ntpclient"
   dependencies:
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
     vite: "npm:8.3.6"
@@ -8095,7 +8095,7 @@ __metadata:
     "@npmcli/arborist": "npm:10.0.4"
     "@types/npm-packlist": "npm:7.0.3"
     "@types/npmcli__arborist": "npm:6.3.3"
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     logdown: "npm:3.3.1"
     npm-packlist: "npm:11.3.0"
     tsx: "npm:4.23.15"
@@ -8430,7 +8430,7 @@ __metadata:
   resolution: "scrabble-cheater@workspace:packages/scrabble-cheater"
   dependencies:
     clipboardy: "npm:5.3.2"
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
     vite: "npm:8.3.6"
@@ -9471,7 +9471,7 @@ __metadata:
   resolution: "which-os@workspace:packages/which-os"
   dependencies:
     "@types/node": "npm:~26"
-    commander: "npm:15.0.0"
+    commander: "npm:15.1.0"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
   bin:
