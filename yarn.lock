@@ -1708,7 +1708,7 @@ __metadata:
   dependencies:
     "@types/basic-auth": "npm:1.1.8"
     "@types/tsscmp": "npm:1.0.2"
-    basic-auth: "npm:3.0.0"
+    basic-auth: "npm:3.1.0"
     commander: "npm:15.1.0"
     http-status-codes: "npm:2.3.0"
     logdown: "npm:3.3.1"
@@ -4007,10 +4007,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"basic-auth@npm:3.0.0":
-  version: 3.0.0
-  resolution: "basic-auth@npm:3.0.0"
-  checksum: 10c0/aad23359806541495aef7c49d7940e284e8071410bafcd9e71994fbac4f9fb67e6df20794bd28d60005c7ccc8a5c98e57fd2d33b69f081f404acd4d912c432fc
+"basic-auth@npm:3.1.0":
+  version: 3.1.0
+  resolution: "basic-auth@npm:3.1.0"
+  checksum: 10c0/b81095162f858ce06e9cba6ccef5571ae04f9d8210943b813f956ae280add2e1941cd28577106f0e591624e1e86911fe18824383a9be89e1c3b3627c3fcb037c
   languageName: node
   linkType: hard
 
