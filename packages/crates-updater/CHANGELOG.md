@@ -1,3 +1,9 @@
+## 1.17.15 (2026-11-13)
+
+### 🩹 Fixes
+
+- **deps:** bump commander from 15.0.0 to 15.1.0  [ci skip] ([#1541](https://github.com/ffflorian/node-packages/pull/1541))
+
 ## 1.17.14 (2026-11-05)
 
 ### 🩹 Fixes

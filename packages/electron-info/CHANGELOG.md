@@ -1,3 +1,21 @@
+## 1.32.22 (2026-11-13)
+
+### 🩹 Fixes
+
+- **deps:** bump semver from 7.8.5 to 7.8.6  [ci skip] ([#1536](https://github.com/ffflorian/node-packages/pull/1536))
+- **deps:** bump commander from 15.0.0 to 15.1.0  [ci skip] ([#1541](https://github.com/ffflorian/node-packages/pull/1541))
+- **deps:** bump table from 6.9.0 to 6.10.1  [ci skip] ([#1538](https://github.com/ffflorian/node-packages/pull/1538))
+
+### 🏡 Chore
+
+- **deps-dev:** bump vitest from 5.0.5 to 5.1.0 ([#1539](https://github.com/ffflorian/node-packages/pull/1539))
+- **deps-dev:** bump vite from 8.3.5 to 8.3.6 ([#1540](https://github.com/ffflorian/node-packages/pull/1540))
+- **deps-dev:** bump nock from 15.0.5 to 15.0.6 ([#1542](https://github.com/ffflorian/node-packages/pull/1542))
+
+### ❤️ Thank You
+
+- Florian Imdahl @ffflorian
+
 ## 1.32.21 (2026-11-05)
 
 This was a version bump only for electron-info to align it with other projects, there were no code changes.

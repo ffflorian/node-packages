@@ -1,3 +1,14 @@
+## 1.16.16 (2026-11-13)
+
+### 🩹 Fixes
+
+- **deps:** bump commander from 15.0.0 to 15.1.0  [ci skip] ([#1541](https://github.com/ffflorian/node-packages/pull/1541))
+
+### 🏡 Chore
+
+- **deps-dev:** bump vitest from 5.0.5 to 5.1.0 ([#1539](https://github.com/ffflorian/node-packages/pull/1539))
+- **deps-dev:** bump vite from 8.3.5 to 8.3.6 ([#1540](https://github.com/ffflorian/node-packages/pull/1540))
+
 ## 1.16.15 (2026-11-05)
 
 This was a version bump only for ntpclient to align it with other projects, there were no code changes.

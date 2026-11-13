@@ -43,5 +43,5 @@
     "test": "vitest run"
   },
   "type": "module",
-  "version": "1.8.17"
+  "version": "1.8.18"
 }

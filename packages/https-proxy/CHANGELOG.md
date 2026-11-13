@@ -1,3 +1,10 @@
+## 1.20.16 (2026-11-13)
+
+### 🩹 Fixes
+
+- **deps:** bump basic-auth from 3.0.0 to 3.1.0 ([#1537](https://github.com/ffflorian/node-packages/pull/1537))
+- **deps:** bump commander from 15.0.0 to 15.1.0  [ci skip] ([#1541](https://github.com/ffflorian/node-packages/pull/1541))
+
 ## 1.20.15 (2026-11-05)
 
 This was a version bump only for @ffflorian/https-proxy to align it with other projects, there were no code changes.
