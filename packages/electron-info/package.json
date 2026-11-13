@@ -5,7 +5,7 @@
     "chalk": "6.0.1",
     "commander": "15.1.0",
     "logdown": "3.3.1",
-    "semver": "7.8.5",
+    "semver": "7.8.6",
     "table": "6.10.1"
   },
   "description": "Get useful data about Electron releases.",
