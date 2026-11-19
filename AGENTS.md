@@ -139,7 +139,7 @@ Each package supports `build`, `clean`, and `test` scripts run via `yarn workspa
 - **Versioning**: Independent versioning via conventional commits
 - **Publishing**: `nx release` versions, tags, creates GitHub releases and publishes to npm; only packages with conventional commits touching their own directory since their last tag are released. Only run from CI on `main`.
 - **Release config**: `release` section in root `nx.json`: independent versioning, tags `{projectName}@{version}`, one `chore(release): publish [skip ci]` commit per release. Private packages are excluded via `release.projects` - add new private packages there.
-- **Cross-repo deps**: When a package in this repo depends on another package in this repo, use `workspace:*` as the version; `nx release` keeps local dependency versions in sync.
+- **Cross-repo deps**: When a package in this repo depends on another package in this repo, pin its exact current version (e.g. `"@ffflorian/api-client": "2.7.0"`); yarn still links the local workspace, and `nx release` updates the pinned version and patch-bumps the dependent when the dependency is released. Do not use `workspace:*` in published packages: `nx release` cannot publish it with yarn. It is only fine in the private root `package.json`.
 
 ## Dependencies
 
