@@ -43,5 +43,5 @@
     "start": "tsx src/cli.ts",
     "test": "vitest run"
   },
-  "version": "2.7.0"
+  "version": "2.7.1"
 }

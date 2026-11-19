@@ -5680,7 +5680,7 @@ __metadata:
   dependencies:
     commander: "npm:15.1.0"
     compare-versions: "npm:6.1.1"
-    crates.io: "npm:2.6.0"
+    crates.io: "npm:2.6.1"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
   bin:
@@ -5689,7 +5689,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"crates.io@npm:2.6.0, crates.io@workspace:packages/crates.io":
+"crates.io@npm:2.6.1, crates.io@workspace:packages/crates.io":
   version: 0.0.0-use.local
   resolution: "crates.io@workspace:packages/crates.io"
   dependencies:

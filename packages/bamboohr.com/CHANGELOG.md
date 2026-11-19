@@ -1,3 +1,13 @@
+## 1.8.1 (2026-11-19)
+
+### 🩹 Fixes
+
+- Pin local dependency versions ([56b98aaa](https://github.com/ffflorian/node-packages/commit/56b98aaa))
+
+### 🏡 Chore
+
+- Do not mention authors in changelogs [ci skip] ([fdfad5de](https://github.com/ffflorian/node-packages/commit/fdfad5de))
+
 ## 1.8.0 (2026-11-19)
 
 ### 🚀 Features
