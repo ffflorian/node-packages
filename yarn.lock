@@ -5550,7 +5550,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:14.0.6":
+"glob@npm:14.0.6, glob@npm:^14.0.3":
   version: 14.0.6
   resolution: "glob@npm:14.0.6"
   dependencies:
@@ -5601,17 +5601,6 @@ __metadata:
     minipass: "npm:^7.1.3"
     path-scurry: "npm:^2.0.2"
   checksum: 10c0/269c236f11a9b50357fe7a8c6aadac667e01deb5242b19c84975628f05f4438d8ee1354bb62c5d6c10f37fd59911b54d7799730633a2786660d8c69f1d18120a
-  languageName: node
-  linkType: hard
-
-"glob@npm:^14.0.3":
-  version: 14.0.6
-  resolution: "glob@npm:14.0.6"
-  dependencies:
-    minimatch: "npm:^11.0.5"
-    minipass: "npm:^7.1.3"
-    path-scurry: "npm:^3.0.0"
-  checksum: 10c0/5b8621a6a363abc630de0a542f0f8d0a919a0a5e154626b5fdf1e97425e8709783b0b27cc1eb9d65a5ce097db84e904fe50f8f1dc8c0579c49583c0ac30f8ac7
   languageName: node
   linkType: hard
 
