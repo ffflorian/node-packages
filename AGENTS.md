@@ -62,9 +62,14 @@ This is a yarn workspaces monorepo released with [Nx Release](https://nx.dev/fea
 
 | Package | npm name | Description |
 | --- | --- | --- |
+| `absence.io` | `absence.io` | An absence.io API client |
 | `api-client` | `@ffflorian/api-client` | Simple API client using the Fetch API (pure ESM) |
 | `auto-merge` | `@ffflorian/auto-merge` | GitHub auto-merge tool |
+| `bamboohr.com` | `bamboohr.com` | An bamboohr.com API client |
+| `c3nav` | `c3nav` | A c3nav API client |
+| `corona-warn-app` | (unpublished) | A corona-warn-app API client |
 | `crates-updater` | `crates-updater` | Rust crates dependency updater |
+| `crates.io` | `crates.io` | A crates.io API client |
 | `double-linked-list` | (unpublished) | Double linked list data structure |
 | `electron-icon-generator` | `@ffflorian/electron-icon-generator` | Generate icons for Electron apps |
 | `electron-info` | `electron-info` | Retrieve Electron release information |
@@ -72,10 +77,14 @@ This is a yarn workspaces monorepo released with [Nx Release](https://nx.dev/fea
 | `exposure-keys` | `exposure-keys` | Exposure keys tooling |
 | `gh-open` | `@ffflorian/gh-open` | Open GitHub URLs from the terminal |
 | `https-proxy` | `@ffflorian/https-proxy` | HTTPS proxy utility |
+| `icanhazdadjoke` | `@ffflorian/icanhazdadjoke` | An icanhazdadjoke.com API client with a CLI |
+| `imgflip.com` | `imgflip.com` | A imgflip.com API client |
 | `jszip-cli` | `@ffflorian/jszip-cli` | CLI for creating/extracting ZIP archives via jszip |
 | `mastodon-bot-yearprogress` | (unpublished) | Mastodon bot for year progress updates |
+| `libraries.io` | `libraries.io` | A libraries.io API client |
 | `mock-udp` | `@ffflorian/mock-udp` | Mock UDP socket for testing |
 | `my-timezone` | `my-timezone` | Timezone utility |
+| `npms.io` | `npms.io` | A npms.io API client |
 | `ntfy` | `ntfy` | Send notifications via ntfy |
 | `ntpclient` | `ntpclient` | NTP client |
 | `oxfmt-config` | `@ffflorian/oxfmt-config` | Shared oxfmt config |
@@ -86,8 +95,12 @@ This is a yarn workspaces monorepo released with [Nx Release](https://nx.dev/fea
 | `quick-sort` | (unpublished) | Quick sort algorithm implementation |
 | `scrabble-cheater` | `scrabble-cheater` | Scrabble word finder |
 | `semantic-release-config` | `@ffflorian/semantic-release-config` | Shared semantic-release config |
+| `statuspage.io` | `statuspage.io` | A statuspage.io API client |
+| `updown.io` | `updown.io` | An updown.io API client |
+| `useresponse` | `useresponse` | A useresponse API client (API v7.0) |
 | `which-os` | `which-os` | Detect operating system |
 | `windows-shortcut-maker` | `@ffflorian/windows-shortcut-maker` | Create Windows shortcuts |
+| `xkcdjs` | `@ffflorian/xkcdjs` | An xkcd API client with a CLI |
 
 ## Development
 

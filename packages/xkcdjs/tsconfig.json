@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["dist", "node_modules"],
+  "extends": "../../tsconfig.json"
+}

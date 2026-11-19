@@ -1,0 +1,64 @@
+export interface ClientOptions {
+  apiUrl?: string;
+}
+
+export interface GraphQLData {
+  joke: GraphQLJokeResult;
+}
+
+export interface GraphQLJokeResult {
+  id: string;
+  joke: string;
+  permalink: string;
+}
+
+export interface GraphQLResponse {
+  data: GraphQLData;
+}
+
+export interface JokeResult {
+  id: string;
+  joke: string;
+  status: number;
+}
+
+export interface JokeResultWithImage extends JokeResult {
+  image: Buffer;
+}
+
+export interface JokeSearchResult {
+  current_page: number;
+  limit: number;
+  next_page: number;
+  previous_page: number;
+  results: JokeResult[];
+  search_term: string;
+  status: number;
+  total_jokes: number;
+  total_pages: number;
+}
+
+export interface RequestOptions {
+  withImage?: boolean;
+}
+
+export interface SearchOptions {
+  /** number of results to return per page (default: 20) (max: 30) */
+  limit?: number;
+  /** which page of results to fetch (default: 1) */
+  page?: number;
+  /** search term to use (default: list all jokes) */
+  term?: string;
+}
+
+export interface SlackAttachment {
+  fallback: string;
+  footer: string;
+  text: string;
+}
+
+export interface SlackJokeResult {
+  attachments: SlackAttachment[];
+  response_type: string;
+  username: string;
+}

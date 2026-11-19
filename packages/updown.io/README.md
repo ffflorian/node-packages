@@ -1,0 +1,32 @@
+# updown.io [![npm version](https://img.shields.io/npm/v/updown.io.svg)](https://www.npmjs.com/package/updown.io)
+
+An [updown.io](https://updown.io) API client. For a documentation on the API see [the updown.io API reference](https://updown.io/api/).
+
+### Installation
+
+Run `yarn add updown.io` or `npm install updown.io`.
+
+## Usage
+
+### Example
+
+```ts
+import {UpdownIO} from 'updown.io';
+
+const updownIO = new UpdownIO('my-api-key'); // API key is only required for checks
+
+UpdownIO.api.checks.getChecks().then(checks => {
+  //
+});
+
+updownIO.api.nodes.getNodes().then(nodes => {
+  // ...
+});
+```
+
+## Build and test
+
+```
+yarn
+yarn test
+```

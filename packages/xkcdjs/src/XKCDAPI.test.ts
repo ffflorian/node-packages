@@ -1,0 +1,135 @@
+import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
+import nock from 'nock';
+import {beforeEach, describe, expect, it} from 'vitest';
+
+import * as XKCDJS from '.';
+
+const responseDataFirst: XKCDJS.XKCDResult = {
+  alt: "Don't we all.",
+  day: '1',
+  img: 'https://imgs.xkcd.com/comics/barrel_cropped_(1).jpg',
+  link: '',
+  month: '1',
+  news: '',
+  num: 1,
+  safe_title: 'Barrel - Part 1',
+  title: 'Barrel - Part 1',
+  transcript:
+    "[[A boy sits in a barrel which is floating in an ocean.]]\nBoy: I wonder where I'll float next?\n[[The barrel drifts into the distance. Nothing else can be seen.]]\n{{Alt: Don't we all.}}",
+  year: '2006',
+};
+
+const responseDataLatest: XKCDJS.XKCDResult = {
+  alt: "If you study graphs in which edges can link more than two nodes, you're more properly called a hyperedgelord.",
+  day: '22',
+  img: 'https://imgs.xkcd.com/comics/edgelord.png',
+  link: '',
+  month: '8',
+  news: '',
+  num: 2036,
+  safe_title: 'Edgelord',
+  title: 'Edgelord',
+  transcript: '',
+  year: '2018',
+};
+
+describe('XKCD', () => {
+  let xkcdJS: XKCDJS.XKCD;
+
+  beforeEach(() => {
+    xkcdJS = new XKCDJS.XKCD();
+
+    nock('https://xkcd.com')
+      .get(/\/[0-9]+\/info\.0\.json/)
+      .reply(HTTP_STATUS.OK, responseDataFirst)
+      .persist();
+
+    nock('https://xkcd.com').get('/info.0.json').reply(HTTP_STATUS.OK, responseDataLatest).persist();
+
+    nock('https://imgs.xkcd.com/')
+      .get(/.*/)
+      .reply(HTTP_STATUS.OK, Buffer.from([]), {
+        'content-type': 'image/png',
+      })
+      .persist();
+
+    nock('https://example.com').get(/.*/).reply(HTTP_STATUS.NOT_FOUND).persist();
+  });
+
+  it('gets the latest comic', async () => {
+    const latest = await xkcdJS.api.getLatest();
+
+    expect(latest.alt).toBe(responseDataLatest.alt);
+  });
+
+  it('gets a random comic', async () => {
+    const random = await xkcdJS.api.getRandom();
+
+    expect(random.alt).toBe(responseDataFirst.alt);
+  });
+
+  it('throws for index lower than lowest index', async () => {
+    await expect(xkcdJS.api.getByIndex(0)).rejects.toThrow('Index is lower than the lowest index of 1.');
+  });
+
+  it('gets a comic by id', async () => {
+    const byIndex = await xkcdJS.api.getByIndex(1);
+
+    expect(byIndex.alt).toBe(responseDataFirst.alt);
+  });
+
+  it('gets the image data', async () => {
+    const latestWithData = await xkcdJS.api.getLatest({withData: true});
+
+    expect(latestWithData.data).toMatchObject({
+      data: expect.any(ArrayBuffer),
+      mimeType: 'image/png',
+    });
+  });
+
+  it('returns undefined mimeType when image content-type header is missing', async () => {
+    nock.cleanAll();
+
+    nock('https://xkcd.com').get('/info.0.json').reply(HTTP_STATUS.OK, responseDataLatest);
+    nock('https://imgs.xkcd.com').get('/comics/edgelord.png').reply(HTTP_STATUS.OK, Buffer.from([]));
+
+    const latestWithData = await xkcdJS.api.getLatest({withData: true});
+
+    expect(latestWithData.data.mimeType).toBeUndefined();
+  });
+
+  it('uses /:index/info.0.json endpoint for getByIndex', async () => {
+    nock.cleanAll();
+
+    const byIndexScope = nock('https://xkcd.com').get('/1/info.0.json').reply(HTTP_STATUS.OK, responseDataFirst);
+
+    const byIndex = await xkcdJS.api.getByIndex(1);
+
+    expect(byIndexScope.isDone()).toBe(true);
+    expect(byIndex).toMatchObject(responseDataFirst);
+  });
+
+  it('gets a random comic with data and keeps metadata unchanged', async () => {
+    const randomWithData = await xkcdJS.api.getRandom({withData: true});
+
+    expect(randomWithData).toMatchObject({
+      ...responseDataFirst,
+      data: {
+        data: expect.any(ArrayBuffer),
+        mimeType: 'image/png',
+      },
+    });
+  });
+
+  it('sets the base URL', async () => {
+    xkcdJS.setApiUrl('https://example.com');
+
+    try {
+      await xkcdJS.api.getByIndex(1);
+      expect.fail('Did not throw error');
+    } catch (error) {
+      console.error((error as Error).message);
+      expect((error as Error).message.includes('Request failed with status code 404')).toBe(true);
+    }
+  });
+});

@@ -1,0 +1,118 @@
+import type {APIClient} from '@ffflorian/api-client';
+
+import type {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions, RequestOptions} from '../interfaces';
+
+import {Endpoint} from '../Endpoints';
+
+export class ChecksAPI {
+  private readonly apiClient: APIClient;
+
+  constructor(apiClient: APIClient) {
+    this.apiClient = apiClient;
+  }
+
+  private static mapCheckOptions(options?: CheckOptions): RequestOptions {
+    if (!options) {
+      return {};
+    }
+
+    const {customHeaders, disabledLocations, ...rest} = options;
+
+    return {
+      ...rest,
+      ...(customHeaders && {custom_headers: customHeaders}),
+      ...(disabledLocations && {disabled_locations: disabledLocations}),
+    };
+  }
+
+  /**
+   * Add a new check.
+   * @param url The URL you want to monitor.
+   * @param options Further check adding options
+   */
+  public async addCheck(url: string, options?: CheckOptions): Promise<Check> {
+    const endpoint = Endpoint.checks();
+    const params = {
+      url,
+      ...ChecksAPI.mapCheckOptions(options),
+    };
+    const {data} = await this.apiClient.post(endpoint, params);
+    return data;
+  }
+
+  /**
+   * Delete a check.
+   * @param token The check unique token
+   */
+  public async deleteCheck(token: string): Promise<Deleted> {
+    const endpoint = Endpoint.checks(token);
+    const {data} = await this.apiClient.delete(endpoint);
+    return data;
+  }
+
+  /**
+   * Show a single check.
+   * @param token The check unique token
+   * @param metrics Include performance metrics (last hour only)
+   */
+  public async getCheck(token: string, metrics?: boolean): Promise<Check> {
+    const endpoint = Endpoint.Checks.check(token);
+    const {data} = await this.apiClient.get(endpoint, {params: {metrics}});
+    return data;
+  }
+
+  /** List all your checks. */
+  public async getChecks(): Promise<Check[]> {
+    const endpoint = Endpoint.checks();
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
+  }
+
+  /**
+   * Get all the downtimes of a check.
+   *
+   * @param token The check unique token
+   * @param page The page to fetch (100 per page)
+   */
+  public async getDowntimes(token: string, page?: number): Promise<Downtime[]> {
+    const endpoint = Endpoint.Checks.downtimes(token);
+    const {data} = await this.apiClient.get(endpoint, {params: {page}});
+    return data;
+  }
+
+  /**
+   * Get detailed metrics about the check.
+   *
+   * Statistic are aggregated per hour which means you can't get more
+   * precise results than this. For example all requests performed
+   * between 5:00 and 5:59 will be reported at 5:00 in this API.
+   * The time range needs to be at least one hour to get data.
+   *
+   * @param token The check unique token
+   * @param options Metrics options
+   */
+  public async getMetrics(token: string, options?: MetricsOptions): Promise<Metrics> {
+    const endpoint = Endpoint.Checks.metrics(token);
+    const {data} = await this.apiClient.get(endpoint, {params: options});
+    return data;
+  }
+
+  /**
+   * Set a new API URL.
+   * @param newURL The new API url
+   */
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
+  }
+
+  /**
+   * Update a check.
+   * @param token The check unique token
+   * @param options Further check updating options
+   */
+  public async updateCheck(token: string, options?: CheckOptions): Promise<Check> {
+    const endpoint = Endpoint.checks(token);
+    const {data} = await this.apiClient.put(endpoint, ChecksAPI.mapCheckOptions(options));
+    return data;
+  }
+}

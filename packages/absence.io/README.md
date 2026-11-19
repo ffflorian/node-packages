@@ -1,0 +1,29 @@
+# absence.io [![npm version](https://img.shields.io/npm/v/absence.io.svg)](https://www.npmjs.com/package/absence.io)
+
+An [absence.io](https://absence.io) API client. For a documentation on the API see the [absence.io API reference](https://docs.absence.io/).
+
+### Installation
+
+Run `yarn add absence.io` or `npm install absence.io`.
+
+## Usage
+
+### Example
+
+```ts
+import {AbsenceIO} from 'absence.io';
+
+const absenceIO = new AbsenceIO({
+  apiKey: '<your API key here>',
+  apiKeyId: '<your API key ID here>',
+});
+
+absenceIO.api.absence.retrieveAbsences().then(absences => console.log(absences));
+```
+
+## Build and test
+
+```
+yarn
+yarn test
+```
