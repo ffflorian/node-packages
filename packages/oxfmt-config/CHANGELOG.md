@@ -1,3 +1,7 @@
+## 1.5.0 (2026-11-19)
+
+This was a version bump only for @ffflorian/oxfmt-config to align it with other projects, there were no code changes.
+
 ## 1.4.0 (2026-11-19)
 
 ### 🚀 Features

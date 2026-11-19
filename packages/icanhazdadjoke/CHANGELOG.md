@@ -1,3 +1,17 @@
+## 2.7.0 (2026-11-19)
+
+### 🚀 Features
+
+- Import packages from ffflorian/api-clients ([#1555](https://github.com/ffflorian/node-packages/pull/1555))
+
+### 🧱 Updated Dependencies
+
+- Updated @ffflorian/api-client to 2.7.0
+
+### ❤️ Thank You
+
+- Florian Imdahl @ffflorian
+
 ## 2.6.13 (2026-11-19)
 
 ### 🩹 Fixes

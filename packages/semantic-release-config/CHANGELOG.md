@@ -1,3 +1,7 @@
+## 1.2.0 (2026-11-19)
+
+This was a version bump only for @ffflorian/semantic-release-config to align it with other projects, there were no code changes.
+
 ## 1.1.0 (2026-11-19)
 
 ### 🚀 Features
