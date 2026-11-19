@@ -5,7 +5,6 @@ const config: OxfmtConfig = {
   bracketSameLine: false,
   bracketSpacing: false,
   endOfLine: 'lf',
-  insertFinalNewline: true,
   ignorePatterns: [
     '**/dist/**',
     '**/node_modules/**',
@@ -15,6 +14,7 @@ const config: OxfmtConfig = {
     '**/.claude',
     '**/.yarnrc.yml',
   ],
+  insertFinalNewline: true,
   jsxSingleQuote: false,
   objectWrap: 'preserve',
   overrides: [

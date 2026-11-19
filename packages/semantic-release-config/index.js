@@ -5,33 +5,33 @@ const defaultConfig = {
     [
       '@semantic-release/commit-analyzer',
       {
-        preset: 'angular',
         parserOpts: {
           noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING'],
         },
+        preset: 'angular',
       },
     ],
     [
       '@semantic-release/release-notes-generator',
       {
+        parserOpts: {
+          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING'],
+        },
         preset: 'conventionalcommits',
         presetConfig: {
           types: [
-            {type: 'feat', section: 'Features'},
-            {type: 'fix', section: 'Bug Fixes'},
-            {type: 'perf', section: 'Performance Improvements'},
-            {type: 'revert', section: 'Reverts'},
-            {type: 'refactor', section: 'Code Refactoring'},
-            {type: 'docs', section: 'Documentation'},
-            {type: 'build', section: 'Build System'},
-            {type: 'ci', section: 'Continuous Integration'},
-            {type: 'test', section: 'Tests'},
-            {type: 'style', section: 'Styles'},
-            {type: 'chore', section: 'Miscellaneous Chores'},
+            {section: 'Features', type: 'feat'},
+            {section: 'Bug Fixes', type: 'fix'},
+            {section: 'Performance Improvements', type: 'perf'},
+            {section: 'Reverts', type: 'revert'},
+            {section: 'Code Refactoring', type: 'refactor'},
+            {section: 'Documentation', type: 'docs'},
+            {section: 'Build System', type: 'build'},
+            {section: 'Continuous Integration', type: 'ci'},
+            {section: 'Tests', type: 'test'},
+            {section: 'Styles', type: 'style'},
+            {section: 'Miscellaneous Chores', type: 'chore'},
           ],
-        },
-        parserOpts: {
-          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING'],
         },
       },
     ],
@@ -69,5 +69,5 @@ const multiPackageConfig = {
   ],
 };
 
-export {multiPackageConfig, defaultConfig};
+export {defaultConfig, multiPackageConfig};
 export default defaultConfig;
