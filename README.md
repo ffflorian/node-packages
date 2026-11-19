@@ -4,7 +4,7 @@ My Node.js packages
 
 ## Packages
 
-| Package name | npm |
+| Package name | Version on npm |
 | --- | --- |
 | [`absence.io`](./packages/absence.io) | [![npm version](https://img.shields.io/npm/v/absence.io.svg)](https://npmjs.com/packages/absence.io) |
 | [`api-client`](./packages/api-client) | [![npm version](https://img.shields.io/npm/v/@ffflorian/api-client.svg)](https://npmjs.com/packages/@ffflorian/api-client) |
