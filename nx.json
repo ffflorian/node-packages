@@ -77,9 +77,11 @@
       }
     },
     "version": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "fallbackCurrentVersionResolver": "disk"
     },
     "changelog": {
+      "automaticFromRef": true,
       "workspaceChangelog": false,
       "projectChangelogs": {
         "createRelease": "github"

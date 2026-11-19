@@ -1,0 +1,29 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "description": "@ffflorian's prettier configuration",
+  "devDependencies": {
+    "prettier": "3.10.1"
+  },
+  "exports": "./index.js",
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "prettier",
+    "prettierconfig"
+  ],
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "name": "@ffflorian/prettier-config",
+  "peerDependencies": {
+    "prettier": ">= 1.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/node-packages.git"
+  },
+  "type": "module",
+  "version": "1.0.4"
+}

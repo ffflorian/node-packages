@@ -1,0 +1,29 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "description": "@ffflorian's oxlint configuration",
+  "devDependencies": {
+    "oxlint": "1.93.0"
+  },
+  "files": [
+    "index.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "oxlint",
+    "oxlintconfig"
+  ],
+  "license": "GPL-3.0",
+  "main": "index.json",
+  "name": "@ffflorian/oxlint-config",
+  "peerDependencies": {
+    "eslint": ">=10.8.0",
+    "eslint-plugin-perfectionist": ">=5.10.0",
+    "oxlint": ">=1.76.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/node-packages.git"
+  },
+  "version": "1.0.17"
+}

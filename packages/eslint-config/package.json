@@ -1,0 +1,45 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "dependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "9.39.5",
+    "eslint-import-resolver-typescript": "4.4.5",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-oxlint": "1.93.0",
+    "eslint-plugin-perfectionist": "5.13.0",
+    "globals": "17.14.0",
+    "jiti": "2.7.0",
+    "typescript-eslint": "8.72.2"
+  },
+  "description": "@ffflorian's eslint configuration",
+  "devDependencies": {
+    "typescript": "6.0.3"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "@ffflorian/eslint-config",
+  "peerDependencies": {
+    "eslint": ">=8.x || <10.x",
+    "typescript": ">=6.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/node-packages.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "version": "1.2.10"
+}

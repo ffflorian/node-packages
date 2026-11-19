@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "sourceMap": false,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "target": "es2018",
+    "types": ["oxfmt"]
+  },
+  "include": ["index.ts"]
+}

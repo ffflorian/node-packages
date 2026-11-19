@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext", "DOM"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "target": "es2018",
+    "types": []
+  },
+  "include": ["index.ts"]
+}
