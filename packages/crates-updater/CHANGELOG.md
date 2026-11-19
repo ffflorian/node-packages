@@ -1,3 +1,9 @@
+## 1.17.16 (2026-11-19)
+
+### 🩹 Fixes
+
+- **deps:** bump crates.io from 2.5.10 to 2.5.11  [ci skip] ([#1551](https://github.com/ffflorian/node-packages/pull/1551))
+
 ## 1.17.15 (2026-11-13)
 
 ### 🩹 Fixes

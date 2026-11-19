@@ -1,3 +1,7 @@
+## 1.18.25 (2026-11-19)
+
+This was a version bump only for exposure-keys to align it with other projects, there were no code changes.
+
 ## 1.18.24 (2026-11-13)
 
 This was a version bump only for exposure-keys to align it with other projects, there were no code changes.

@@ -1,3 +1,13 @@
+## 3.16.19 (2026-11-19)
+
+### 🩹 Fixes
+
+- **deps:** bump glob from 14.0.4 to 14.0.6  [ci skip] ([#1549](https://github.com/ffflorian/node-packages/pull/1549))
+
+### 🏡 Chore
+
+- **deps-dev:** bump vite from 8.3.6 to 8.3.8  [ci skip] ([#1553](https://github.com/ffflorian/node-packages/pull/1553))
+
 ## 3.16.18 (2026-11-13)
 
 ### 🩹 Fixes

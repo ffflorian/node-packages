@@ -1,3 +1,7 @@
+## 1.15.18 (2026-11-19)
+
+This was a version bump only for @ffflorian/electron-icon-generator to align it with other projects, there were no code changes.
+
 ## 1.15.17 (2026-11-13)
 
 ### 🩹 Fixes

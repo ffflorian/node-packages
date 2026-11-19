@@ -1,3 +1,9 @@
+## 1.16.17 (2026-11-19)
+
+### 🏡 Chore
+
+- **deps-dev:** bump vite from 8.3.6 to 8.3.8  [ci skip] ([#1553](https://github.com/ffflorian/node-packages/pull/1553))
+
 ## 1.16.16 (2026-11-13)
 
 ### 🩹 Fixes

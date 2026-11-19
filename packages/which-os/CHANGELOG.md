@@ -1,3 +1,7 @@
+## 1.18.17 (2026-11-19)
+
+This was a version bump only for which-os to align it with other projects, there were no code changes.
+
 ## 1.18.16 (2026-11-13)
 
 ### 🩹 Fixes

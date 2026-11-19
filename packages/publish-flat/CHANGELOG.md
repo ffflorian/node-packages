@@ -1,3 +1,9 @@
+## 1.19.23 (2026-11-19)
+
+### 🩹 Fixes
+
+- **deps:** bump npm-packlist from 11.3.0 to 11.3.1 ([#1547](https://github.com/ffflorian/node-packages/pull/1547))
+
 ## 1.19.22 (2026-11-13)
 
 ### 🩹 Fixes
