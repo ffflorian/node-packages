@@ -1,0 +1,27 @@
+import type {APIClient} from '@ffflorian/api-client';
+
+import type {Buildings, ClientOptions} from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
+import {APIBase} from './APIBase';
+
+export class BuildingsAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
+  }
+
+  /**
+   * @param id The id to get
+   */
+  public async getById(id: number): Promise<Buildings> {
+    const endpoint = Endpoint.buildings(id);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
+  }
+
+  public async getList(): Promise<Buildings[]> {
+    const endpoint = Endpoint.buildings();
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
+  }
+}

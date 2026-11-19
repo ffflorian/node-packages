@@ -1,0 +1,47 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "bin": "dist/cli.js",
+  "dependencies": {
+    "@ffflorian/api-client": "workspace:*",
+    "commander": "15.1.0"
+  },
+  "description": "An icanhazdadjoke.com API client with a CLI.",
+  "devDependencies": {
+    "@types/node": "~26",
+    "nock": "15.0.6",
+    "rimraf": "6.1.4",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  },
+  "engines": {
+    "node": ">= 21"
+  },
+  "exports": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "api-client",
+    "cli",
+    "icanhazdadjoke"
+  ],
+  "license": "GPL-3.0",
+  "name": "@ffflorian/icanhazdadjoke",
+  "readme": "https://github.com/ffflorian/node-packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/node-packages.git"
+  },
+  "scripts": {
+    "build": "yarn build:ts",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "start": "tsx src/cli.ts",
+    "test": "vitest run"
+  },
+  "version": "2.6.13"
+}

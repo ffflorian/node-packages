@@ -1,0 +1,61 @@
+import type {
+  AccessRestrictionGroupsAPI,
+  AccessRestrictionsAPI,
+  AreasAPI,
+  BuildingsAPI,
+  ChangesetsAPI,
+  ColumnsAPI,
+  CrossDescriptionsAPI,
+  DoorsAPI,
+  EditorAPI,
+  HolesAPI,
+  LeaveDescriptionsAPI,
+  LevelListAPI,
+  LineObstaclesAPI,
+  LocationGroupCategoriesAPI,
+  LocationGroupsAPI,
+  LocationsAPI,
+  MapAPI,
+  MeshAPI,
+  ObstaclesAPI,
+  PoisAPI,
+  PositioningAPI,
+  RampsAPI,
+  RoutingAPI,
+  SessionAPI,
+  SourcesAPI,
+  SpacesAPI,
+  StairsAPI,
+  UpdatesAPI,
+} from '../api/';
+
+export interface API {
+  accessRestrictionGroups: AccessRestrictionGroupsAPI;
+  accessRestrictions: AccessRestrictionsAPI;
+  areas: AreasAPI;
+  buildings: BuildingsAPI;
+  changesets: ChangesetsAPI;
+  columns: ColumnsAPI;
+  crossDescriptions: CrossDescriptionsAPI;
+  doors: DoorsAPI;
+  editor: EditorAPI;
+  holes: HolesAPI;
+  leaveDescriptions: LeaveDescriptionsAPI;
+  levels: LevelListAPI;
+  lineObstacles: LineObstaclesAPI;
+  locationGroupCategories: LocationGroupCategoriesAPI;
+  locationGroups: LocationGroupsAPI;
+  locations: LocationsAPI;
+  map: MapAPI;
+  mesh: MeshAPI;
+  obstacles: ObstaclesAPI;
+  pois: PoisAPI;
+  positioning: PositioningAPI;
+  ramps: RampsAPI;
+  routing: RoutingAPI;
+  session: SessionAPI;
+  sources: SourcesAPI;
+  spaces: SpacesAPI;
+  stairs: StairsAPI;
+  updates: UpdatesAPI;
+}

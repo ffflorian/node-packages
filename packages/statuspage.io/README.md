@@ -1,0 +1,28 @@
+# statuspage.io [![npm version](https://img.shields.io/npm/v/statuspage.io.svg)](https://www.npmjs.com/package/statuspage.io)
+
+A [statuspage.io](https://statuspage.io) API client. For a documentation on the API see [the statuspage.io API reference](https://developer.statuspage.io).
+
+### Installation
+
+Run `yarn add statuspage.io` or `npm install statuspage.io`.
+
+## Usage
+
+### Example
+
+```ts
+import {Statuspage} from 'statuspage.io';
+
+const statuspage = new Statuspage('kctbh9vrtdwd');
+
+statuspage.api.incidents.getAll().then(response => {
+  //
+});
+```
+
+## Build and test
+
+```
+yarn
+yarn test
+```

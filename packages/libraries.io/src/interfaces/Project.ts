@@ -1,0 +1,63 @@
+import type {PlatformType} from './Options';
+
+export interface Project {
+  dependent_repos_count: number;
+  dependents_count: number;
+  description: null | string;
+  forks: number;
+  homepage: null | string;
+  keywords: string[];
+  language: string;
+  latest_download_url: string;
+  latest_release_number: string;
+  latest_release_published_at: string;
+  latest_stable_release: ProjectRelease;
+  name: string;
+  normalized_licenses: string[];
+  package_manager_url: string;
+  platform: string;
+  rank: number;
+  repository_url: null | string;
+  stars: number;
+  status: null | string;
+  versions: ProjectVersion[];
+}
+
+export interface ProjectDependency {
+  deprecated: boolean;
+  filepath: null | string;
+  kind: 'Development' | 'Optional' | 'runtime';
+  latest: string;
+  latest_stable: string;
+  name: string;
+  outdated: boolean;
+  platform: PlatformType;
+  project_name: string;
+  requirements: string;
+}
+
+export interface ProjectRelease {
+  created_at: string;
+  id: number;
+  number: string;
+  project_id: number;
+  published_at: string;
+  runtime_dependencies_count: null | number;
+  updated_at: string;
+}
+
+export interface ProjectUsage {
+  [version: string]: number;
+}
+
+export interface ProjectVersion {
+  number: string;
+  published_at: string;
+}
+
+export interface ProjectWithDependencies extends Project {
+  dependencies: ProjectDependency[];
+  dependencies_for_version: string;
+  dependent_repos_count: number;
+  dependents_count: number;
+}

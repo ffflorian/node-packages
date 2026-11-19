@@ -7,7 +7,7 @@
     }
   },
   "release": {
-    "projects": ["packages/*", "!@ffflorian/doublelinkedlist", "!@ffflorian/mastodon-bot-yearprogress", "!quick-sort"],
+    "projects": ["packages/*", "!@ffflorian/doublelinkedlist", "!@ffflorian/mastodon-bot-yearprogress", "!quick-sort", "!corona-warn-app"],
     "projectsRelationship": "independent",
     "releaseTag": {
       "pattern": "{projectName}@{version}"
