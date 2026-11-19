@@ -1,3 +1,7 @@
+## 1.18.0 (2026-11-19)
+
+This was a version bump only for crates-updater to align it with other projects, there were no code changes.
+
 ## 1.17.16 (2026-11-19)
 
 ### 🩹 Fixes

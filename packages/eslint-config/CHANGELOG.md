@@ -1,3 +1,13 @@
+## 1.3.0 (2026-11-19)
+
+### 🚀 Features
+
+- Import packages from ffflorian/config ([#1554](https://github.com/ffflorian/node-packages/pull/1554))
+
+### ❤️ Thank You
+
+- Florian Imdahl @ffflorian
+
 ## 1.2.10 (2026-11-18)
 
 ### 🩹 Fixes

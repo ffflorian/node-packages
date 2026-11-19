@@ -1,3 +1,7 @@
+## 3.17.0 (2026-11-19)
+
+This was a version bump only for @ffflorian/gh-open to align it with other projects, there were no code changes.
+
 ## 3.16.18 (2026-11-19)
 
 ### 🏡 Chore
