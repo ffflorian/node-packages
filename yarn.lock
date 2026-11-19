@@ -5604,6 +5604,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob@npm:^14.0.3":
+  version: 14.0.6
+  resolution: "glob@npm:14.0.6"
+  dependencies:
+    minimatch: "npm:^11.0.5"
+    minipass: "npm:^7.1.3"
+    path-scurry: "npm:^3.0.0"
+  checksum: 10c0/5b8621a6a363abc630de0a542f0f8d0a919a0a5e154626b5fdf1e97425e8709783b0b27cc1eb9d65a5ce097db84e904fe50f8f1dc8c0579c49583c0ac30f8ac7
+  languageName: node
+  linkType: hard
+
 "glob@npm:^8.1.0":
   version: 8.1.0
   resolution: "glob@npm:8.1.0"
@@ -7224,7 +7235,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-packlist@npm:11.3.0, npm-packlist@npm:^11.2.0":
+"npm-packlist@npm:11.3.1":
+  version: 11.3.1
+  resolution: "npm-packlist@npm:11.3.1"
+  dependencies:
+    glob: "npm:^14.0.3"
+    ignore-walk: "npm:^9.0.0"
+    proc-log: "npm:^7.0.0"
+  checksum: 10c0/39c13850a4b0ea4ecba154a6d16685f0aa71fa4705c6edcae000b5f8838516f0ac5998d6552b13cf2802563984aa3eaa6eddf1c301711daf8f979617c22a0d52
+  languageName: node
+  linkType: hard
+
+"npm-packlist@npm:^11.2.0":
   version: 11.3.0
   resolution: "npm-packlist@npm:11.3.0"
   dependencies:
@@ -8141,7 +8163,7 @@ __metadata:
     "@types/npmcli__arborist": "npm:6.3.3"
     commander: "npm:15.1.0"
     logdown: "npm:3.3.1"
-    npm-packlist: "npm:11.3.0"
+    npm-packlist: "npm:11.3.1"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
   bin:
