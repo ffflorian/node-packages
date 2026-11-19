@@ -2,8 +2,8 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "My Node.js packages",
   "devDependencies": {
-    "@ffflorian/oxfmt-config": "1.3.1",
-    "@ffflorian/oxlint-config": "1.0.17",
+    "@ffflorian/oxfmt-config": "workspace:*",
+    "@ffflorian/oxlint-config": "workspace:*",
     "@nx/js": "24.0.6",
     "@types/node": "~26",
     "eslint": "10.15.0",
@@ -33,7 +33,7 @@
     "format": "oxfmt .",
     "lint": "yarn lint:other && yarn lint:ts",
     "lint:other": "yarn format --list-different",
-    "lint:ts": "oxlint --ignore-path .gitignore packages/",
+    "lint:ts": "oxlint packages/",
     "release": "nx release --yes",
     "test": "yarn test:all",
     "test:all": "yarn workspaces foreach --all --parallel --exclude node-packages run test"

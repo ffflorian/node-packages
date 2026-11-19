@@ -68,6 +68,7 @@ This is a yarn workspaces monorepo released with [Nx Release](https://nx.dev/fea
 | `double-linked-list` | (unpublished) | Double linked list data structure |
 | `electron-icon-generator` | `@ffflorian/electron-icon-generator` | Generate icons for Electron apps |
 | `electron-info` | `electron-info` | Retrieve Electron release information |
+| `eslint-config` | `@ffflorian/eslint-config` | Shared ESLint flat config |
 | `exposure-keys` | `exposure-keys` | Exposure keys tooling |
 | `gh-open` | `@ffflorian/gh-open` | Open GitHub URLs from the terminal |
 | `https-proxy` | `@ffflorian/https-proxy` | HTTPS proxy utility |
@@ -77,10 +78,14 @@ This is a yarn workspaces monorepo released with [Nx Release](https://nx.dev/fea
 | `my-timezone` | `my-timezone` | Timezone utility |
 | `ntfy` | `ntfy` | Send notifications via ntfy |
 | `ntpclient` | `ntpclient` | NTP client |
+| `oxfmt-config` | `@ffflorian/oxfmt-config` | Shared oxfmt config |
+| `oxlint-config` | `@ffflorian/oxlint-config` | Shared oxlint config |
 | `pixelflut` | `pixelflut` | Pixelflut client |
+| `prettier-config` | `@ffflorian/prettier-config` | Shared Prettier config |
 | `publish-flat` | `publish-flat` | Publish npm packages with a flat directory structure |
 | `quick-sort` | (unpublished) | Quick sort algorithm implementation |
 | `scrabble-cheater` | `scrabble-cheater` | Scrabble word finder |
+| `semantic-release-config` | `@ffflorian/semantic-release-config` | Shared semantic-release config |
 | `which-os` | `which-os` | Detect operating system |
 | `windows-shortcut-maker` | `@ffflorian/windows-shortcut-maker` | Create Windows shortcuts |
 

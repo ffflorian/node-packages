@@ -12,6 +12,7 @@ My Node.js packages
 | [`double-linked-list`](./packages/double-linked-list) |
 | [`electron-icon-generator`](./packages/electron-icon-generator) | [![npm version](https://img.shields.io/npm/v/@ffflorian/electron-icon-generator.svg)](https://npmjs.com/packages/@ffflorian/electron-icon-generator) |
 | [`electron-info`](./packages/electron-info) | [![npm version](https://img.shields.io/npm/v/electron-info.svg)](https://npmjs.com/packages/electron-info) |
+| [`eslint-config`](./packages/eslint-config) | [![npm version](https://img.shields.io/npm/v/@ffflorian/eslint-config.svg)](https://npmjs.com/packages/@ffflorian/eslint-config) |
 | [`exposure-keys`](./packages/exposure-keys) | [![npm version](https://img.shields.io/npm/v/exposure-keys.svg)](https://npmjs.com/packages/exposure-keys) |
 | [`gh-open`](./packages/gh-open) | [![npm version](https://img.shields.io/npm/v/@ffflorian/gh-open.svg)](https://npmjs.com/packages/@ffflorian/gh-open) |
 | [`https-proxy`](./packages/https-proxy) | [![npm version](https://img.shields.io/npm/v/@ffflorian/https-proxy.svg)](https://npmjs.com/packages/@ffflorian/https-proxy) |
@@ -20,10 +21,14 @@ My Node.js packages
 | [`my-timezone`](./packages/my-timezone) | [![npm version](https://img.shields.io/npm/v/my-timezone.svg)](https://npmjs.com/packages/my-timezone) |
 | [`ntfy`](./packages/ntfy) | [![npm version](https://img.shields.io/npm/v/ntfy.svg)](https://npmjs.com/packages/ntfy) |
 | [`ntpclient`](./packages/ntpclient) | [![npm version](https://img.shields.io/npm/v/ntpclient.svg)](https://npmjs.com/packages/ntpclient) |
+| [`oxfmt-config`](./packages/oxfmt-config) | [![npm version](https://img.shields.io/npm/v/@ffflorian/oxfmt-config.svg)](https://npmjs.com/packages/@ffflorian/oxfmt-config) |
+| [`oxlint-config`](./packages/oxlint-config) | [![npm version](https://img.shields.io/npm/v/@ffflorian/oxlint-config.svg)](https://npmjs.com/packages/@ffflorian/oxlint-config) |
 | [`pixelflut`](./packages/pixelflut) | [![npm version](https://img.shields.io/npm/v/pixelflut.svg)](https://npmjs.com/packages/pixelflut) |
+| [`prettier-config`](./packages/prettier-config) | [![npm version](https://img.shields.io/npm/v/@ffflorian/prettier-config.svg)](https://npmjs.com/packages/@ffflorian/prettier-config) |
 | [`publish-flat`](./packages/publish-flat) | [![npm version](https://img.shields.io/npm/v/publish-flat.svg)](https://npmjs.com/packages/publish-flat) |
 | [`quick-sort`](./packages/quick-sort) |  |
 | [`scrabble-cheater`](./packages/scrabble-cheater) | [![npm version](https://img.shields.io/npm/v/scrabble-cheater.svg)](https://npmjs.com/packages/scrabble-cheater) |
+| [`semantic-release-config`](./packages/semantic-release-config) | [![npm version](https://img.shields.io/npm/v/@ffflorian/semantic-release-config.svg)](https://npmjs.com/packages/@ffflorian/semantic-release-config) |
 | [`which-os`](./packages/which-os) | [![npm version](https://img.shields.io/npm/v/which-os.svg)](https://npmjs.com/packages/which-os) |
 | [`windows-shortcut-maker`](./packages/windows-shortcut-maker) | [![npm version](https://img.shields.io/npm/v/@ffflorian/windows-shortcut-maker.svg)](https://npmjs.com/packages/@ffflorian/windows-shortcut-maker) |
 | [`mastodon-bot-yearprogress`](./packages/mastodon-bot-yearprogress) |  |

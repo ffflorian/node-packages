@@ -1,0 +1,38 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "description": "@ffflorian's semantic-release configuration",
+  "devDependencies": {
+    "oxfmt": "0.78.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./multi": "./multi.js"
+  },
+  "files": [
+    "index.js",
+    "multi.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "semantic-release",
+    "semantic-release-config"
+  ],
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "name": "@ffflorian/semantic-release-config",
+  "peerDependencies": {
+    "@semantic-release/changelog": ">= 3.0.0",
+    "@semantic-release/git": ">= 7.0.0",
+    "semantic-release": ">= 15.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/node-packages.git"
+  },
+  "type": "module",
+  "version": "1.0.5",
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "10.4.1"
+  }
+}
