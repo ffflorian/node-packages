@@ -26,10 +26,6 @@ This was a version bump only for electron-info to align it with other projects, 
 - **deps-dev:** bump vite from 8.3.5 to 8.3.6 ([#1540](https://github.com/ffflorian/node-packages/pull/1540))
 - **deps-dev:** bump nock from 15.0.5 to 15.0.6 ([#1542](https://github.com/ffflorian/node-packages/pull/1542))
 
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
-
 ## 1.32.21 (2026-11-05)
 
 This was a version bump only for electron-info to align it with other projects, there were no code changes.

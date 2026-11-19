@@ -6,7 +6,7 @@ pre-commit:
       exclude:
         - 'CLAUDE.md'
         - '.claude'
-      run: npx --no oxfmt -- --write {staged_files} && git add {staged_files}
+      run: npx --no oxfmt -- --write --no-error-on-unmatched-pattern {staged_files} && git add {staged_files}
     oxlint:
       glob: '*.{js,ts}'
       run: npx --no oxlint -- --fix {staged_files} && git add {staged_files}

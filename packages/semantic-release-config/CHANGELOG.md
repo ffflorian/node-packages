@@ -8,10 +8,6 @@ This was a version bump only for @ffflorian/semantic-release-config to align it 
 
 - Import packages from ffflorian/config ([#1554](https://github.com/ffflorian/node-packages/pull/1554))
 
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
-
 ## 1.0.5 (2026-11-18)
 
 ### 🩹 Fixes
@@ -44,10 +40,6 @@ This was a version bump only for @ffflorian/semantic-release-config to align it 
 ### 🚀 Features
 
 - **oxfmt-config:** Add oxfmt config ([#581](https://github.com/ffflorian/config/pull/581))
-
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
 
 ## 1.0.2 (2026-09-10)
 

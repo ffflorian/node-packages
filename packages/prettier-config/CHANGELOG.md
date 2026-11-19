@@ -8,10 +8,6 @@ This was a version bump only for @ffflorian/prettier-config to align it with oth
 
 - Import packages from ffflorian/config ([#1554](https://github.com/ffflorian/node-packages/pull/1554))
 
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
-
 ## 1.0.4 (2026-11-18)
 
 ### 🏡 Chore
@@ -27,10 +23,6 @@ This was a version bump only for @ffflorian/prettier-config to align it with oth
 ### 🚀 Features
 
 - **oxfmt-config:** Add oxfmt config ([#581](https://github.com/ffflorian/config/pull/581))
-
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
 
 ## 1.0.2 (2026-09-10)
 

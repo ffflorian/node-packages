@@ -58,10 +58,6 @@ This was a version bump only for @ffflorian/electron-icon-generator to align it 
 
 - **electron-icon-generator:** Replace icon-gen with png2icons ([#1446](https://github.com/ffflorian/node-packages/pull/1446))
 
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
-
 ## 1.15.6 (2026-09-17)
 
 This was a version bump only for @ffflorian/electron-icon-generator to align it with other projects, there were no code changes.

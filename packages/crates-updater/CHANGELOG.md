@@ -8,10 +8,6 @@
 
 - Updated crates.io to 2.6.0
 
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
-
 ## 1.18.0 (2026-11-19)
 
 This was a version bump only for crates-updater to align it with other projects, there were no code changes.

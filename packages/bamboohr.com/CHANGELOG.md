@@ -8,10 +8,6 @@
 
 - Updated @ffflorian/api-client to 2.7.0
 
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
-
 ## 1.7.12 (2026-11-19)
 
 ### 🩹 Fixes

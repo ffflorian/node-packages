@@ -8,10 +8,6 @@ This was a version bump only for @ffflorian/eslint-config to align it with other
 
 - Import packages from ffflorian/config ([#1554](https://github.com/ffflorian/node-packages/pull/1554))
 
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
-
 ## 1.2.10 (2026-11-18)
 
 ### 🩹 Fixes
@@ -99,10 +95,6 @@ This was a dependency update only for @ffflorian/eslint-config, there were no co
 ### 🚀 Features
 
 - **oxfmt-config:** Add oxfmt config ([#581](https://github.com/ffflorian/config/pull/581))
-
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
 
 ## 1.1.8 (2026-09-10)
 

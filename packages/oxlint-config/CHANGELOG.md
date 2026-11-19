@@ -8,10 +8,6 @@ This was a version bump only for @ffflorian/oxlint-config to align it with other
 
 - Import packages from ffflorian/config ([#1554](https://github.com/ffflorian/node-packages/pull/1554))
 
-### ❤️ Thank You
-
-- Florian Imdahl @ffflorian
-
 ## 1.0.17 (2026-11-18)
 
 ### 🏡 Chore
