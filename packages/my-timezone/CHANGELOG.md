@@ -1,3 +1,9 @@
+## 1.17.1 (2026-11-20)
+
+### 🧱 Updated Dependencies
+
+- Updated ntpclient to 1.18.1
+
 ## 1.17.0 (2026-11-19)
 
 ### 🧱 Updated Dependencies

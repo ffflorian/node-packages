@@ -1,3 +1,9 @@
+## 1.19.2 (2026-11-20)
+
+### 🧱 Updated Dependencies
+
+- Updated crates.io to 2.6.2
+
 ## 1.19.1 (2026-11-19)
 
 ### 🩹 Fixes

@@ -1,3 +1,7 @@
+## 1.18.1 (2026-11-20)
+
+This was a version bump only for ntpclient to align it with other projects, there were no code changes.
+
 ## 1.18.0 (2026-11-19)
 
 This was a version bump only for ntpclient to align it with other projects, there were no code changes.

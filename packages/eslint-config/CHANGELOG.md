@@ -1,3 +1,9 @@
+## 1.4.1 (2026-11-20)
+
+### 🏡 Chore
+
+- Do not mention authors in changelogs [ci skip] ([fdfad5de](https://github.com/ffflorian/node-packages/commit/fdfad5de))
+
 ## 1.4.0 (2026-11-19)
 
 This was a version bump only for @ffflorian/eslint-config to align it with other projects, there were no code changes.

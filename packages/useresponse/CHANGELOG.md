@@ -1,3 +1,7 @@
+## 1.2.2 (2026-11-20)
+
+This was a version bump only for useresponse to align it with other projects, there were no code changes.
+
 ## 1.2.1 (2026-11-19)
 
 ### 🩹 Fixes
