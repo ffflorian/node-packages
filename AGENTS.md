@@ -55,8 +55,8 @@ This file explains how coding agents should work in this repository.
 This is a yarn workspaces monorepo released with [Nx Release](https://nx.dev/features/manage-releases), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
 
 - **License**: GPL-3.0
-- **Node.js requirement**: >= 18.0
-- **Package manager**: yarn 4.18.1 (Berry)
+- **Node.js requirement**: >= 20.0
+- **Package manager**: yarn >= 4.0
 
 ## Packages
 
@@ -160,7 +160,6 @@ build: build system changes
 ci: CI/CD configuration changes
 ```
 
-- Do **not** include references to Claude or AI tools in commit messages or PR descriptions.
 - `nx release` uses conventional commits to determine version bumps and generate changelogs. Only `feat` (minor), `fix` (patch) and breaking changes bump versions; all other types (`chore`, `refactor`, `docs`, etc.) are listed in the changelog but never trigger a release on their own (`release.conventionalCommits` in `nx.json`).
 - Only packages with commits touching their own directory are released — unrelated packages are never published.
 
@@ -175,8 +174,6 @@ chore/<short-description>
 docs/<short-description>
 refactor/<short-description>
 ```
-
-Do **not** include references to Claude, AI agents, or tool-generated identifiers in branch names. Use only the semantic prefix and a short human-readable description of the change.
 
 ## CI/CD
 
@@ -215,5 +212,4 @@ This runs oxfmt (formatting) and oxlint (linting) with auto-fix across the codeb
 
 ## PR Guidelines
 
-- Do **not** add references to Claude or AI tools in PR titles, descriptions, or commit messages.
 - Keep PR descriptions focused on what changed and why.
