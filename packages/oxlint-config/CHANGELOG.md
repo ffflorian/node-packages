@@ -1,3 +1,9 @@
+## 1.2.2 (2026-11-26)
+
+### 🏡 Chore
+
+- **deps-dev:** bump the oxc group with 2 updates  [ci skip] ([#1556](https://github.com/ffflorian/node-packages/pull/1556))
+
 ## 1.2.1 (2026-11-20)
 
 ### 🏡 Chore

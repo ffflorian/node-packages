@@ -1,3 +1,7 @@
+## 1.22.2 (2026-11-26)
+
+This was a version bump only for @ffflorian/https-proxy to align it with other projects, there were no code changes.
+
 ## 1.22.1 (2026-11-20)
 
 This was a version bump only for @ffflorian/https-proxy to align it with other projects, there were no code changes.

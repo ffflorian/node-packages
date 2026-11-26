@@ -1,3 +1,14 @@
+## 1.2.1 (2026-11-26)
+
+### 💅 Refactors
+
+- Apply local oxlint rules ([1ddad8cb](https://github.com/ffflorian/node-packages/commit/1ddad8cb))
+
+### 🏡 Chore
+
+- **deps-dev:** bump the oxc group with 2 updates  [ci skip] ([#1556](https://github.com/ffflorian/node-packages/pull/1556))
+- Do not mention authors in changelogs [ci skip] ([fdfad5de](https://github.com/ffflorian/node-packages/commit/fdfad5de))
+
 ## 1.2.0 (2026-11-19)
 
 This was a version bump only for @ffflorian/semantic-release-config to align it with other projects, there were no code changes.

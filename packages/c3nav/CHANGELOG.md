@@ -1,3 +1,13 @@
+## 3.6.3 (2026-11-26)
+
+### 🏡 Chore
+
+- **deps-dev:** bump vitest from 5.1.0 to 5.1.1  [ci skip] ([#1559](https://github.com/ffflorian/node-packages/pull/1559))
+
+### 🧱 Updated Dependencies
+
+- Updated @ffflorian/api-client to 2.7.1
+
 ## 3.6.2 (2026-11-20)
 
 This was a version bump only for c3nav to align it with other projects, there were no code changes.

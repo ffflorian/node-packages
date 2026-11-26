@@ -1,3 +1,12 @@
+## 1.4.2 (2026-11-26)
+
+### 🩹 Fixes
+
+- **deps:** bump typescript-eslint from 8.72.2 to 8.73.0 ([#1558](https://github.com/ffflorian/node-packages/pull/1558))
+- **deps:** bump eslint-plugin-oxlint from 1.93.0 to 1.94.0  [ci skip] ([#1557](https://github.com/ffflorian/node-packages/pull/1557))
+- **deps:** bump eslint-plugin-perfectionist from 5.13.0 to 5.14.0  [ci skip] ([#1562](https://github.com/ffflorian/node-packages/pull/1562))
+- **deps:** bump eslint from 9.39.5 to 10.15.0  [ci skip] ([#1563](https://github.com/ffflorian/node-packages/pull/1563))
+
 ## 1.4.1 (2026-11-20)
 
 ### 🏡 Chore

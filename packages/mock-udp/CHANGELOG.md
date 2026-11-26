@@ -1,3 +1,9 @@
+## 1.17.2 (2026-11-26)
+
+### 🏡 Chore
+
+- **deps-dev:** bump vitest from 5.1.0 to 5.1.1  [ci skip] ([#1559](https://github.com/ffflorian/node-packages/pull/1559))
+
 ## 1.17.1 (2026-11-20)
 
 This was a version bump only for @ffflorian/mock-udp to align it with other projects, there were no code changes.
