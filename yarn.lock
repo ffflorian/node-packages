@@ -1826,7 +1826,7 @@ __metadata:
   dependencies:
     "@types/ws": "npm:8.18.2"
     commander: "npm:15.1.0"
-    masto: "npm:8.0.0"
+    masto: "npm:8.0.1"
     tsx: "npm:4.23.15"
     typescript: "npm:7.0.2"
   bin:
@@ -8618,14 +8618,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"masto@npm:8.0.0":
-  version: 8.0.0
-  resolution: "masto@npm:8.0.0"
+"masto@npm:8.0.1":
+  version: 8.0.1
+  resolution: "masto@npm:8.0.1"
   dependencies:
     change-case: "npm:^5.4.4"
     events-to-async: "npm:^2.0.2"
     ts-custom-error: "npm:^3.3.1"
-  checksum: 10c0/df1fcdbd4de516d96f231ed3c06534ad6a953abd3f4568d4bd38a228f29f36a95a038506eab3184dfc3a0d23233cf5a31017fb0a85cb15335fd5766689f10770
+  checksum: 10c0/e86b7d779048bbb7ae141b0c4524fd7e95e858794e298a5045d4f29354a0ae7ed9f3d51ded8213af23520bc95a18e58e13d2edbc1a2ffd117afa5fac39220c06
   languageName: node
   linkType: hard
 
