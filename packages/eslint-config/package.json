@@ -2,11 +2,11 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
     "@eslint/js": "10.0.1",
-    "eslint": "9.39.5",
+    "eslint": "10.15.0",
     "eslint-import-resolver-typescript": "4.4.5",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-oxlint": "1.94.0",
-    "eslint-plugin-perfectionist": "5.13.0",
+    "eslint-plugin-perfectionist": "5.14.0",
     "globals": "17.14.0",
     "jiti": "2.7.0",
     "typescript-eslint": "8.72.2"
