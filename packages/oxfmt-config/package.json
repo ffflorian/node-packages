@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "@ffflorian's oxfmt configuration",
   "devDependencies": {
-    "oxfmt": "0.78.0",
+    "oxfmt": "0.79.0",
     "typescript": "7.0.2"
   },
   "files": [
